@@ -1,24 +1,16 @@
 a {
-  @apply underline text-blue-light;
-}
-
-a:hover {
-  @apply no-underline;
-}
+  @apply underline text-blue-light; }
+  a:hover {
+    @apply no-underline; }
 
 .container {
-  @apply px-6 max-w-5xl mx-auto;
-}
+  @apply px-6 max-w-5xl mx-auto; }
 
 .content p:not(:first-child) {
-  @apply mt-3 sm:mt-4 md:mt-6;
-}
+  @apply mt-3 sm:mt-4 md:mt-6; }
 
 .have_question {
-  box-shadow: inset 0 -10px 40px rgba(0, 0, 0, 0.05), inset 0 -5px 30px rgba(0, 0, 0, 0.1);
-}
+  box-shadow: inset 0 -10px 40px rgba(0, 0, 0, 0.05), inset 0 -5px 30px rgba(0, 0, 0, 0.1); }
 
 .drop-cap:first-letter {
-  @apply text-blue-light float-left text-7xl font-extrabold leading-none m-0 -mt-2 py-0 pl-0 pr-2 font-serif;
-}
-/*# sourceMappingURL=main.css.map */
+  @apply text-blue-light float-left text-7xl font-extrabold leading-none m-0 -mt-2 py-0 pl-0 pr-2 font-serif; }

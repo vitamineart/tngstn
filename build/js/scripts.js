@@ -1,3 +1,1 @@
-//libraries like jquery etc
-// External JS file like jquery etc which you do not wish to inlcuded in minification
-//main.js file
+const scrollToTopButton=document.getElementById("go-to-top"),scrollFunc=()=>{window.scrollY>300?(scrollToTopButton.classList.remove("invisible","opacity-0"),scrollToTopButton.classList.add("visible","opacity-100")):(scrollToTopButton.classList.remove("visible","opacity-100"),scrollToTopButton.classList.add("invisible","opacity-0"))};window.addEventListener("scroll",scrollFunc);const scrollToTop=()=>{const o=document.documentElement.scrollTop||document.body.scrollTop;o>0&&(window.requestAnimationFrame(scrollToTop),window.scrollTo(0,o-o/12))};scrollToTopButton.onclick=function(o){o.preventDefault(),scrollToTop()},Resources;
