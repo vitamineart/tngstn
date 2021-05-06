@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gulp with TailwindCSS</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Oranienbaum&display=swap"
+        rel="stylesheet">
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@0.6.2/lite-youtube.js" defer> -->
+
+</head>
+<body class="">
+
+    @@include('./includes/header.html')
+    <main class="">
+        <div class="video w-full">
+            <img src="img/video-cover.jpg" alt="" class="w-full">
+
+        </div>
+
+        <header class="page-title pt-8">
+            <div class="container">
+                <div class="tag bg-blue-light inline-block px-2 py-1 text-white font-semibold">Davis Instruments</div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 text-blue-dark">How the King-of-the-Wire Crosses the Canyon.</h1>
+
+                <button class="btn-audio text-sm md:text-base font-bold text-blue-dark border border-2 border-current rounded flex items-center leading-none px-5 h-10 md:h-12 hover:text-blue-light transition-all duration-300 my-6">
+                    <img src="img/icon-audio-wave.svg" alt="" class="mr-4 w-20 md:w-24" >
+                    Play Audio Version
+                </button>
+            </div>
+        </header>
+
+        <div class="lead bg-gray-light py-8 font-bold text-xl mt-10">
+            <div class="container">
+                When you're a <span class="text-blue-light">tightrope walker</span> traversing the <span class="text-blue-light">Grand Canyon</span>, a surprise gush of wind can mean the end of your world.
+            </div>
+        </div>
+
+        <article class="content mt-10 leading-relaxed">
+            <div class="container">
+                <p class="drop-cap">Often, the safe landing of a passenger plane, or the return home of a fire- fighter, or even the success of a wine label depend on precise second-by- second data of hyper-local weather conditions.</p>
+                <p>But weather isn't just for dare-devils and critical infrastructure. We all have an interest in local weather.</p>
+                <img src="img/Instrument1.png" alt="Davis Instruments" class="float-left mr-2 w-48 sm:w-52 md:w-60 lg:w-64  mt-4 -ml-16 md:-ml-10" style="shape-outside: url(img/Instrument1.png); shape-margin: 20px; shape-image-threshold: .1;">
+                <p>You and I would like to know if we should leave home with an umbrella today. That’s why TV stations install weather stations on their roof-tops.</p>
+                <p>Schools install weather stations for K-12 STEM students. Hobbyists have them at home, and storm chasers put them on top of their trucks. Surfer Jack O'Neill had one in his garden. Take a walk in a park and you might spot one, left there by a horticulturist.</p>
+                <img src="img/NikWallenda.png" alt="Nik Wallenda" class="float-right -mr-10 w-48 sm:w-52 md:w-60 lg:w-64 md:mr-0" style="shape-outside:url(img/NikWallenda.png); shape-margin: 20px; shape-image-threshold: .1;">
+                <p>Coming back to King-of-the-Wire Nik Wallenda, he needs to know if humidity could make his tightrope slippery. His life depends on it. So he depends on Davis.</p>
+                <p>For over 50-years, Davis Instruments has been a leader in precision weather stations. Industries around the world rely on Davis for making critical decisions that require real-time weather monitoring.</p>
+            </div>
+            <div class="bg-gray-dark my-10 py-8">
+                <div class="container">
+                    <p class="border-l-2 pl-10 border-white text-white text-xl font-semibold">Davis Instruments hired Tungsten as its advertising agen cy to differentiate the brand by product attributes, company values, and history.</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <p>Tungsten created a central idea that captured real users using the product in real-life situations, and putting their trust in Davis. The concept was executed in dramatic and memorable video productions. These videos are endorsements from professionals at the "top of their field", where weather can have a critical outcome on success.</p>
+                <img src="img/Instrument2.png" alt="Davis Instruments" class="float-right w-48 -mr-20 sm:mr-0 sm:w-52 md:w-60 lg:w-64" style="shape-outside: url(img/Instrument2.png); shape-margin: 15px;">
+                <p>Tungsten's experience in consumer IoT technology makes it particularly suited for engineering products. If you are a marketer with a product targeted at a specific region of the world, or worldwide, Tungsten would like the opportunity to talk to you about your brand, regardless of where on the globe your company is headquartered. We're in San Francisco, and work with clients across the world.</p>
+            </div>
+
+        </article>
+
+        <div class="container mt-16">
+            <div class="max-w-lg">
+                <div class="flex items-center justify-between border-b py-2">
+                    <span class="mr-auto text-sm md:text-base"><i>Copywriter:</i> <span class="font-semibold">Mukul Bakshi</span></span>
+
+                    <a href="#" class="text-gray-light hover:text-blue-light mx-1">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" class="w-6 h-6">
+                            <path d="M40 0C17.9286 0 0 17.9286 0 40C0 62.0714 17.9286 80 40 80C62.0714 80 80 62.0714 80 40C80 17.9286 62.0714 0 40 0ZM59.8571 33.5714C59.8571 34 59.8571 34.4286 59.8571 34.7857C59.8571 47.4286 50.2143 62 32.5714 62C27.1429 62 22.1429 60.4286 17.8571 57.7143C18.6429 57.7857 19.3571 57.8571 20.1429 57.8571C24.6429 57.8571 28.7857 56.2857 32.0714 53.7857C27.8571 53.7143 24.3571 50.9286 23.1429 47.1429C23.7143 47.2857 24.3571 47.2857 24.9286 47.2857C25.7857 47.2857 26.6429 47.1429 27.4286 46.9286C23.0714 46.0714 19.7143 42.2143 19.7143 37.5714V37.4286C21 38.1429 22.5 38.5714 24.0714 38.6429C21.5 36.9286 19.7857 34 19.7857 30.6429C19.7857 28.8571 20.2857 27.2143 21.0714 25.8571C25.7857 31.6429 32.8571 35.5 40.7857 35.8571C40.6429 35.1429 40.5714 34.4286 40.5714 33.6429C40.5714 28.3571 44.8571 24.0714 50.1429 24.0714C52.9286 24.0714 55.3571 25.2143 57.1429 27.0714C59.2857 26.6429 61.3571 25.8571 63.2143 24.7857C62.5 27 61 28.9286 59 30.0714C60.9286 29.8571 62.7857 29.2857 64.5 28.5714C63.2857 30.5714 61.7143 32.2857 59.8571 33.5714Z" fill="currentColor" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-light hover:text-blue-light mx-1">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" class="w-6 h-6">
+                            <path d="M40 0C17.9286 0 0 17.9286 0 40C0 62.0714 17.9286 80 40 80C62.0714 80 80 62.0714 80 40C80 17.9286 62.0714 0 40 0ZM29.5 59.6429H19.8571V30.8571H29.4286V59.6429H29.5ZM24.7143 26.9286C21.4286 26.9286 19.3571 24.7143 19.3571 21.9286C19.3571 19.0714 21.5 16.9286 24.7857 16.9286C28.0714 16.9286 30.0714 19.0714 30.1429 21.9286C30.0714 24.7143 28 26.9286 24.7143 26.9286ZM64 59.6429H54.4286V44.2143C54.4286 40.3571 53.0714 37.7143 49.5714 37.7143C46.9286 37.7143 45.3571 39.5 44.6429 41.2143C44.4286 41.8571 44.3571 42.7143 44.3571 43.5714V59.6429H34.7857C34.7857 59.6429 34.9286 33.5714 34.7857 30.8571H44.3571V34.9286C45.6429 33 47.9286 30.1429 53 30.1429C59.2857 30.1429 64 34.2857 64 43.0714V59.6429V59.6429ZM44.3571 35V34.9286C44.3571 35 44.2857 35 44.3571 35Z" fill="currentColor" />
+                        </svg>
+                    </a>
+
+                </div>
+                <div class="flex items-center justify-between border-b py-2">
+                    <span class="mr-auto text-sm md:text-base"><i>Video Editor: </i> <span class="font-semibold">Kia Reaghabi</span></span>
+
+                    <a href="#" class="text-gray-light hover:text-blue-light mx-1">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" class="w-6 h-6">
+                            <path d="M40 0C17.9286 0 0 17.9286 0 40C0 62.0714 17.9286 80 40 80C62.0714 80 80 62.0714 80 40C80 17.9286 62.0714 0 40 0ZM59.8571 33.5714C59.8571 34 59.8571 34.4286 59.8571 34.7857C59.8571 47.4286 50.2143 62 32.5714 62C27.1429 62 22.1429 60.4286 17.8571 57.7143C18.6429 57.7857 19.3571 57.8571 20.1429 57.8571C24.6429 57.8571 28.7857 56.2857 32.0714 53.7857C27.8571 53.7143 24.3571 50.9286 23.1429 47.1429C23.7143 47.2857 24.3571 47.2857 24.9286 47.2857C25.7857 47.2857 26.6429 47.1429 27.4286 46.9286C23.0714 46.0714 19.7143 42.2143 19.7143 37.5714V37.4286C21 38.1429 22.5 38.5714 24.0714 38.6429C21.5 36.9286 19.7857 34 19.7857 30.6429C19.7857 28.8571 20.2857 27.2143 21.0714 25.8571C25.7857 31.6429 32.8571 35.5 40.7857 35.8571C40.6429 35.1429 40.5714 34.4286 40.5714 33.6429C40.5714 28.3571 44.8571 24.0714 50.1429 24.0714C52.9286 24.0714 55.3571 25.2143 57.1429 27.0714C59.2857 26.6429 61.3571 25.8571 63.2143 24.7857C62.5 27 61 28.9286 59 30.0714C60.9286 29.8571 62.7857 29.2857 64.5 28.5714C63.2857 30.5714 61.7143 32.2857 59.8571 33.5714Z" fill="currentColor" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-light hover:text-blue-light mx-1">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" class="w-6 h-6">
+                            <path d="M40 0C17.9286 0 0 17.9286 0 40C0 62.0714 17.9286 80 40 80C62.0714 80 80 62.0714 80 40C80 17.9286 62.0714 0 40 0ZM29.5 59.6429H19.8571V30.8571H29.4286V59.6429H29.5ZM24.7143 26.9286C21.4286 26.9286 19.3571 24.7143 19.3571 21.9286C19.3571 19.0714 21.5 16.9286 24.7857 16.9286C28.0714 16.9286 30.0714 19.0714 30.1429 21.9286C30.0714 24.7143 28 26.9286 24.7143 26.9286ZM64 59.6429H54.4286V44.2143C54.4286 40.3571 53.0714 37.7143 49.5714 37.7143C46.9286 37.7143 45.3571 39.5 44.6429 41.2143C44.4286 41.8571 44.3571 42.7143 44.3571 43.5714V59.6429H34.7857C34.7857 59.6429 34.9286 33.5714 34.7857 30.8571H44.3571V34.9286C45.6429 33 47.9286 30.1429 53 30.1429C59.2857 30.1429 64 34.2857 64 43.0714V59.6429V59.6429ZM44.3571 35V34.9286C44.3571 35 44.2857 35 44.3571 35Z" fill="currentColor" />
+                        </svg>
+                    </a>
+
+                </div>
+                <div class="flex items-center justify-between border-b py-2">
+                    <span class="mr-auto text-sm md:text-base"><i>Client: </i> <span class="font-semibold">Atul Chawla</span></span>
+
+                    <a href="#" class="text-gray-light hover:text-blue-light mx-1">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" class="w-6 h-6">
+                            <path
+                                d="M40 0C17.9286 0 0 17.9286 0 40C0 62.0714 17.9286 80 40 80C62.0714 80 80 62.0714 80 40C80 17.9286 62.0714 0 40 0ZM59.8571 33.5714C59.8571 34 59.8571 34.4286 59.8571 34.7857C59.8571 47.4286 50.2143 62 32.5714 62C27.1429 62 22.1429 60.4286 17.8571 57.7143C18.6429 57.7857 19.3571 57.8571 20.1429 57.8571C24.6429 57.8571 28.7857 56.2857 32.0714 53.7857C27.8571 53.7143 24.3571 50.9286 23.1429 47.1429C23.7143 47.2857 24.3571 47.2857 24.9286 47.2857C25.7857 47.2857 26.6429 47.1429 27.4286 46.9286C23.0714 46.0714 19.7143 42.2143 19.7143 37.5714V37.4286C21 38.1429 22.5 38.5714 24.0714 38.6429C21.5 36.9286 19.7857 34 19.7857 30.6429C19.7857 28.8571 20.2857 27.2143 21.0714 25.8571C25.7857 31.6429 32.8571 35.5 40.7857 35.8571C40.6429 35.1429 40.5714 34.4286 40.5714 33.6429C40.5714 28.3571 44.8571 24.0714 50.1429 24.0714C52.9286 24.0714 55.3571 25.2143 57.1429 27.0714C59.2857 26.6429 61.3571 25.8571 63.2143 24.7857C62.5 27 61 28.9286 59 30.0714C60.9286 29.8571 62.7857 29.2857 64.5 28.5714C63.2857 30.5714 61.7143 32.2857 59.8571 33.5714Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-light hover:text-blue-light mx-1">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" class="w-6 h-6">
+                            <path d="M40 0C17.9286 0 0 17.9286 0 40C0 62.0714 17.9286 80 40 80C62.0714 80 80 62.0714 80 40C80 17.9286 62.0714 0 40 0ZM29.5 59.6429H19.8571V30.8571H29.4286V59.6429H29.5ZM24.7143 26.9286C21.4286 26.9286 19.3571 24.7143 19.3571 21.9286C19.3571 19.0714 21.5 16.9286 24.7857 16.9286C28.0714 16.9286 30.0714 19.0714 30.1429 21.9286C30.0714 24.7143 28 26.9286 24.7143 26.9286ZM64 59.6429H54.4286V44.2143C54.4286 40.3571 53.0714 37.7143 49.5714 37.7143C46.9286 37.7143 45.3571 39.5 44.6429 41.2143C44.4286 41.8571 44.3571 42.7143 44.3571 43.5714V59.6429H34.7857C34.7857 59.6429 34.9286 33.5714 34.7857 30.8571H44.3571V34.9286C45.6429 33 47.9286 30.1429 53 30.1429C59.2857 30.1429 64 34.2857 64 43.0714V59.6429V59.6429ZM44.3571 35V34.9286C44.3571 35 44.2857 35 44.3571 35Z" fill="currentColor" />
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    @@include('./includes/page-bottom.html')
+
+    <script src="./js/scripts.js"></script>
+</body>
+</html>
