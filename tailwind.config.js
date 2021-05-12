@@ -40,7 +40,8 @@ module.exports = {
         'cardshadow': '0 1px 45px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.2)',
       },
       fontFamily: {
-        'sans': 'Montserrat, sans-serif',
+        'proxima': 'ProximaNovaA-Regular, sans-serif',
+        'proxima-bold': 'ProximaNovaA-Bold, sans-serif',
       },
     },
   },

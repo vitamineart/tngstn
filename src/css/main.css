@@ -1,13 +1,26 @@
+@font-face {
+  font-family: "ProximaNovaA-Bold";
+  src: url("/fonts/ProximaNovaABold/font.woff2") format("woff2"), url("/fonts/ProximaNovaABold/font.woff") format("woff"); }
+
+@font-face {
+  font-family: "ProximaNovaA-Regular";
+  src: url("/fonts/ProximaNovaARegular/font.woff2") format("woff2"), url("/fonts/ProximaNovaARegular/font.woff") format("woff"); }
+
 a {
   @apply underline text-blue-light; }
   a:hover {
     @apply no-underline; }
 
 .container {
-  @apply px-6 max-w-5xl mx-auto; }
+  @apply px-6 mx-auto;
+  max-width: 960px; }
 
 .content p:not(:first-child) {
   @apply mt-3 sm:mt-4 md:mt-6; }
+
+.content img.float-right,
+.content img.float-left {
+  shape-margin: 15px; }
 
 .have_question {
   box-shadow: inset 0 -10px 40px rgba(0, 0, 0, 0.05), inset 0 -5px 30px rgba(0, 0, 0, 0.1); }

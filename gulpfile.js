@@ -82,12 +82,16 @@ function devScripts(){
 function devImages(){
   return src(`${options.paths.src.img}/**/*`).pipe(dest(options.paths.dist.img));
 }
+function devFonts(){
+  return src(`${options.paths.src.fonts}/*`).pipe(dest(options.paths.dist.fonts));
+}
 
 function watchFiles(){
   watch(`${options.paths.src.base}/**/*.html`,series(devHTML, devStyles, previewReload));
   watch([options.config.tailwindjs, `${options.paths.src.css}/**/*.scss`],series(devStyles, previewReload));
   watch(`${options.paths.src.js}/**/*.js`,series(devScripts, previewReload));
   watch(`${options.paths.src.img}/**/*`,series(devImages, previewReload));
+  watch(`${options.paths.src.fonts}/**/*`,series(devFonts, previewReload));
   console.log("\n\t" + logSymbols.info,"Watching for Changes..\n");
 }
 
@@ -141,7 +145,7 @@ function buildFinish(done){
 
 exports.default = series(
   devClean, // Clean Dist Folder
-  parallel(devStyles, devScripts, devImages, devHTML), //Run All tasks in parallel
+  parallel(devStyles, devScripts, devImages, devFonts, devHTML), //Run All tasks in parallel
   livePreview, // Live Preview Build
   watchFiles // Watch for Live Changes
 );
