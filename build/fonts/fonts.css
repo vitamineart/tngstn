@@ -1,0 +1,48 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 4086644, 2021-05-10T13:09:00-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: ProximaNova-Bold by Mark Simonson
+ * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/bold/
+ *
+ * Webfont: ProximaNova-Regular by Mark Simonson
+ * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/regular/
+ *
+ * Webfont: ProximaNovaA-Bold by Mark Simonson
+ * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/a-bold/
+ *
+ * Webfont: ProximaNovaA-Regular by Mark Simonson
+ * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/a-regular/
+ *
+ * Webfont: ProximaNovaS-Bold by Mark Simonson
+ * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/s-bold/
+ *
+ * Webfont: ProximaNovaS-Regular by Mark Simonson
+ * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/s-regular/
+ *
+ *
+ * Webfonts copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+ *
+ * © 2021 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3e5b74");
+
+@font-face {
+  font-family: "ProximaNovaA-Bold";
+  src: url('ProximaNovaABold.woff2') format('woff2'), url('ProximaNovaABold.woff') format('woff');
+}
+@font-face {
+  font-family: "ProximaNovaA-Regular";
+  src: url('ProximaNovaARegular.woff2') format('woff2'), url('ProximaNovaARegular.woff') format('woff');
+}
+
+
