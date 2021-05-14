@@ -1,5 +1,3 @@
-const colors = require('tailwindcss/colors')
-
 module.exports = {
   mode: 'jit', // Just-In-Time Compiler
   purge: ['./src/**/*.html'],

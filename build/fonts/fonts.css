@@ -34,15 +34,17 @@
 
 
 /* @import must be at top of file, otherwise CSS will not work */
-@import url("//hello.myfonts.net/count/3e5b74");
+/* @import url("//hello.myfonts.net/count/3e5b74"); */
 
 @font-face {
   font-family: "ProximaNovaA-Bold";
   src: url('ProximaNovaABold.woff2') format('woff2'), url('ProximaNovaABold.woff') format('woff');
+  font-display: swap;
 }
 @font-face {
   font-family: "ProximaNovaA-Regular";
   src: url('ProximaNovaARegular.woff2') format('woff2'), url('ProximaNovaARegular.woff') format('woff');
+  font-display: swap;
 }
 
 
