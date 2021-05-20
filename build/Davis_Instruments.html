@@ -28,7 +28,107 @@
     <link rel="preload" href="./fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" type="text/css" href="./fonts/fonts.css">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <style>
+        :root {
+            --c-blue-light: #338bc8;
+            --c-blue-link: #2581d0;
+            --c-blue: #185599;
+            --c-blue-dark: #071f51;
+        }
+
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            max-width: 960px;
+        }
+
+        header.header {
+            position: relative;
+            z-index: 10;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        header.header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header.header .logo {
+            width: clamp(150px, 15vw, 170px);
+        }
+
+        .nav-menu {
+            display: inline-block;
+            width: 40px;
+        }
+
+        .page-title {
+            @apply py-8;
+        }
+
+        .page-title h1 {
+            margin-top: 1rem;
+            font-family: 'ProximaNovaA-Bold', sans-serif;
+            font-size: clamp(1.8rem, 8vw, 2.7rem);
+            line-height: 1.1;
+            color: var(--c-blue-dark);
+        }
+
+        @media (min-width: 640px) {
+            .page-title h1 {
+                font-size: 3rem;
+                line-height: 1;
+            }
+        }
+
+        .tag-client {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            font-family: 'ProximaNovaA-Bold', sans-serif;
+            background-color: var(--c-blue-light);
+            color: #fff;
+            display: inline-block;
+        }
+
+        .lead-in {
+            background-color: #ebebeb;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            font-family: 'ProximaNovaA-Bold', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+
+        .btn-audio {
+            border-width: 1px;
+            color: var(--c-blue-dark);
+            border-color: currentColor;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            border-radius: 0.25rem;
+            padding-top: 0;
+            padding-bottom: 0;
+            height: 38px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            font-family: 'ProximaNovaA-Bold', sans-serif;
+        }
+
+        .btn-audio svg {
+            width: 5rem;
+            margin-right: 15px;
+        }
+    </style>
+
 
 
 </head>
@@ -116,7 +216,7 @@
 
     <main class="">
         <div class="video w-full">
-            <div class="video-wrapper">
+            <div class="video-wrapper" style="aspect-ratio: 16 / 9 ;">
                 <lite-youtube video-title="NikWallenda" videoid="0puWSusGbOA" params="controls=0&enablejsapi=1"></lite-youtube>
             </div>
 
@@ -334,7 +434,7 @@
                 When you're a <span class="text-blue-light">tightrope walker</span> traversing the <span class="text-blue-light">Grand Canyon</span>, a surprise gush of wind can mean the end of your world.
             </div>
         </div>
-
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
         <article class="content mt-10 leading-relaxed overflow-hidden">
             <div class="container flow-root">
                 <p class="drop-cap" style="--color: #338bc8;">Often, the safe landing of a passenger plane, or the return home of a fire- fighter, or even the success of a wine label depend on precise second-by- second data of hyper-local weather conditions.</p>
@@ -423,42 +523,42 @@
 <section class="py-16">
     <div class="container">
         <header class="text-blue font-proxima-bold text-3xl text-center">Our Work and Clients</header>
-        <div class="grid works-grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mt-10">
-            <a href="#" class="item shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all">
-                <img loading="lazy" src="img/works_clients_item1.jpg" alt="" class=" filter hover:saturate-50 transition-all">
+        <div class="works-grid">
+            <a href="#" class="item wow animate__fadeIn">
+                <img loading="lazy" src="img/works_clients_item1.jpg" alt="" class="">
             </a>
-            <a href="#" class="item shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all">
-                <img loading="lazy" src="img/works_clients_item2.jpg" alt="" class=" filter hover:saturate-50 transition-all">
+            <a href="#" class="item wow animate__fadeIn">
+                <img loading="lazy" src="img/works_clients_item2.jpg" alt="" class="">
             </a>
-            <a href="#" class="item shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all hidden md:inline-block">
-                <img loading="lazy" src="img/works_clients_item3.jpg" alt="" class=" filter hover:saturate-50 transition-all">
+            <a href="#" class="item wow animate__fadeIn hidden md:inline-block">
+                <img loading="lazy" src="img/works_clients_item3.jpg" alt="" class="">
             </a>
-            <a href="#" class="item shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all">
-                <img loading="lazy" src="img/works_clients_item4.jpg" alt="" class=" filter hover:saturate-50 transition-all">
+            <a href="#" class="item wow animate__fadeIn">
+                <img loading="lazy" src="img/works_clients_item4.jpg" alt="" class="">
             </a>
-            <a href="#" class="item shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all">
-                <img loading="lazy" src="img/works_clients_item5.jpg" alt="" class=" filter hover:saturate-50 transition-all">
+            <a href="#" class="item wow animate__fadeIn">
+                <img loading="lazy" src="img/works_clients_item5.jpg" alt="" class="">
             </a>
-            <a href="#" class="item shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all hidden md:inline-block">
-                <img loading="lazy" src="img/works_clients_item6.jpg" alt="" class=" filter hover:saturate-50 transition-all">
+            <a href="#" class="item wow animate__fadeIn hidden md:inline-block">
+                <img loading="lazy" src="img/works_clients_item6.jpg" alt="" class="">
             </a>
-            <a href="#" class="item shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all">
-                <img loading="lazy" src="img/works_clients_item7.jpg" alt="" class=" filter hover:saturate-50 transition-all">
+            <a href="#" class="item wow animate__fadeIn">
+                <img loading="lazy" src="img/works_clients_item7.jpg" alt="" class="">
             </a>
-            <a href="#" class="item shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all">
-                <img loading="lazy" src="img/works_clients_item8.jpg" alt="" class=" filter hover:saturate-50 transition-all">
+            <a href="#" class="item wow animate__fadeIn">
+                <img loading="lazy" src="img/works_clients_item8.jpg" alt="" class="">
             </a>
-            <a href="#" class="item shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all hidden md:inline-block">
-                <img loading="lazy" src="img/works_clients_item9.jpg" alt="" class=" filter hover:saturate-50 transition-all">
+            <a href="#" class="item wow animate__fadeIn hidden md:inline-block">
+                <img loading="lazy" src="img/works_clients_item9.jpg" alt="" class="">
             </a>
-            <a href="#" class="item shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all">
-                <img loading="lazy" src="img/works_clients_item10.jpg" alt="" class=" filter hover:saturate-50 transition-all">
+            <a href="#" class="item wow animate__fadeIn">
+                <img loading="lazy" src="img/works_clients_item10.jpg" alt="" class="">
             </a>
-            <a href="#" class="item shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all">
-                <img loading="lazy" src="img/works_clients_item11.jpg" alt="" class=" filter hover:saturate-50 transition-all">
+            <a href="#" class="item wow animate__fadeIn">
+                <img loading="lazy" src="img/works_clients_item11.jpg" alt="" class="">
             </a>
-            <a href="#" class="item shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all hidden md:inline-block">
-                <img loading="lazy" src="img/works_clients_item12.jpg" alt="" class=" filter hover:saturate-50 transition-all">
+            <a href="#" class="item wow animate__fadeIn hidden md:inline-block">
+                <img loading="lazy" src="img/works_clients_item12.jpg" alt="" class="">
             </a>
         </div>
     </div>
@@ -473,7 +573,7 @@
             (415) 269-6931
         </div>
         <div class="mt-5">
-            <a href="mailto:contact@tungstenadvertising.com" class="text-white font-proxima-bold">contact@tungstenadvertising.com</a>
+            <a href="mailto:hello@tngstn.com" class="text-white font-proxima-bold">hello@tngstn.com</a>
             <div class="social flex gap-3 mt-3">
                 <a href="#" class="inline-block ">
                     <svg width="100%" height="100%" viewBox="0 0 80 80" fill="none" class="fill-current text-blue-link hover:text-blue w-8">
@@ -499,7 +599,7 @@
         </div>
 
         <div class="mt-8">
-            2020 © Tungsten. ALL Rights Reserved. <br>
+            2021 © Tungsten. ALL Rights Reserved. <br>
             <a href="#" class="text-blue-light font-proxima-bold no-underline">Privacy Policy</a>
         </div>
     </div>
