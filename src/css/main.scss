@@ -130,12 +130,61 @@ header.header {
 
 .works-grid {
     @apply grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mt-10;
-    .item {
-        @apply shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all;
-        a {
-            @apply shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all;
+    a.item {
+        @apply relative block shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all;
+        img {
+            @apply relative transition-all z-0 duration-700;
+        }
+        .overlay {
+            @apply absolute top-0 left-0 bottom-0 right-0 grid place-items-center opacity-0 invisible z-50;
+            background-color: hsla(205, 99%, 29%, .85);
+            transition: .3s ease;
+            pointer-events: none;
+            .text {
+                @apply text-center;
+                color: #fff;
+                text-shadow: 0 1px 5px var(--c-blue-dark);
+                .project-category {
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    transform: translate(-10px);
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: .3s ease;
+                    transition-delay: .2s;
+                }
+                .project-name {
+                    font-size: 20px;
+                    font-family: var(--f-proxima-bold);
+                    transform: translate(-10px);
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: .3s ease;
+                    transition-delay: .4s;
+                }
+                .project-type {
+                    transform: translate(-10px);
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: .3s ease;
+                    transition-delay: .6s;
+                }
+            }
+        }
+        &:hover {
             img {
-                @apply filter hover:saturate-50 transition-all transition-all;
+                @apply scale-110 transform rotate-1;
+            }
+            .overlay {
+                @apply opacity-100 visible;
+                .text {
+
+                    >div {
+                        transform: none;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
             }
         }
     }
