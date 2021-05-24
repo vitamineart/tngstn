@@ -9,6 +9,7 @@
 
     <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@0.6.2/lite-youtube.js"
         defer></script>
+
     <!--
     /**
     * @license
@@ -25,11 +26,12 @@
     *
     */
     -->
+    <link rel="preload" as="image" href="https://i.ytimg.com/vi_webp/0puWSusGbOA/hqdefault.webp">
     <link rel="preload" href="./fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" type="text/css" href="./fonts/fonts.css">
 
-    <style>
+    <!-- <style>
         :root {
             --c-blue-light: #338bc8;
             --c-blue-link: #2581d0;
@@ -127,7 +129,7 @@
             width: 5rem;
             margin-right: 15px;
         }
-    </style>
+    </style> -->
 
 
 
@@ -217,7 +219,10 @@
     <main class="">
         <div class="video w-full">
             <div class="video-wrapper" style="aspect-ratio: 16 / 9 ;">
-                <lite-youtube video-title="NikWallenda" videoid="0puWSusGbOA" params="controls=0&enablejsapi=1"></lite-youtube>
+                <lite-youtube video-title="YouTube video player" videoid="0puWSusGbOA" params="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></lite-youtube>
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/0puWSusGbOA" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe> -->
             </div>
 
         </div>
@@ -448,7 +453,7 @@
             </div>
             <div class="bg-gray-dark my-10 py-8">
                 <div class="container">
-                    <p class="border-l-2 pl-10 border-white text-white text-xl font-proxima-bold">Davis Instruments hired Tungsten as its advertising agen cy to differentiate the brand by product attributes, company values, and history.</p>
+                    <p class="border-l-2 pl-10 border-white text-white text-xl font-proxima-bold">Davis Instruments hired Tungsten as its advertising agency to differentiate the brand by product attributes, company values, and history.</p>
                 </div>
             </div>
 
@@ -462,7 +467,7 @@
 
         <div class="container mt-20">
             <div class="max-w-lg mx-auto">
-                <div class="flex items-center justify-between border-b py-2">
+                <div class="flex items-center justify-between border-b py-2" data-aos="fade-in" data-aos="duration-300" data-aos-delay="50">
                     <span class="mr-auto text-sm md:text-base"><i>Copywriter:</i> <span class="font-proxima-bold">Mukul Bakshi</span></span>
 
                     <a href="#" class="text-gray-light hover:text-blue-light mx-1">
@@ -477,7 +482,7 @@
                     </a>
 
                 </div>
-                <div class="flex items-center justify-between border-b py-2">
+                <div class="flex items-center justify-between border-b py-2" data-aos="fade-in" data-aos="duration-300" data-aos-delay="100">
                     <span class="mr-auto text-sm md:text-base"><i>Video Editor: </i> <span class="font-proxima-bold">Kia Reaghabi</span></span>
 
                     <a href="#" class="text-gray-light hover:text-blue-light mx-1">
@@ -492,7 +497,7 @@
                     </a>
 
                 </div>
-                <div class="flex items-center justify-between border-b py-2">
+                <div class="flex items-center justify-between border-b py-2" data-aos="fade-in" data-aos="duration-300" data-aos-delay="150">
                     <span class="mr-auto text-sm md:text-base"><i>Client: </i> <span class="font-proxima-bold">Atul Chawla</span></span>
 
                     <a href="#" class="text-gray-light hover:text-blue-light mx-1">
@@ -524,7 +529,7 @@
     <div class="container">
         <header class="text-blue font-proxima-bold text-3xl text-center">Our Work and Clients</header>
         <div class="works-grid">
-            <a href="#" class="item wow animate__fadeIn">
+            <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
                     <div class="text">
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
@@ -532,7 +537,7 @@
                 </div>
                 <img loading="lazy" src="img/works_clients_item1.jpg" alt="" class="">
             </a>
-            <a href="#" class="item wow animate__fadeIn">
+            <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
                     <div class="text">
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
@@ -540,7 +545,7 @@
                 </div>
                 <img loading="lazy" src="img/works_clients_item2.jpg" alt="" class="">
             </a>
-            <a href="#" class="item wow animate__fadeIn hidden md:inline-block">
+            <a href="#" data-aos-duration="300" data-aos="fade-in" class="item hidden md:inline-block">
                 <div class="overlay">
                     <div class="text">
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
@@ -548,7 +553,7 @@
                 </div>
                 <img loading="lazy" src="img/works_clients_item3.jpg" alt="" class="">
             </a>
-            <a href="#" class="item wow animate__fadeIn">
+            <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
                     <div class="text">
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
@@ -556,7 +561,7 @@
                 </div>
                 <img loading="lazy" src="img/works_clients_item4.jpg" alt="" class="">
             </a>
-            <a href="#" class="item wow animate__fadeIn">
+            <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
                     <div class="text">
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
@@ -564,7 +569,7 @@
                 </div>
                 <img loading="lazy" src="img/works_clients_item5.jpg" alt="" class="">
             </a>
-            <a href="#" class="item wow animate__fadeIn hidden md:inline-block">
+            <a href="#" data-aos-duration="300" data-aos="fade-in" class="item hidden md:inline-block">
                 <div class="overlay">
                     <div class="text">
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
@@ -572,7 +577,7 @@
                 </div>
                 <img loading="lazy" src="img/works_clients_item6.jpg" alt="" class="">
             </a>
-            <a href="#" class="item wow animate__fadeIn">
+            <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
                     <div class="text">
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
@@ -580,7 +585,7 @@
                 </div>
                 <img loading="lazy" src="img/works_clients_item7.jpg" alt="" class="">
             </a>
-            <a href="#" class="item wow animate__fadeIn">
+            <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
                     <div class="text">
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
@@ -588,7 +593,7 @@
                 </div>
                 <img loading="lazy" src="img/works_clients_item8.jpg" alt="" class="">
             </a>
-            <a href="#" class="item wow animate__fadeIn hidden md:inline-block">
+            <a href="#" data-aos-duration="300" data-aos="fade-in" class="item hidden md:inline-block">
                 <div class="overlay">
                     <div class="text">
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
@@ -596,7 +601,7 @@
                 </div>
                 <img loading="lazy" src="img/works_clients_item9.jpg" alt="" class="">
             </a>
-            <a href="#" class="item wow animate__fadeIn">
+            <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
                     <div class="text">
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
@@ -604,7 +609,7 @@
                 </div>
                 <img loading="lazy" src="img/works_clients_item10.jpg" alt="" class="">
             </a>
-            <a href="#" class="item wow animate__fadeIn">
+            <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
                     <div class="text">
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
@@ -612,7 +617,7 @@
                 </div>
                 <img loading="lazy" src="img/works_clients_item11.jpg" alt="" class="">
             </a>
-            <a href="#" class="item wow animate__fadeIn hidden md:inline-block">
+            <a href="#" data-aos-duration="300" data-aos="fade-in" class="item hidden md:inline-block">
                 <div class="overlay">
                     <div class="text">
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
@@ -673,7 +678,21 @@
 </footer>
 
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <script src="./js/scripts.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    const worksgridItems = document.querySelectorAll('.works-grid .item');
+    const timeNums = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600];
+
+
+    worksgridItems.forEach(item => {
+        item.setAttribute('data-aos-delay', `${timeNums[Math.round(Math.random() * timeNums.length)]}`);
+    })
+    AOS.init();
+
+</script>
+
 </body>
 </html>
