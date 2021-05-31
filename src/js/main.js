@@ -43,4 +43,11 @@ scrollToTopButton.onclick = function(e) {
 
 
 
+const worksgridItems = document.querySelectorAll('.works-grid .item');
+const timeNums = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600];
+
+worksgridItems.forEach(item => {
+    item.setAttribute('data-aos-delay', `${timeNums[Math.round(Math.random() * timeNums.length)]}`);
+})
+AOS.init();
 

@@ -177,8 +177,8 @@ header.header {
         .beer-range:hover~.beer-handle:after {
             text-shadow: 0 1px 3px var(--c-blue-dark);
         }
-        .beer-reveal { animation: firstSlideW 2s 1 normal ease-in-out .1s; }
-        .beer-handle { animation: firstSlideX 2s 1 normal ease-in-out .1s; }
+        .beer-reveal { animation: firstSlideW 2s 1 normal ease .1s; }
+        .beer-handle { animation: firstSlideX 2s 1 normal ease .1s; }
         @keyframes firstSlideW { 0% { width: 0%; } 50% { width: 80%; } 100% { width: 50%; } }
         @keyframes firstSlideX { 0% { left: 0%;opacity: 0; } 50% { left: 80%;opacity: 0; } 100% { left: 50%;opacity: 1; } }
 
@@ -278,9 +278,9 @@ header.header {
     <main class="">
 
         <div id="slider" class="beer-slider">
-            <img src="img/Porziuncola/Porziuncola_Slide_illustrated.png" alt="Porziuncola After" width="1903" height="560">
+            <img src="img/Porziuncola/Porziuncola_Slide_illustrated.png" alt="Porziuncola After">
             <div class="beer-reveal">
-                <img src="img/Porziuncola/Porziuncola_Slide_photo.png" alt="Porziuncola Before" width="1903" height="560">
+                <img src="img/Porziuncola/Porziuncola_Slide_photo.png" alt="Porziuncola Before">
             </div>
         </div>
 
@@ -499,16 +499,13 @@ header.header {
                 Eight hundred years after <span class="text-blue-light">Saint Francis</span> built a chapel with his own hands in the far away city of Assisi, San Francisco built an identical chapel to honor the saint after whom the city is named, and called it the <span class="text-blue-light">"Porziuncola."</span> Or, in Italian, <span class="text-blue-light">"The Little Bit."</span>
             </div>
         </div>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
 
         <article class="content mt-10 leading-relaxed overflow-hidden flow-root">
             <div class="container flow-root">
                 <p class="drop-cap" style="--color: #d63867;">This print and online campaign was created as an effort to keep the Porziuncola open to the public, after it had been
                 closed due to an administrative issue.</p>
-                <!-- <img loading="lazy" src="img/heart.png" alt="Heart" class="float-right w-3/5 sm:w-80 -mr-4 sm:mr-0 animate__heartBeat wow" data-wow-delay=".5s" style="shape-outside: url(img/heart.png);" width="175" height="158"> -->
-                <!-- <img src="img/Heart-3b.gif"> -->
+
 
                 <svg width="223" height="204" viewBox="0 0 223 204" fill="none" class="float-right" style="shape-outside: url(img/Porziuncola/heart.svg);" data-aos="zoom-in" data-aos-duration="" data-aos-delay="200" data-aos-anchor=".content">
                     <g filter="url(#filter0_d)" id="heart-3">
@@ -809,22 +806,60 @@ header.header {
     <script>
         new BeerSlider(document.getElementById('slider'));
     </script>
+    <style>
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
 
+            20% {
+                transform: scale(1);
+            }
+
+            30% {
+                transform: scale(var(--scale-amount));
+            }
+            50% {
+                transform: scale(1);
+            }
+
+            60% {
+                transform: scale(1);
+            }
+
+            80% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+        #heart-1 {
+            --scale-amount: .75;
+            transform-origin: center;
+            animation: heartbeat 1.4s ease-in-out 500ms infinite both normal;
+        }
+
+        #heart-2 {
+            --scale-amount: .85;
+            transform-origin: center;
+            animation: heartbeat 1.4s ease-in-out 570ms infinite both normal;
+        }
+
+        #heart-3 {
+            --scale-amount: .95;
+            transform-origin: center;
+            animation: heartbeat 1.4s ease-in-out 640ms infinite both normal;
+        }
+    </style>
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="./js/scripts.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    const worksgridItems = document.querySelectorAll('.works-grid .item');
-    const timeNums = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600];
-
-
-    worksgridItems.forEach(item => {
-        item.setAttribute('data-aos-delay', `${timeNums[Math.round(Math.random() * timeNums.length)]}`);
-    })
-    AOS.init();
-
-</script>
+<script src="./js/scripts.js"></script>
 
 </body>
 </html>
