@@ -406,9 +406,29 @@
                     display: inline-block;
                     margin: 30px;
                 }
+                .white-paper-thumbs {
+                    display: inline-flex;
+                    gap: 10px;
+                    margin: 0 auto;
+                    justify-content: center;
+                    padding: 10px;
+                    border-radius: 5px;
+                    background-color: hsla(200, 5%, 57%, .8);;
+                }
+                .thumb {
+                    width: clamp(40px, 5vw, 60px);
+                    border: 3px solid hsl(200, 0%, 77%);
+                    cursor: pointer;
+                    border-radius: 5px;
+                }
+                .thumb.active {
+                    border-color: #00ffea;
+                }
+                .thumb {
+                    max-width: 100%;
+                }
             </style>
-            <div class="my-20 bg-gradient-to-b from-gray-400 via-gray-100 to-gray-400 p-20 relative">
-
+            <div class="my-10 lg:my-20 bg-gradient-to-b from-gray-300 via-gray-100 to-gray-300 p-5 lg:p-20 relative shadow-inner drop-shadow-2xl">
                 <div class="reveal white-paper-slideshow">
                     <div class="slides">
                         <section data-transition="convex">
@@ -465,9 +485,36 @@
                                 Page 4 of White_Paper 3
                             </section>
                         </section>
+                        <section data-transition="convex">
+                            <section>
+                                <header>White Paper Example 4</header>
+                                <img src="img/White_Paper/WhitePaper1.jpg" alt="" loading="lazy" class="white-paper-cover" width="400" height="auto"></section>
+                            <section data-transition="slide">
+                                Page 1 of White_Paper 4
+                            </section>
+                            <section data-transition="slide">
+                                Page 2 of White_Paper 4
+                            </section>
+                            <section data-transition="slide">
+                                Page 3 of White_Paper 4
+                            </section>
+                            <section data-transition="slide">
+                                Page 4 of White_Paper 4
+                            </section>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="white-paper-thumbs">
+                        <img src="img/White_Paper/WhitePaper1_thumb.jpg" alt="" class="thumb active">
+                        <img src="img/White_Paper/WhitePaper2_thumb.jpg" alt="" class="thumb">
+                        <img src="img/White_Paper/WhitePaper3_thumb.jpg" alt="" class="thumb">
+                        <img src="img/White_Paper/WhitePaper4_thumb.jpg" alt="" class="thumb">
 
                     </div>
                 </div>
+
 
 
             </div>
@@ -724,14 +771,14 @@
 
             // Help the user learn the controls by providing hints, for example by
             // bouncing the down arrow when they first encounter a vertical slide
-            controlsTutorial: true,
+            controlsTutorial: false,
 
             // Determines where controls appear, "edges" or "bottom-right"
-            controlsLayout: 'bottom-left',
+            controlsLayout: 'edges',
 
             // Visibility rule for backwards navigation arrows; "faded", "hidden"
             // or "visible"
-            controlsBackArrows: 'faded',
+            controlsBackArrows: 'visible',
 
             // Display a presentation progress bar
             progress: false,
@@ -773,7 +820,7 @@
             history: false,
 
             // Enable keyboard shortcuts for navigation
-            keyboard: true,
+            keyboard: false,
 
             // Optional function that blocks keyboard events when retuning false
             //
@@ -971,11 +1018,24 @@
         });
         wpShowcase.initialize();
 
-    // Change the size of our presentation
+        // Change the size of our presentation
         document.querySelector('.reveal').style.height = '60vw';
 
         // Make reveal.js aware of the size change
         wpShowcase.layout();
+
+        const thumbs = document.querySelectorAll('.white-paper-thumbs > .thumb');
+        thumbs.forEach(function(thumb, index){
+            thumb.addEventListener('click', function () {
+                if(this.className !== 'thumb active') {
+                    thumbs.forEach(thumb=>thumb.classList.remove('active'))
+                    this.className = 'thumb active';
+                } else {
+                    return;
+                }
+                wpShowcase.slide(index);
+            })
+        })
     </script>
 
     <style>
