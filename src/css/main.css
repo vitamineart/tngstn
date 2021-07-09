@@ -157,3 +157,9 @@ header.header {
         transform: none;
         opacity: 1;
         visibility: visible; }
+
+[data-aos-delay="4000"] {
+  transition-delay: 4000ms; }
+
+[data-aos-delay="5000"] {
+  transition-delay: 5000ms; }
