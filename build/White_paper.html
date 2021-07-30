@@ -429,8 +429,8 @@
                             </div>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
-                                    var adobeDCView = new AdobeDC.View({ clientId: "364d50cd605e4a5499f2f0fce6f81b10", divId: "adobe-dc-view-1" });
-                                    adobeDCView.previewFile({
+                                    var adobeDCView1 = new AdobeDC.View({ clientId: "364d50cd605e4a5499f2f0fce6f81b10", divId: "adobe-dc-view-1" });
+                                    adobeDCView1.previewFile({
                                         content: { location: { url: "img/White_Paper/MultiAxis_10mar_v4.pdf" } },
                                         metaData: { fileName: "Multi-Axis Stabilized Antenna Architecture" }
                                     }, { embedMode: "SIZED_CONTAINER" });
@@ -443,8 +443,8 @@
                             </div>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
-                                    var adobeDCView = new AdobeDC.View({ clientId: "364d50cd605e4a5499f2f0fce6f81b10", divId: "adobe-dc-view-2" });
-                                    adobeDCView.previewFile({
+                                    var adobeDCView2 = new AdobeDC.View({ clientId: "364d50cd605e4a5499f2f0fce6f81b10", divId: "adobe-dc-view-2" });
+                                    adobeDCView2.previewFile({
                                         content: { location: { url: "img/White_Paper/QOR_WP_22july.pdf" } },
                                         metaData: { fileName: "QOR" }
                                     }, { embedMode: "SIZED_CONTAINER" });
@@ -458,8 +458,8 @@
                             </div>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
-                                    var adobeDCView = new AdobeDC.View({ clientId: "364d50cd605e4a5499f2f0fce6f81b10", divId: "adobe-dc-view-3" });
-                                    adobeDCView.previewFile({
+                                    var adobeDCView3 = new AdobeDC.View({ clientId: "364d50cd605e4a5499f2f0fce6f81b10", divId: "adobe-dc-view-3" });
+                                    adobeDCView3.previewFile({
                                         content: { location: { url: "img/White_Paper/UnlimitedAz_02jun.pdf" } },
                                         metaData: { fileName: "Unlimited" }
                                     }, { embedMode: "SIZED_CONTAINER" });
@@ -472,8 +472,8 @@
                             </div>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
-                                    var adobeDCView = new AdobeDC.View({ clientId: "364d50cd605e4a5499f2f0fce6f81b10", divId: "adobe-dc-view-4" });
-                                    adobeDCView.previewFile({
+                                    var adobeDCView4 = new AdobeDC.View({ clientId: "364d50cd605e4a5499f2f0fce6f81b10", divId: "adobe-dc-view-4" });
+                                    adobeDCView4.previewFile({
                                         content: { location: { url: "img/White_Paper/VSAT_WhitePaper.pdf" } },
                                         metaData: { fileName: "VSAT" }
                                     }, { embedMode: "SIZED_CONTAINER" });
@@ -753,12 +753,12 @@
             // watchSlidesProgress: true
         });
         const swiper = new Swiper('.pdf-slider-main', {
-                loop: true,
-                // effect: 'coverflow',
-                // coverflowEffect: {
-                // rotate: 30,
-                //     slideShadows: false,
-                // },
+                // loop: true,
+                effect: 'coverflow',
+                coverflowEffect: {
+                rotate: 30,
+                    slideShadows: false,
+                },
                 thumbs: {
                     swiper: thumbsSwiper
                 },
