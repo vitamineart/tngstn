@@ -385,38 +385,29 @@
                 </p>
             </div>
             <style>
-                section header {
-                    font-weight: 900;
-                    font-size: 50px;
+                .pdf-slider-main .swiper-slide {
+                    opacity: .3;
+                    transition-property: transform, opacity;
                 }
-                .white-paper-cover {
-                    box-shadow: -5px 5px 20px hsla(200, 20%, 30%, .8),
-                                -1px 25px 40px hsla(200, 20%, 30%, .1);
-                    display: inline-block;
-                    margin: 30px;
+                .pdf-slider-main .swiper-slide-active {
+                    opacity: 1;
                 }
-                .white-paper-thumbs {
-                    display: inline-flex;
-                    gap: 10px;
-                    margin: 0 auto;
-                    justify-content: center;
-                    padding: 10px;
-                    border-radius: 5px;
-                    background-color: hsla(200, 5%, 57%, .8);;
-                }
-                .thumb {
+
+                .pdf-slider-thumbs .swiper-slide .thumb {
                     width: clamp(40px, 5vw, 60px);
                     border: 3px solid hsl(200, 0%, 77%);
                     cursor: pointer;
                     border-radius: 5px;
                     max-width: 100%;
+                    transition: .25s ease;
                 }
-                .swiper-slide-thumb-active .thumb {
+                .pdf-slider-thumbs .swiper-slide.swiper-slide-thumb-active .thumb {
                     border-color: #00ffea;
+                    transform: scale(1.2);
                 }
 
             </style>
-            <div class="my-10 lg:my-20 bg-gradient-to-b from-gray-300 via-gray-100 to-gray-300 p-5 lg:p-20 relative shadow-inner drop-shadow-2xl">
+            <div class="my-10 lg:my-20 bg-gradient-to-b from-gray-300 via-gray-100 to-gray-300 p-10 lg:p-20 relative shadow-inner drop-shadow-2xl">
                 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
                 <!-- Slider main container -->
                 <div class="pdf-slider-main">
@@ -424,8 +415,8 @@
                     <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <header class="mb-5 text-center text-3xl">Multi-Axis Stabilized Antenna Architecture</header>
-                            <div id="adobe-dc-view-1" style="height: 460px; width: 80%;" class="mx-auto mt-10">
+                            <header class="text-center text-3xl">Multi-Axis Stabilized Antenna Architecture</header>
+                            <div id="adobe-dc-view-1" style="height: 460px; max-width: 760px;" class="w-full mx-auto mt-5">
                             </div>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
@@ -438,8 +429,8 @@
                             </script>
                         </div>
                         <div class="swiper-slide">
-                            <header class="mb-5 text-center text-3xl">Quatraded Oriented Reflectors</header>
-                            <div id="adobe-dc-view-2" style="height: 460px; width: 80%;" class="mx-auto mt-10">
+                            <header class="text-center text-3xl">Quatraded Oriented Reflectors</header>
+                            <div id="adobe-dc-view-2" style="height: 460px; max-width: 760px;" class="w-full mx-auto mt-5">
                             </div>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
@@ -453,8 +444,8 @@
                         </div>
 
                         <div class="swiper-slide">
-                            <header class="mb-5 text-center text-3xl">TV-at-Sea Antenna System</header>
-                            <div id="adobe-dc-view-3" style="height: 460px; width: 80%;" class="mx-auto mt-10">
+                            <header class="text-center text-3xl">TV-at-Sea Antenna System</header>
+                            <div id="adobe-dc-view-3" style="height: 460px; max-width: 760px;" class="w-full mx-auto mt-5">
                             </div>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
@@ -467,8 +458,8 @@
                             </script>
                         </div>
                         <div class="swiper-slide">
-                            <header class="mb-5 text-center text-3xl">VSAT White Paper</header>
-                            <div id="adobe-dc-view-4" style="height: 460px; width: 80%;" class="mx-auto mt-10">
+                            <header class="text-center text-3xl">VSAT White Paper</header>
+                            <div id="adobe-dc-view-4" style="height: 460px; max-width: 760px;" class="w-full mx-auto mt-5">
                             </div>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
@@ -491,19 +482,19 @@
 
                 </div>
 
-                <div class="pdf-slider-thumbs mt-10 mx-auto" style="width: 200px;">
+                <div class="pdf-slider-thumbs mt-10 mx-auto w-48 sm:w-64 md:w-80">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide p-1">
-                            <img width="182" height="234" loading="lazy" src="img/White_Paper/WhitePaper1_thumb.jpg" alt="" class="thumb active">
+                            <img width="152" height="198" loading="lazy" src="img/White_Paper/WhitePaper1_thumb.jpg" alt="" class="thumb active">
                         </div>
                         <div class="swiper-slide p-1">
-                            <img width="182" height="234" loading="lazy" src="img/White_Paper/WhitePaper2_thumb.jpg" alt="" class="thumb">
+                            <img width="152" height="198" loading="lazy" src="img/White_Paper/WhitePaper2_thumb.jpg" alt="" class="thumb">
                         </div>
                         <div class="swiper-slide p-1">
-                            <img width="182" height="234" loading="lazy" src="img/White_Paper/WhitePaper3_thumb.jpg" alt="" class="thumb">
+                            <img width="152" height="198" loading="lazy" src="img/White_Paper/WhitePaper3_thumb.jpg" alt="" class="thumb">
                         </div>
                         <div class="swiper-slide p-1">
-                            <img width="182" height="234" loading="lazy" src="img/White_Paper/WhitePaper4_thumb.jpg" alt="" class="thumb">
+                            <img width="152" height="198" loading="lazy" src="img/White_Paper/WhitePaper4_thumb.jpg" alt="" class="thumb">
                         </div>
                     </div>
                 </div>
