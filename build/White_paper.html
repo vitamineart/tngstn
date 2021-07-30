@@ -31,7 +31,6 @@
 
 
 
-    <script src="https://documentcloud.adobe.com/view-sdk/main.js" async></script>
 </head>
 
 <body class="font-proxima">
@@ -418,7 +417,7 @@
 
             </style>
             <div class="my-10 lg:my-20 bg-gradient-to-b from-gray-300 via-gray-100 to-gray-300 p-5 lg:p-20 relative shadow-inner drop-shadow-2xl">
-
+                <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
                 <!-- Slider main container -->
                 <div class="pdf-slider-main">
                     <!-- Additional required wrapper -->
@@ -508,16 +507,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="flex">
-                    <div class="white-paper-thumbs">
-                        <img width="182" height="234" loading="lazy" src="img/White_Paper/WhitePaper1_thumb.jpg" alt="" class="thumb active">
-                        <img width="182" height="234" loading="lazy" src="img/White_Paper/WhitePaper2_thumb.jpg" alt="" class="thumb">
-                        <img width="182" height="234" loading="lazy" src="img/White_Paper/WhitePaper3_thumb.jpg" alt="" class="thumb">
-                        <img width="182" height="234" loading="lazy" src="img/White_Paper/WhitePaper4_thumb.jpg" alt="" class="thumb">
-                    </div>
-                </div> -->
-
-
 
             </div>
             <div class="container flow-root">
@@ -765,11 +754,11 @@
         });
         const swiper = new Swiper('.pdf-slider-main', {
                 loop: true,
-                effect: 'coverflow',
-                coverflowEffect: {
-                rotate: 30,
-                    slideShadows: false,
-                },
+                // effect: 'coverflow',
+                // coverflowEffect: {
+                // rotate: 30,
+                //     slideShadows: false,
+                // },
                 thumbs: {
                     swiper: thumbsSwiper
                 },
