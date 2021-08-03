@@ -432,7 +432,7 @@
 
                         </div>
                         <div class="swiper-slide">
-                            <header class="text-center text-3xl">Quatraded Oriented Reflectors</header>
+                            <header class="text-center text-3xl">Quatraded Quatraded Oriented Reflectors Oriented Reflectors</header>
                             <div id="adobe-dc-view-2" style="height: 460px; max-width: 760px;" class="w-full mx-auto mt-5 adobe-pdf-container">
                             </div>
 
@@ -767,32 +767,25 @@
             'mode': "SIZED_CONTAINER",
             'pdfContainers':
                 [{
-                    'name': "adobeDCView1",
                     'url': "img/White_Paper/MultiAxis_10mar_v4.pdf",
                     'fileName': "Multi-Axis Stabilized Antenna Architecture"
                 },
                 {
-                    'name': "adobeDCView2",
-                    'url': "img/White_Paper/MultiAxis_10mar_v4.pdf",
-                    'fileName': "Multi-Axis Stabilized Antenna Architecture"
+                    'url': "img/White_Paper/QOR_WP_22july.pdf",
+                    'fileName': "Quatraded Oriented Reflectors"
                 },
                 {
-                    'name': "adobeDCView3",
-                    'url': "img/White_Paper/MultiAxis_10mar_v4.pdf",
-                    'fileName': "Multi-Axis Stabilized Antenna Architecture"
+                    'url': "img/White_Paper/UnlimitedAz_02jun.pdf",
+                    'fileName': "TV-at-Sea Antenna System"
                 },
                 {
-                    'name': "adobeDCView4",
-                    'url': "img/White_Paper/MultiAxis_10mar_v4.pdf",
-                    'fileName': "Multi-Axis Stabilized Antenna Architecture"
+                    'url': "img/White_Paper/VSAT_WhitePaper.pdf",
+                    'fileName': "VSAT White Paper"
                 }]
-
         }
 
 
         document.addEventListener("adobe_dc_view_sdk.ready", function () {
-
-
             const pdfboxes = document.querySelectorAll('.adobe-pdf-container');
             pdfboxes.forEach(function (item, index) {
                 new AdobeDC.View({
