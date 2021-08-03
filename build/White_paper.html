@@ -7,30 +7,63 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>White Paper</title>
 
-    <!--
-    /**
+    <link rel="preload" href="./fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin>
+<!-- <link rel="stylesheet" type="text/css" href="./fonts/fonts.css"> -->
+<style>
+/**
     * @license
-    * MyFonts Webfont Build ID 630897
+    * MyFonts Webfont Build ID 4086644, 2021-05-10T13:09:00-0400
     *
     * The fonts listed in this notice are subject to the End User License
     * Agreement(s) entered into by the website owner. All other parties are
     * explicitly restricted from using the Licensed Webfonts(s).
     *
-    * You may obtain a valid license from one of MyFonts official sites.
-    * http://www.fonts.com
-    * http://www.myfonts.com
-    * http://www.linotype.com
+    * You may obtain a valid license at the URLs below.
     *
+    * Webfont: ProximaNova-Bold by Mark Simonson
+    * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/bold/
+    *
+    * Webfont: ProximaNova-Regular by Mark Simonson
+    * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/regular/
+    *
+    * Webfont: ProximaNovaA-Bold by Mark Simonson
+    * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/a-bold/
+    *
+    * Webfont: ProximaNovaA-Regular by Mark Simonson
+    * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/a-regular/
+    *
+    * Webfont: ProximaNovaS-Bold by Mark Simonson
+    * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/s-bold/
+    *
+    * Webfont: ProximaNovaS-Regular by Mark Simonson
+    * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/s-regular/
+    *
+    *
+    * Webfonts copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+    *
+    * © 2021 MyFonts Inc
     */
-    -->
-
-<link rel="preload" href="./fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" type="text/css" href="./fonts/fonts.css">
 
 
+/* @import must be at top of file, otherwise CSS will not work */
+/* @import url("//hello.myfonts.net/count/3e5b74"); */
+
+    @font-face {
+        font-family: "ProximaNovaA-Bold";
+        src: url('../fonts/ProximaNovaABold.woff2') format('woff2'), url('../fonts/ProximaNovaABold.woff') format('woff');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "ProximaNovaA-Regular";
+        src: url('../fonts/ProximaNovaARegular.woff2') format('woff2'), url('../fonts/ProximaNovaARegular.woff') format('woff');
+        font-display: swap;
+    }
+</style>
 
 
+
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js" async></script>
 </head>
 
 <body class="font-proxima">
@@ -384,31 +417,9 @@
                     position Cobham as a trusted advisor.
                 </p>
             </div>
-            <style>
-                .pdf-slider-main .swiper-slide {
-                    opacity: .3;
-                    transition-property: transform, opacity;
-                }
-                .pdf-slider-main .swiper-slide-active {
-                    opacity: 1;
-                }
 
-                .pdf-slider-thumbs .swiper-slide .thumb {
-                    width: clamp(40px, 5vw, 60px);
-                    border: 3px solid hsl(200, 0%, 77%);
-                    cursor: pointer;
-                    border-radius: 5px;
-                    max-width: 100%;
-                    transition: .25s ease;
-                }
-                .pdf-slider-thumbs .swiper-slide.swiper-slide-thumb-active .thumb {
-                    border-color: #00ffea;
-                    transform: scale(1.2);
-                }
-
-            </style>
             <div class="my-10 lg:my-20 bg-gradient-to-b from-gray-300 via-gray-100 to-gray-300 p-10 lg:p-20 relative shadow-inner drop-shadow-2xl">
-                <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+
                 <!-- Slider main container -->
                 <div class="pdf-slider-main">
                     <!-- Additional required wrapper -->
@@ -418,9 +429,19 @@
                             <header class="text-center text-3xl">Multi-Axis Stabilized Antenna Architecture</header>
                             <div id="adobe-dc-view-1" style="height: 460px; max-width: 760px;" class="w-full mx-auto mt-5">
                             </div>
+                            <script>
+                                const adobeConfig = {
+                                    id: '364d50cd605e4a5499f2f0fce6f81b10',
+
+                                }
+
+                                // document.addEventListener("adobe_dc_view_sdk.ready", function () {
+                                //     var adobeDCView1 = new AdobeDC.View({ clientId: clientID
+                                // })
+                            </script>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
-                                    var adobeDCView1 = new AdobeDC.View({ clientId: "364d50cd605e4a5499f2f0fce6f81b10", divId: "adobe-dc-view-1" });
+                                    var adobeDCView1 = new AdobeDC.View({ clientId: adobeConfig.id, divId: "adobe-dc-view-1" });
                                     adobeDCView1.previewFile({
                                         content: { location: { url: "img/White_Paper/MultiAxis_10mar_v4.pdf" } },
                                         metaData: { fileName: "Multi-Axis Stabilized Antenna Architecture" }
@@ -434,7 +455,7 @@
                             </div>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
-                                    var adobeDCView2 = new AdobeDC.View({ clientId: "364d50cd605e4a5499f2f0fce6f81b10", divId: "adobe-dc-view-2" });
+                                    var adobeDCView2 = new AdobeDC.View({ clientId: adobeConfig.id, divId: "adobe-dc-view-2" });
                                     adobeDCView2.previewFile({
                                         content: { location: { url: "img/White_Paper/QOR_WP_22july.pdf" } },
                                         metaData: { fileName: "Quatraded Oriented Reflectors" }
@@ -449,7 +470,7 @@
                             </div>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
-                                    var adobeDCView3 = new AdobeDC.View({ clientId: "364d50cd605e4a5499f2f0fce6f81b10", divId: "adobe-dc-view-3" });
+                                    var adobeDCView3 = new AdobeDC.View({ clientId: adobeConfig.id, divId: "adobe-dc-view-3" });
                                     adobeDCView3.previewFile({
                                         content: { location: { url: "img/White_Paper/UnlimitedAz_02jun.pdf" } },
                                         metaData: { fileName: "TV-at-Sea Antenna System" }
@@ -463,7 +484,7 @@
                             </div>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
-                                    var adobeDCView4 = new AdobeDC.View({ clientId: "364d50cd605e4a5499f2f0fce6f81b10", divId: "adobe-dc-view-4" });
+                                    var adobeDCView4 = new AdobeDC.View({ clientId: adobeConfig.id, divId: "adobe-dc-view-4" });
                                     adobeDCView4.previewFile({
                                         content: { location: { url: "img/White_Paper/VSAT_WhitePaper.pdf" } },
                                         metaData: { fileName: "VSAT Antenna Systems" }
@@ -482,19 +503,19 @@
 
                 </div>
 
-                <div class="pdf-slider-thumbs mt-10 mx-auto w-48 sm:w-64 md:w-80">
+                <div class="pdf-slider-thumbs mt-10 mx-auto w-full sm:w-64 md:w-80">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide p-1">
-                            <img width="152" height="198" loading="lazy" src="img/White_Paper/WhitePaper1_thumb.jpg" alt="" class="thumb active">
+                            <img width="100" height="130" loading="lazy" src="img/White_Paper/WhitePaper1_thumb.webp" alt="" class="thumb active">
                         </div>
                         <div class="swiper-slide p-1">
-                            <img width="152" height="198" loading="lazy" src="img/White_Paper/WhitePaper2_thumb.jpg" alt="" class="thumb">
+                            <img width="100" height="130" loading="lazy" src="img/White_Paper/WhitePaper2_thumb.webp" alt="" class="thumb">
                         </div>
                         <div class="swiper-slide p-1">
-                            <img width="152" height="198" loading="lazy" src="img/White_Paper/WhitePaper3_thumb.jpg" alt="" class="thumb">
+                            <img width="100" height="130" loading="lazy" src="img/White_Paper/WhitePaper3_thumb.webp" alt="" class="thumb">
                         </div>
                         <div class="swiper-slide p-1">
-                            <img width="152" height="198" loading="lazy" src="img/White_Paper/WhitePaper4_thumb.jpg" alt="" class="thumb">
+                            <img width="100" height="130" loading="lazy" src="img/White_Paper/WhitePaper4_thumb.webp" alt="" class="thumb">
                         </div>
                     </div>
                 </div>
@@ -517,8 +538,7 @@
         <!---------------- Team Members Start -->
         <div class="container mt-20">
             <div class="max-w-lg mx-auto">
-                <div class="flex items-center justify-between border-b py-2" data-aos-duration="3003 data-aos-delay="50"00" data-aos="fade-in"
-                    data-aos-delay="50">
+                <div class="flex items-center justify-between border-b py-2" data-aos-duration="300" data-aos="fade-in" data-aos-delay="0">
                     <span class="mr-auto text-sm"><i>Creative Director :</i> <span class="font-proxima-bold">Stuart Silberman</span></span>
 
                     <a href="#" class="text-gray-light hover:text-blue-light mx-1">
@@ -731,6 +751,28 @@
 
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+
+        .pdf-slider-main .swiper-slide {
+            opacity: .3;
+            transition-property: transform, opacity;
+        }
+        .pdf-slider-main .swiper-slide-active {
+            opacity: 1;
+        }
+        .pdf-slider-thumbs .swiper-slide .thumb {
+            border: 3px solid hsl(200, 0%, 77%);
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 100px;
+            transition: .25s ease;
+        }
+        .pdf-slider-thumbs .swiper-slide.swiper-slide-thumb-active .thumb {
+            border-color: #00ffea;
+            transform: scale(1.2);
+        }
+    </style>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -742,6 +784,7 @@
             // watchOverflow: true,
             // watchSlidesVisibility: true,
             // watchSlidesProgress: true
+            spaceBetween: 1,
         });
         const swiper = new Swiper('.pdf-slider-main', {
                 // loop: true,

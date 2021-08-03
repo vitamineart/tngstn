@@ -1,1 +1,13 @@
-<svg width="111" height="73" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0)" stroke="#185599" stroke-width="6" stroke-miterlimit="10"><path d="M102.1 69.5H8.7C5.5 69.5 3 67 3 63.8V8.7C3 5.5 5.5 3 8.7 3h93.4c3.1 0 5.7 2.5 5.7 5.7v55.1c0 3.2-2.6 5.7-5.7 5.7zm-92.8 0l22.9-39.3m47.4 0l22.9 39.3"/><path d="M2.4 7.2l53 39.6 53-39.6"/></g><defs><clipPath id="clip0"><path fill="#fff" d="M0 0h110.8v72.5H0z"/></clipPath></defs></svg>
+<svg width="111" height="73" viewBox="0 0 111 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path d="M102.1 69.5H8.7C5.5 69.5 3 67 3 63.8V8.7C3 5.5 5.5 3 8.7 3H102.1C105.2 3 107.8 5.5 107.8 8.7V63.8C107.8 67 105.2 69.5 102.1 69.5Z" stroke="#185599" stroke-width="6" stroke-miterlimit="10"/>
+<path d="M9.3 69.5L32.2 30.2" stroke="#185599" stroke-width="6" stroke-miterlimit="10"/>
+<path d="M79.6 30.2L102.5 69.5" stroke="#185599" stroke-width="6" stroke-miterlimit="10"/>
+<path d="M2.4 7.19995L55.4 46.7999L108.4 7.19995" stroke="#185599" stroke-width="6" stroke-miterlimit="10"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="110.8" height="72.5" fill="white"/>
+</clipPath>
+</defs>
+</svg>

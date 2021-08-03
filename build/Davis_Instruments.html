@@ -9,29 +9,67 @@
 
     <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@0.6.2/lite-youtube.js"
         defer></script>
+    <link rel="preload" as="image" href="https://i.ytimg.com/vi_webp/0puWSusGbOA/hqdefault.webp">
 
-    <!--
-    /**
+    <link rel="preload" href="./fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin>
+<!-- <link rel="stylesheet" type="text/css" href="./fonts/fonts.css"> -->
+<style>
+/**
     * @license
-    * MyFonts Webfont Build ID 630897
+    * MyFonts Webfont Build ID 4086644, 2021-05-10T13:09:00-0400
     *
     * The fonts listed in this notice are subject to the End User License
     * Agreement(s) entered into by the website owner. All other parties are
     * explicitly restricted from using the Licensed Webfonts(s).
     *
-    * You may obtain a valid license from one of MyFonts official sites.
-    * http://www.fonts.com
-    * http://www.myfonts.com
-    * http://www.linotype.com
+    * You may obtain a valid license at the URLs below.
     *
+    * Webfont: ProximaNova-Bold by Mark Simonson
+    * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/bold/
+    *
+    * Webfont: ProximaNova-Regular by Mark Simonson
+    * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/regular/
+    *
+    * Webfont: ProximaNovaA-Bold by Mark Simonson
+    * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/a-bold/
+    *
+    * Webfont: ProximaNovaA-Regular by Mark Simonson
+    * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/a-regular/
+    *
+    * Webfont: ProximaNovaS-Bold by Mark Simonson
+    * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/s-bold/
+    *
+    * Webfont: ProximaNovaS-Regular by Mark Simonson
+    * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/s-regular/
+    *
+    *
+    * Webfonts copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+    *
+    * © 2021 MyFonts Inc
     */
-    -->
-    <link rel="preload" as="image" href="https://i.ytimg.com/vi_webp/0puWSusGbOA/hqdefault.webp">
-    <link rel="preload" href="./fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" type="text/css" href="./fonts/fonts.css">
 
-    <!-- <style>
+
+/* @import must be at top of file, otherwise CSS will not work */
+/* @import url("//hello.myfonts.net/count/3e5b74"); */
+
+    @font-face {
+        font-family: "ProximaNovaA-Bold";
+        src: url('../fonts/ProximaNovaABold.woff2') format('woff2'), url('../fonts/ProximaNovaABold.woff') format('woff');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "ProximaNovaA-Regular";
+        src: url('../fonts/ProximaNovaARegular.woff2') format('woff2'), url('../fonts/ProximaNovaARegular.woff') format('woff');
+        font-display: swap;
+    }
+</style>
+
+
+
+
+
+    <style>
         :root {
             --c-blue-light: #338bc8;
             --c-blue-link: #2581d0;
@@ -129,8 +167,9 @@
             width: 5rem;
             margin-right: 15px;
         }
-    </style> -->
+    </style>
 
+    <link rel="stylesheet" type="text/css" href="./css/style.css" media="print" onload="this.media='all'">
 
 
 </head>
@@ -439,7 +478,6 @@
                 When you're a <span class="text-blue-light">tightrope walker</span> traversing the <span class="text-blue-light">Grand Canyon</span>, a surprise gush of wind can mean the end of your world.
             </div>
         </div>
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
         <article class="content mt-10 leading-relaxed overflow-hidden">
             <div class="container flow-root">
                 <p class="drop-cap" style="--color: #338bc8;">Often, the safe landing of a passenger plane, or the return home of a fire- fighter, or even the success of a wine label depend on precise second-by- second data of hyper-local weather conditions.</p>
@@ -677,8 +715,6 @@
     </button>
 </footer>
 
-
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

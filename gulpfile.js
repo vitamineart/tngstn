@@ -27,8 +27,8 @@ const cleanCSS = require('gulp-clean-css');//To Minify CSS files
 const purgecss = require('gulp-purgecss');// Remove Unused CSS from Styles
 
 //Note : Webp still not supported in major browsers including forefox
-//const webp = require('gulp-webp'); //For converting images to WebP format
-//const replace = require('gulp-replace'); //For Replacing img formats to webp in html
+// const webp = require('gulp-webp'); //For converting images to WebP format
+// const replace = require('gulp-replace'); //For Replacing img formats to webp in html
 const logSymbols = require('log-symbols'); //For Symbolic Console logs :) :P
 
 //Load Previews on Browser on dev
@@ -130,7 +130,7 @@ function prodScripts(){
 }
 
 function prodImages(){
-  return src(options.paths.src.img + '/**/*').pipe(imagemin()).pipe(dest(options.paths.build.img));
+  return src(options.paths.src.img + '/**/*').pipe(dest(options.paths.build.img));
 }
 function prodFonts(){
   return src(options.paths.src.fonts + '/**/*').pipe(dest(options.paths.build.fonts));
