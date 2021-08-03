@@ -10,7 +10,7 @@
     <link rel="preload" href="./fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin>
 <!-- <link rel="stylesheet" type="text/css" href="./fonts/fonts.css"> -->
-<style>
+<style class="font-style">
 /**
     * @license
     * MyFonts Webfont Build ID 4086644, 2021-05-10T13:09:00-0400
@@ -63,7 +63,6 @@
 
 
 
-    <script src="https://documentcloud.adobe.com/view-sdk/main.js" defer></script>
 </head>
 
 <body class="font-proxima">
@@ -150,7 +149,7 @@
 
 
     <main class="">
-        <img srcset="img/White_Paper/WhitePaper_Small.webp 390w, img/White_Paper/WhitePaper_Mid.webp 768w, img/White_Paper/WhitePaper_Big.webp 1000w " alt="" width="1569" height="681" class="w-full">
+        <img src="img/White_Paper/WhitePaper_Small.webp" srcset="img/White_Paper/WhitePaper_Small.webp 380w, img/White_Paper/WhitePaper_Mid.webp 768w, img/White_Paper/WhitePaper_Big.webp 1000w " alt="" width="1569" height="681" class="w-full">
         <header class="page-title">
             <div class="container">
                 <div class="tag-client">Cobham</div>
@@ -372,7 +371,7 @@
         <article class="content mt-10 leading-relaxed overflow-hidden flow-root">
             <div class="container flow-root">
                 <p class="drop-cap" style="--color: #3288c3;">Cobham, the world leader in satellite communications, is constantly releasing new technologies that shape the entire eco-system. Decision-makers across multiple industries seek to understand these technologies in an objective way.</p>
-                <img src="img/White_Paper/Antena.png" alt="Antena" class="float-left m-4 w-40 sm:w-44 md:-ml-16" style="shape-outside: url(img/White_Paper/Antena.png);" width="312" height="360">
+                <img src="img/White_Paper/Antena.webp" alt="Antena" class="float-left m-4 w-40 sm:w-44 md:-ml-16" style="shape-outside: url(img/White_Paper/Antena.webp);" width="312" height="360">
                 <p>A White Paper can serve this purpose remarkably well.</p>
                 <p> The format allows information and research findings to be presented dispassionately to anyone interested in studying the technology or its ramifications. </p>
                 <p>The audience includes Cobham's own dealer network, the IT, finance and procurement officers of customer companies, prospective customers, channel partners, journalists, analysts, or investors.</p>
@@ -386,7 +385,7 @@
 
 
             <div class="container flow-root">
-                <img loading="lazy" src="img/White_Paper/Tanker.png" alt="" class="float-right h-auto w-2/3 md:w-2/5" style="shape-outside: url(img/White_Paper/Tanker.png);" width="1728" height="1409">
+                <img loading="lazy" src="img/White_Paper/Tanker_400.webp" alt="" class="float-right h-auto w-2/3 md:w-2/5" style="shape-outside: url(img/White_Paper/Tanker.webp);" width="1728" height="1409">
                 <p>White Papers are especially important for highly technical products with long sales cycles, or products used in critical situations. A company investing in such a product will typically go through an extensive decision-making process that spans multiple departments and levels inside the company.</p>
                 <p>Some executives on the selection committee will come from non-technical backgrounds, but need to contribute to the buying decision in an informed way. Busy executives seek plain-language explanations, presented in a journalistic or academic style, backed by statistics, facts and references to reliable sources.</p>
 
@@ -427,38 +426,30 @@
                         <!-- Slides -->
                         <div class="swiper-slide">
                             <header class="text-center text-3xl">Multi-Axis Stabilized Antenna Architecture</header>
-                            <div id="adobe-dc-view-1" style="height: 460px; max-width: 760px;" class="w-full mx-auto mt-5 adobe-pdf-container">
-                            </div>
+                            <iframe src="img/White_Paper/MultiAxis_10mar_v4.pdf" width="85%" height="600px" style="max-width: 800px;" class="mx-auto mt-5" loading="lazy"></iframe>
 
                         </div>
                         <div class="swiper-slide">
                             <header class="text-center text-3xl">Quatraded Quatraded Oriented Reflectors Oriented Reflectors</header>
-                            <div id="adobe-dc-view-2" style="height: 460px; max-width: 760px;" class="w-full mx-auto mt-5 adobe-pdf-container">
-                            </div>
+                            <iframe src="img/White_Paper/QOR_WP_22july.pdf" width="100%" height="600px" style="max-width: 800px;" class="mx-auto mt-5" loading="lazy"></iframe>
 
                         </div>
 
                         <div class="swiper-slide">
                             <header class="text-center text-3xl">TV-at-Sea Antenna System</header>
-                            <div id="adobe-dc-view-3" style="height: 460px; max-width: 760px;" class="w-full mx-auto mt-5 adobe-pdf-container">
-                            </div>
+                            <iframe src="img/White_Paper/UnlimitedAz_02jun.pdf" width="100%" height="600px" style="max-width: 800px;" class="mx-auto mt-5" loading="lazy"></iframe>
 
                         </div>
                         <div class="swiper-slide">
                             <header class="text-center text-3xl">VSAT White Paper</header>
-                            <div id="adobe-dc-view-4" style="height: 460px; max-width: 760px;" class="w-full mx-auto mt-5 adobe-pdf-container">
-                            </div>
+                            <iframe src="img/White_Paper/VSAT_WhitePaper.pdf" width="100%" height="600px" style="max-width: 800px;" class="mx-auto mt-5" loading="lazy"></iframe>
 
                         </div>
                     </div>
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
 
                     <!-- If we need navigation buttons -->
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
-
-
                 </div>
 
                 <div class="pdf-slider-thumbs mt-10 mx-auto w-full sm:w-64 md:w-80">
@@ -482,7 +473,7 @@
             <div class="container flow-root">
                 <p> It's important to note that the White Papers you see here are distinct from the product spec sheets and multiple brochures Tungsten has created for Cobham's individual products. They are different in the audience they appeal to, and in the way they are distributed to the audience. </p>
 
-                <img loading="lazy" src="img/White_Paper/CrossSection.jpg" srcset="img/White_Paper/CrossSection_Small.jpg 360w, img/White_Paper/CrossSection_Mid.jpg 768w, img/White_Paper/CrossSection.jpg 1000w" width="871" height="529" class="w-full sm:w-3/4 mx-auto" alt="">
+                <img loading="lazy" src="img/White_Paper/CrossSection.webp" srcset="img/White_Paper/CrossSection_Small.webp 360w, img/White_Paper/CrossSection_Mid.webp 768w, img/White_Paper/CrossSection.webp 1000w" width="871" height="529" class="w-full sm:w-3/4 mx-auto" alt="">
 
                 <p> Most of the White Papers you see on these pages were printed and distributed worldwide at the trade shows Cobham participated in, or were mailed to dealerships, or made available as online PDFs. </p>
 
@@ -556,7 +547,7 @@
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
                     </div>
                 </div>
-                <img loading="lazy" src="img/works_clients_item1.jpg" alt="" class="">
+                <img loading="lazy" src="img/works_clients_item1.webp" alt="" class="">
             </a>
             <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
@@ -564,7 +555,7 @@
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
                     </div>
                 </div>
-                <img loading="lazy" src="img/works_clients_item2.jpg" alt="" class="">
+                <img loading="lazy" src="img/works_clients_item2.webp" alt="" class="">
             </a>
             <a href="#" data-aos-duration="300" data-aos="fade-in" class="item hidden md:inline-block">
                 <div class="overlay">
@@ -572,7 +563,7 @@
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
                     </div>
                 </div>
-                <img loading="lazy" src="img/works_clients_item3.jpg" alt="" class="">
+                <img loading="lazy" src="img/works_clients_item3.webp" alt="" class="">
             </a>
             <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
@@ -580,7 +571,7 @@
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
                     </div>
                 </div>
-                <img loading="lazy" src="img/works_clients_item4.jpg" alt="" class="">
+                <img loading="lazy" src="img/works_clients_item4.webp" alt="" class="">
             </a>
             <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
@@ -588,7 +579,7 @@
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
                     </div>
                 </div>
-                <img loading="lazy" src="img/works_clients_item5.jpg" alt="" class="">
+                <img loading="lazy" src="img/works_clients_item5.webp" alt="" class="">
             </a>
             <a href="#" data-aos-duration="300" data-aos="fade-in" class="item hidden md:inline-block">
                 <div class="overlay">
@@ -596,7 +587,7 @@
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
                     </div>
                 </div>
-                <img loading="lazy" src="img/works_clients_item6.jpg" alt="" class="">
+                <img loading="lazy" src="img/works_clients_item6.webp" alt="" class="">
             </a>
             <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
@@ -604,7 +595,7 @@
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
                     </div>
                 </div>
-                <img loading="lazy" src="img/works_clients_item7.jpg" alt="" class="">
+                <img loading="lazy" src="img/works_clients_item7.webp" alt="" class="">
             </a>
             <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
@@ -612,7 +603,7 @@
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
                     </div>
                 </div>
-                <img loading="lazy" src="img/works_clients_item8.jpg" alt="" class="">
+                <img loading="lazy" src="img/works_clients_item8.webp" alt="" class="">
             </a>
             <a href="#" data-aos-duration="300" data-aos="fade-in" class="item hidden md:inline-block">
                 <div class="overlay">
@@ -620,7 +611,7 @@
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
                     </div>
                 </div>
-                <img loading="lazy" src="img/works_clients_item9.jpg" alt="" class="">
+                <img loading="lazy" src="img/works_clients_item9.webp" alt="" class="">
             </a>
             <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
@@ -628,7 +619,7 @@
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
                     </div>
                 </div>
-                <img loading="lazy" src="img/works_clients_item10.jpg" alt="" class="">
+                <img loading="lazy" src="img/works_clients_item10.webp" alt="" class="">
             </a>
             <a href="#" data-aos-duration="300" data-aos="fade-in" class="item">
                 <div class="overlay">
@@ -636,7 +627,7 @@
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
                     </div>
                 </div>
-                <img loading="lazy" src="img/works_clients_item11.jpg" alt="" class="">
+                <img loading="lazy" src="img/works_clients_item11.webp" alt="" class="">
             </a>
             <a href="#" data-aos-duration="300" data-aos="fade-in" class="item hidden md:inline-block">
                 <div class="overlay">
@@ -644,7 +635,7 @@
                         <div class="project-category">Telecom</div><div class="project-name">8 Easy Turns</div><div class="project-type">Print</div>
                     </div>
                 </div>
-                <img loading="lazy" src="img/works_clients_item12.jpg" alt="" class="">
+                <img loading="lazy" src="img/works_clients_item12.webp" alt="" class="">
             </a>
         </div>
     </div>
@@ -713,6 +704,7 @@
         .pdf-slider-main .swiper-slide {
             opacity: .3;
             transition-property: transform, opacity;
+            will-change: transform;
         }
         .pdf-slider-main .swiper-slide-active {
             opacity: 1;
@@ -724,6 +716,8 @@
             width: 100%;
             max-width: 100px;
             transition: .25s ease;
+            transition-property: transform;
+            will-change: transform;
         }
         .pdf-slider-thumbs .swiper-slide.swiper-slide-thumb-active .thumb {
             border-color: #00ffea;
@@ -744,10 +738,9 @@
             spaceBetween: 1,
         });
         const swiper = new Swiper('.pdf-slider-main', {
-                // loop: true,
-                effect: 'coverflow',
-                coverflowEffect: {
-                rotate: 30,
+                effect: 'slide',
+                slideEffect: {
+                    rotate: 30,
                     slideShadows: false,
                 },
                 thumbs: {
@@ -761,43 +754,7 @@
             });
 
     </script>
-    <script>
-        const adobeConfig = {
-            'id': "364d50cd605e4a5499f2f0fce6f81b10",
-            'mode': "SIZED_CONTAINER",
-            'pdfContainers':
-                [{
-                    'url': "img/White_Paper/MultiAxis_10mar_v4.pdf",
-                    'fileName': "Multi-Axis Stabilized Antenna Architecture"
-                },
-                {
-                    'url': "img/White_Paper/QOR_WP_22july.pdf",
-                    'fileName': "Quatraded Oriented Reflectors"
-                },
-                {
-                    'url': "img/White_Paper/UnlimitedAz_02jun.pdf",
-                    'fileName': "TV-at-Sea Antenna System"
-                },
-                {
-                    'url': "img/White_Paper/VSAT_WhitePaper.pdf",
-                    'fileName': "VSAT White Paper"
-                }]
-        }
 
-
-        document.addEventListener("adobe_dc_view_sdk.ready", function () {
-            const pdfboxes = document.querySelectorAll('.adobe-pdf-container');
-            pdfboxes.forEach(function (item, index) {
-                new AdobeDC.View({
-                    clientId: adobeConfig.id,
-                    divId: item.id
-                }).previewFile({
-                    content: { location: { url: adobeConfig.pdfContainers[index].url } },
-                    metaData: { fileName: adobeConfig.pdfContainers[index].fileName }
-                }, { embedMode: adobeConfig.mode });
-            })
-        });
-    </script>
 
 </body>
 
