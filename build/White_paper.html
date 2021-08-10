@@ -14,6 +14,10 @@
 
 
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload="this.media='print'">
+    <style>.pdf-slider-main .swiper-slide{opacity:.3;transition-property:transform,opacity;will-change:transform}.pdf-slider-main .swiper-slide-active{opacity:1}.pdf-slider-thumbs .swiper-slide .thumb{border:3px solid #c4c4c4;cursor:pointer;border-radius:5px;width:100%;max-width:100px;transition:.25s ease;transition-property:transform;will-change:transform}.pdf-slider-thumbs .swiper-slide.swiper-slide-thumb-active .thumb{border-color:#00ffea;transform:scale(1.2)}</style>
+
+
     <link rel="stylesheet" type="text/css" href="css/style.79f1723e.css" media="print" onload="this.media='all'">
 </head>
 
@@ -315,7 +319,7 @@
 
 
             <div class="container flow-root">
-                <img loading="lazy" src="img/White_Paper/Tanker_400.webp" alt class="float-right h-auto w-2/3 md:w-2/5" style="shape-outside: url(img/White_Paper/Tanker.webp);" width="1728" height="1409">
+                <img loading="lazy" src="img/White_Paper/Tanker_400.webp" srcset="img/White_Paper/Tanker_400.webp 400w, img/White_Paper/Tanker.webp 1728w," alt class="float-right h-auto w-2/3 md:w-2/5" style="shape-outside: url(img/White_Paper/Tanker.webp);" width="1728" height="1409">
                 <p>White Papers are especially important for highly technical products with long sales cycles, or products used in critical situations. A company investing in such a product will typically go through an extensive decision-making process that spans multiple departments and levels inside the company.</p>
                 <p>Some executives on the selection committee will come from non-technical backgrounds, but need to contribute to the buying decision in an informed way. Busy executives seek plain-language explanations, presented in a journalistic or academic style, backed by statistics, facts and references to reliable sources.</p>
 
@@ -613,15 +617,14 @@
 
 
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="./js/scripts.js"> </script>
 
 
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <style>.pdf-slider-main .swiper-slide{opacity:.3;transition-property:transform,opacity;will-change:transform}.pdf-slider-main .swiper-slide-active{opacity:1}.pdf-slider-thumbs .swiper-slide .thumb{border:3px solid #c4c4c4;cursor:pointer;border-radius:5px;width:100%;max-width:100px;transition:.25s ease;transition-property:transform;will-change:transform}.pdf-slider-thumbs .swiper-slide.swiper-slide-thumb-active .thumb{border-color:#00ffea;transform:scale(1.2)}</style>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>const thumbsSwiper=new Swiper(".pdf-slider-thumbs",{centeredSlides:!0,centeredSlidesBounds:!0,slidesPerView:4,spaceBetween:1}),swiper=new Swiper(".pdf-slider-main",{effect:"slide",slideEffect:{rotate:30,slideShadows:!1},thumbs:{swiper:thumbsSwiper},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});</script>
 
@@ -633,12 +636,12 @@
 
 
 
+<noscript><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload="this.media='all'"></noscript>
+
+
+
+
 <noscript><link rel="stylesheet" type="text/css" href="css/style.79f1723e.css"></noscript>
-
-
-
-
-<noscript><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"></noscript>
 
 
 </body>
