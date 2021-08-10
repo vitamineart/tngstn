@@ -3,9 +3,6 @@ a {
   a:hover {
     @apply no-underline; }
 
-img {
-  aspect-ratio: attr(width)/attr(height); }
-
 /* above the fold styles start */
 :root {
   --c-blue-light: #338bc8;

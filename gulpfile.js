@@ -25,6 +25,10 @@ const uglify = require('gulp-terser');//To Minify JS files
 const imagemin = require('gulp-imagemin'); //To Optimize Images
 const cleanCSS = require('gulp-clean-css');//To Minify CSS files
 const purgecss = require('gulp-purgecss');// Remove Unused CSS from Styles
+const critical = require('critical').stream;
+const minifyInline = require('gulp-minify-inline');
+
+
 
 //Note : Webp still not supported in major browsers including forefox
 const webp = require('gulp-webp'); //For converting images to WebP format
@@ -71,6 +75,8 @@ function devStyles(){
     .pipe(dest(options.paths.dist.css));
 }
 
+
+
 function devScripts(){
   return src([
     `${options.paths.src.js}/libs/**/*.js`,
@@ -106,13 +112,14 @@ function prodHTML(){
   .pipe(replace('.png', '.webp'))
   .pipe(replace('.jpg', '.webp'))
   .pipe(replace('.jpeg', '.webp'))
+  .pipe(minifyInline())
   .pipe(dest(options.paths.build.base));
 }
 
 function prodStyles(){
   return src(`${options.paths.dist.css}/**/*`)
   .pipe(purgecss({
-    content: ['src/**/*.{html,js}'],
+    content: ['dist/**/*.{html,js}'],
     defaultExtractor: content => {
       const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
       const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || []
@@ -152,6 +159,24 @@ function buildFinish(done){
   done();
 }
 
+// Generate & Inline Critical-path CSS
+function criticalCSS () {
+    return src('build/*.html')
+    .pipe(
+      critical({
+        base: 'build/',
+        inline: true,
+        css: ['build/css/style.css'],
+        extract: true
+      })
+    )
+    .on('error', err => {
+      log.error(err.message);
+    })
+    .pipe(dest('build/'));
+};
+
+
 exports.default = series(
   devClean, // Clean Dist Folder
   parallel(devStyles, devScripts, devImages, devFonts, devHTML), //Run All tasks in parallel
@@ -162,5 +187,8 @@ exports.default = series(
 exports.prod = series(
   prodClean, // Clean Build Folder
   parallel(prodStyles, prodScripts, prodImages, prodFonts, prodHTML), //Run All tasks in parallel
+  criticalCSS,
   buildFinish
 );
+
+exports.critical = criticalCSS;
