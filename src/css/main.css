@@ -112,48 +112,30 @@ header.header {
 .works-grid {
   @apply grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mt-10; }
   .works-grid a.item {
-    @apply relative block shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition-all; }
+    @apply relative block shadow-cardshadow overflow-hidden border-3 border-white hover:border-blue-light transition; }
     .works-grid a.item img {
-      @apply relative transition-all z-0 duration-700; }
+      @apply relative transition z-0 duration-700; }
     .works-grid a.item .overlay {
-      @apply absolute top-0 left-0 bottom-0 right-0 grid place-items-center opacity-0 invisible z-50;
-      background-color: rgba(1, 86, 147, 0.85);
-      transition: .3s ease;
-      pointer-events: none; }
+      @apply absolute top-0 left-0 bottom-0 right-0 grid place-items-center opacity-0 z-50 pointer-events-none ease-in-out transition-opacity duration-300;
+      background-color: rgba(1, 86, 147, 0.85); }
       .works-grid a.item .overlay .text {
-        @apply text-center;
-        color: #fff;
+        @apply text-center text-white;
         text-shadow: 0 1px 5px var(--c-blue-dark); }
         .works-grid a.item .overlay .text .project-category {
-          font-size: 14px;
-          text-transform: uppercase;
-          transform: translate(-10px);
-          visibility: hidden;
-          opacity: 0;
-          transition: .3s ease;
-          transition-delay: .2s; }
+          transition-property: opacity, transform;
+          @apply text-sm opacity-0 uppercase ease-in-out duration-300 delay-200 transform -translate-x-2; }
         .works-grid a.item .overlay .text .project-name {
-          font-size: 20px;
-          font-family: var(--f-proxima-bold);
-          transform: translate(-10px);
-          visibility: hidden;
-          opacity: 0;
-          transition: .3s ease;
-          transition-delay: .4s; }
+          transition-property: opacity, transform;
+          @apply text-xl font-proxima-bold opacity-0 duration-300 delay-300 ease-in-out transform -translate-x-2; }
         .works-grid a.item .overlay .text .project-type {
-          transform: translate(-10px);
-          visibility: hidden;
-          opacity: 0;
-          transition: .3s ease;
-          transition-delay: .6s; }
+          transition-property: opacity, transform;
+          @apply opacity-0 duration-300 delay-500 ease-in-out transform -translate-x-2; }
     .works-grid a.item:hover img {
       @apply scale-110 transform rotate-1; }
     .works-grid a.item:hover .overlay {
-      @apply opacity-100 visible; }
+      @apply opacity-100; }
       .works-grid a.item:hover .overlay .text > div {
-        transform: none;
-        opacity: 1;
-        visibility: visible; }
+        @apply transform-none opacity-100; }
 
 [data-aos-delay="4000"] {
   transition-delay: 4000ms; }
