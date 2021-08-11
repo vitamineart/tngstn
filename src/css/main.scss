@@ -109,8 +109,7 @@ header.header {
     p:not(:first-child) {
         @apply mt-3 sm:mt-4 md:mt-6;
     }
-    img.float-right,
-    img.float-left {
+    img.shape-outside {
         shape-margin: 15px;
     }
 }
@@ -192,7 +191,6 @@ header.header {
         }
     }
 }
-
 
 [data-aos-delay="4000"] {
     transition-delay: 4000ms;

@@ -190,5 +190,3 @@ exports.prod = series(
   criticalCSS,
   buildFinish
 );
-
-exports.critical = criticalCSS;

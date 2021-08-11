@@ -42,7 +42,7 @@ scrollToTopButton.onclick = function(e) {
 }
 
 
-
+// works-clients grid random appear
 const worksgridItems = document.querySelectorAll('.works-grid .item');
 const timeNums = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600];
 
@@ -50,4 +50,13 @@ worksgridItems.forEach(item => {
     item.setAttribute('data-aos-delay', `${timeNums[Math.round(Math.random() * timeNums.length)]}`);
 })
 AOS.init();
+
+
+// style="shape-outside: url(img/White_Paper/Tanker_400.png);"
+window.onload = function () {
+  const imageShapes = document.querySelectorAll('.shape-outside');
+  imageShapes.forEach(function(item){
+    item.style = `shape-outside: url(${item.getAttribute('src')})`;
+  });
+}
 
