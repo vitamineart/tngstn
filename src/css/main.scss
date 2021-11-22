@@ -138,7 +138,7 @@ header.header {
         .overlay {
             @apply absolute top-0 left-0 bottom-0 right-0 grid place-items-center opacity-0 z-50 bg-blue/90;
             // background-color: hsla(205, 99%, 29%, .85);
-            transition: opacity .3s ease;
+            transition: opacity .5s ease;
             will-change: opacity;
             pointer-events: none;
             .text {
@@ -149,26 +149,25 @@ header.header {
                     text-transform: uppercase;
                     transform: translate(-10px);
                     opacity: 0;
-                    transition: .3s ease;
-                    transition-delay: .2s;
+                    transition: .5s ease-out;
+                    // transition-delay: .2s;
                     transition-property: opacity, transform;
                     will-change: transform, opacity;
                 }
                 .project-name {
                     @apply text-xl;
                     font-family: var(--f-proxima-bold);
-                    transform: translate(-10px);
                     opacity: 0;
-                    transition: .3s ease;
-                    transition-delay: .4s;
+                    transition: .5s ease-out;
+                    // transition-delay: .4s;
                     transition-property: opacity, transform;
                     will-change: transform, opacity;
                 }
                 .project-type {
-                    transform: translate(-10px);
+                    transform: translate(10px);
                     opacity: 0;
-                    transition: .3s ease;
-                    transition-delay: .6s;
+                    transition: .5s ease-out;
+                    // transition-delay: .3s;
                     transition-property: opacity, transform;
                     will-change: transform, opacity;
                 }
@@ -192,6 +191,7 @@ header.header {
     }
 }
 
+@import "../../node_modules/aos/dist/aos";
 [data-aos-delay="4000"] {
     transition-delay: 4000ms;
 }
