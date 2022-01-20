@@ -104,10 +104,6 @@ prepend preload
             border-radius: 2px;
             display: block;
         }
-        .beer-reveal { animation: firstSlideW 1.5s 1 normal ease-in-out 2s; }
-        .beer-handle { animation: firstSlideHandle 1.5s 1 normal ease-in-out 2s; }
-        @keyframes firstSlideW { 0% { width: 0%; } 50% { width: 60%; } 75% { width: 40%; } 100% { width: 50%; } }
-        @keyframes firstSlideHandle { 0% {opacity:0;} 85% { opacity: 0;} 100% { opacity: 1; } }
         /* BeerSlider Overrides End */
 
 
@@ -204,6 +200,10 @@ block page
 
 
     style.
+        .beer-reveal { animation: firstSlideW 1s 1 ease 5s; }
+        .beer-handle { animation: firstSlideHandle 1s 1 ease 5s; }
+        @keyframes firstSlideW { 0% { width: 50%; } 30% { width: 60%; } 65% { width: 30%; } 100% { width: 50%; } }
+        @keyframes firstSlideHandle { 0% { left: 50%; } 30% { left: 60%; } 65% { left: 30%; } 100% { left: 50%; } }
         @keyframes heartbeat {
             0% {
                 transform: scale(1);
