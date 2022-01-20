@@ -83,7 +83,7 @@ section(class="py-10 md:py-16")
         header.text-blue.font-proxima-bold.text-3xl.text-center Our Work and Clients
         div(class="works-grid grid gap-2 md:gap-4 mt-6 md:mt-10")
             each project in projects
-                a.item(href="#" data-aos-duration="500" data-aos-delay=`${timeNums[Math.round(Math.random() * timeNums.length)]}` data-aos="zoom-in" class="m-auto max-w-sm sm:max-w-none relative block shadow-cardshadow overflow-hidden group")
+                a.item(href="#" data-aos-duration="500" data-aos-delay=`${timeNums[Math.round(Math.random() * timeNums.length)]}` data-aos="zoom-in" class="m-auto max-w-sm sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity transition-transform-opacity")
                     .overlay(class="absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue/90 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change: opacity")
                         .text(class="text-center text-white tracking-wide" style="text-shadow: 0 1px 5px var(--c-blue-dark);")
                             div(class="project-category text-xs transition-transform-opacity will-change-transform-opacity uppercase -translate-x-3 duration-500 opacity-0 group-hover:opacity-100 group-hover:transform-none")= project.category
