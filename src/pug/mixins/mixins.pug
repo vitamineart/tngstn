@@ -27,7 +27,7 @@ mixin team-member(x)
         - let social = Object(x.contacts)
         each val, key in social
             a(href=`${val}` class="text-gray-light hover:text-blue-light mx-1")
-                svg.svg.w-6.h-6.fill-current.transition-colors
+                svg.svg.w-6.h-6.fill-current
                     +iconMono(key)
 
 
