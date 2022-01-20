@@ -5,7 +5,6 @@ block variables
 prepend preload
     script(src="https://unpkg.com/beerslider/dist/BeerSlider.js" defer)
     script(src="js/porziuncolaSlider.js" defer)
-    //- link(rel="preload" as="style" href="https://unpkg.com/beerslider/dist/BeerSlider.css")
 
     link(rel="preload" as="image" imagesrcset="img/Porziuncola/Porziuncola_Slide_photo_500.png 500w, img/Porziuncola/Porziuncola_Slide_photo_768.png 768w, img/Porziuncola/Porziuncola_Slide_photo_1000.png 1000w, img/Porziuncola/Porziuncola_Slide_photo_1300.png 1300w, img/Porziuncola/Porziuncola_Slide_photo_1903.png 1903w" imagesizes="100vw")
 
@@ -15,8 +14,9 @@ prepend preload
         /* BeerSlider Overrides */
         #slider {
             z-index: -10;
-            opacity: 0;
-            transition: opacity .5s ease;
+            opacity:0;
+            will-change: opacity;
+            transition: opacity .3s;
         }
         #slider.beer-ready {
             z-index: 11;
@@ -202,8 +202,8 @@ block page
     style.
         .beer-reveal { animation: firstSlideW 1s 1 ease 5s; }
         .beer-handle { animation: firstSlideHandle 1s 1 ease 5s; }
-        @keyframes firstSlideW { 0% { width: 50%; } 30% { width: 60%; } 65% { width: 30%; } 100% { width: 50%; } }
-        @keyframes firstSlideHandle { 0% { left: 50%; } 30% { left: 60%; } 65% { left: 30%; } 100% { left: 50%; } }
+        @keyframes firstSlideW { 0% { width: 50vw; } 30% { width: 60vw; } 65% { width: 30vw; } 100% { width: 50vw; } }
+        @keyframes firstSlideHandle { 0% { left: 50vw; } 30% { left: 60vw; } 65% { left: 30vw; } 100% { left: 50vw; } }
         @keyframes heartbeat {
             0% {
                 transform: scale(1);
