@@ -1,7 +1,5 @@
 module.exports = {
-  mode: 'jit', // Just-In-Time Compiler
-  purge: ['./src/**/*.html'],
-  darkMode: false, // or 'media' or 'class',
+  content: ['./src/pug/**/*.pug', './src/js/**/*.js', './src/**/*.html'],
   corePlugins: {
      container: false,
   },
@@ -41,10 +39,14 @@ module.exports = {
         'proxima': 'ProximaNovaA-Regular, sans-serif',
         'proxima-bold': 'ProximaNovaA-Bold, sans-serif',
       },
+      willChange: {
+        'transform-opacity': 'transform, opacity',
+        'opacity': 'opacity',
+      },
+      transitionProperty: {
+        'transform-opacity': 'transform, opacity',
+      }
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }

@@ -1,0 +1,32 @@
+include ../mixins/mixins
+block variables
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{pageTitle}
+
+        block preload
+            link(rel="preload" href="fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin)
+            link(rel="preload" href="fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin)
+            style.font-style.
+                @font-face { font-family: "ProximaNovaA-Bold"; src: url('fonts/ProximaNovaABold.woff2') format('woff2'), url('fonts/ProximaNovaABold.woff') format('woff'); font-display: swap; } @font-face { font-family: "ProximaNovaA-Regular"; src: url('fonts/ProximaNovaARegular.woff2') format('woff2'), url('fonts/ProximaNovaARegular.woff') format('woff'); font-display: swap;}
+        block head
+            link(href="css/style.css" rel="stylesheet")
+
+    body
+        include ../chunk/header
+        main
+            block page
+
+
+        include ../chunk/have_question
+        include ../chunk/works_clients
+        include ../chunk/footer
+
+        block footer_scripts
+            script(src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer)
+            script(src="js/main.js" defer)
+            link(rel="stylesheet", href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'")

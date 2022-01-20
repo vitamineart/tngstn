@@ -1,3 +1,20 @@
 @tailwind base;
+@layer base {
+  :root {
+    --c-blue-light: #338bc8;
+    --c-blue-link: #2581d0;
+    --c-blue: #185599;
+    --c-blue-dark: #071f51;
+    --f-proxima: 'ProximaNovaA-Regular', sans-serif;
+    --f-proxima-bold: 'ProximaNovaA-Bold', sans-serif; }
+  body {
+    @apply font-proxima; }
+  a {
+    @apply underline text-blue-light; }
+    a:hover {
+      @apply no-underline; }
+  .container {
+    @apply px-6 sm:px-8 md:px-10 mx-auto max-w-5xl; } }
+
 @tailwind components;
 @tailwind utilities;

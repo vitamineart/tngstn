@@ -1,0 +1,170 @@
+extends ./layout/base
+block variables
+    - var pageTitle = 'White Papers | Tungsten Advertising'
+
+prepend preload
+    script(src="https://unpkg.com/swiper@7/swiper-bundle.min.js" defer)
+    link(rel="preload" as="image"  imagesrcset="img/White_Paper/WhitePaper_450.jpg 450w, img/White_Paper/WhitePaper_600.jpg 600w, img/White_Paper/WhitePaper_800.jpg 800w, img/White_Paper/WhitePaper_1000.jpg 1000w, img/White_Paper/WhitePaper_1300.jpg 1300w, img/White_Paper/WhitePaper_1600.jpg 1600w, img/White_Paper/WhitePaper_2000.jpg 2000w" imagesizes="100vw")
+
+append head
+    script(src="js/whitePaperSlider.js" defer)
+
+
+block page
+    img(src="img/White_Paper/WhitePaper_1600.jpg" srcset="img/White_Paper/WhitePaper_450.jpg 450w, img/White_Paper/WhitePaper_600.jpg 600w, img/White_Paper/WhitePaper_800.jpg 800w, img/White_Paper/WhitePaper_1000.jpg 1000w, img/White_Paper/WhitePaper_1300.jpg 1300w, img/White_Paper/WhitePaper_1600.jpg 1600w, img/White_Paper/WhitePaper_2000.jpg 2000w" sizes="100vw" alt="White Paper" width="2000" height="868" class="w-full")
+    +page-title({
+        tagClient: 'Cobham',
+        h1: 'White Papers Turn <br> Techspeak Into English.',
+        subtitle: "What exactly is a White Paper? <br> And why do Tungsten's clients require them?"
+    })
+    +lead-in(`A White Paper is an <span class="text-blue-light">informational document</span> that explains and illuminates a particular aspect of a company's business. It is <span class="text-blue-light">objective</span>. White Papers are written to inform the reader concisely about a <span class="text-blue-light">complex issue</span>, and to present the issuing body's philosophy on the subject. The purpose is to help readers <span class="text-blue-light">understand an issue</span>, solve a problem, or make a decision.`)
+
+    article.page-content.mt-10.leading-relaxed.overflow-hidden
+        .container.flow-root
+            .drop-cap(style="--color: #3288c3;").
+                Cobham, the world leader in satellite communications, is constantly releasing new technologies that shape the entire eco-system. Decision-makers across multiple industries seek to understand these technologies in an objective way.
+            img(loading="lazy" src="img/White_Paper/Antena.png" alt="Antena" class="shape-outside float-left w-40 sm:w-44 m-4 -ml-10 sm:-ml-12" width="200" height="231")
+            p White Paper can serve this purpose remarkably well.
+            p The format allows information and research findings to be presented dispassionately to anyone interested in studying the technology or its ramifications.
+            p The audience includes Cobham's own dealer network, the IT, finance and procurement officers of customer companies, prospective customers, channel partners, journalists, analysts, or investors.
+
+        .py-10.bg-blue-light.text-white.my-8
+            .container.border-l-2.border-white.bg
+                p.font-proxima-bold.italic.text-lg The reader of a White Paper is looking to understand how a particular technology, product or method is a superior choice when solving a specific business problem.
+
+        .container.flow-root
+            img(loading="lazy" src="img/White_Paper/Tanker_1000.png" srcset="img/White_Paper/Tanker_400.png 400w, img/White_Paper/Tanker_600.png 600w, img/White_Paper/Tanker_800.png 800w, img/White_Paper/Tanker_1000.png 1000w, img/White_Paper/Tanker_1200.png 1200w, img/White_Paper/Tanker_1400.png 1400w" sizes="60vw, (min-width: 768px) 50vw, (min-width: 1024px) 30vw" alt="" class="shape-outside float-right h-auto w-2/3 md:w-2/5 -mr-12 sm:mr-0" width="1000" height="815")
+
+            p White Papers are especially important for highly technical products with long sales cycles, or products used in critical situations. A company investing in such a product will typically go through an extensive decision-making process that spans multiple departments and levels inside the company.
+
+            p Some executives on the selection committee will come from non-technical backgrounds, but need to contribute to the buying decision in an informed way. Busy executives seek plain-language explanations, presented in a journalistic or academic style, backed by statistics, facts and references to reliable sources.
+
+            .my-16.max-w-xl.mx-auto.overflow-hidden
+                header.uppercase.text-xl.tracking-wide.text-white.bg-blue-light.border-blue-light.p-4.text-center Why Decision Makers Read a White Paper
+                -
+                    const why_paper = [
+                        "Stay on top of maritime and satellite technology trends",
+                        "Get information about products and vendors",
+                        "Compare products or technologies",
+                        "Help justify buying decisions",
+                        "Short list qualified vendors"
+                    ]
+                each reason, index in why_paper
+                    div(class="even:bg-gray-100 last:border-b-gray-300 border-b py-3 px-4 text-lg border-l border-r border-gray-300" data-aos-duration="2000" data-aos="fade-in" data-aos-delay=`${400*(index+1)}`)= reason
+
+            p White Papers must be carefully written and designed. Key information is presented visually because readers have limited time and attention.
+
+            p This is not just dressing up, but making meaningful. Tungsten visualized the content with specially created graphics, sidebars, callouts, boxes, bullets and other visual devices to direct the attention of a reader scanning through the content.
+
+            p Tungsten has created White Papers for Cobham products ranging from complex satellite antenna systems to individual technologies. Mostly designed for B2B audiences, these papers use facts and logic to establish thought leadership, and position Cobham as a trusted advisor.
+
+        div(class="my-10 lg:my-20 bg-gradient-to-b from-gray-300 via-gray-100 to-gray-300 p-10 lg:p-20 relative shadow-inner")
+            link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload='this.media="all"')
+            style.
+                .pdf-slider-main .swiper-slide {
+                    opacity: 0;
+                    transition-property: transform, opacity;
+                    will-change: transform;
+                }
+
+                .pdf-slider-main .swiper-slide-active {
+                    opacity: 1;
+                }
+
+                .pdf-slider-thumbs .swiper-slide .thumb {
+                    border: 3px solid hsl(200, 0%, 77%);
+                    cursor: pointer;
+                    border-radius: 5px;
+                    width: 100%;
+                    max-width: 100px;
+                    transition: .25s ease;
+                    transition-property: transform;
+                    will-change: transform;
+                }
+
+                .pdf-slider-thumbs .swiper-slide.swiper-slide-thumb-active .thumb {
+                    border-color: #00ffea;
+                    transform: scale(1.2);
+                }
+                .swiper-button-prev,
+                .swiper-button-next {
+                    z-index: 1000;
+                }
+            //- Slider main container
+            .pdf-slider-main
+                //- Additional required wrapper
+                .swiper-wrapper
+                    //- Slides
+                    -
+                        const iframes = [
+                            {
+                                header: "Multi-Axis Stabilized Antenna Architecture",
+                                url:"img/White_Paper/MultiAxis_10mar_v4.pdf"
+                            },
+                            {
+                                header: "Quatraded Quatraded Oriented Reflectors Oriented Reflectors",
+                                url:"img/White_Paper/QOR_WP_22july.pdf"
+                            },
+                            {
+                                header: "TV-at-Sea Antenna System",
+                                url:"img/White_Paper/UnlimitedAz_02jun.pdf"
+                            },
+                            {
+                                header: "VSAT White Paper",
+                                url:"img/White_Paper/VSAT_WhitePaper.pdf"
+                            }
+                        ]
+                    each iframe in iframes
+                        .swiper-slide
+                            header.text-center.text-3xl #{iframe.header}
+                            iframe(class="mx-auto mt-5 swiper-lazy" width="100%" height="600" style="max-width: 800px;" data-src=`${iframe.url}`)
+                            .swiper-lazy-preloader
+
+                //- navigation buttons
+                .swiper-button-prev
+                .swiper-button-next
+
+            div(class="pdf-slider-thumbs mt-10 mx-auto w-full sm:w-64 md:w-80")
+                div.swiper-wrapper
+                    .swiper-slide.p-1
+                        img(loading="lazy" width="100" height="130"  src="img/White_Paper/WhitePaper1_thumb.jpg" alt="WhitePaper1 Thumbnail" class="thumb active")
+                    .swiper-slide.p-1
+                        img(loading="lazy" width="100" height="130"  src="img/White_Paper/WhitePaper2_thumb.jpg" alt="WhitePaper2 Thumbnail" class="thumb")
+                    .swiper-slide.p-1
+                        img(loading="lazy" width="100" height="130"  src="img/White_Paper/WhitePaper3_thumb.jpg" alt="WhitePaper3 Thumbnail" class="thumb")
+                    .swiper-slide.p-1
+                        img(loading="lazy" width="100" height="130"  src="img/White_Paper/WhitePaper4_thumb.jpg" alt="WhitePaper4 Thumbnail" class="thumb")
+
+        .container.flow-root
+            p It's important to note that the White Papers you see here are distinct from the product spec sheets and multiple brochures Tungsten has created for Cobham's individual products. They are different in the audience they appeal to, and in the way they are distributed to the audience.
+
+            img(loading="lazy" src="img/White_Paper/CrossSection.jpg" srcset="img/White_Paper/CrossSection_Small.jpg 360w, img/White_Paper/CrossSection_Mid.jpg 768w, img/White_Paper/CrossSection.jpg 1000w" width="871" height="529" class="w-full sm:w-3/4 mx-auto" alt="CrossSection Image")
+
+            p Most of the White Papers you see on these pages were printed and distributed worldwide at the trade shows Cobham participated in, or were mailed to dealerships, or made available as online PDFs.
+
+            p Tungsten brings objective input to a brand. These beautiful examples of marketing communications are a result of Tungsten's close working relationship with its client, and a deep understanding of the client's business, technology, and target audiences.
+        </div>
+
+    div(class="container mt-12 md:mt-20")
+        -
+            const team = [
+                {
+                    role:"Creative Director",
+                    name:"Stuart Silberman",
+                    contacts: {twitter: "#", linkedin:"#"}
+                },
+                {
+                    role:"Client",
+                    name: "Bobby Johns",
+                    contacts: {twitter: "#", linkedin:"#"}
+                }
+            ]
+        +team(team)
+
+
+
+
+prepend footer_scripts
+
+
+

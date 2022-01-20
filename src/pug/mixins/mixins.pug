@@ -1,0 +1,48 @@
+mixin page-title(u)
+    header(class="page-title pt-8 pb-6")
+        .container
+            div(class="tag-client inline-block text-white bg-blue-light font-proxima-bold px-2 py-0.5")= u.tagClient
+            h1(class=" mt-4 font-proxima-bold leading-none text-blue-dark") !{u.h1}
+            if u.subtitle
+                p.page-subtitle.mt-3.text-blue-dark.leading-tight !{u.subtitle}
+            if u.audio
+                a(class="btn-audio w-auto relative font-proxima-bold no-underline px-4 h-9 rounded-sm items-center inline-flex mt-6 border border-current text-blue-dark after:inline-block after:h-full after:w-3 after:bg-white after:absolute after:left-11 after:z-0 after:scale-y-110 hover:text-blue transition-colors" href=`${u.audio}`)
+                    svg.inline-block.relative.z-10.w-20.h-16.mr-4
+                        +iconMulti('audio-wave')
+
+                    span.text-base Listen
+
+
+mixin lead-in(content)
+    .lead-in.bg-gray-100.py-8.font-proxima-bold
+        .container.
+            !{content}
+
+
+mixin team-member(x)
+    span(class="mr-auto text-sm md:text-base")
+        i #{x.role}:
+        b.font-proxima-bold  #{x.name}
+    .team-contacts.flex.items-center
+        - let social = Object(x.contacts)
+        each val, key in social
+            a(href=`${val}` class="text-gray-light hover:text-blue-light mx-1")
+                svg.svg.w-6.h-6.fill-current.transition-colors
+                    +iconMono(key)
+
+
+mixin team(team)
+    .max-w-lg.mx-auto
+        each teamMember, index in team
+            div(data-aos="fade-in" data-aos-delay=`${100*(index+1)}` class="border-b py-2 last:border-0")
+                .flex.items-center.justify-between
+                    +team-member(teamMember)
+                if teamMember.comment
+                    .clients-comment.text-xs.text-gray-400.mt-2 !{teamMember.comment}
+
+
+//- svg icons
+mixin iconMono(icon)
+    use(xlink:href=`img/icons/icons-sprite-mono.svg#${icon}`)
+mixin iconMulti(icon)
+    use(xlink:href=`img/icons/icons-sprite-multi.svg#${icon}`)

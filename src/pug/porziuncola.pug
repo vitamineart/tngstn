@@ -1,0 +1,244 @@
+extends ./layout/base
+block variables
+    - var pageTitle = 'Porziuncola | Tungsten Advertising'
+
+prepend preload
+    script(src="https://unpkg.com/beerslider/dist/BeerSlider.js" defer)
+    script(src="js/porziuncolaSlider.js" defer)
+    //- link(rel="preload" as="style" href="https://unpkg.com/beerslider/dist/BeerSlider.css")
+
+    link(rel="preload" as="image" imagesrcset="img/Porziuncola/Porziuncola_Slide_photo_500.png 500w, img/Porziuncola/Porziuncola_Slide_photo_768.png 768w, img/Porziuncola/Porziuncola_Slide_photo_1000.png 1000w, img/Porziuncola/Porziuncola_Slide_photo_1300.png 1300w, img/Porziuncola/Porziuncola_Slide_photo_1903.png 1903w" imagesizes="100vw")
+
+    //- link(rel="stylesheet" href="https://unpkg.com/beerslider/dist/BeerSlider.css")
+    style.
+        .beer-slider{display:inline-block;overflow:hidden;position:relative}.beer-slider *,.beer-slider:after,.beer-slider :after,.beer-slider:before,.beer-slider :before{box-sizing:border-box}.beer-slider img,.beer-slider svg{vertical-align:bottom}.beer-slider>*{height:100%}.beer-slider>img{height:auto;max-width:100%}.beer-reveal{left:0;opacity:0;overflow:hidden;position:absolute;right:50%;top:0;transition:opacity .35s;z-index:1}.beer-reveal>:first-child{height:100%;max-width:none;width:200%}.beer-reveal>img:first-child{height:auto}.beer-range{-moz-appearance:none;-ms-touch-action:auto;-webkit-appearance:slider-horizontal!important;bottom:0;cursor:pointer;height:100%;left:-1px;margin:0;opacity:0;position:absolute;top:0;touch-action:auto;width:calc(100% + 2px);z-index:2}.beer-range::-webkit-slider-thumb{-webkit-appearance:none;height:300vh}.beer-range::-moz-range-thumb{-webkit-appearance:none;height:300vh}.beer-range::-ms-tooltip{display:none}.beer-handle{background:hsla(0,0%,100%,.5);border-radius:50%;box-shadow:0 0 6px transparent;color:#000;height:48px;left:50%;opacity:0;pointer-events:none;position:absolute;top:50%;transform:translate3d(-50%,-50%,0);transition:background .3s,box-shadow .3s,opacity .5s .25s;width:48px;z-index:2}.beer-handle:after,.beer-handle:before{border-left:2px solid;border-top:2px solid;content:"";height:10px;position:absolute;top:50%;transform-origin:0 0;width:10px}.beer-handle:before{left:10px;transform:rotate(-45deg)}.beer-handle:after{right:0;transform:rotate(135deg)}.beer-range:focus~.beer-handle{background:hsla(0,0%,100%,.85);box-shadow:0 0 3px rgba(0,0,0,.4)}.beer-reveal[data-beer-label]:after,.beer-slider[data-beer-label]:after{background:hsla(0,0%,100%,.75);border-radius:.125rem;content:attr(data-beer-label);line-height:1;padding:.5rem;position:absolute;top:1.5rem}.beer-slider[data-beer-label]:after{right:1.5rem}.beer-reveal[data-beer-label]:after{left:1.5rem}.beer-reveal[data-beer-label=""]:after,.beer-slider[data-beer-label=""]:after{content:none}.beer-ready .beer-handle,.beer-ready .beer-reveal{opacity:1}
+        /* BeerSlider Overrides */
+        #slider {
+            z-index: -10;
+            opacity: 0;
+            transition: opacity .5s ease;
+        }
+        #slider.beer-ready {
+            z-index: 11;
+            opacity: 1;
+        }
+        #slider, .slider-preloader {
+            --slider-height: 250px;
+        }
+        @media (min-width: 360px) {
+            #slider, .slider-preloader {
+                --slider-height: 280px;
+            }
+        }
+        @media (min-width: 420px) {
+            #slider, .slider-preloader {
+                --slider-height: 300px;
+            }
+        }
+        @media (min-width: 480px) {
+            #slider, .slider-preloader {
+                --slider-height: 320px;
+            }
+        }
+        @media (min-width: 640px) {
+            #slider, .slider-preloader {
+                --slider-height: 340px;
+            }
+        }
+        @media (min-width: 1000px) {
+            #slider, .slider-preloader {
+                --slider-height: unset;
+            }
+        }
+        .beer-reveal>img:first-child {
+            min-height: var(--slider-height);
+            object-fit: cover;
+        }
+        .beer-slider>img {
+            min-height: var(--slider-height);
+            object-fit: cover;
+        }
+        .beer-range:focus~.beer-handle {
+            background: transparent;
+        }
+        .beer-reveal {
+            border-right: 1px solid #fff;
+        }
+        .beer-handle:before {
+            display: none;
+        }
+        .beer-handle {
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border: 2px solid #fff;
+            box-sizing: border-box;
+            border-radius: 0;
+            transform-origin: center;
+            transform: rotate(45deg) translateX(-15px);
+            perspective-origin: center;
+            top: 90%;
+            overflow: visible;
+        }
+        .beer-handle:after {
+            content: 'Slide to Reveal';
+            text-transform: uppercase;
+            font-size: 14px;
+            font-family: var(--f-proxima);
+            color: #fff;
+            transform-origin: right;
+            transform: rotate(-45deg) translate(120%, -12px);
+            width: 150px;
+            height: 30px;
+            border: 0;
+            transition: .3s ease;
+        }
+        .beer-range~.beer-handle:after {
+            text-shadow: 0 1px 2px var(--c-blue-dark);
+        }
+        [type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none !important;
+            height: 200px;
+            width: 200px;
+            border-radius: 2px;
+            display: block;
+        }
+        .beer-reveal { animation: firstSlideW 2s 1 normal ease-in-out; }
+        .beer-handle { animation: firstSlideX 2s 1 normal ease-in-out; }
+        @keyframes firstSlideW { 0% { width: 0%; } 40% { width: 65%; } 65% { width: 30%; } 100% { width: 50%; } }
+        @keyframes firstSlideX { 0% { left: 0%;opacity: 0; } 40% { left: 65%;opacity: 0; } 65% { left: 30%; opacity: 0;} 100% { left: 50%;opacity: 1; } }
+        /* BeerSlider Overrides End */
+
+
+
+prepend head
+
+
+
+
+block page
+    .text-center
+        img(src="img/Porziuncola/Porziuncola_Slide_photo_500.png" srcset="img/Porziuncola/Porziuncola_Slide_photo_500.png 500w, img/Porziuncola/Porziuncola_Slide_photo_768.png 768w, img/Porziuncola/Porziuncola_Slide_photo_1000.png 1000w, img/Porziuncola/Porziuncola_Slide_photo_1300.png 1300w, img/Porziuncola/Porziuncola_Slide_photo_1903.png 1903w" alt="Porziuncola Before" sizes="100vw" width="1903" height="560" class="valign-middle object-cover absolute z-10 sm:hidden slider-preloader" style="height: var(--slider-height);")
+        #slider.beer-slider
+            img(src="img/Porziuncola/Porziuncola_Slide_illustrated_1903.png" srcset="img/Porziuncola/Porziuncola_Slide_illustrated_500.png 500w, img/Porziuncola/Porziuncola_Slide_illustrated_768.png 768w, img/Porziuncola/Porziuncola_Slide_illustrated_1000.png 1000w, img/Porziuncola/Porziuncola_Slide_illustrated_1300.png 1300w, img/Porziuncola/Porziuncola_Slide_illustrated_1903.png 1903w" alt="Porziuncola After" sizes="100vw" width="1903" height="560")
+            .beer-reveal
+                img(src="img/Porziuncola/Porziuncola_Slide_photo_1903.png" srcset="img/Porziuncola/Porziuncola_Slide_photo_500.png 500w, img/Porziuncola/Porziuncola_Slide_photo_768.png 768w, img/Porziuncola/Porziuncola_Slide_photo_1000.png 1000w, img/Porziuncola/Porziuncola_Slide_photo_1300.png 1300w, img/Porziuncola/Porziuncola_Slide_photo_1903.png 1903w" alt="Porziuncola Before" sizes="100vw" width="1903" height="560")
+
+    +page-title({
+        tagClient: 'Knights of Saint Francis',
+        h1: 'Love, Peace, Joy, and Possibly <br class="hidden md:inline-block"> the Oldest Floor in America.</h1>',
+        subtitle: 'What is the Porziuncola? How do you say it? Where can you find it?',
+        audio: "#"
+    })
+    +lead-in(`Eight hundred years after <span class="text-blue-light">Saint Francis</span> built a chapel with his own hands in the far away city of Assisi, San Francisco built an identical chapel to honor the saint after whom the city is named, and called it the <span class="text-blue-light">"Porziuncola."</span> Or, in Italian, <span class="text-blue-light">"The Little Bit."</span>`)
+
+    article.page-content.mt-10.leading-relaxed.overflow-hidden
+        .container.flow-root
+            p.drop-cap(style="--color: #338bc8;").
+                This print and online campaign was created as an effort to keep the Porziuncola open to the public, after it had been closed due to an administrative issue.
+
+            svg(width="223" height="204" viewBox="0 0 223 204" fill="none" class="float-right w-48 sm:w-auto -mr-16 sm:mr-0" style="shape-outside: url(img/Porziuncola/heart.svg);" data-aos="zoom-in" data-aos-duration="" data-aos-delay="200" data-aos-anchor=".page-content").
+                <g filter="url(#filter0_d)" id="heart-3"> <path d="M154.777 24C127 24 116.144 31.8228 116.144 31.8228C116.144 31.8228 106.5 24 79.4424 24C53.3849 24 28 47.6432 28 80.8714C28 114.1 53.0432 132.714 75.5791 148.689C98.1151 164.664 103.583 180 116.144 180C128.705 180 138.036 165.942 154.777 148.689C171.518 131.436 203 117.934 203 80.8714C203 43.8092 178.554 24 154.777 24Z" fill="white" /> </g> <g filter="url(#filter1_d)" id="heart-2"> <path d="M146.719 40C131.108 40 120.868 46.3333 116.504 49.5C112.475 46 105.928 40 87.7986 40C65.1367 40 46 58.5 46 84.5C46 110.5 67.1511 123.5 84.777 136C102.403 148.5 109.957 160.5 116.504 160.5C122.959 160.5 133.333 149.803 146.175 136.561L146.719 136C159.813 122.5 186 113.5 186 84.5C186 55.5 162.331 40 146.719 40Z" fill="white" /> </g>
+                <path id="heart-1" d="M111.725 68.0739C113.726 70.966 114.727 72.4121 115.235 72.6403C115.895 72.9361 116.094 72.9417 116.769 72.6833C117.29 72.4839 118.387 71.0749 120.58 68.2569C125.104 62.444 132.731 57 143.762 57C162.095 57 171 75.8571 171 84.2381C171 100 165.45 106.5 141.734 122.5C124.983 133.801 120.278 140.763 117.373 143.482C117.175 143.668 117.075 143.76 116.66 143.899C116.394 143.987 115.698 143.993 115.431 143.91C115.013 143.779 114.891 143.668 114.647 143.448C111.95 141.012 106.944 135.25 91.2752 123.5C77.1468 112.905 61 108 61 84.2381C61 66.9524 76.7143 57 86.6667 57C100.651 57 107.75 62.3303 111.725 68.0739Z" fill="url(#paint0_radial)" /> <defs> <filter id="filter0_d" x="0" y="0" width="223" height="204" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix" /> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" /> <feOffset dx="-4" /> <feGaussianBlur stdDeviation="12" /> <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0" /> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" /> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" /> </filter> <filter id="filter1_d" x="30" y="24" width="164" height="144.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix" /> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" /> <feOffset dx="-4" dy="-4" /> <feGaussianBlur stdDeviation="6" /> <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0" /> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" /> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" /> </filter> <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(115.759 100.476) rotate(-18.3528) scale(53.2347 64.9221)"> <stop stop-color="#F5072B" /> <stop offset="1" stop-color="#C6001C" /> </radialGradient>
+                </defs>
+            </svg>
+
+            p.
+                The creative idea and execution seeks to engage the audience with a little play on the word itself. The look is bright, sunny, cheerful, optimistic. The colors on the building lend the chapel an appearance of dynamism and love. A contemporary interpretation of psychedelic San Francisco: surprising and unexpected.
+            p.
+                The look disarms anyone who might be opposed to religion. It arouses curiosity, and makes the chapel inviting even to the non-religious. A happy and refreshing look at something that is age-old.
+
+            img(loading="lazy" src="img/Porziuncola/KOSF.png" alt="Knights of Saint Francis" class="shape-outside float-left w-44 -ml-10 sm:ml-0" width="246" height="333")
+            p.
+                What better way to get someone to sign a petition? Oh, and if you’re still wondering about that floor: the Porziuncola's floor is made from the same marble with which Saint Francis built his floor.
+            p.
+                After centuries of quarrying, that particular marble cannot be found anywhere. But as Providence would have it, an identical marble floor was discovered under a Medieval Italian cathedral that was being disassembled. That floor now rests under San Francisco's Porziuncola, making it quite possibly the oldest floor on the continent.
+
+        div(class="py-12 md:py-16 mt-6 md:mt-8" style="min-height: 500px; background-image: radial-gradient(#ddd, #bbb);")
+            .container
+                img(loading="lazy" src="img/Porziuncola/Porziuncola_postcard_600.jpg" width="1160" height="789" srcset="img/Porziuncola/Porziuncola_postcard_600.jpg 600w, img/Porziuncola/Porziuncola_postcard_870.jpg 870w, img/Porziuncola/Porziuncola_postcard.jpg 1160w" sizes="93vw, (min-width:640px) 60vw" alt="Porziuncola Postcard" class="shadow-cardshadow w-auto sm:w-2/3 md:1/2" data-aos-duration="1000" data-aos="fade-right")
+
+                img(loading="lazy" src="img/Porziuncola/Porziuncola_postcard_back_600.jpg" srcset="img/Porziuncola/Porziuncola_postcard_back_600.jpg 600w, img/Porziuncola/Porziuncola_postcard_back_870.jpg 870w, img/Porziuncola/Porziuncola_postcard_back.jpg 1168w" sizes="93vw, (min-width:640px) 60vw" width="1168" height="794" alt="Porziuncola Postcard Back Side" class="shadow-cardshadow w-auto sm:w-2/3 md:1/2 ml-auto mt-6 md:mt-10 " data-aos="fade-left" data-aos-delay="150" data-aos-duration="1000")
+
+    div(class="container mt-12 md:mt-20")
+        -
+            const team = [
+                {
+                    role:"Copywriter",
+                    name:"Meg Hurtado Bloom",
+                    contacts: {twitter: "#", linkedin:"#"}
+                },
+                {
+                    role:"Art Director",
+                    name: "Vladimir Skocajic",
+                    contacts: {twitter: "#", linkedin:"#"}
+                },
+                {
+                    role:"Illustrator",
+                    name: "Vladimir Skocajic",
+                    contacts: {twitter: "#", linkedin:"#"}
+                },
+                {
+                    role:"Client",
+                    name: "Angela M. Alioto",
+                    contacts: {twitter: "#", linkedin:"#"},
+                    comment: "“ I work with Tungsten because they always do an excellent job on every project I have worked with them on, and this is just one example of...” <a>Listen to audio</a>"
+
+                }
+            ]
+        +team(team)
+
+
+
+
+
+
+
+    style.
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            20% {
+                transform: scale(1);
+            }
+            30% {
+                transform: scale(var(--scale-amount));
+            }
+            50% {
+                transform: scale(1);
+            }
+            60% {
+                transform: scale(1);
+            }
+            80% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        #heart-1 {
+            --scale-amount: .75;
+            transform-origin: center;
+            animation: heartbeat 1.4s ease-in-out 500ms infinite both normal;
+        }
+        #heart-2 {
+            --scale-amount: .85;
+            transform-origin: center;
+            animation: heartbeat 1.4s ease-in-out 570ms infinite both normal;
+        }
+        #heart-3 {
+            --scale-amount: .95;
+            transform-origin: center;
+            animation: heartbeat 1.4s ease-in-out 640ms infinite both normal;
+        }
+
+
+
+
+prepend footer_scripts
+
+
+
+

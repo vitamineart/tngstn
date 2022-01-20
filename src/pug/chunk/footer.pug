@@ -1,0 +1,36 @@
+footer.footer.relative.w-full.bg-indigo.py-14.border-b-12.border-blue-dark
+    .container.text-indigo-light.px-5.text-sm
+        .text-white.uppercase.text-lg.font-proxima-bold Tungsten
+        .mt-5.
+            268 Bush Street, #3438 <br>
+            San Francisco, CA <br>
+            (415) 269-6931
+        .mt-5
+            a.text-white.font-proxima-bold(href="mailto:hello@tngstn.com") hello@tngstn.com
+            -
+                const social = [
+                    {link:"#", icon:"facebook"},
+                    {link:"#", icon:"twitter"},
+                    {link:"#", icon:"linkedin"},
+                    {link:"#", icon:"envelope"}
+                ]
+        .mt-5
+            .social.flex.space-x-3.mt-3
+                each x in social
+                    a(class="text-blue-link hover:text-blue inline-block" href=`${x.link}`)
+                        svg.w-8.h-8.fill-current
+                            +iconMono(`${x.icon}`)
+
+
+
+
+        .mt-8.
+            2022 © Tungsten. ALL Rights Reserved. <br>
+            <a href="#" class="text-blue-light font-proxima-bold no-underline">Privacy Policy</a>
+
+
+    button(id="go-to-top" class="go-to-top fixed opacity-0 invisible bottom-10 right-10 lg:bottom-12 lg:right-12 w-14 h-14 transition-all duration-500 cursor-pointer text-blue hover:text-blue-light")
+        svg.stroke-current.fill-transparent.w-full.h-full
+            +iconMono('back-to-top')
+
+
