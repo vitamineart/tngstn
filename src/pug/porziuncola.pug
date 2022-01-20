@@ -79,6 +79,7 @@ prepend preload
             perspective-origin: center;
             top: 90%;
             overflow: visible;
+            will-change: opacity;
         }
         .beer-handle:after {
             content: 'Slide to Reveal';
@@ -104,9 +105,9 @@ prepend preload
             display: block;
         }
         .beer-reveal { animation: firstSlideW 2s 1 normal ease-in-out; }
-        .beer-handle { animation: firstSlideX 2s 1 normal ease-in-out; }
-        @keyframes firstSlideW { 0% { width: 0%; } 40% { width: 65%; } 65% { width: 30%; } 100% { width: 50%; } }
-        @keyframes firstSlideX { 0% { left: 0%;opacity: 0; } 40% { left: 65%;opacity: 0; } 65% { left: 30%; opacity: 0;} 100% { left: 50%;opacity: 1; } }
+        .beer-handle { animation: firstSlideHandle 2s 1 normal ease-in-out; }
+        @keyframes firstSlideW { 0% { width: 0%; } 50% { width: 65%; } 75% { width: 30%; } 100% { width: 50%; } }
+        @keyframes firstSlideHandle { 0% {opacity:0;} 85% { opacity: 0;} 100% { opacity: 1; } }
         /* BeerSlider Overrides End */
 
 

@@ -34,7 +34,7 @@ mixin team-member(x)
 mixin team(team)
     .max-w-lg.mx-auto
         each teamMember, index in team
-            div(data-aos="fade-in" data-aos-delay=`${100*(index+1)}` class="border-b py-2 last:border-0 will-change-opacity transition-opacity")
+            div(data-aos="fade-in" data-aos-delay=`${100*(index+1)}` class="border-b py-2 last:border-0 will-change-opacity")
                 .flex.items-center.justify-between
                     +team-member(teamMember)
                 if teamMember.comment
