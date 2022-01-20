@@ -1,6 +1,6 @@
 extends ./layout/base
 block variables
-    - var pageTitle = 'Porziuncola | Tungsten Advertising'
+    - var pageTitle = 'Tungsten Advertising Case Study | San Francisco Porziuncola | Client: Angela Alioto'
 
 prepend preload
     script(src="https://unpkg.com/beerslider/dist/BeerSlider.js" defer)
@@ -104,9 +104,9 @@ prepend preload
             border-radius: 2px;
             display: block;
         }
-        .beer-reveal { animation: firstSlideW 2s 1 normal ease-in-out; }
-        .beer-handle { animation: firstSlideHandle 2s 1 normal ease-in-out; }
-        @keyframes firstSlideW { 0% { width: 0%; } 50% { width: 65%; } 75% { width: 30%; } 100% { width: 50%; } }
+        .beer-reveal { animation: firstSlideW 1.5s 1 normal ease-in-out 2s; }
+        .beer-handle { animation: firstSlideHandle 1.5s 1 normal ease-in-out 2s; }
+        @keyframes firstSlideW { 0% { width: 0%; } 50% { width: 60%; } 75% { width: 40%; } 100% { width: 50%; } }
         @keyframes firstSlideHandle { 0% {opacity:0;} 85% { opacity: 0;} 100% { opacity: 1; } }
         /* BeerSlider Overrides End */
 
@@ -167,24 +167,32 @@ block page
                 {
                     role:"Copywriter",
                     name:"Meg Hurtado Bloom",
-                    contacts: {twitter: "#", linkedin:"#"}
+                    contacts: {
+                        twitter: "#",
+                        linkedin:"https://www.linkedin.com/in/meg-hurtado-bloom-547aa210/"
+                    }
                 },
                 {
                     role:"Art Director",
                     name: "Vladimir Skocajic",
-                    contacts: {twitter: "#", linkedin:"#"}
+                    contacts: {
+                        twitter: "#", linkedin:"https://www.linkedin.com/in/skotchaya/"
+                    }
                 },
                 {
                     role:"Illustrator",
                     name: "Vladimir Skocajic",
-                    contacts: {twitter: "#", linkedin:"#"}
+                    contacts: {
+                        twitter: "#", linkedin:"https://www.linkedin.com/in/skotchaya/"
+                    }
                 },
                 {
                     role:"Client",
                     name: "Angela M. Alioto",
-                    contacts: {twitter: "#", linkedin:"#"},
-                    comment: "“ I work with Tungsten because they always do an excellent job on every project I have worked with them on, and this is just one example of...” <a>Listen to audio</a>"
-
+                    contacts: {
+                        facebook: "https://www.facebook.com/angela.m.alioto", linkedin:"https://www.linkedin.com/in/angela-alioto-0780375/"
+                    },
+                    comment: "“...Meg Hurtado is one of the most artistic people I have ever met in my life… So talented in thinking out-of-the-box and expressing herself in ways that you just don’t see nowadays…” <a href='#'>Listen</a>"
                 }
             ]
         +team(team)

@@ -26,7 +26,7 @@ mixin team-member(x)
     .team-contacts.flex.items-center
         - let social = Object(x.contacts)
         each val, key in social
-            a(href=`${val}` class="text-gray-light hover:text-blue-light mx-1")
+            a(href=`${val}` class="text-gray-light hover:text-blue-light mx-1" target="_blank")
                 svg.svg.w-6.h-6.fill-current
                     +iconMono(key)
 
