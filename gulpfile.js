@@ -182,7 +182,9 @@ function prodHTML(){
   .pipe(size({title: "Before html minification "}))
   .pipe(htmlmin({
     collapseWhitespace: true,
-    removeComments: true
+    removeComments: true,
+    minifyCSS: true,
+    minifyJS: true
   }))
   .pipe(size({title: "After html minification "}))
   .pipe(dest(options.paths.build.base));
