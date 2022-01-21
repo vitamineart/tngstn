@@ -1,13 +1,13 @@
 extends ./layout/base
 block variables
-    - var pageTitle = 'White Papers | Tungsten Advertising'
+    - var pageTitle = 'Tungsten Advertising Case Study | Maritime White Papers | Cobham Sea Tel'
 
 prepend preload
     script(src="https://unpkg.com/swiper@7/swiper-bundle.min.js" defer)
+    script(src="js/whitePaperSlider.js" defer)
     link(rel="preload" as="image"  imagesrcset="img/White_Paper/WhitePaper_450.jpg 450w, img/White_Paper/WhitePaper_600.jpg 600w, img/White_Paper/WhitePaper_800.jpg 800w, img/White_Paper/WhitePaper_1000.jpg 1000w, img/White_Paper/WhitePaper_1300.jpg 1300w, img/White_Paper/WhitePaper_1600.jpg 1600w, img/White_Paper/WhitePaper_2000.jpg 2000w" imagesizes="100vw")
 
 append head
-    script(src="js/whitePaperSlider.js" defer)
 
 
 block page
@@ -117,7 +117,7 @@ block page
                     each iframe in iframes
                         .swiper-slide
                             header.text-center.text-3xl #{iframe.header}
-                            iframe(class="mx-auto mt-5 swiper-lazy" width="100%" height="600" style="max-width: 800px;" data-src=`${iframe.url}`)
+                            iframe(loading="lazy" class="mx-auto mt-5 swiper-lazy" width="100%" height="600" style="max-width: 800px;" data-src=`${iframe.url}`)
                             .swiper-lazy-preloader
 
                 //- navigation buttons
@@ -151,12 +151,16 @@ block page
                 {
                     role:"Creative Director",
                     name:"Stuart Silberman",
-                    contacts: {twitter: "#", linkedin:"#"}
+                    contacts: {
+                        linkedin:"https://www.linkedin.com/in/stuart-silberman-a67939/"
+                    }
                 },
                 {
                     role:"Client",
                     name: "Bobby Johns",
-                    contacts: {twitter: "#", linkedin:"#"}
+                    contacts: {
+
+                    }
                 }
             ]
         +team(team)
