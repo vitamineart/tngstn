@@ -1,6 +1,6 @@
 extends ./layout/base
 block variables
-    - var pageTitle = 'Davis Intruments | Tungsten Advertising'
+    - var pageTitle = 'Tungsten Advertising Case Study | Nik Wallenda Video | Davis Instruments'
 
 prepend preload
     link(rel="preload" as="image" href="https://i.ytimg.com/vi_webp/0puWSusGbOA/hqdefault.webp")
@@ -51,17 +51,21 @@ block page
                 {
                     role: "Copywriter",
                     name:"Mukul Bakshi",
-                    contacts: { twitter: "#", linkedin: "#" }
+                    contacts: {
+                        twitter: "https://twitter.com/MukulBakshi",
+                        linkedin: "https://www.linkedin.com/in/mukulbakshi/"
+                    }
                 },
                 {
                     role: "Video Editor",
-                    name: "Kia Reaghabi",
-                    contacts: { twitter: "#", linkedin: "#" }
+                    name: "Kia Reaghabi"
                 },
                 {
                     role: "Client",
                     name: "Atul Chawla",
-                    contacts: { twitter: "#", linkedin: "#" }
+                    contacts: {
+                        linkedin: "https://www.linkedin.com/in/atulchawla/"
+                    }
                 }
             ]
         +team(team)

@@ -1,6 +1,6 @@
 footer.footer.relative.w-full.bg-indigo.py-14.border-b-12.border-blue-dark
     .container.text-indigo-light.px-5.text-sm
-        .text-white.uppercase.text-lg.font-proxima-bold.leading-tight.
+        div(class=" text-white uppercase text-lg font-proxima-bold !leading-tight").
             Tungsten, Inc. <br>
             #[small(class="text-xs font-proxima opacity-50") A California Corporation]
         .mt-5.
@@ -14,12 +14,12 @@ footer.footer.relative.w-full.bg-indigo.py-14.border-b-12.border-blue-dark
                     {link:"https://www.facebook.com/TungstenAdvertising", icon:"facebook"},
                     {link:"https://www.linkedin.com/company/tungsten-advertising/", icon:"twitter"},
                     {link:"https://twitter.com/TungstenAds", icon:"linkedin"},
-                    {link:"hello@tngstn.com", icon:"envelope"}
+                    {link:"mailto:hello@tngstn.com", icon:"envelope"}
                 ]
         .mt-5
             .social.flex.space-x-3.mt-3
                 each x in social
-                    a(class="text-blue-link hover:text-blue inline-block" href=`${x.link}`)
+                    a(class="text-blue-link hover:text-blue inline-block" href=`${x.link}` target="_blank")
                         svg.w-8.h-8.fill-current
                             +iconMono(`${x.icon}`)
 
