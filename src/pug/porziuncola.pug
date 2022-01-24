@@ -124,8 +124,7 @@ block page
     +page-title({
         tagClient: 'Knights of Saint Francis',
         h1: 'Love, Peace, Joy, and Possibly <br class="hidden md:inline-block"> the Oldest Floor in America.</h1>',
-        subtitle: 'What is the Porziuncola? How do you say it? Where can you find it?',
-        audio: "#"
+        subtitle: 'What is the Porziuncola? How do you say it? Where can you find it?'
     })
     +lead-in(`Eight hundred years after <span class="text-blue-light">Saint Francis</span> built a chapel with his own hands in the far away city of Assisi, San Francisco built an identical chapel to honor the saint after whom the city is named, and called it the <span class="text-blue-light">"Porziuncola."</span> Or, in Italian, <span class="text-blue-light">"The Little Bit."</span>`)
 
@@ -164,7 +163,6 @@ block page
                     role:"Copywriter",
                     name:"Meg Hurtado Bloom",
                     contacts: {
-                        twitter: "#",
                         linkedin:"https://www.linkedin.com/in/meg-hurtado-bloom-547aa210/"
                     }
                 },
@@ -172,14 +170,14 @@ block page
                     role:"Art Director",
                     name: "Vladimir Skocajic",
                     contacts: {
-                        twitter: "#", linkedin:"https://www.linkedin.com/in/skotchaya/"
+                        linkedin:"https://www.linkedin.com/in/skotchaya/"
                     }
                 },
                 {
                     role:"Illustrator",
                     name: "Vladimir Skocajic",
                     contacts: {
-                        twitter: "#", linkedin:"https://www.linkedin.com/in/skotchaya/"
+                        linkedin:"https://www.linkedin.com/in/skotchaya/"
                     }
                 },
                 {
@@ -213,8 +211,14 @@ block page
             20% {
                 transform: scale(1);
             }
+            25% {
+                transform: scale(1);
+            }
             30% {
                 transform: scale(var(--scale-amount));
+            }
+            35% {
+                transform: scale(1);
             }
             50% {
                 transform: scale(1);
@@ -232,17 +236,17 @@ block page
         #heart-1 {
             --scale-amount: .75;
             transform-origin: center;
-            animation: heartbeat 1.4s ease-in-out 500ms infinite both normal;
+            animation: heartbeat 5s ease-in-out 500ms infinite both normal;
         }
         #heart-2 {
             --scale-amount: .85;
             transform-origin: center;
-            animation: heartbeat 1.4s ease-in-out 570ms infinite both normal;
+            animation: heartbeat 5s ease-in-out 570ms infinite both normal;
         }
         #heart-3 {
             --scale-amount: .95;
             transform-origin: center;
-            animation: heartbeat 1.4s ease-in-out 640ms infinite both normal;
+            animation: heartbeat 5s ease-in-out 640ms infinite both normal;
         }
 
 
