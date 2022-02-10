@@ -1,0 +1,1 @@
+var x=evt.pageX-$("#element").offset().left,y=evt.pageY-$("#element").offset().top;

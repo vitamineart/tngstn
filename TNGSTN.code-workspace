@@ -4,5 +4,7 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"netlify.site_id": "tngstn.netlify.app"
+	}
 }

@@ -45,7 +45,7 @@ module.exports = {
       },
       transitionProperty: {
         'transform-opacity': 'transform, opacity',
-      }
+      },
     },
   },
   plugins: [],
