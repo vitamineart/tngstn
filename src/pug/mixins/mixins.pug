@@ -1,5 +1,5 @@
 mixin page-title(u)
-    header(class="page-title pt-8 pb-6")
+    header(class=`page-title pt-8 pb-6 ${u.classes}`)
         .container
             div(class="tag-client inline-block text-white bg-blue-light font-proxima-bold px-2 py-0.5")= u.tagClient
             h1(class=" mt-4 font-proxima-bold leading-none text-blue-dark") !{u.h1}

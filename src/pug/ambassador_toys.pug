@@ -23,17 +23,18 @@ append head
 
 block page
     div(class="hero relative grid h-2/6 overflow-hidden")
-        img(src="img/Ambassador_Toys/Ambassador_Hero_Bg.jpg", srcset="img/Ambassador_Toys/Ambassador_Hero_Bg_small.jpg 900w, img/Ambassador_Toys/Ambassador_Hero_Bg_Mid.jpg 1400w, img/Ambassador_Toys/Ambassador_Hero_Bg.jpg 1900w" alt="" class="max-w-none h-72 sm:h-96 lg:h-full object-center object-cover animate__heroBg" width="1920" height="494")
-        img(src="img/Ambassador_Toys/Ambassador_logo_2x.png", srcset="img/Ambassador_Toys/Ambassador_logo_1x.png 1x, img/Ambassador_Toys/Ambassador_logo_2x.png 2x" sizes="50vw, (min-width:768px) 35vw, (min-width:1024px) 503px" alt="" class="absolute inset-0 m-auto mt-24 sm:mt-32 z-10 w-64 sm:w-72 lg:w-auto animatedLogo" width="503" height="162")
+        img(src="img/Ambassador_Toys/Ambassador_Hero_Bg.jpg", srcset="img/Ambassador_Toys/Ambassador_Hero_Bg_small.jpg 900w, img/Ambassador_Toys/Ambassador_Hero_Bg_Mid.jpg 1400w, img/Ambassador_Toys/Ambassador_Hero_Bg.jpg 1900w" alt="" class="max-w-none h-72 sm:h-96 lg:h-full object-center object-cover" width="1920" height="494")
+        img(src="img/Ambassador_Toys/Ambassador_logo_2x.png", srcset="img/Ambassador_Toys/Ambassador_logo_1x.png 1x, img/Ambassador_Toys/Ambassador_logo_2x.png 2x" sizes="50vw, (min-width:768px) 35vw, (min-width:1024px) 503px" alt="" class="absolute inset-0 m-auto mt-24 sm:mt-32 z-10 w-64 sm:w-72 lg:w-auto" width="503" height="162")
 
     +page-title({
         tagClient: 'Ambassador Toys',
         h1: 'How a Neighborhood Toy Store Got San Francisco’s Attention.',
-        subtitle: 'A retail chain of toy stores across the San Francisco Bay Area had been buying media space, but had never had a creative agency.'
+        subtitle: 'A retail chain of toy stores across the San Francisco Bay Area had been buying media space, but had never had a creative agency.',
+        classes: '-translate-y-20'
     })
     //- +lead-in(`When you're a <span class="text-blue-light">tightrope walker</span> traversing the <span class="text-blue-light">Grand Canyon</span>, a surprise gush of wind can mean the end of your world.`)
 
-    article.page-content.mt-10.leading-relaxed.overflow-hidden
+    article.page-content.mt-0.leading-relaxed.overflow-hidden
         .container.flow-root
             img(src="img/Ambassador_Toys/giraffe.png", srcset="img/Ambassador_Toys/giraffe.png 1x, img/Ambassador_Toys/giraffe.png 2x", alt="Giraffe Toy" class="float-right shape-outside -mt-8 -mr-12 w-48 sm:w-64 md:w-5/12" width="376" height="516" data-aos="zoom-in-down")
             p.drop-cap(style="--color: hsla(205, 74%, 47%, 1)").
