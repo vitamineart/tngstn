@@ -23,18 +23,18 @@ append head
 
 block page
     div(class="hero relative grid h-2/6 overflow-hidden")
-        img(src="img/Ambassador_Toys/Ambassador_Hero_Bg.jpg", srcset="img/Ambassador_Toys/Ambassador_Hero_Bg_small.jpg 900w, img/Ambassador_Toys/Ambassador_Hero_Bg_Mid.jpg 1400w, img/Ambassador_Toys/Ambassador_Hero_Bg.jpg 1900w" alt="" class="max-w-none h-72 sm:h-96 lg:h-full object-center object-cover" width="1920" height="494")
+        img(src="img/Ambassador_Toys/Ambassador_Hero_Bg.jpg", srcset="img/Ambassador_Toys/Ambassador_Hero_Bg_small.jpg 900w, img/Ambassador_Toys/Ambassador_Hero_Bg_Mid.jpg 1400w, img/Ambassador_Toys/Ambassador_Hero_Bg.jpg 1900w" alt="" class="max-w-none h-72 sm:h-96 lg:h-full object-bottom lg:object-center object-cover" width="1920" height="494")
         img(src="img/Ambassador_Toys/Ambassador_logo_2x.png", srcset="img/Ambassador_Toys/Ambassador_logo_1x.png 1x, img/Ambassador_Toys/Ambassador_logo_2x.png 2x" sizes="50vw, (min-width:768px) 35vw, (min-width:1024px) 503px" alt="" class="absolute inset-0 m-auto mt-24 sm:mt-32 z-10 w-64 sm:w-72 lg:w-auto" width="503" height="162")
 
     +page-title({
         tagClient: 'Ambassador Toys',
         h1: 'How a Neighborhood Toy Store Got San Francisco’s Attention.',
         subtitle: 'A retail chain of toy stores across the San Francisco Bay Area had been buying media space, but had never had a creative agency.',
-        classes: '-translate-y-20'
+        classes: '-translate-y-10 lg:-translate-y-20'
     })
     //- +lead-in(`When you're a <span class="text-blue-light">tightrope walker</span> traversing the <span class="text-blue-light">Grand Canyon</span>, a surprise gush of wind can mean the end of your world.`)
 
-    article.page-content.mt-0.leading-relaxed.overflow-hidden
+    article(class=" page-content -mt-10 leading-relaxed overflow-hidden")
         .container.flow-root
             img(src="img/Ambassador_Toys/giraffe.png", srcset="img/Ambassador_Toys/giraffe.png 1x, img/Ambassador_Toys/giraffe.png 2x", alt="Giraffe Toy" class="float-right shape-outside -mt-8 -mr-12 w-48 sm:w-64 md:w-5/12" width="376" height="516" data-aos="zoom-in-down")
             p.drop-cap(style="--color: hsla(205, 74%, 47%, 1)").
@@ -80,61 +80,60 @@ block page
                 p(class="!mt-10 w-11/12 sm:w-9/12 md:w-8/12 pr-4 sm:pr-10" style="").
                     Whether your product is exclusive to San Francisco or  distributed across the world, we would love to hear from you  about your brand and share ideas on how advertising can help achieve your company's business objectives.
 
-        div(class="pt-20 relative")
+        div(class="pt-14 sm:pt-20 relative")
             img(loading="lazy" src="img/Ambassador_Toys/blueBG.jpg" width="1920" height="1713" alt="alt" class="absolute z-0 inset-0 w-full h-full object-cover")
             .container.relative
-                img(loading="lazy" src="img/Ambassador_Toys/butterfly.png", alt="" class="left-10 -top-36 aspect-square absolute z-0" width="202" data-aos="zoom-in-up")
-                div(class="toys-works-grid relative z-10 -mt-8 grid grid-cols-12 gap-8 place-items-center drop-shadow-xl")
-                    div(class=" drop-shadow-xl col-span-4 row-span-3 self-end")
+                div(class="-left-2 -top-36 scale-75 sm:scale-100 sm:left-10 sm:-top-36 absolute z-0")
+                    img(loading="lazy" src="img/Ambassador_Toys/butterfly.png", alt="" class="" width="202" data-aos="zoom-in-up")
+                div(class="toys-works-grid relative z-10 sm:-mt-8 flex flex-wrap justify-center sm:grid grid-cols-12 gap-6 sm:gap-8 place-items-center drop-shadow-xl  grid-flow-row-dense ")
+                    a(href="#" class="col-span-8 row-span-4 sm:col-span-4 sm:row-span-3 sm:place-self-end")
                         img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/bestSeat.jpg", alt="Best Seat Image" width="226" height="146" style="transform: rotate(-1.68deg)")
-                    div(class="col-span-3 row-span-3")
+                    a(href="#" class="col-span-4 row-span-4 sm:col-span-3 sm:row-span-3 sm:self-start")
                         img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/diabolicalPieces.jpg", alt="Diabolical Pieces Image" width="180" height="176")
-                    div(class="col-span-5 row-span-3 self-start")
-                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/giraffeAd.jpg", alt="Girafee Ad Image" style=" transform: rotate(1.29deg) " width="298" height="102")
-                    div(class="col-span-3 row-span-3")
+                    a(href="#" class=" sm:col-span-5 sm:row-span-2 sm:self-start")
+                        img(class=" shadow-xl " loading="lazy" src="img/Ambassador_Toys/toys_works/giraffeAd.jpg", alt="Girafee Ad Image" style=" transform: rotate(1.29deg) " width="298" height="102")
+                    a(href="#" class=" sm:col-span-3 sm:row-span-3 sm:self-start" style="grid-column-start: 1")
                         img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/zeroEmissionVehicle.jpg", alt="Zero Emission Vehicle Image" width="181" height="146")
-                    div(class="col-span-4 row-span-3")
+                    a(href="#" class=" sm:col-span-4 sm:row-span-3")
                         img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/randomActs.jpg", alt="Random Acts of Hugging Image" width="249" height="161")
-                    div(class="col-span-5 row-span-3 self-start justify-self-start ")
-                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/easyRider.jpg", alt="Easy Rider Image"  style="margin-top: -80px;" width="280" height="145")
-                    div(class="col-span-4 row-span-2 justify-start")
+                    a(href="#" class=" sm:col-span-5 sm:row-span-3 sm:self-start sm:justify-self-start" style="grid-row-start: 3; grid-column-start: 8")
+                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/easyRider.jpg", alt="Easy Rider Image"  width="280" height="145")
+                    a(href="#" class=" sm:col-span-4 sm:row-span-1 sm:place-self-start" style="grid-column-start: 1")
                         img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/bearNecessities.jpg", alt="Bear Necessities Image" width="514" height="174" style="transform: rotate(0.44deg)")
-                    div(class="col-span-3 row-span-3 self-start")
+                    a(href="#" class=" row-span-1 sm:col-span-3 sm:row-span-2 sm:self-start")
                         img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/paparazzis.jpg", alt="Paparazzis Image" width="170" height="137")
-                    div(class="col-span-5 row-span-2 self-start")
-                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/notDoWindows.jpg", alt="I don not do Windows Image" style="margin-top:-90px;" width="273" height="140")
-                    div(class="col-span-5 row-span-1 self-center" )
-                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/RadarDetector.jpg", alt="Radar Detector Not Included Image" style="margin-top: -50px; transform: rotate(-0.35deg)" width="307" height="102")
-                    div(class="col-span-2 row-span-8 self-end")
-                        img(class="shadow scale-110" loading="lazy" src="img/Ambassador_Toys/toys_works/crumpledCasuals.jpg", alt="Crumpled Casuals Image" style="margin-top: -50px;" width="107" height="408")
-                    div(class="col-span-3 row-span-2 place-self-start")
-                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/semiFormalDinner.jpg", alt="Formal Dinner Image" style="margin-top: -60px;" width="186" height="97")
-                    div(class="col-span-3 row-span-4 place-self-start")
-                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/kungShi.jpg", alt="Kung Shi Image" style="margin-top: -50px; transform: rotate(-0.82deg)"  width="180" height="203")
-                    div(class="col-span-3 row-span-3 self-start")
+                    a(href="#" class=" row-span-1 sm:col-span-4 sm:row-span-3 justify-self-end sm:-translate-y-16 " style="grid-row-start: 6; grid-column-start: 8")
+                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/notDoWindows.jpg", alt="I don not do Windows Image" width="273" height="140")
+                    a(href="#" class=" sm:col-span-5 sm:row-span-2 sm:place-self-center sm:-translate-y-10" style="grid-row-start: 8; grid-column-start: 8;")
+                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/RadarDetector.jpg", alt="Radar Detector Not Included Image" style=" transform: rotate(-0.35deg)" width="307" height="102")
+                    a(href="#" class=" sm:col-span-2 sm:row-span-8 sm:self-start" style="grid-row-start: 8; grid-row-end: 14")
+                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/crumpledCasuals.jpg", alt="Crumpled Casuals Image"  width="107" height="408")
+                    a(href="#" class=" sm:col-span-3 sm:row-span-2 place-self-start sm:-translate-y-9 sm:-translate-x-3 " style="grid-column-start: 3; grid-row-start: 9;")
+                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/semiFormalDinner.jpg", alt="Formal Dinner Image" width="186" height="97")
+                    a(href="#" class=" sm:col-span-2 sm:row-span-4 place-self-center sm:place-self-start sm:scale-150 sm:translate-y-3 " style="grid-column-start: 6; grid-row-start: 9;")
+                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/kungShi.jpg", alt="Kung Shi Image" style=" transform: rotate(-0.82deg)"  width="180" height="203")
+                    a(href="#" class="sm:col-span-3 sm:row-span-4 place-self-start sm:-translate-x-4 sm:-translate-y-8" style="grid-column-start: 3; grid-row-start: 11;")
+                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/ChinesePoster.jpg", alt="Chinese Poster Image" width="183" height="275" )
+                    a(href="#" class="sm:col-span-3 sm:row-span-3 self-start sm:-translate-y-10 " style="grid-row-start: 10; grid-column-start: 9;")
                         img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/rakeInFun.jpg", alt="Rake in the Fun Image"  width="223" height="179" style="transform: rotate(0.13deg)")
+                    a(href="#" class=" sm:col-span-5 sm:row-span-3 sm:scale-150 lg:scale-125" style="grid-row-start: 12; grid-column-start: 7")
+                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/catchThem.jpg", alt="Catch Them While You Can Image" style=" transform: rotate(0.87deg)" width="631" height="213")
 
-                    div(class="col-span-2 row-span-3")
-                    div(class="col-span-3 row-span-3")
-                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/ChinesePoster.jpg", alt="Chinese Poster Image" style="margin-top: -360px;" width="183" height="275")
-                    div(class="col-span-7 row-span-3")
-                        img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/catchThem.jpg", alt="Catch Them While You Can Image" style="margin-top: -320px; transform: rotate(0.87deg)" width="631" height="213")
 
-                    div(class="col-span-1 row-span-3" style="margin-top: -90px;")
-                    div(class="col-span-4 row-span-3" style="margin-top: -100px;")
+
+
+                div(class="toys-works-grid grid gap-y-8 place-content-center place-items-center drop-shadow-2xl mt-10" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))")
+                    div(class="min-w-max md:justify-self-end" )
                         img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/littleGreenThumbs.jpg", alt="Little Green Thumbs Image"  width="249" height="128" )
-                    div(class="col-span-3 row-span-3 place-self-start" style="margin-top: -150px;")
+                    div(class="min-w-max " )
                         img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/rainGear.jpg", alt="Rain Gear Image"  width="170" height="136" )
-                    div(class="col-span-3 row-span-3" style="margin-top: -220px;")
+                    div(class="min-w-max lg:justify-self-start ")
                         img(class="shadow" loading="lazy" src="img/Ambassador_Toys/toys_works/Pandamonium.jpg", alt="Pandamonium Image"  width="170" height="136" )
-                    div(class="col-span-1 row-span-3")
-
-
-                    div(class="col-span-4 row-span-4 self-start" style="margin-top: 20px;")
+                    div(class="min-w-max ")
                         img(class="relative" loading="lazy" src="img/Ambassador_Toys/toys_works/AT-toydetailpage.jpg", alt="Ambassador Toys Detail Page Image"  width="242" height="182" style="transform: rotate(-0.88deg)")
-                    div(class="col-span-4 row-span-4 self-start" style="margin-top: -50px;")
+                    div(class="min-w-max " )
                         img(class="relative" loading="lazy" src="img/Ambassador_Toys/toys_works/AT-home.jpg", alt="Ambassador Toys Homepage Image"  width="233" height="184" )
-                    div(class="col-span-4 row-span-4 self-start" style="margin-top: -40px;")
+                    div(class="min-w-max " )
                         img(class="relative" loading="lazy" src="img/Ambassador_Toys/toys_works/at-toyshome.jpg", alt="AT Toys Home Image"  width="245" height="184" style=" transform: rotate(1.3deg)")
 
                 div(style="transform: translateY(16px)")
