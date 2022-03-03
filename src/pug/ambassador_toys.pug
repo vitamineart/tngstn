@@ -5,27 +5,26 @@ block variables
 prepend preload
 
 append head
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print"  onload="this.media='all'"/>
-    style.
-        .animatedLogo {
-            animation: zoomInDown;
-            animation-duration: 3.5s;
-            animation-delay: 1.2s;
-            animation-fill-mode: both;
-        }
-        .animate__heroBg {
-            animation: fadeInDown;
-            animation-duration: 4s;
-            animation-iteration-count: 1;
-            animation-fill-mode: both;
-        }
+
 
 
 block page
-    div(class="hero relative grid h-2/6 overflow-hidden")
-        img(src="img/Ambassador_Toys/Ambassador_Hero_Bg.jpg", srcset="img/Ambassador_Toys/Ambassador_Hero_Bg_small.jpg 900w, img/Ambassador_Toys/Ambassador_Hero_Bg_Mid.jpg 1400w, img/Ambassador_Toys/Ambassador_Hero_Bg.jpg 1900w" alt="" class="max-w-none h-72 sm:h-96 lg:h-full object-bottom lg:object-center object-cover" width="1920" height="494")
-        img(src="img/Ambassador_Toys/Ambassador_logo_2x.png", srcset="img/Ambassador_Toys/Ambassador_logo_1x.png 1x, img/Ambassador_Toys/Ambassador_logo_2x.png 2x" sizes="50vw, (min-width:768px) 35vw, (min-width:1024px) 503px" alt="" class="absolute inset-0 m-auto mt-24 sm:mt-32 z-10 w-64 sm:w-72 lg:w-auto" width="503" height="162")
-
+    div(class="min-h-[500px] hero relative grid overflow-hidden bg-gradient-to-b from-blue-dark via-[#004B80] to-blue-light")
+        img(src="img/Ambassador_Toys/clouds.svg", alt="alt" class="absolute bottom-0")
+        img(src="img/Ambassador_Toys/clouds.svg", alt="alt" class="absolute bottom-0 left-64")
+        img(src="img/Ambassador_Toys/clouds.svg", alt="alt" class="absolute bottom-0 right-1/3")
+        img(src="img/Ambassador_Toys/clouds.svg", alt="alt" class="absolute bottom-0 right-64")
+        img(src="img/Ambassador_Toys/clouds.svg", alt="alt" class="absolute bottom-0 right-0")
+        img(src="img/Ambassador_Toys/moon.svg", alt="alt" width="123" height="133" class="absolute top-1/4 left-20 z-50 drop-shadow-moon moon")
+        //- img(src="img/Ambassador_Toys/SkyBg.jpg" alt="" class="max-w-none min-h-fit object-bottom object-cover mix-screen " width="2000" height="1000")
+        //- img(src="img/Ambassador_Toys/Ambassador_logo_2x.png", srcset="img/Ambassador_Toys/Ambassador_logo_1x.png 1x, img/Ambassador_Toys/Ambassador_logo_2x.png 2x" sizes="50vw, (min-width:768px) 35vw, (min-width:1024px) 503px" alt="" class="absolute inset-0 m-auto mt-24 sm:mt-32 z-10 w-64 sm:w-72 lg:w-auto" width="503" height="162")
+        div(class="sky-fade-bottom absolute w-full h-1/3 top-auto left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-white z-0" )
+        div(class="stars")
+        script.
+            for (var i = 0; i < 200; i++) {
+                var star = '<div class="star" style=" --delay: '+((Math.random()*5) + 5)+'s;  --duration: '+(Math.ceil((Math.random()*5)) + 5)+'s;  --top: '+Math.random()* window.outerHeight +'px; --left: '+Math.random()* window.outerWidth +'px; --width: '+ Math.random()* window.outerWidth/400 +'px;"></div>';
+                document.querySelector('.stars').innerHTML += star;
+            }
     +page-title({
         tagClient: 'Ambassador Toys',
         h1: 'How a Neighborhood Toy Store Got San Francisco’s Attention.',
@@ -36,7 +35,7 @@ block page
 
     article(class=" page-content -mt-10 leading-relaxed overflow-hidden")
         .container.flow-root
-            img(src="img/Ambassador_Toys/giraffe.png", srcset="img/Ambassador_Toys/giraffe.png 1x, img/Ambassador_Toys/giraffe.png 2x", alt="Giraffe Toy" class="float-right shape-outside -mt-8 -mr-12 w-48 sm:w-64 md:w-5/12" width="376" height="516" data-aos="zoom-in-down")
+            img(src="img/Ambassador_Toys/giraffe.png", srcset="img/Ambassador_Toys/giraffe.png 410w, img/Ambassador_Toys/giraffe@1.5x.png 616w, img/Ambassador_Toys/giraffe@2x.png 820w, img/Ambassador_Toys/giraffe@3x.png 1230w", sizes="192px, (min-width: 640px) 256px, (min-width: 768px) 37vw, (min-width: 1024px) 393px", alt="Giraffe Toy" class="float-right shape-outside -mt-8 -mr-12 w-48 sm:w-64 md:w-5/12" width="376" height="516" data-aos="zoom-in-down")
             p.drop-cap(style="--color: hsla(205, 74%, 47%, 1)").
                 For years, the stores had relied on TV stations or the in-house graphics departments of newspapers to create the ads. (Most publications will offer this service if you buy space from them.)
             p.
@@ -54,10 +53,10 @@ block page
             div.relative.my-10
                 div.relative.flex.items-center
                     div(data-aos="zoom-out" class="relative z-10")
-                        img(loading="lazy" src="img/Ambassador_Toys/toys_works/bearNecessities.jpg", alt="" width="514" height="174" class="-rotate-3 shadow-2xl flex-none relative z-20" )
+                        img(loading="lazy" src="img/Ambassador_Toys/toys_works/bearNecessities.jpg", srcset="img/Ambassador_Toys/toys_works/bearNecessities.jpg 1x, img/Ambassador_Toys/toys_works/bearNecessities@2x.jpg 2x, img/Ambassador_Toys/toys_works/bearNecessities@3x.jpg 3x" sizes="60vw, (min-width: 768px) 520px" alt="" width="514" height="174" class="-rotate-3 shadow-2xl flex-none relative z-20" )
                     img(loading="lazy" src="img/Ambassador_Toys/paper_plane.png", alt="" class="flex-none h-max" width="199" height="85" data-aos="zoom-out-right" data-aos-delay="350" class="w-3/12 md:w-auto")
                 div(data-aos="zoom-out" data-aos-data-aos-delay="350" class="z-30 relative")
-                    img(loading="lazy" src="img/Ambassador_Toys/toys_works/catchThem.jpg", alt="" width="631" height="213" class="rotate-3 shadow-2xl sm:-mr-10 ml-auto " )
+                    img(loading="lazy" src="img/Ambassador_Toys/toys_works/catchThem.jpg" srcset="img/Ambassador_Toys/toys_works/catchThem.jpg 1x, img/Ambassador_Toys/toys_works/catchThem@2x.jpg 2x, img/Ambassador_Toys/toys_works/catchThem@3x.jpg 3x", alt="" width="631" height="213" class="rotate-3 shadow-2xl sm:-mr-10 ml-auto " )
                 img(loading="lazy" src="img/Ambassador_Toys/two_clouds.png", alt="" class="absolute inset-0 -left-32 -z-10" data-aos="zoom-in-right" data-aos-duration="2000")
 
             div(class="relative w-96 aspect-square mx-auto sm:float-left" style="shape-outside: circle(50%);")
@@ -135,7 +134,7 @@ block page
                         img(class="relative" loading="lazy" src="img/Ambassador_Toys/toys_works/at-toyshome.jpg", alt="AT Toys Home Image"  width="245" height="184" style=" transform: rotate(1.3deg)")
 
                 div(style="transform: translateY(16px)")
-                    img(loading="lazy" src="img/Ambassador_Toys/redCar.png" width="550" height="305" alt="Boy in Red Car" class="mx-auto relative"  data-aos="zoom-in-right")
+                    img(loading="lazy" src="img/Ambassador_Toys/redCar.png" srcset="img/Ambassador_Toys/redCar.png 594w, img/Ambassador_Toys/redCar@1.5x.png 891w, img/Ambassador_Toys/redCar@2x.png 1188w, img/Ambassador_Toys/redCar@3x.png 1782w,"  width="550" height="305" alt="Boy in Red Car" class="mx-auto relative"  data-aos="zoom-in-right")
 
     div(class="container mt-12 md:mt-20")
         -
@@ -165,6 +164,20 @@ block page
 
 append footer_scripts
     //- script(src="../js/rotateRandom.js")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print"  onload="this.media='all'"/>
+    style.
+        .animatedLogo {
+            animation: zoomInDown;
+            animation-duration: 3.5s;
+            animation-delay: 1.2s;
+            animation-fill-mode: both;
+        }
+        .animate__heroBg {
+            animation: fadeInDown;
+            animation-duration: 4s;
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+        }
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.js" integrity="sha512-EqNNJuepkw5P9vxCml8eBk7C4Ld+4kAnvzOD/jG21rkxWPILGoQa5EvD62UieiJF0u3xoQrcVnce4i83VnYj/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload='this.media="all"' />
 

@@ -12,7 +12,7 @@ header.header {
 
 .tag-client {
   font-size: clamp(0.8rem, 2vw, 1rem);
-  letter-spacing: .2px; }
+  letter-spacing: 0.2px; }
 
 .lead-in {
   font-size: clamp(1.15rem, 4vw, 1.35rem); }
@@ -38,3 +38,36 @@ header.header {
 
 [data-aos-delay="5000"] {
   transition-delay: 5000ms; }
+
+.star {
+  @apply absolute w-1 h-1 bg-white rounded-full;
+  animation-name: starTwinkle;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-delay: var(--delay);
+  animation-duration: var(--duration);
+  top: var(--top);
+  left: var(--left);
+  width: var(--width);
+  height: var(--width);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5)); }
+
+@keyframes starTwinkle {
+  0% {
+    transform: scale(0.8);
+    background: rgba(255, 255, 255, 0.7);
+    animation-timing-function: ease-in; }
+  60% {
+    transform: scale(1.1);
+    background: #fff;
+    animation-timing-function: ease-out;
+    filter: drop-shadow(0 0 22px white); }
+  80% {
+    transform: scale(0.7);
+    background: rgba(255, 255, 255, 0.6); }
+  100% {
+    transform: scale(0.8);
+    background: rgba(255, 255, 255, 0.7); } }
+
+.moon:after {
+  content: ""; }

@@ -36,6 +36,12 @@ module.exports = {
         cardshadow:
           "0 1px 45px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.2)",
       },
+      dropShadow: {
+        moon: [
+          "0 0 35px hsla(0, 50%, 100%, .8)",
+          "0 0 65px hsla(50, 50%, 80%, .6)",
+        ],
+      },
       fontFamily: {
         proxima: "ProximaNovaA-Regular, sans-serif",
         "proxima-bold": "ProximaNovaA-Bold, sans-serif",
