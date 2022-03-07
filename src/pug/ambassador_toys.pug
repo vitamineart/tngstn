@@ -21,8 +21,8 @@ block page
         div(class="sky-fade-bottom absolute w-full h-1/3 top-auto left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-white z-0" )
         div(class="stars")
         script.
-            for (var i = 0; i < 200; i++) {
-                var star = '<div class="star" style=" --delay: '+((Math.random()*5) + 5)+'s;  --duration: '+(Math.ceil((Math.random()*5)) + 5)+'s;  --top: '+Math.random()* window.outerHeight +'px; --left: '+Math.random()* window.outerWidth +'px; --width: '+ Math.random()* window.outerWidth/400 +'px;"></div>';
+            for (var i = 0; i < 100; i++) {
+                var star = '<div class="star" style=" --delay: '+((Math.random()*5) + 5)+'s;  --duration: '+(Math.ceil((Math.random()*4)) + 2)+'s;  --top: '+Math.random()* window.outerHeight +'px; --left: '+Math.random()* window.outerWidth +'px; --width: '+ Math.random()*10 +'px;"></div>';
                 document.querySelector('.stars').innerHTML += star;
             }
     +page-title({
