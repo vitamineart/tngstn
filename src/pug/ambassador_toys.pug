@@ -10,18 +10,37 @@ append head
 
 block page
     div(class="min-h-[500px] hero relative grid overflow-hidden bg-gradient-to-b from-blue-dark via-[#004B80] to-blue-light")
-        img(src="img/Ambassador_Toys/clouds.svg", alt="alt" class="absolute bottom-0")
-        img(src="img/Ambassador_Toys/clouds.svg", alt="alt" class="absolute bottom-0 left-64")
-        img(src="img/Ambassador_Toys/clouds.svg", alt="alt" class="absolute bottom-0 right-1/3")
-        img(src="img/Ambassador_Toys/clouds.svg", alt="alt" class="absolute bottom-0 right-64")
-        img(src="img/Ambassador_Toys/clouds.svg", alt="alt" class="absolute bottom-0 right-0")
-        img(src="img/Ambassador_Toys/moon.svg", alt="alt" width="123" height="133" class="absolute top-1/4 left-20 z-50 moon")
-        //- img(src="img/Ambassador_Toys/SkyBg.jpg" alt="" class="max-w-none min-h-fit object-bottom object-cover mix-screen " width="2000" height="1000")
-        //- img(src="img/Ambassador_Toys/Ambassador_logo_2x.png", srcset="img/Ambassador_Toys/Ambassador_logo_1x.png 1x, img/Ambassador_Toys/Ambassador_logo_2x.png 2x" sizes="50vw, (min-width:768px) 35vw, (min-width:1024px) 503px" alt="" class="absolute inset-0 m-auto mt-24 sm:mt-32 z-10 w-64 sm:w-72 lg:w-auto" width="503" height="162")
-        div(class="sky-fade-bottom absolute w-full h-1/3 top-auto left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-white z-0" )
+
+
+
+        img(src="img/Ambassador_Toys/Ambassador_logo_2x.png", srcset="img/Ambassador_Toys/Ambassador_logo_1x.png 1x, img/Ambassador_Toys/Ambassador_logo_2x.png 2x" sizes="50vw, (min-width:768px) 35vw, (min-width:1024px) 503px" alt="" class="absolute inset-0 m-auto mt-24 sm:mt-32 z-50 w-64 sm:w-72 lg:w-auto" width="503" height="162")
+        div(class="clouds absolute top-1/2 left-0 right-0 bottom-0 w-full overflow-hidden z-10")
+            img(src="img/Ambassador_Toys/cloud_01.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 5")
+            img(src="img/Ambassador_Toys/cloud_02.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 2")
+            img(src="img/Ambassador_Toys/cloud_03.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 3")
+            img(src="img/Ambassador_Toys/cloud_04.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 4")
+            img(src="img/Ambassador_Toys/cloud_05.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 5")
+            img(src="img/Ambassador_Toys/cloud_06.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 6")
+            img(src="img/Ambassador_Toys/cloud_07.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 7")
+            img(src="img/Ambassador_Toys/cloud_08.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 8")
+            img(src="img/Ambassador_Toys/cloud_09.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 9")
+            img(src="img/Ambassador_Toys/cloud_10.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 10")
+            img(src="img/Ambassador_Toys/cloud_11.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 11")
+            img(src="img/Ambassador_Toys/cloud_12.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 12")
+            img(src="img/Ambassador_Toys/cloud_13.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 13")
+            img(src="img/Ambassador_Toys/cloud_14.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 14")
+            img(src="img/Ambassador_Toys/cloud_15.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 15")
+            img(src="img/Ambassador_Toys/cloud_16.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 16")
+            img(src="img/Ambassador_Toys/cloud_17.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 17")
+            img(src="img/Ambassador_Toys/cloud_18.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 18")
+            img(src="img/Ambassador_Toys/cloud_19.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 19")
+            img(src="img/Ambassador_Toys/cloud_20.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 20")
+        img(src="img/Ambassador_Toys/clouds_back.svg", alt="Clouds background image" width="1590" height="151" class="object-cover h-1/3 absolute left-0 bottom-0  translate-y-10 mt-auto scale-150" style="opacity: .95;")
+        div(class="sky-fade-bottom absolute w-full h-2/3 top-auto left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-white z-0 opacity-50" )
+        img(src="img/Ambassador_Toys/moon.svg", alt="alt" width="123" height="133" class="absolute top-1/4 left-20 moon")
         div(class="stars")
         script.
-            for (var i = 0; i < 100; i++) {
+            for (var i = 0; i < 150; i++) {
                 var star = '<div class="star" style=" --delay: '+((Math.random()*5) + 5)+'s;  --duration: '+(Math.ceil((Math.random()*4)) + 2)+'s;  --top: '+Math.random()* window.outerHeight +'px; --left: '+Math.random()* window.outerWidth +'px; --width: '+ Math.random()*10 +'px;"></div>';
                 document.querySelector('.stars').innerHTML += star;
             }
@@ -29,7 +48,7 @@ block page
         tagClient: 'Ambassador Toys',
         h1: 'How a Neighborhood Toy Store Got San Francisco’s Attention.',
         subtitle: 'A retail chain of toy stores across the San Francisco Bay Area had been buying media space, but had never had a creative agency.',
-        classes: '-translate-y-10 lg:-translate-y-20'
+        classes: '-translate-y-10 lg:-translate-y-20 z-50 relative'
     })
     //- +lead-in(`When you're a <span class="text-blue-light">tightrope walker</span> traversing the <span class="text-blue-light">Grand Canyon</span>, a surprise gush of wind can mean the end of your world.`)
 
