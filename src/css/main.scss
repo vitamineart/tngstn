@@ -102,20 +102,20 @@ header.header {
 
 .cloud {
   top: var(--top);
-  animation: animateCloud calc(10s * var(--i)) linear infinite;
-  left: 70%;
+  animation: animateCloud calc(16s * var(--i)) linear infinite;
+  left: 50%;
 }
 @keyframes animateCloud {
   0% {
-    transform: translateX(-1000%);
+    transform: translateX(-1000%) translateY(10px);
     opacity: 0;
   }
-  5% {
+  1% {
     opacity: 1;
-    transform: translateX(-995%);
+    transform: translateX(-990%) translateY(0);
   }
-  95% {
-    transform: translateX(995%);
+  99% {
+    transform: translateX(990%);
     opacity: 1;
   }
   100% {
