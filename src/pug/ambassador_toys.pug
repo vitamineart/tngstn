@@ -14,41 +14,34 @@ block page
 
 
         img(src="img/Ambassador_Toys/Ambassador_logo_2x.png", srcset="img/Ambassador_Toys/Ambassador_logo_1x.png 1x, img/Ambassador_Toys/Ambassador_logo_2x.png 2x" sizes="50vw, (min-width:768px) 35vw, (min-width:1024px) 503px" alt="" class="absolute inset-0 m-auto mt-24 sm:mt-32 z-50 w-64 sm:w-72 lg:w-auto" width="503" height="162")
-        div(class="clouds absolute top-1/2 left-0 right-0 bottom-0 w-full overflow-hidden z-10")
-            img(src="img/Ambassador_Toys/cloud_01.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 5")
-            img(src="img/Ambassador_Toys/cloud_02.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 2")
-            img(src="img/Ambassador_Toys/cloud_03.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 3")
-            img(src="img/Ambassador_Toys/cloud_04.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 4")
-            img(src="img/Ambassador_Toys/cloud_05.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 5")
-            img(src="img/Ambassador_Toys/cloud_06.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 6")
-            img(src="img/Ambassador_Toys/cloud_07.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 7")
-            img(src="img/Ambassador_Toys/cloud_08.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 8")
-            img(src="img/Ambassador_Toys/cloud_09.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 9")
-            img(src="img/Ambassador_Toys/cloud_10.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 10")
-            img(src="img/Ambassador_Toys/cloud_11.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 11")
-            img(src="img/Ambassador_Toys/cloud_12.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 12")
-            //- img(src="img/Ambassador_Toys/cloud_13.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 13")
-            //- img(src="img/Ambassador_Toys/cloud_14.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 14")
-            //- img(src="img/Ambassador_Toys/cloud_15.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 15")
-            //- img(src="img/Ambassador_Toys/cloud_16.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 16")
-            //- img(src="img/Ambassador_Toys/cloud_17.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 17")
-            //- img(src="img/Ambassador_Toys/cloud_18.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 18")
-            //- img(src="img/Ambassador_Toys/cloud_19.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 19")
-            //- img(src="img/Ambassador_Toys/cloud_20.svg", class="absolute cloud" alt="", style="--top: calc(10vh/var(--i)); --i: 20")
-        img(src="img/Ambassador_Toys/clouds_back.svg", alt="Clouds background image" width="1590" height="151" class="object-cover h-1/3 absolute left-0 bottom-0  translate-y-10 mt-auto scale-150" style="opacity: .95;")
+        div(class="clouds absolute top-1/2 left-0 right-0 bottom-0 w-full overflow-hidden z-20")
+            img(src="img/Ambassador_Toys/cloud_01.svg", class="absolute cloud" alt="" style="--top: 35px;")
+            img(src="img/Ambassador_Toys/cloud_06.svg", class="absolute cloud" alt="" style="--delay: 1.2s; --top: 2px;")
+            img(src="img/Ambassador_Toys/cloud_08.svg", class="absolute cloud " alt="" style="--delay: 7s; --top: 10px;")
+            img(src="img/Ambassador_Toys/cloud_big_01.svg", class="absolute cloud -left-14" alt="" style="--delay: 18s; --top: 2px;")
+            img(src="img/Ambassador_Toys/cloud_09.svg", class="absolute cloud " alt="" style="--delay: 20s; --top: 40px;")
+            img(src="img/Ambassador_Toys/cloud_10.svg", class="absolute cloud " alt="" style="--delay: 28s; --top: 40px;")
+            img(src="img/Ambassador_Toys/cloud_11.svg", class="absolute cloud " alt="" style="--delay: 32s; --top: 20px;")
+            img(src="img/Ambassador_Toys/cloud_big_02.svg", class="absolute cloud" alt="" style="--delay: 40s; --top: 12px;")
+        img(src="img/Ambassador_Toys/clouds_back.svg", alt="Clouds background image" width="2300" height="594" class="absolute h-1/2 object-cover object-top left-0 bottom-0 z-30 translate-y-16 lg:translate-y-20 mt-auto scale-110")
         div(class="sky-fade-bottom absolute w-full h-2/3 top-auto left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-white z-0 opacity-50" )
-        img(src="img/Ambassador_Toys/moon.svg", alt="alt" width="123" height="133" class="absolute top-1/4 left-20 moon")
-        div(class="stars")
+        img(src="img/Ambassador_Toys/moon.svg", alt="alt" width="123" height="133" class="moon absolute top-1/4 left-20 z-10")
+        div(class="stars relative z-0")
         script.
-            for (var i = 0; i < 150; i++) {
-                var star = '<div class="star" style=" --delay: '+((Math.random()*5) + 5)+'s;  --duration: '+(Math.ceil((Math.random()*4)) + 2)+'s;  --top: '+Math.random()* window.outerHeight +'px; --left: '+Math.random()* window.outerWidth +'px; --width: '+ Math.random()*10 +'px;"></div>';
-                document.querySelector('.stars').innerHTML += star;
+            var sky = document.querySelector('.stars');
+            for (var i = 0; i < 200; i++) {
+                var starStatic = '<div class="star" style="--top: '+Math.random()* window.outerHeight +'px; --left: '+Math.random()* window.outerWidth +'px; --width: '+ Math.random()*12 +'px;"></div>';
+                sky.innerHTML += starStatic;
+            }
+            for (var i = 0; i < 25; i++) {
+                var star = '<div class="star" style=" --delay: '+((Math.random()*5) + 5)+'s;  --duration: '+(Math.ceil((Math.random()*4)) + 2)+'s;  --top: '+Math.random()* window.outerHeight +'px; --left: '+Math.random()* window.outerWidth +'px; --width: '+ Math.random()*12 +'px;"></div>';
+                sky.innerHTML += star;
             }
     +page-title({
         tagClient: 'Ambassador Toys',
         h1: 'How a Neighborhood Toy Store Got San Francisco’s Attention.',
         subtitle: 'A retail chain of toy stores across the San Francisco Bay Area had been buying media space, but had never had a creative agency.',
-        classes: '-translate-y-10 lg:-translate-y-20 z-50 relative'
+        classes: '-translate-y-20 z-50 relative'
     })
     //- +lead-in(`When you're a <span class="text-blue-light">tightrope walker</span> traversing the <span class="text-blue-light">Grand Canyon</span>, a surprise gush of wind can mean the end of your world.`)
 
@@ -73,10 +66,10 @@ block page
                 div.relative.flex.items-center
                     div(data-aos="zoom-out" class="relative z-10")
                         img(loading="lazy" src="img/Ambassador_Toys/toys_works/bearNecessities.jpg", srcset="img/Ambassador_Toys/toys_works/bearNecessities.jpg 1x, img/Ambassador_Toys/toys_works/bearNecessities@2x.jpg 2x, img/Ambassador_Toys/toys_works/bearNecessities@3x.jpg 3x" sizes="60vw, (min-width: 768px) 520px" alt="" width="514" height="174" class="-rotate-3 shadow-2xl flex-none relative z-20" )
-                    img(loading="lazy" src="img/Ambassador_Toys/paper_plane.png", alt="" class="flex-none h-max" width="199" height="85" data-aos="zoom-out-right" data-aos-delay="350" class="w-3/12 md:w-auto")
+                    img(loading="lazy" src="img/Ambassador_Toys/paper_plane.png", alt="" class="flex-none h-max" width="199" height="85" data-aos="zoom-out-right" data-aos-delay="550" class="w-3/12 md:w-auto")
                 div(data-aos="zoom-out" data-aos-data-aos-delay="350" class="z-30 relative")
                     img(loading="lazy" src="img/Ambassador_Toys/toys_works/catchThem.jpg" srcset="img/Ambassador_Toys/toys_works/catchThem.jpg 1x, img/Ambassador_Toys/toys_works/catchThem@2x.jpg 2x, img/Ambassador_Toys/toys_works/catchThem@3x.jpg 3x", alt="" width="631" height="213" class="rotate-3 shadow-2xl sm:-mr-10 ml-auto " )
-                img(loading="lazy" src="img/Ambassador_Toys/two_clouds.png", alt="" class="absolute inset-0 -left-32 -z-10" data-aos="zoom-in-right" data-aos-duration="2000")
+                img(loading="lazy" src="img/Ambassador_Toys/two_clouds.png", alt="" class="absolute inset-0 -left-32 -z-10" data-aos="zoom-in-right" data-aos-duration="700")
 
             div(class="relative w-96 aspect-square mx-auto sm:float-left" style="shape-outside: circle(50%);")
                 div(class=" absolute z-10 inset-0 bottom-3 right-2 m-auto w-72 h-36 text-white uppercase text-xl font-proxima-bold text-center leading-relaxed rounded-full").
