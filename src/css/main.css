@@ -89,9 +89,10 @@ header.header {
     filter: brightness(100%); } }
 
 .cloud {
+  left: var(--left);
   top: var(--top);
-  animation: animateCloud 60s linear infinite both;
-  animation-delay: var(--delay);
+  animation: animateCloud 120s linear infinite both;
+  animation-delay: calc(var(--delay) * 12);
   filter: blur(1px); }
 
 @keyframes animateCloud {
