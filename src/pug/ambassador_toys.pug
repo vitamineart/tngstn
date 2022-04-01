@@ -7,40 +7,29 @@ prepend preload
 append head
 
 
-
 block page
     div(class="min-h-[500px] hero relative grid overflow-hidden bg-gradient-to-b from-blue-dark via-[#004B80] to-blue-light")
 
 
 
-        img(src="img/Ambassador_Toys/Ambassador_logo_2x.png", srcset="img/Ambassador_Toys/Ambassador_logo_1x.png 1x, img/Ambassador_Toys/Ambassador_logo_2x.png 2x" sizes="50vw, (min-width:768px) 35vw, (min-width:1024px) 503px" alt="" class="absolute inset-0 m-auto mt-24 sm:mt-32 z-50 w-64 sm:w-72 lg:w-auto" width="503" height="162")
+        img(src="img/Ambassador_Toys/AmbassadorToysLogo@500.png", srcset="img/Ambassador_Toys/AmbassadorToysLogo@252.png 300w, img/Ambassador_Toys/AmbassadorToysLogo@378.png 378w, img/Ambassador_Toys/AmbassadorToysLogo@500.png 500w, img/Ambassador_Toys/AmbassadorToysLogo@500.png 500w, img/Ambassador_Toys/AmbassadorToysLogo@755.png 755w, img/Ambassador_Toys/AmbassadorToysLogo@1006.png 1006w, img/Ambassador_Toys/AmbassadorToysLogo@1509.png 1509w" sizes="(max-width:640px) 256px, (max-width:1024px) 288px, 503px" alt="Ambassador Logo Image" class="absolute inset-0 m-auto mt-24 sm:mt-32 z-50 w-64 sm:w-72 lg:w-[503px] toys-logo transition-transform" width="503" height="162")
         div(class="clouds absolute top-1/2 left-0 right-0 bottom-0 w-full overflow-hidden z-20")
-            img(src="img/Ambassador_Toys/cloud_01.svg", class="absolute cloud" alt="" style="--top: 35px; --delay: -2s;")
-            img(src="img/Ambassador_Toys/cloud_06.svg", class="absolute cloud" alt="" style=" --top: 2px; --delay: -3s;")
-            img(src="img/Ambassador_Toys/cloud_08.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: -4.4s;")
-            img(src="img/Ambassador_Toys/cloud_09.svg", class="absolute cloud " alt="" style="--top: 20px; --delay: -5.1s;")
-            img(src="img/Ambassador_Toys/cloud_10.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: -6s;")
-            img(src="img/Ambassador_Toys/cloud_11.svg", class="absolute cloud " alt="" style="--top: 20px; --delay: 1s;")
-            img(src="img/Ambassador_Toys/cloud_02.svg", class="absolute cloud " alt="" style="--top: 20px; --delay: -1.3s;")
-            img(src="img/Ambassador_Toys/cloud_03.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: 1.8s;")
-            img(src="img/Ambassador_Toys/cloud_04.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: 4s;")
-            img(src="img/Ambassador_Toys/cloud_05.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: -7.8s;")
-            img(src="img/Ambassador_Toys/cloud_12.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: -3.3s;")
-            img(src="img/Ambassador_Toys/cloud_13.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: 2.1s;")
+            img(src="img/Ambassador_Toys/cloud_01.svg", class="absolute cloud" alt="" style="--top: 35px; --delay: -2s; --duration: .9")
+            img(src="img/Ambassador_Toys/cloud_06.svg", class="absolute cloud" alt="" style=" --top: 2px; --delay: -3s; --duration: 1")
+            img(src="img/Ambassador_Toys/cloud_08.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: -4.4s; --duration: 1.1")
+            img(src="img/Ambassador_Toys/cloud_09.svg", class="absolute cloud " alt="" style="--top: 20px; --delay: -5.1s; --duration: .9")
+            img(src="img/Ambassador_Toys/cloud_10.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: -6s; --duration: .9")
+            img(src="img/Ambassador_Toys/cloud_11.svg", class="absolute cloud " alt="" style="--top: 20px; --delay: 1s; --duration: .9")
+            img(src="img/Ambassador_Toys/cloud_02.svg", class="absolute cloud " alt="" style="--top: 20px; --delay: -1.3s; --duration: .9")
+            img(src="img/Ambassador_Toys/cloud_03.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: 1.8s; --duration: .9")
+            img(src="img/Ambassador_Toys/cloud_04.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: 4s; --duration: .9")
+            img(src="img/Ambassador_Toys/cloud_05.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: -7.8s; --duration: .9")
+            img(src="img/Ambassador_Toys/cloud_12.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: -3.3s; --duration: .9")
+            img(src="img/Ambassador_Toys/cloud_13.svg", class="absolute cloud " alt="" style="--top: 40px; --delay: 2.1s; --duration: .9")
         img(src="img/Ambassador_Toys/clouds_back.svg", alt="Clouds background image" width="2300" height="594" class="absolute h-1/2 object-cover object-top left-0 bottom-0 z-30 translate-y-16 lg:translate-y-20 mt-auto scale-110")
         div(class="sky-fade-bottom absolute w-full h-2/3 top-auto left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-white z-0 opacity-50" )
         img(src="img/Ambassador_Toys/moon.svg", alt="alt" width="123" height="133" class="moon absolute top-1/4 left-20 z-10")
-        div(class="stars relative z-0")
-        script.
-            var sky = document.querySelector('.stars');
-            for (var i = 0; i < 200; i++) {
-                var starStatic = '<div class="star" style="--top: '+Math.random()* window.outerHeight +'px; --left: '+Math.random()* window.outerWidth +'px; --width: '+ Math.random()*12 +'px;"></div>';
-                sky.innerHTML += starStatic;
-            }
-            for (var i = 0; i < 25; i++) {
-                var star = '<div class="star" style=" --delay: '+((Math.random()*5) + 5)+'s;  --duration: '+(Math.ceil((Math.random()*4)) + 2)+'s;  --top: '+Math.random()* window.outerHeight +'px; --left: '+Math.random()* window.outerWidth +'px; --width: '+ Math.random()*12 +'px;"></div>';
-                sky.innerHTML += star;
-            }
+        div(class="stars relative z-0 stars_fadein")
     +page-title({
         tagClient: 'Ambassador Toys',
         h1: 'How a Neighborhood Toy Store Got San Francisco’s Attention.',
@@ -49,7 +38,7 @@ block page
     })
     //- +lead-in(`When you're a <span class="text-blue-light">tightrope walker</span> traversing the <span class="text-blue-light">Grand Canyon</span>, a surprise gush of wind can mean the end of your world.`)
 
-    article(class=" page-content -mt-10 leading-relaxed overflow-hidden")
+    article(class=" page-content -mt-20 leading-relaxed overflow-hidden")
         .container.flow-root
             img(src="img/Ambassador_Toys/giraffe.png", srcset="img/Ambassador_Toys/giraffe.png 410w, img/Ambassador_Toys/giraffe@1.5x.png 616w, img/Ambassador_Toys/giraffe@2x.png 820w, img/Ambassador_Toys/giraffe@3x.png 1230w", sizes="192px, (min-width: 640px) 256px, (min-width: 768px) 37vw, (min-width: 1024px) 393px", alt="Giraffe Toy" class="float-right shape-outside -mt-8 -mr-12 w-48 sm:w-64 md:w-5/12" width="376" height="516" data-aos="zoom-in-down")
             p.drop-cap(style="--color: hsla(205, 74%, 47%, 1)").
@@ -86,20 +75,23 @@ block page
             p.
                 Each ad is topical and based on current events and seasons. This strategy allowed Tungsten to demonstrate the wide range of toys the stores carry, and to show that this retailer offers a hand picked selection that appeals to its faithful target audience.
 
-            div(style="text-shadow: 0 0 3px #fff;" class="relative mt-10 lg:mt-16 pb-36 lg:pb-48 min-h-max")
-                img(loading="lazy" src="img/Ambassador_Toys/RainbowRobot.png", alt="Robot Toy" class=" md:w-auto absolute -right-10 bottom-0 sm:-bottom-12 -translate-y-10 -z-10 scale-150 sm:scale-110 md:scale-100" width="781" height="474")
-                p(class="md:w-9/12").
-                    Readers of the San Francisco Chronicle found these ads so enjoyable that they looked forward to the new creative every time the weekly ad was published on Tuesday mornings.
-                p(class="sm:w-9/12").
-                    Tungsten has years of experience creating distinctive/memorable  advertising ideas for uniquely San Francisco brands.
-                p(class="!mt-10 w-11/12 sm:w-9/12 md:w-8/12 pr-4 sm:pr-10" style="").
-                    Whether your product is exclusive to San Francisco or  distributed across the world, we would love to hear from you  about your brand and share ideas on how advertising can help achieve your company's business objectives.
+            div(class="relative mt-10 lg:mt-16 pb-24 sm:pb-36 lg:pb-48 min-h-max" style="text-shadow: 0 0 10px #fff;")
 
+                p(class="sm:w-10/12 lg:w-11/12 relative z-50").
+                    Readers of the San Francisco Chronicle found these ads so enjoyable that they looked forward to the new creative every time the weekly ad was published on Tuesday mornings.
+                p(class="w-11/12 sm:pr-0 sm:w-10/12 relative z-50").
+                    Tungsten has years of experience creating distinctive/memorable  advertising ideas for uniquely San Francisco brands.
+                p(class="w-7/12 xs:w-8/12 sm:w-9/12 relative z-50" ).
+                    Whether your product is exclusive to San Francisco or  distributed across the world, we would love to hear from you  about your brand and share ideas on how advertising can help achieve your company's business objectives.
+                div(class="absolute bottom-0 right-0 w-full left-0 z-0")
+                    img(loading="lazy" src="../img/Ambassador_Toys/LightBulb.svg" width="77" height="113" class="z-10 lightbulb absolute left-1/2 -ml-20  bottom-2 md:bottom-8 hidden xs:inline-block scale-50 sm:scale-75 md:scale-100")
+                    img(loading="lazy" src="img/Ambassador_Toys/Robot@301.png" srcset="img/Ambassador_Toys/Robot@151.png 151w, img/Ambassador_Toys/Robot@227.png 227w, img/Ambassador_Toys/Robot@452.png 452w, img/Ambassador_Toys/Robot@602.png 602w" alt="Robot Toy" class="absolute -right-10 md:-right-20 lg:-right-28 -bottom-1 xs:-bottom-5 md:-bottom-10 lg:bottom-0 left-auto w-48 sm:w-1/3 md:w-64 lg:w-72 z-20" width="301" height="466")
+                    img(src="../img/Ambassador_Toys/Rainbow_clouds_bg.png" class="absolute right-0 -bottom-2 z-0")
         div(class="pt-14 sm:pt-20 relative")
             img(loading="lazy" src="img/Ambassador_Toys/blueBG.jpg" width="1920" height="1713" alt="alt" class="absolute z-0 inset-0 w-full h-full object-cover")
             .container.relative
                 div(class="-left-2 -top-36 scale-75 sm:scale-100 sm:left-10 sm:-top-36 absolute z-0")
-                    img(loading="lazy" src="img/Ambassador_Toys/butterfly.png", alt="" class="" width="202" data-aos="zoom-in-up")
+                    img(loading="lazy" src="img/Ambassador_Toys/butterfly@202.png" srcset="img/Ambassador_Toys/butterfly@101.png 101w, img/Ambassador_Toys/butterfly@152.png 152w, img/Ambassador_Toys/butterfly@202.png 202w, img/Ambassador_Toys/butterfly@304.png 304w, img/Ambassador_Toys/butterfly@404.png 404w, img/Ambassador_Toys/butterfly@606.png 606w, img/Ambassador_Toys/butterfly@804.png 804w" sizes="(max-width:640px) 151px, 202px" alt="Butterfly Image" class="butterfly" width="202" height="202" data-aos="zoom-in-up")
                 div(class="toys-works-grid relative z-10 sm:-mt-8 flex flex-wrap justify-center sm:grid grid-cols-12 gap-6 sm:gap-8 place-items-center drop-shadow-xl  grid-flow-row-dense ")
                     a(href="img/Ambassador_Toys/toys_works/bestSeat@3x.jpg" data-fslightbox="gallery" class="col-span-8 row-span-4 sm:col-span-4 sm:row-span-3 sm:place-self-end")
                         img(class="shadow-xl" loading="lazy" src="img/Ambassador_Toys/toys_works/bestSeat.jpg", alt="Best Seat Image" width="226" height="146" style="transform: rotate(-1.68deg)")
@@ -194,6 +186,13 @@ append footer_scripts
             animation-iteration-count: 1;
             animation-fill-mode: both;
         }
+        .stars_fadein {
+            animation: fadeIn;
+            animation-duration: 5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+        }
+    script(src="js/ambassador_toys.js" async)
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.js" integrity="sha512-EqNNJuepkw5P9vxCml8eBk7C4Ld+4kAnvzOD/jG21rkxWPILGoQa5EvD62UieiJF0u3xoQrcVnce4i83VnYj/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload='this.media="all"' />
 

@@ -40,7 +40,7 @@ header.header {
   transition-delay: 5000ms; }
 
 .stars {
-  filter: drop-shadow(0 0 10px #32e600); }
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.507)) drop-shadow(0 0 5px #fff) drop-shadow(0 0 20px #fff); }
 
 .star {
   @apply absolute w-1 h-1 bg-white rounded-full;
@@ -59,20 +59,17 @@ header.header {
   0% {
     transform: scale(0.8);
     background: rgba(255, 255, 255, 0.7);
-    animation-timing-function: ease-in;
-    filter: drop-shadow(0 0 22px white) drop-shadow(0 0 12px white); }
+    animation-timing-function: ease-in; }
   60% {
     transform: scale(1.1);
     background: #fff;
-    animation-timing-function: ease-out;
-    filter: drop-shadow(0 0 52px white) drop-shadow(0 0 22px white); }
+    animation-timing-function: ease-out; }
   80% {
     transform: scale(0.7);
     background: rgba(255, 255, 255, 0.6); }
   100% {
     transform: scale(0.8);
-    background: rgba(255, 255, 255, 0.7);
-    filter: drop-shadow(0 0 22px white) drop-shadow(0 0 12px white); } }
+    background: rgba(255, 255, 255, 0.7); } }
 
 .moon {
   width: 123px;
@@ -91,7 +88,8 @@ header.header {
 .cloud {
   left: var(--left);
   top: var(--top);
-  animation: animateCloud 120s linear infinite both;
+  animation: animateCloud linear infinite both;
+  animation-duration: 120s;
   animation-delay: calc(var(--delay) * 12);
   filter: blur(1px); }
 
@@ -100,3 +98,23 @@ header.header {
     transform: translateX(-500px); }
   100% {
     transform: translateX(2000px); } }
+
+.toys-works-grid a img:hover {
+  animation: swing;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-duration: 1s; }
+
+.butterfly:hover {
+  animation: rubberBand;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-out; }
+
+.lightbulb:hover {
+  animation: tada;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  filter: drop-shadow(0 0 1px rgba(255, 255, 112, 0.509)) invert(1) drop-shadow(0 0 2px #ffff70) drop-shadow(0 0 5px #ffff70) drop-shadow(0 0 10px #ffff70); }

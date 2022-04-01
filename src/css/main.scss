@@ -48,7 +48,8 @@ header.header {
   transition-delay: 5000ms;
 }
 .stars {
-  filter: drop-shadow(0 0 10px rgb(50, 230, 0));
+  filter: drop-shadow(0 0 1px hsla(0, 0%, 100%, 0.507))
+    drop-shadow(0 0 5px #fff) drop-shadow(0 0 20px #fff);
 }
 .star {
   @apply absolute w-1 h-1 bg-white rounded-full;
@@ -78,15 +79,11 @@ header.header {
     transform: scale(0.8);
     background: hsla(0, 50%, 100%, 0.7);
     animation-timing-function: ease-in;
-    filter: drop-shadow(0 0 22px hsla(0, 0%, 100%, 1))
-      drop-shadow(0 0 12px hsla(0, 0%, 100%, 1));
   }
   60% {
     transform: scale(1.1);
     background: #fff;
     animation-timing-function: ease-out;
-    filter: drop-shadow(0 0 52px hsla(0, 0%, 100%, 1))
-      drop-shadow(0 0 22px hsla(0, 0%, 100%, 1));
   }
   80% {
     transform: scale(0.7);
@@ -95,8 +92,6 @@ header.header {
   100% {
     transform: scale(0.8);
     background: hsla(0, 50%, 100%, 0.7);
-    filter: drop-shadow(0 0 22px hsla(0, 0%, 100%, 1))
-      drop-shadow(0 0 12px hsla(0, 0%, 100%, 1));
   }
 }
 
@@ -121,7 +116,9 @@ header.header {
 .cloud {
   left: var(--left);
   top: var(--top);
-  animation: animateCloud 120s linear infinite both;
+  animation: animateCloud linear infinite both;
+  // animation-duration: calc(120s * var(--duration));
+  animation-duration: 120s;
   animation-delay: calc(var(--delay) * 12);
   filter: blur(1px);
 }
@@ -131,5 +128,40 @@ header.header {
   }
   100% {
     transform: translateX(2000px);
+  }
+}
+
+.toys-works-grid {
+  a {
+    img {
+      &:hover {
+        animation: swing;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        animation-duration: 1s;
+      }
+    }
+  }
+}
+.butterfly {
+  &:hover {
+    animation: rubberBand;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+  }
+}
+.lightbulb {
+  &:hover {
+    animation: tada;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+    // animation-timing-function: ease-out;
+    filter: drop-shadow(0 0 1px hsla(60, 100%, 72%, 0.509)) invert(1)
+      drop-shadow(0 0 2px rgb(255, 255, 112))
+      drop-shadow(0 0 5px rgb(255, 255, 112))
+      drop-shadow(0 0 10px rgb(255, 255, 112));
   }
 }

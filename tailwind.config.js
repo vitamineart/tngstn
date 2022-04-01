@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./src/pug/**/*.pug", "./src/js/**/*.js", "./src/**/*.html"],
   corePlugins: {
@@ -58,6 +60,10 @@ module.exports = {
         92: "23rem",
         94: "23.5rem",
       },
+    },
+    screens: {
+      xs: "480px",
+      ...defaultTheme.screens,
     },
   },
   plugins: [],
