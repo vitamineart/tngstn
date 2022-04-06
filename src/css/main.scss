@@ -47,10 +47,12 @@ header.header {
 [data-aos-delay="5000"] {
   transition-delay: 5000ms;
 }
+
 .stars {
   filter: drop-shadow(0 0 1px hsla(0, 0%, 100%, 0.507))
     drop-shadow(0 0 5px #fff) drop-shadow(0 0 20px #fff);
 }
+
 .star {
   @apply absolute w-1 h-1 bg-white rounded-full;
   animation-name: starTwinkle;
@@ -80,13 +82,18 @@ header.header {
     background: hsla(0, 50%, 100%, 0.7);
     animation-timing-function: ease-in;
   }
+  50% {
+    transform: scale(0.9);
+    background: hsla(0, 50%, 100%, 0.7);
+    animation-timing-function: ease-in;
+  }
   60% {
-    transform: scale(1.1);
+    transform: scale(1.4);
     background: #fff;
     animation-timing-function: ease-out;
   }
-  80% {
-    transform: scale(0.7);
+  70% {
+    transform: scale(0.9);
     background: hsla(0, 50%, 100%, 0.6);
   }
   100% {
@@ -117,8 +124,8 @@ header.header {
   left: var(--left);
   top: var(--top);
   animation: animateCloud linear infinite both;
-  // animation-duration: calc(120s * var(--duration));
-  animation-duration: 120s;
+  animation-duration: calc(120s * var(--duration));
+  // animation-duration: 120s;
   animation-delay: calc(var(--delay) * 12);
   filter: blur(1px);
 }
@@ -163,5 +170,13 @@ header.header {
       drop-shadow(0 0 2px rgb(255, 255, 112))
       drop-shadow(0 0 5px rgb(255, 255, 112))
       drop-shadow(0 0 10px rgb(255, 255, 112));
+  }
+}
+
+.blue-bg {
+  background-image: radial-gradient(circle at center, #1784c1 40%, #264783);
+  box-shadow: 0 0 150px hsla(219, 67%, 20%, 0.5) inset;
+  &::after {
+    background: url(../img/Ambassador_Toys/blueBGpattern.svg);
   }
 }

@@ -60,12 +60,16 @@ header.header {
     transform: scale(0.8);
     background: rgba(255, 255, 255, 0.7);
     animation-timing-function: ease-in; }
+  50% {
+    transform: scale(0.9);
+    background: rgba(255, 255, 255, 0.7);
+    animation-timing-function: ease-in; }
   60% {
-    transform: scale(1.1);
+    transform: scale(1.4);
     background: #fff;
     animation-timing-function: ease-out; }
-  80% {
-    transform: scale(0.7);
+  70% {
+    transform: scale(0.9);
     background: rgba(255, 255, 255, 0.6); }
   100% {
     transform: scale(0.8);
@@ -89,7 +93,7 @@ header.header {
   left: var(--left);
   top: var(--top);
   animation: animateCloud linear infinite both;
-  animation-duration: 120s;
+  animation-duration: calc(120s * var(--duration));
   animation-delay: calc(var(--delay) * 12);
   filter: blur(1px); }
 
@@ -118,3 +122,9 @@ header.header {
   animation-fill-mode: both;
   animation-duration: 1s;
   filter: drop-shadow(0 0 1px rgba(255, 255, 112, 0.509)) invert(1) drop-shadow(0 0 2px #ffff70) drop-shadow(0 0 5px #ffff70) drop-shadow(0 0 10px #ffff70); }
+
+.blue-bg {
+  background-image: radial-gradient(circle at center, #1784c1 40%, #264783);
+  box-shadow: 0 0 150px rgba(17, 41, 85, 0.5) inset; }
+  .blue-bg::after {
+    background: url(../img/Ambassador_Toys/blueBGpattern.svg); }

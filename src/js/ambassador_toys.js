@@ -1,12 +1,12 @@
 var sky = document.querySelector(".stars");
-for (var i = 0; i < 200; i++) {
+for (var i = 0; i < 250; i++) {
   var starStatic =
     '<div class="star" style="--top: ' +
     Math.random() * window.outerHeight +
     "px; --left: " +
     Math.random() * window.outerWidth +
     "px; --width: " +
-    Math.random() * 12 +
+    Math.random() * 10 +
     'px;"></div>';
   sky.innerHTML += starStatic;
 }
@@ -15,13 +15,13 @@ for (var i = 0; i < 25; i++) {
     '<div class="star" style=" --delay: ' +
     (Math.random() * 5 + 5) +
     "s;  --duration: " +
-    (Math.ceil(Math.random() * 4) + 2) +
+    (Math.ceil(Math.random() * 2) + 2) +
     "s;  --top: " +
     Math.random() * window.outerHeight +
     "px; --left: " +
     Math.random() * window.outerWidth +
     "px; --width: " +
-    Math.random() * 12 +
+    Math.random() * 15 +
     'px;"></div>';
   sky.innerHTML += star;
 }
