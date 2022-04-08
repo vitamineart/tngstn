@@ -5,7 +5,7 @@ block variables
 prepend preload
 
 append head
-
+    script(src="js/ambassador_toys.js" defer)
 
 block page
     div(class="min-h-[500px] hero relative grid overflow-hidden bg-gradient-to-b from-blue-dark via-[#004B80] to-blue-light")
@@ -196,8 +196,8 @@ append footer_scripts
             animation-duration: 5s;
             animation-iteration-count: 1;
             animation-fill-mode: both;
+
         }
-    script(src="js/ambassador_toys.js" async)
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.js" integrity="sha512-EqNNJuepkw5P9vxCml8eBk7C4Ld+4kAnvzOD/jG21rkxWPILGoQa5EvD62UieiJF0u3xoQrcVnce4i83VnYj/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload='this.media="all"' />
 
