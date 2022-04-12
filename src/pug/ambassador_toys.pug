@@ -8,9 +8,9 @@ append head
     script(src="js/ambassador_toys.js" defer)
 
 block page
-    div(class="min-h-[500px] hero relative grid overflow-hidden bg-gradient-to-b from-blue-dark via-[#004B80] to-blue-light")
-        img(src="img/Ambassador_Toys/AmbassadorToysLogo@500.png", srcset="img/Ambassador_Toys/AmbassadorToysLogo@252.png 300w, img/Ambassador_Toys/AmbassadorToysLogo@378.png 378w, img/Ambassador_Toys/AmbassadorToysLogo@500.png 500w, img/Ambassador_Toys/AmbassadorToysLogo@500.png 500w, img/Ambassador_Toys/AmbassadorToysLogo@755.png 755w, img/Ambassador_Toys/AmbassadorToysLogo@1006.png 1006w, img/Ambassador_Toys/AmbassadorToysLogo@1509.png 1509w" sizes="(max-width:640px) 256px, (max-width:1024px) 288px, 503px" alt="Ambassador Logo Image" class="absolute inset-0 m-auto mt-24 sm:mt-32 z-50 w-64 sm:w-72 lg:w-[503px] toys-logo transition-transform" width="503" height="162")
-        div(class="clouds absolute top-1/2 left-0 right-0 bottom-0 w-full overflow-hidden z-20")
+    div(class="hero relative grid overflow-hidden bg-gradient-to-b from-blue-dark via-[#004B80] to-blue-light")
+        img(src="img/Ambassador_Toys/AmbassadorToysLogo@500.png", srcset="img/Ambassador_Toys/AmbassadorToysLogo@252.png 300w, img/Ambassador_Toys/AmbassadorToysLogo@378.png 378w, img/Ambassador_Toys/AmbassadorToysLogo@500.png 500w, img/Ambassador_Toys/AmbassadorToysLogo@500.png 500w, img/Ambassador_Toys/AmbassadorToysLogo@755.png 755w, img/Ambassador_Toys/AmbassadorToysLogo@1006.png 1006w, img/Ambassador_Toys/AmbassadorToysLogo@1509.png 1509w" sizes="(max-width:640px) 256px, (max-width:1024px) 288px, 503px" alt="Ambassador Logo Image" class="absolute inset-0 m-auto z-50 w-64 xs:w-72 sm:w-96 lg:w-[503px] toys-logo -translate-y-2 xs:-translate-y-5 sm:-translate-y-10 lg:-translate-y-16" width="503" height="162")
+        div(class="clouds absolute top-2/3 sm:top-1/2 left-0 right-0 bottom-0 w-full overflow-hidden z-20")
             img(src="img/Ambassador_Toys/cloud_01.svg", class="absolute cloud" alt="Cloud" style="--top: 35px; --delay: -2s; --duration: 1")
             img(src="img/Ambassador_Toys/cloud_02.svg", class="absolute cloud " alt="Cloud" style="--top: 20px; --delay: -1.3s; --duration: 1")
             img(src="img/Ambassador_Toys/cloud_03.svg", class="absolute cloud " alt="Cloud" style="--top: 39px; --delay: 1.8s; --duration: 1")
@@ -33,13 +33,13 @@ block page
             img(src="img/Ambassador_Toys/cloud_20.svg", class="absolute cloud " alt="Cloud" style="--top: 43px; --delay: 1.1s; --duration: 1")
         img(src="img/Ambassador_Toys/cloudsBG.svg", alt="Clouds background image" width="1004" height="282" class="absolute h-1/3 md:h-2/5 lg:h-1/2 w-full object-cover object-top left-0 bottom-0 z-30 translate-y-16 lg:translate-y-20 mt-auto scale-110")
         div(class="sky-fade-bottom absolute w-full h-2/3 top-auto left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-white z-0 opacity-50" )
-        img(src="img/Ambassador_Toys/moon.svg", alt="alt" width="123" height="133" class="moon absolute top-1/4 left-20 z-10")
+        img(src="img/Ambassador_Toys/moon.svg", alt="alt" width="123" height="133" class="moon absolute z-10  ")
         div(class="stars relative z-0 stars_fadein")
     +page-title({
         tagClient: 'Ambassador Toys',
-        h1: 'How a Neighborhood Toy Store Got San&nbsp;Francisco’s Attention.',
-        subtitle: 'A retail chain of toy stores across the San&nbsp;Francisco Bay Area had been buying media space, but had never had a creative agency.',
-        classes: '-translate-y-20 z-50 relative'
+        h1: 'How a Neighborhood Toy Store Got San Francisco’s Attention.',
+        subtitle: 'A retail chain of toy stores across the San Francisco Bay Area had been buying media space, but had never had a creative agency.',
+        classes: '-translate-y-10 md:-translate-y-20 z-50 relative'
     })
     //- +lead-in(`When you're a <span class="text-blue-light">tightrope walker</span> traversing the <span class="text-blue-light">Grand Canyon</span>, a surprise gush of wind can mean the end of your world.`)
 
@@ -66,12 +66,12 @@ block page
                         img(loading="lazy" src="img/Ambassador_Toys/toys_works/bearNecessities@1200.jpg", srcset="img/Ambassador_Toys/toys_works/bearNecessities@300.jpg 300w, img/Ambassador_Toys/toys_works/bearNecessities@600.jpg 600w, img/Ambassador_Toys/toys_works/bearNecessities@800.jpg 800w, img/Ambassador_Toys/toys_works/bearNecessities@1000.jpg 1000w, img/Ambassador_Toys/toys_works/bearNecessities@1200.jpg 1200w, img/Ambassador_Toys/toys_works/bearNecessities@1519.jpg 1519w, img/Ambassador_Toys/toys_works/bearNecessities@2025.jpg 2025w" sizes="(max-width: 1024px) 62vw,  522px" alt="" width="514" height="174" class="-rotate-3 shadow-2xl flex-none relative z-20" )
                     img(loading="lazy" src="img/Ambassador_Toys/paper_plane.png", alt="" class="flex-none h-max" width="199" height="85" data-aos="zoom-out-right" data-aos-delay="550" class="w-3/12 md:w-auto")
                 div(data-aos="zoom-out" data-aos-data-aos-delay="350" class="z-30 relative")
-                    img(loading="lazy" src="img/Ambassador_Toys/toys_works/catchThem@1200.jpg", srcset="img/Ambassador_Toys/toys_works/catchThem@300.jpg 300w, img/Ambassador_Toys/toys_works/catchThem@600.jpg 600w, img/Ambassador_Toys/toys_works/catchThem@800.jpg 800w, img/Ambassador_Toys/toys_works/catchThem@1000.jpg 1000w, img/Ambassador_Toys/toys_works/catchThem@1200.jpg 1200w, img/Ambassador_Toys/toys_works/catchThem@1519.jpg 1519w, img/Ambassador_Toys/toys_works/catchThem@2025.jpg 2025w", sizes="90vw (max-width: 1024px), 635px" alt="" width="631" height="213" class="rotate-1 shadow-2xl mt-10 sm:-mr-10 ml-auto max-w" )
+                    img(loading="lazy" src="img/Ambassador_Toys/toys_works/catchThem@1200.jpg", srcset="img/Ambassador_Toys/toys_works/catchThem@300.jpg 300w, img/Ambassador_Toys/toys_works/catchThem@600.jpg 600w, img/Ambassador_Toys/toys_works/catchThem@800.jpg 800w, img/Ambassador_Toys/toys_works/catchThem@1000.jpg 1000w, img/Ambassador_Toys/toys_works/catchThem@1200.jpg 1200w, img/Ambassador_Toys/toys_works/catchThem@1519.jpg 1519w, img/Ambassador_Toys/toys_works/catchThem@1920.jpg 1920w", sizes="90vw (max-width: 1024px), 635px" alt="" width="631" height="213" class="rotate-1 shadow-2xl mt-10 sm:-mr-10 ml-auto max-w" )
                 img(loading="lazy" src="img/Ambassador_Toys/two_clouds.png", alt="" class="absolute inset-0 -left-32 -z-10" data-aos="zoom-in-right" data-aos-duration="700")
 
             div(class="relative w-96 aspect-square mx-auto sm:float-left -left-10 xs:left-auto" style="shape-outside: circle(50%); " data-aos="fade-right" data-aos-duration="500" data-aos-delay="100")
                 div(class=" absolute z-10 inset-0 bottom-3 right-2 m-auto w-72 h-36 text-white uppercase text-xl font-proxima-bold text-center leading-relaxed rounded-full").
-                    Tungsten has years of experience creating distinctive/memorable  advertising ideas for uniquely San&nbsp;Francisco brands.
+                    Tungsten has years of experience creating distinctive/memorable  advertising ideas for uniquely San Francisco brands.
                 //- img(src="img/Ambassador_Toys/BlueCircleStars.svg", alt="" class="-left-8 absolute z-0 scale-110 sm:scale-105" loading="lazy" width="402" height="374")
                 <svg width="402" height="374" viewBox="0 0 402 374" fill="none" class="-left-10 absolute z-0 scale-95 sm:scale-100"> <circle cx="102.5" cy="108.5" r="102.5" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="102.5" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="102.5" fill="#36C0C8"/> <circle cx="102.5" cy="108.5" r="71.75" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="71.75" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="71.75" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="41.7321" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="41.7321" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="41.7321" fill="#F9E75C"/> <circle cx="227.5" cy="199.5" r="174.5" fill="url(#paint0_linear_1961_1168)"/> <path d="M330.656 12.6562C331.686 11.0413 334.167 11.5595 334.355 13.4288L336.213 31.9242C336.297 32.7635 336.913 33.443 337.747 33.6171L356.955 37.6294C358.882 38.032 359.051 40.6673 357.197 41.4108L339.385 48.5538C338.533 48.8952 338.004 49.7514 338.094 50.6423L339.913 68.7553C340.104 70.6532 337.725 71.7624 336.42 70.3839L323.182 56.3942C322.626 55.8067 321.753 55.6243 320.98 55.9343L302.576 63.3144C300.763 64.0417 299.123 62.0928 300.169 60.4532L310.15 44.8053C310.641 44.0356 310.556 43.0512 309.944 42.404L297.131 28.864C295.798 27.4545 297.163 25.1399 299.091 25.5425L318.299 29.5547C319.133 29.7289 320.002 29.3596 320.464 28.6345L330.656 12.6562Z" fill="#F9E75C"/> <path d="M221.178 54.7359C221.162 52.86 223.59 52.1057 224.79 53.6142L227.572 57.1115C228.11 57.7885 229.019 58.073 229.834 57.8198L234.023 56.5186C235.9 55.9357 237.51 58.0913 236.338 59.6179L233.919 62.767C233.382 63.4659 233.403 64.4443 233.971 65.158L236.536 68.3831C237.752 69.9118 236.315 71.9986 234.429 71.4447L229.916 70.12C229.107 69.8826 228.249 70.1491 227.756 70.7907L225.006 74.3711C223.856 75.868 221.359 75.0029 221.342 73.1018L221.306 69.0912C221.298 68.2037 220.683 67.4098 219.802 67.1513L215.833 65.9861C213.908 65.4213 213.801 62.7991 215.678 62.2161L219.867 60.915C220.683 60.6618 221.225 59.9268 221.217 59.0849L221.178 54.7359Z" fill="#F9E75C"/> <defs> <linearGradient id="paint0_linear_1961_1168" x1="227.5" y1="25" x2="227.5" y2="374" gradientUnits="userSpaceOnUse"> <stop stop-color="#174375"/> <stop offset="1" stop-color="#3378A8"/> </linearGradient> </defs> </svg>
             p(class="sm:!mt-20").
@@ -84,11 +84,11 @@ block page
             div(class="relative mt-10 lg:mt-16 pb-24 sm:pb-36 lg:pb-48 min-h-max" style="text-shadow: 0 0 10px #fff;")
 
                 p(class="sm:w-10/12 lg:w-11/12 relative z-50").
-                    Readers of the San&nbsp;Francisco Chronicle found these ads so enjoyable that they looked forward to the new creative every time the weekly ad was published on Tuesday mornings.
+                    Readers of the San Francisco Chronicle found these ads so enjoyable that they looked forward to the new creative every time the weekly ad was published on Tuesday mornings.
                 p(class="w-11/12 sm:pr-0 sm:w-10/12 relative z-50").
-                    Tungsten has years of experience creating distinctive/memorable  advertising ideas for uniquely San&nbsp;Francisco brands.
+                    Tungsten has years of experience creating distinctive/memorable  advertising ideas for uniquely San Francisco brands.
                 p(class="w-7/12 xs:w-8/12 sm:w-9/12 relative z-50" ).
-                    Whether your product is exclusive to San&nbsp;Francisco or  distributed across the world, we would love to hear from you  about your brand and share ideas on how advertising can help achieve your company's business objectives.
+                    Whether your product is exclusive to San Francisco or  distributed across the world, we would love to hear from you  about your brand and share ideas on how advertising can help achieve your company's business objectives.
                 div(class="absolute bottom-0 right-0 w-full left-0 z-0")
                     img(loading="lazy" src="../img/Ambassador_Toys/LightBulb.svg" width="77" height="113" class="z-10 lightbulb absolute left-1/2 -ml-20  bottom-2 md:bottom-8 hidden xs:inline-block scale-50 sm:scale-75 md:scale-100")
                     img(loading="lazy" src="img/Ambassador_Toys/Robot@301.png" srcset="img/Ambassador_Toys/Robot@151.png 151w, img/Ambassador_Toys/Robot@227.png 227w, img/Ambassador_Toys/Robot@452.png 452w, img/Ambassador_Toys/Robot@602.png 602w" alt="Robot Girl Image" class="absolute -right-10 md:-right-20 lg:-right-28 -bottom-1 xs:-bottom-5 md:-bottom-10 lg:bottom-0 left-auto w-48 sm:w-1/3 md:w-64 lg:w-72 z-20" width="301" height="466" )
@@ -128,7 +128,7 @@ block page
                         img(class="shadow-xl" loading="lazy" src="img/Ambassador_Toys/toys_works/ChinesePoster.jpg", alt="Chinese Poster Image" width="183" height="275" )
                     a(href="img/Ambassador_Toys/toys_works/rakeInFun@3x.jpg" data-fslightbox="gallery" class="sm:col-span-3 sm:row-span-3 self-start sm:-translate-y-10 " style="grid-row-start: 10; grid-column-start: 9;")
                         img(class="shadow-xl" loading="lazy" src="img/Ambassador_Toys/toys_works/rakeInFun.jpg", alt="Rake in the Fun Image"  width="223" height="179" style="transform: rotate(0.13deg)")
-                    a(href="img/Ambassador_Toys/toys_works/catchThem@2025.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-3 sm:scale-150 lg:scale-125" style="grid-row-start: 12; grid-column-start: 7")
+                    a(href="img/Ambassador_Toys/toys_works/catchThem@1920.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-3 sm:scale-150 lg:scale-125" style="grid-row-start: 12; grid-column-start: 7")
                         img(class="shadow-xl" loading="lazy" src="img/Ambassador_Toys/toys_works/catchThem@600.jpg", alt="Catch Them While You Can Image" style=" transform: rotate(0.87deg)" width="631" height="213")
 
 

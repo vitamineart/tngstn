@@ -48,6 +48,25 @@ header.header {
   transition-delay: 5000ms;
 }
 
+
+
+
+
+
+// ambassador toys
+
+.hero {
+  min-height: 340px;
+  @media (min-width:480px) {
+    min-height: 400px;
+  }
+  @media (min-width:640px) {
+    min-height: 450px;
+  }
+  @media (min-width:768px) {
+    min-height: 500px;
+  }
+}
 .stars {
   filter: drop-shadow(0 0 1px hsla(0, 0%, 100%, 0.507))
     drop-shadow(0 0 5px #fff) drop-shadow(0 0 20px #fff);
@@ -103,8 +122,21 @@ header.header {
 }
 
 .moon {
-  width: 123px;
-  height: 130px;
+  width: 18vw;
+  top: 10%;
+  left: auto;
+  right: 15%;
+  @media (min-width:480px) {
+    width: 16vw;
+  }
+  @media (min-width:640px) {
+    width: 13vw;
+  }
+  @media (min-width:768px) {
+    width: 123px;
+    right: auto;
+    left: 15%;
+  }
   animation: light 12s linear infinite both;
   filter: drop-shadow(0 0 60px #fff);
 }
