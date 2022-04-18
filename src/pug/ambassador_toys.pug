@@ -34,7 +34,7 @@ block page
         img(src="img/Ambassador_Toys/cloudsBG.svg", alt="Clouds background image" width="1004" height="282" class="absolute h-1/3 md:h-2/5 lg:h-1/2 w-full object-cover object-top left-0 bottom-0 z-30 translate-y-16 lg:translate-y-20 mt-auto scale-110")
         div(class="sky-fade-bottom absolute w-full h-2/3 top-auto left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-white z-0 opacity-50" )
         img(src="img/Ambassador_Toys/moon.svg", alt="alt" width="123" height="133" class="moon absolute z-10  ")
-        div(class="stars relative z-0 stars_fadein")
+        div(class="stars absolute z-0 stars_fadein w-full h-full inset-0")
     +page-title({
         tagClient: 'Ambassador Toys',
         h1: 'How a Neighborhood Toy Store Got San Francisco’s Attention.',
@@ -43,9 +43,9 @@ block page
     })
     //- +lead-in(`When you're a <span class="text-blue-light">tightrope walker</span> traversing the <span class="text-blue-light">Grand Canyon</span>, a surprise gush of wind can mean the end of your world.`)
 
-    article(class=" page-content -mt-20 leading-relaxed overflow-hidden")
+    article(class=" page-content -mt-10 leading-relaxed overflow-hidden")
         .container.flow-root
-            img(src="img/Ambassador_Toys/giraffe.png", srcset="img/Ambassador_Toys/giraffe.png 410w, img/Ambassador_Toys/giraffe@1.5x.png 616w, img/Ambassador_Toys/giraffe@2x.png 820w", sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, (max-width: 1024px) 37vw, 393px", alt="Giraffe Toy" class="float-right shape-outside -mt-8 -mr-12 w-48 sm:w-64 md:w-5/12" width="376" height="516" data-aos="zoom-in-down")
+            img(src="img/Ambassador_Toys/pinguin@224.png", srcset="img/Ambassador_Toys/pinguin@224.png 224w, img/Ambassador_Toys/pinguin@288.png 288w, img/Ambassador_Toys/pinguin@432.png 432w, img/Ambassador_Toys/pinguin@448.png 448w, img/Ambassador_Toys/pinguin@576.png 576w, img/Ambassador_Toys/pinguin@672.png 672w, img/Ambassador_Toys/pinguin@720.png 720w", sizes="(max-width: 480px) 144px, (max-width: 768px) 192px, 224px", alt="Pinguin Toy" class="float-right shape-outside -mr-12 w-36 xs:-mr-10 xs:w-48 md:w-56 md:mr-0" width="600" height="1156" data-aos="fade-left")
             p.drop-cap(style="--color: hsla(205, 74%, 47%, 1)").
                 For years, the stores had relied on TV stations or the in-house graphics departments of newspapers to create the ads. (Most publications will offer this service if you buy space from them.)
             p.
@@ -90,9 +90,9 @@ block page
                 p(class="w-7/12 xs:w-8/12 sm:w-9/12 relative z-50" ).
                     Whether your product is exclusive to San Francisco or  distributed across the world, we would love to hear from you  about your brand and share ideas on how advertising can help achieve your company's business objectives.
                 div(class="absolute bottom-0 right-0 w-full left-0 z-0")
-                    img(loading="lazy" src="../img/Ambassador_Toys/LightBulb.svg" width="77" height="113" class="z-10 lightbulb absolute left-1/2 -ml-20  bottom-2 md:bottom-8 hidden xs:inline-block scale-50 sm:scale-75 md:scale-100")
+                    img(loading="lazy" src="img/Ambassador_Toys/LightBulb.svg" width="77" height="113" class="z-10 lightbulb absolute left-1/2 -ml-20  bottom-2 md:bottom-8 hidden xs:inline-block scale-50 sm:scale-75 md:scale-100")
                     img(loading="lazy" src="img/Ambassador_Toys/Robot@301.png" srcset="img/Ambassador_Toys/Robot@151.png 151w, img/Ambassador_Toys/Robot@227.png 227w, img/Ambassador_Toys/Robot@452.png 452w, img/Ambassador_Toys/Robot@602.png 602w" alt="Robot Girl Image" class="absolute -right-10 md:-right-20 lg:-right-28 -bottom-1 xs:-bottom-5 md:-bottom-10 lg:bottom-0 left-auto w-48 sm:w-1/3 md:w-64 lg:w-72 z-20" width="301" height="466" )
-                    img(loading="lazy" src="../img/Ambassador_Toys/Rainbow_clouds_bg.png" class="absolute right-0 -bottom-2 z-0" alt="Rainbow Clouds Image")
+                    img(loading="lazy" src="img/Ambassador_Toys/Rainbow_clouds_bg.png" class="absolute right-0 -bottom-2 z-0" alt="Rainbow Clouds Image")
         div(class="pt-14 sm:pt-20 relative bg-repeat blue-bg after:absolute after:inset-0 after:w-full after:h-full after:z-0 after:bg-repeat after:opacity-20 after:mix-blend-overlay")
             .container.relative.z-10
                 div(class="-left-2 -top-36 scale-75 sm:scale-100 sm:left-10 sm:-top-36 absolute z-0")
@@ -149,34 +149,33 @@ block page
                 div(style="transform: translateY(16px)")
                     img(loading="lazy" src="img/Ambassador_Toys/redCar.png" srcset="img/Ambassador_Toys/redCar.png 594w, img/Ambassador_Toys/redCar@1.5x.png 891w, img/Ambassador_Toys/redCar@2x.png 1188w, img/Ambassador_Toys/redCar@3x.png 1782w,"  width="550" height="305" alt="Boy in Red Car" class="mx-auto relative"  data-aos="zoom-in-right")
 
-    div(class="container mt-12 md:mt-20")
+    //- div(class="container py-12 md:py-20")
         -
             const team = [
-                //- {
-                    //- role: "Copywriter",
-                    //- name:"Mukul Bakshi",
-                    //- contacts: {
-                    //-     twitter: "https://twitter.com/MukulBakshi",
-                    //-     linkedin: "https://www.linkedin.com/in/mukulbakshi/"
-                    //- }
-                //- },
-                //- {
-                //-     role: "Video Editor",
-                //-     name: "Kia Reaghabi"
-                //- },
-                //- {
-                //-     role: "Client",
-                //-     name: "Atul Chawla",
-                //-     contacts: {
-                //-         linkedin: "https://www.linkedin.com/in/atulchawla/"
-                //-     }
-                //- }
+                {
+                    role: "Copywriter",
+                    name:"Mukul Bakshi",
+                    contacts: {
+                        twitter: "https://twitter.com/MukulBakshi",
+                        linkedin: "https://www.linkedin.com/in/mukulbakshi/"
+                    }
+                },
+                {
+                    role: "Video Editor",
+                    name: "Kia Reaghabi"
+                },
+                {
+                    role: "Client",
+                    name: "Atul Chawla",
+                    contacts: {
+                        linkedin: "https://www.linkedin.com/in/atulchawla/"
+                    }
+                }
             ]
         +team(team)
 
 
 append footer_scripts
-    //- script(src="../js/rotateRandom.js")
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print"  onload="this.media='all'"/>
     style.
         .animatedLogo {
@@ -196,8 +195,131 @@ append footer_scripts
             animation-duration: 5s;
             animation-iteration-count: 1;
             animation-fill-mode: both;
-
         }
+
+
+        .hero {
+            min-height: 340px; }
+            @media (min-width: 480px) {
+                .hero {
+                min-height: 400px; } }
+            @media (min-width: 640px) {
+                .hero {
+                min-height: 450px; } }
+            @media (min-width: 768px) {
+                .hero {
+                min-height: 500px; } }
+
+        .stars {
+        filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.507)) drop-shadow(0 0 5px #fff) drop-shadow(0 0 20px #fff); }
+
+        .star {
+            animation-name: starTwinkle;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+            animation-delay: var(--delay);
+            animation-duration: var(--duration);
+            top: var(--top);
+            left: var(--left);
+            width: var(--width);
+            height: var(--width);
+            clip-path: polygon(57% 41%, 100% 50%, 57% 57%, 50% 100%, 43% 57%, 0 50%, 43% 42%, 50% 0); }
+
+        @keyframes starTwinkle {
+            0% {
+                transform: scale(0.8);
+                background: rgba(255, 255, 255, 0.7);
+                animation-timing-function: ease-in; }
+            50% {
+                transform: scale(0.9);
+                background: rgba(255, 255, 255, 0.7);
+                animation-timing-function: ease-in; }
+            60% {
+                transform: scale(1.4);
+                background: #fff;
+                animation-timing-function: ease-out; }
+            70% {
+                transform: scale(0.9);
+                background: rgba(255, 255, 255, 0.6); }
+            100% {
+                transform: scale(0.8);
+            background: rgba(255, 255, 255, 0.7); }
+        }
+
+        .moon {
+            width: 18vw;
+            top: 10%;
+            left: auto;
+            right: 15%;
+            animation: light 12s linear infinite both;
+            filter: drop-shadow(0 0 60px #fff); }
+        @media (min-width: 480px) {
+            .moon {
+            width: 16vw; } }
+        @media (min-width: 640px) {
+            .moon {
+            width: 13vw; } }
+        @media (min-width: 768px) {
+            .moon {
+            width: 123px;
+            right: auto;
+            left: 15%; } }
+
+        @keyframes light {
+            from {
+                filter: brightness(100%); }
+            50% {
+                filter: brightness(200%) blur(0.5px) drop-shadow(0 0 30px #fff5bd); }
+            to {
+            filter: brightness(100%); } }
+
+        .cloud {
+            left: var(--left);
+            top: var(--top);
+            animation: animateCloud linear infinite both;
+            animation-duration: calc(120s * var(--duration));
+            animation-delay: calc(var(--delay) * 12);
+            filter: blur(1px);
+        }
+
+        @keyframes animateCloud {
+            0% {
+                transform: translateX(-500px); }
+            100% {
+            transform: translateX(2000px); }
+        }
+
+        .toys-works-grid a img:hover {
+            animation: swing;
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+            animation-duration: 1s;
+            }
+
+        .butterfly:hover {
+            animation: rubberBand;
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+            animation-duration: 0.7s;
+            animation-timing-function: ease-out;
+        }
+        .lightbulb:hover {
+            animation: tada;
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+            animation-duration: 1s;
+            filter: drop-shadow(0 0 1px rgba(255, 255, 112, 0.509)) invert(1) drop-shadow(0 0 2px #ffff70) drop-shadow(0 0 5px #ffff70) drop-shadow(0 0 10px #ffff70);
+        }
+        .blue-bg {
+            background-image: radial-gradient(circle at center, #1784c1 40%, #264783);
+            box-shadow: 0 0 150px rgba(17, 41, 85, 0.5) inset;
+        }
+        .blue-bg::after {
+            background-image: radial-gradient(circle at center, #1784c1 40%, #264783);
+            box-shadow: 0 0 150px hsla(219, 67%, 20%, 0.5) inset;
+            background: url(img/Ambassador_Toys/blueBGpattern.svg);
+        }
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.js" integrity="sha512-EqNNJuepkw5P9vxCml8eBk7C4Ld+4kAnvzOD/jG21rkxWPILGoQa5EvD62UieiJF0u3xoQrcVnce4i83VnYj/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload='this.media="all"' />
 
