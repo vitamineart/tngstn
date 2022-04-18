@@ -328,7 +328,7 @@ exports.prod = series(
     prodFonts,
     prodHTML
   ), //Run All tasks in parallel
-  // criticalCSS,
+  criticalCSS,
   buildFinish
 );
 
