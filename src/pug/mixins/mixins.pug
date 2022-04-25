@@ -13,10 +13,10 @@ mixin page-title(u)
                     span.text-base Listen
 
 
-mixin lead-in(content)
-    .lead-in.bg-gray-100.py-8.font-proxima-bold
+mixin lead-in(u)
+    div(class=`lead-in font-proxima-bold ${u.classes}`)
         .container.
-            !{content}
+            !{u.content}
 
 
 mixin team-member(x)
