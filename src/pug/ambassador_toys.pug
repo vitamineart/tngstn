@@ -39,14 +39,11 @@ block page
         tagClient: 'Ambassador Toys',
         h1: 'How a Neighborhood Toy Store Got San Francisco’s Attention.',
         subtitle: 'A retail chain of toy stores across the San Francisco Bay Area had been buying media space, but had never had a creative agency.',
-        classes: '-translate-y-10 md:-translate-y-20 z-50 relative'
+        classes: '-mt-10 md:-mt-20 z-50 relative'
     })
-    +lead-in({
-        content: `When you're a <span class="text-blue-light">tightrope walker</span> traversing the <span class="text-blue-light">Grand Canyon</span>, a surprise gush of wind can mean the end of your world.`,
-        classes: ''
-        })
 
-    article(class=" page-content -mt-10 leading-relaxed overflow-hidden")
+
+    article(class=" page-content leading-relaxed overflow-hidden")
         .container.flow-root
             img(src="img/Ambassador_Toys/pinguin@224.png", srcset="img/Ambassador_Toys/pinguin@224.png 224w, img/Ambassador_Toys/pinguin@288.png 288w, img/Ambassador_Toys/pinguin@432.png 432w, img/Ambassador_Toys/pinguin@448.png 448w, img/Ambassador_Toys/pinguin@576.png 576w, img/Ambassador_Toys/pinguin@672.png 672w, img/Ambassador_Toys/pinguin@720.png 720w", sizes="(max-width: 480px) 144px, (max-width: 768px) 192px, 224px", alt="Pinguin Toy" class="float-right shape-outside -mr-12 w-36 xs:-mr-10 xs:w-48 md:w-56 md:mr-0" width="600" height="1156" data-aos="fade-left")
             p.drop-cap(style="--color: hsla(205, 74%, 47%, 1)").

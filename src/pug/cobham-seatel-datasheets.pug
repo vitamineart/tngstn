@@ -38,7 +38,7 @@ block page
     +page-title({
         tagClient: 'Cobham',
         h1: 'Data Sheets: Somewhere Between a Brochure and a White Paper on the Buyer\'s Journey.',
-        subtitle: 'Do Data Sheets play a role in your marketing mix?',
+        subtitle: 'Do data sheets play a role in your marketing mix?',
         classes: 'z-10 relative -mt-2 lg:-mt-5 xl:-mt-10'
     })
     +lead-in({
@@ -135,12 +135,18 @@ block page
                 .swiper-wrapper
                     //- Slides
                     -
-                        const iframes = [
-                            1, 2, 3, 4, 5, 6
+                        const datasheets = [
+                            {link: "../img/cobham-datasheets/datasheets/3011_datasht_01feb.pdf"},
+                            {link: "../img/cobham-datasheets/datasheets/3612_datasht_01oct.pdf"},
+                            {link: "../img/cobham-datasheets/datasheets/6012_datasht_15nov.pdf"},
+                            {link: "../img/cobham-datasheets/datasheets/9711_datasht_28nov.pdf"},
+                            {link: "../img/cobham-datasheets/datasheets/ST88datasheet_07aug.pdf"},
+                            {link: "../img/cobham-datasheets/datasheets/ST94datasheet_18sep.pdf"},
+                            {link: "../img/cobham-datasheets/datasheets/ST144datasheet_06aug.pdf"}
                         ]
-                    each iframe in iframes
+                    each datasheet in datasheets
                         .swiper-slide
-                            a(href="../img/White_Paper/MultiAxis_10mar_v4.pdf" target="_blank")
+                            a(href=`${datasheet.link}` target="_blank")
                                 img(loading="lazy" src="../img/cobham-datasheets/SeatelDatasheetSlide.jpg" class="mx-auto swiper-lazy shadow-lg" width="541" height="699")
                             //- .swiper-lazy-preloader
 
@@ -161,7 +167,7 @@ block page
                 As the headline on this page tells us, a data sheet occupies the space between a product brochure that highlights features and benefits, and a technical white paper or an instruction manual. The examples of data sheets on this page were created by Tungsten for different models of Cobham's self-stabilizing maritime satellite antennae.
             p.
                 As a full-service advertising agency, Tungsten created communication materials for every stage of the customer's buying process. The data sheets displayed here represent a type of product communication that has a distinct place amongst other materials Tungsten created for Cobham, ranging from technical videos to training emulator, to magazine advertisements published worldwide.
-            p.
+            p.mb-10.
                 Once designed, these data sheets were printed at an offset printing press, and distributed at trade shows in addition to being made available for electronic download.
 
 
