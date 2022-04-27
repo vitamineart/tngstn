@@ -60,12 +60,11 @@ block page
                         "Technical Summary"
                     ]
 
-            div(class="md:float-right my-5 mx-auto md:m-5 lg:m-8 text-base text-center font-proxima-bold leading-tight max-w-sm lg:max-w-max border-2 border-blue-light")
-                div(class=" bg-blue-light text-white px-8 lg:px-12.5 py-4").
+            div(class="md:float-right my-5 mx-auto md:m-5 lg:m-8 text-base text-center font-proxima-bold leading-tight max-w-sm lg:max-w-max border-2 border-blue-light" data-aos-duration="2000" data-aos="zoom-in")
+                div(class=" bg-blue-light text-white px-8 lg:px-12.5 py-4" data-aos-duration="1500" data-aos="fade-in").
                     Data sheet are also referred to as:
                 each name, index in datasheetReferred
-                    div(class="odd:bg-gray-light text-blue-light px-8 lg:px-12.5 py-4")
-                        div(class="" data-aos-duration="2000" data-aos="fade-in" data-aos-delay=`${150*(index+1)}`)= name
+                    div(class="odd:bg-gray-light text-blue-light px-8 lg:px-12.5 py-4" data-aos-duration="2000" data-aos="fade-in" data-aos-delay=`${150*(index+1)}`)= name
 
             p.
                 These decision-makers include Cobham's dealer network, the IT departments of potential client companies, and the wider satcom industry.
