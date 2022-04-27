@@ -49,7 +49,7 @@ block page
     article(class=" page-content mt-10 lg:mt-20 xl:mt-24 leading-normal overflow-hidden")
         .container.flow-root
             p.drop-cap(style="--color: hsla(207, 100%, 39%, 1)").
-                As the world leader in satellite communications, Cobham is constantly releasing new products featuring industry-leading technologies. Decision-makers across multiple industries seek to understand these products and their place within the satellite communications e co-system.
+                As the world leader in satellite communications, Cobham is constantly releasing new products featuring industry-leading technologies. Decision-makers across multiple industries seek to understand these products and their place within the satellite communications eco-system.
 
             -
                     const datasheetReferred = [
@@ -82,8 +82,7 @@ block page
         link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload='this.media="all"')
         style.
             .pdf-slider-main .swiper-slide {
-                opacity: .8;
-                transform: scale(.6);
+                transform: scale(.7);
                 transition: 0.4s ease;
             }
 
@@ -119,18 +118,66 @@ block page
             .swiper-button-next:after {
                 display: none;
             }
+            #seaBg {
+                top: -580px;
 
-        div(id="datasheets-slider" class="my-8 md:my-10 lg:my-20 relative py-8 xs:py-12 sm:py-20 md:py-28 lg:py-32 xl:py-36 bg-blue-light/20 overflow-hidden")
+            }
+            @media (min-width:375px){
+                #seaBg {
+                    top: -500px;
+                }
+            }
+            @media (min-width:425px){
+                #seaBg {
+                    top: -470px;
+                }
+            }
+            #woodTableBg {
+                bottom: 60px;
+                height: 67%;
+            }
+            @media (min-width:375px){
+                #woodTableBg {
+                    bottom: 50px;
+                    height: 60%;
+                }
+            }
+            @media (min-width:425px){
+                #woodTableBg {
+                    bottom: 50px;
+                    height: 50%;
+                }
+            }
+            @media (min-width:640px){
+                #woodTableBg {
+                    bottom: 55px;
+                    height: 45%;
+                }
+            }
+            @media (min-width:768px){
+                #woodTableBg {
+                    bottom: 60px;
+                    height: 40%;
+                }
+            }
+            @media (min-width:1024px){
+                #woodTableBg {
+                    bottom: 70px;
+                    height: 40%;
+                }
+            }
+
+        div(id="datasheets-slider" class="my-8 md:my-10 lg:my-20 relative py-12 sm:py-20 md:py-28 lg:py-32 xl:py-36 bg-blue-light/20 overflow-hidden")
             svg(class="ellipse absolute top-0 left-0 right-0 w-full bottom-auto z-50 scale-110 -translate-y-1/2" fill="none" viewBox="0 0 2219 153")
                 ellipse(cx="1109.37" cy="76.27" fill="#fff" rx="1109.37" ry="76.27")
             svg(class="ellipse absolute bottom-0 w-full top-auto z-50 scale-110 translate-y-1/2" fill="none" viewBox="0 0 2219 153")
                 ellipse(cx="1109.37" cy="76.27" fill="#fff" rx="1109.37" ry="76.27")
             .absolute.w-full.h-full.inset-0
-                img(srcset="../img/cobham-datasheets/SeaTelSliderBg_Sea@400.jpg 400w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@600.jpg 600w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@600.jpg 600w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@800.jpg 800w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@1000.jpg 1000w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@1200.jpg 1200w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@1600.jpg 1600w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@2000.jpg 2000w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@3000.jpg 3000w" src="../img/cobham-datasheets/SeaTelSliderBg_Sea@2000.jpg", alt="SeaTelSliderBg Sea" loading="lazy" class="parallax absolute inset-0 w-full h-full object-cover scale-150" id="seaBg" style="top: -450px;" data-speed="0.2")
-                img(srcset="../img/cobham-datasheets/SeaTelSliderBg_WoodTable@400.png 400w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@600.png 600w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@600.png 600w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@800.png 800w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@1000.png 1000w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@1200.png 1200w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@1600.png 1600w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@2000.png 2000w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@3000.png 3000w" src="../img/cobham-datasheets/SeaTelSliderBg_WoodTable@2000.png", alt="SeaTelSliderBg Sea" loading="lazy" class="parallax absolute w-full h-1/3 object-cover scale-150" id="woodTableBg" data-speed="0.1" style="bottom: 150px;")
+                img(srcset="../img/cobham-datasheets/SeaTelSliderBg_Sea@400.jpg 400w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@600.jpg 600w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@600.jpg 600w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@800.jpg 800w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@1000.jpg 1000w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@1200.jpg 1200w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@1600.jpg 1600w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@2000.jpg 2000w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@3000.jpg 3000w" src="../img/cobham-datasheets/SeaTelSliderBg_Sea@2000.jpg", alt="SeaTelSliderBg Sea" loading="lazy" class="parallax absolute inset-0 w-full h-full object-cover" id="seaBg" data-speed="0.2")
+                img(srcset="../img/cobham-datasheets/SeaTelSliderBg_WoodTable@400.png 400w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@600.png 600w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@600.png 600w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@800.png 800w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@1000.png 1000w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@1200.png 1200w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@1600.png 1600w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@2000.png 2000w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@3000.png 3000w" src="../img/cobham-datasheets/SeaTelSliderBg_WoodTable@2000.png", alt="SeaTelSliderBg Sea" loading="lazy" class="parallax absolute w-full h-1/3 object-cover" id="woodTableBg" data-speed="0.04")
 
             //- Slider main container
-            .pdf-slider-main
+            div(class="pdf-slider-main")
                 //- Additional required wrapper
                 .swiper-wrapper
                     //- Slides
