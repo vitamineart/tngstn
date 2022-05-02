@@ -28,7 +28,7 @@ block page
         picture
             source(srcset="img/cobham-datasheets/Cobham_DataSheets_hero_xs@290.jpg 290w, img/cobham-datasheets/Cobham_DataSheets_hero_xs@436.jpg 436w, img/cobham-datasheets/Cobham_DataSheets_hero_xs@580.jpg 580w, img/cobham-datasheets/Cobham_DataSheets_hero_xs@720.jpg 720w, img/cobham-datasheets/Cobham_DataSheets_hero_xs@1080.jpg 1080w, img/cobham-datasheets/Cobham_DataSheets_hero_xs@1440.jpg 1440w" alt="SeaTel Data Sheets Hero Image" media="(max-width:600px)")
             source(srcset="img/cobham-datasheets/Cobham_DataSheets_hero_sm@400.jpg 400w, img/cobham-datasheets/Cobham_DataSheets_hero_sm@617.jpg 617w, img/cobham-datasheets/Cobham_DataSheets_hero_sm@926.jpg 926w, img/cobham-datasheets/Cobham_DataSheets_hero_sm@1234.jpg 1234w, img/cobham-datasheets/Cobham_DataSheets_hero_sm@1851.jpg 1851w" alt="SeaTel Data Sheets Hero Image" media="(max-width:1024px)")
-            source(srcset="img/cobham-datasheets/Cobham_DataSheets_hero@1441.jpg 1441w, img/cobham-datasheets/Cobham_DataSheets_hero@1920.jpg 1920w, img/cobham-datasheets/Cobham_DataSheets_hero@3840.jpg 3840w" alt="SeaTel Data Sheets Hero Image")
+            source(srcset="img/cobham-datasheets/Cobham_DataSheets_hero@1441.jpg 1441w, img/cobham-datasheets/Cobham_DataSheets_hero@1920.jpg 1920w" alt="SeaTel Data Sheets Hero Image")
             img(src="img/cobham-datasheets/Cobham_DataSheets_hero@1920.jpg" , alt="SeaTel Data Sheets Hero Image" width="1920" height="773")
         svg(class="hero-ellipse" fill="none" viewBox="0 0 2219 153")
             ellipse(cx="1109.37" cy="76.27" fill="#fff" rx="1109.37" ry="76.27")
@@ -43,7 +43,7 @@ block page
     })
     +lead-in({
         content: `A data sheet is an informational document that outlines the technical specifications of a product, component, or software program. It spells out the performance and constraints of the system and its components. Its purpose is to help experienced technical professionals arrive at a buying decision by presenting them with sufficient information to satisfy their questions, or to seek additional information from white papers, brochures, or user guides. Data sheets ultimately lead to a more informed and confident purchasing decision for buyers. `,
-        classes: 'py-12 sm:py-16 lg:py-20 xl:py-24 bg-blue-light text-white my-6 sm:my-10 lg:my-14 xl:my-20'
+        classes: 'py-12 sm:py-16 lg:py-20 xl:py-22 bg-blue-light text-white my-6 sm:my-10 lg:my-14 xl:my-20'
     })
 
     article(class=" page-content mt-10 lg:mt-20 xl:mt-24 leading-normal overflow-hidden")
@@ -182,19 +182,19 @@ block page
                     //- Slides
                     -
                         const datasheets = [
-                            {link: "../img/cobham-datasheets/datasheets/3011_datasht_01feb.pdf"},
-                            {link: "../img/cobham-datasheets/datasheets/3612_datasht_01oct.pdf"},
-                            {link: "../img/cobham-datasheets/datasheets/6012_datasht_15nov.pdf"},
-                            {link: "../img/cobham-datasheets/datasheets/9711_datasht_28nov.pdf"},
-                            {link: "../img/cobham-datasheets/datasheets/ST88datasheet_07aug.pdf"},
-                            {link: "../img/cobham-datasheets/datasheets/ST94datasheet_18sep.pdf"},
-                            {link: "../img/cobham-datasheets/datasheets/ST144datasheet_06aug.pdf"}
+                            { model: '3011' },
+                            { model: '3612' },
+                            { model: '6012' },
+                            { model: '9711' },
+                            { model: 'ST88' },
+                            { model: 'ST94' },
+                            { model: 'ST144' }
                         ]
                     each datasheet in datasheets
                         .swiper-slide
-                            a(href=`${datasheet.link}` target="_blank")
-                                img(loading="lazy" src="../img/cobham-datasheets/SeatelDatasheetSlide.jpg" class="mx-auto swiper-lazy shadow-lg" width="541" height="699")
-                            //- .swiper-lazy-preloader
+                            a(href=`../img/cobham-datasheets/datasheets/${datasheet.model}.pdf` target="_blank")
+                                img(loading="lazy" src=`../img/cobham-datasheets/datasheets/${datasheet.model}@1082.jpg`, srcset=`../img/cobham-datasheets/datasheets/${datasheet.model}@360.jpg 360w, ../img/cobham-datasheets/datasheets/${datasheet.model}@600.jpg 600w, ../img/cobham-datasheets/datasheets/${datasheet.model}@800.jpg 800w, ../img/cobham-datasheets/datasheets/${datasheet.model}@1082.jpg 1082w`, sizes="(max-width:1200px) 33.33vw, 541px" class="mx-auto swiper-lazy shadow-lg" width="541" height="699" )
+                                //- .swiper-lazy-preloader
 
                 //- navigation buttons
                 div(class=" swiper-button-prev rounded-lg text-blue-light")
@@ -246,6 +246,7 @@ append footer_scripts
     //- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print"  onload="this.media='all'"/>
 
     //- script(src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.js" integrity="sha512-EqNNJuepkw5P9vxCml8eBk7C4Ld+4kAnvzOD/jG21rkxWPILGoQa5EvD62UieiJF0u3xoQrcVnce4i83VnYj/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" async>)
+
 
 
 

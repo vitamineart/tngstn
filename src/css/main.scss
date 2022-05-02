@@ -16,9 +16,7 @@ header.header {
   font-size: clamp(0.8rem, 2vw, 1rem);
   letter-spacing: 0.2px;
 }
-.lead-in {
-  font-size: clamp(1.15rem, 4vw, 1.35rem);
-}
+
 
 .page-content {
   p:not(:first-child) {
@@ -33,7 +31,9 @@ header.header {
     inset 0 -5px 30px hsla(0, 0%, 0%, 0.1);
 }
 .drop-cap:first-letter {
-  @apply float-left font-bold leading-none m-0 -mt-1 py-0 pl-0 pr-2 font-serif;
+  @apply relative float-left font-bold m-0 -mt-1 py-0 pl-0 pr-2 font-serif;
+  line-height: 0.95;
+  margin-top:-2px;
   font-size: 5rem;
   color: var(--color);
 }
