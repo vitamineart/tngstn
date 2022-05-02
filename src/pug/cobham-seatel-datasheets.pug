@@ -190,7 +190,8 @@ block page
                             { model: 'ST94' },
                             { model: 'ST144' }
                         ]
-                    each datasheet in datasheets
+                        const reverseDatasheets = datasheets.reverse();
+                    each datasheet in reverseDatasheets
                         .swiper-slide
                             a(href=`../img/cobham-datasheets/datasheets/${datasheet.model}.pdf` target="_blank")
                                 img(loading="lazy" src=`../img/cobham-datasheets/datasheets/${datasheet.model}@1082.jpg`, srcset=`../img/cobham-datasheets/datasheets/${datasheet.model}@360.jpg 360w, ../img/cobham-datasheets/datasheets/${datasheet.model}@600.jpg 600w, ../img/cobham-datasheets/datasheets/${datasheet.model}@800.jpg 800w, ../img/cobham-datasheets/datasheets/${datasheet.model}@1082.jpg 1082w`, sizes="(max-width:1200px) 33.33vw, 541px" class="mx-auto swiper-lazy shadow-lg" width="541" height="699" )
