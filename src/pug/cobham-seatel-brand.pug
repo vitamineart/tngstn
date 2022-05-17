@@ -136,13 +136,22 @@ block page
                     left: -10px;
                 }
             }
+            .ship-category {
+                position: relative;
+                z-index: 1;
+                text-shadow: 0 0 13px #fff, 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff;
+                transition: .2s;
+                backdrop-filter: blur(1px) brightness(2);
+                box-shadow: 0 0 10px #fff, 0 0 2px #fff, 0 0 5px #fff,;
+                padding:0 2px;
+            }
             .highlighted {
-                text-shadow: 0 0 13px #fff;
                 animation-name: highlightWord;
                 animation-iteration-count: 1;
                 animation-timing-function: ease-out;
-                animation-duration: 700ms;
-                color: var(--c-blue-light);
+                animation-duration: 5000ms;
+                color: hsl(198, 92%, 48%);
+                z-index: 10;
             }
             @keyframes highlightWord {
                 from {
@@ -200,7 +209,7 @@ block page
                 div(class="lg:text-right")
                     img(loading="lazy" src="img/cobham-brand/DomeAntennaShape.png", alt="alt" width="622" height="688" class="hidden md:block float-left shape-outside brightness-75 -z-10 relative xl:-ml-28 opacity-0")
                     p(class="pt-64 sm:pt-72 md:pt-24").
-                        Sea Tel antennas were adopted on every type of vessel, resulting in five distinct market segments: <span id="leisure" class="font-proxima-bold transition-all inline-block">Leisure Yachts</span>, <span id="commercial" class="font-proxima-bold transition-all inline-block">Commercial Vessels</span> (cruise and cargo ships), <span id="military" class="font-proxima-bold transition-all inline-block">Military</span>, <span id="oil_gas" class="font-proxima-bold transition-all inline-block">Oil & Gas,</span> and <span id="fisheries" class="font-proxima-bold transition-all inline-block">Fisheries</span>. Soon, the brand was being marketed across the world -- anywhere there is shipping, with a product line of 32 different models designed for every type of maritime application. Sea Tel gained immediate majority market share.
+                        Sea Tel antennas were adopted on every type of vessel, resulting in five distinct market segments: <span id="leisure" class="font-proxima-bold transition-all inline-block ship-category">Leisure Yachts</span>, <span id="commercial" class="font-proxima-bold transition-all inline-block ship-category">Commercial Vessels</span> (cruise and cargo ships), <span id="military" class="font-proxima-bold transition-all inline-block ship-category">Military</span>, <span id="oil_gas" class="font-proxima-bold transition-all inline-block ship-category">Oil & Gas,</span> and <span id="fisheries" class="font-proxima-bold transition-all inline-block ship-category">Fisheries</span>. Soon, the brand was being marketed across the world -- anywhere there is shipping, with a product line of 32 different models designed for every type of maritime application. Sea Tel gained immediate majority market share.
                     p.
                         Cobham appointed Tungsten as its advertising agency for the Sea Tel  division, with the objective of creating a powerful central idea for the  brand, and executing that idea across every consumer touch-point,  worldwide. This includes corporate brand-building in trade magazines  published from every shipping center around the globe, tactical advertising  in print, online display advertising, social media in Facebook, Twitter and YouTube, video production, poster design, brochures, pamphlets and  collateral materials, trade-show booth design, fabrication, executing product photography, public relations in maritime and satcom trade journals, white papers for each product, cartography and mapmaking, printing, media planning and worldwide media buying, internal training materials, and all other full-service advertising services that the brand may need.
 
