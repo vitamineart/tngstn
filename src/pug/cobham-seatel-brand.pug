@@ -1,0 +1,245 @@
+extends ./layout/base
+block variables
+    - var pageTitle = 'Tungsten Advertising Case Study | Cobham SeaTel Brand Page'
+
+prepend preload
+    style.
+        #cobham-seatel-brand-hero-video {
+        }
+        .hero {
+            height: max(250px, 37vw);
+        }
+
+        .page-title.inverted  {
+
+        }
+        .page-title::after {
+            background: linear-gradient(to bottom, transparent, var(--c-blue-dark));
+            z-index: -1;
+        }
+append head
+    //- script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer)
+    script(src="../js/cobham-seatel-brand.js" defer)
+
+block page
+    div(class="video-container relative")
+        video(id="cobham-seatel-brand-hero-video" class="absolute inset-0 -z-10 w-full h-full object-cover object-top" autoplay loop muted)
+            source(src="img/cobham-brand/Comp 1.mp4" type="video/mp4")
+        div(class="hero relative pt-px")
+            img(src="img/cobham-brand/satelite.svg", alt="alt" width="1700" height="506" class="md:w-10/12 block mx-auto relative top-3 lg:top-5 xl:top-7")
+
+
+        +page-title({
+            tagClient: 'Cobham',
+            tagClasses: 'bg-white text-blue-light',
+            h1: 'Would You Go on a Pleasure Cruise if You Had to Leave Your Phone at Home?',
+            h1Classes: 'text-white',
+            subtitle: 'Imagine yourself a seaman on a tanker crossing the calm blue oceans. Or imagine living on an oil rig. Or as a sailor on a naval carrier. How do you keep in touch with the world when living and working on a sea-going vessel, hundreds of miles from a land-line or a cell tower?',
+            subtitleClasses: 'text-white',
+            classes: 'inverted z-50 after:absolute after:w-full after:h-1/4 after:top-auto after:bottom-0'
+        })
+
+
+
+
+    article(class="page-content leading-normal")
+
+        section(class="text-white pb-24 relative bg-blue-dark")
+            .container.flow-root
+                img(src="img/cobham-brand/compass.svg" width="395" height="391" class="mix-blend-multiply opacity-30 float-right shape-outside w-48 sm:w-56 md:w-64 lg:w-auto -mr-24 sm:-mr-20 xl:-mr-48 relative z-0" )
+                img(src="img/cobham-brand/Seatel_Dome@340.png", srcset="img/cobham-brand/Seatel_Dome@340.png 340w, img/cobham-brand/Seatel_Dome@392.png 392w", sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 288px", alt="Sea Tel Dome Image" class="float-right shape-outside -mr-32 xl:-mr-48 w-48 sm:w-56 md:w-64 lg:w-72 relative z-10 mt-24 lg:mt-48 lg:-mr-56" width="392" height="407")
+                p.drop-cap(style="--color: #fff;").
+                    When on land, we're familiar with dish antennae. Look through your  window, and you might spot one on the wall across the street, pointing at the sky, receiving satellite TV and internet straight from space.
+                p.
+                    But that won't work on a boat. A boat will constantly yaw, pitch, and roll. It will heave up and down. It could be pointing east one day, and west on the return voyage. No antenna can keep eye-contact with the satellite under those conditions.
+                p.
+                    In the early years of satellite communications, Robert J. Matthews invented  an antenna that remained stable by relying on the principle of inertia.
+                p.
+                    He founded Sea Tel, Inc. to manufacture and market the antenna. Today, Sea Tel is part of Cobham plc, a British manufacturing company, and world-leader in air-to-air refueling systems.
+                p.
+                    Robert Matthews had designed a dish that would remain perfectly still  even when the vessel under the antenna was being tossed about in a storm.
+                p.
+                    Nowadays as you can imagine, almost any vessel, any distance from shore will use a self-stabilizing maritime satellite antenna. Leisure yachts use them, aircraft carriers use them. So do fisheries, oil-tankers, cruise and  cargo ships.
+                p.
+                    Robert Matthews' invention meant that nascent satellite communications technology could be applied to the maritime industry.
+
+            svg(viewBox="0 0 1921 12" class="absolute top-auto bottom-0 z-50 -scale-y-100")
+                path(d="M96.0172 4.72619C64.069 1.58103 32.1207 0.00567729 0.172485 0H383.896C351.948 0.00567729 320 1.58103 288.052 4.72619C224.04 11.0277 160.029 11.0277 96.0172 4.72619Z" fill="white")
+                path(d="M480.086 4.72619C448.138 1.58103 416.19 0.00567729 384.242 0H767.965C736.017 0.00567729 704.069 1.58103 672.121 4.72619C608.109 11.0277 544.098 11.0277 480.086 4.72619Z" fill="white")
+                path(d="M768.311 0C800.259 0.00567729 832.207 1.58103 864.155 4.72619C928.167 11.0277 992.178 11.0277 1056.19 4.72619C1088.14 1.58103 1120.09 0.00567729 1152.03 0H768.311Z" fill="white")
+                path(d="M1248.22 4.72619C1216.28 1.58103 1184.33 0.00567729 1152.38 0H1536.1C1504.16 0.00567729 1472.21 1.58103 1440.26 4.72619C1376.25 11.0277 1312.24 11.0277 1248.22 4.72619Z" fill="white")
+                path(d="M1632.29 4.72619C1600.35 1.58103 1568.4 0.00567729 1536.45 0H1920.17C1888.22 0.00567729 1856.28 1.58103 1824.33 4.72619C1760.32 11.0277 1696.31 11.0277 1632.29 4.72619Z" fill="white")
+
+
+        style.
+            #circleShips {
+                width: 300px;
+                transform:rotate(39deg);
+                left: 80px;
+                right: 0;
+                top: 0;
+            }
+            #domeAntennaImage {
+                top:40px;
+                left: 28vw;
+                right: 0;
+                width: 300px;
+            }
+
+            @media (min-width: 480px){
+                #circleShips {
+                    left: 50%;
+                    margin-left: -100px;
+                    right: auto;
+                    top: 30%;
+                }
+                #domeAntennaImage {
+                    width: 400px;
+                    top: 120px;
+                    right: 0;
+                }
+            }
+            @media (min-width: 640px){
+                #domeAntennaImage {
+                    top: 135px;
+                }
+            }
+            @media (min-width: 768px){
+                #circleShips {
+                    left: 160px;
+                    right: auto;
+                    top: -40px;
+                }
+                #domeAntennaImage {
+                    top: 0;
+                    left: 100px;
+                    width: auto;
+                }
+            }
+            @media (min-width: 1024px){
+                #circleShips {
+                    left: 145px;
+                    top: 30px;
+                }
+                #domeAntennaImage {
+                    top: 65px;
+                    left: 66px;
+                }
+            }
+            @media (min-width: 1280px){
+                #circleShips {
+                    left: 50px;
+                    top: 40px;
+                }
+                #domeAntennaImage {
+                    top: 80px;
+                    left: -10px;
+                }
+            }
+            .highlighted {
+                text-shadow: 0 0 13px #fff;
+                animation-name: highlightWord;
+                animation-iteration-count: 1;
+                animation-timing-function: ease-out;
+                animation-duration: 700ms;
+                color: var(--c-blue-light);
+            }
+            @keyframes highlightWord {
+                from {
+                    transform: scale(1.5);
+                }
+                to {
+                    transform: scale(1);
+                }
+            }
+
+
+        section(class="py-10 lg:py-20 bg-white")
+            .container.relative
+                div(class="relative translate-y-16 xs:translate-y-0 md:absolute md:translate-x-20 md:translate-y-48 lg:translate-y-32 xl:translate-y-28 ")
+                    img(src="img/cobham-brand/SeaTel_Dome_Antenna.png", alt="SeaTel_Dome_Antenna Image" loading="lazy" class="relative" id="domeAntennaImage" width="432" height="356")
+                    div(id="circleShips" class="absolute aspect-square")
+                        -
+                            const ships = [
+                                {
+                                    src:'img/cobham-brand/Ship1.svg',
+                                    width: 123,
+                                    height: 50,
+                                    id: 'leisure'
+                                },
+                                {
+                                    src:'img/cobham-brand/Ship2.svg',
+                                    width: 135,
+                                    height: 50,
+                                    id: 'commercial'
+                                },
+                                {
+                                    src:'img/cobham-brand/Ship3.svg',
+                                    width: 119,
+                                    height: 46,
+                                    id: 'military'
+                                },
+                                {
+                                    src:'img/cobham-brand/Ship4.svg',
+                                    width: 133,
+                                    height: 48,
+                                    id: 'oil_gas'
+                                },
+                                {
+                                    src:'img/cobham-brand/Ship5.svg',
+                                    width: 116,
+                                    height: 71,
+                                    id: 'fisheries'
+                                }
+                            ]
+                            const shipsReverse = ships.reverse();
+                        each ship, index in shipsReverse
+                            div(class="absolute top-1/3 left-1/3 rounded-full bg-white w-30 xs:w-32 sm:w-40 aspect-square grid place-items-center p-1 xs:p-4 group" style=`box-shadow: 0 0 20px #00000022; transform: rotate(${(index+1)*47}deg) translate(clamp(170px, 35vw, 250px))` data-id=`${ship.id}`)
+                                img(src=`${ship.src}`, alt=`Ship${index+1} Icon` style=`transform: rotate(${(index+1)*-47+321}deg)` class="w-5/6 xs:w-auto" width=`${ship.width}` height=`${ship.height}`)
+
+                div(class="lg:text-right")
+                    img(loading="lazy" src="img/cobham-brand/DomeAntennaShape.png", alt="alt" width="622" height="688" class="hidden md:block float-left shape-outside brightness-75 -z-10 relative xl:-ml-28 opacity-0")
+                    p(class="pt-64 sm:pt-72 md:pt-24").
+                        Sea Tel antennas were adopted on every type of vessel, resulting in five distinct market segments: <span id="leisure" class="font-proxima-bold transition-all inline-block">Leisure Yachts</span>, <span id="commercial" class="font-proxima-bold transition-all inline-block">Commercial Vessels</span> (cruise and cargo ships), <span id="military" class="font-proxima-bold transition-all inline-block">Military</span>, <span id="oil_gas" class="font-proxima-bold transition-all inline-block">Oil & Gas,</span> and <span id="fisheries" class="font-proxima-bold transition-all inline-block">Fisheries</span>. Soon, the brand was being marketed across the world -- anywhere there is shipping, with a product line of 32 different models designed for every type of maritime application. Sea Tel gained immediate majority market share.
+                    p.
+                        Cobham appointed Tungsten as its advertising agency for the Sea Tel  division, with the objective of creating a powerful central idea for the  brand, and executing that idea across every consumer touch-point,  worldwide. This includes corporate brand-building in trade magazines  published from every shipping center around the globe, tactical advertising  in print, online display advertising, social media in Facebook, Twitter and YouTube, video production, poster design, brochures, pamphlets and  collateral materials, trade-show booth design, fabrication, executing product photography, public relations in maritime and satcom trade journals, white papers for each product, cartography and mapmaking, printing, media planning and worldwide media buying, internal training materials, and all other full-service advertising services that the brand may need.
+
+
+        section(class="lg:mt-10 xl:mt-32 py-16 sm:py-32 lg:py-36 relative overflow-hidden" style="background: #223F7B;")
+            svg(viewBox="0 0 1921 10" class="absolute top-0 bottom-auto z-50 ")
+                path(d="M96.0172 4.72619C64.069 1.58103 32.1207 0.00567729 0.172485 0H383.896C351.948 0.00567729 320 1.58103 288.052 4.72619C224.04 11.0277 160.029 11.0277 96.0172 4.72619Z" fill="white")
+                path(d="M480.086 4.72619C448.138 1.58103 416.19 0.00567729 384.242 0H767.965C736.017 0.00567729 704.069 1.58103 672.121 4.72619C608.109 11.0277 544.098 11.0277 480.086 4.72619Z" fill="white")
+                path(d="M768.311 0C800.259 0.00567729 832.207 1.58103 864.155 4.72619C928.167 11.0277 992.178 11.0277 1056.19 4.72619C1088.14 1.58103 1120.09 0.00567729 1152.03 0H768.311Z" fill="white")
+                path(d="M1248.22 4.72619C1216.28 1.58103 1184.33 0.00567729 1152.38 0H1536.1C1504.16 0.00567729 1472.21 1.58103 1440.26 4.72619C1376.25 11.0277 1312.24 11.0277 1248.22 4.72619Z" fill="white")
+                path(d="M1632.29 4.72619C1600.35 1.58103 1568.4 0.00567729 1536.45 0H1920.17C1888.22 0.00567729 1856.28 1.58103 1824.33 4.72619C1760.32 11.0277 1696.31 11.0277 1632.29 4.72619Z" fill="white")
+
+            div(class="mx-auto max-w-xl font-proxima-bold relative z-10 text-sm sm:text-base lg:text-xl text-white text-center px-6" style="text-shadow: 0 0 5px #071f5155;").
+                Tungsten has rare knowledge and expertise in maritime and satellite communications products and services. If you are a marketer with a maritime product targeted at a specific geo or worldwide, Tungsten would like the opportunity to talk to you about your brand, regardless of where in  the world your company is headquartered. We're in San Francisco, California
+            div(class="shadow absolute inset-0 w-full h-full z-40 pointer-events-none" style="box-shadow: inset 0 0 9vw #223F7B;")
+            img(src="img/cobham-brand/SeaSurface@1920.jpg", srcset="img/cobham-brand/SeaSurface@480.jpg 480w, img/cobham-brand/SeaSurface@640.jpg 640w, img/cobham-brand/SeaSurface@780.jpg 780w, img/cobham-brand/SeaSurface@900.jpg 900w, img/cobham-brand/SeaSurface@1200.jpg 1200w, img/cobham-brand/SeaSurface@1920.jpg 1920w", alt="Sea Surface Image" loading="lazy" class="z-0 absolute w-full h-full inset-0 object-cover object-top opacity-90")
+
+
+    //- div(class="container py-12 md:py-20")
+        -
+            const team = [
+                {
+                    role: "Creative Director",
+                    name:"Stuart Silberman",
+                    contacts: {
+                        linkedin: "https://www.linkedin.com/in/stuart_silberman/"
+                    }
+                },
+                {
+                    role: "Client",
+                    name: "Bobby Jones"
+                }
+            ]
+        +team(team)
+
+
+append footer_scripts
+
+
+
+
+

@@ -1,10 +1,10 @@
 mixin page-title(u)
     header(class=`page-title pt-8 pb-6 ${u.classes}`)
         .container
-            div(class="tag-client inline-block text-white bg-blue-light font-proxima-bold px-2 py-0.5")= u.tagClient
-            h1(class=" mt-4 font-proxima-bold leading-none text-blue-dark") !{u.h1}
+            div(class=`tag-client inline-block font-proxima-bold px-2 py-0.5 ${u.tagClasses}`)= u.tagClient
+            h1(class=`mt-4 font-proxima-bold leading-none ${u.h1Classes}`) !{u.h1}
             if u.subtitle
-                p.page-subtitle.mt-3.text-blue-dark.leading-tight !{u.subtitle}
+                p(class=`page-subtitle mt-3 leading-tight ${u.subtitleClasses}`) !{u.subtitle}
             if u.audio
                 a(class="btn-audio w-auto relative font-proxima-bold no-underline px-4 h-9 rounded-sm items-center inline-flex mt-6 border border-current text-blue-dark after:inline-block after:h-full after:w-3 after:bg-white after:absolute after:left-11 after:z-0 after:scale-y-110 hover:text-blue transition-colors" href=`${u.audio}`)
                     svg.inline-block.relative.z-10.w-20.h-16.mr-4
