@@ -3,6 +3,7 @@ block variables
     - var pageTitle = 'Tungsten Advertising Case Study | Cobham SeaTel Brand Page'
 
 prepend preload
+    //- <link rel="preload" as="video" href="../img/cobham-brand/cobham-brand-hero-bg.mp4">
     style.
         #cobham-seatel-brand-hero-video {
         }
@@ -18,24 +19,26 @@ prepend preload
             z-index: -1;
         }
 append head
-    //- script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer)
     script(src="../js/cobham-seatel-brand.js" defer)
+
+
 
 block page
     div(class="video-container relative")
         video(id="cobham-seatel-brand-hero-video" class="absolute inset-0 -z-10 w-full h-full object-cover object-top" autoplay loop muted)
-            source(src="img/cobham-brand/Comp 1.mp4" type="video/mp4")
-        div(class="hero relative pt-px")
-            img(src="img/cobham-brand/satelite.svg", alt="alt" width="1700" height="506" class="md:w-10/12 block mx-auto relative top-3 lg:top-5 xl:top-7")
+            source(src="../img/cobham-brand/cobham-brand-hero-bg.mp4" type="video/mp4")
+
+        .hero
+
 
 
         +page-title({
             tagClient: 'Cobham',
             tagClasses: 'bg-white text-blue-light',
             h1: 'Would You Go on a Pleasure Cruise if You Had to Leave Your Phone at Home?',
-            h1Classes: 'text-white',
+            h1Classes: 'text-white drop-shadow-sm',
             subtitle: 'Imagine yourself a seaman on a tanker crossing the calm blue oceans. Or imagine living on an oil rig. Or as a sailor on a naval carrier. How do you keep in touch with the world when living and working on a sea-going vessel, hundreds of miles from a land-line or a cell tower?',
-            subtitleClasses: 'text-white',
+            subtitleClasses: 'text-white drop-shadow-sm',
             classes: 'inverted z-50 after:absolute after:w-full after:h-1/4 after:top-auto after:bottom-0'
         })
 
