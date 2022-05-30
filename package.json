@@ -8,6 +8,7 @@
     "swiper": "^7.4.1"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.18.2",
     "autoprefixer": "^10.4.1",
     "browser-sync": "^2.27.7",
     "critical": "^4.0.1",

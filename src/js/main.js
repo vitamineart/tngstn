@@ -1,7 +1,3 @@
-AOS.init({
-  once: true,
-});
-
 // Set a variable for our button element.
 const scrollToTopButton = document.getElementById("go-to-top");
 
@@ -52,3 +48,8 @@ window.onload = function () {
     });
   }, 1000);
 };
+
+
+AOS.init({
+  once: true,
+});

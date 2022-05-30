@@ -3,6 +3,10 @@ block variables
     - var pageTitle = 'Tungsten Advertising Case Study | Cobham SeaTel Data Sheets'
 
 prepend preload
+    script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer)
+    script(src="js/cobham-seatel-datasheets.js" defer)
+
+append head
     style.
         .hero {
             position: relative;
@@ -19,9 +23,6 @@ prepend preload
             right:0;
             z-index: 1000;
         }
-append head
-    script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer)
-    script(src="js/cobham-seatel-datasheets.js" defer)
 
 block page
     div(class="hero overflow-hidden")
@@ -246,9 +247,8 @@ block page
 
 
 append footer_scripts
-    //- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print"  onload="this.media='all'"/>
 
-    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.js" integrity="sha512-EqNNJuepkw5P9vxCml8eBk7C4Ld+4kAnvzOD/jG21rkxWPILGoQa5EvD62UieiJF0u3xoQrcVnce4i83VnYj/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" async>)
+    script(src="js/simpleParallax.js" defer)
 
 
 
