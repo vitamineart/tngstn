@@ -50,6 +50,9 @@ module.exports = {
         "transform-opacity": "transform, opacity",
       },
       spacing: {
+        7:	"1.75rem"	/* 28px */,
+        7.5:	"1.875rem"	/* 30px */,
+        8:	"2rem"	/* 32px */,
         12.5: "3.125rem",
         13: "3.25rem",
         16:	"4rem", /* 64px */
@@ -70,6 +73,9 @@ module.exports = {
         92: "23rem",
         94: "23.5rem",
       },
+      scale: {
+        '85': '0.85',
+      }
     },
     screens: {
       xs: "480px",

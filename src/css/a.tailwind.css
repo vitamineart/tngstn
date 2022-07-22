@@ -16,7 +16,9 @@
     a:hover {
       @apply no-underline; }
   .container {
-    @apply px-6 sm:px-8 md:px-10 mx-auto max-w-5xl; } }
+    @apply px-6 sm:px-8 md:px-10 mx-auto max-w-5xl; }
+  b, strong {
+    @apply font-proxima-bold; } }
 
 @tailwind components;
 @tailwind utilities;

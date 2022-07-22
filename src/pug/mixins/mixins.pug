@@ -6,11 +6,16 @@ mixin page-title(u)
             if u.subtitle
                 p(class=`page-subtitle mt-3 leading-tight ${u.subtitleClasses}`) !{u.subtitle}
             if u.audio
-                a(class="btn-audio w-auto relative font-proxima-bold no-underline px-4 h-9 rounded-sm items-center inline-flex mt-6 border border-current text-blue-dark after:inline-block after:h-full after:w-3 after:bg-white after:absolute after:left-11 after:z-0 after:scale-y-110 hover:text-blue transition-colors" href=`${u.audio}`)
-                    svg.inline-block.relative.z-10.w-20.h-16.mr-4
-                        +iconMulti('audio-wave')
-
-                    span.text-base Listen
+                if invertedAudio
+                    a(class=`btn-audio w-auto relative font-proxima-bold no-underline px-4 h-9 rounded-sm items-center inline-flex mt-6 border border-current text-blue-dark hover:text-blue transition-colors ${u.audioClasses}` href=`${u.audio}`)
+                            svg.inline-block.relative.z-10.w-20.h-16.mr-4
+                                +iconMono('audio-wave')
+                            span.text-base Listen
+                else
+                    a(class=`btn-audio w-auto relative font-proxima-bold no-underline px-4 h-9 rounded-sm items-center inline-flex mt-6 border border-current text-blue-dark after:inline-block after:h-full after:w-3 after:bg-white after:absolute after:left-11 after:z-0 after:scale-y-110 hover:text-blue transition-colors ${u.audioClasses}` href=`${u.audio}`)
+                            svg.inline-block.relative.z-10.w-20.h-16.mr-4
+                                +iconMulti('audio-wave')
+                            span.text-base Listen
 
 
 mixin lead-in(u)
