@@ -23,7 +23,7 @@ header.header {
     @apply mt-3 sm:mt-4 md:mt-6;
   }
   img.shape-outside {
-    shape-margin: 15px;
+    shape-margin: clamp(15px, 3vw, 30px);
   }
 }
 .have_question {

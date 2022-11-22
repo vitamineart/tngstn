@@ -8,6 +8,7 @@ prepend preload
 
     script(src="https://d3js.org/d3.v4.js" defer)
     script(src="https://cdnjs.cloudflare.com/ajax/libs/d3-ease/1.0.3/d3-ease.min.js" defer)
+    script(src="https://unpkg.co/gsap@3/dist/gsap.min.js" defer)
     script(src="js/shamann-walton.js" defer)
 
 
@@ -18,6 +19,7 @@ append head
         :root {
             --c-walton-violet: #604B8D;
             --c-walton-purple: #744E9F;
+
         }
         .hero {
             background-image: url(img/shamann-walton/Walton-Hero-Bg.jpg);
@@ -27,13 +29,23 @@ append head
 
 block page
     div(class="relative hero pt-1 bg-slate-700 bg-cover bg-no-repeat !xs:bg-center")
+
+        .container.flex.justify-end
+            a(href="#" class="watch-video-btn group transition duration-300 text-white no-underline font-proxima-bold inline-flex items-center mt-10 hover:text-purple-400")
+                +iconMono({
+                    icon: 'watch-video',
+                    classes: 'w-9 h-9 fill-current mr-3 '
+                })
+                span Watch Video
+
         +page-title({
+            inverted: true,
             tagClient: 'Shamann Walton',
-            tagClasses: 'bg-violet-800/50 text-white relative',
+            tagClasses: 'bg-[#744e9f] text-white relative',
             h1: 'How a Candidate for San Francisco\'s Board of  Supervisors Won the Election in  a Crowded Field',
             h1Classes: 'text-white drop-shadow-sm',
-            audio: '#',
-            audioClasses: 'fill-white !text-white hover:opacity-70',
+            audio: '',
+            audioClasses: '',
             classes: 'mt-48'
         })
         div(class="py-10 text-white text-3xl" style="background-color: hsla(259, 27%, 50%, 0.9);")
@@ -42,7 +54,8 @@ block page
                     It was <b>ten days before election day.</b>
                 p.
                     Seven candidates were running for the position of Supervisor of District 10 in San Francisco. Polls showed three of them tied at first place.
-
+                p.mt-5.
+                    That day, the Labor Council of San Francisco - a Political Action Committee - asked Tungsten to create and place a television commercial to help the candidate they were supporting, Shamann Walton, win the election.
     img(src="img/shamann-walton/walton-hands-logos@1921.jpg" srcset="img/shamann-walton/walton-hands-logos@400.jpg 400w, img/shamann-walton/walton-hands-logos@600.jpg 600w, img/shamann-walton/walton-hands-logos@800.jpg 800w, img/shamann-walton/walton-hands-logos@1200.jpg 1200w, img/shamann-walton/walton-hands-logos@1921.jpg 1921w, img/shamann-walton/walton-hands-logos@3842.jpg 3842w" width="1921" height="524" class="object-cover" style="min-height: 130px;")
 
 
@@ -53,7 +66,7 @@ block page
                     District 10 of San Francisco starts at county line and  runs north along the bay to Dog Patch. It includes  voter banks such as Vietnamese-Americans in Visitation Valley, Chinese-Americans in Bayshore, Black  residents in Bay View, White residents in Dog Patch, and  several other diverse socio-economic groups.
                 p
                 div(class="sm:flex sm:space-x-6 lg:space-x-10")
-                    div(class="font-proxima-bold text-white py-6 sm:py-8 md:py-10 px-8 sm:px-10  md:px-12 md:max-w-sm my-6 sm:m-0" style="background-image: linear-gradient(-135deg, hsl(260, 97%, 86%), hsl(259, 33%, 52%))" data-aos="fade-right" data-aos-data-aos-duration="1000" data-aos-delay="100").
+                    div(class="font-proxima-bold text-white py-6 sm:py-8 md:py-10 px-8 sm:px-10  md:px-12 md:max-w-sm my-6 sm:m-0" style="background-image: linear-gradient(-135deg, hsl(260, 97%, 86%), hsl(259, 33%, 52%))" data-aos="fade-right" data-aos-duration="1200").
                         When advertising for  an election, television  must be an essential  component of the  media plan. It appeals  disproportionately to  older viewers. An  audience comprising  homeowners and  business owners --  the demographic  most likely to vote.
 
                     div
@@ -188,15 +201,15 @@ block page
                         "Are so targeted as to cost fractions of a penny per impression ",
                         "Require no budgetary commitments with the platform"
                     ]
-                div(class="w-full xs:w-10/12 sm:w-5/12 lg:w-1/2 mx-auto sm:ml-10 my-5 sm:float-right text-center font-proxima-bold leading-tight border-2 border-current" data-aos-duration="2000" data-aos="zoom-in" style="color: var(--c-walton-purple);")
-                    div(class=" text-white px-8 lg:px-12.5 py-4 text-lg lg:text-xl bg-current" data-aos-duration="1500" data-aos="fade-in" style="background-color: var(--c-walton-purple);").
+                div(class="w-full xs:w-10/12 sm:w-1/2 lg:w-1/2 mx-auto sm:ml-8 md:ml-10 lg:ml-24 my-6 sm:mt-24 sm:float-right text-center font-proxima-bold leading-tight border-2 border-current" data-aos-duration="2000" data-aos="zoom-in" style="color: var(--c-walton-purple); max-width: 430px;")
+                    div(class=" text-white px-8 lg:px-12.5 py-4 text-lg lg:text-xl bg-current" data-aos-duration="1500" data-aos="fade-in" style="background-color: var(--c-walton-purple); ").
                         Online ads are easy to implement:
                     each name, index in datasheetReferred
-                        div(class="odd:bg-gray-light/80 px-8 lg:px-12.5 py-4 text-sm lg:text-base border-current" data-aos-duration="2000" data-aos="fade-in" data-aos-delay=`${150*(index+1)}`)
+                        div(class="odd:bg-gray-light/80 px-8 lg:px-12.5 py-4 text-sm lg:text-base lg:!leading-loose border-current" data-aos-duration="2000" data-aos="fade-in" data-aos-delay=`${150*(index+1)}`)
                             span.text-black= name
 
                 div(class="mt-12")
-                    header(class="font-proxima-bold text-3xl text-current after:block after:mt-6 after:w-7.5 after:h-1 after:bg-current " style="color: var(--c-walton-violet);") Sometimes, the Medium is the Message
+                    header(class="font-proxima-bold text-3xl text-current after:block after:mt-6 after:w-7.5 after:h-1 after:bg-current " style="color: var(--c-walton-violet);") Sometimes, the Medium <br class="hidden lg:block"> is the Message
                     p Could we have achieved the same success without a heavy  reliance on television advertising?
                     p What would have been the outcome if we had spent the entire  budget online instead?
                     p If we had spent the same dollars on tightly targeted online ads, we would have had the capability to individually reach each person registered to vote, with individualized messages specifically crafted for that voter. We could have further sliced and diced the audience by parameters such as propensity to vote, party affiliation, social issues, etc.
@@ -204,27 +217,34 @@ block page
                     p But would that approach have won the election in a 6-day  sprint?
         section(class="py-12 lg:py-20 relative" style="background-color: hsla(0,0%,80%,0.25);")
             div(class="container sm:flex items-center")
-                div(class="sm:pr-12 lg:pr-24 sm:w-7/12 lg:w-1/2")
+                div(class="sm:pr-12 lg:pr-24 sm:w-1/2")
                     p Television commercials are perceived by viewers as higher value, with a higher bar-to-entry for the advertiser.
                     p The target audience knows that it's easier for an advertiser to  <b>"Boost"</b> a video on Facebook than to run the same video as a  television spot.
                     p Let's think about this for a moment: Do you remember ever  having seen a political candidate make a public speech where  they sounded ambivalent about their chances of winning?
                     p No.
                     p You'll never see that happen.
 
-                div(class="text-center sm:text-left mx-auto border-t-2 sm:border-l-2 sm:border-t-0 mt-10 border-current sm:pl-5 pt-5 sm:py-6 w-10/12 sm:w-5/12 lg:w-1/2 font-proxima-bold text-lg lg:text-xl -tracking-tight " style="color: var(--c-walton-violet);").
+                div(class="text-center sm:text-left mx-auto border-t-2 sm:border-l-[4px] sm:border-t-0 mt-10 border-current sm:pl-5 pt-5 sm:py-6 w-10/12 sm:w-1/2  font-proxima-bold text-lg lg:text-xl -tracking-tight " style="color: var(--c-walton-violet);").
                     When a voter sees a political candidate advertising in mass media, it  leaves the voter with a different perception of the candidate's  viability than if they were to see the same exact message on Facebook  or other online channels.
-        section(class="py-12 lg:py-20 relative text-white" style="background-color: var(--c-walton-violet);")
+        section(class="pt-0 pb-12 sm:py-12 lg:py-20 relative text-white" style="background-color: var(--c-walton-violet);")
             style.
                 #waltons-people-image{
                     color: #785BB7;
                 }
+                #waltons-people-image img{
+                    border: 3px solid currentColor;
+                }
                 @media (min-width: 1024px){
-                    #waltons-people-image{
-                        width: calc(50% - 2.6rem);
+                    #waltons-people-image {
+                        width: calc(50% - 3.6rem);
                         height: calc(100% - 8rem);
+                        max-height: 695px;
                     }
                 }
-            img(loading="lazy" id="waltons-people-image" src="img/shamann-walton/waltons_people@1720.jpg", srcset="img/shamann-walton/waltons_people@600.jpg 600w, img/shamann-walton/waltons_people@860.jpg 860w, img/shamann-walton/waltons_people@1720.jpg 1720w" sizes="(max-width: 640px) 84vw, (max-width: 1024px) 50vw, 47vw" alt="Walton's People" class="sm:float-right sm:mx-5 lg:mx-0 sm:mb-5 lg:absolute lg:-translate-y-1/2 top-1/2 right-10 block mx-auto w-10/12 sm:w-1/2 lg:object-cover border-3 border-current shadow-sm" width="860" height="613")
+
+            div(id="waltons-people-image" class=" sm:float-right lg:float-none sm:mx-7 lg:mx-0 sm:mb-5 lg:absolute lg:-translate-y-1/2 top-1/2 right-10 block mx-auto w-full sm:w-1/2 md:shadow-lg")
+                img(loading="lazy"  src="img/shamann-walton/waltons_people@430.jpg", srcset="img/shamann-walton/waltons_people@646.jpg 646w, img/shamann-walton/waltons_people@860.jpg 860w, img/shamann-walton/waltons_people@1290.jpg 1290w, img/shamann-walton/waltons_people@1720.jpg 1720w, img/shamann-walton/waltons_people@2580.jpg 2580w" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 45vw, 46.5vw" alt="Walton's People" class="w-full h-full object-cover xl:object-top border-none" width="860" height="613")
+
             div(class="container lg:flex")
                 div(class="w-full mt-8 sm:mt-0 lg:w-1/2 pr-5")
                     p Publicly, candidates always make announcements like “When  I’m President, I will ___(fill-in-the-blank)___ on Day One.”
@@ -235,7 +255,7 @@ block page
                     p Or they have insufficient funds.
                     p Which means donors are unsure.
                     p When voters see that a candidate is advertising, they sense  that the candidate has a viable shot at victory. That’s when  voters put their support and donations behind that candidate.
-        section(class="py-12 lg:py-20 relative")
+        section(class="py-12 lg:py-20 relative ")
             .container.z-10.relative
                 div(class="xs:w-9/12 mx-auto")
                     header(class="text-2xl sm:text-3xl font-proxima-bold" style="color: var(--c-walton-violet);") But how do voters know that a candidate is advertising?
@@ -248,28 +268,42 @@ block page
                     p They know that contracts with TV stations are longer-term,  and budgetary commitments are more substantial. In other words, when voters see a commercial on television,  they subconsciously conclude that the candidate must have a  donor base to support the advertising they are seeing.
 
 
-                    style.
-                        .tick {
-                            font-size: 15px;
-                            font-weight: 900;
-                            padding: 10px;
-                        }
-                        .tick line {
-                            opacity: .2;
-                        }
-                    div(class="mt-10 p-5 mx-auto bg-white rounded-3xl flex flex-col items-center" id="chart-container" data-aos="fade-in" data-aos-duration="1000" )
-                        header.text-3xl.font-proxima-bold.text-center Average Super Bowl ad costs, 1967-2020
-                        div(class="mt-5 py-4 px-5 rounded-full text-current font-proxima-bold text-xs flex items-center" style="color: #2028E8; box-shadow: inset 4px 4px 22px hsla(0, 0%, 0%, 0.1);" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300")
-                            div(class="bg-current rounded-full w-2 h-2 box-content border-gray-200 border-3 mr-2")
-                            span Average cost for 30-sec. spot adjusted for inflation
 
-                        <div id="chart"></div>
+                style.
+                    #chart {
+                        aspect-ratio: 904 / 487;
+                    }
+                    .tick {
 
-            img(loading="lazy" src="img/shamann-walton/chart-bg-bridge@1920.jpg", srcset="img/shamann-walton/chart-bg-bridge@600.jpg 600w, img/shamann-walton/chart-bg-bridge@800.jpg 800w, img/shamann-walton/chart-bg-bridge@1200.jpg 1200w, img/shamann-walton/chart-bg-bridge@1920.jpg 1920w, img/shamann-walton/chart-bg-bridge@3840.jpg 3840w", alt="Golden Gate Bg" class="absolute w-full h-full inset-0 z-0 object-cover" width="1920" height="999")
+                    }
+                    .tick line {
+                        opacity: .2;
+                    }
+                    .tick text {
+                        font-size: 12px;
+                        font-weight: 900;
+                        padding: 10px;
+                        font-family: 'ProximaNovaA-Bold';
+                        width: 20px;
+                        height: 20px;
+                    }
+                div(class="mt-10 px-3 py-5 lg:p-5 bg-white -mx-6 md:mx-auto sm:rounded-xl md:rounded-2xl lg:rounded-3xl flex flex-col items-center min-h-min" id="chart-container")
+                    header(class="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-proxima-bold text-center") Average Super Bowl ad costs, 1967&nbsp;-&nbsp;2020
+                    div(class="mt-5 py-3 lg:py-4 px-4 lg:px-5 rounded-full text-current font-proxima-bold text-xs flex items-center" style="color: #2028E8; box-shadow: inset 4px 4px 22px hsla(0, 0%, 0%, 0.1);" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="700")
+                        div(class="bg-current flex-none rounded-full w-2 h-2 box-content border-gray-200 border-3 mr-2.5")
+                        span Average cost for 30-sec. spot adjusted for&nbsp;inflation
+
+                    <div id="chart" class="w-full"></div>
+
+            img(loading="lazy" src="img/shamann-walton/chart-bg-bridge@1920.jpg", srcset="img/shamann-walton/chart-bg-bridge@600.jpg 600w, img/shamann-walton/chart-bg-bridge@800.jpg 800w, img/shamann-walton/chart-bg-bridge@1200.jpg 1200w, img/shamann-walton/chart-bg-bridge@1920.jpg 1920w, img/shamann-walton/chart-bg-bridge@3840.jpg 3840w", sizes="" alt="Golden Gate Bg" class="absolute w-full h-full inset-0 z-0 object-cover" width="1920" height="999"  data-aos="fade-in" data-aos-delay="600" data-aos-duration="1500")
 
         section(class="py-12 lg:py-20 relative" style="background-color: hsla(0, 0%, 80%, 0.25)")
             div(class="container flow-root xl:flex")
-                img(loading="lazy" src="img/shamann-walton/Walton_with_family@867.jpg", srcset="img/shamann-walton/Walton_with_family@600.jpg 600w, img/shamann-walton/Walton_with_family@867.jpg 867w, img/shamann-walton/Walton_with_family@1734.jpg 1734w" sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, (max-width:1280px) 472px, 50vw" alt="Walton with Family" width="867" height="591" class=" border-white shadow-xl border-5 lg:border-12 md:w-1/2 xl:w-7/12 2xl:w-1/2 mx-auto md:float-left xl:float-none xl:absolute xl:top-1/2 xl:-translate-y-1/2 xl:-translate-x-5 left-0 md:mr-5" id="walton-w-family-image")
+                style.
+                    #walton-family-image {
+                        height: calc(100% - 10rem);
+                    }
+                img(loading="lazy" src="img/shamann-walton/Walton_with_family@867.jpg", srcset="img/shamann-walton/Walton_with_family@600.jpg 600w, img/shamann-walton/Walton_with_family@867.jpg 867w, img/shamann-walton/Walton_with_family@1734.jpg 1734w" sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, (max-width:1280px) 472px, 50vw" alt="Walton with Family" width="867" height="591" class=" border-white shadow-xl border-5 lg:border-12 md:w-1/2 xl:w-7/12 2xl:w-1/2 mx-auto md:float-left xl:float-none xl:absolute xl:top-1/2 lg:-left-10 xl:-translate-y-1/2 xl:-translate-x-5 left-0 md:mr-5 object-cover object-right" id="walton-family-image")
                 div(class="xl:w-5/12 2xl:w-1/2 xl:ml-auto xl:pl-10 mt-6 md:mt-0")
                     p Which in turn implies the candidate has professional and experienced staff, and not simply a team of social media  interns.
                     p In the voters' mind, they are now looking at a viable candidate worth supporting.
@@ -289,11 +323,11 @@ block page
                         p The commercial suddenly becomes a talking point that the  audience can discuss with their friends and relatives later that  weekend, confident that their friends have also seen the  commercial, and are thinking the same thing.
                         p While television worked so well to help Shamann Walton win  the election, that's not to say that a media plan that is limited  to television will always be the best strategy.
                     div(class="md:w-1/2 ")
-                        div(class="overflow-hidden max-w-sm mx-auto rounded-2xl shadow-2xl")
+                        div(class="overflow-hidden max-w-sm mx-auto rounded-2xl shadow-2xl" data-aos="zoom-in" data-aos-duration="400")
                             div(class="text-white px-7 py-5 font-proxima-bold text-xl" style="background-color: var(--c-walton-violet)") Advertising in mass media gives the consumer  greater trust in the brand. This is especially critical  for certain product categories:
-                            div.bg-white.px-7.py-5 High price or high involvement products
-                            div.bg-gray-light.px-7.py-5 Products that need ongoing support
-                            div.bg-white.px-7.py-5 Products that are long term customer commitments - Products that depend on an ecosystem
+                            div(class=" bg-white px-7 py-5" data-aos="zoom-in" data-aos-delay="100") High price or high involvement products
+                            div(class=" bg-gray-light px-7 py-5" data-aos="zoom-in" data-aos-delay="150") Products that need ongoing support
+                            div(class=" bg-white px-7 py-5" data-aos="zoom-in" data-aos-delay="200") Products that are long term customer commitments - Products that depend on an ecosystem
                 style.
                     #mass_media_circle {
                         max-width: 441px;
@@ -357,12 +391,12 @@ block page
                         }
                     }
 
-                img(loading="lazy" src="img/shamann-walton/mass_media_circle@841.png", srcset="img/shamann-walton/mass_media_circle@620.png 620w, img/shamann-walton/mass_media_circle@841.png 841w, img/shamann-walton/mass_media_circle@1200.png 1200w, img/shamann-walton/mass_media_circle@1682.png 1682w", sizes="(max-width: 640px) 441px, (max-width: 768px) 541px, (max-width: 1024px) 80vw, 841px" alt="Mass Media" id="mass_media_circle" class="border-12 border-white shadow-2xl absolute -z-10 aspect-square rounded-full" width="841" height="841")
+                img(loading="lazy" src="img/shamann-walton/mass_media_circle@841.png", srcset="img/shamann-walton/mass_media_circle@620.png 620w, img/shamann-walton/mass_media_circle@841.png 841w, img/shamann-walton/mass_media_circle@1200.png 1200w, img/shamann-walton/mass_media_circle@1682.png 1682w", sizes="(max-width: 640px) 441px, (max-width: 768px) 541px, (max-width: 1024px) 80vw, 841px" alt="Mass Media" id="mass_media_circle" class="shape-outside float-right border-12 border-white shadow-2xl absolute -z-10 aspect-square rounded-full" width="841" height="841")
 
-                div(id="megaphone-container" class="lg:-ml-7 mt-18 flow-root")
-                    div(class="shadow-xl font-proxima-bold text-base sm:text-lg lg:text-xl max-w-2xl px-10 py-7 -mb-8 -ml-3 xs:ml-0 -mr-4 lg:ml-8" style="background-color: #EAC31F; transform: rotate(2.21deg)") For over a half century it’s been well-known to advertising agency  media planners that when a consumer sees an ad in three different  mediums, the consumer will have higher recall of that ad than when  they see the same ad multiple times in the same medium.
+                div(id="megaphone-container" class="lg:-ml-7 mt-18 flow-root" )
+                    div(class="shadow-xl relative z-10 font-proxima-bold text-base sm:text-lg lg:text-xl max-w-2xl px-10 py-7 -mb-8 -ml-3 xs:ml-0 -mr-4 lg:ml-8" style="background-color: #EAC31F; transform: rotate(2.21deg)" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="600" data-aos-easing="ease-out-back") For over a half century it’s been well-known to advertising agency  media planners that when a consumer sees an ad in three different  mediums, the consumer will have higher recall of that ad than when  they see the same ad multiple times in the same medium.
 
-                    img(id="megaphone" loading="lazy" src="img/shamann-walton/megaphone@833.png" srcset="img/shamann-walton/megaphone@600.png 600w, img/shamann-walton/megaphone@833.png 833w" sizes="833px" class="float-right shape-outside -mr-6 ml-10 lg:-mb-20 md:w-2/3 xl:w-auto" width="833" height="579")
+                    img(id="megaphone" loading="lazy" src="img/shamann-walton/megaphone@833.png" srcset="img/shamann-walton/megaphone@600.png 600w, img/shamann-walton/megaphone@833.png 833w" sizes="833px" class="relative z-0 float-right shape-outside -mr-6 ml-10 lg:-mb-20 md:w-2/3 xl:w-auto" width="833" height="579" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300" data-aos-easing="ease-out-back")
                     p(class=" lg:ml-7 !mt-10 lg:!mt-36") For instance, if a media budget is spread across three media:  let's say, a primary medium of TV, some support media like online, and also some billboard and bus stop shelters, and if the consumer sees the ad once in each medium, that individual is more likely to remember the brand and its  message, than someone who has seen the same ad three times  on TV. Or three times on billboards. Or thrice online.
 
         section(class="py-12 lg:py-20 relative")
@@ -376,12 +410,13 @@ block page
                 p That can only happen when the product has been advertised  on mass media where everyone has seen it. Not when it's  targeted one-on-one at individuals on their phone screens,  based on data that says they "have a propensity to purchase  IPAs that are maltier but less hoppy," or a propensity to vote  on a certain political issue.
                 p Brands (and politicians) build instant social validation on  television in a way online ads cannot match.
 
-            img(loading="lazy" src="img/shamann-walton/Badges_bg@1920.jpg", srcset="img/shamann-walton/Badges_bg@600.jpg 600w, img/shamann-walton/Badges_bg@800.jpg 800w, img/shamann-walton/Badges_bg@1000.jpg 1000w, img/shamann-walton/Badges_bg@1200.jpg 1200w, img/shamann-walton/Badges_bg@1920.jpg 1920w", alt="Badges Bg" width="1920" height="723" class="absolute w-full h-full inset-0 z-0 object-cover")
+            img(loading="lazy" src="img/shamann-walton/Badges_bg@1920.jpg", srcset="img/shamann-walton/Badges_bg@600.jpg 600w, img/shamann-walton/Badges_bg@800.jpg 800w, img/shamann-walton/Badges_bg@1000.jpg 1000w, img/shamann-walton/Badges_bg@1200.jpg 1200w, img/shamann-walton/Badges_bg@1920.jpg 1920w", alt="Badges Bg" width="1920" height="723" class="absolute w-full h-full inset-0 z-0 object-cover" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000")
         section(class="py-12 lg:py-20 relative" style="background-color: hsla(284, 64%, 25%, 0.63);")
-            .container.text-white
+            div(class="pattern w-full h-full absolute inset-0 z-0 mix-blend-darken " style="background: url(../../../img/TomMeyer/pattern.png) left top no-repeat; background-size: cover;")
+            .container.text-white.z-10.relative
                 header(class="text-4xl lg:text-5xl font-proxima-bold") Television and the power of shared experience
                 p Try for a moment to recall a time when you saw a movie in a  theater.
-                img(loading="lazy" src="img/shamann-walton/walton-circle-image@802.png" srcset="img/shamann-walton/walton-circle-image@600.png 600w, img/shamann-walton/walton-circle-image@802.png 802w, img/shamann-walton/walton-circle-image@1200.png 1200w, img/shamann-walton/walton-circle-image@1600.png 1600w" sizes="(max-width: 640px) 85vw, (max-width:1024px) 90vw, 802px" class="border-5 border-current text-violet-100 rounded-full shadow-2xl float-right shape-outside -mr-32 xs:-mr-48 sm:-mr-56 lg:-mr-64" width="802" height="802" data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="700")
+                img(loading="lazy" src="img/shamann-walton/walton-circle-image@802.png" srcset="img/shamann-walton/walton-circle-image@600.png 600w, img/shamann-walton/walton-circle-image@802.png 802w, img/shamann-walton/walton-circle-image@1200.png 1200w, img/shamann-walton/walton-circle-image@1600.png 1600w" sizes="(max-width: 640px) 85vw, (max-width:1024px) 90vw, 802px" class="border-5 lg:border-8 border-current text-violet-100 rounded-full shadow-2xl float-right shape-outside -mr-32 xs:-mr-48 sm:-mr-56 lg:-mr-64 scale-95 " width="802" height="802" style="max-width: 802px !important; ")
                 p When we're seeing a movie in a sold-out theater, we  have a very different experience than when we watch it alone  at home, on our favorite couch.
                 p When we collectively experience the same emotion as  everyone else around us, that experience is indelible. Sports matches, rock concerts, solar eclipses, Princess Diana's  funeral, these are the defining moments of our lives. Where  were you when the second plane struck?
                 p Meanwhile, a 30-second Super Bowl commercial costs $7 million because nothing else delivers an audience of 100  million viewers, instantly catapulting the brand into the national discourse for weeks to come. What a bargain.
@@ -406,28 +441,28 @@ block page
                 p It's common to hear advertisers sigh: <b>“Online video is hard.”</b>  So imagine how they might feel about creating commercials  for broadcast television.
                 p As Supervisor Shamann Walton's case study demonstrates,  good media planning can make it possible for advertisers  with small budgets to be on TV on national programming,  and be more effective than on other mediums.
 
-                div(class="relative border-current border-5 shadow-lg text-white py-1 mt-10 overflow-hidden" style="border-radius: 35px;")
+                div(class="relative border-current border-5 shadow-lg text-white py-1 mt-10 overflow-hidden" style="border-radius: 35px;" data-aos="flip-up" data-aos-duration="1000" data-aos-easing="ease-out-back" data-aos-delay="200")
                     div(class="relative z-30 p-8 lg:p-0 my-5 lg:my-8 max-w-2xl mx-auto text-center text-lg lg:text-xl leading-relaxed" style="letter-spacing: 0.6px;") Shamann Walton was elected to the eleven-member San Francisco Board of Supervisors (BoS) in 2019. In 2021, he was unanimously voted President of the Board of Supervisors. He is the third black man on the BoS, and the first to have not been previously appointed by a mayor. Tungsten is a nonpartisan, full-service advertising agency that works on all categories of products and services.
                     div(class="w-full h-full absolute inset-0 z-20" style="background-color: hsla(284, 64%, 25%, 0.85);")
-                    img(loading="lazy" src="img/shamann-walton/supervisor-walton@827.jpg", srcset="img/shamann-walton/supervisor-walton@600.jpg 600w, img/shamann-walton/supervisor-walton@827.jpg 827w" sizes="(max-width:1024px) 90vw, 934px" alt="alt" class="absolute inset-0 w-full h-full z-0 object-cover" style="border-radius: 30px;")
+                    img(loading="lazy" src="img/shamann-walton/supervisor-walton@827.jpg", srcset="img/shamann-walton/supervisor-walton@600.jpg 600w, img/shamann-walton/supervisor-walton@827.jpg 827w" sizes="(max-width:1024px) 90vw, 934px" alt="alt" class="absolute inset-0 w-full h-full z-0 object-cover" style="border-radius: 30px;" data-aos="zoom-out" data-aos-delay="300" data-aos-duration="700")
 
 
-    div(class="container py-12 md:py-20")
-        -
-            const team = [
-                {
-                    role: "Creative Director",
-                    name:"Stuart Silberman",
-                    contacts: {
-                        linkedin: "https://www.linkedin.com/in/stuart_silberman/"
-                    }
-                },
-                {
-                    role: "Client",
-                    name: "Bobby Jones"
-                }
-            ]
-        +team(team)
+    //- div(class="container py-12 md:py-20")
+    //-     -
+    //-         const team = [
+    //-             {
+    //-                 role: "Creative Director",
+    //-                 name:"Stuart Silberman",
+    //-                 contacts: {
+    //-                     linkedin: "https://www.linkedin.com/in/stuart_silberman/"
+    //-                 }
+    //-             },
+    //-             {
+    //-                 role: "Client",
+    //-                 name: "Bobby Jones"
+    //-             }
+    //-         ]
+    //-     +team(team)
 
 
 append footer_scripts

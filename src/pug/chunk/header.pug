@@ -1,10 +1,14 @@
 header.header.relative.z-50.py-4.bg-white
     .container.flex.justify-between.items-center
         a(class=" logo w-36 md:w-44 h-12 md:h-14" href="/")
-            svg.w-full.h-full
-                +iconMulti("logo")
+            +iconMulti({
+                icon: "logo",
+                classes: 'w-full h-full'
+            })
 
         a(class="nav-menu w-12 md:w-14 h-6 md:h-7 text-blue hover:text-blue-light" href="mailto:hello@tngstn.com" target="_blank" rel="noopener noreferrer")
-            svg(class="fill-transparent stroke-current stroke-[6px] w-full h-full")
-                +iconMono("envelope-closed")
+            +iconMono({
+                icon:"envelope-closed",
+                classes: 'fill-transparent stroke-4 stroke-current w-full h-full'
+            })
 

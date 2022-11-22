@@ -1,21 +1,36 @@
 mixin page-title(u)
-    header(class=`page-title pt-8 pb-6 ${u.classes}`)
-        .container
-            div(class=`tag-client inline-block font-proxima-bold px-2 py-0.5 ${u.tagClasses}`)= u.tagClient
-            h1(class=`mt-4 font-proxima-bold leading-none ${u.h1Classes}`) !{u.h1}
-            if u.subtitle
-                p(class=`page-subtitle mt-3 leading-tight ${u.subtitleClasses}`) !{u.subtitle}
-            if u.audio
-                if invertedAudio
-                    a(class=`btn-audio w-auto relative font-proxima-bold no-underline px-4 h-9 rounded-sm items-center inline-flex mt-6 border border-current text-blue-dark hover:text-blue transition-colors ${u.audioClasses}` href=`${u.audio}`)
-                            svg.inline-block.relative.z-10.w-20.h-16.mr-4
-                                +iconMono('audio-wave')
-                            span.text-base Listen
-                else
-                    a(class=`btn-audio w-auto relative font-proxima-bold no-underline px-4 h-9 rounded-sm items-center inline-flex mt-6 border border-current text-blue-dark after:inline-block after:h-full after:w-3 after:bg-white after:absolute after:left-11 after:z-0 after:scale-y-110 hover:text-blue transition-colors ${u.audioClasses}` href=`${u.audio}`)
-                            svg.inline-block.relative.z-10.w-20.h-16.mr-4
-                                +iconMulti('audio-wave')
-                            span.text-base Listen
+    if u.inverted
+        header(class=`page-title pt-8 pb-6 relative ${u.classes}`)
+            .container
+                div(class=`tag-client inline-block font-proxima-bold px-2 py-0.5 bg-white ${u.tagClasses}`)= u.tagClient
+                h1(class=`mt-4 font-proxima-bold leading-none text-white ${u.h1Classes}`) !{u.h1}
+                if u.subtitle
+                    p(class=`page-subtitle mt-3 leading-tight text-white ${u.subtitleClasses}`) !{u.subtitle}
+                if u.audio
+                    a(class=`btn-audio w-auto relative font-proxima-bold no-underline px-4 h-9 rounded-[4px] items-center inline-flex mt-6 border border-current fill-current text-white hover:text-white/80 transition-colors text-white` href=`${u.audio} `)
+                        svg.inline-block.relative.z-20.w-20.h-16.mr-4
+                            +iconMono({
+                                icon: 'audio-wave'
+                            })
+                        span.text-base Listen
+                        div(class="h-[50px] bg-transparent w-3 absolute left-11 z-10 " style="backdrop-filter: blur(10px)")
+
+
+    else
+        header(class=`page-title pt-8 pb-6 ${u.classes}`)
+            .container
+                div(class=`tag-client inline-block font-proxima-bold px-2 py-0.5 bg-blue-light text-white ${u.tagClasses}`)= u.tagClient
+                h1(class=`mt-4 font-proxima-bold leading-none text-blue-dark ${u.h1Classes}`) !{u.h1}
+                if u.subtitle
+                    p(class=`page-subtitle mt-3 leading-tight text-blue-dark ${u.subtitleClasses}`) !{u.subtitle}
+                if u.audio
+                    a(class=`btn-audio w-auto relative font-proxima-bold no-underline px-4 h-9 rounded-[4px] items-center inline-flex mt-6 border border-current text-blue-dark hover:text-blue transition-colors ${u.audioClasses}` href=`${u.audio}`)
+                        svg.inline-block.relative.z-20.w-20.h-16.mr-4
+                            +iconMulti({
+                                icon: 'audio-wave'
+                            })
+                        span.text-base Listen
+                        div(class="h-[50px] bg-white w-3 absolute left-11 z-10 " )
 
 
 mixin lead-in(u)
@@ -33,7 +48,9 @@ mixin team-member(x)
         each val, key in social
             a(href=`${val}` class="text-gray-light hover:text-blue-light mx-1" target="_blank")
                 svg.svg.w-6.h-6.fill-current
-                    +iconMono(key)
+                    +iconMono({
+                        icon: key
+                    })
 
 
 mixin team(team)
@@ -47,7 +64,19 @@ mixin team(team)
 
 
 //- svg icons
-mixin iconMono(icon)
-    use(xlink:href=`img/icons/icons-sprite-mono.svg#${icon}`)
-mixin iconMulti(icon)
-    use(xlink:href=`img/icons/icons-sprite-multi.svg#${icon}`)
+mixin iconMono(x)
+    if x.style
+        svg(class=`svg ${x.classes}` style=`${x.style}`)
+            use(xlink:href=`img/icons/icons-sprite-mono.svg#${x.icon}`)
+    else
+        svg(class=`svg ${x.classes}`)
+            use(xlink:href=`img/icons/icons-sprite-mono.svg#${x.icon}`)
+
+mixin iconMulti(x)
+    if x.style
+        svg(class=`svg ${x.classes}` style=`${x.style}`)
+            use(xlink:href=`img/icons/icons-sprite-multi.svg#${x.icon}`)
+    else
+        svg(class=`svg ${x.classes}`)
+            use(xlink:href=`img/icons/icons-sprite-multi.svg#${x.icon}`)
+

@@ -4,16 +4,38 @@ function drawChart(){
   var margin = {top: 20, right: 40, bottom: 30, left: 40},
       width = 650 - margin.left - margin.right,
       height = 350 - margin.top - margin.bottom,
-      ease = d3.easeBack;
+      animationDelay = 2000;
+
+
+  const createGradient = select => {
+    const gradient = select
+      .select('defs')
+        .append('linearGradient')
+          .attr('id', 'gradient')
+          .attr('x1', '0%')
+          .attr('y1', '100%')
+          .attr('x2', '0%')
+          .attr('y2', '0%');
+
+    gradient
+      .append('stop')
+        .attr('offset', '0%')
+        .attr('style', 'stop-color:#2028E833;');
+
+    gradient
+      .append('stop')
+        .attr('offset', '100%')
+        .attr('style', 'stop-color:#2028E8bb;');
+  }
 
   // append the svg object to the body of the page
   var svG = d3.select("#chart")
     .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-      .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+      .call(responsivefy) // Call responsivefy to make the chart responsive
+            .append('g').
+        attr('transform', `translate(${margin.left}, ${margin.top})`);
 
   // Create data
   var data = [
@@ -70,7 +92,9 @@ function drawChart(){
 
 
   var x_axis = d3.axisBottom(xScale)
-    .ticks(9).tickFormat((x,index)=> index !== 0 ? `'${x}` : "").tickSizeInner(-height);
+    .ticks(9)
+    .tickFormat((x,index)=> index !== 0 ? `'${x}` : "")
+    .tickSizeInner(-height);
 
   svG
     .append('g')
@@ -80,8 +104,8 @@ function drawChart(){
 
   // X scale and Axis
   var yScale = d3.scaleLinear()
-      .domain([0, 7])         // This is the min and the max of the data: 0 to 100 if percentages
-      .range([height, 0]);       // This is the corresponding value I want in Pixel
+      .domain([0, 7])
+      .range([height, 0]);
   var y_axis = d3.axisLeft(yScale);
   y_axis.ticks(9).tickFormat((y,index)=> index !== 0 ? `$${y}M` : `${y}`).tickSizeInner(-width);
 
@@ -102,9 +126,24 @@ function drawChart(){
     class: "lineChart"
   });
 
+   // Add the area
+  svG.append("path")
+   .datum(data)
+   .attr("fill", "url(#gradient)")
+   .attr("stroke", "none")
+   .attr("fill-opacity", .0)
+   .transition()
+   .delay(animationDelay)
+   .duration(10000)
+   .attr("fill-opacity", .35)
+   .attr("d", d3.area()
+     .x(function(d) { return xScale(d.x) })
+     .y0( height )
+     .y1(function(d) { return yScale(d.y) })
+     )
 
-
-
+  svG.append('defs');
+  svG.call(createGradient);
 
 
 // Add the line
@@ -125,8 +164,12 @@ line
   .attr("stroke-dasharray", totalLength + " " + totalLength)
   .attr("stroke-dashoffset", totalLength)
   .transition()
-  .duration(4000)
+  .delay(animationDelay)
+  .duration(6000)
+  .ease(d3.easeBounceIn)
   .attr("stroke-dashoffset", 0)
+
+
 
 
 
@@ -136,44 +179,83 @@ let points = svG.selectAll("w")
   .data(dataPoints)
   .enter()
   .append("circle")
-    .attr("cx", function(d){ return xScale(d.x) - 500 })
-    .attr("cy", function(d){ return yScale(d.y) - 500 })
-    .attr("fill", "white")
-    .attr('stroke', '#3D35F1')
-    .style("filter", "blur(3px)")
 
 
-points
-    .attr('cy', 0)
-    .attr('cx', 0)
+  points
+    .attr("fill", "#3D35F1")
+    .attr('stroke', 'white')
+    .attr('cy', height)
+    .attr('cx', function(d){ return xScale(d.x)})
     .attr("r", 0)
     .attr("opacity", 0)
     .attr('stroke-width', 0)
+    .attr("fill", "#3D35F1")
     .transition()
-    .ease(ease)
-    .delay((d, i) => i * 120 + 500)
-    .duration(800)
-    .ease(ease)
+    // .delay(animationDelay)
+    .ease(d3.easeBackOut)
+    .delay((d, i) => i * 120 + animationDelay/2)
+    .duration(1000)
+    .ease(d3.easeBackOut)
     .attr("cx", function(d){ return xScale(d.x) })
     .attr("cy", function(d){ return yScale(d.y) })
-    .attr("r", 3.2)
-    .attr('stroke-width', 2.2)
+    .attr("r", 3)
+    .attr('stroke-width', 2.3)
+    .attr("fill", "white")
+    .attr('stroke', '#3D35F1')
     .attr("opacity", 1)
-    .style("filter", "none")
+
+
+
+    function responsivefy(svg) {
+
+      // Container is the DOM element, svg is appended.
+      // Then we measure the container and find its
+      // aspect ratio.
+      const container = d3.select(svg.node().parentNode),
+          width = parseInt(svg.style('width'), 10),
+          height = parseInt(svg.style('height'), 10),
+          aspect = width / height;
+
+      // Add viewBox attribute to set the value to initial size
+      // add preserveAspectRatio attribute to specify how to scale
+      // and call resize so that svg resizes on page load
+      svg.attr('viewBox', `0 0 ${width} ${height}`).
+      attr('preserveAspectRatio', 'xMinYMid').
+      call(resize);
+
+      d3.select(window).on('resize.' + container.attr('id'), resize);
+
+      function resize() {
+          const targetWidth = parseInt(container.style('width'));
+          svg.attr('width', targetWidth);
+          svg.attr('height', Math.round(targetWidth / aspect));
+      }
+    }
 
 }
 
 
-  const observer = new IntersectionObserver((entry, observer) => {
-      entry.forEach(entry => {
-          if (entry.isIntersecting) {
-             drawChart();
-             console.log(`Drawing a chart...`)
-             console.log(entry.threshold)
-             observer.unobserve(entry.target)
-          }
-      })
-  }, { threshold: 0.4 })
 
-  const target = document.querySelector('#chart-container')
-  observer.observe(target);
+const observer = new IntersectionObserver((entry, observer) => {
+    entry.forEach(entry => {
+        if (entry.isIntersecting) {
+            drawChart();
+            observer.unobserve(entry.target)
+        }
+    })
+}, { threshold: 0.2 })
+
+const target = document.querySelector('#chart-container')
+observer.observe(target);
+
+
+
+// gsap.from('#megaphone', {
+//   x: 300,
+//   y: 100,
+//   opacity: 0,
+//   scale: 0.1,
+//   duration: 1,
+//   delay: 1,
+//   ease: "back.out(1.9)"
+// })

@@ -1,40 +1,52 @@
 header.header {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.07); }
+  box-shadow: 0 2px 10px hsla(0deg, 0%, 0%, 0.05), 0 5px 20px hsla(0deg, 0%, 0%, 0.07);
+}
 
 .page-title h1 {
-  font-size: clamp(2rem, 8vw, 2.7rem); }
-  @media (min-width: 640px) {
-    .page-title h1 {
-      font-size: 3.1rem; } }
+  font-size: clamp(2rem, 8vw, 2.7rem);
+}
+@media (min-width: 640px) {
+  .page-title h1 {
+    font-size: 3.1rem;
+  }
+}
 
 .page-subtitle {
-  font-size: clamp(1.35rem, 5vw, 1.9rem); }
+  font-size: clamp(1.35rem, 5vw, 1.9rem);
+}
 
 .tag-client {
   font-size: clamp(0.8rem, 2vw, 1rem);
-  letter-spacing: 0.2px; }
+  letter-spacing: 0.2px;
+}
 
 .page-content p:not(:first-child) {
-  @apply mt-3 sm:mt-4 md:mt-6; }
-
+  @apply mt-3 sm:mt-4 md:mt-6;
+}
 .page-content img.shape-outside {
-  shape-margin: 15px; }
+  shape-margin: clamp(15px, 3vw, 30px);
+}
 
 .have_question {
-  box-shadow: inset 0 -10px 40px rgba(0, 0, 0, 0.05), inset 0 -5px 30px rgba(0, 0, 0, 0.1); }
+  box-shadow: inset 0 -10px 40px hsla(0deg, 0%, 0%, 0.05), inset 0 -5px 30px hsla(0deg, 0%, 0%, 0.1);
+}
 
 .drop-cap:first-letter {
   @apply relative float-left font-bold m-0 -mt-1 py-0 pl-0 pr-2 font-serif;
   line-height: 0.95;
   margin-top: -2px;
   font-size: 5rem;
-  color: var(--color); }
+  color: var(--color);
+}
 
 .works-grid {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
 
 [data-aos-delay="4000"] {
-  transition-delay: 4000ms; }
+  transition-delay: 4000ms;
+}
 
 [data-aos-delay="5000"] {
-  transition-delay: 5000ms; }
+  transition-delay: 5000ms;
+}

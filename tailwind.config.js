@@ -75,6 +75,10 @@ module.exports = {
       },
       scale: {
         '85': '0.85',
+      },
+      strokeWidth: {
+        '3': '3px',
+        '4': '4px',
       }
     },
     screens: {

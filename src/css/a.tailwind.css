@@ -7,18 +7,24 @@
     --c-blue-dark: #071f51;
     --c-indigo-light: #76769f;
     --c-indigo: #121341;
-    --f-proxima: 'ProximaNovaA-Regular', sans-serif;
-    --f-proxima-bold: 'ProximaNovaA-Bold', sans-serif; }
+    --f-proxima: "ProximaNovaA-Regular", sans-serif;
+    --f-proxima-bold: "ProximaNovaA-Bold", sans-serif;
+  }
   body {
-    @apply font-proxima; }
+    @apply font-proxima;
+  }
   a {
-    @apply underline text-blue-light; }
-    a:hover {
-      @apply no-underline; }
+    @apply underline text-blue-light;
+  }
+  a:hover {
+    @apply no-underline;
+  }
   .container {
-    @apply px-6 sm:px-8 md:px-10 mx-auto max-w-5xl; }
+    @apply px-6 sm:px-8 md:px-10 mx-auto max-w-5xl;
+  }
   b, strong {
-    @apply font-proxima-bold; } }
-
+    @apply font-proxima-bold;
+  }
+}
 @tailwind components;
 @tailwind utilities;
