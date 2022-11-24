@@ -51,8 +51,5 @@ window.onload = function () {
 
 
 AOS.init({
-  once: true,
-  useClassNames: true,
-  initClassName: false,
-  animatedClassName: 'animate__animated',
+  once: true
 });

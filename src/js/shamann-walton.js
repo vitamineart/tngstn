@@ -93,7 +93,8 @@ function drawChart(){
 
   var x_axis = d3.axisBottom(xScale)
     .ticks(9)
-    .tickFormat((x,index)=> index !== 0 ? `'${x}` : "")
+    .tickFormat((x,index)=> index !== 0 ? `'${x.toString().split('').slice(2).join('')}` : "")
+    .tickPadding(15)
     .tickSizeInner(-height);
 
   svG
@@ -107,7 +108,10 @@ function drawChart(){
       .domain([0, 7])
       .range([height, 0]);
   var y_axis = d3.axisLeft(yScale);
-  y_axis.ticks(9).tickFormat((y,index)=> index !== 0 ? `$${y}M` : `${y}`).tickSizeInner(-width);
+  y_axis.ticks(9)
+    .tickPadding(10)
+    .tickFormat((y,index)=> index !== 0 ? `$${y}M` : `${y}`)
+    .tickSizeInner(-width);
 
   svG
     .append('g')
@@ -134,8 +138,8 @@ function drawChart(){
    .attr("fill-opacity", .0)
    .transition()
    .delay(animationDelay)
-   .duration(10000)
-   .attr("fill-opacity", .35)
+   .duration(2500)
+   .attr("fill-opacity", .3)
    .attr("d", d3.area()
      .x(function(d) { return xScale(d.x) })
      .y0( height )
@@ -150,7 +154,6 @@ function drawChart(){
 let line = svG.append("path")
     .datum(data)
     .attr("fill", "none")
-    .attr("stroke", "#3D35F1")
     .attr("stroke-width", 2)
     .attr("d", d3.line()
         .x(function(d) { return xScale(d.x) })
@@ -163,12 +166,13 @@ var totalLength = line.node().getTotalLength();
 line
   .attr("stroke-dasharray", totalLength + " " + totalLength)
   .attr("stroke-dashoffset", totalLength)
+  .attr("stroke", "skyblue")
   .transition()
-  .delay(animationDelay)
-  .duration(6000)
-  .ease(d3.easeBounceIn)
+  .delay(animationDelay/2)
+  .duration(2000)
+  .ease(d3.easeCircleIn)
+  .attr("stroke", "#3D35F1")
   .attr("stroke-dashoffset", 0)
-
 
 
 
@@ -186,16 +190,15 @@ let points = svG.selectAll("w")
     .attr('stroke', 'white')
     .attr('cy', height)
     .attr('cx', function(d){ return xScale(d.x)})
-    .attr("r", 0)
+    .attr("r", 10)
     .attr("opacity", 0)
     .attr('stroke-width', 0)
     .attr("fill", "#3D35F1")
     .transition()
-    // .delay(animationDelay)
-    .ease(d3.easeBackOut)
+    .delay(animationDelay)
     .delay((d, i) => i * 120 + animationDelay/2)
-    .duration(1000)
-    .ease(d3.easeBackOut)
+    .duration(2000)
+    .ease(d3.easeElasticOut)
     .attr("cx", function(d){ return xScale(d.x) })
     .attr("cy", function(d){ return yScale(d.y) })
     .attr("r", 3)
@@ -250,12 +253,136 @@ observer.observe(target);
 
 
 
-// gsap.from('#megaphone', {
-//   x: 300,
-//   y: 100,
-//   opacity: 0,
-//   scale: 0.1,
-//   duration: 1,
-//   delay: 1,
-//   ease: "back.out(1.9)"
-// })
+gsap.registerPlugin(ScrollTrigger);
+
+const mapTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#map-container',
+    start: 'top 100%',
+    end: 'top 15%',
+  }
+})
+.fromTo("#map-container", {
+  opacity: 0,
+  filter: 'saturate(0%)',
+}, {
+  opacity: 1,
+  filter: 'saturate(120%)',
+  duration: 2,
+  ease: "pow3.Out",
+})
+.from("#map-image", {
+  scale: 1.3,
+  rotate: 60,
+  opacity: 0,
+  duration: 1.2,
+  ease: "Expo.inOut(2)"
+}, "<")
+.from('#san-francisco-city-map', {
+  opacity :0,
+  filter: "grayscale(1)",
+  duration: .4,
+  ease: 'circ.Out()'
+}, "<50%")
+.from("#san-francisco-pin", {
+  scale: 2,
+  opacity: 0,
+  duration: .4,
+  ease: 'circ.out(2)'
+}, "<50%")
+.from("#map-container-center", {
+  scale: 2,
+  opacity: 0,
+  duration: .4,
+  ease: 'circ.out(2)'
+}, "<50%")
+.from(".map-location-label", {
+  scale: 0,
+  opacity: 0,
+  duration: .4,
+  stagger: -0.5,
+  ease: 'back.out(2)'
+}, "<")
+.from(".map-container-circle", {
+  opacity: 0,
+  scale: .5,
+  duration: .8,
+  stagger: -0.2,
+  ease: 'back.out(2)'
+}, "<")
+.from(".broadcast-label", {
+  scale: 2,
+  opacity: 0,
+  duration: .8,
+  stagger: -0.5,
+  ease: 'back.out(2)'
+}, "<25%")
+.from(".broadcast-label > div", {
+  xPercent: 0,
+  scale: 0,
+  opacity: 0,
+  duration: .3,
+  stagger: -0.5,
+  ease: 'circ.out()'
+}, "<10%")
+
+
+
+
+
+
+gsap.from("#walton-circle-image", {
+  scrollTrigger: {
+    trigger: "#walton-circle-image",
+    start: '-100px 100%'
+  },
+  opacity: 0,
+  xPercent: 50,
+  duration: 1.7,
+  ease: "quad.inOut"
+})
+
+const bubble = document.querySelector(".bubble-container");
+const megaTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#mass_media_circle',
+    start: '40% 100%',
+  }
+})
+.from("#megaphone", {
+  rotate: 60,
+  opacity: 0,
+  scale: 0,
+  x: 350,
+  y: 300,
+  duration: 1,
+  ease: "back.out(1.7)",
+})
+.fromTo(bubble, {
+  opacity: 0,
+  scale: 0,
+  rotate: 20,
+  x: 200,
+  y: 100,
+
+},{
+  opacity: 1,
+  scale: 1,
+  x: 0,
+  y: 0,
+  rotate: -2,
+  duration: .8,
+  ease: "back.out(3)"
+}, "<75%")
+.from(bubble.querySelector('p'), {
+  filter: 'blur(4px)',
+  scale: 1.1,
+  opacity: 0,
+  duration: .5,
+  ease: "circ.out"
+})
+
+
+
+
+

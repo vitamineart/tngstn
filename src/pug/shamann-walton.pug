@@ -1,14 +1,17 @@
 extends ./layout/base
 block variables
-    - var pageTitle = 'Tungsten Advertising Case Study | Cobham SeaTel Brand Page'
+    - var pageTitle = 'Tungsten Advertising Case Study | Shamann Walton'
     - var invertedAudio = true;
 
 prepend preload
+    //- link(rel="preload" as="image" href="https://i.ytimg.com/vi_webp/0puWSusGbOA/hqdefault.webp")
+    script(type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js" defer)
 
 
     script(src="https://d3js.org/d3.v4.js" defer)
     script(src="https://cdnjs.cloudflare.com/ajax/libs/d3-ease/1.0.3/d3-ease.min.js" defer)
     script(src="https://unpkg.co/gsap@3/dist/gsap.min.js" defer)
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" defer)
     script(src="js/shamann-walton.js" defer)
 
 
@@ -31,7 +34,7 @@ block page
     div(class="relative hero pt-1 bg-slate-700 bg-cover bg-no-repeat !xs:bg-center")
 
         .container.flex.justify-end
-            a(href="#" class="watch-video-btn group transition duration-300 text-white no-underline font-proxima-bold inline-flex items-center mt-10 hover:text-purple-400")
+            a(href="#" class="watch-video-btn relative z-10 group transition duration-300 text-white no-underline font-proxima-bold inline-flex items-center mt-10 hover:text-purple-400")
                 +iconMono({
                     icon: 'watch-video',
                     classes: 'w-9 h-9 fill-current mr-3 '
@@ -46,9 +49,9 @@ block page
             h1Classes: 'text-white drop-shadow-sm',
             audio: '',
             audioClasses: '',
-            classes: 'mt-48'
+            classes: 'mt-48 z-10'
         })
-        div(class="py-10 text-white text-3xl" style="background-color: hsla(259, 27%, 50%, 0.9);")
+        div(class="py-10 justify-self-end text-white text-xl sm:text-2xl xl:text-3xl relative z-10" style="background-color: hsla(259, 27%, 50%, 0.9);")
             .container
                 p.
                     It was <b>ten days before election day.</b>
@@ -56,7 +59,13 @@ block page
                     Seven candidates were running for the position of Supervisor of District 10 in San Francisco. Polls showed three of them tied at first place.
                 p.mt-5.
                     That day, the Labor Council of San Francisco - a Political Action Committee - asked Tungsten to create and place a television commercial to help the candidate they were supporting, Shamann Walton, win the election.
+        .video-container.absolute.inset-0.w-full.h-full
+            iframe(width="200%" frameborder="20" height="100%" src="https://www.youtube.com/embed/rHQnWL0zY8U?controls=0&autoplay=1&mute=1&playsinline=1&loop=1" class="absolute w-full h-full inset-0 object-cover")
+
     img(src="img/shamann-walton/walton-hands-logos@1921.jpg" srcset="img/shamann-walton/walton-hands-logos@400.jpg 400w, img/shamann-walton/walton-hands-logos@600.jpg 600w, img/shamann-walton/walton-hands-logos@800.jpg 800w, img/shamann-walton/walton-hands-logos@1200.jpg 1200w, img/shamann-walton/walton-hands-logos@1921.jpg 1921w, img/shamann-walton/walton-hands-logos@3842.jpg 3842w" width="1921" height="524" class="object-cover" style="min-height: 130px;")
+
+
+
 
 
     article(class="page-content leading-normal overflow-hidden mt-12")
@@ -66,8 +75,8 @@ block page
                     District 10 of San Francisco starts at county line and  runs north along the bay to Dog Patch. It includes  voter banks such as Vietnamese-Americans in Visitation Valley, Chinese-Americans in Bayshore, Black  residents in Bay View, White residents in Dog Patch, and  several other diverse socio-economic groups.
                 p
                 div(class="sm:flex sm:space-x-6 lg:space-x-10")
-                    div(class="font-proxima-bold text-white py-6 sm:py-8 md:py-10 px-8 sm:px-10  md:px-12 md:max-w-sm my-6 sm:m-0" style="background-image: linear-gradient(-135deg, hsl(260, 97%, 86%), hsl(259, 33%, 52%))" data-aos="fade-right" data-aos-duration="1200").
-                        When advertising for  an election, television  must be an essential  component of the  media plan. It appeals  disproportionately to  older viewers. An  audience comprising  homeowners and  business owners --  the demographic  most likely to vote.
+                    div(class="font-proxima-bold text-white py-6 sm:py-8 md:py-10 px-8 sm:px-10  md:px-12 md:max-w-sm my-6 sm:m-0" style="background-image: linear-gradient(-135deg, hsl(260, 97%, 86%), hsl(259, 33%, 52%))" data-aos="zoom-out" data-aos-duration="1000")
+                        p(data-aos="zoom-in" data-aos-delay="200") When advertising for an election, television  must be an essential  component of the  media plan. It appeals  disproportionately to  older viewers. An  audience comprising  homeowners and  business owners --  the demographic  most likely to vote.
 
                     div
                         p.
@@ -138,23 +147,23 @@ block page
                     }
 
                 div(class="-left-24 xs:-left-8 md:left-0 -mr-64 sm: relative scale-50 xs:scale-75 md:scale-85 lg:scale-100 -top-36 xs:-top-24 md:top-0 md:float-right lg:bottom-0 md:-mt-24 md:-mb-10 lg:-mt-24 lg:-mb-36" id="map-container")
-                    div(class="map-location-label bg-white inset-0 absolute m-auto z-40 py-2 px-4 font-proxima-bold inline-table" style="--color: #4562C7; left: 130px; top: 100px;" data-aos="flip-right" data-aos-delay="400") Oakland
-                    div(class="map-location-label bg-white bottom-24 left-11 absolute m-auto z-40 py-2 px-4 font-proxima-bold inline-table" style="--color: #D12767; left: 123px; bottom: 187px;" data-aos="flip-right" data-aos-delay="500") San Francisco
+                    div(class="map-location-label bg-white inset-0 absolute m-auto z-40 py-2 px-4 font-proxima-bold inline-table" style="--color: #4562C7; left: 130px; top: 100px;") Oakland
+                    div(class="map-location-label bg-white bottom-24 left-11 absolute m-auto z-40 py-2 px-4 font-proxima-bold inline-table" style="--color: #D12767; left: 123px; bottom: 187px;") San Francisco
 
-                    div(class="broadcast-label border-5 border-white shadow-lg grid place-items-center text-center leading-tight rounded-full absolute z-30 -left-24 -top-12 bg-current" style="color: #4562C7;" data-aos="zoom-in" data-aos-easing="ease-out-back" data-aos-delay="300")
+                    div(class="broadcast-label border-5 border-white shadow-lg grid place-items-center text-center leading-tight rounded-full absolute z-30 -left-24 -top-12 bg-current" style="color: #4562C7;")
                         span.text-white Terrestrial <br> Broadcast
                         div(class="bg-current border border-current mix-blend-color absolute left-3/4 top-3/4 origin-top-left -z-10" style="width: 210px; transform: rotate(40deg);")
 
-                    div(class="broadcast-label border-5 border-white shadow-lg grid place-items-center text-center leading-tight rounded-full absolute z-30 -left-24 bottom-2 bg-current" style="color: #D12767;" data-aos="zoom-in" data-aos-easing="ease-out-back" data-aos-delay="400")
+                    div(class="broadcast-label border-5 border-white shadow-lg grid place-items-center text-center leading-tight rounded-full absolute z-30 -left-24 bottom-2 bg-current" style="color: #D12767;" )
                         span.text-white Zoned <br> Broadcast
                         div(class="bg-current border border-current mix-blend-color absolute origin-bottom-left -z-10" style="width: 210px; left: 80%; top: 27%; transform: rotate(-33deg);")
 
-                    div(class="border-3 border-dashed border-blue rounded-full absolute inset-0 m-auto z-10 map-container-circle" style="--width: 68%;" data-aos="zoom-in" data-aos-delay="300" data-aos-easing="ease-out-back" data-aos-duration="700")
-                    div(class="border-2 border-dotted border-blue rounded-full absolute inset-0 m-auto z-10 map-container-circle" style="--width: 44%;" data-aos="zoom-in" data-aos-delay="200" data-aos-easing="ease-out-back" data-aos-duration="700")
-                    div(class="border border-dotted border-blue rounded-full absolute inset-0 m-auto z-10 map-container-circle" style="--width: 22%;" data-aos="zoom-in" data-aos-delay="100" data-aos-easing="ease-out-back" data-aos-duration="700")
-                    div(class="rounded-full absolute z-10" id="san-francisco-pin" data-aos="zoom-out" data-aos-duration="200" data-aos-delay="700" data-aos-easing="ease-out-back")
-                    img(loading="lazy" src="img/shamann-walton/san-francisco-city-map.png" id="san-francisco-city-map" width="140" height="201" class="absolute z-10" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="200" data-aos-easing="ease-out-back")
-                    div(class="absolute inset-0 m-auto z-10 w-6 h-6 bg-blue " id="map-container-center" data-aos="zoom-out" data-aos-duration="200" data-aos-delay="300" data-aos-easing="ease-out-back")
+                    div(class="border-3 border-dashed border-blue rounded-full absolute inset-0 m-auto z-10 map-container-circle" style="--width: 68%;" )
+                    div(class="border-2 border-dotted border-blue rounded-full absolute inset-0 m-auto z-10 map-container-circle" style="--width: 44%;")
+                    div(class="border border-dotted border-blue rounded-full absolute inset-0 m-auto z-10 map-container-circle" style="--width: 22%;" )
+                    div(class="rounded-full absolute z-10" id="san-francisco-pin" )
+                    img(loading="lazy" src="img/shamann-walton/san-francisco-city-map.png" id="san-francisco-city-map" width="140" height="201" class="absolute z-10" )
+                    div(class="absolute inset-0 m-auto z-10 w-6 h-6 bg-blue " id="map-container-center" )
                     img(loading="lazy" src="img/shamann-walton/SanFranciscoMap@620.png", srcset="img/shamann-walton/SanFranciscoMap@540.png 540w, img/shamann-walton/SanFranciscoMap@620.png 620w, img/shamann-walton/SanFranciscoMap@930.png 930w, img/shamann-walton/SanFranciscoMap@1240.png 1240w" alt="San Francisco Map" class="absolute h-full w-full z-0" width="620" height="620" id="map-image")
 
                 div(class="-mt-72 xs:-mt-36 md:mt-0 relative")
@@ -277,15 +286,12 @@ block page
 
                     }
                     .tick line {
-                        opacity: .2;
+                        opacity: .15;
                     }
                     .tick text {
                         font-size: 12px;
                         font-weight: 900;
-                        padding: 10px;
                         font-family: 'ProximaNovaA-Bold';
-                        width: 20px;
-                        height: 20px;
                     }
                 div(class="mt-10 px-3 py-5 lg:p-5 bg-white -mx-6 md:mx-auto sm:rounded-xl md:rounded-2xl lg:rounded-3xl flex flex-col items-center min-h-min" id="chart-container")
                     header(class="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-proxima-bold text-center") Average Super Bowl ad costs, 1967&nbsp;-&nbsp;2020
@@ -330,76 +336,176 @@ block page
                             div(class=" bg-white px-7 py-5" data-aos="zoom-in" data-aos-delay="200") Products that are long term customer commitments - Products that depend on an ecosystem
                 style.
                     #mass_media_circle {
-                        max-width: 441px;
-                        right: -50vw;
+                        max-width: 621px;
+                        right: -140vw;
                         top: auto;
-                        bottom: 13%;
+                        bottom: 10%;
+                    }
+                    @media(min-width: 350px) {
+                        #mass_media_circle {
+                            right: -128vw;
+                            bottom: 5%;
+                        }
+                    }
+                    @media(min-width: 400px) {
+                        #mass_media_circle {
+                            right: -110vw;
+                            bottom: 4%;
+                        }
+                    }
+                    @media(min-width: 450px) {
+                        #mass_media_circle {
+                            right: -100vw;
+                            bottom: 0%;
+                        }
+                    }
+                    @media(min-width: 500px) {
+                        #mass_media_circle {
+                            right: -80vw;
+                            bottom: 5%;
+                        }
+                    }
+                    @media(min-width: 550px) {
+                        #mass_media_circle {
+                            right: -80vw;
+                            bottom: 0%;
+                        }
                     }
                     @media(min-width: 640px) {
                         #mass_media_circle {
                             max-width: 541px;
-                            right: -30vw;
-                            bottom: 10%;
+                            right: -44vw;
+                            bottom: 8%;
                         }
                     }
                     @media(min-width: 768px) {
                         #mass_media_circle {
                             max-width: 80vw;
-                            right: -35vw;
-                            bottom: 20%;
+                            right: -38vw;
+                            bottom: 12%;
                         }
                     }
                     @media(min-width: 1024px) {
                         #mass_media_circle {
                             max-width: 841px;
+                            right: -35vw;
+                            bottom: 10%;
+                        }
+                    }
+                    @media(min-width: 1100px) {
+                        #mass_media_circle {
                             right: -25vw;
-                            bottom: 2%;
+                            bottom: 10%;
+                        }
+                    }
+                    @media(min-width: 1300px) {
+                        #mass_media_circle {
+                            right: -280px;
+                            margin: 0;
                         }
                     }
 
+                    /* megaphone-image */
                     #megaphone{
-                        margin-right: -15vw;
+                        margin-right: -40vw;
+                        margin-top: 13%;
+                    }
+                    @media (min-width: 450px){
+                        #megaphone{
+                            margin-right: -30vw;
+                            max-width: 400px;
+                        }
+                    }
+                    @media (min-width: 500px){
+                        #megaphone{
+                            margin-right: -25vw;
+                            margin-top: 10%;
+                        }
+                    }
+                    @media (min-width: 550px){
+                        #megaphone{
+                            margin-right: -22vw;
+                            margin-top: 12%;
+                        }
+                    }
+                    @media (min-width: 600px){
+                        #megaphone{
+                            margin-right: -15vw;
+                        }
                     }
                     @media (min-width: 640px){
                         #megaphone{
-                            margin-right: -10vw;
+                            margin-right: -12vw;
+                            margin-top: 14%;
+                        }
+                    }
+                    @media (min-width: 700px){
+                        #megaphone{
+                            margin-right: -8vw;
+                            margin-top: 14%;
                         }
                     }
                     @media (min-width: 768px){
                         #megaphone{
-                            margin-right: 0;
+                            margin-top: 10%;
+                            margin-right: -10vw;
+                        }
+                    }
+                    @media (min-width: 800px){
+                        #megaphone{
+                            margin-right: -2vw;
+                            margin-top: 8%;
                         }
                     }
                     @media (min-width: 833px){
                         #megaphone{
+                            margin-top: 10%;
+                            margin-right: -2vw;
+                        }
+                    }
+
+                    @media (min-width: 900px){
+                        #megaphone{
                             margin-right: 10vw;
                         }
                     }
-                    @media (min-width: 960px){
+                    @media (min-width: 950px){
                         #megaphone{
-                            margin-right: 20vw;
+                            margin-right: 12vw;
                         }
                     }
                     @media (min-width: 1024px){
                         #megaphone{
-                            margin-right: 20%;
+                            margin-top: -4%;
+                            margin-right: 0;
+                            max-width: none;
                         }
                     }
-                    @media (min-width: 1280px){
-                        #megaphone{
-                            margin-right: 10%;
-                        }
-                    }
+
+
+
 
                 img(loading="lazy" src="img/shamann-walton/mass_media_circle@841.png", srcset="img/shamann-walton/mass_media_circle@620.png 620w, img/shamann-walton/mass_media_circle@841.png 841w, img/shamann-walton/mass_media_circle@1200.png 1200w, img/shamann-walton/mass_media_circle@1682.png 1682w", sizes="(max-width: 640px) 441px, (max-width: 768px) 541px, (max-width: 1024px) 80vw, 841px" alt="Mass Media" id="mass_media_circle" class="shape-outside float-right border-12 border-white shadow-2xl absolute -z-10 aspect-square rounded-full" width="841" height="841")
 
-                div(id="megaphone-container" class="lg:-ml-7 mt-18 flow-root" )
-                    div(class="shadow-xl relative z-10 font-proxima-bold text-base sm:text-lg lg:text-xl max-w-2xl px-10 py-7 -mb-8 -ml-3 xs:ml-0 -mr-4 lg:ml-8" style="background-color: #EAC31F; transform: rotate(2.21deg)" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="600" data-aos-easing="ease-out-back") For over a half century it’s been well-known to advertising agency  media planners that when a consumer sees an ad in three different  mediums, the consumer will have higher recall of that ad than when  they see the same ad multiple times in the same medium.
+                div(id="megaphone-container" class="lg:-ml-7 mt-10 flow-root" )
+                    div(class="bubble-container z-10 relative max-w-2xl -mb-8 -ml-10 md:ml-0 -mr-4 lg:ml-8")
+                        div(class="bubble shadow-xl relative z-40 font-proxima-bold text-base sm:text-lg lg:text-xl px-10 py-7" style="background-color: #EAC31F;")
+                            p For over a half century it’s been well-known to advertising agency  media planners that when a consumer sees an ad in three different  mediums, the consumer will have higher recall of that ad than when  they see the same ad multiple times in the same medium.
+                        div(class="w-1/2 h-1/2 scale-y-50 rounded-full bg-black/60 absolute -bottom-5 left-0 right-0 mx-auto z-20" style="filter: blur(30px)")
 
-                    img(id="megaphone" loading="lazy" src="img/shamann-walton/megaphone@833.png" srcset="img/shamann-walton/megaphone@600.png 600w, img/shamann-walton/megaphone@833.png 833w" sizes="833px" class="relative z-0 float-right shape-outside -mr-6 ml-10 lg:-mb-20 md:w-2/3 xl:w-auto" width="833" height="579" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300" data-aos-easing="ease-out-back")
-                    p(class=" lg:ml-7 !mt-10 lg:!mt-36") For instance, if a media budget is spread across three media:  let's say, a primary medium of TV, some support media like online, and also some billboard and bus stop shelters, and if the consumer sees the ad once in each medium, that individual is more likely to remember the brand and its  message, than someone who has seen the same ad three times  on TV. Or three times on billboards. Or thrice online.
+                        div(class="bubble-tip absolute left-1/2 -translate-x-1/2 z-0 top-auto -mt-6 xs:-mt-8 sm:-mt-10 w-2/3")
+                            //- svg(viewBox="0 0 174 66" class="")
+                                path(fill="#EAC31F" d="m155 65.5-30-31L0 26 1.5.5h172l-2 37-17.5-1 1 29Z")
+                            svg(fill="none" viewBox="0 0 174 58" class="")
+                                path(fill="#EAC31F"  d="M134.5 58 74 31.5 0 26 1.5.5h172l-2 37-57-4 20 24.5Z")
 
-        section(class="py-12 lg:py-20 relative")
+
+
+
+                    img(id="megaphone" loading="lazy" src="img/shamann-walton/megaphone@324.png" srcset="img/shamann-walton/megaphone@324.png 324w, img/shamann-walton/megaphone@487.png 487w, img/shamann-walton/megaphone@648.png 648w, img/shamann-walton/megaphone@972.png 972w, img/shamann-walton/megaphone@1296.png 1296w, img/shamann-walton/megaphone@1944.png 1944w" class="relative z-0 float-right shape-outside md:w-2/3 xl:max-w-max md:-mb-24" width="648" height="613")
+                    p(class=" lg:ml-7 !mt-20 xs:!mt-32 lg:!mt-32") For instance, if a media budget is spread across three media:  let's say, a primary medium of TV, some support media like online, and also some billboard and bus stop shelters, and if the consumer sees the ad once in each medium, that individual is more likely to remember the brand and its  message, than someone who has seen the same ad three times  on TV. Or three times on billboards. Or thrice online.
+
+        section(class="py-12 lg:py-20 relative group overflow-hidden  ")
             .container.z-10.relative
                 header(class="text-4xl lg:text-5xl font-proxima-bold" style="color: var(--c-walton-violet);") A media mix makes the budget go further.
                 p Mass media (such as television) should be a part of that mix in most cases, but especially when building a politician's brand.
@@ -410,13 +516,15 @@ block page
                 p That can only happen when the product has been advertised  on mass media where everyone has seen it. Not when it's  targeted one-on-one at individuals on their phone screens,  based on data that says they "have a propensity to purchase  IPAs that are maltier but less hoppy," or a propensity to vote  on a certain political issue.
                 p Brands (and politicians) build instant social validation on  television in a way online ads cannot match.
 
-            img(loading="lazy" src="img/shamann-walton/Badges_bg@1920.jpg", srcset="img/shamann-walton/Badges_bg@600.jpg 600w, img/shamann-walton/Badges_bg@800.jpg 800w, img/shamann-walton/Badges_bg@1000.jpg 1000w, img/shamann-walton/Badges_bg@1200.jpg 1200w, img/shamann-walton/Badges_bg@1920.jpg 1920w", alt="Badges Bg" width="1920" height="723" class="absolute w-full h-full inset-0 z-0 object-cover" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000")
+            div(class="absolute w-full h-full inset-0 z-0 overflow-hidden group-hover:opacity-50 transition duration-500")
+                img(loading="lazy" src="img/shamann-walton/Badges_bg@1920.jpg", srcset="img/shamann-walton/Badges_bg@600.jpg 600w, img/shamann-walton/Badges_bg@800.jpg 800w, img/shamann-walton/Badges_bg@1000.jpg 1000w, img/shamann-walton/Badges_bg@1200.jpg 1200w, img/shamann-walton/Badges_bg@1920.jpg 1920w", alt="Badges Bg" width="1920" height="723" class="absolute w-full h-full inset-0 z-0 object-cover" data-aos="zoom-out" data-aos-delay="300")
+
         section(class="py-12 lg:py-20 relative" style="background-color: hsla(284, 64%, 25%, 0.63);")
-            div(class="pattern w-full h-full absolute inset-0 z-0 mix-blend-darken " style="background: url(../../../img/TomMeyer/pattern.png) left top no-repeat; background-size: cover;")
+            div(class="pattern w-full h-full absolute inset-0 z-0 mix-blend-darken " style="background: url(img/shamann-walton/pattern.png) left top no-repeat; background-size: cover;")
             .container.text-white.z-10.relative
                 header(class="text-4xl lg:text-5xl font-proxima-bold") Television and the power of shared experience
                 p Try for a moment to recall a time when you saw a movie in a  theater.
-                img(loading="lazy" src="img/shamann-walton/walton-circle-image@802.png" srcset="img/shamann-walton/walton-circle-image@600.png 600w, img/shamann-walton/walton-circle-image@802.png 802w, img/shamann-walton/walton-circle-image@1200.png 1200w, img/shamann-walton/walton-circle-image@1600.png 1600w" sizes="(max-width: 640px) 85vw, (max-width:1024px) 90vw, 802px" class="border-5 lg:border-8 border-current text-violet-100 rounded-full shadow-2xl float-right shape-outside -mr-32 xs:-mr-48 sm:-mr-56 lg:-mr-64 scale-95 " width="802" height="802" style="max-width: 802px !important; ")
+                img(loading="lazy" src="img/shamann-walton/walton-circle-image@802.png" srcset="img/shamann-walton/walton-circle-image@600.png 600w, img/shamann-walton/walton-circle-image@802.png 802w, img/shamann-walton/walton-circle-image@1200.png 1200w, img/shamann-walton/walton-circle-image@1600.png 1600w" id="walton-circle-image" sizes="(max-width: 640px) 85vw, (max-width:1024px) 90vw, 802px" class="border-5 lg:border-8 border-current text-violet-100 rounded-full shadow-2xl float-right shape-outside -mr-32 xs:-mr-48 sm:-mr-56 lg:-mr-64 scale-95 " width="802" height="802" style="max-width: 802px !important; ")
                 p When we're seeing a movie in a sold-out theater, we  have a very different experience than when we watch it alone  at home, on our favorite couch.
                 p When we collectively experience the same emotion as  everyone else around us, that experience is indelible. Sports matches, rock concerts, solar eclipses, Princess Diana's  funeral, these are the defining moments of our lives. Where  were you when the second plane struck?
                 p Meanwhile, a 30-second Super Bowl commercial costs $7 million because nothing else delivers an audience of 100  million viewers, instantly catapulting the brand into the national discourse for weeks to come. What a bargain.
