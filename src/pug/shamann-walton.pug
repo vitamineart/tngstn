@@ -34,7 +34,7 @@ block page
     div(class="relative hero pt-1 bg-slate-700 bg-cover bg-no-repeat !xs:bg-center")
 
         .container.flex.justify-end
-            a(href="#" class="watch-video-btn relative z-10 group transition duration-300 text-white no-underline font-proxima-bold inline-flex items-center mt-10 hover:text-purple-400")
+            a(href="#" onClick="openPopup()" class="watch-video-btn relative z-10 group transition duration-300 text-white no-underline font-proxima-bold inline-flex items-center mt-10 hover:text-purple-400")
                 +iconMono({
                     icon: 'watch-video',
                     classes: 'w-9 h-9 fill-current mr-3 '
@@ -59,9 +59,9 @@ block page
                     Seven candidates were running for the position of Supervisor of District 10 in San Francisco. Polls showed three of them tied at first place.
                 p.mt-5.
                     That day, the Labor Council of San Francisco - a Political Action Committee - asked Tungsten to create and place a television commercial to help the candidate they were supporting, Shamann Walton, win the election.
-        .video-container.absolute.inset-0.w-full.h-full.z-0
+        .video-container.aspect-video.absolute.inset-0.w-full.h-full.z-0
             div(class="overlay absolute inset-0 w-full h-full bg-black/60 z-10 ")
-            iframe(width="200%" frameborder="20" height="100%" src="https://www.youtube.com/embed/rHQnWL0zY8U?controls=0&autoplay=1&mute=1&playsinline=1&loop=1" class="absolute w-full h-full inset-0 object-cover z-0")
+            iframe(src="https://www.youtube.com/embed/rHQnWL0zY8U?controls=0&autoplay=1&mute=1&playsinline=1&loop=1" class="absolute w-full h-full inset-0 object-cover z-0 yt_player_iframe")
 
     img(src="img/shamann-walton/walton-hands-logos@1921.jpg" srcset="img/shamann-walton/walton-hands-logos@400.jpg 400w, img/shamann-walton/walton-hands-logos@600.jpg 600w, img/shamann-walton/walton-hands-logos@800.jpg 800w, img/shamann-walton/walton-hands-logos@1200.jpg 1200w, img/shamann-walton/walton-hands-logos@1921.jpg 1921w, img/shamann-walton/walton-hands-logos@3842.jpg 3842w" width="1921" height="524" class="object-cover" style="min-height: 130px;")
 
@@ -76,8 +76,8 @@ block page
                     District 10 of San Francisco starts at county line and  runs north along the bay to Dog Patch. It includes  voter banks such as Vietnamese-Americans in Visitation Valley, Chinese-Americans in Bayshore, Black  residents in Bay View, White residents in Dog Patch, and  several other diverse socio-economic groups.
                 p
                 div(class="sm:flex sm:space-x-6 lg:space-x-10")
-                    div(class="font-proxima-bold text-white py-6 sm:py-8 md:py-10 px-8 sm:px-10  md:px-12 md:max-w-sm my-6 sm:m-0" style="background-image: linear-gradient(-135deg, hsl(260, 97%, 86%), hsl(259, 33%, 52%))" data-aos="zoom-out" data-aos-duration="1000")
-                        p(data-aos="zoom-in" data-aos-delay="200") When advertising for an election, television  must be an essential  component of the  media plan. It appeals  disproportionately to  older viewers. An  audience comprising  homeowners and  business owners --  the demographic  most likely to vote.
+                    div(class="font-proxima-bold text-white py-6 sm:py-8 md:py-10 px-8 sm:px-10  md:px-12 md:max-w-sm my-6 sm:m-0" style="background-image: linear-gradient(-135deg, hsl(260, 97%, 86%), hsl(259, 33%, 52%))" id="purple-message")
+                        p When advertising for an election, television  must be an essential  component of the  media plan. It appeals  disproportionately to  older viewers. An  audience comprising  homeowners and  business owners --  the demographic  most likely to vote.
 
                     div
                         p.
@@ -147,7 +147,7 @@ block page
                         shape-margin: 40px;
                     }
 
-                div(class="-left-24 xs:-left-8 md:left-0 -mr-64 sm: relative scale-50 xs:scale-75 md:scale-85 lg:scale-100 -top-36 xs:-top-24 md:top-0 md:float-right lg:bottom-0 md:-mt-24 md:-mb-10 lg:-mt-24 lg:-mb-36" id="map-container")
+                div(class="-left-24 xs:-left-8 sm:left-10 md:left-0 -mr-64 sm: relative scale-50 xs:scale-75 md:scale-85 lg:scale-100 -top-36 xs:-top-24 md:top-0 md:float-right lg:bottom-0 md:-mt-24 md:-mb-10 lg:-mt-24 lg:-mb-36" id="map-container")
                     div(class="map-location-label bg-white inset-0 absolute m-auto z-40 py-2 px-4 font-proxima-bold inline-table" style="--color: #4562C7; left: 130px; top: 100px;") Oakland
                     div(class="map-location-label bg-white bottom-24 left-11 absolute m-auto z-40 py-2 px-4 font-proxima-bold inline-table" style="--color: #D12767; left: 123px; bottom: 187px;") San Francisco
 
@@ -573,6 +573,15 @@ block page
     //-         ]
     //-     +team(team)
 
+
+    div(id="video-popup" class="popup fixed inset-0 m-auto max-w-4xl aspect-video z-[51] hidden animate__animated animate__fadeInDown")
+        button(type="button" role="button" onClick="closePopup();" id="close-popup" class="text-white hover:text-purple-300")
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" class="top-0 right-0 absolute -translate-y-10 translate-x-12">
+                <path d="M29.5834 3.35413L26.6459 0.416626L15 12.0625L3.35419 0.416626L0.416687 3.35413L12.0625 15L0.416687 26.6458L3.35419 29.5833L15 17.9375L26.6459 29.5833L29.5834 26.6458L17.9375 15L29.5834 3.35413Z" fill="currentColor"/></svg>
+
+
+
+    div(class="popup-overlay fixed inset-0 w-full h-full z-50 animate__fadeIn hidden" style="background: linear-gradient(90deg, hsla(259, 31%, 22%, .9), hsl(268, 34%, 27%, .9) )" onClick="closePopup()")
 
 append footer_scripts
 

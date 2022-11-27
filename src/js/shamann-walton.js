@@ -255,6 +255,29 @@ observer.observe(target);
 
 gsap.registerPlugin(ScrollTrigger);
 
+const purpleTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#purple-message',
+    start: 'top 100%',
+    end: 'top 15%',
+    toggleActions: 'restart none reverse none'
+  },
+  defaults: {
+    duration: 1,
+    ease: 'pow3.out()'
+  }
+})
+.from("#purple-message", {
+  opacity: 0,
+  x: -50,
+  delay: .1
+})
+.from("#purple-message > p", {
+  filter: "blur(2px)",
+  opacity: 0,
+  x: 100
+}, "<")
+
 const mapTl = gsap.timeline({
   scrollTrigger: {
     trigger: '#map-container',
@@ -334,12 +357,13 @@ const mapTl = gsap.timeline({
 gsap.from("#walton-circle-image", {
   scrollTrigger: {
     trigger: "#walton-circle-image",
-    start: '-100px 100%'
+    start: '-50px 100%'
   },
   opacity: 0,
-  xPercent: 50,
-  duration: 1.7,
-  ease: "quad.inOut"
+  filter: 'grayscale(1) blur(5px)',
+  xPercent: 15,
+  duration: 1,
+  ease: "quad.0ut"
 })
 
 const bubble = document.querySelector(".bubble-container");
@@ -381,6 +405,30 @@ const megaTl = gsap.timeline({
   duration: .5,
   ease: "circ.out"
 })
+
+const popupOverlay = document.querySelector('.popup-overlay');
+const popup = document.querySelector('#video-popup');
+const ytPlayerIframe = document.querySelector('.yt_player_iframe');
+
+const openPopup = (e) => {
+  popupOverlay.classList.remove('hidden');
+  popupOverlay.classList.toggle('animate__animated');
+  popup.classList.toggle('hidden');
+  document.querySelector('body').classList.add('overflow-hidden')
+
+  let player = ytPlayerIframe.cloneNode();
+  player.src = 'https://www.youtube.com/embed/rHQnWL0zY8U?autoplay=1&playsinline=1';
+  player.setAttribute('allowfullscreen', 'allowfullscreen');
+  popup.appendChild(player)
+}
+
+const closePopup = () => {
+  popupOverlay.classList.add('hidden');
+  popup.classList.add('hidden');
+  popup.querySelector('.yt_player_iframe').remove()
+  document.querySelector('body').classList.remove('overflow-hidden')
+
+}
 
 
 
