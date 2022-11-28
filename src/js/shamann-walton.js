@@ -260,7 +260,6 @@ const purpleTl = gsap.timeline({
     trigger: '#purple-message',
     start: 'top 100%',
     end: 'top 15%',
-    toggleActions: 'restart none reverse none'
   },
   defaults: {
     duration: 1,
@@ -351,6 +350,20 @@ const mapTl = gsap.timeline({
 
 
 
+const logosTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".tv-logo",
+    start: 'top 100%'
+  },
+});
+logosTl.from('.tv-logo', {
+  opacity: 0,
+  rotateY: 50,
+  x: -30,
+  duration: .7,
+  stagger: .1,
+  ease: 'back.out(2)'
+})
 
 
 

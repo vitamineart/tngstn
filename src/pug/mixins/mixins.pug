@@ -2,7 +2,7 @@ mixin page-title(u)
     if u.inverted
         header(class=`page-title pt-8 pb-6 relative ${u.classes}`)
             .container
-                div(class=`tag-client inline-block font-proxima-bold px-2 py-0.5 bg-white ${u.tagClasses}`)= u.tagClient
+                div(class=`tag-client inline-block font-proxima-bold px-2 py-0.5 ${u.tagClasses}`)= u.tagClient
                 h1(class=`mt-4 font-proxima-bold leading-none text-white ${u.h1Classes}`) !{u.h1}
                 if u.subtitle
                     p(class=`page-subtitle mt-3 leading-tight text-white ${u.subtitleClasses}`) !{u.subtitle}
