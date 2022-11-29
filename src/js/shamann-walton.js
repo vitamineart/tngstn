@@ -423,7 +423,7 @@ const popupOverlay = document.querySelector('.popup-overlay');
 const popup = document.querySelector('#video-popup');
 const ytPlayerIframe = document.querySelector('.yt_player_iframe');
 
-const openPopup = (e) => {
+const openPopup = () => {
   popupOverlay.classList.remove('hidden');
   popupOverlay.classList.toggle('animate__animated');
   popup.classList.toggle('hidden');
