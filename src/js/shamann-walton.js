@@ -358,11 +358,10 @@ const logosTl = gsap.timeline({
 });
 logosTl.from('.tv-logo', {
   opacity: 0,
-  rotateY: 50,
-  x: -30,
-  duration: .7,
+  scale: .4,
+  duration: 1,
   stagger: .2,
-  ease: 'back.out(2)'
+  ease: 'back.out(1.7)'
 })
 
 
