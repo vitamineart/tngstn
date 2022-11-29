@@ -5,10 +5,10 @@ block variables
 
 prepend preload
     //- //- link(rel="preload" as="image" href="https://i.ytimg.com/vi_webp/0puWSusGbOA/hqdefault.webp")
-    //- script(type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js" defer)
+    script(type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js" defer)
 
 
-    script(src="https://d3js.org/d3.v4.js" defer)
+    script(src="https://d3js.org/d3.v4.min.js" defer)
     script(src="https://cdnjs.cloudflare.com/ajax/libs/d3-ease/1.0.3/d3-ease.min.js" defer)
     script(src="https://unpkg.co/gsap@3/dist/gsap.min.js" defer)
     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" defer)
@@ -325,7 +325,7 @@ block page
                         p The commercial suddenly becomes a talking point that the  audience can discuss with their friends and relatives later that  weekend, confident that their friends have also seen the  commercial, and are thinking the same thing.
                         p While television worked so well to help Shamann Walton win  the election, that's not to say that a media plan that is limited  to television will always be the best strategy.
                     div(class="md:w-1/2 ")
-                        div(class="overflow-hidden max-w-sm mx-auto rounded-2xl shadow-2xl" data-aos="zoom-in" data-aos-duration="400")
+                        div(class="overflow-hidden max-w-sm mx-auto rounded-2xl shadow-2xl bg-white" data-aos="zoom-in" data-aos-duration="400")
                             div(class="text-white px-7 py-5 font-proxima-bold text-xl" style="background-color: var(--c-walton-violet)") Advertising in mass media gives the consumer  greater trust in the brand. This is especially critical  for certain product categories:
                             div(class=" bg-white px-7 py-5" data-aos="zoom-in" data-aos-delay="100") High price or high involvement products
                             div(class=" bg-gray-light px-7 py-5" data-aos="zoom-in" data-aos-delay="150") Products that need ongoing support
@@ -569,14 +569,14 @@ block page
     //-     +team(team)
 
 
-    div(id="video-popup" class="popup fixed inset-0 m-auto max-w-4xl aspect-video z-[51] hidden animate__animated animate__fadeInDown")
+    div(id="video-popup" class="popup fixed inset-10 m-auto max-w-7xl aspect-video z-[51] hidden animate__animated animate__fadeInDown")
         button(type="button" role="button" onClick="closePopup();" id="close-popup" class="text-white hover:text-purple-300")
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" class="top-0 right-0 absolute -translate-y-10 translate-x-12">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" class="top-0 right-0 absolute -translate-y-9 translate-x-9">
                 <path d="M29.5834 3.35413L26.6459 0.416626L15 12.0625L3.35419 0.416626L0.416687 3.35413L12.0625 15L0.416687 26.6458L3.35419 29.5833L15 17.9375L26.6459 29.5833L29.5834 26.6458L17.9375 15L29.5834 3.35413Z" fill="currentColor"/></svg>
 
 
 
-    div(class="popup-overlay fixed inset-0 w-full h-full z-50 animate__fadeIn hidden" style="background: linear-gradient(90deg, hsla(259, 31%, 22%, .9), hsl(268, 34%, 27%, .9) )" onClick="closePopup()")
+    div(class="popup-overlay fixed inset-0 w-full h-full z-50 animate__fadeIn hidden p-20" style="background: linear-gradient(90deg, hsla(259, 41%, 22%, .95), hsl(268, 44%, 27%, .95) )" onClick="closePopup()")
 
 append footer_scripts
 

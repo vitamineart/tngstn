@@ -361,7 +361,7 @@ logosTl.from('.tv-logo', {
   rotateY: 50,
   x: -30,
   duration: .7,
-  stagger: .1,
+  stagger: .2,
   ease: 'back.out(2)'
 })
 
