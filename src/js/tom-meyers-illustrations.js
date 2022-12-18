@@ -4,7 +4,7 @@ gsap.from("#tom-photo", {
     scrollTrigger: {
         trigger: '#tom-photo',
         top: 'top 100%',
-        toggleActions: 'restart none reverse none'
+        once: true
     },
     opacity: 0,
     y: 50,
@@ -17,18 +17,10 @@ ScrollTrigger.create({
     trigger: '#dropcap',
     start: 'bottom 100%',
     toggleClass: 'animate__wobble',
+    once: true
 })
 
-gsap.from("#tngstn-ruins", {
-    scrollTrigger: {
-        trigger: '#tngstn-ruins',
-        top: 'top 100%',
-    },
-    opacity: 0,
-    x: 50,
-    duration: 1.5,
-    ease: 'pow3.out()'
-})
+
 gsap.from("#pep_logo", {
     scrollTrigger: {
         trigger: '#pep_logo',

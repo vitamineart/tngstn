@@ -215,6 +215,7 @@ function prodHTML() {
     .pipe(replace(".png", ".webp"))
     .pipe(replace(".jpg", ".webp"))
     .pipe(replace(".jpeg", ".webp"))
+    .pipe(replace("../img", "img"))
     .pipe(size({ title: "Before html minification " }))
     .pipe(
       htmlmin({

@@ -20,7 +20,7 @@ header.header {
   letter-spacing: 0.2px;
 }
 
-.page-content p:not(:first-child) {
+.page-content p:not(:first-of-type) {
   @apply mt-3 sm:mt-4 md:mt-6;
 }
 .page-content img.shape-outside {

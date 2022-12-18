@@ -10,24 +10,67 @@ prepend preload
 append head
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print"  onload="this.media='all'"/>
 
-    //- style.
-        :root {
-            --c-walton-violet: #604B8D;
-            --c-walton-purple: #744E9F;
+    style.
+        .hero-overlay {
+            background: radial-gradient(40% 60% at 30% 30%, #242424, #000);
+            opacity: .97;
+            mix-blend-mode: darken;
+        }
+        .hero-desktop {
 
         }
-        .hero {
-            background-image: url(img/shamann-walton/Walton-Hero-Bg.jpg);
-            background-position: 28% 50%;
+        @media (max-width:767px) {
+            .hero-desktop {
+                height: max(45vh, 350px);
+            }
         }
+        .hero-book {
+            left: 0%;
+            top: 40%;
+            width: 33%;
+            rotate: -34deg;
+            translate: -80% 20%;
+            transition: .5s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+        .hero:hover .hero-book {
+            transition: .5s cubic-bezier(0.33, 1, 0.68, 1);
+            rotate: -13deg;
+            translate: none;
+            filter: drop-shadow(2px 5px 3px hsla(0, 0%, 0%, .2)) drop-shadow(2px 10px 15px hsla(30, 25%, 35%, .4));
+        }
+        @media (min-width: 401px){
+            .hero-book {
+                width:33%;
+            }
+        }
+        @media (min-width: 501px){
+            .hero-book {
+                top: 37%;
+                left: 12%;
+                width: 25%;
+                translate: -80% 25%;
+            }
+        }
+        @media (min-width: 601px){
+            .hero-book {
 
+
+                left: 18%;
+                top: 37%;
+                width: 20%;
+                rotate: -34deg;
+                translate: -70% 25%;
+            }
+        }
 
 block page
-    .hero
-        img(src="http://unsplash.it/2000/1000?animals&gravity=center", alt="alt" height="1000" width="2000")
+    .hero(class="relative group")
+        img(src="../img/tom-meyer/Hero@961.jpg" srcset="../img/tom-meyer/Hero@486.jpg 486w, ../img/tom-meyer/Hero@660.jpg 660w, ../img/tom-meyer/Hero@782.jpg 782w, ../img/tom-meyer/Hero@1000.jpg 1000w, ../img/tom-meyer/Hero@1441.jpg 1441w, ../img/tom-meyer/Hero@1920.jpg 1920w, ../img/tom-meyer/Hero@2881.jpg 2881w, ../img/tom-meyer/Hero@3840.jpg 3840w, ../img/tom-meyer/Hero@5760.jpg 5760w, ../img/tom-meyer/Hero@7680.jpg 7680w" alt="Hero" height="1217" width="1920" class="hero-desktop w-full relative z-0 object-cover")
+        img(src="../img/tom-meyer/book@1024.jpg" srcset="../img/tom-meyer/book@400.jpg 400w, ../img/tom-meyer/book@600.jpg 600w, ../img/tom-meyer/book@800.jpg 800w, ../img/tom-meyer/book@1024.jpg 1024w, ../img/tom-meyer/book@1318.jpg 1318w" sizes="(max-width: 500px) 33vw, (max-width: 600px) 25vw, 20vw" width="400" height="572" class="absolute hero-book ")
+        div(class="hero-overlay absolute w-full h-full inset-0 z-10  group-hover:opacity-0  transition duration-500")
 
     div(
-        class="relative py-8 "
+        class="relative xs:py-4 sm:py-6 lg:py-8"
         style=" background-color: hsl(224, 62%, 34%);"
     )
         .z-10.relative
@@ -61,6 +104,14 @@ block page
                                 left: 49vw;
                             }
                         }
+                        #tngstn-ruins {
+
+                        }
+                        @media (min-width:1280px){
+                            #tngstn-ruins {
+                                width: 669px;
+                            }
+                        }
                     div(class="mt-10 md:mt-16 lg:mt-20 relative")
                         p(class="drop-cap first-letter:!mr-5 sm:flex-2 " style="--color: #000").
                             For four weeks, every Sunday morning, brewed himself a cup of coffee and sat down at his kitchen table to conceptualize and create an illustration for a book on personal finance.
@@ -69,7 +120,7 @@ block page
                         p(class="mt-2").
                             Tom Meyer is a nationally syndicated political cartoonist with a mastery over the power of observational comedy.
 
-                img(loading="lazy" src="img/tom-meyer/Tungsten_ruins@335.png" srcset="img/tom-meyer/Tungsten_ruins@335.png 335w, img/tom-meyer/Tungsten_ruins@503.png 503w, img/tom-meyer/Tungsten_ruins@669.png 669w, img/tom-meyer/Tungsten_ruins@1338.png 1338w, img/tom-meyer/Tungsten_ruins@2007.png 2007w" sizes="(max-width: 479px) 256px, (max-width:639px) 288px, (max-width:767px) 336px, (max-width:1023px) 376px, (max-width:1279px) 472px, 669px" alt="Tungsten Ruins" class="" width="669" height="926" class="float-right w-64 xs:w-72 sm:w-84 md:w-94 lg:w-1/2 xl:w-9/12  -mt-2 sm:-mt-6 md:-mt-16 lg:-mt-24 xl:-mt-28 -mr-16 md:mr-0 lg:-mr-20 xl:-mr-48 shape-outside"  style="max-width: 669px !important;" id="tngstn-ruins")
+                img(loading="lazy" src="../img/tom-meyer/TungstenRuins-cropped@256.png" srcset="../img/tom-meyer/TungstenRuins-cropped@256.png 256w, ../img/tom-meyer/TungstenRuins-cropped@512.png 512w, ../img/tom-meyer/TungstenRuins-cropped@669.png 669w, ../img/tom-meyer/TungstenRuins-cropped@768.png 768w, ../img/tom-meyer/TungstenRuins-cropped@1024.png 1024w, ../img/tom-meyer/TungstenRuins-cropped@1338.png 1338w, ../img/tom-meyer/TungstenRuins-cropped@1461.png 1461w, ../img/tom-meyer/TungstenRuins-cropped@2007.png 2007w" sizes="(max-width: 479px) 256px, (max-width:639px) 288px, (max-width:767px) 336px, (max-width:1023px) 376px, (max-width:1279px) 472px, 669px" alt="Tungsten Ruins" width="669" height="926" class="float-right w-64 xs:w-72 sm:w-84 md:w-94 lg:w-1/2 xl:w-9/12 -mt-2 sm:-mt-6 md:-mt-16 lg:-mt-24 xl:-mt-28 -mr-20 xs:-mr-16 md:-mr-6 lg:-mr-20 xl:-mr-48 shape-outside" id="tngstn-ruins")
                 p(class="mt-2").
                     Cartoons take up just four pages of this 120 page book, but they have an outsized impact:
                 p(class="mt-2").
@@ -123,8 +174,9 @@ block page
                 }
 
             div(class="paper absolute inset-0 w-full h-full z-0")
-                img(loading="lazy" src="img/tom-meyer/paper_texture.jpeg", alt="paper" class="paper-texture absolute w-full h-full object-cover inset-0 z-0" width="1920" height="2719")
-                img(loading="lazy" src="img/tom-meyer/paper_edge.png", alt="paper edge" class="paper-edge absolute left-0 right-0 z-10 w-full object-cover object-bottom ")
+                img(loading="lazy" src="../img/tom-meyer/paper-texture@1264.jpg" srcset="../img/tom-meyer/paper-texture@633.jpg 633w, ../img/tom-meyer/paper-texture@949.jpg 949w, ../img/tom-meyer/paper-texture@1264.jpg 1264w, ../img/tom-meyer/paper-texture@1897.jpg 1897w, ../img/tom-meyer/paper-texture@2528.jpg 2528w, ../img/tom-meyer/paper-texture@3792.jpg 3792w, ../img/tom-meyer/paper-texture@5056.jpg 5056w" alt="Paper" class="paper-texture absolute w-full h-full object-cover inset-0 z-0" width="1264" height="1790")
+
+                img(loading="lazy" src="../img/tom-meyer/paper_edge@1920.png" srcset="../img/tom-meyer/paper_edge@960.png 960w, ../img/tom-meyer/paper_edge@1440.png 1440w, ../img/tom-meyer/paper_edge@1920.png 1920w, ../img/tom-meyer/paper_edge@2880.png 2880w,  ../img/tom-meyer/paper_edge@3840.png 3840w, ../img/tom-meyer/paper_edge@5760.png 5760w, ../img/tom-meyer/paper_edge@7680.png 7680w" alt="paper edge" class="paper-edge absolute left-0 right-0 z-10 w-full object-cover object-bottom " width="1920" height="154")
 
             style.
                 .sketch {
@@ -201,30 +253,119 @@ block page
 
             svg(class="-mb-1 w-full orange-section-top-edge" fill="none" viewBox="0 0 1920 82" style="height:var(--edge-height)")
                 path(fill="#D85427" d="M7.6 22.75c4.94-.166 9.499-.496 14.058-1.157 2.28.165 4.94.495 7.22.66 11.78-1.321 22.038-4.461 34.197-4.461.76.165 1.14 0 1.52-.165 4.56-.661 9.12-.827 13.68.165.38.165 1.14.33 1.52.496 5.319.165 10.638.826 15.578.991 18.999.33 37.997-1.322 56.616-.826 9.499.33 18.619 0 28.118-.496l6.839-.496c12.16-1.156 23.179-3.14 33.058-6.114 7.22-2.148 13.679-2.974 21.658-2.81 1.9 0 3.42 0 5.32.166.76-.991 2.66-1.652 5.32-2.148 18.618-.992 37.997.496 56.235-2.314 1.14-.165 2.28 0 3.42 0 11.019 1.488 22.419.661 33.438.661 4.56.661 8.739 1.157 12.919 1.818 9.119-.66 17.859-1.983 26.218-3.635 10.639-1.983 19.759-2.81 30.398-1.322 4.559.66 10.639 1.487 14.439.66 9.879-1.817 18.618 0 27.738.331 4.559.165 8.739 1.157 13.299.661 3.799.165 7.219.165 11.019.33 1.14 0 1.9.331 2.66.662h2.28l2.279.991c6.46.33 12.919-.496 18.999-1.487 3.8-.661 7.979-1.157 12.159-1.157 9.879 0 18.999-2.644 28.878-1.157.76.166 1.52 0 2.28-.165 9.879-2.479 19.758-1.322 28.878.33 8.359 1.488 15.959 3.47 25.458 3.47 1.52 0 3.04.992 4.559 1.488 3.8.992 7.6 1.818 11.78 2.81 1.9.33 2.66 1.156 2.66 1.982 3.039.496 5.319 1.157 6.459 2.314 2.66 2.313 6.84 2.644 11.779 2.479 1.9 0 3.8.165 5.32.165 6.459-.661 14.059-1.983 19.378-.165 4.56 1.652 8.36 1.652 12.919 1.322 3.8-.496 7.6-1.157 11.02.33 1.14 0 1.899.33 2.659.826l6.84 2.975c7.22.496 14.819-.165 22.038-.165 0-.166-.38-.166-.38-.33.38-.827 1.14-1.323 2.66-1.653 4.94-.827 9.879.33 14.819.165h3.42c1.14.165 1.9.33 3.04.496.76.33 1.519.495 2.279.826.76.33 1.52.661 1.9.991 0 .166 0 .496.38.662 7.22 1.817 14.819.66 22.419 1.156 1.52.33 3.419.33 4.939.992 1.14.165 1.9.66 2.66.826 1.14.661 3.42.33 4.56.991.38.166.76.496 1.14.662.38 0 1.14 0 1.52.165v.165c.76.496 1.519.661 1.899 1.157 1.14 1.322 4.18 1.322 6.46 1.487 7.979.33 16.339.992 23.938 1.487 11.779.826 23.179 2.148 35.338 1.983 5.699-2.148 11.019-1.652 15.958-.495.76-.166 1.52-.331 1.9-.496 1.14-.166 2.28-.33 3.8-.33 3.8.164 7.219.33 10.639.99 27.358-.33 54.716-.495 82.074-1.321 3.42.33 7.22.66 10.639.826 7.6-.496 15.199-.991 22.802-1.322 4.94-.33 8.74-.661 11.4-2.644.76-.826 3.04-.661 4.56-1.157.76-.495 1.52-.826 3.04-.991v.165c4.56.165 8.73 2.314 13.29-.165.38-.166.38-.33.76-.496 2.28-.826 5.32-.992 7.6-1.652.76-.166 1.9-.166 2.66-.331 2.66 0 5.7 0 8.36-.33 1.14 0 1.9-.166 2.66-.166 2.28 0 4.56.33 6.46.992.76.165 1.52.33 2.28.66 1.52.331 3.42.662 4.94.827.76.165 1.9.165 2.66.33 2.28.331 4.56.496 7.22.662 1.14 0 1.9 0 3.04.165h24.32c1.14 0 1.9 0 3.04-.166 1.9-.165 3.8-.33 5.7-.66 1.14-.166 1.9-.166 3.04-.331l4.56-.496c1.14 0 2.28-.165 3.04-.165 3.42-.496 6.84-.33 10.26-.496 2.28-.165 4.56-.495 6.46-.165a485.803 485.803 0 0 0 37.61 4.462c4.18.33 7.22 1.652 7.22 3.8l-1.14.496c.76.166 1.52.496 2.28.661 2.28.33 4.56.661 6.84.661 1.14 0 2.28 0 3.42-.33 10.64-1.983 21.28-1.488 31.54.496 3.04.66 6.08.826 8.74.495 11.02-1.818 22.42-1.322 33.44-.826 1.52.661 3.8 1.157 6.08.992 8.36-.661 14.06.826 19.38 3.635 6.07 2.975 14.05 5.123 24.31 5.453 8.36.33 17.48-.33 25.46 1.818.38.165.38.33.76.33 1.52 0 3.04.166 4.56.166 5.7.991 12.16 1.322 18.24 1.652 25.46 1.653 49.78 4.627 75.23 6.115 18.24.991 36.48 3.635 55.1 3.47 23.94-.661 47.12 1.818 69.92 4.792 28.11 3.636 56.23 3.801 84.73 1.157 10.26-.992 20.14-1.818 30.4-.496 2.28-.165 4.56-.33 6.84-.826 1.14-.165 2.28-.165 3.42-.165 1.52 0 3.04.33 4.56.495 1.52 0 3.42 0 5.32.166 3.8.33 7.59.496 11.77.496 1.52-.496 2.66-.992 4.18-1.983 1.14-.166 1.9-.331 3.04-.496 1.52-.33 3.04-.496 4.56-.827 1.14-.165 1.9-.33 3.04-.495 4.94-.33 9.5-.992 14.06-.827 3.8-.165 7.98 0 12.16.331 8.36.826 16.72.661 25.08.33 1.14-.165 2.66-.165 3.8-.165 1.9 0 3.8-.165 5.32-.165 0-.33.38-.661.76-.826 5.7-1.983 13.3-2.149 19.76-2.975 20.9-3.14 41.79-3.966 63.07-.826 5.32 0 10.64.165 15.58.826 7.22.992 14.82 1.322 22.42 1.157.76.165 1.14.33 2.28.496V81.86H0V22.419c1.52 0 4.18.165 7.6.33Z")
-            section(class="relative py-10 sm:py-14 md:py-16 lg:py-20 text-white" style="background:#D85427; ")
+            section(class="relative py-6 sm:py-10 md:py-16 lg:py-20 text-white" style="background:#D85427; ")
                 .container
-                    div(class="sm:grid sm:grid-cols-2")
-                        img(src="img/tom-meyer/Art_Board.png", alt="Art Board" class="float-left max-w-max" width="605" height="1230")
-                        .col(class="sm:col-start-2")
-                            p - The presence of cartoons in a book makes the audience more accepting of the opinions expressed by the author in the written text. The reader experiences an instant sense of relief and gratitude for a light moment in a book on the serious topics of wealth management and estate planning. The cartoons relax the reader, and diffuse any reluctance to reading through the long text.
+                    div(class="md:grid md:grid-cols-2 lg:grid-cols-10 relative ")
+
+                        .col(class="md:col-start-2 lg:col-start-7 lg:col-end-11 sm:pr-6 flow-root")
+                            style.
+                                .artboard-jigsaw {
+                                    left: -200px;
+                                    bottom: -270px;
+                                    width: 86vw;
+                                }
+                                #artboard-gray-layer {
+                                    height: 100px;
+                                }
+                                @media (min-width: 850px){
+                                    .artboard-jigsaw {
+                                        width: 82vw;
+                                    }
+                                }
+                                @media (min-width: 900px){
+                                    .artboard-jigsaw {
+                                        width: 80vw;
+                                        bottom: -320px;
+                                    }
+                                    #artboard-gray-layer {
+                                        height: 200px;
+                                    }
+                                }
+                                @media (min-width: 1024px){
+                                    .artboard-jigsaw {
+                                        left: -10%;
+                                        width: 800px;
+                                    }
+                                    #artboard-gray-layer {
+                                        height: 250px;
+                                    }
+                                }
+                                @media (min-width: 1280px){
+                                    .artboard-jigsaw {
+                                        left: -15%;
+                                        bottom: -350px;
+                                        width: 868px;
+                                    }
+                                    #artboard-gray-layer {
+                                        height: 220px;
+                                    }
+                                }
+                                @media (min-width: 1400px){
+                                    .artboard-jigsaw {
+                                        left: -20%;
+                                        bottom: -370px;
+                                    }
+                                    #artboard-gray-layer {
+                                        height: 300px;
+                                    }
+                                }
+
+
+
+
+
+
+                            img(src="../img/tom-meyer/JigsawArtboard@868.png" srcset="../img/tom-meyer/JigsawArtboard@435.png 435w, ../img/tom-meyer/JigsawArtboard@652.png 652w, ../img/tom-meyer/JigsawArtboard@868.png 868w, ../img/tom-meyer/JigsawArtboard@1303.png 1303w, ../img/tom-meyer/JigsawArtboard@1736.png 1736w, ../img/tom-meyer/JigsawArtboard@2604.png 2604w, ../img/tom-meyer/JigsawArtboard@3472.png 3472w" sizes="(max-width:849px) 86vw, (max-width:899px) 82vw, (max-width: 1023px) 80vw, (max-width:1279px) 800px, 868px" alt="Art Board" class="md:absolute hidden md:block artboard-jigsaw z-0" width="868" height="1337" loading="lazy")
+
+                            p(class="") - The presence of cartoons in a book makes the audience more accepting of the opinions expressed by the author in the written text. The reader experiences an instant sense of relief and gratitude for a light moment in a book on the serious topics of wealth management and estate planning. The cartoons relax the reader, and diffuse any reluctance to reading through the long text.
                             p - The book’s author expresses strong opinions that differentiate him from the approaches of other financial brokers. The message embedded in a cartoon however, is perceived by the reader to be an unbiased and objective view of a situation.
+
+                            img(src="../img/tom-meyer/JigsawArtboardMobile@1x.png" srcset="../img/tom-meyer/JigsawArtboardMobile@1x.png 1x, ../img/tom-meyer/JigsawArtboardMobile@2x.png 2x, ../img/tom-meyer/JigsawArtboardMobile@3x.png 3x, ../img/tom-meyer/JigsawArtboardMobile@4x.png 4x" sizes="(max-width:370px) 86vw, (max-width:480px) 90vw, 93vw" alt="Art Board" class="mt-4 md:hidden mx-auto sm:w-4/5" width="591" height="644" loading="lazy")
+
                             p Why did Tungsten choose to put so much thought into cartoons for this book? Well, cartoons have qualities that make them an ideal medium to reach and influence a wide general public.
                             p But cartoons are also especially suitable when communicating to a target audience of intelligent, educated, social elites: and this was the demographic for the client's financial planning services.
             svg(class="-mt-1 w-full orange-section-bottom-edge" fill="none" viewBox="0 0 1920 62")
                 path(fill="#D85427" d="M1906.06 42.624c-2.96-.796-6.22-.663-9.49-.398-4.15.398-8.3.53-11.86-.53a98 98 0 0 1-12.45-.797c-2.37.265-4.74 0-6.82-.265-8.9-.93-17.5-.93-26.09.53-2.08.398-3.86.531-5.93.398-8.6-.132-17.2 0-25.51-.53-13.64-.796-26.98-.266-40.32-.133-5.04 1.725-10.38 1.99-16.02.796-9.19 1.194-18.38.664-27.57.796-6.23.133-12.75.266-18.68-.796-1.19-.265-2.38-.53-3.56-.796-.59.133-1.19 0-1.78-.133-8.9-.265-17.5-.929-26.39.266-3.86.53-8.3 0-12.16-.398-7.12-.797-12.75-2.654-18.38-4.512-9.2-.398-18.09.796-27.28-.266-.3 0-.6.133-.89.133-2.08-.663-5.34.133-7.42-.663-1.78-.664-3.85-.266-5.93-.399h-.29c-1.19 0-2.38.133-3.56.266-.89.133-1.48.133-2.37.133h-5.64c-.89 0-1.48-.133-2.07-.266-1.78-.398-3.86-.398-5.64-.663-.89 0-1.78-.266-2.37-.266-13.94-1.062-27.87-.796-41.81-1.194-2.37 0-4.74 0-7.12.133-7.71-.399-15.71.928-23.42-.399-.3-.398-.59-.796-.89-1.194-2.37 0-4.45-.265-6.52-.398-.3.133-.6.265-.89.53-.89.532-2.38.664-3.86.664-10.97.133-21.94-.796-32.91 0-6.53.531-13.05.531-19.57.266-1.49-.266-2.67-.664-3.27-1.327v-.133c-4.15-.133-8-.398-12.15-.53h-6.23c-1.48 0-2.97.132-4.45.265-2.37.265-5.34 0-7.41-.797-2.37-.265-5.04-.53-7.41-.928-.89.265-1.49.663-2.38 1.061-2.07.53-4.44.929-6.82.664-8.89-.797-17.49 0-26.09 1.061-1.78.266-3.26.531-5.04.796-.89.133-1.48.133-2.37.266-5.04.398-10.09.796-15.13 1.46-1.48.265-2.96.398-4.74.53-.89.133-1.48.133-2.37.266-7.71.265-15.13 1.46-22.84.663-4.74-.265-9.19 1.195-14.23.797-11.86.928-24.31 1.194-35.88 3.052-2.07 0-4.15-.266-6.23-.266-3.26.398-6.52.664-9.78.531-.89.266-1.78.664-2.67 1.062-2.07 0-4.15.132-6.23.398-.89 0-1.78 0-2.37-.133-2.07-.265-4.45-.133-6.52-.53-19.57.53-39.14.795-58.71 1.06-29.95.532-59.6 1.328-88.96 3.451-.89.133-2.08.133-2.97.133-21.05-.796-42.1-2.521-63.15-1.194-1.49 0-3.27-.133-4.75-.266h-3.26c-2.97 0-5.93-.265-8.304.531-8.302-1.327-17.198-.663-25.797-1.725-3.559-.398-7.413 0-11.268.53-7.413.93-15.123.93-22.536.399-6.524-.531-12.751-.398-19.274-.266-6.524 0-13.344.133-19.571-1.061-2.075.133-4.151.398-6.227.663l-.889.133h-1.483c-.593 0-1.186-.133-1.483-.265l-.889-.133-.89-.133c-.593-.133-.889-.265-1.482-.398l-1.779-.398c-.297 0-.593-.133-.593-.133a8.054 8.054 0 0 1-3.559 0h-.889c-.89 0-1.483.133-2.373.133-2.668.265-5.041.265-7.413-.266-.296-.132-.593-.265-.889-.132-1.186-.133-1.779-.398-2.372-.796-7.414-1.858-15.716-2.522-24.019-2.92-2.372-.133-4.744 0-7.117-.265-.889.133-1.779.265-2.372.398-13.047-1.327-26.094-2.654-39.141-4.114-5.634-1.194-12.157-.53-17.791-1.858-2.669-.265-4.745-.929-7.413-1.327a4.33 4.33 0 0 0-1.78.398h-2.668c-.89 0-1.483 0-1.186-.265-1.186 0-2.076 0-2.966-.398-.296-.133-.889-.133-1.186-.133-2.372-.663-5.337.266-7.413-.796-.593-.398-1.482-.796-2.076-1.327-1.779 0-3.261-.133-5.04-.133l-1.78-.796c-7.116-1.725-14.529-2.654-22.832-1.725-2.372.265-5.337.133-8.006-.133-7.413-.796-15.123-1.061-22.832-1.061-7.117 0-14.234-.664-21.054-1.062-12.454-.664-24.908 0-37.065-.133-2.076.664-4.448.664-6.82.664-14.826.132-29.06 1.46-42.403 4.114a62.715 62.715 0 0 1-7.413.796c-.593.265-1.186.663-1.483 1.061-.593.266-1.483.398-2.372.531a16.248 16.248 0 0 1-3.558.398h-.594c-1.482 1.195-5.04 1.062-7.709 1.195-21.35 1.061-42.697 2.654-63.454 4.91-2.965.663-6.227.928-9.489.398-.593-.133-1.186-.133-1.779-.266-2.965.664-6.227 1.46-9.192 2.123-1.779.399-3.559.664-5.634.93-9.489.663-18.681.796-28.17.663-1.779-.265-3.855-.133-5.634-.265a15.939 15.939 0 0 0-3.855 1.194c-38.251-.664-76.206-1.062-114.458.265a156.162 156.162 0 0 1-22.239 1.195c-4.745.53-9.489 1.327-13.937 2.388-5.931.398-11.861.93-17.495 1.46v.133c-5.93-.797-12.158.132-17.792-.664-2.965-.265-5.93-.663-8.896-.929-.593 0-1.186.133-1.779.133h-1.186c-.296 0-.593.133-.593.133-.889 0-1.483 0-2.372-.133 0 0-.297 0-.297-.133h-10.081c-.594.133-1.187.266-2.076.266h-2.076v.265c-.593 1.725-3.855 2.389-7.116 2.389-11.268.398-22.24.929-33.508 1.592-1.779.133-3.558 0-4.744-.398a5.401 5.401 0 0 1-1.186.398c-2.669.133-5.338 0-8.006.133-26.391 1.46-50.409 2.92-74.131 5.175-5.634.531-10.675 1.725-16.309 1.725-13.64-.132-26.687 1.46-40.03 2.389-2.076.133-4.449 0-6.524.398-.593 0-1.186 0-1.78-.133-3.558.399-7.116.93-10.378 1.593-2.372.265-4.448.133-6.227-.93-2.668-.132-5.04.266-7.71.664L0 0h1919.99l.01 43.288c-4.74.265-9.19-.398-13.94-.664ZM748.434 27.231l.889.398c0-.266-.593-.398-.889-.398Z")
-        div(class="py-20" style="background-color: #EAEAEA;")
+        div(class="py-20 hidden md:block" id="artboard-gray-layer" style="background-color: #EAEAEA;")
 
         section(class="relative z-20 py-12 lg:py-20")
-            img(loading="lazy" src="img/tom-meyer/book-image@879.jpg" srcset="img/tom-meyer/book-image@440.jpg 440w,  img/tom-meyer/book-image@660.jpg 660w, img/tom-meyer/book-image@879.jpg 879w, img/tom-meyer/book-image@1319.jpg 1319w, img/tom-meyer/book-image@1758.jpg 1758w, img/tom-meyer/book-image@2637.jpg 2637w, img/tom-meyer/book-image@3516.jpg 3516w" sizes="(max-width: 639px) 83.3w, 50vw" alt="Book Image" width="879" height="664" class="-mt-18 2xl:mt-0 mb-8 mx-auto w-10/12 sm:absolute sm:right-0 2xl:right-auto 2xl:left-1/2 2xl:-translate-x-10 sm:top-1/2 sm:-translate-y-1/2 sm:w-1/2 border-2 border-white shadow-xl sm:shadow-none sm:border-none sm:h-full xl:h-auto sm:object-cover sm:object-left lg:mx-8 " style="background-color: #c9bdb3; max-width: 879px;")
-
             .container
-                .grid(class="sm:grid-cols-2")
-                    .col(class="sm:col-span-1 sm:pr-14")
+                .grid(class="lg:grid-cols-2")
+                    .col(class="lg:col-span-1 lg:pr-14 flow-root")
+                        style.
+                            #book-image {
+                            }
+                            @media (min-width: 1024px){
+                                 #book-image {
+                                    right: 2%;
+                                    bottom: 0;
+                                    top: auto;
+                                    width: calc(50% - 1rem);
+                                }
+                            }
+                            @media (min-width: 1280px){
+                                 #book-image {
+                                    right: 3%;
+                                    bottom: 3%;
+                                    top: auto;
+                                    width: calc(50% - 4rem);
+                                }
+                            }
+                            @media (min-width: 1400px){
+                                 #book-image {
+                                    right: 3%;
+                                    bottom: 3%;
+                                    top: auto;
+                                    width: calc(50% - 5rem);
+                                }
+                            }
+                        img(loading="lazy" src="img/tom-meyer/book-image@879.jpg" srcset="img/tom-meyer/book-image@440.jpg 440w,  img/tom-meyer/book-image@660.jpg 660w, img/tom-meyer/book-image@879.jpg 879w, img/tom-meyer/book-image@1319.jpg 1319w, img/tom-meyer/book-image@1758.jpg 1758w, img/tom-meyer/book-image@2637.jpg 2637w, img/tom-meyer/book-image@3516.jpg 3516w" sizes="(max-width: 639px) 90vw, (max-width: 1600px) 45vw,  46vw" alt="Book Image" width="879" height="664" class="mx-auto sm:float-right sm:ml-10 sm:mb-10 -mt-12 mb-8 sm:-mt-16 md:-mt-20 lg:absolute shape-outside  sm:w-1/2 lg:object-cover lg:h-full" id="book-image")
+
                         p It is rare for an art form to have made an impact academically, culturally, socially, economically, and as commercial art in advertising.
                         p This target audience is familiar with, and even wistful about cartoons. They have grown up with cartoons whether in newspapers or on television. Since their childhoods, they have associated cartoons with laughter, happiness and fun.
                         p Most importantly, the most vital role for cartoons in this book is to unite the readers behind a common point-ofview which the readers collectively share between themselves, and with the author.
 
-        section(class="xl:mt-32 py-12 lg:py-20" style="background-color: #EAEAEA;")
+        section(class="py-12 lg:py-20" style="background-color: #EAEAEA;")
             style.
                 @media (min-width:640px) {
                     .imagesGrid .item:nth-child(2n+1) {
@@ -291,35 +432,35 @@ block page
         each color, index in reverseColors
             div(class="meyer-color h-full absolute" style=`background-color: ${color.color}; width: ${color.width}%; z-index: ${index} ;`)
 
-    div(class="container py-12 md:py-20")
-        -
-            const team = [
-                {
-                    role: "Illustrator",
-                    name: "Tom Meyer",
-                    contacts: {
-                        linkedin: "https://www.linkedin.com/in/stuart_silberman/",
-                        twitter: "https://www.linkedin.com/in/stuart_silberman/"
-                    }
-                },
-                {
-                    role: "Copyrighter",
-                    name: "Mukul Bakshi",
-                    contacts: {
-                        linkedin: "https://www.linkedin.com/in/stuart_silberman/",
-                        twitter: "https://www.linkedin.com/in/stuart_silberman/"
-                    }
-                },
-                {
-                    role: "Art Director",
-                    name: "Zachery Boutilier",
-                    contacts: {
-                        linkedin: "https://www.linkedin.com/in/stuart_silberman/",
-                        facebook: "https://www.linkedin.com/in/stuart_silberman/"
-                    }
+
+    -
+        const team = [
+            {
+                role: "Illustrator",
+                name: "Tom Meyer",
+                contacts: {
+                    linkedin: "https://www.linkedin.com/in/stuart_silberman/",
+                    twitter: "https://www.linkedin.com/in/stuart_silberman/"
                 }
-            ]
-        +team(team)
+            },
+            {
+                role: "Copyrighter",
+                name: "Mukul Bakshi",
+                contacts: {
+                    linkedin: "https://www.linkedin.com/in/stuart_silberman/",
+                    twitter: "https://www.linkedin.com/in/stuart_silberman/"
+                }
+            },
+            {
+                role: "Art Director",
+                name: "Zachery Boutilier",
+                contacts: {
+                    linkedin: "https://www.linkedin.com/in/stuart_silberman/",
+                    facebook: "https://www.linkedin.com/in/stuart_silberman/"
+                }
+            }
+        ]
+    +team(team)
 
 
 append footer_scripts
