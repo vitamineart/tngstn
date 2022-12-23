@@ -1,7 +1,7 @@
 extends ./layout/base
 block variables
     - var pageTitle = 'Tungsten Advertising Case Study | Ambassador Toys'
-
+    - let currentUrl = 'ambassador-toys.html';
 prepend preload
 
 append head
@@ -9,48 +9,44 @@ append head
 
 block page
     div(class="hero relative grid overflow-hidden bg-gradient-to-b from-blue-dark via-[#004B80] to-blue-light")
-        img(src="img/ambassador-toys/AmbassadorToysLogo@500.png", srcset="img/ambassador-toys/AmbassadorToysLogo@252.png 300w, img/ambassador-toys/AmbassadorToysLogo@378.png 378w, img/ambassador-toys/AmbassadorToysLogo@500.png 500w, img/ambassador-toys/AmbassadorToysLogo@500.png 500w, img/ambassador-toys/AmbassadorToysLogo@755.png 755w, img/ambassador-toys/AmbassadorToysLogo@1006.png 1006w, img/ambassador-toys/AmbassadorToysLogo@1509.png 1509w" sizes="(max-width:640px) 256px, (max-width:1024px) 288px, 503px" alt="Ambassador Logo Image" class="absolute inset-0 m-auto z-50 w-64 xs:w-72 sm:w-96 lg:w-[503px] toys-logo -translate-y-2 xs:-translate-y-5 sm:-translate-y-10 lg:-translate-y-16" width="503" height="162")
+        img(src="media/ambassador-toys/AmbassadorToysLogo@500.png", srcset="media/ambassador-toys/AmbassadorToysLogo@252.png 300w, media/ambassador-toys/AmbassadorToysLogo@378.png 378w, media/ambassador-toys/AmbassadorToysLogo@500.png 500w, media/ambassador-toys/AmbassadorToysLogo@500.png 500w, media/ambassador-toys/AmbassadorToysLogo@755.png 755w, media/ambassador-toys/AmbassadorToysLogo@1006.png 1006w, media/ambassador-toys/AmbassadorToysLogo@1509.png 1509w" sizes="(max-width:640px) 256px, (max-width:1024px) 288px, 503px" alt="Ambassador Logo Image" class="absolute inset-0 m-auto z-50 w-64 xs:w-72 sm:w-96 lg:w-[503px] toys-logo -translate-y-2 xs:-translate-y-5 sm:-translate-y-10 lg:-translate-y-16" width="503" height="162")
         div(class="clouds absolute top-2/3 sm:top-1/2 left-0 right-0 bottom-0 w-full overflow-hidden z-20")
-            img(src="img/ambassador-toys/cloud_01.svg", class="absolute cloud" alt="Cloud" style="--top: 35px; --delay: -2s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_02.svg", class="absolute cloud " alt="Cloud" style="--top: 20px; --delay: -1.3s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_03.svg", class="absolute cloud " alt="Cloud" style="--top: 39px; --delay: 1.8s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_04.svg", class="absolute cloud " alt="Cloud" style="--top: 40px; --delay: 4s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_05.svg", class="absolute cloud " alt="Cloud" style="--top: 41px; --delay: -7.8s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_06.svg", class="absolute cloud" alt="Cloud" style=" --top: 2px; --delay: -3s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_07.svg", class="absolute cloud" alt="Cloud" style=" --top: 2px; --delay: -6.2s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_08.svg", class="absolute cloud " alt="Cloud" style="--top: 40px; --delay: -4.4s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_09.svg", class="absolute cloud " alt="Cloud" style="--top: 20px; --delay: -5.1s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_10.svg", class="absolute cloud " alt="Cloud" style="--top: 40px; --delay: -6s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_11.svg", class="absolute cloud " alt="Cloud" style="--top: 20px; --delay: 1s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_12.svg", class="absolute cloud " alt="Cloud" style="--top: 42px; --delay: -3.3s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_13.svg", class="absolute cloud " alt="Cloud" style="--top: 11px; --delay: -3.1s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_14.svg", class="absolute cloud " alt="Cloud" style="--top: 30px; --delay: -7.1s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_15.svg", class="absolute cloud " alt="Cloud" style="--top: 3px; --delay: .5s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_16.svg", class="absolute cloud " alt="Cloud" style="--top: 13px; --delay: 4.1s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_17.svg", class="absolute cloud " alt="Cloud" style="--top: 13px; --delay: .7s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_18.svg", class="absolute cloud " alt="Cloud" style="--top: 15px; --delay: -0.1s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_19.svg", class="absolute cloud " alt="Cloud" style="--top: 13px; --delay: -0.7s; --duration: 1")
-            img(src="img/ambassador-toys/cloud_20.svg", class="absolute cloud " alt="Cloud" style="--top: 43px; --delay: 1.1s; --duration: 1")
-        img(src="img/ambassador-toys/cloudsBG.svg", alt="Clouds background image" width="1004" height="282" class="absolute h-1/3 md:h-2/5 lg:h-1/2 w-full object-cover object-top left-0 bottom-0 z-30 translate-y-16 lg:translate-y-20 mt-auto scale-110")
+            img(src="media/ambassador-toys/cloud_01.svg", class="absolute cloud" alt="Cloud" style="--top: 35px; --delay: -2s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_02.svg", class="absolute cloud " alt="Cloud" style="--top: 20px; --delay: -1.3s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_03.svg", class="absolute cloud " alt="Cloud" style="--top: 39px; --delay: 1.8s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_04.svg", class="absolute cloud " alt="Cloud" style="--top: 40px; --delay: 4s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_05.svg", class="absolute cloud " alt="Cloud" style="--top: 41px; --delay: -7.8s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_06.svg", class="absolute cloud" alt="Cloud" style=" --top: 2px; --delay: -3s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_07.svg", class="absolute cloud" alt="Cloud" style=" --top: 2px; --delay: -6.2s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_08.svg", class="absolute cloud " alt="Cloud" style="--top: 40px; --delay: -4.4s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_09.svg", class="absolute cloud " alt="Cloud" style="--top: 20px; --delay: -5.1s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_10.svg", class="absolute cloud " alt="Cloud" style="--top: 40px; --delay: -6s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_11.svg", class="absolute cloud " alt="Cloud" style="--top: 20px; --delay: 1s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_12.svg", class="absolute cloud " alt="Cloud" style="--top: 42px; --delay: -3.3s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_13.svg", class="absolute cloud " alt="Cloud" style="--top: 11px; --delay: -3.1s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_14.svg", class="absolute cloud " alt="Cloud" style="--top: 30px; --delay: -7.1s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_15.svg", class="absolute cloud " alt="Cloud" style="--top: 3px; --delay: .5s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_16.svg", class="absolute cloud " alt="Cloud" style="--top: 13px; --delay: 4.1s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_17.svg", class="absolute cloud " alt="Cloud" style="--top: 13px; --delay: .7s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_18.svg", class="absolute cloud " alt="Cloud" style="--top: 15px; --delay: -0.1s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_19.svg", class="absolute cloud " alt="Cloud" style="--top: 13px; --delay: -0.7s; --duration: 1")
+            img(src="media/ambassador-toys/cloud_20.svg", class="absolute cloud " alt="Cloud" style="--top: 43px; --delay: 1.1s; --duration: 1")
+        img(src="media/ambassador-toys/cloudsBG.svg", alt="Clouds background image" width="1004" height="282" class="absolute h-1/3 md:h-2/5 lg:h-1/2 w-full object-cover object-top left-0 bottom-0 z-30 translate-y-16 lg:translate-y-20 mt-auto scale-110")
         div(class="sky-fade-bottom absolute w-full h-2/3 top-auto left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-white z-0 opacity-50" )
-        img(src="img/ambassador-toys/moon.svg", alt="alt" width="123" height="133" class="moon absolute z-10  ")
+        img(src="media/ambassador-toys/moon.svg", alt="alt" width="123" height="133" class="moon absolute z-10  ")
         div(class="stars absolute z-0 stars_fadein w-full h-full inset-0")
     +page-title({
-        inverted: false,
+        class: '-mt-10 md:-mt-20 z-50',
         tagClient: 'Ambassador Toys',
-        tagClasses: 'text-white bg-blue-light',
         h1: 'How a Neighborhood Toy Store Got San Francisco’s Attention.',
-        h1Classes: 'text-blue-dark',
         subtitle: 'A retail chain of toy stores across the San Francisco Bay Area had been buying media space, but had never had a creative agency.',
-        subtitleClasses: 'text-blue-dark',
-        classes: '-mt-10 md:-mt-20 z-50 relative',
         audio: '#'
     })
 
 
     article(class=" page-content leading-relaxed overflow-hidden")
         .container.flow-root
-            img(src="img/ambassador-toys/pinguin@224.png", srcset="img/ambassador-toys/pinguin@224.png 224w, img/ambassador-toys/pinguin@288.png 288w, img/ambassador-toys/pinguin@432.png 432w, img/ambassador-toys/pinguin@448.png 448w, img/ambassador-toys/pinguin@576.png 576w, img/ambassador-toys/pinguin@672.png 672w, img/ambassador-toys/pinguin@720.png 720w", sizes="(max-width: 480px) 144px, (max-width: 768px) 192px, 224px", alt="Pinguin Toy" class="float-right shape-outside -mr-12 w-36 xs:-mr-10 xs:w-48 md:w-56 md:mr-0" width="600" height="1156" data-aos="fade-left")
+            img(src="media/ambassador-toys/pinguin@224.png", srcset="media/ambassador-toys/pinguin@224.png 224w, media/ambassador-toys/pinguin@288.png 288w, media/ambassador-toys/pinguin@432.png 432w, media/ambassador-toys/pinguin@448.png 448w, media/ambassador-toys/pinguin@576.png 576w, media/ambassador-toys/pinguin@672.png 672w, media/ambassador-toys/pinguin@720.png 720w", sizes="(max-width: 480px) 144px, (max-width: 768px) 192px, 224px", alt="Pinguin Toy" class="float-right shape-outside -mr-12 w-36 xs:-mr-10 xs:w-48 md:w-56 md:mr-0" width="600" height="1156" data-aos="fade-left")
             p.drop-cap(style="--color: hsla(205, 74%, 47%, 1)").
                 For years, the stores had relied on TV stations or the in-house graphics departments of newspapers to create the ads. (Most publications will offer this service if you buy space from them.)
             p.
@@ -68,16 +64,16 @@ block page
             div.relative.my-10
                 div.relative.flex.items-center
                     div(data-aos="zoom-out" class="relative z-10")
-                        img(loading="lazy" src="img/ambassador-toys/toys_works/bearNecessities@1200.jpg", srcset="img/ambassador-toys/toys_works/bearNecessities@300.jpg 300w, img/ambassador-toys/toys_works/bearNecessities@600.jpg 600w, img/ambassador-toys/toys_works/bearNecessities@800.jpg 800w, img/ambassador-toys/toys_works/bearNecessities@1000.jpg 1000w, img/ambassador-toys/toys_works/bearNecessities@1200.jpg 1200w, img/ambassador-toys/toys_works/bearNecessities@1519.jpg 1519w, img/ambassador-toys/toys_works/bearNecessities@2025.jpg 2025w" sizes="(max-width: 1024px) 62vw,  522px" alt="" width="514" height="174" class="-rotate-3 shadow-2xl flex-none relative z-20" )
-                    img(loading="lazy" src="img/ambassador-toys/paper_plane.png", alt="" class="flex-none h-max" width="199" height="85" data-aos="zoom-out-right" data-aos-delay="550" class="w-3/12 md:w-auto")
+                        img(loading="lazy" src="media/ambassador-toys/toys_works/bearNecessities@1200.jpg", srcset="media/ambassador-toys/toys_works/bearNecessities@300.jpg 300w, media/ambassador-toys/toys_works/bearNecessities@600.jpg 600w, media/ambassador-toys/toys_works/bearNecessities@800.jpg 800w, media/ambassador-toys/toys_works/bearNecessities@1000.jpg 1000w, media/ambassador-toys/toys_works/bearNecessities@1200.jpg 1200w, media/ambassador-toys/toys_works/bearNecessities@1519.jpg 1519w, media/ambassador-toys/toys_works/bearNecessities@2025.jpg 2025w" sizes="(max-width: 1024px) 62vw,  522px" alt="" width="514" height="174" class="-rotate-3 shadow-2xl flex-none relative z-20" )
+                    img(loading="lazy" src="media/ambassador-toys/paper_plane.png", alt="" class="flex-none h-max" width="199" height="85" data-aos="zoom-out-right" data-aos-delay="550" class="w-3/12 md:w-auto")
                 div(data-aos="zoom-out" data-aos-data-aos-delay="350" class="z-30 relative")
-                    img(loading="lazy" src="img/ambassador-toys/toys_works/catchThem@1200.jpg", srcset="img/ambassador-toys/toys_works/catchThem@300.jpg 300w, img/ambassador-toys/toys_works/catchThem@600.jpg 600w, img/ambassador-toys/toys_works/catchThem@800.jpg 800w, img/ambassador-toys/toys_works/catchThem@1000.jpg 1000w, img/ambassador-toys/toys_works/catchThem@1200.jpg 1200w, img/ambassador-toys/toys_works/catchThem@1519.jpg 1519w, img/ambassador-toys/toys_works/catchThem@1920.jpg 1920w", sizes="(max-width: 1024px) 90vw, 635px" alt="" width="631" height="213" class="rotate-1 shadow-2xl mt-10 sm:-mr-10 ml-auto max-w" )
-                img(loading="lazy" src="img/ambassador-toys/two_clouds.png", alt="" class="absolute inset-0 -left-32 -z-10" data-aos="zoom-in-right" data-aos-duration="700")
+                    img(loading="lazy" src="media/ambassador-toys/toys_works/catchThem@1200.jpg", srcset="media/ambassador-toys/toys_works/catchThem@300.jpg 300w, media/ambassador-toys/toys_works/catchThem@600.jpg 600w, media/ambassador-toys/toys_works/catchThem@800.jpg 800w, media/ambassador-toys/toys_works/catchThem@1000.jpg 1000w, media/ambassador-toys/toys_works/catchThem@1200.jpg 1200w, media/ambassador-toys/toys_works/catchThem@1519.jpg 1519w, media/ambassador-toys/toys_works/catchThem@1920.jpg 1920w", sizes="(max-width: 1024px) 90vw, 635px" alt="" width="631" height="213" class="rotate-1 shadow-2xl mt-10 sm:-mr-10 ml-auto max-w" )
+                img(loading="lazy" src="media/ambassador-toys/two_clouds.png", alt="" class="absolute inset-0 -left-32 -z-10" data-aos="zoom-in-right" data-aos-duration="700")
 
             div(class="relative w-96 aspect-square mx-auto sm:float-left -left-10 xs:left-auto" style="shape-outside: circle(50%); " data-aos="fade-right" data-aos-duration="500" data-aos-delay="100")
                 div(class=" absolute z-10 inset-0 bottom-3 right-2 m-auto w-72 h-36 text-white uppercase text-xl font-proxima-bold text-center leading-relaxed rounded-full").
                     Tungsten has years of experience creating distinctive/memorable  advertising ideas for uniquely San Francisco brands.
-                //- img(src="img/ambassador-toys/BlueCircleStars.svg", alt="" class="-left-8 absolute z-0 scale-110 sm:scale-105" loading="lazy" width="402" height="374")
+                //- img(src="media/ambassador-toys/BlueCircleStars.svg", alt="" class="-left-8 absolute z-0 scale-110 sm:scale-105" loading="lazy" width="402" height="374")
                 <svg width="402" height="374" viewBox="0 0 402 374" fill="none" class="-left-10 absolute z-0 scale-95 sm:scale-100"> <circle cx="102.5" cy="108.5" r="102.5" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="102.5" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="102.5" fill="#36C0C8"/> <circle cx="102.5" cy="108.5" r="71.75" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="71.75" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="71.75" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="41.7321" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="41.7321" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="41.7321" fill="#F9E75C"/> <circle cx="227.5" cy="199.5" r="174.5" fill="url(#paint0_linear_1961_1168)"/> <path d="M330.656 12.6562C331.686 11.0413 334.167 11.5595 334.355 13.4288L336.213 31.9242C336.297 32.7635 336.913 33.443 337.747 33.6171L356.955 37.6294C358.882 38.032 359.051 40.6673 357.197 41.4108L339.385 48.5538C338.533 48.8952 338.004 49.7514 338.094 50.6423L339.913 68.7553C340.104 70.6532 337.725 71.7624 336.42 70.3839L323.182 56.3942C322.626 55.8067 321.753 55.6243 320.98 55.9343L302.576 63.3144C300.763 64.0417 299.123 62.0928 300.169 60.4532L310.15 44.8053C310.641 44.0356 310.556 43.0512 309.944 42.404L297.131 28.864C295.798 27.4545 297.163 25.1399 299.091 25.5425L318.299 29.5547C319.133 29.7289 320.002 29.3596 320.464 28.6345L330.656 12.6562Z" fill="#F9E75C"/> <path d="M221.178 54.7359C221.162 52.86 223.59 52.1057 224.79 53.6142L227.572 57.1115C228.11 57.7885 229.019 58.073 229.834 57.8198L234.023 56.5186C235.9 55.9357 237.51 58.0913 236.338 59.6179L233.919 62.767C233.382 63.4659 233.403 64.4443 233.971 65.158L236.536 68.3831C237.752 69.9118 236.315 71.9986 234.429 71.4447L229.916 70.12C229.107 69.8826 228.249 70.1491 227.756 70.7907L225.006 74.3711C223.856 75.868 221.359 75.0029 221.342 73.1018L221.306 69.0912C221.298 68.2037 220.683 67.4098 219.802 67.1513L215.833 65.9861C213.908 65.4213 213.801 62.7991 215.678 62.2161L219.867 60.915C220.683 60.6618 221.225 59.9268 221.217 59.0849L221.178 54.7359Z" fill="#F9E75C"/> <defs> <linearGradient id="paint0_linear_1961_1168" x1="227.5" y1="25" x2="227.5" y2="374" gradientUnits="userSpaceOnUse"> <stop stop-color="#174375"/> <stop offset="1" stop-color="#3378A8"/> </linearGradient> </defs> </svg>
             p(class="sm:!mt-20").
                 Tungsten gave the brand a distinctive look, voice, style, and identity. The creative gives the brand an image that is charming,  irreverent, witty, unpredictable, sometimes wry, always cerebral, independent and premium.
@@ -95,64 +91,64 @@ block page
                 p(class="w-7/12 xs:w-8/12 sm:w-9/12 relative z-50" ).
                     Whether your product is exclusive to San Francisco or  distributed across the world, we would love to hear from you  about your brand and share ideas on how advertising can help achieve your company's business objectives.
                 div(class="absolute bottom-0 right-0 w-full left-0 z-0")
-                    img(loading="lazy" src="img/ambassador-toys/LightBulb.svg" width="77" height="113" class="z-10 lightbulb absolute left-1/2 -ml-20  bottom-2 md:bottom-8 hidden xs:inline-block scale-50 sm:scale-75 md:scale-100")
-                    img(loading="lazy" src="img/ambassador-toys/Robot@301.png" srcset="img/ambassador-toys/Robot@151.png 151w, img/ambassador-toys/Robot@227.png 227w, img/ambassador-toys/Robot@452.png 452w, img/ambassador-toys/Robot@602.png 602w" alt="Robot Girl Image" class="absolute -right-10 md:-right-20 lg:-right-28 -bottom-1 xs:-bottom-5 md:-bottom-10 lg:bottom-0 left-auto w-48 sm:w-1/3 md:w-64 lg:w-72 z-20" width="301" height="466" )
-                    img(loading="lazy" src="img/ambassador-toys/Rainbow_clouds_bg.png" class="absolute right-0 -bottom-2 z-0" alt="Rainbow Clouds Image")
+                    img(loading="lazy" src="media/ambassador-toys/LightBulb.svg" width="77" height="113" class="z-10 lightbulb absolute left-1/2 -ml-20  bottom-2 md:bottom-8 hidden xs:inline-block scale-50 sm:scale-75 md:scale-100")
+                    img(loading="lazy" src="media/ambassador-toys/Robot@301.png" srcset="media/ambassador-toys/Robot@151.png 151w, media/ambassador-toys/Robot@227.png 227w, media/ambassador-toys/Robot@452.png 452w, media/ambassador-toys/Robot@602.png 602w" alt="Robot Girl Image" class="absolute -right-10 md:-right-20 lg:-right-28 -bottom-1 xs:-bottom-5 md:-bottom-10 lg:bottom-0 left-auto w-48 sm:w-1/3 md:w-64 lg:w-72 z-20" width="301" height="466" )
+                    img(loading="lazy" src="media/ambassador-toys/Rainbow_clouds_bg.png" class="absolute right-0 -bottom-2 z-0" alt="Rainbow Clouds Image")
         div(class="pt-14 sm:pt-20 relative bg-repeat blue-bg after:absolute after:inset-0 after:w-full after:h-full after:z-0 after:bg-repeat after:opacity-20 after:mix-blend-overlay")
             .container.relative.z-10
                 div(class="-left-2 -top-36 scale-75 sm:scale-100 sm:left-10 sm:-top-36 absolute z-0")
-                    img(loading="lazy" src="img/ambassador-toys/butterfly@202.png" srcset="img/ambassador-toys/butterfly@101.png 101w, img/ambassador-toys/butterfly@152.png 152w, img/ambassador-toys/butterfly@202.png 202w, img/ambassador-toys/butterfly@304.png 304w, img/ambassador-toys/butterfly@404.png 404w, img/ambassador-toys/butterfly@606.png 606w, img/ambassador-toys/butterfly@804.png 804w" sizes="(max-width:640px) 151px, 202px" alt="Butterfly Image" class="butterfly" width="202" height="202" data-aos="zoom-in-up")
+                    img(loading="lazy" src="media/ambassador-toys/butterfly@202.png" srcset="media/ambassador-toys/butterfly@101.png 101w, media/ambassador-toys/butterfly@152.png 152w, media/ambassador-toys/butterfly@202.png 202w, media/ambassador-toys/butterfly@304.png 304w, media/ambassador-toys/butterfly@404.png 404w, media/ambassador-toys/butterfly@606.png 606w, media/ambassador-toys/butterfly@804.png 804w" sizes="(max-width:640px) 151px, 202px" alt="Butterfly Image" class="butterfly" width="202" height="202" data-aos="zoom-in-up")
                 div(class="toys-works-grid relative z-10 sm:-mt-8 flex flex-wrap justify-center sm:grid grid-cols-12 gap-6 sm:gap-8 place-items-center drop-shadow-xl  grid-flow-row-dense ")
-                    a(href="img/ambassador-toys/toys_works/bestSeat@3x.jpg" data-fslightbox="gallery" class="col-span-8 row-span-4 sm:col-span-4 sm:row-span-3 sm:place-self-end")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/bestSeat.jpg", alt="Best Seat Image" width="226" height="146" style="transform: rotate(-1.68deg)")
-                    a(href="img/ambassador-toys/toys_works/diabolicalPieces@3x.jpg" data-fslightbox="gallery" class="col-span-4 row-span-4 sm:col-span-3 sm:row-span-3 sm:self-start")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/diabolicalPieces.jpg", alt="Diabolical Pieces Image" width="180" height="176")
-                    a(href="img/ambassador-toys/toys_works/giraffeAd@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-2 sm:self-start")
-                        img(class=" shadow-xl " loading="lazy" src="img/ambassador-toys/toys_works/giraffeAd.jpg", alt="Girafee Ad Image" style=" transform: rotate(1.29deg) " width="298" height="102")
-                    a(href="img/ambassador-toys/toys_works/zeroEmissionVehicle@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-3 sm:row-span-3 sm:self-start" style="grid-column-start: 1")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/zeroEmissionVehicle.jpg", alt="Zero Emission Vehicle Image" width="181" height="146")
-                    a(href="img/ambassador-toys/toys_works/randomActs@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-4 sm:row-span-3")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/randomActs.jpg", alt="Random Acts of Hugging Image" width="249" height="161")
-                    a(href="img/ambassador-toys/toys_works/easyRider@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-3 sm:self-start sm:justify-self-start" style="grid-row-start: 3; grid-column-start: 8")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/easyRider.jpg", alt="Easy Rider Image"  width="280" height="145")
-                    a(href="img/ambassador-toys/toys_works/bearNecessities@2025.jpg" data-fslightbox="gallery" class=" sm:col-span-4 sm:row-span-1 sm:place-self-start" style="grid-column-start: 1")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/bearNecessities@800.jpg", alt="Bear Necessities Image" width="514" height="174" style="transform: rotate(0.44deg)")
-                    a(href="img/ambassador-toys/toys_works/paparazzis@3x.jpg" data-fslightbox="gallery" class=" row-span-1 sm:col-span-3 sm:row-span-2 sm:self-start")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/paparazzis.jpg", alt="Paparazzis Image" width="170" height="137")
-                    a(href="img/ambassador-toys/toys_works/notDoWindows@3x.jpg" data-fslightbox="gallery" class=" row-span-1 sm:col-span-4 sm:row-span-3 justify-self-end sm:-translate-y-16 " style="grid-row-start: 6; grid-column-start: 8")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/notDoWindows.jpg", alt="I don not do Windows Image" width="273" height="140")
-                    a(href="img/ambassador-toys/toys_works/RadarDetector@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-2 sm:place-self-center sm:-translate-y-10" style="grid-row-start: 8; grid-column-start: 8;")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/RadarDetector.jpg", alt="Radar Detector Not Included Image" style=" transform: rotate(-0.35deg)" width="307" height="102")
-                    a(href="img/ambassador-toys/toys_works/crumpledCasuals@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-2 sm:row-span-8 sm:self-start" style="grid-row-start: 8; grid-row-end: 14")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/crumpledCasuals.jpg", alt="Crumpled Casuals Image"  width="107" height="408")
-                    a(href="img/ambassador-toys/toys_works/semiFormalDinner@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-3 sm:row-span-2 place-self-start sm:-translate-y-9 sm:-translate-x-3 " style="grid-column-start: 3; grid-row-start: 9;")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/semiFormalDinner.jpg", alt="Formal Dinner Image" width="186" height="97")
-                    a(href="img/ambassador-toys/toys_works/kungShi@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-2 sm:row-span-4 place-self-center sm:place-self-start sm:scale-150 sm:translate-y-3 " style="grid-column-start: 6; grid-row-start: 9;")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/kungShi.jpg", alt="Kung Shi Image" style=" transform: rotate(-0.82deg)"  width="180" height="203")
-                    a(href="img/ambassador-toys/toys_works/ChinesePoster@3x.jpg" data-fslightbox="gallery" class="sm:col-span-3 sm:row-span-4 place-self-start sm:-translate-x-4 sm:-translate-y-8" style="grid-column-start: 3; grid-row-start: 11;")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/ChinesePoster.jpg", alt="Chinese Poster Image" width="183" height="275" )
-                    a(href="img/ambassador-toys/toys_works/rakeInFun@3x.jpg" data-fslightbox="gallery" class="sm:col-span-3 sm:row-span-3 self-start sm:-translate-y-10 " style="grid-row-start: 10; grid-column-start: 9;")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/rakeInFun.jpg", alt="Rake in the Fun Image"  width="223" height="179" style="transform: rotate(0.13deg)")
-                    a(href="img/ambassador-toys/toys_works/catchThem@1920.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-3 sm:scale-150 lg:scale-125" style="grid-row-start: 12; grid-column-start: 7")
-                        img(class="shadow-xl" loading="lazy" src="img/ambassador-toys/toys_works/catchThem@600.jpg", alt="Catch Them While You Can Image" style=" transform: rotate(0.87deg)" width="631" height="213")
+                    a(href="media/ambassador-toys/toys_works/bestSeat@3x.jpg" data-fslightbox="gallery" class="col-span-8 row-span-4 sm:col-span-4 sm:row-span-3 sm:place-self-end")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/bestSeat.jpg", alt="Best Seat Image" width="226" height="146" style="transform: rotate(-1.68deg)")
+                    a(href="media/ambassador-toys/toys_works/diabolicalPieces@3x.jpg" data-fslightbox="gallery" class="col-span-4 row-span-4 sm:col-span-3 sm:row-span-3 sm:self-start")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/diabolicalPieces.jpg", alt="Diabolical Pieces Image" width="180" height="176")
+                    a(href="media/ambassador-toys/toys_works/giraffeAd@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-2 sm:self-start")
+                        img(class=" shadow-xl " loading="lazy" src="media/ambassador-toys/toys_works/giraffeAd.jpg", alt="Girafee Ad Image" style=" transform: rotate(1.29deg) " width="298" height="102")
+                    a(href="media/ambassador-toys/toys_works/zeroEmissionVehicle@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-3 sm:row-span-3 sm:self-start" style="grid-column-start: 1")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/zeroEmissionVehicle.jpg", alt="Zero Emission Vehicle Image" width="181" height="146")
+                    a(href="media/ambassador-toys/toys_works/randomActs@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-4 sm:row-span-3")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/randomActs.jpg", alt="Random Acts of Hugging Image" width="249" height="161")
+                    a(href="media/ambassador-toys/toys_works/easyRider@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-3 sm:self-start sm:justify-self-start" style="grid-row-start: 3; grid-column-start: 8")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/easyRider.jpg", alt="Easy Rider Image"  width="280" height="145")
+                    a(href="media/ambassador-toys/toys_works/bearNecessities@2025.jpg" data-fslightbox="gallery" class=" sm:col-span-4 sm:row-span-1 sm:place-self-start" style="grid-column-start: 1")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/bearNecessities@800.jpg", alt="Bear Necessities Image" width="514" height="174" style="transform: rotate(0.44deg)")
+                    a(href="media/ambassador-toys/toys_works/paparazzis@3x.jpg" data-fslightbox="gallery" class=" row-span-1 sm:col-span-3 sm:row-span-2 sm:self-start")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/paparazzis.jpg", alt="Paparazzis Image" width="170" height="137")
+                    a(href="media/ambassador-toys/toys_works/notDoWindows@3x.jpg" data-fslightbox="gallery" class=" row-span-1 sm:col-span-4 sm:row-span-3 justify-self-end sm:-translate-y-16 " style="grid-row-start: 6; grid-column-start: 8")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/notDoWindows.jpg", alt="I don not do Windows Image" width="273" height="140")
+                    a(href="media/ambassador-toys/toys_works/RadarDetector@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-2 sm:place-self-center sm:-translate-y-10" style="grid-row-start: 8; grid-column-start: 8;")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/RadarDetector.jpg", alt="Radar Detector Not Included Image" style=" transform: rotate(-0.35deg)" width="307" height="102")
+                    a(href="media/ambassador-toys/toys_works/crumpledCasuals@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-2 sm:row-span-8 sm:self-start" style="grid-row-start: 8; grid-row-end: 14")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/crumpledCasuals.jpg", alt="Crumpled Casuals Image"  width="107" height="408")
+                    a(href="media/ambassador-toys/toys_works/semiFormalDinner@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-3 sm:row-span-2 place-self-start sm:-translate-y-9 sm:-translate-x-3 " style="grid-column-start: 3; grid-row-start: 9;")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/semiFormalDinner.jpg", alt="Formal Dinner Image" width="186" height="97")
+                    a(href="media/ambassador-toys/toys_works/kungShi@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-2 sm:row-span-4 place-self-center sm:place-self-start sm:scale-150 sm:translate-y-3 " style="grid-column-start: 6; grid-row-start: 9;")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/kungShi.jpg", alt="Kung Shi Image" style=" transform: rotate(-0.82deg)"  width="180" height="203")
+                    a(href="media/ambassador-toys/toys_works/ChinesePoster@3x.jpg" data-fslightbox="gallery" class="sm:col-span-3 sm:row-span-4 place-self-start sm:-translate-x-4 sm:-translate-y-8" style="grid-column-start: 3; grid-row-start: 11;")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/ChinesePoster.jpg", alt="Chinese Poster Image" width="183" height="275" )
+                    a(href="media/ambassador-toys/toys_works/rakeInFun@3x.jpg" data-fslightbox="gallery" class="sm:col-span-3 sm:row-span-3 self-start sm:-translate-y-10 " style="grid-row-start: 10; grid-column-start: 9;")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/rakeInFun.jpg", alt="Rake in the Fun Image"  width="223" height="179" style="transform: rotate(0.13deg)")
+                    a(href="media/ambassador-toys/toys_works/catchThem@1920.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-3 sm:scale-150 lg:scale-125" style="grid-row-start: 12; grid-column-start: 7")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/catchThem@600.jpg", alt="Catch Them While You Can Image" style=" transform: rotate(0.87deg)" width="631" height="213")
 
 
                 div(class="toys-works-grid grid gap-y-8 place-content-center place-items-center drop-shadow-2xl mt-10" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))")
-                    a(href="img/ambassador-toys/toys_works/littleGreenThumbs@3x.jpg" data-fslightbox="gallery" class="min-w-max md:justify-self-end" )
-                        img(class="shadow" loading="lazy" src="img/ambassador-toys/toys_works/littleGreenThumbs.jpg", alt="Little Green Thumbs Image"  width="249" height="128" )
-                    a(href="img/ambassador-toys/toys_works/rainGear@3x.jpg" data-fslightbox="gallery" class="min-w-max " )
-                        img(class="shadow" loading="lazy" src="img/ambassador-toys/toys_works/rainGear.jpg", alt="Rain Gear Image"  width="170" height="136" )
-                    a(href="img/ambassador-toys/toys_works/Pandamonium@3x.jpg" data-fslightbox="gallery" class="min-w-max lg:justify-self-start ")
-                        img(class="shadow" loading="lazy" src="img/ambassador-toys/toys_works/Pandamonium.jpg", alt="Pandamonium Image"  width="170" height="136" )
-                    a(href="img/ambassador-toys/toys_works/AT-toydetailpage@3x.jpg" data-fslightbox="gallery" class="min-w-max ")
-                        img(class="relative" loading="lazy" src="img/ambassador-toys/toys_works/AT-toydetailpage.jpg", alt="Ambassador Toys Detail Page Image"  width="242" height="182" style="transform: rotate(-0.88deg)")
-                    a(href="img/ambassador-toys/toys_works/AT-home@3x.jpg" data-fslightbox="gallery" class="min-w-max " )
-                        img(class="relative" loading="lazy" src="img/ambassador-toys/toys_works/AT-home.jpg", alt="Ambassador Toys Homepage Image"  width="233" height="184" )
-                    a(href="img/ambassador-toys/toys_works/at-toyshome@3x.jpg" data-fslightbox="gallery" class="min-w-max " )
-                        img(class="relative" loading="lazy" src="img/ambassador-toys/toys_works/at-toyshome.jpg", alt="AT Toys Home Image"  width="245" height="184" style=" transform: rotate(1.3deg)")
+                    a(href="media/ambassador-toys/toys_works/littleGreenThumbs@3x.jpg" data-fslightbox="gallery" class="min-w-max md:justify-self-end" )
+                        img(class="shadow" loading="lazy" src="media/ambassador-toys/toys_works/littleGreenThumbs.jpg", alt="Little Green Thumbs Image"  width="249" height="128" )
+                    a(href="media/ambassador-toys/toys_works/rainGear@3x.jpg" data-fslightbox="gallery" class="min-w-max " )
+                        img(class="shadow" loading="lazy" src="media/ambassador-toys/toys_works/rainGear.jpg", alt="Rain Gear Image"  width="170" height="136" )
+                    a(href="media/ambassador-toys/toys_works/Pandamonium@3x.jpg" data-fslightbox="gallery" class="min-w-max lg:justify-self-start ")
+                        img(class="shadow" loading="lazy" src="media/ambassador-toys/toys_works/Pandamonium.jpg", alt="Pandamonium Image"  width="170" height="136" )
+                    a(href="media/ambassador-toys/toys_works/AT-toydetailpage@3x.jpg" data-fslightbox="gallery" class="min-w-max ")
+                        img(class="relative" loading="lazy" src="media/ambassador-toys/toys_works/AT-toydetailpage.jpg", alt="Ambassador Toys Detail Page Image"  width="242" height="182" style="transform: rotate(-0.88deg)")
+                    a(href="media/ambassador-toys/toys_works/AT-home@3x.jpg" data-fslightbox="gallery" class="min-w-max " )
+                        img(class="relative" loading="lazy" src="media/ambassador-toys/toys_works/AT-home.jpg", alt="Ambassador Toys Homepage Image"  width="233" height="184" )
+                    a(href="media/ambassador-toys/toys_works/at-toyshome@3x.jpg" data-fslightbox="gallery" class="min-w-max " )
+                        img(class="relative" loading="lazy" src="media/ambassador-toys/toys_works/at-toyshome.jpg", alt="AT Toys Home Image"  width="245" height="184" style=" transform: rotate(1.3deg)")
 
                 div(style="transform: translateY(16px)")
-                    img(loading="lazy" src="img/ambassador-toys/redCar.png" srcset="img/ambassador-toys/redCar.png 594w, img/ambassador-toys/redCar@1.5x.png 891w, img/ambassador-toys/redCar@2x.png 1188w, img/ambassador-toys/redCar@3x.png 1782w,"  width="550" height="305" alt="Boy in Red Car" class="mx-auto relative"  data-aos="zoom-in-right")
+                    img(loading="lazy" src="media/ambassador-toys/redCar.png" srcset="media/ambassador-toys/redCar.png 594w, media/ambassador-toys/redCar@1.5x.png 891w, media/ambassador-toys/redCar@2x.png 1188w, media/ambassador-toys/redCar@3x.png 1782w,"  width="550" height="305" alt="Boy in Red Car" class="mx-auto relative"  data-aos="zoom-in-right")
 
     //- -
         const team = [
@@ -321,7 +317,7 @@ append footer_scripts
         .blue-bg::after {
             background-image: radial-gradient(circle at center, #1784c1 40%, #264783);
             box-shadow: 0 0 150px hsla(219, 67%, 20%, 0.5) inset;
-            background: url(img/ambassador-toys/blueBGpattern.svg);
+            background: url(media/ambassador-toys/blueBGpattern.svg);
         }
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.js" integrity="sha512-EqNNJuepkw5P9vxCml8eBk7C4Ld+4kAnvzOD/jG21rkxWPILGoQa5EvD62UieiJF0u3xoQrcVnce4i83VnYj/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" async)

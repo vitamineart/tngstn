@@ -1,6 +1,8 @@
 extends ./layout/base
 block variables
     - var pageTitle = 'Tungsten Advertising Case Study | Cobham SeaTel Data Sheets'
+    - let currentUrl = 'cobham-seatel-datasheets.html'
+
 
 prepend preload
     script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer)
@@ -27,10 +29,10 @@ append head
 block page
     div(class="hero overflow-hidden")
         picture
-            source(srcset="img/cobham-datasheets/Cobham_DataSheets_hero_xs@290.jpg 290w, img/cobham-datasheets/Cobham_DataSheets_hero_xs@436.jpg 436w, img/cobham-datasheets/Cobham_DataSheets_hero_xs@580.jpg 580w, img/cobham-datasheets/Cobham_DataSheets_hero_xs@720.jpg 720w, img/cobham-datasheets/Cobham_DataSheets_hero_xs@1080.jpg 1080w, img/cobham-datasheets/Cobham_DataSheets_hero_xs@1440.jpg 1440w" alt="SeaTel Data Sheets Hero Image" media="(max-width:600px)")
-            source(srcset="img/cobham-datasheets/Cobham_DataSheets_hero_sm@400.jpg 400w, img/cobham-datasheets/Cobham_DataSheets_hero_sm@617.jpg 617w, img/cobham-datasheets/Cobham_DataSheets_hero_sm@926.jpg 926w, img/cobham-datasheets/Cobham_DataSheets_hero_sm@1234.jpg 1234w, img/cobham-datasheets/Cobham_DataSheets_hero_sm@1851.jpg 1851w" alt="SeaTel Data Sheets Hero Image" media="(max-width:1024px)")
-            source(srcset="img/cobham-datasheets/Cobham_DataSheets_hero@1441.jpg 1441w, img/cobham-datasheets/Cobham_DataSheets_hero@1920.jpg 1920w" alt="SeaTel Data Sheets Hero Image")
-            img(src="img/cobham-datasheets/Cobham_DataSheets_hero@1920.jpg" , alt="SeaTel Data Sheets Hero Image" width="1920" height="773")
+            source(srcset="media/cobham-datasheets/Cobham_DataSheets_hero_xs@290.jpg 290w, media/cobham-datasheets/Cobham_DataSheets_hero_xs@436.jpg 436w, media/cobham-datasheets/Cobham_DataSheets_hero_xs@580.jpg 580w, media/cobham-datasheets/Cobham_DataSheets_hero_xs@720.jpg 720w, media/cobham-datasheets/Cobham_DataSheets_hero_xs@1080.jpg 1080w, media/cobham-datasheets/Cobham_DataSheets_hero_xs@1440.jpg 1440w" alt="SeaTel Data Sheets Hero Image" media="(max-width:600px)")
+            source(srcset="media/cobham-datasheets/Cobham_DataSheets_hero_sm@400.jpg 400w, media/cobham-datasheets/Cobham_DataSheets_hero_sm@617.jpg 617w, media/cobham-datasheets/Cobham_DataSheets_hero_sm@926.jpg 926w, media/cobham-datasheets/Cobham_DataSheets_hero_sm@1234.jpg 1234w, media/cobham-datasheets/Cobham_DataSheets_hero_sm@1851.jpg 1851w" alt="SeaTel Data Sheets Hero Image" media="(max-width:1024px)")
+            source(srcset="media/cobham-datasheets/Cobham_DataSheets_hero@1441.jpg 1441w, media/cobham-datasheets/Cobham_DataSheets_hero@1920.jpg 1920w" alt="SeaTel Data Sheets Hero Image")
+            img(src="media/cobham-datasheets/Cobham_DataSheets_hero@1920.jpg" , alt="SeaTel Data Sheets Hero Image" width="1920" height="773")
         svg(class="hero-ellipse" fill="none" viewBox="0 0 2219 153")
             ellipse(cx="1109.37" cy="76.27" fill="#fff" rx="1109.37" ry="76.27")
 
@@ -38,16 +40,13 @@ block page
 
     +page-title({
         tagClient: 'Cobham',
-        tagClasses: 'text-white bg-blue-light',
         h1: 'Data Sheets: Somewhere Between a Brochure and a White Paper on the Buyer\'s Journey.',
-        h1Classes: 'text-blue-dark',
         subtitle: 'Do data sheets play a role in your marketing mix?',
-        subtitleClasses: 'text-blue-dark',
-        classes: 'z-10 relative -mt-2 lg:-mt-5 xl:-mt-10'
+        class: 'z-10 -mt-2 lg:-mt-5 xl:-mt-10'
     })
     +lead-in({
         content: `A data sheet is an informational document that outlines the technical specifications of a product, component, or software program. It spells out the performance and constraints of the system and its components. Its purpose is to help experienced technical professionals arrive at a buying decision by presenting them with sufficient information to satisfy their questions, or to seek additional information from white papers, brochures, or user guides. Data sheets ultimately lead to a more informed and confident purchasing decision for buyers. `,
-        classes: 'py-12 sm:py-16 lg:py-20 xl:py-22 bg-blue-light text-white my-6 sm:my-10 lg:my-14 xl:my-20'
+        class: 'py-12 sm:py-16 lg:py-20 xl:py-22 bg-blue-light text-white my-6 sm:my-10 lg:my-14 xl:my-20'
     })
 
     article(class=" page-content mt-10 lg:mt-20 xl:mt-24 leading-normal overflow-hidden")
@@ -176,8 +175,8 @@ block page
             svg(class="ellipse absolute bottom-0 w-full top-auto z-50 scale-110 translate-y-1/2" fill="none" viewBox="0 0 2219 153")
                 ellipse(cx="1109.37" cy="76.27" fill="#fff" rx="1109.37" ry="76.27")
             .absolute.w-full.h-full.inset-0
-                img(srcset="../img/cobham-datasheets/SeaTelSliderBg_Sea@400.jpg 400w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@600.jpg 600w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@600.jpg 600w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@800.jpg 800w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@1000.jpg 1000w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@1200.jpg 1200w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@1600.jpg 1600w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@2000.jpg 2000w, ../img/cobham-datasheets/SeaTelSliderBg_Sea@3000.jpg 3000w" src="../img/cobham-datasheets/SeaTelSliderBg_Sea@2000.jpg", alt="SeaTelSliderBg Sea" loading="lazy" class="parallax absolute inset-0 w-full h-full object-cover" id="seaBg" data-speed="0.2")
-                img(srcset="../img/cobham-datasheets/SeaTelSliderBg_WoodTable@400.png 400w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@600.png 600w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@600.png 600w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@800.png 800w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@1000.png 1000w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@1200.png 1200w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@1600.png 1600w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@2000.png 2000w, ../img/cobham-datasheets/SeaTelSliderBg_WoodTable@3000.png 3000w" src="../img/cobham-datasheets/SeaTelSliderBg_WoodTable@2000.png", alt="SeaTelSliderBg Sea" loading="lazy" class="parallax absolute w-full h-1/3 object-cover" id="woodTableBg" data-speed="0.04")
+                img(srcset="../media/cobham-datasheets/SeaTelSliderBg_Sea@400.jpg 400w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@600.jpg 600w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@600.jpg 600w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@800.jpg 800w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@1000.jpg 1000w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@1200.jpg 1200w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@1600.jpg 1600w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@2000.jpg 2000w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@3000.jpg 3000w" src="../media/cobham-datasheets/SeaTelSliderBg_Sea@2000.jpg", alt="SeaTelSliderBg Sea" loading="lazy" class="parallax absolute inset-0 w-full h-full object-cover" id="seaBg" data-speed="0.2")
+                img(srcset="../media/cobham-datasheets/SeaTelSliderBg_WoodTable@400.png 400w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@600.png 600w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@600.png 600w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@800.png 800w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@1000.png 1000w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@1200.png 1200w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@1600.png 1600w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@2000.png 2000w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@3000.png 3000w" src="../media/cobham-datasheets/SeaTelSliderBg_WoodTable@2000.png", alt="SeaTelSliderBg Sea" loading="lazy" class="parallax absolute w-full h-1/3 object-cover" id="woodTableBg" data-speed="0.04")
 
             //- Slider main container
             div(class="pdf-slider-main")
@@ -196,8 +195,8 @@ block page
                         const reverseDatasheets = datasheets.reverse();
                     each datasheet in reverseDatasheets
                         .swiper-slide
-                            a(href=`../img/cobham-datasheets/datasheets/${datasheet.model}.pdf` target="_blank")
-                                img(loading="lazy" src=`../img/cobham-datasheets/datasheets/${datasheet.model}@1082.jpg`, srcset=`../img/cobham-datasheets/datasheets/${datasheet.model}@360.jpg 360w, ../img/cobham-datasheets/datasheets/${datasheet.model}@600.jpg 600w, ../img/cobham-datasheets/datasheets/${datasheet.model}@800.jpg 800w, ../img/cobham-datasheets/datasheets/${datasheet.model}@1082.jpg 1082w`, sizes="(max-width:1200px) 33.33vw, 541px" class="mx-auto swiper-lazy shadow-lg" width="541" height="699" )
+                            a(href=`../media/cobham-datasheets/datasheets/${datasheet.model}.pdf` target="_blank")
+                                img(loading="lazy" src=`../media/cobham-datasheets/datasheets/${datasheet.model}@1082.jpg`, srcset=`../media/cobham-datasheets/datasheets/${datasheet.model}@360.jpg 360w, ../media/cobham-datasheets/datasheets/${datasheet.model}@600.jpg 600w, ../media/cobham-datasheets/datasheets/${datasheet.model}@800.jpg 800w, ../media/cobham-datasheets/datasheets/${datasheet.model}@1082.jpg 1082w`, sizes="(max-width:1200px) 33.33vw, 541px" class="mx-auto swiper-lazy shadow-lg" width="541" height="699" )
                                 //- .swiper-lazy-preloader
 
                 //- navigation buttons
@@ -228,22 +227,22 @@ block page
 
 
 
-    div(class="container py-12 md:py-20")
-        -
-            const team = [
-                {
-                    role: "Creative Director",
-                    name:"Stuart Silberman",
-                    contacts: {
-                        linkedin: "https://www.linkedin.com/in/stuart_silberman/"
-                    }
-                },
-                {
-                    role: "Client",
-                    name: "Bobby Jones"
+
+    -
+        const team = [
+            {
+                role: "Creative Director",
+                name:"Stuart Silberman",
+                contacts: {
+                    linkedin: "https://www.linkedin.com/in/stuart_silberman/"
                 }
-            ]
-        +team(team)
+            },
+            {
+                role: "Client",
+                name: "Bobby Jones"
+            }
+        ]
+    +team(team)
 
 
 append footer_scripts

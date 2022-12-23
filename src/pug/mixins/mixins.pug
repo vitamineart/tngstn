@@ -1,43 +1,38 @@
 mixin page-title(u)
-    if u.inverted
-        header(class=`page-title pt-8 pb-6 relative ${u.classes}`)
-            .container
-                div(class=`tag-client inline-block font-proxima-bold px-2 py-0.5 ${u.tagClasses}`)= u.tagClient
-                h1(class=`mt-4 font-proxima-bold leading-none text-white ${u.h1Classes}`) !{u.h1}
-                if u.subtitle
-                    p(class=`page-subtitle mt-3 leading-tight text-white ${u.subtitleClasses}`) !{u.subtitle}
-                if u.audio
-                    a(class=`btn-audio w-auto relative font-proxima-bold no-underline px-4 h-9 rounded-[4px] items-center inline-flex mt-6 border border-current fill-current text-white hover:text-white/80 transition-colors text-white` href=`${u.audio} `)
-                        svg.inline-block.relative.z-20.w-20.h-16.mr-4
-                            +iconMono({
-                                icon: 'audio-wave'
-                            })
+    header(class="page-title pt-8 pb-6 relative" class=u.class style=u.style)
+        .container
+            if u.tagClient
+                div(class=`tag-client relative inline-block font-proxima-bold px-2 py-0.5 ${u.inverted ? 'bg-white text-blue' : 'bg-blue-light text-white'} ${u.tagClass || ''}` style=u.tagStyle)= u.tagClient
+
+            h1(class=`mt-4 font-proxima-bold leading-none ${u.inverted ? 'text-white' : 'text-blue-dark'} ${u.h1Class || ''}`) !{u.h1}
+            if u.subtitle
+                p(class=`page-subtitle mt-3 leading-tight ${u.inverted ? 'text-white' : 'text-blue-dark'} ${u.subtitleClass || ''}`) !{u.subtitle}
+            if u.audio
+                a(class=`btn-audio w-auto relative font-proxima-bold no-underline px-4 h-9 rounded-[4px] items-center inline-flex mt-6 border border-current transition-colors ${u.inverted ? ` text-white hover:text-white/80 ` : `text-blue-dark hover:text-blue ${ u.audioClass || ' '}`} ` href=`${u.audio} `)
+
+                    if u.inverted
+                        +iconMono({
+                            icon: 'audio-wave',
+                            class: 'inline-block fill-current relative z-20 w-20 h-16 mr-4'
+                        })
                         span.text-base Listen
                         div(class="h-[50px] bg-transparent w-3 absolute left-11 z-10 " style="backdrop-filter: blur(10px)")
 
-
-    else
-        header(class=`page-title pt-8 pb-6 ${u.classes}`)
-            .container
-                div(class=`tag-client inline-block font-proxima-bold px-2 py-0.5 bg-blue-light text-white ${u.tagClasses}`)= u.tagClient
-                h1(class=`mt-4 font-proxima-bold leading-none text-blue-dark ${u.h1Classes}`) !{u.h1}
-                if u.subtitle
-                    p(class=`page-subtitle mt-3 leading-tight text-blue-dark ${u.subtitleClasses}`) !{u.subtitle}
-                if u.audio
-                    a(class=`btn-audio w-auto relative font-proxima-bold no-underline px-4 h-9 rounded-[4px] items-center inline-flex mt-6 border border-current text-blue-dark hover:text-blue transition-colors ${u.audioClasses}` href=`${u.audio}`)
-                        svg.inline-block.relative.z-20.w-20.h-16.mr-4
-                            +iconMulti({
-                                icon: 'audio-wave'
-                            })
+                    else
+                        +iconMulti({
+                            icon: 'audio-wave',
+                            class: 'inline-block relative z-20 w-20 h-16 mr-4'
+                        })
                         span.text-base Listen
                         div(class="h-[50px] bg-white w-3 absolute left-11 z-10 " )
 
 
+
+
 mixin lead-in(u)
-    div(class=`lead-in font-proxima-bold text-lg lg:text-xl ${u.classes}`)
+    div(class=`lead-in ${ u.bold === false ? 'font-proxima' : 'font-proxima-bold' } text-lg lg:text-xl` class=u.class  style=u.style)
         .container.
             !{u.content}
-
 
 mixin team-member(x)
     span(class="mr-auto text-sm md:text-base")
@@ -47,17 +42,16 @@ mixin team-member(x)
         - let social = Object(x.contacts)
         each val, key in social
             a(href=`${val}` class="text-gray-light hover:text-blue-light mx-1 transition-colors" target="_blank")
-                svg.svg.w-6.h-6.fill-current.pointer-events-none
-                    +iconMono({
-                        icon: key
-                    })
+                +iconMono({
+                    icon: key,
+                })
 
 
 mixin team(team)
     div(class="container py-12 md:py-20")
-        .max-w-lg.mx-auto
+        #team.max-w-lg.mx-auto
             each teamMember, index in team
-                div(data-aos="fade-in" data-aos-delay=`${100*(index+1)}` class="border-b py-2 last:border-0 will-change-opacity")
+                div(class="border-b py-2 last:border-0 will-change-transform-opacity team-member")
                     .flex.items-center.justify-between
                         +team-member(teamMember)
                     if teamMember.comment
@@ -66,18 +60,30 @@ mixin team(team)
 
 //- svg icons
 mixin iconMono(x)
-    if x.style
-        svg(class=`svg ${x.classes}` style=`${x.style}`)
-            use(xlink:href=`img/icons/icons-sprite-mono.svg#${x.icon}`)
-    else
-        svg(class=`svg ${x.classes}`)
-            use(xlink:href=`img/icons/icons-sprite-mono.svg#${x.icon}`)
+    svg(class=`svg ${x.class || 'fill-current w-6 h-6 pointer-events-none'}` style=x.style)
+        use(xlink:href=`media/icons/icons-sprite-mono.svg#${x.icon}`)
+
 
 mixin iconMulti(x)
-    if x.style
-        svg(class=`svg ${x.classes}` style=`${x.style}`)
-            use(xlink:href=`img/icons/icons-sprite-multi.svg#${x.icon}`)
-    else
-        svg(class=`svg ${x.classes}`)
-            use(xlink:href=`img/icons/icons-sprite-multi.svg#${x.icon}`)
+    svg(class=`svg` class=x.class style=x.style)
+        use(xlink:href=`media/icons/icons-sprite-multi.svg#${x.icon}`)
 
+
+
+mixin image(x)
+    img(
+        width=x.width
+        height=x.height
+        alt=x.alt
+        src=x.src
+        loading = x.loading || 'lazy'
+        srcset= `
+            ${
+                x.resolutions.map((resolution, index, arr) => {
+                    return `${mediaFolder}${x.name}@${resolution}.${x.ext} ${resolution}w`
+                })
+            }
+        `
+        sizes=x.sizes
+        class=x.class
+    )

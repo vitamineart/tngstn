@@ -2,88 +2,75 @@
     const projects = [
         {
             category: 'Telecom',
-            name: '8 Easy Turns',
-            type: 'Print',
-            image: 'img/works_clients_item1.jpg'
+            name: 'Maritime White Papers',
+            image: 'media/works_clients_item1.jpg',
+            url: 'white-paper.html'
         },
         {
             category: 'Telecom',
-            name: '8 Easy Turns',
-            type: 'Print',
-            image: 'img/works_clients_item2.jpg'
+            name: 'Cobham SeaTel Brand',
+            type: 'Web',
+            image: 'media/works_clients_item4.jpg',
+            url: 'cobham-seatel-brand.html'
         },
         {
             category: 'Telecom',
-            name: '8 Easy Turns',
-            type: 'Print',
-            image: 'img/works_clients_item3.jpg'
+            name: 'Davis Instruments',
+            type: 'Web',
+            image: 'media/works_clients_item7.jpg',
+            url: 'davis-instruments.html'
         },
         {
             category: 'Telecom',
-            name: '8 Easy Turns',
+            name: 'Ambassador Toys',
             type: 'Print',
-            image: 'img/works_clients_item4.jpg'
+            image: 'media/works_clients_item8.jpg',
+            url: 'ambassador-toys.html'
         },
         {
             category: 'Telecom',
-            name: '8 Easy Turns',
+            name: 'Cobham Seatel Datasheets',
             type: 'Print',
-            image: 'img/works_clients_item5.jpg'
+            image: 'media/works_clients_item9.jpg',
+            url: 'cobham-seatel-datasheets.html'
         },
         {
             category: 'Telecom',
-            name: '8 Easy Turns',
+            name: 'Tom Meyer\'s Illustrations',
             type: 'Print',
-            image: 'img/works_clients_item6.jpg'
+            image: 'media/works_clients_item10.jpg',
+            url: 'tom-meyers-illustrations.html'
         },
         {
             category: 'Telecom',
-            name: '8 Easy Turns',
+            name: 'Shamann Walton',
             type: 'Print',
-            image: 'img/works_clients_item7.jpg'
-
+            image: 'media/works_clients_item11.jpg',
+            url: 'shamann-walton.html'
         },
         {
             category: 'Telecom',
-            name: '8 Easy Turns',
+            name: 'Porziuncola',
             type: 'Print',
-            image: 'img/works_clients_item8.jpg'
-        },
-        {
-            category: 'Telecom',
-            name: '8 Easy Turns',
-            type: 'Print',
-            image: 'img/works_clients_item9.jpg'
-        },
-        {
-            category: 'Telecom',
-            name: '8 Easy Turns',
-            type: 'Print',
-            image: 'img/works_clients_item10.jpg'
-        },
-        {
-            category: 'Telecom',
-            name: '8 Easy Turns',
-            type: 'Print',
-            image: 'img/works_clients_item11.jpg'
-        },
-        {
-            category: 'Telecom',
-            name: '8 Easy Turns',
-            type: 'Print',
-            image: 'img/works_clients_item12.jpg'
+            image: 'media/works_clients_item12.jpg',
+            url: 'porziuncola.html'
         },
     ]
 
-    // works-clients grid random appear
-    const timeNums = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600];
+    const filteredProjects = projects.filter((item)=>{
+        return item.url !== currentUrl
+    })
+
 
 section(class="py-10 md:py-16")
     .container
         header.text-blue.font-proxima-bold.text-3xl.text-center Our Work and Clients
         div(class="works-grid grid gap-2 md:gap-4 mt-6 md:mt-10")
-            each project in projects
-                a.item(href="#" data-aos-duration="500" data-aos-delay=`${timeNums[Math.round(Math.random() * timeNums.length)]}` data-aos="zoom-in" class="m-auto max-w-sm sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity min-w-fit")
+            each project in filteredProjects
+                a.item(
+                    href=project.url
+                    class="m-auto max-w-sm sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity min-w-fit"
+                )
                     .overlay(class="absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change: opacity")
                         .text(class="text-center text-white tracking-wide" style="text-shadow: 0 1px 5px var(--c-blue-dark);")
                             div(class="project-category text-xs transition-transform-opacity will-change-transform-opacity uppercase -translate-x-3 duration-500 opacity-0 group-hover:opacity-100 group-hover:transform-none")= project.category

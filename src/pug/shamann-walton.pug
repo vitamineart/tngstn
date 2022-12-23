@@ -1,7 +1,7 @@
 extends ./layout/base
 block variables
     - var pageTitle = 'Tungsten Advertising Case Study | Shamann Walton'
-    - var invertedAudio = true;
+    - let currentUrl = 'shamann-walton.html'
 
 prepend preload
     //- //- link(rel="preload" as="image" href="https://i.ytimg.com/vi_webp/0puWSusGbOA/hqdefault.webp")
@@ -25,7 +25,7 @@ append head
 
         }
         .hero {
-            background-image: url(img/shamann-walton/Walton-Hero-Bg.jpg);
+            background-image: url(media/shamann-walton/Walton-Hero-Bg.jpg);
             background-position: 28% 50%;
         }
 
@@ -37,19 +37,17 @@ block page
             button(onClick="openPopup()" class="watch-video-btn relative z-10 group transition duration-300 text-white no-underline font-proxima-bold inline-flex items-center mt-10 hover:text-purple-400")
                 +iconMono({
                     icon: 'watch-video',
-                    classes: 'w-9 h-9 fill-current mr-3 '
+                    class: 'w-9 h-9 fill-current mr-3 '
                 })
                 span Watch Video
 
         +page-title({
             inverted: true,
+            class: 'mt-48 z-10',
             tagClient: 'Shamann Walton',
-            tagClasses: 'bg-[#744e9f] text-white relative',
+            tagStyle: 'background-color: var(--c-walton-purple); color: #fff;',
             h1: 'How a Candidate for San Francisco\'s Board of  Supervisors Won the Election in  a Crowded Field',
-            h1Classes: 'text-white drop-shadow-sm',
-            audio: '',
-            audioClasses: '',
-            classes: 'mt-48 z-10'
+            h1Class: 'drop-shadow-sm',
         })
         div(class="py-10 justify-self-end text-white text-xl sm:text-2xl xl:text-3xl relative z-10" style="background-color: hsla(259, 27%, 50%, 0.9);")
             .container
@@ -63,7 +61,7 @@ block page
             div(class="overlay absolute inset-0 w-full h-full bg-black/60 z-10 " style="backdrop-filter: blur(1px) saturate(0.7);")
             iframe(src="https://www.youtube.com/embed/rHQnWL0zY8U?controls=0&autoplay=1&mute=1&playsinline=1&loop=1" class="absolute w-full h-full inset-0 object-cover z-0 yt_player_iframe")
 
-    img(src="img/shamann-walton/walton-hands-logos@1921.jpg" srcset="img/shamann-walton/walton-hands-logos@400.jpg 400w, img/shamann-walton/walton-hands-logos@600.jpg 600w, img/shamann-walton/walton-hands-logos@800.jpg 800w, img/shamann-walton/walton-hands-logos@1200.jpg 1200w, img/shamann-walton/walton-hands-logos@1921.jpg 1921w, img/shamann-walton/walton-hands-logos@3842.jpg 3842w" width="1921" height="524" class="object-cover" style="min-height: 130px;")
+    img(src="media/shamann-walton/walton-hands-logos@1921.jpg" srcset="media/shamann-walton/walton-hands-logos@400.jpg 400w, media/shamann-walton/walton-hands-logos@600.jpg 600w, media/shamann-walton/walton-hands-logos@800.jpg 800w, media/shamann-walton/walton-hands-logos@1200.jpg 1200w, media/shamann-walton/walton-hands-logos@1921.jpg 1921w, media/shamann-walton/walton-hands-logos@3842.jpg 3842w" width="1921" height="524" class="object-cover" style="min-height: 130px;")
 
 
 
@@ -158,9 +156,9 @@ block page
                     div(class="border-2 border-dotted border-blue rounded-full absolute inset-0 m-auto z-10 map-container-circle" style="--size: 44%;")
                     div(class="border border-dotted border-blue rounded-full absolute inset-0 m-auto z-10 map-container-circle" style="--size: 22%;" )
                     div(class="rounded-full absolute z-10" id="san-francisco-pin" )
-                    img(loading="lazy" src="img/shamann-walton/san-francisco-city-map.png" id="san-francisco-city-map" width="140" height="201" class="absolute z-10" )
+                    img(loading="lazy" src="media/shamann-walton/san-francisco-city-map.png" id="san-francisco-city-map" width="140" height="201" class="absolute z-10" )
                     div(class="absolute inset-0 m-auto z-10 w-6 h-6 bg-blue " id="map-container-center" )
-                    img(loading="lazy" src="img/shamann-walton/SanFranciscoMap@620.png", srcset="img/shamann-walton/SanFranciscoMap@540.png 540w, img/shamann-walton/SanFranciscoMap@620.png 620w, img/shamann-walton/SanFranciscoMap@930.png 930w, img/shamann-walton/SanFranciscoMap@1240.png 1240w" alt="San Francisco Map" class="absolute h-full w-full z-0" width="620" height="620" id="map-image")
+                    img(loading="lazy" src="media/shamann-walton/SanFranciscoMap@620.png", srcset="media/shamann-walton/SanFranciscoMap@540.png 540w, media/shamann-walton/SanFranciscoMap@620.png 620w, media/shamann-walton/SanFranciscoMap@930.png 930w, media/shamann-walton/SanFranciscoMap@1240.png 1240w" alt="San Francisco Map" class="absolute h-full w-full z-0" width="620" height="620" id="map-image")
 
                 div(class="-mt-72 xs:-mt-36 md:mt-0 relative")
                     div(class="float-right shape-outside-addition-circle rounded-full -mt-4" style="")
@@ -187,7 +185,7 @@ block page
                                 {width: 120, height: 61}
                             ]
                         each logo, index in logos
-                            img(loading="lazy" src=`img/shamann-walton/tv-logo-${index+1}.svg`, width=`${logo.width}`, height=`${logo.height}`, alt=`TV Company Logo ${index+1}` class="max-w-fit w-full sm:w-auto tv-logo" )
+                            img(loading="lazy" src=`media/shamann-walton/tv-logo-${index+1}.svg`, width=`${logo.width}`, height=`${logo.height}`, alt=`TV Company Logo ${index+1}` class="max-w-fit w-full sm:w-auto tv-logo" )
                     div(class=" pt-8 xs:pt-0 xs:w-2/3 md:w-auto xs:pl-6 sm:pl-10 md:pl-16 lg:pl-20")
                         p.
                             But with only six days for the ads to take effect, we calculated that exclusive use of TV would be the best way to spend the media budget.
@@ -196,7 +194,7 @@ block page
                         p.
                             After a 6-day burst of 30-second commercials, our media strategy saw Shamann Walton decisively pull ahead on election day, winning a majority of first place votes in San Francisco's ranked choice voting system.
 
-            img(loading="lazy" src="img/shamann-walton/tv-bg@1920.jpg", srcset="img/shamann-walton/tv-bg@500.jpg 500w, img/shamann-walton/tv-bg@800.jpg 800w, img/shamann-walton/tv-bg@1200.jpg 1200w, img/shamann-walton/tv-bg@1920.jpg 1920w", alt="TV Background" class="object-cover absolute inset-0 z-0 w-full h-full")
+            img(loading="lazy" src="media/shamann-walton/tv-bg@1920.jpg", srcset="media/shamann-walton/tv-bg@500.jpg 500w, media/shamann-walton/tv-bg@800.jpg 800w, media/shamann-walton/tv-bg@1200.jpg 1200w, media/shamann-walton/tv-bg@1920.jpg 1920w", alt="TV Background" class="object-cover absolute inset-0 z-0 w-full h-full")
         section(class="py-12 lg:py-20 relative flow-root")
             .container.relative
                 -
@@ -248,7 +246,7 @@ block page
                 }
 
             div(id="waltons-people-image" class=" sm:float-right lg:float-none sm:mx-7 lg:mx-0 sm:mb-5 lg:absolute lg:-translate-y-1/2 top-1/2 right-10 block mx-auto w-full sm:w-1/2 md:shadow-lg")
-                img(loading="lazy"  src="img/shamann-walton/waltons_people@430.jpg", srcset="img/shamann-walton/waltons_people@646.jpg 646w, img/shamann-walton/waltons_people@860.jpg 860w, img/shamann-walton/waltons_people@1290.jpg 1290w, img/shamann-walton/waltons_people@1720.jpg 1720w, img/shamann-walton/waltons_people@2580.jpg 2580w" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 45vw, 46.5vw" alt="Walton's People" class="w-full h-full object-cover xl:object-top border-none" width="860" height="613")
+                img(loading="lazy"  src="media/shamann-walton/waltons_people@430.jpg", srcset="media/shamann-walton/waltons_people@646.jpg 646w, media/shamann-walton/waltons_people@860.jpg 860w, media/shamann-walton/waltons_people@1290.jpg 1290w, media/shamann-walton/waltons_people@1720.jpg 1720w, media/shamann-walton/waltons_people@2580.jpg 2580w" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 45vw, 46.5vw" alt="Walton's People" class="w-full h-full object-cover xl:object-top border-none" width="860" height="613")
 
             div(class="container lg:flex")
                 div(class="w-full mt-8 sm:mt-0 lg:w-1/2 pr-5")
@@ -297,7 +295,7 @@ block page
 
                     <div id="chart" class="w-full"></div>
 
-            img(loading="lazy" src="img/shamann-walton/chart-bg-bridge@1920.jpg", srcset="img/shamann-walton/chart-bg-bridge@600.jpg 600w, img/shamann-walton/chart-bg-bridge@800.jpg 800w, img/shamann-walton/chart-bg-bridge@1200.jpg 1200w, img/shamann-walton/chart-bg-bridge@1920.jpg 1920w, img/shamann-walton/chart-bg-bridge@3840.jpg 3840w", sizes="" alt="Golden Gate Bg" class="absolute w-full h-full inset-0 z-0 object-cover" width="1920" height="999"  data-aos="fade-in" data-aos-delay="600" data-aos-duration="1500")
+            img(loading="lazy" src="media/shamann-walton/chart-bg-bridge@1920.jpg", srcset="media/shamann-walton/chart-bg-bridge@600.jpg 600w, media/shamann-walton/chart-bg-bridge@800.jpg 800w, media/shamann-walton/chart-bg-bridge@1200.jpg 1200w, media/shamann-walton/chart-bg-bridge@1920.jpg 1920w, media/shamann-walton/chart-bg-bridge@3840.jpg 3840w", sizes="" alt="Golden Gate Bg" class="absolute w-full h-full inset-0 z-0 object-cover" width="1920" height="999"  data-aos="fade-in" data-aos-delay="600" data-aos-duration="1500")
 
         section(class="py-12 lg:py-20 relative" style="background-color: hsla(0, 0%, 80%, 0.25)")
             div(class="container flow-root xl:flex")
@@ -305,7 +303,7 @@ block page
                     #walton-family-image {
                         height: calc(100% - 10rem);
                     }
-                img(loading="lazy" src="img/shamann-walton/Walton_with_family@867.jpg", srcset="img/shamann-walton/Walton_with_family@600.jpg 600w, img/shamann-walton/Walton_with_family@867.jpg 867w, img/shamann-walton/Walton_with_family@1734.jpg 1734w" sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, (max-width:1280px) 472px, 50vw" alt="Walton with Family" width="867" height="591" class=" border-white shadow-xl border-5 lg:border-12 md:w-1/2 xl:w-7/12 2xl:w-1/2 mx-auto md:float-left xl:float-none xl:absolute xl:top-1/2 lg:-left-10 xl:-translate-y-1/2 xl:-translate-x-5 left-0 md:mr-5 object-cover object-right" id="walton-family-image")
+                img(loading="lazy" src="media/shamann-walton/Walton_with_family@867.jpg", srcset="media/shamann-walton/Walton_with_family@600.jpg 600w, media/shamann-walton/Walton_with_family@867.jpg 867w, media/shamann-walton/Walton_with_family@1734.jpg 1734w" sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, (max-width:1280px) 472px, 50vw" alt="Walton with Family" width="867" height="591" class=" border-white shadow-xl border-5 lg:border-12 md:w-1/2 xl:w-7/12 2xl:w-1/2 mx-auto md:float-left xl:float-none xl:absolute xl:top-1/2 lg:-left-10 xl:-translate-y-1/2 xl:-translate-x-5 left-0 md:mr-5 object-cover object-right" id="walton-family-image")
                 div(class="xl:w-5/12 2xl:w-1/2 xl:ml-auto xl:pl-10 mt-6 md:mt-0")
                     p Which in turn implies the candidate has professional and experienced staff, and not simply a team of social media  interns.
                     p In the voters' mind, they are now looking at a viable candidate worth supporting.
@@ -481,7 +479,7 @@ block page
 
 
 
-                img(loading="lazy" src="img/shamann-walton/mass_media_circle@841.png", srcset="img/shamann-walton/mass_media_circle@620.png 620w, img/shamann-walton/mass_media_circle@841.png 841w, img/shamann-walton/mass_media_circle@1200.png 1200w, img/shamann-walton/mass_media_circle@1682.png 1682w", sizes="(max-width: 640px) 441px, (max-width: 768px) 541px, (max-width: 1024px) 80vw, 841px" alt="Mass Media" id="mass_media_circle" class="shape-outside float-right border-12 border-white shadow-2xl absolute -z-10 aspect-square rounded-full" width="841" height="841")
+                img(loading="lazy" src="media/shamann-walton/mass_media_circle@841.png", srcset="media/shamann-walton/mass_media_circle@620.png 620w, media/shamann-walton/mass_media_circle@841.png 841w, media/shamann-walton/mass_media_circle@1200.png 1200w, media/shamann-walton/mass_media_circle@1682.png 1682w", sizes="(max-width: 640px) 441px, (max-width: 768px) 541px, (max-width: 1024px) 80vw, 841px" alt="Mass Media" id="mass_media_circle" class="shape-outside float-right border-12 border-white shadow-2xl absolute -z-10 aspect-square rounded-full" width="841" height="841")
 
                 div(id="megaphone-container" class="lg:-ml-7 mt-10 flow-root" )
                     div(class="bubble-container z-10 relative max-w-2xl -mb-8 -ml-10 md:ml-0 -mr-4 lg:ml-8")
@@ -498,7 +496,7 @@ block page
 
 
 
-                    img(id="megaphone" loading="lazy" src="img/shamann-walton/megaphone@324.png" srcset="img/shamann-walton/megaphone@324.png 324w, img/shamann-walton/megaphone@487.png 487w, img/shamann-walton/megaphone@648.png 648w, img/shamann-walton/megaphone@972.png 972w, img/shamann-walton/megaphone@1296.png 1296w, img/shamann-walton/megaphone@1944.png 1944w" class="relative z-0 float-right shape-outside md:w-2/3 xl:max-w-max md:-mb-24" width="648" height="613")
+                    img(id="megaphone" loading="lazy" src="media/shamann-walton/megaphone@324.png" srcset="media/shamann-walton/megaphone@324.png 324w, media/shamann-walton/megaphone@487.png 487w, media/shamann-walton/megaphone@648.png 648w, media/shamann-walton/megaphone@972.png 972w, media/shamann-walton/megaphone@1296.png 1296w, media/shamann-walton/megaphone@1944.png 1944w" class="relative z-0 float-right shape-outside md:w-2/3 xl:max-w-max md:-mb-24" width="648" height="613")
                     p(class=" lg:ml-7 !mt-20 xs:!mt-32 lg:!mt-32") For instance, if a media budget is spread across three media:  let's say, a primary medium of TV, some support media like online, and also some billboard and bus stop shelters, and if the consumer sees the ad once in each medium, that individual is more likely to remember the brand and its  message, than someone who has seen the same ad three times  on TV. Or three times on billboards. Or thrice online.
 
         section(class="py-12 lg:py-20 relative group overflow-hidden  ")
@@ -513,14 +511,14 @@ block page
                 p Brands (and politicians) build instant social validation on  television in a way online ads cannot match.
 
             div(class="absolute w-full h-full inset-0 z-0 overflow-hidden group-hover:opacity-50 transition duration-500")
-                img(loading="lazy" src="img/shamann-walton/Badges_bg@1920.jpg", srcset="img/shamann-walton/Badges_bg@600.jpg 600w, img/shamann-walton/Badges_bg@800.jpg 800w, img/shamann-walton/Badges_bg@1000.jpg 1000w, img/shamann-walton/Badges_bg@1200.jpg 1200w, img/shamann-walton/Badges_bg@1920.jpg 1920w", alt="Badges Bg" width="1920" height="723" class="absolute w-full h-full inset-0 z-0 object-cover" data-aos="zoom-out" data-aos-delay="300")
+                img(loading="lazy" src="media/shamann-walton/Badges_bg@1920.jpg", srcset="media/shamann-walton/Badges_bg@600.jpg 600w, media/shamann-walton/Badges_bg@800.jpg 800w, media/shamann-walton/Badges_bg@1000.jpg 1000w, media/shamann-walton/Badges_bg@1200.jpg 1200w, media/shamann-walton/Badges_bg@1920.jpg 1920w", alt="Badges Bg" width="1920" height="723" class="absolute w-full h-full inset-0 z-0 object-cover" data-aos="zoom-out" data-aos-delay="300")
 
         section(class="py-12 lg:py-20 relative" style="background-color: hsla(284, 64%, 25%, 0.63);")
-            div(class="pattern w-full h-full absolute inset-0 z-0 mix-blend-darken " style="background: url(img/shamann-walton/pattern.png) left top no-repeat; background-size: cover;")
+            div(class="pattern w-full h-full absolute inset-0 z-0 mix-blend-darken " style="background: url(media/shamann-walton/pattern.png) left top no-repeat; background-size: cover;")
             .container.text-white.z-10.relative
                 header(class="text-4xl lg:text-5xl font-proxima-bold") Television and the power of shared experience
                 p Try for a moment to recall a time when you saw a movie in a  theater.
-                img(loading="lazy" src="img/shamann-walton/walton-circle-image@802.png" srcset="img/shamann-walton/walton-circle-image@600.png 600w, img/shamann-walton/walton-circle-image@802.png 802w, img/shamann-walton/walton-circle-image@1200.png 1200w, img/shamann-walton/walton-circle-image@1600.png 1600w" id="walton-circle-image" sizes="(max-width: 640px) 85vw, (max-width:1024px) 90vw, 802px" class="border-5 lg:border-8 border-current text-violet-100 rounded-full shadow-2xl float-right shape-outside -mr-32 xs:-mr-48 sm:-mr-56 lg:-mr-64 scale-95 " width="802" height="802" style="max-width: 802px !important; ")
+                img(loading="lazy" src="media/shamann-walton/walton-circle-image@802.png" srcset="media/shamann-walton/walton-circle-image@600.png 600w, media/shamann-walton/walton-circle-image@802.png 802w, media/shamann-walton/walton-circle-image@1200.png 1200w, media/shamann-walton/walton-circle-image@1600.png 1600w" id="walton-circle-image" sizes="(max-width: 640px) 85vw, (max-width:1024px) 90vw, 802px" class="border-5 lg:border-8 border-current text-violet-100 rounded-full shadow-2xl float-right shape-outside -mr-32 xs:-mr-48 sm:-mr-56 lg:-mr-64 scale-95 " width="802" height="802" style="max-width: 802px !important; ")
                 p When we're seeing a movie in a sold-out theater, we  have a very different experience than when we watch it alone  at home, on our favorite couch.
                 p When we collectively experience the same emotion as  everyone else around us, that experience is indelible. Sports matches, rock concerts, solar eclipses, Princess Diana's  funeral, these are the defining moments of our lives. Where  were you when the second plane struck?
                 p Meanwhile, a 30-second Super Bowl commercial costs $7 million because nothing else delivers an audience of 100  million viewers, instantly catapulting the brand into the national discourse for weeks to come. What a bargain.
@@ -545,10 +543,10 @@ block page
                 p It's common to hear advertisers sigh: <b>“Online video is hard.”</b>  So imagine how they might feel about creating commercials  for broadcast television.
                 p As Supervisor Shamann Walton's case study demonstrates,  good media planning can make it possible for advertisers  with small budgets to be on TV on national programming,  and be more effective than on other mediums.
 
-                div(class="relative border-current border-5 shadow-lg text-white py-1 mt-10 overflow-hidden" style="border-radius: 35px;" data-aos="flip-up" data-aos-duration="1000" data-aos-easing="ease-out-back" data-aos-delay="200")
-                    div(class="relative z-30 p-8 lg:p-0 my-5 lg:my-8 max-w-2xl mx-auto text-center text-lg lg:text-xl leading-relaxed" style="letter-spacing: 0.6px;") Shamann Walton was elected to the eleven-member San Francisco Board of Supervisors (BoS) in 2019. In 2021, he was unanimously voted President of the Board of Supervisors. He is the third black man on the BoS, and the first to have not been previously appointed by a mayor. Tungsten is a nonpartisan, full-service advertising agency that works on all categories of products and services.
+                div(class="relative border-current border-5 shadow-lg text-white py-1 mt-4 sm:mt-10 overflow-hidden -mx-4 xs:-mx-2" style="border-radius: 35px;" data-aos="flip-up" data-aos-duration="1000" data-aos-easing="ease-out-back" data-aos-delay="200")
+                    div(class="relative z-30 px-5 md:p-8 lg:p-0 my-5 lg:my-8 max-w-2xl mx-auto text-center text-base sm:text-lg lg:text-xl leading-relaxed" style="letter-spacing: 0.6px;") Shamann Walton was elected to the eleven-member San Francisco Board of Supervisors (BoS) in 2019. In 2021, he was unanimously voted President of the Board of Supervisors. He is the third black man on the BoS, and the first to have not been previously appointed by a mayor. Tungsten is a nonpartisan, full-service advertising agency that works on all categories of products and services.
                     div(class="w-full h-full absolute inset-0 z-20" style="background-color: hsla(284, 64%, 25%, 0.85);")
-                    img(loading="lazy" src="img/shamann-walton/supervisor-walton@827.jpg", srcset="img/shamann-walton/supervisor-walton@600.jpg 600w, img/shamann-walton/supervisor-walton@827.jpg 827w" sizes="(max-width:1024px) 90vw, 934px" alt="alt" class="absolute inset-0 w-full h-full z-0 object-cover" style="border-radius: 30px;" data-aos="zoom-out" data-aos-delay="300" data-aos-duration="700")
+                    img(loading="lazy" src="media/shamann-walton/supervisor-walton@827.jpg", srcset="media/shamann-walton/supervisor-walton@600.jpg 600w, media/shamann-walton/supervisor-walton@827.jpg 827w" sizes="(max-width:1024px) 90vw, 934px" alt="alt" class="absolute inset-0 w-full h-full z-0 object-cover" style="border-radius: 30px;" data-aos="zoom-out" data-aos-delay="300" data-aos-duration="700")
 
 
     //- div(class="container py-12 md:py-20")
@@ -576,7 +574,7 @@ block page
 
 
 
-    div(class="popup-overlay fixed inset-0 w-full h-full z-50 animate__fadeIn hidden p-20" style="background: linear-gradient(90deg, hsla(259, 41%, 22%, .95), hsl(268, 44%, 27%, .95) )" onClick="closePopup()")
+    div(class="popup-overlay fixed inset-0 w-full h-full z-50 animate__fadeIn hidden p-20" style="background: radial-gradient(hsla(259, 41%, 12%, .95), hsl(268, 44%, 17%, .95) )" onClick="closePopup()")
 
 append footer_scripts
 

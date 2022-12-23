@@ -1,7 +1,7 @@
 extends ./layout/base
 block variables
     - var pageTitle = 'Tungsten Advertising Case Study | Tom Meyers Illustrations'
-
+    - let currentUrl = 'tom-meyers-illustrations.html'
 prepend preload
 
 
@@ -65,38 +65,40 @@ append head
 
 block page
     .hero(class="relative group")
-        img(src="../img/tom-meyer/Hero@961.jpg" srcset="../img/tom-meyer/Hero@486.jpg 486w, ../img/tom-meyer/Hero@660.jpg 660w, ../img/tom-meyer/Hero@782.jpg 782w, ../img/tom-meyer/Hero@1000.jpg 1000w, ../img/tom-meyer/Hero@1441.jpg 1441w, ../img/tom-meyer/Hero@1920.jpg 1920w, ../img/tom-meyer/Hero@2881.jpg 2881w, ../img/tom-meyer/Hero@3840.jpg 3840w, ../img/tom-meyer/Hero@5760.jpg 5760w, ../img/tom-meyer/Hero@7680.jpg 7680w" alt="Hero" height="1217" width="1920" class="hero-desktop w-full relative z-0 object-cover")
-        img(src="../img/tom-meyer/book@1024.jpg" srcset="../img/tom-meyer/book@400.jpg 400w, ../img/tom-meyer/book@600.jpg 600w, ../img/tom-meyer/book@800.jpg 800w, ../img/tom-meyer/book@1024.jpg 1024w, ../img/tom-meyer/book@1318.jpg 1318w" sizes="(max-width: 500px) 33vw, (max-width: 600px) 25vw, 20vw" width="400" height="572" class="absolute hero-book ")
+        img(src="media/tom-meyer/Hero@961.jpg" srcset="media/tom-meyer/Hero@486.jpg 486w, media/tom-meyer/Hero@660.jpg 660w, media/tom-meyer/Hero@782.jpg 782w, media/tom-meyer/Hero@1000.jpg 1000w, media/tom-meyer/Hero@1441.jpg 1441w, media/tom-meyer/Hero@1920.jpg 1920w, media/tom-meyer/Hero@2881.jpg 2881w, media/tom-meyer/Hero@3840.jpg 3840w, media/tom-meyer/Hero@5760.jpg 5760w, media/tom-meyer/Hero@7680.jpg 7680w" alt="Hero" height="1217" width="1920" class="hero-desktop w-full relative z-0 object-cover")
+        img(src="media/tom-meyer/book@1024.jpg" srcset="media/tom-meyer/book@400.jpg 400w, media/tom-meyer/book@600.jpg 600w, media/tom-meyer/book@800.jpg 800w, media/tom-meyer/book@1024.jpg 1024w, media/tom-meyer/book@1318.jpg 1318w" sizes="(max-width: 500px) 33vw, (max-width: 600px) 25vw, 20vw" width="400" height="572" class="absolute hero-book ")
         div(class="hero-overlay absolute w-full h-full inset-0 z-10  group-hover:opacity-0  transition duration-500")
 
     div(
-        class="relative xs:py-4 sm:py-6 lg:py-8"
+        class="relative pb-8 lg:py-12 xl:pb-16"
         style=" background-color: hsl(224, 62%, 34%);"
     )
         .z-10.relative
             +page-title({
                 inverted: true,
                 tagClient: 'Tom Meyers Illustrations',
-                tagClasses: 'bg-white text-[#33477C]',
+                tagStyle: 'color: hsl(224, 62%, 34%)',
                 h1: 'When to Make a Serious Point <br class="md:block hidden"> in a Funny Way.',
-                h1Classes: ' ',
                 subtitle: 'Would you take financial advice from a cartoonist?',
-                subtitleClasses: '',
-                audio: '#',
-                audioClasses: ''
+                audio: '#'
             })
             +lead-in({
-                classes: 'text-white pb-8 !font-proxima',
-                content: `<p>Tungsten was tasked with the design, publishing and private distribution of a book about wealth management written by the CEO of client company, Pacific Equity Partners.</p> <p class="mt-6">To help readers more easily understand the serious concepts explained in the book, Tungsten commissioned a cartoonist to illustrate its pages.</p>`
+                bold: false,
+                content: `<p>Tungsten was tasked with the design, publishing and private distribution of a book about wealth management written by the CEO of client company, Pacific Equity Partners.</p> <p class="mt-6">To help readers more easily understand the serious concepts explained in the book, Tungsten commissioned a cartoonist to illustrate its pages.</p>`,
+                class:"text-white"
             })
-        div(class="  w-full h-full absolute inset-0 opacity-30 z-0  " style=" background: radial-gradient(circle at center, hsl(224, 100%, 95%) 6%, hsl(224, 42%, 34%))")
+        div(
+            class="w-full h-full absolute inset-0 opacity-30 z-0"
+            style={
+                background: 'radial-gradient(circle at center, hsl(224, 100%, 95%) 6%, hsl(224, 42%, 34%))'}
+        )
 
 
     article(class="page-content leading-normal overflow-hidden")
         section(class="shadow-xl relative pb-12 lg:pb-20 z-10")
             .container.flow-root.z-10.relative
                 div(class="sm:flex sm:items-center sm:gap-10")
-                    img(loading="lazy" src="img/tom-meyer/Tom@630.png" srcset="img/tom-meyer/Tom@157.png 157w, img/tom-meyer/Tom@236.png 236w, img/tom-meyer/Tom@313.png 313w, img/tom-meyer/Tom@470.png 470w, img/tom-meyer/Tom@520.png 520w, img/tom-meyer/Tom@630.png 630w, img/tom-meyer/Tom@939.png 939w" sizes="(max-width:479px) 53.1vw, (max-width: 690px) 45vw, 313px" alt="Tom Meyer" class="" width="313" height="376" class="relative block mx-auto w-2/3 xs:w-1/2 md:w-auto xs:mr-10 xs:float-left mb-10 sm:float-none mt-6" style="max-width: 313px; shape-outside: circle();" id="tom-photo")
+                    img(loading="lazy" src="media/tom-meyer/Tom@630.png" srcset="media/tom-meyer/Tom@157.png 157w, media/tom-meyer/Tom@236.png 236w, media/tom-meyer/Tom@313.png 313w, media/tom-meyer/Tom@470.png 470w, media/tom-meyer/Tom@520.png 520w, media/tom-meyer/Tom@630.png 630w, media/tom-meyer/Tom@939.png 939w" sizes="(max-width:479px) 53.1vw, (max-width: 690px) 45vw, 313px" alt="Tom Meyer" class="" width="313" height="376" class="relative block mx-auto w-2/3 xs:w-1/2 md:w-auto xs:mr-10 xs:float-left mb-10 sm:float-none mt-6" style="max-width: 313px; shape-outside: circle();" id="tom-photo")
 
                     style.
                         @media (min-width:481px) and (max-width: 639px) {
@@ -115,12 +117,12 @@ block page
                     div(class="mt-10 md:mt-16 lg:mt-20 relative")
                         p(class="drop-cap first-letter:!mr-5 sm:flex-2 " style="--color: #000").
                             For four weeks, every Sunday morning, brewed himself a cup of coffee and sat down at his kitchen table to conceptualize and create an illustration for a book on personal finance.
-                        img(loading="lazy" src="img/tom-meyer/dropcap.png", alt="alt" class="absolute -top-9 -left-6 sm:-left-6 animate__animated" id="dropcap")
+                        img(loading="lazy" src="media/tom-meyer/dropcap.png", alt="alt" class="absolute -top-9 -left-6 sm:-left-6 animate__animated" id="dropcap")
 
                         p(class="mt-2").
                             Tom Meyer is a nationally syndicated political cartoonist with a mastery over the power of observational comedy.
 
-                img(loading="lazy" src="../img/tom-meyer/TungstenRuins-cropped@256.png" srcset="../img/tom-meyer/TungstenRuins-cropped@256.png 256w, ../img/tom-meyer/TungstenRuins-cropped@512.png 512w, ../img/tom-meyer/TungstenRuins-cropped@669.png 669w, ../img/tom-meyer/TungstenRuins-cropped@768.png 768w, ../img/tom-meyer/TungstenRuins-cropped@1024.png 1024w, ../img/tom-meyer/TungstenRuins-cropped@1338.png 1338w, ../img/tom-meyer/TungstenRuins-cropped@1461.png 1461w, ../img/tom-meyer/TungstenRuins-cropped@2007.png 2007w" sizes="(max-width: 479px) 256px, (max-width:639px) 288px, (max-width:767px) 336px, (max-width:1023px) 376px, (max-width:1279px) 472px, 669px" alt="Tungsten Ruins" width="669" height="926" class="float-right w-64 xs:w-72 sm:w-84 md:w-94 lg:w-1/2 xl:w-9/12 -mt-2 sm:-mt-6 md:-mt-16 lg:-mt-24 xl:-mt-28 -mr-20 xs:-mr-16 md:-mr-6 lg:-mr-20 xl:-mr-48 shape-outside" id="tngstn-ruins")
+                img(loading="lazy" src="media/tom-meyer/TungstenRuins-cropped@256.png" srcset="media/tom-meyer/TungstenRuins-cropped@256.png 256w, media/tom-meyer/TungstenRuins-cropped@512.png 512w, media/tom-meyer/TungstenRuins-cropped@669.png 669w, media/tom-meyer/TungstenRuins-cropped@768.png 768w, media/tom-meyer/TungstenRuins-cropped@1024.png 1024w, media/tom-meyer/TungstenRuins-cropped@1338.png 1338w, media/tom-meyer/TungstenRuins-cropped@1461.png 1461w, media/tom-meyer/TungstenRuins-cropped@2007.png 2007w" sizes="(max-width: 479px) 256px, (max-width:639px) 288px, (max-width:767px) 336px, (max-width:1023px) 376px, (max-width:1279px) 472px, 669px" alt="Tungsten Ruins" width="669" height="926" class="float-right w-64 xs:w-72 sm:w-84 md:w-94 lg:w-1/2 xl:w-9/12 -mt-2 sm:-mt-6 md:-mt-16 lg:-mt-24 xl:-mt-28 -mr-20 xs:-mr-16 md:-mr-6 lg:-mr-20 xl:-mr-48 shape-outside" id="tngstn-ruins")
                 p(class="mt-2").
                     Cartoons take up just four pages of this 120 page book, but they have an outsized impact:
                 p(class="mt-2").
@@ -142,7 +144,7 @@ block page
 
 
 
-                img(loading="lazy" src="img/tom-meyer/pen@413.png" srcset="img/tom-meyer/pen@413.png 413w, img/tom-meyer/pen@619.png 619w, img/tom-meyer/pen@825.png 825w, img/tom-meyer/pen@1237.png 1237w, img/tom-meyer/pen@1650.png 1650w, img/tom-meyer/pen@2474.png 2474w" sizes="(max-width: 767px) 288px, (max-width:1023px) 384px, (max-width:1279px) 630px, 825px" alt="Pen" class="w-72 md:w-96 lg:w-2/3 xl:w-auto" width="825" height="130" class="mt-16  mx-auto " id="pen")
+                img(loading="lazy" src="media/tom-meyer/pen@413.png" srcset="media/tom-meyer/pen@413.png 413w, media/tom-meyer/pen@619.png 619w, media/tom-meyer/pen@825.png 825w, media/tom-meyer/pen@1237.png 1237w, media/tom-meyer/pen@1650.png 1650w, media/tom-meyer/pen@2474.png 2474w" sizes="(max-width: 767px) 288px, (max-width:1023px) 384px, (max-width:1279px) 630px, 825px" alt="Pen" class="w-72 md:w-96 lg:w-2/3 xl:w-auto" width="825" height="130" class="mt-16  mx-auto " id="pen")
             style.
                 .paper-texture {
 
@@ -174,9 +176,9 @@ block page
                 }
 
             div(class="paper absolute inset-0 w-full h-full z-0")
-                img(loading="lazy" src="../img/tom-meyer/paper-texture@1264.jpg" srcset="../img/tom-meyer/paper-texture@633.jpg 633w, ../img/tom-meyer/paper-texture@949.jpg 949w, ../img/tom-meyer/paper-texture@1264.jpg 1264w, ../img/tom-meyer/paper-texture@1897.jpg 1897w, ../img/tom-meyer/paper-texture@2528.jpg 2528w, ../img/tom-meyer/paper-texture@3792.jpg 3792w, ../img/tom-meyer/paper-texture@5056.jpg 5056w" alt="Paper" class="paper-texture absolute w-full h-full object-cover inset-0 z-0" width="1264" height="1790")
+                img(loading="lazy" src="media/tom-meyer/paper-texture@1264.jpg" srcset="media/tom-meyer/paper-texture@633.jpg 633w, media/tom-meyer/paper-texture@949.jpg 949w, media/tom-meyer/paper-texture@1264.jpg 1264w, media/tom-meyer/paper-texture@1897.jpg 1897w, media/tom-meyer/paper-texture@2528.jpg 2528w, media/tom-meyer/paper-texture@3792.jpg 3792w, media/tom-meyer/paper-texture@5056.jpg 5056w" alt="Paper" class="paper-texture absolute w-full h-full object-cover inset-0 z-0" width="1264" height="1790")
 
-                img(loading="lazy" src="../img/tom-meyer/paper_edge@1920.png" srcset="../img/tom-meyer/paper_edge@960.png 960w, ../img/tom-meyer/paper_edge@1440.png 1440w, ../img/tom-meyer/paper_edge@1920.png 1920w, ../img/tom-meyer/paper_edge@2880.png 2880w,  ../img/tom-meyer/paper_edge@3840.png 3840w, ../img/tom-meyer/paper_edge@5760.png 5760w, ../img/tom-meyer/paper_edge@7680.png 7680w" alt="paper edge" class="paper-edge absolute left-0 right-0 z-10 w-full object-cover object-bottom " width="1920" height="154")
+                img(loading="lazy" src="media/tom-meyer/paper_edge@1920.png" srcset="media/tom-meyer/paper_edge@960.png 960w, media/tom-meyer/paper_edge@1440.png 1440w, media/tom-meyer/paper_edge@1920.png 1920w, media/tom-meyer/paper_edge@2880.png 2880w,  media/tom-meyer/paper_edge@3840.png 3840w, media/tom-meyer/paper_edge@5760.png 5760w, media/tom-meyer/paper_edge@7680.png 7680w" alt="paper edge" class="paper-edge absolute left-0 right-0 z-10 w-full object-cover object-bottom " width="1920" height="154")
 
             style.
                 .sketch {
@@ -211,8 +213,8 @@ block page
 
 
         section(class="relative z-0" id="sketch-container")
-            img(loading="lazy" src="img/tom-meyer/desktop@1920.jpg" srcset="" width="1920" height="1287" alt="Desktop" class="desktop-image")
-            img(loading="lazy" src="img/tom-meyer/sketch@3000.jpg" alt="Sketch" width="775" height="602" class="sketch mix-blend-multiply absolute z-0 inset-0 m-auto")
+            img(loading="lazy" src="media/tom-meyer/desktop@1920.jpg" srcset="" width="1920" height="1287" alt="Desktop" class="desktop-image")
+            img(loading="lazy" src="media/tom-meyer/sketch@3000.jpg" alt="Sketch" width="775" height="602" class="sketch mix-blend-multiply absolute z-0 inset-0 m-auto")
             div(class="sketch-utils -translate-y-1/4 absolute inset-0 m-auto z-10 ")
                 -
                     const sketchUtils = [
@@ -238,7 +240,7 @@ block page
                         },
                     ]
                 each image in sketchUtils
-                    img(src=`img/tom-meyer/${image.fileName}@2x.png` srcset=`img/tom-meyer/${image.fileName}@1x.png 1x, img/tom-meyer/${image.fileName}@2x.png 2x, img/tom-meyer/${image.fileName}@3x.png 3x, img/tom-meyer/${image.fileName}@4x.png 4x` alt=`${image.alt}` loading="lazy" class=`absolute ${image.classes}`)
+                    img(src=`media/tom-meyer/${image.fileName}@2x.png` srcset=`media/tom-meyer/${image.fileName}@1x.png 1x, media/tom-meyer/${image.fileName}@2x.png 2x, media/tom-meyer/${image.fileName}@3x.png 3x, media/tom-meyer/${image.fileName}@4x.png 4x` alt=`${image.alt}` loading="lazy" class=`absolute ${image.classes}`)
         section(class="relative z-10 orange-section")
             style.
                 .orange-section {
@@ -315,12 +317,12 @@ block page
 
 
 
-                            img(src="../img/tom-meyer/JigsawArtboard@868.png" srcset="../img/tom-meyer/JigsawArtboard@435.png 435w, ../img/tom-meyer/JigsawArtboard@652.png 652w, ../img/tom-meyer/JigsawArtboard@868.png 868w, ../img/tom-meyer/JigsawArtboard@1303.png 1303w, ../img/tom-meyer/JigsawArtboard@1736.png 1736w, ../img/tom-meyer/JigsawArtboard@2604.png 2604w, ../img/tom-meyer/JigsawArtboard@3472.png 3472w" sizes="(max-width:849px) 86vw, (max-width:899px) 82vw, (max-width: 1023px) 80vw, (max-width:1279px) 800px, 868px" alt="Art Board" class="md:absolute hidden md:block artboard-jigsaw z-0" width="868" height="1337" loading="lazy")
+                            img(src="media/tom-meyer/JigsawArtboard@868.png" srcset="media/tom-meyer/JigsawArtboard@435.png 435w, media/tom-meyer/JigsawArtboard@652.png 652w, media/tom-meyer/JigsawArtboard@868.png 868w, media/tom-meyer/JigsawArtboard@1303.png 1303w, media/tom-meyer/JigsawArtboard@1736.png 1736w, media/tom-meyer/JigsawArtboard@2604.png 2604w, media/tom-meyer/JigsawArtboard@3472.png 3472w" sizes="(max-width:849px) 86vw, (max-width:899px) 82vw, (max-width: 1023px) 80vw, (max-width:1279px) 800px, 868px" alt="Art Board" class="md:absolute hidden md:block artboard-jigsaw z-0" width="868" height="1337" loading="lazy")
 
                             p(class="") - The presence of cartoons in a book makes the audience more accepting of the opinions expressed by the author in the written text. The reader experiences an instant sense of relief and gratitude for a light moment in a book on the serious topics of wealth management and estate planning. The cartoons relax the reader, and diffuse any reluctance to reading through the long text.
                             p - The book’s author expresses strong opinions that differentiate him from the approaches of other financial brokers. The message embedded in a cartoon however, is perceived by the reader to be an unbiased and objective view of a situation.
 
-                            img(src="../img/tom-meyer/JigsawArtboardMobile@1x.png" srcset="../img/tom-meyer/JigsawArtboardMobile@1x.png 1x, ../img/tom-meyer/JigsawArtboardMobile@2x.png 2x, ../img/tom-meyer/JigsawArtboardMobile@3x.png 3x, ../img/tom-meyer/JigsawArtboardMobile@4x.png 4x" sizes="(max-width:370px) 86vw, (max-width:480px) 90vw, 93vw" alt="Art Board" class="mt-4 md:hidden mx-auto sm:w-4/5" width="591" height="644" loading="lazy")
+                            img(src="media/tom-meyer/JigsawArtboardMobile@1x.png" srcset="media/tom-meyer/JigsawArtboardMobile@1x.png 1x, media/tom-meyer/JigsawArtboardMobile@2x.png 2x, media/tom-meyer/JigsawArtboardMobile@3x.png 3x, media/tom-meyer/JigsawArtboardMobile@4x.png 4x" sizes="(max-width:370px) 86vw, (max-width:480px) 90vw, 93vw" alt="Art Board" class="mt-4 md:hidden mx-auto sm:w-4/5" width="591" height="644" loading="lazy")
 
                             p Why did Tungsten choose to put so much thought into cartoons for this book? Well, cartoons have qualities that make them an ideal medium to reach and influence a wide general public.
                             p But cartoons are also especially suitable when communicating to a target audience of intelligent, educated, social elites: and this was the demographic for the client's financial planning services.
@@ -359,7 +361,7 @@ block page
                                     width: calc(50% - 5rem);
                                 }
                             }
-                        img(loading="lazy" src="img/tom-meyer/book-image@879.jpg" srcset="img/tom-meyer/book-image@440.jpg 440w,  img/tom-meyer/book-image@660.jpg 660w, img/tom-meyer/book-image@879.jpg 879w, img/tom-meyer/book-image@1319.jpg 1319w, img/tom-meyer/book-image@1758.jpg 1758w, img/tom-meyer/book-image@2637.jpg 2637w, img/tom-meyer/book-image@3516.jpg 3516w" sizes="(max-width: 639px) 90vw, (max-width: 1600px) 45vw,  46vw" alt="Book Image" width="879" height="664" class="mx-auto sm:float-right sm:ml-10 sm:mb-10 -mt-12 mb-8 sm:-mt-16 md:-mt-20 lg:absolute shape-outside  sm:w-1/2 lg:object-cover lg:h-full" id="book-image")
+                        img(loading="lazy" src="media/tom-meyer/book-image@879.jpg" srcset="media/tom-meyer/book-image@440.jpg 440w,  media/tom-meyer/book-image@660.jpg 660w, media/tom-meyer/book-image@879.jpg 879w, media/tom-meyer/book-image@1319.jpg 1319w, media/tom-meyer/book-image@1758.jpg 1758w, media/tom-meyer/book-image@2637.jpg 2637w, media/tom-meyer/book-image@3516.jpg 3516w" sizes="(max-width: 639px) 90vw, (max-width: 1600px) 45vw,  46vw" alt="Book Image" width="879" height="664" class="mx-auto sm:float-right sm:ml-10 sm:mb-10 -mt-12 mb-8 sm:-mt-16 md:-mt-20 lg:absolute shape-outside  sm:w-1/2 lg:object-cover lg:h-full" id="book-image")
 
                         p It is rare for an art form to have made an impact academically, culturally, socially, economically, and as commercial art in advertising.
                         p This target audience is familiar with, and even wistful about cartoons. They have grown up with cartoons whether in newspapers or on television. Since their childhoods, they have associated cartoons with laughter, happiness and fun.
@@ -403,7 +405,7 @@ block page
                 each item in imagesGrid
                     div(class="item mx-auto mt-10 first:mt-0 xs:mt-0 sm:col-span-4" style="max-width: 252px;")
                         div(class="image bg-purple-200")
-                            img(loading="lazy" src=`img/tom-meyer/${item.image}@1x.jpg` srcset=`img/tom-meyer/${item.image}@1x.jpg 1x, img/tom-meyer/${item.image}@2x.jpg 2x, img/tom-meyer/${item.image}@3x.jpg 3x, img/tom-meyer/${item.image}@4x.jpg 4x` sizes="(max-width: 479px) 252px, (max-width:592px) 43vw, (max-width: 639px) 252px, (max-width: 710px) 216px, (max-width:767px) 31vw, 252px" alt=`${item.title}` width="252" height="349" class="shadow-cardshadow w-full sm:w-auto")
+                            img(loading="lazy" src=`media/tom-meyer/${item.image}@1x.jpg` srcset=`media/tom-meyer/${item.image}@1x.jpg 1x, media/tom-meyer/${item.image}@2x.jpg 2x, media/tom-meyer/${item.image}@3x.jpg 3x, media/tom-meyer/${item.image}@4x.jpg 4x` sizes="(max-width: 479px) 252px, (max-width:592px) 43vw, (max-width: 639px) 252px, (max-width: 710px) 216px, (max-width:767px) 31vw, 252px" alt=`${item.title}` width="252" height="349" class="shadow-cardshadow w-full sm:w-auto")
                         b(class="mt-5 block ")= item.title
                         div(class="bg-current w-2 h-0.5 block my-3" style="color: #D85427;")
                         p(class="!mt-0")= item.content
@@ -470,7 +472,6 @@ append footer_scripts
 
 
 
-    //- script(defer src="js/simpleParallax.js")
 
 
 

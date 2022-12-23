@@ -1,29 +1,33 @@
 extends ./layout/base
 block variables
     - var pageTitle = 'Tungsten Advertising Case Study | Maritime White Papers | Cobham Sea Tel'
+    - let currentUrl = 'white-paper.html'
 
 prepend preload
     script(src="https://unpkg.com/swiper@7/swiper-bundle.min.js" defer)
-    script(src="js/whitePaperSlider.js" defer)
-    link(rel="preload" as="image"  imagesrcset="img/white-paper/WhitePaper_450.jpg 450w, img/white-paper/WhitePaper_600.jpg 600w, img/white-paper/WhitePaper_800.jpg 800w, img/white-paper/WhitePaper_1000.jpg 1000w, img/white-paper/WhitePaper_1300.jpg 1300w, img/white-paper/WhitePaper_1600.jpg 1600w, img/white-paper/WhitePaper_2000.jpg 2000w" imagesizes="100vw")
+    script(src="js/white-paper.js" defer)
+    link(rel="preload" as="image"  imagesrcset="media/white-paper/WhitePaper_450.jpg 450w, media/white-paper/WhitePaper_600.jpg 600w, media/white-paper/WhitePaper_800.jpg 800w, media/white-paper/WhitePaper_1000.jpg 1000w, media/white-paper/WhitePaper_1300.jpg 1300w, media/white-paper/WhitePaper_1600.jpg 1600w, media/white-paper/WhitePaper_2000.jpg 2000w" imagesizes="100vw")
 
 append head
 
 
 block page
-    img(src="img/white-paper/WhitePaper_1600.jpg" srcset="img/white-paper/WhitePaper_450.jpg 450w, img/white-paper/WhitePaper_600.jpg 600w, img/white-paper/WhitePaper_800.jpg 800w, img/white-paper/WhitePaper_1000.jpg 1000w, img/white-paper/WhitePaper_1300.jpg 1300w, img/white-paper/WhitePaper_1600.jpg 1600w, img/white-paper/WhitePaper_2000.jpg 2000w" sizes="100vw" alt="White Paper" width="2000" height="868" class="w-full")
+    img(src="media/white-paper/WhitePaper_1600.jpg" srcset="media/white-paper/WhitePaper_450.jpg 450w, media/white-paper/WhitePaper_600.jpg 600w, media/white-paper/WhitePaper_800.jpg 800w, media/white-paper/WhitePaper_1000.jpg 1000w, media/white-paper/WhitePaper_1300.jpg 1300w, media/white-paper/WhitePaper_1600.jpg 1600w, media/white-paper/WhitePaper_2000.jpg 2000w" sizes="100vw" alt="White Paper" width="2000" height="868" class="w-full")
     +page-title({
         tagClient: 'Cobham',
         h1: 'White Papers Turn <br> Techspeak Into English.',
         subtitle: "What exactly is a White Paper? <br> And why do Tungsten's clients require them?",
     })
-    +lead-in(`A White Paper is an <span class="text-blue-light">informational document</span> that explains and illuminates a particular aspect of a company's business. It is <span class="text-blue-light">objective</span>. White Papers are written to inform the reader concisely about a <span class="text-blue-light">complex issue</span>, and to present the issuing body's philosophy on the subject. The purpose is to help readers <span class="text-blue-light">understand an issue</span>, solve a problem, or make a decision.`)
+    +lead-in({
+        content: `A White Paper is an <span class="text-blue-light">informational document</span> that explains and illuminates a particular aspect of a company's business. It is <span class="text-blue-light">objective</span>. White Papers are written to inform the reader concisely about a <span class="text-blue-light">complex issue</span>, and to present the issuing body's philosophy on the subject. The purpose is to help readers <span class="text-blue-light">understand an issue</span>, solve a problem, or make a decision.`,
+        class: 'py-8 bg-gray-100',
+    })
 
     article.page-content.mt-10.leading-relaxed.overflow-hidden
         .container.flow-root
             .drop-cap(style="--color: #3288c3;").
                 Cobham, the world leader in satellite communications, is constantly releasing new technologies that shape the entire eco-system. Decision-makers across multiple industries seek to understand these technologies in an objective way.
-            img(loading="lazy" src="img/white-paper/Antena.png" alt="Antena" class="shape-outside float-left w-40 sm:w-44 m-4 -ml-10 sm:-ml-12" width="200" height="231")
+            img(loading="lazy" src="media/white-paper/Antena.png" alt="Antena" class="shape-outside float-left w-40 sm:w-44 m-4 -ml-10 sm:-ml-12" width="200" height="231")
             p White Paper can serve this purpose remarkably well.
             p The format allows information and research findings to be presented dispassionately to anyone interested in studying the technology or its ramifications.
             p The audience includes Cobham's own dealer network, the IT, finance and procurement officers of customer companies, prospective customers, channel partners, journalists, analysts, or investors.
@@ -33,13 +37,13 @@ block page
                 p.font-proxima-bold.italic.text-lg The reader of a White Paper is looking to understand how a particular technology, product or method is a superior choice when solving a specific business problem.
 
         .container.flow-root
-            img(loading="lazy" src="img/white-paper/Tanker_1000.png" srcset="img/white-paper/Tanker_400.png 400w, img/white-paper/Tanker_600.png 600w, img/white-paper/Tanker_800.png 800w, img/white-paper/Tanker_1000.png 1000w, img/white-paper/Tanker_1200.png 1200w, img/white-paper/Tanker_1400.png 1400w" sizes="60vw, (min-width: 768px) 50vw, (min-width: 1024px) 30vw" alt="" class="shape-outside float-right h-auto w-2/3 md:w-2/5 -mr-12 sm:mr-0" width="1000" height="815")
 
+            img(loading="lazy" src="media/white-paper/Tanker_1000.png" srcset="media/white-paper/Tanker_400.png 400w, media/white-paper/Tanker_600.png 600w, media/white-paper/Tanker_800.png 800w, media/white-paper/Tanker_1000.png 1000w, media/white-paper/Tanker_1200.png 1200w, media/white-paper/Tanker_1400.png 1400w" sizes="60vw, (min-width: 768px) 50vw, (min-width: 1024px) 30vw" alt="" class="shape-outside xs:float-right w-9/12 xs:w-1/2 md:w-5/12 lg:w-1/3 lg:-mb-10 -mr-10 m:mr-0 -mt-4 translate-x-10 xs:translate-x-0 mb-4" width="1000" height="815")
             p White Papers are especially important for highly technical products with long sales cycles, or products used in critical situations. A company investing in such a product will typically go through an extensive decision-making process that spans multiple departments and levels inside the company.
 
             p Some executives on the selection committee will come from non-technical backgrounds, but need to contribute to the buying decision in an informed way. Busy executives seek plain-language explanations, presented in a journalistic or academic style, backed by statistics, facts and references to reliable sources.
 
-            .my-16.max-w-xl.mx-auto.overflow-hidden
+            div(class="my-6 lg:my-10 max-w-xl mx-auto overflow-hidden bg-white")
                 header.uppercase.text-xl.tracking-wide.text-white.bg-blue-light.border-blue-light.p-4.text-center Why Decision Makers Read a White Paper
                 -
                     const why_paper = [
@@ -50,7 +54,7 @@ block page
                         "Short list qualified vendors"
                     ]
                 each reason, index in why_paper
-                    div(class="even:bg-gray-100 last:border-b-gray-300 border-b py-3 px-4 text-lg border-l border-r border-gray-300 will-change-opacity" data-aos-duration="2000" data-aos="fade-in" data-aos-delay=`${400*(index+1)}`)= reason
+                    div(class="even:bg-gray-100 last:border-b-gray-300 border-b py-3 px-4 text-lg border-l border-r border-gray-300 will-change-opacity" data-aos-duration="1000" data-aos="fade-in" data-aos-delay=`${200*(index+1)}`)= reason
 
             p White Papers must be carefully written and designed. Key information is presented visually because readers have limited time and attention.
 
@@ -99,19 +103,19 @@ block page
                         const iframes = [
                             {
                                 header: "Multi-Axis Stabilized Antenna Architecture",
-                                url:"img/white-paper/MultiAxis_10mar_v4.pdf"
+                                url:"media/white-paper/MultiAxis_10mar_v4.pdf"
                             },
                             {
                                 header: "Quatraded Quatraded Oriented Reflectors Oriented Reflectors",
-                                url:"img/white-paper/QOR_WP_22july.pdf"
+                                url:"media/white-paper/QOR_WP_22july.pdf"
                             },
                             {
                                 header: "TV-at-Sea Antenna System",
-                                url:"img/white-paper/UnlimitedAz_02jun.pdf"
+                                url:"media/white-paper/UnlimitedAz_02jun.pdf"
                             },
                             {
                                 header: "VSAT White Paper",
-                                url:"img/white-paper/VSAT_WhitePaper.pdf"
+                                url:"media/white-paper/VSAT_WhitePaper.pdf"
                             }
                         ]
                     each iframe in iframes
@@ -127,18 +131,18 @@ block page
             div(class="pdf-slider-thumbs mt-10 mx-auto w-full sm:w-64 md:w-80")
                 div.swiper-wrapper
                     .swiper-slide.p-1
-                        img(loading="lazy" width="100" height="130"  src="img/white-paper/WhitePaper1_thumb.jpg" alt="WhitePaper1 Thumbnail" class="thumb active")
+                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper1_thumb.jpg" alt="WhitePaper1 Thumbnail" class="thumb active")
                     .swiper-slide.p-1
-                        img(loading="lazy" width="100" height="130"  src="img/white-paper/WhitePaper2_thumb.jpg" alt="WhitePaper2 Thumbnail" class="thumb")
+                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper2_thumb.jpg" alt="WhitePaper2 Thumbnail" class="thumb")
                     .swiper-slide.p-1
-                        img(loading="lazy" width="100" height="130"  src="img/white-paper/WhitePaper3_thumb.jpg" alt="WhitePaper3 Thumbnail" class="thumb")
+                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper3_thumb.jpg" alt="WhitePaper3 Thumbnail" class="thumb")
                     .swiper-slide.p-1
-                        img(loading="lazy" width="100" height="130"  src="img/white-paper/WhitePaper4_thumb.jpg" alt="WhitePaper4 Thumbnail" class="thumb")
+                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper4_thumb.jpg" alt="WhitePaper4 Thumbnail" class="thumb")
 
         .container.flow-root
             p It's important to note that the White Papers you see here are distinct from the product spec sheets and multiple brochures Tungsten has created for Cobham's individual products. They are different in the audience they appeal to, and in the way they are distributed to the audience.
 
-            img(loading="lazy" src="img/white-paper/CrossSection.jpg" srcset="img/white-paper/CrossSection_Small.jpg 360w, img/white-paper/CrossSection_Mid.jpg 768w, img/white-paper/CrossSection.jpg 1000w" width="871" height="529" class="w-full sm:w-3/4 mx-auto" alt="CrossSection Image")
+            img(loading="lazy" src="media/white-paper/CrossSection.jpg" srcset="media/white-paper/CrossSection_Small.jpg 360w, media/white-paper/CrossSection_Mid.jpg 768w, media/white-paper/CrossSection.jpg 1000w" width="871" height="529" class="w-full sm:w-3/4 mx-auto" alt="CrossSection Image")
 
             p Most of the White Papers you see on these pages were printed and distributed worldwide at the trade shows Cobham participated in, or were mailed to dealerships, or made available as online PDFs.
 

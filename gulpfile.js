@@ -32,7 +32,7 @@ const htmlmin = require("gulp-htmlmin");
 const notify = require("gulp-notify");
 const svgSprite = require("gulp-svg-sprite");
 const webp = require("gulp-webp"); //For converting images to WebP format
-const replace = require("gulp-replace"); //For Replacing img formats to webp in html
+const replace = require("gulp-replace"); //For Replacing media formats to webp in html
 const newer = require("gulp-newer"); //For Symbolic Console logs :) :P
 const logSymbols = require("log-symbols"); //For Symbolic Console logs :) :P
 
@@ -97,12 +97,12 @@ function devScripts() {
 
 function devImages() {
   return src([
-    `${options.paths.src.img}/**/*`,
-    `!${options.paths.src.img}/icons/**`,
-    `!${options.paths.src.img}/icons`,
+    `${options.paths.src.media}/**/*`,
+    `!${options.paths.src.media}/icons/**`,
+    `!${options.paths.src.media}/icons`,
   ])
-    .pipe(newer(options.paths.dist.img))
-    .pipe(dest(options.paths.dist.img));
+    .pipe(newer(options.paths.dist.media))
+    .pipe(dest(options.paths.dist.media));
 }
 function devFonts() {
   return src(`${options.paths.src.fonts}/*`).pipe(
@@ -111,7 +111,7 @@ function devFonts() {
 }
 //svg sprite-mono task
 function svgSpriteMono() {
-  return src(`${options.paths.src.img}/icons/mono/*.svg`)
+  return src(`${options.paths.src.media}/icons/mono/*.svg`)
     .pipe(
       plumber({
         errorHandler: notify.onError((error) => ({
@@ -120,7 +120,7 @@ function svgSpriteMono() {
         })),
       })
     )
-    .pipe(newer(`${options.paths.dist.img}/icons`))
+    .pipe(newer(`${options.paths.dist.media}/icons`))
     .pipe(
       svgSprite({
         mode: {
@@ -148,11 +148,11 @@ function svgSpriteMono() {
       })
     )
     .pipe(plumber.stop())
-    .pipe(dest(`${options.paths.dist.img}/icons/`));
+    .pipe(dest(`${options.paths.dist.media}/icons/`));
 }
 
 function svgSpriteMulti() {
-  return src(`${options.paths.src.img}/icons/multi/*.svg`)
+  return src(`${options.paths.src.media}/icons/multi/*.svg`)
     .pipe(
       plumber({
         errorHandler: notify.onError((error) => ({
@@ -161,7 +161,7 @@ function svgSpriteMulti() {
         })),
       })
     )
-    .pipe(newer(`${options.paths.dist.img}/icons`))
+    .pipe(newer(`${options.paths.dist.media}/icons`))
     .pipe(
       svgSprite({
         mode: {
@@ -172,7 +172,7 @@ function svgSpriteMulti() {
       })
     )
     .pipe(plumber.stop())
-    .pipe(dest(`${options.paths.dist.img}/icons/`));
+    .pipe(dest(`${options.paths.dist.media}/icons/`));
 }
 
 function watchFiles() {
@@ -186,15 +186,15 @@ function watchFiles() {
   );
   watch(`${options.paths.src.js}/**/*.js`, series(devScripts, previewReload));
   watch(
-    [`!${options.paths.src.img}/icons/**`, `${options.paths.src.img}/**/*`],
+    [`!${options.paths.src.media}/icons/**`, `${options.paths.src.media}/**/*`],
     series(devImages, previewReload)
   );
   watch(
-    `${options.paths.src.img}/icons/mono/*.svg`,
+    `${options.paths.src.media}/icons/mono/*.svg`,
     series(svgSpriteMono, previewReload)
   );
   watch(
-    `${options.paths.src.img}/icons/multi/*.svg`,
+    `${options.paths.src.media}/icons/multi/*.svg`,
     series(svgSpriteMulti, previewReload)
   );
   watch(`${options.paths.src.fonts}/**/*`, series(devFonts, previewReload));
@@ -215,7 +215,8 @@ function prodHTML() {
     .pipe(replace(".png", ".webp"))
     .pipe(replace(".jpg", ".webp"))
     .pipe(replace(".jpeg", ".webp"))
-    .pipe(replace("../img", "img"))
+    .pipe(replace("../js", "js"))
+    .pipe(replace("../media", "media"))
     .pipe(size({ title: "Before html minification " }))
     .pipe(
       htmlmin({
@@ -254,18 +255,18 @@ function prodScripts() {
 
 function prodImages() {
   return src([
-    options.paths.dist.img + "/**/*",
-    `!${options.paths.dist.img}/icons/**`,
-    `!${options.paths.dist.img}/icons`,
+    options.paths.dist.media + "/**/*",
+    `!${options.paths.dist.media}/icons/**`,
+    `!${options.paths.dist.media}/icons`,
   ])
     .pipe(size({ title: "Before WEBP conversion " }))
     .pipe(webp())
     .pipe(size({ title: "After WEBP conversion " }))
-    .pipe(dest(options.paths.build.img));
+    .pipe(dest(options.paths.build.media));
 }
 function prodSVGSprite() {
-  return src(`${options.paths.dist.img}/icons/**`).pipe(
-    dest(`${options.paths.build.img}/icons/`)
+  return src(`${options.paths.dist.media}/icons/**`).pipe(
+    dest(`${options.paths.build.media}/icons/`)
   );
 }
 function prodFonts() {

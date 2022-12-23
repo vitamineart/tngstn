@@ -1,6 +1,7 @@
 extends ./layout/base
 block variables
     - var pageTitle = 'Tungsten Advertising Case Study | Nik Wallenda Video | Davis Instruments'
+    - let currentUrl = 'davis-instruments.html';
 
 prepend preload
     link(rel="preload" as="image" href="https://i.ytimg.com/vi_webp/0puWSusGbOA/hqdefault.webp")
@@ -18,7 +19,7 @@ block page
     })
     +lead-in({
         content: `When you're a <span class="text-blue-light">tightrope walker</span> traversing the <span class="text-blue-light">Grand Canyon</span>, a surprise gush of wind can mean the end of your world.`,
-        classes: 'bg-gray-light py-10'
+        class:'bg-gray-light py-6 sm:py-10'
     })
 
     article.page-content.mt-10.leading-relaxed.overflow-hidden
@@ -27,12 +28,12 @@ block page
                 Often, the safe landing of a passenger plane, or the return home of a fire-fighter, or even the success of a wine label depend on precise second-by-second data of hyper-local weather conditions.
             p.
                 But weather isn't just for dare-devils and critical infrastructure. We all have an interest in local weather.
-            img(loading="lazy" src="img/davis-instruments/Instrument1.png" alt="Davis Instruments" width="256" height="255" class="shape-outside float-left mr-2 w-40 sm:w-44 md:w-48 mt-4 -ml-5")
+            img(loading="lazy" src="media/davis-instruments/Instrument1.png" alt="Davis Instruments" width="256" height="255" class="shape-outside float-left mr-2 w-40 sm:w-44 md:w-48 mt-4 -ml-5")
             p.
                 You and I would like to know if we should leave home with an umbrella today. That’s why TV stations install weather stations on their roof-tops.
             p.
                 Schools install weather stations for K-12 STEM students. Hobbyists have them at home, and storm chasers put them on top of their trucks. Surfer Jack O'Neill had one in his garden. Take a walk in a park and you might spot one, left there by a horticulturist.
-            img(loading="lazy" src="img/davis-instruments/NikWallenda.png" alt="Nik Wallenda" class="shape-outside float-right -mr-12 w-48 sm:w-60 lg:w-64 sm:mr-0" width="256" height="278")
+            img(loading="lazy" src="media/davis-instruments/NikWallenda.png" alt="Nik Wallenda" class="shape-outside float-right -mr-12 w-48 sm:w-60 lg:w-64 sm:mr-0" width="256" height="278")
             p.
                 Coming back to King-of-the-Wire Nik Wallenda, he needs to know if humidity could make his tightrope slippery. His life depends on it. So he depends on Davis.
             p.
@@ -45,7 +46,7 @@ block page
         .container
             p.
                 Tungsten created a central idea that captured real users using the product in real-life situations, and putting their trust in Davis. The concept was executed in dramatic and memorable video productions. These videos are endorsements from professionals at the "top of their field", where weather can have a critical outcome on success.
-            img(loading="lazy" src="img/davis-instruments/Instrument2.png" alt="Davis Instruments" class="shape-outside float-right w-40 -mr-5 sm:mr-0 sm:w-52 md:w-60 lg:w-64" width="256" height="224")
+            img(loading="lazy" src="media/davis-instruments/Instrument2.png" alt="Davis Instruments" class="shape-outside float-right w-40 -mr-5 sm:mr-0 sm:w-52 md:w-60 lg:w-64" width="256" height="224")
             p.
                 Tungsten's experience in consumer IoT technology makes it particularly suited for engineering products. If you are a marketer with a product targeted at a specific region of the world, or worldwide, Tungsten would like the opportunity to talk to you about your brand, regardless of where on the globe your company is headquartered. We're in San Francisco, and work with clients across the world.
 

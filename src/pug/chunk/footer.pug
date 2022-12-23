@@ -30,10 +30,10 @@ footer.footer.relative.w-full.bg-indigo.py-14.border-b-12.border-blue-dark
         .mt-5
             .social.flex.space-x-3.mt-3
                 each x in social
-                    a(class="text-blue-link hover:text-blue inline-block" href=`${x.link}` target="_blank")
+                    a(class="text-blue-link hover:text-blue inline-block transition-colors" href=`${x.link}` target="_blank")
                         +iconMono({
                             icon: `${x.icon}`,
-                            classes: 'w-8 h-8 fill-current'
+                            class: 'w-8 h-8 fill-current',
                         })
 
 
@@ -47,7 +47,7 @@ footer.footer.relative.w-full.bg-indigo.py-14.border-b-12.border-blue-dark
     button(id="go-to-top" class="go-to-top fixed z-[500] opacity-0 invisible bottom-10 right-10 lg:bottom-12 lg:right-12 w-14 h-14 transition-all duration-500 cursor-pointer text-blue hover:text-blue-light")
         +iconMono({
             icon: 'back-to-top',
-            classes: 'stroke-current fill-transparent w-full h-full'
+            class: 'stroke-current fill-transparent w-full h-full'
         })
 
 
