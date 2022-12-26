@@ -112,3 +112,12 @@ ScrollTrigger.matchMedia({
         })
     }
 })
+
+
+const hero = document.querySelector('#hero');
+const turnOn = document.querySelector('#turnOn');
+const turnOff = document.querySelector('#turnOff');
+
+
+hero.addEventListener('mouseenter', ()=>turnOn.play())
+hero.addEventListener('mouseleave', ()=>turnOff.play())

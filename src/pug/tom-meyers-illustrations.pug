@@ -2,6 +2,7 @@ extends ./layout/base
 block variables
     - var pageTitle = 'Tungsten Advertising Case Study | Tom Meyers Illustrations'
     - let currentUrl = 'tom-meyers-illustrations.html'
+
 prepend preload
 
 
@@ -64,10 +65,14 @@ append head
         }
 
 block page
-    .hero(class="relative group")
+    .hero(class="relative group" id="hero")
         img(src="media/tom-meyer/Hero@961.jpg" srcset="media/tom-meyer/Hero@486.jpg 486w, media/tom-meyer/Hero@660.jpg 660w, media/tom-meyer/Hero@782.jpg 782w, media/tom-meyer/Hero@1000.jpg 1000w, media/tom-meyer/Hero@1441.jpg 1441w, media/tom-meyer/Hero@1920.jpg 1920w, media/tom-meyer/Hero@2881.jpg 2881w, media/tom-meyer/Hero@3840.jpg 3840w, media/tom-meyer/Hero@5760.jpg 5760w, media/tom-meyer/Hero@7680.jpg 7680w" alt="Hero" height="1217" width="1920" class="hero-desktop w-full relative z-0 object-cover")
         img(src="media/tom-meyer/book@1024.jpg" srcset="media/tom-meyer/book@400.jpg 400w, media/tom-meyer/book@600.jpg 600w, media/tom-meyer/book@800.jpg 800w, media/tom-meyer/book@1024.jpg 1024w, media/tom-meyer/book@1318.jpg 1318w" sizes="(max-width: 500px) 33vw, (max-width: 600px) 25vw, 20vw" width="400" height="572" class="absolute hero-book ")
         div(class="hero-overlay absolute w-full h-full inset-0 z-10  group-hover:opacity-0  transition duration-500")
+
+        audio(preload="auto" src="../media/tom-meyer/light-switch-1.wav" id="turnOn")
+        audio(preload="auto" src="../media/tom-meyer/light-switch-2.wav" id="turnOff")
+
 
     div(
         class="relative pb-8 lg:py-12 xl:pb-16"
