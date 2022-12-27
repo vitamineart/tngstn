@@ -121,3 +121,30 @@ if(document.querySelector('#team')){
     stagger: .1
   })
 }
+
+const audioWave = document.querySelector('#audio-wave');
+const audioBtn = document.querySelector('.btn-audio');
+
+const animateAudio = gsap.to('#audio-wave .bar', {
+  opacity: 'random(0.5, 1)',
+  transformOrigin: "center center",
+  scaleY: 'random(0.7, 1)',
+  duration: .1,
+  repeat: -1,
+  yoyo: true,
+  yoyoEase: 'power1.inOut',
+  paused: true,
+  ease: 'power1.out',
+  stagger: {
+    amount: 0.2,
+    grid: 'auto',
+    from: 'random'
+  }
+})
+
+audioBtn.addEventListener('mouseenter', ()=>{
+  animateAudio.play()
+})
+audioBtn.addEventListener('mouseleave', ()=>{
+  animateAudio.pause(0, false)
+})

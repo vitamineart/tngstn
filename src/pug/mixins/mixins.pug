@@ -4,27 +4,75 @@ mixin page-title(u)
             if u.tagClient
                 div(class=`tag-client relative inline-block font-proxima-bold px-2 py-0.5 ${u.inverted ? 'bg-white text-blue' : 'bg-blue-light text-white'} ${u.tagClass || ''}` style=u.tagStyle)= u.tagClient
 
-            h1(class=`mt-4 font-proxima-bold leading-none ${u.inverted ? 'text-white' : 'text-blue-dark'} ${u.h1Class || ''}`) !{u.h1}
+            h1(class=`${u.h1Class || ''} mt-4 font-proxima-bold leading-none ${u.inverted ? 'text-white' : 'text-blue-dark'} `) !{u.h1}
             if u.subtitle
-                p(class=`page-subtitle mt-3 leading-tight ${u.inverted ? 'text-white' : 'text-blue-dark'} ${u.subtitleClass || ''}`) !{u.subtitle}
+                p(style=u.subtitleStyle class=`page-subtitle mt-3 leading-tight ${u.inverted ? 'text-white' : 'text-blue-dark'} ${u.subtitleClass || ''}`) !{u.subtitle}
             if u.audio
-                a(class=`btn-audio w-auto relative font-proxima-bold no-underline px-4 h-9 rounded-[4px] items-center inline-flex mt-6 border border-current transition-colors ${u.inverted ? ` text-white hover:text-white/80 ` : `text-blue-dark hover:text-blue ${ u.audioClass || ' '}`} ` href=`${u.audio} `)
+                a(
+                    class=`btn-audio relative font-proxima-bold no-underline px-4 h-10 items-center inline-flex mt-6  transition-colors ${u.inverted ? ` text-white hover:text-white/80 ` : `text-blue-dark hover:text-blue`} ` class=u.audioClass href=`${u.audio} `,
+                    class="before:absolute before:h-10 before:left-0 before:w-1/4 before:border before:border-current before:rounded-tl before:rounded-bl before:border-r-0"
+                    class="after:absolute after:h-10 after:-right-3 after:w-3/4 after:border after:border-current after:rounded-tr after:rounded-br after:border-l-0"
+                )
 
                     if u.inverted
-                        +iconMono({
-                            icon: 'audio-wave',
-                            class: 'inline-block fill-current relative z-20 w-20 h-16 mr-4'
-                        })
+                        //- +iconMono({
+                        //-     icon: 'audio-wave',
+                        //-     class: 'inline-block fill-current relative z-20 w-20 h-16 mr-4'
+                        //- })
+                        svg(width="126" height="80" fill="none" viewBox="0 0 126 80" class="text-white z-20 h-16 w-20 mr-4 inline-block relative" id="audio-wave" style="filter: saturate(1.5)")
+                            path(class="bar" fill="currentColor" d="M50.4 0h-2.8v79.2h2.8V0z")
+                            path(class="bar" fill="currentColor" d="M36.8 16.6H34v46h2.8v-46z")
+                            path(class="bar" fill="currentColor" d="M27.2 25.5H30v28.2h-2.8V25.5z")
+                            path(class="bar" fill="currentColor" d="M23.2 33.7h-2.8v11.6h2.8V33.7z")
+                            path(class="bar" fill="currentColor" d="M13.6 35.4h2.8v8.3h-2.8v-8.3z")
+                            path(class="bar" fill="currentColor" d="M2.8 37H0v4.5h2.8V37z")
+                            path(class="bar" fill="currentColor" d="M9.6 37H6.8v5h2.8v-5z")
+                            path(class="bar" fill="currentColor" d="M40.8 19.3h2.8v41h-2.8v-41z")
+                            path(class="bar" fill="currentColor" d="M64 16.6h-2.8v46H64v-46z")
+                            path(class="bar" fill="currentColor" d="M68 25.5h2.8v27.7H68V25.5z")
+                            path(class="bar" fill="currentColor" d="M77.6 31.5h-2.8v16h2.8v-16z")
+                            path(class="bar" fill="currentColor" d="M81.6 31.5h2.8v16h-2.8v-16z")
+                            path(class="bar" fill="currentColor" d="M98 33.7h-2.8v11.7H98V33.7z")
+                            path(class="bar" fill="currentColor" d="M102 35.4h2.8v8.3H102v-8.3z")
+                            path(class="bar" fill="currentColor" d="M111.6 37h-2.8v5.1h2.8V37z")
+                            path(class="bar" fill="currentColor" d="M115.6 37h2.8v5.1h-2.8V37z")
+                            path(class="bar" fill="currentColor" d="M125.2 37h-2.8v4.6h2.8V37z")
+                            path(class="bar" fill="currentColor" d="M125.2 37h-2.8v4.6h2.8V37z")
+                            path(class="bar" fill="currentColor" d="M88.4 28.7h2.8v21.6h-2.8V28.7z")
+                            path(class="bar" fill="currentColor" d="M54.4 6.5h2.8v65.8h-2.8V6.5z")
                         span.text-base Listen
-                        div(class="h-[50px] bg-transparent w-3 absolute left-11 z-10 " style="backdrop-filter: blur(10px)")
+
 
                     else
-                        +iconMulti({
-                            icon: 'audio-wave',
-                            class: 'inline-block relative z-20 w-20 h-16 mr-4'
-                        })
+                        //- +iconMulti({
+                        //-     icon: 'audio-wave',
+                        //-     class: 'inline-block relative z-20 w-20 h-16 mr-4',
+                        //-     style: 'filter: saturate(1.1) brightness(1.2);'
+                        //- })
+                        svg(width="126" height="80" fill="none" viewBox="0 0 126 80" class="z-20 h-16 w-20 mr-4 inline-block relative" id="audio-wave" style="filter: saturate(1.5)")
+                            path(class="bar" fill="#3C5CA2" d="M50.4 0h-2.8v79.2h2.8V0z")
+                            path(class="bar" fill="#805B75" d="M36.8 16.6H34v46h2.8v-46z")
+                            path(class="bar" fill="#9F5A5F" d="M27.2 25.5H30v28.2h-2.8V25.5z")
+                            path(class="bar" fill="#C45946" d="M23.2 33.7h-2.8v11.6h2.8V33.7z")
+                            path(class="bar" fill="#D05F40" d="M13.6 35.4h2.8v8.3h-2.8v-8.3z")
+                            path(class="bar" fill="#888D80" d="M2.8 37H0v4.5h2.8V37z")
+                            path(class="bar" fill="#B0745D" d="M9.6 37H6.8v5h2.8v-5z")
+                            path(class="bar" fill="#615B89" d="M40.8 19.3h2.8v41h-2.8v-41z")
+                            path(class="bar" fill="#73488F" d="M64 16.6h-2.8v46H64v-46z")
+                            path(class="bar" fill="#963D81" d="M68 25.5h2.8v27.7H68V25.5z")
+                            path(class="bar" fill="#BB3172" d="M77.6 31.5h-2.8v16h2.8v-16z")
+                            path(class="bar" fill="#D73C67" d="M81.6 31.5h2.8v16h-2.8v-16z")
+                            path(class="bar" fill="#E78B62" d="M98 33.7h-2.8v11.7H98V33.7z")
+                            path(class="bar" fill="#EFB35F" d="M102 35.4h2.8v8.3H102v-8.3z")
+                            path(class="bar" fill="#F9E45C" d="M111.6 37h-2.8v5.1h2.8V37z")
+                            path(class="bar" fill="#B7AA43" d="M115.6 37h2.8v5.1h-2.8V37z")
+                            path(class="bar" fill="#F1BD5E" d="M125.2 37h-2.8v4.6h2.8V37z")
+                            path(class="bar" fill="#766D2B" d="M125.2 37h-2.8v4.6h2.8V37z")
+                            path(class="bar" fill="#DF6265" d="M88.4 28.7h2.8v21.6h-2.8V28.7z")
+                            path(class="bar" fill="#4C549F" d="M54.4 6.5h2.8v65.8h-2.8V6.5z")
+
                         span.text-base Listen
-                        div(class="h-[50px] bg-white w-3 absolute left-11 z-10 " )
+
 
 
 

@@ -1,0 +1,66 @@
+extends ./layout/base
+block variables
+    - var pageTitle = 'Tungsten Advertising Case Study | Alaska Maritime Highway System'
+    - let mediaFolder = 'media/alaska/';
+    - let currentUrl = 'alaska.html';
+
+prepend preload
+
+
+
+
+append head
+    style.
+        @media (max-width: 767px){
+            .hero-image {
+                height: max(50vh, 400px);
+            }
+        }
+
+block page
+    .hero(
+        class="relative pt-px ",
+        style={
+            'aspect-ratio': 1920/951,
+        }
+    )
+        div(class="absolute inset-0")
+            +page-title({
+                class:' lg:mt-5 xl:mt-10 2xl:mt-16 z-10',
+                tagClient: 'Friends Of Alaska Maritime Highway System',
+                h1: 'If You’re Going to the Last Frontier, <br> Isn’t it Good to Know the Ferry <br> Gets You There?',
+                h1Class: '!text-indigo',
+                subtitle: 'In parts of the nation\'s largest state, the only  way to get from one city to another is the Alaska Marine Highway System.',
+                subtitleClass:'!text-indigo border-l-2 border-l-indigo pl-5 py-3 max-w-xl ',
+                audio: '#',
+            })
+        +image({
+            name: 'alaska-hero',
+            ext: 'jpg',
+            src: '../media/alaska/alaska-hero@2000.jpg',
+            resolutions: [1000, 1200, 1600, 2000, 3000, 4000],
+            width: 1920,
+            height: 951,
+            class:"w-full relative z-0 hero-image object-cover",
+            style: {
+                'aspect-ratio': 1920/951
+            }
+        })
+
+
+    article( class="page-content leading-normal overflow-hidden" )
+        .container
+
+
+
+
+
+append footer_scripts
+    script(src="js/alaska.js" defer)
+
+
+
+
+
+
+
