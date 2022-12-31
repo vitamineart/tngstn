@@ -120,6 +120,7 @@ mixin iconMulti(x)
 
 mixin image(x)
     img(
+        id=x.id
         width=x.width
         height=x.height
         alt=x.alt
@@ -134,4 +135,5 @@ mixin image(x)
         `
         sizes=x.sizes
         class=x.class
-    )
+        style=x.style
+    )&attributes(attributes)

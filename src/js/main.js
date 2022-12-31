@@ -44,7 +44,7 @@ window.onload = function () {
   setTimeout(() => {
     const imageShapes = document.querySelectorAll(".shape-outside");
     imageShapes.forEach(function (item) {
-      item.style = `shape-outside: url(${item.getAttribute("src")})`;
+      item.style.shapeOutside = `url(${item.getAttribute("src")})`;
     });
   }, 1000);
 };
@@ -122,29 +122,88 @@ if(document.querySelector('#team')){
   })
 }
 
-const audioWave = document.querySelector('#audio-wave');
-const audioBtn = document.querySelector('.btn-audio');
+if (document.querySelector('#audio-wave')) {
+  const audioWave = document.querySelector('#audio-wave');
+  const audioBtn = document.querySelector('.btn-audio');
 
-const animateAudio = gsap.to('#audio-wave .bar', {
-  opacity: 'random(0.5, 1)',
-  transformOrigin: "center center",
-  scaleY: 'random(0.7, 1)',
-  duration: .1,
-  repeat: -1,
-  yoyo: true,
-  yoyoEase: 'power1.inOut',
-  paused: true,
-  ease: 'power1.out',
-  stagger: {
-    amount: 0.2,
-    grid: 'auto',
-    from: 'random'
-  }
-})
+  const animateAudio = gsap.to('#audio-wave .bar', {
+    opacity: 'random(0.4, 1)',
+    transformOrigin: "center center",
+    scaleY: 0.7,
+    duration: .1,
+    repeat: -1,
+    yoyo: true,
+    yoyoEase: 'power1.inOut',
+    paused: true,
+    ease: 'power1.out',
+    stagger: {
+      amount: 0.2,
+      grid: 'auto',
+      from: 'random'
+    }
+  })
 
-audioBtn.addEventListener('mouseenter', ()=>{
-  animateAudio.play()
-})
-audioBtn.addEventListener('mouseleave', ()=>{
-  animateAudio.pause(0, false)
-})
+  audioBtn.addEventListener('mouseenter', ()=>{
+    animateAudio.play()
+  })
+  audioBtn.addEventListener('mouseleave', ()=>{
+    animateAudio.pause(0, false)
+  })
+}
+
+// common entrance animations
+let commonEase = 'circ.out';
+let commonX = 100;
+let commonY = 50;
+let fadeInLeft = gsap.utils.toArray('.fade-in-left');
+let fadeInRight = gsap.utils.toArray('.fade-in-right');
+let fadeInUp = gsap.utils.toArray('.fade-in-up');
+let fadeInDown = gsap.utils.toArray('.fade-in-down');
+let blurIn = gsap.utils.toArray('.blur-in');
+
+fadeInLeft.forEach((item, i) => {
+    const anim = gsap.from(item, {opacity: 0, x: commonX, duration: 1, delay: i * 0.15, ease: commonEase});
+    ScrollTrigger.create({
+        trigger: item,
+        animation: anim,
+        once: true,
+    });
+});
+fadeInRight.forEach((item, i) => {
+    const anim = gsap.from(item, {opacity: 0, x: -commonX, duration: 1, delay: i * 0.15, ease: commonEase});
+    ScrollTrigger.create({
+        trigger: item,
+        animation: anim,
+        once: true,
+    });
+});
+fadeInUp.forEach((item, i) => {
+    const anim = gsap.from(item, {opacity: 0, y: commonY, duration: 1, delay: i * 0.15, ease: commonEase});
+    ScrollTrigger.create({
+        trigger: item,
+        animation: anim,
+        once: true,
+    });
+});
+fadeInDown.forEach((item, i) => {
+    const anim = gsap.from(item, {opacity: 0, y: -commonY, duration: 1, delay: i * 0.15, ease: commonEase});
+    ScrollTrigger.create({
+        trigger: item,
+        animation: anim,
+        once: true,
+    });
+});
+blurIn.forEach((item, i) => {
+    const anim = gsap.from(item, {opacity: 0, scale: 0.8, filter: 'blur(10px)', duration: 1, delay: i * 0.15, ease: commonEase});
+    ScrollTrigger.create({
+        trigger: item,
+        animation: anim,
+        scrub: true,
+        toggleActions: 'play none reverse none'
+        // once: true,
+    });
+});
+
+
+
+

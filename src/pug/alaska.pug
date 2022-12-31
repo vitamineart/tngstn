@@ -11,27 +11,35 @@ prepend preload
 
 append head
     style.
-        @media (max-width: 767px){
+        :root {
+            --c-alaska-iceblue: #628FC7;
+        }
+
+        .hero-image {
+            height: max(100vh, 600px);
+        }
+        @media (min-width: 768px){
             .hero-image {
-                height: max(50vh, 400px);
+                height: max(80vh, 500px);
+            }
+        }
+        @media (min-width: 1280px){
+            .hero-image {
+                min-height: 600px;
             }
         }
 
 block page
-    .hero(
-        class="relative pt-px ",
-        style={
-            'aspect-ratio': 1920/951,
-        }
-    )
+    .hero( class="relative pt-px z-0" )
         div(class="absolute inset-0")
             +page-title({
                 class:' lg:mt-5 xl:mt-10 2xl:mt-16 z-10',
                 tagClient: 'Friends Of Alaska Maritime Highway System',
-                h1: 'If You’re Going to the Last Frontier, <br> Isn’t it Good to Know the Ferry <br> Gets You There?',
+                tagStyle: 'letter-spacing: -0.21px',
+                h1: 'If You’re Going to the Last Frontier, <br class="hidden lg:block"> Isn’t it Good to Know the Ferry <br class="hidden lg:block"> Gets You There?',
                 h1Class: '!text-indigo',
                 subtitle: 'In parts of the nation\'s largest state, the only  way to get from one city to another is the Alaska Marine Highway System.',
-                subtitleClass:'!text-indigo border-l-2 border-l-indigo pl-5 py-3 max-w-xl ',
+                subtitleClass:'!text-indigo border-l-2 border-l-indigo pl-5 py-3 max-w-lg xl:max-w-xl ',
                 audio: '#',
             })
         +image({
@@ -41,21 +49,147 @@ block page
             resolutions: [1000, 1200, 1600, 2000, 3000, 4000],
             width: 1920,
             height: 951,
-            class:"w-full relative z-0 hero-image object-cover",
-            style: {
-                'aspect-ratio': 1920/951
-            }
+            class:"w-full relative z-0 hero-image object-cover object-left",
         })
 
+    svg(fill="none" class="-mt-1 relative z-10 w-full h-14 object-cover")
+        path(fill="#fff" d="M834.602 1.163a120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.339 120.339 0 0 1-33.385 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.339 120.339 0 0 0-33.385 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.33 120.33 0 0 1-33.384 0 120.333 120.333 0 0 0-33.384 0A120.332 120.332 0 0 1 0 1.163V53h1920V1.165c-11.13 1.551-39.36 1.55-50.49-.002a120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.303 120.303 0 0 1-33.38 0 120.375 120.375 0 0 0-33.39 0 120.303 120.303 0 0 1-33.38 0 120.375 120.375 0 0 0-33.39 0 120.303 120.303 0 0 1-33.38 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.303 120.303 0 0 1-33.38 0 120.375 120.375 0 0 0-33.39 0 120.303 120.303 0 0 1-33.38 0 120.375 120.375 0 0 0-33.39 0 120.303 120.303 0 0 1-33.38 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.31 120.31 0 0 0-33.381 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.339 120.339 0 0 0-33.385 0Z")
 
-    article( class="page-content leading-normal overflow-hidden" )
-        .container
+    article( class="page-content leading-normal overflow-x-hidden relative z-10" )
+        .container.relative
+            p.drop-cap.relative(style="--color: var(--c-blue-light);") The Alaska Marine Highway System has provided affordable transit for Alaska's people for decades. The public ferry is an essential part of Alaska's social fabric.
+                svg(width="187" height="9" fill="none" viewBox="0 0 187 9" class="wave absolute -left-1/3 top-2 fade-in-right")
+                    path(stroke="#628FC7" d="M1 4.5c10.267 4.667 20.533 4.667 30.8 0s20.533-4.667 30.8 0 20.533 4.667 30.8 0 20.533-4.667 30.8 0 20.533 4.667 30.8 0 20.533-4.667 30.8 0")
+
+            p.relative Ferries move cargo, groceries, entire households, local sports teams, medical supplies and patients – residents take the ferry for health care services in bigger cities. Ferry travel is statistically safer, environmentally friendly, and cost-effective for Alaskan families and businesses.
+
+                svg(width="187" height="9" fill="none" viewBox="0 0 187 9" class="wave absolute -left-1/2 top-2 fade-in-right")
+                    path(stroke="#628FC7" d="M1 4.5c10.267 4.667 20.533 4.667 30.8 0s20.533-4.667 30.8 0 20.533 4.667 30.8 0 20.533-4.667 30.8 0 20.533 4.667 30.8 0 20.533-4.667 30.8 0")
 
 
+        svg(width="1920" height="53" fill="none" viewBox="0 0 1920 53" class="mt-10 relative z-10" style={'filter':'drop-shadow(0 -5px 5px hsla(0, 0%, 0%, .1))'})
+            path(fill="#fff" d="M834.602 1.163a120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.339 120.339 0 0 1-33.385 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.339 120.339 0 0 0-33.385 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.33 120.33 0 0 1-33.384 0 120.333 120.333 0 0 0-33.384 0A120.332 120.332 0 0 1 0 1.163V53h1920V1.165c-11.13 1.551-39.36 1.55-50.49-.002a120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.303 120.303 0 0 1-33.38 0 120.375 120.375 0 0 0-33.39 0 120.303 120.303 0 0 1-33.38 0 120.375 120.375 0 0 0-33.39 0 120.303 120.303 0 0 1-33.38 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.303 120.303 0 0 1-33.38 0 120.375 120.375 0 0 0-33.39 0 120.303 120.303 0 0 1-33.38 0 120.375 120.375 0 0 0-33.39 0 120.303 120.303 0 0 1-33.38 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.31 120.31 0 0 0-33.381 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.339 120.339 0 0 0-33.385 0Z")
+
+        div(class="relative")
+            .container.flow-root.pb-20
+                style.
+                    .ferry {
+
+                    }
+                    @media (min-width: 640px){
+                        .ferry {
+                        }
+                    }
+                    @media (min-width: 768px){
+                        .ferry {
+                        }
+                    }
+                    @media (min-width: 1024px){
+                        .ferry {
+                        }
+                    }
+                    @media (min-width: 1280px){
+                        .ferry {
+                            left: 50%;
+                            right:0;
+                            width: calc(50% - 2rem);
+                            margin-top: -80px;
+                        }
+                    }
+                +image({
+                    name: 'ferry',
+                    ext: 'jpg',
+                    width: 782,
+                    height: 479,
+                    resolutions: [600,800,1000,1200,1500,2000],
+                    class:"ferry border border-black w-full xs:w-10/12 mx-auto md:w-1/2 md:float-right xl:float-none md:ml-4 xs:mb-10 sm:mb-4 -mt-6 xs:-mt-4 relative z-10 xl:absolute",
+                    style:{
+                        filter: 'saturate(1.3) hue-rotate(-10deg) contrast(1.1) drop-shadow(2px 3px 3px #00000033) drop-shadow(12px 13px 22px #00000033) drop-shadow(37px 35px 48px #00000022)',
+                        'max-width': '782px'
+                    }
+                })
+                div(class="lg:w-1/2 pr-8")
+                    div(class="border-current border-l-4 text-blue-light pl-4 font-proxima-bold text-xl mt-10 md:mt-0 xl:mt-10") In areas where the roads end at the water, ferries connect cities and bring visitors to tourist towns along 3,500 miles of scenic coastline.
+                    p(class="mt-10") While locals say the ferry system is critical to commerce and infrastructure, Alaska's mounting budget deficit led to a proposal for a massive budget cut that could dramatically alter its services or lead to privatization. Imagine the disconcertion.  These cuts would cripple the viability of  these international waterways, and challenge Alaskan's ability to conduct their daily lives.
+
+
+
+                div(class="mt-4 2xl:mt-16 md:flex md:items-center")
+                    img(
+                        width="343"
+                        height="338"
+                        src=`${mediaFolder}alaska-state-seal.svg`,
+                        alt="The Seal of State Alaska"
+                        class="mt-4 mx-auto sm:ml-10 lg:ml-16 -translate-x-4 xs:w-1/2 sm:w-auto xs:float-left md:float-none"
+                        style={
+                            'shape-outside': 'circle(50%)',
+                            'shape-margin': '10px'
+                        }
+                        loading="lazy"
+                        id="alaska-logo"
+                    )
+                    div(class="mt-4 sm:mt-10 md:mt-0 md:text-right md:mr-8 lg:mr-14 lg:ml-10")
+                        p(class=" relative ") Friends of the Alaska Marine Highway System was formed in response to this threat. This broad and powerful coalition of citizens and organizations from across Alaska comprises municipalities, community organizations, labor groups and other interested parties who care deeply about affordable transportation for Alaskans.
+                            svg(width="187" height="9" fill="none" viewBox="0 0 187 9" class="wave absolute -right-2/3 -bottom-3 fade-in-left")
+                                path(stroke="#628FC7" d="M1 4.5c10.267 4.667 20.533 4.667 30.8 0s20.533-4.667 30.8 0 20.533 4.667 30.8 0 20.533-4.667 30.8 0 20.533 4.667 30.8 0 20.533-4.667 30.8 0")
+
+                        p(class="mt-4 sm:mt-10 ") The objective of Friends of the Alaska Marine Highway System was to bring one voice to the Alaskan communities toward restoring full service and funding to the Alaska Marine Highway System.
+
+        section(
+            class="py-10 lg:py-20"
+            style={
+                'background':'radial-gradient(40% 50% at 50% 0%, #efefef, #fff0), radial-gradient(40% 50% at 50% 100%, #efefef, #fff0)'
+
+            }
+        )
+            .container
+                header(
+                    class="text-3xl xl:text-4xl 2xl:text-5xl font-proxima-bold text-center fade-in-up"
+                    style={
+                        'color': 'var(--c-alaska-iceblue)'
+                    }
+                ) Visual Identity Design
+
+                div(class="mx-auto mt-10 lg:mt-20 mb-10 max-w-3xl fade-in-up") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare massa eget elementum efficitur. In dapibus urna pretium ipsum facilisis tempus. Mauris interdum consequat nisi, eu venenatis augue. Nulla interdum metus odio, a hendrerit nisi faucibus nec. Ut ac quam eget neque vehicula congue. Quisque elementum metus vitae condimentum luctus. Proin non urna sed orci efficitur porttitor nec eget tortor. Nam porta pellentesque lorem at elementum.
+
+        style.
+            #pilots {
+                top: 100px;
+                height: 600px;
+                object-position: 40% 50%;
+            }
+
+
+
+        section(class="relative grid place-items-center overflow-hidden z-0 h-82")
+            svg(fill="none" class="-mt-1 rotate-180 absolute top-0 left-0 z-10 w-full h-3")
+                path(fill="#ddd" d="M834.602 1.163a120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.339 120.339 0 0 1-33.385 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.339 120.339 0 0 0-33.385 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.33 120.33 0 0 1-33.384 0 120.333 120.333 0 0 0-33.384 0A120.332 120.332 0 0 1 0 1.163V53h1920V1.165c-11.13 1.551-39.36 1.55-50.49-.002a120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.303 120.303 0 0 1-33.38 0 120.375 120.375 0 0 0-33.39 0 120.303 120.303 0 0 1-33.38 0 120.375 120.375 0 0 0-33.39 0 120.303 120.303 0 0 1-33.38 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.303 120.303 0 0 1-33.38 0 120.375 120.375 0 0 0-33.39 0 120.303 120.303 0 0 1-33.38 0 120.375 120.375 0 0 0-33.39 0 120.303 120.303 0 0 1-33.38 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.303 120.303 0 0 0-33.38 0 120.374 120.374 0 0 1-33.39 0 120.31 120.31 0 0 0-33.381 0 120.331 120.331 0 0 1-33.384 0 120.332 120.332 0 0 0-33.384 0 120.331 120.331 0 0 1-33.384 0 120.339 120.339 0 0 0-33.385 0Z")
+
+
+            div(
+                class="mx-auto max-w-sm px-5 xs:p-0 text-center text-white relative z-10 font-proxima-bold blur-in"
+                style={
+                    'text-shadow': '0 1px 1px #2f217c55, 0 2px 10px #2f217cff',
+                    'font-size': '22px',
+                    'letter-spacing': '0.5px'
+                }
+            ) Inlandboatmen’s Union of the Pacific International Organization of Masters, Mates and Pilots Marine Engineers’ Beneficial Association
+
+            +image({
+                name: 'pilots',
+                ext: 'jpg',
+                width: 1920,
+                height: 1000,
+                src: `${mediaFolder}pilots@1920.jpg`,
+                resolutions: [350,540,720,960,1441,1920,2880,3840,5760],
+            })(id="pilots" data-speed="-0.1" class="z-0 absolute w-full h-full object-cover inset-0 opacity-90 parallax" style={
+                filter: 'saturate(1.1) brightness(1.1) contrast(1.3)'
+            })
 
 
 
 append footer_scripts
+    script(src="../js/simpleParallax.js" defer)
     script(src="js/alaska.js" defer)
 
 
