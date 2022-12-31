@@ -1,3 +1,6 @@
+
+
+
 // Set a variable for our button element.
 const scrollToTopButton = document.getElementById("go-to-top");
 
@@ -153,14 +156,23 @@ if (document.querySelector('#audio-wave')) {
 
 // common entrance animations
 let commonEase = 'circ.out';
-let commonX = 100;
+let commonX = 50;
 let commonY = 50;
 let fadeInLeft = gsap.utils.toArray('.fade-in-left');
 let fadeInRight = gsap.utils.toArray('.fade-in-right');
 let fadeInUp = gsap.utils.toArray('.fade-in-up');
 let fadeInDown = gsap.utils.toArray('.fade-in-down');
+let fadeIn = gsap.utils.toArray('.fade-in');
 let blurIn = gsap.utils.toArray('.blur-in');
 
+fadeIn.forEach((item, i) => {
+    const anim = gsap.from(item, {opacity: 0, duration: 1, delay: i * 0.15, ease: commonEase});
+    ScrollTrigger.create({
+        trigger: item,
+        animation: anim,
+        once: true,
+    });
+});
 fadeInLeft.forEach((item, i) => {
     const anim = gsap.from(item, {opacity: 0, x: commonX, duration: 1, delay: i * 0.15, ease: commonEase});
     ScrollTrigger.create({
@@ -198,9 +210,7 @@ blurIn.forEach((item, i) => {
     ScrollTrigger.create({
         trigger: item,
         animation: anim,
-        scrub: true,
-        toggleActions: 'play none reverse none'
-        // once: true,
+        once: true,
     });
 });
 

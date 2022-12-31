@@ -255,27 +255,7 @@ observer.observe(target);
 
 gsap.registerPlugin(ScrollTrigger);
 
-const purpleTl = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#purple-message',
-    start: 'top 100%',
-    end: 'top 15%',
-  },
-  defaults: {
-    duration: 1,
-    ease: 'pow3.out()'
-  }
-})
-.from("#purple-message", {
-  opacity: 0,
-  x: -50,
-  delay: .1
-})
-.from("#purple-message > p", {
-  filter: "blur(2px)",
-  opacity: 0,
-  x: 100
-}, "<")
+
 
 const mapTl = gsap.timeline({
   scrollTrigger: {
