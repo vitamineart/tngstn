@@ -11,4 +11,25 @@ ships.forEach(ship => {
     })
 })
 
+gsap.registerPlugin(ScrollTrigger);
+
+const circleTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.circleShip',
+    }
+  })
+circleTl.from('.circleShip', {
+    opacity: 0,
+    scale: 2,
+    duration: 1,
+    ease: 'expo.out',
+    stagger: -.1
+}).from('.circleShip-image', {
+    opacity: 0,
+    scale: 0,
+    y: -100,
+    duration: 1,
+    ease: 'expo.out',
+    stagger: -0.1
+}, "<10%")
 

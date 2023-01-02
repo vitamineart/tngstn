@@ -4,7 +4,6 @@ block variables
     - let currentUrl = 'cobham-seatel-brand.html'
 
 prepend preload
-    script(src="../js/cobham-seatel-brand.js" defer)
 
 append head
     style.
@@ -89,7 +88,7 @@ block page
                 #circleShips {
                     width: 300px;
                     transform:rotate(39deg);
-                    left: 80px;
+                    left: 70px;
                     right: 0;
                     top: 0;
                 }
@@ -103,7 +102,7 @@ block page
                 @media (min-width: 480px){
                     #circleShips {
                         left: 50%;
-                        margin-left: -100px;
+                        margin-left: -110px;
                         right: auto;
                         top: 30%;
                     }
@@ -126,7 +125,7 @@ block page
                     }
                     #domeAntennaImage {
                         top: 0;
-                        left: 100px;
+                        left: 70px;
                         width: auto;
                     }
                 }
@@ -232,9 +231,9 @@ block page
                     }
                 }
 
-            svg(viewBox="0 0 1920 34" class="relative")
+            svg( class="relative" width="100%" height="34")
                 path(fill="#fff" d="M192 14.573c-64-19.43-128-19.43-192 0V34h1920V14.573c-64 19.431-128 19.431-192 0-64-19.43-128-19.43-192 0-64 19.431-128 19.431-192 0-64-19.43-128-19.43-192 0-64 19.431-128 19.431-192 0-64-19.43-128-19.43-192 0-64 19.431-128 19.431-192 0-64-19.43-128-19.43-192 0-64 19.431-128 19.431-192 0Z")
-            section(class="py-10 lg:py-20 bg-white relative z-10 overflow-hidden")
+            section(class="pt-6 pb-8 xs:pt-8 xs:pb-12 sm:pt-14 md:pt-8 lg:pt-4 lg:pb-24 bg-white relative z-10 overflow-hidden")
                 .container.relative
                     div(class="relative translate-y-16 xs:translate-y-0 md:absolute md:translate-x-20 md:translate-y-48 lg:translate-y-32 xl:translate-y-28 ")
                         img(src="media/cobham-brand/SeaTel_Dome_Antenna.png", alt="SeaTel_Dome_Antenna Image" loading="lazy" class="relative" id="domeAntennaImage" width="432" height="356")
@@ -279,14 +278,14 @@ block page
                                 ]
                                 const shipsReverse = ships.reverse();
                             each ship, index in ships
-                                div(class="circleShip absolute top-1/3 left-1/3 group" data-id=`${ship.id}` data-aos="zoom-in" data-aos-delay=`${100*(ship.animationOrder+1)}`)
+                                div(class="circleShip absolute top-1/3 left-1/3 group" data-id=`${ship.id}`)
                                     div(class="circleShip-inner rounded-full relative  w-30 xs:w-32 sm:w-40 aspect-square z-10 grid place-items-center p-1 xs:p-4 after:absolute after:w-1/2 after:h-1/2 after:rounded-full  after:inline-grid after:-z-10 before:absolute before:w-1/2 before:h-1/2 before:rounded-full  before:inline-grid before:-z-20" style=`transform: rotate(${(index+1)*47}deg) translate(clamp(170px, 35vw, 250px))`)
                                         img(loading="lazy" src=`${ship.src}`, alt=`${ship.id} Ship Image` style=`transform: rotate(${(index+1)*-47+321}deg)` class="circleShip-image w-5/6 xs:w-auto z-10 relative" width=`${ship.width}` height=`${ship.height}`)
                                         div(class="bg-white absolute w-full h-full inset-0 -z-10 rounded-full")
 
                     div(class="lg:text-right")
-                        img(loading="lazy" src="media/cobham-brand/DomeAntennaShape.png", alt="alt" width="622" height="688" class="hidden md:block float-left shape-outside brightness-75 -z-10 relative xl:-ml-28 opacity-0")
-                        p(class="pt-64 sm:pt-72 md:pt-24").
+                        img(loading="lazy" src="media/cobham-brand/DomeAntennaShape.png", alt="Dome Antenna Shape" width="622" height="688" class="hidden md:block float-left shape-outside -z-10 relative md:-ml-5 xl:-ml-28 opacity-0")
+                        p(class="pt-64 xs:pt-56 sm:pt-72 md:pt-12 lg:pt-24").
                             Sea Tel antennas were adopted on every type of vessel, resulting in five distinct market segments: <span id="Leisure" class="font-proxima-bold transition-all inline-block ship-category">Leisure Yachts</span>, <span id="Commercial" class="font-proxima-bold transition-all inline-block ship-category">Commercial Vessels</span> (cruise and cargo ships), <span id="Military" class="font-proxima-bold transition-all inline-block ship-category">Military</span>, <span id="Oil_Gas" class="font-proxima-bold transition-all inline-block ship-category">Oil & Gas,</span> and <span id="Fisheries" class="font-proxima-bold transition-all inline-block ship-category">Fisheries</span>. Soon, the brand was being marketed across the world -- anywhere there is shipping, with a product line of 32 different models designed for every type of maritime application. Sea Tel gained immediate majority market share.
                         p.
                             Cobham appointed Tungsten as its advertising agency for the Sea Tel  division, with the objective of creating a powerful central idea for the  brand, and executing that idea across every consumer touch-point,  worldwide. This includes corporate brand-building in trade magazines  published from every shipping center around the globe, tactical advertising  in print, online display advertising, social media in Facebook, Twitter and YouTube, video production, poster design, brochures, pamphlets and  collateral materials, trade-show booth design, fabrication, executing product photography, public relations in maritime and satcom trade journals, white papers for each product, cartography and mapmaking, printing, media planning and worldwide media buying, internal training materials, and all other full-service advertising services that the brand may need.
@@ -319,7 +318,7 @@ block page
 
 
             section(class="-mt-10 py-16 xs:py-18 sm:py-24 lg:py-36 relative overflow-hidden z-0")
-                div(class="mx-auto max-w-xl font-proxima-bold relative z-10 text-sm sm:text-base lg:text-xl text-white text-center px-6 parallax" style="text-shadow: 0 0 5px #071f5155;" data-speed="0.005").
+                div(class="mx-auto max-w-xl font-proxima-bold relative z-10 text-sm sm:text-base lg:text-xl text-white text-center px-6 blur-in" style="text-shadow: 0 0 5px #071f5155;").
                     Tungsten has rare knowledge and expertise in maritime and satellite communications products and services. If you are a marketer with a maritime product targeted at a specific geo or worldwide, Tungsten would like the opportunity to talk to you about your brand, regardless of where in  the world your company is headquartered. We're in San Francisco, California
                 div(class="shadow absolute inset-0 w-full h-full z-40 pointer-events-none" style="box-shadow: inset 0 0 9vw #223F7B;")
                 img(src="media/cobham-brand/SeaSurface@1920.jpg", srcset="../media/cobham-brand/SeaSurface@480.jpg 480w, media/cobham-brand/SeaSurface@640.jpg 640w, media/cobham-brand/SeaSurface@780.jpg 780w, media/cobham-brand/SeaSurface@900.jpg 900w, media/cobham-brand/SeaSurface@1200.jpg 1200w, media/cobham-brand/SeaSurface@1920.jpg 1920w", alt="Sea Surface Image" loading="lazy" class="z-0 absolute w-full h-full object-cover inset-0 opacity-90 parallax" width="1920" height="1148" data-speed="-0.04" id="seaSurface")
@@ -344,6 +343,8 @@ block page
 
 append footer_scripts
     script(defer src="js/simpleParallax.js")
+    script(src="../js/cobham-seatel-brand.js" defer)
+
 
 
 
