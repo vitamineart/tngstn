@@ -7,6 +7,21 @@ header.header {
 }
 @media (min-width: 640px) {
   .page-title h1 {
+    font-size: 2.8rem;
+  }
+}
+@media (min-width: 768px) {
+  .page-title h1 {
+    font-size: 2.9rem;
+  }
+}
+@media (min-width: 1024px) {
+  .page-title h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-title h1 {
     font-size: 3.1rem;
   }
 }
@@ -32,7 +47,7 @@ header.header {
 }
 
 .drop-cap:first-letter {
-  @apply relative float-left font-bold m-0 -mt-1 py-0 pl-0 pr-2 font-serif;
+  @apply relative float-left font-bold m-0 -mt-1 -ml-1 py-0 pl-0 pr-2 font-serif;
   line-height: 0.92;
   margin-top: -2px;
   font-size: 5rem;

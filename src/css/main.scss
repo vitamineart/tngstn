@@ -5,6 +5,15 @@ header.header {
   h1 {
     font-size: clamp(2rem, 8vw, 2.7rem);
     @media (min-width: 640px) {
+      font-size: 2.8rem;
+    }
+    @media (min-width: 768px) {
+      font-size: 2.9rem;
+    }
+    @media (min-width: 1024px) {
+      font-size: 3rem;
+    }
+    @media (min-width: 1280px) {
       font-size: 3.1rem;
     }
   }
@@ -31,7 +40,7 @@ header.header {
     inset 0 -5px 30px hsla(0, 0%, 0%, 0.1);
 }
 .drop-cap:first-letter {
-  @apply relative float-left font-bold m-0 -mt-1 py-0 pl-0 pr-2 font-serif;
+  @apply relative float-left font-bold m-0 -mt-1 -ml-1 py-0 pl-0 pr-2 font-serif;
   line-height: 0.92;
   margin-top:-2px;
   font-size: 5rem;

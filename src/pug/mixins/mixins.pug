@@ -134,6 +134,32 @@ mixin image(x)
             }
         `
         sizes=x.sizes
-        class=x.class
-        style=x.style
     )&attributes(attributes)
+
+
+mixin picture(x)
+    picture()&attributes(attributes)
+        - let screens = x.media
+        each screen in screens
+            source(
+                media=`(min-width: ${screen.screenWidth}px)`
+                srcset=`
+                        ${
+                            screen.resolutions.map((resolution, index, arr) => {
+                                return `${mediaFolder}${screen.name}@${resolution}.${screen.ext} ${resolution}w`
+                            })
+                        }
+                    `
+                width = screen.width
+                height = screen.height
+                sizes = screen.sizes
+            )
+        +image({
+            name: x.mobileName,
+            ext: x.mobileExt,
+            src:`${mediaFolder + x.mobileName + '@' + x.mobileResolutions[0] + '.' + x.mobileExt}`,
+            resolutions: x.mobileResolutions,
+            alt: x.alt,
+            width: x.mobileWidth,
+            height: x.mobileHeight
+        })(class=x.class)

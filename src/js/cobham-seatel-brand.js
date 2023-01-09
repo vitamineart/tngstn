@@ -23,13 +23,12 @@ circleTl.from('.circleShip', {
     scale: 2,
     duration: 1,
     ease: 'expo.out',
-    stagger: -.1
+    stagger: -0.2
 }).from('.circleShip-image', {
     opacity: 0,
     scale: 0,
-    y: -100,
     duration: 1,
     ease: 'expo.out',
-    stagger: -0.1
+    stagger: -0.2
 }, "<10%")
 
