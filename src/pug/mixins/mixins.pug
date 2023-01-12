@@ -4,7 +4,7 @@ mixin page-title(u)
             if u.tagClient
                 div(class=`tag-client relative inline-block font-proxima-bold px-2 py-0.5 ${u.inverted ? 'bg-white text-blue' : 'bg-blue-light text-white'} ${u.tagClass || ''}` style=u.tagStyle)= u.tagClient
 
-            h1(class=`${u.h1Class || ''} mt-4 font-proxima-bold leading-none ${u.inverted ? 'text-white' : 'text-blue-dark'} `) !{u.h1}
+            h1(class=`${u.h1Class || ''} mt-4 font-proxima-bold leading-none ${u.inverted ? 'text-white' : 'text-blue-dark'} ` style=u.h1Style) !{u.h1}
             if u.subtitle
                 p(style=u.subtitleStyle class=`page-subtitle mt-3 leading-tight ${u.inverted ? 'text-white' : 'text-blue-dark'} ${u.subtitleClass || ''}`) !{u.subtitle}
             if u.audio
