@@ -78,7 +78,7 @@ mixin page-title(u)
 
 
 mixin lead-in(u)
-    div(class=`lead-in ${ u.bold === false ? 'font-proxima' : 'font-proxima-bold' } text-lg lg:text-xl` class=u.class  style=u.style)
+    div(class=`lead-in ${ u.bold === false ? 'font-proxima' : 'font-proxima-bold' } text-lg lg:text-xl` class=u.class  style=u.style)&attributes(attributes)
         .container.
             !{u.content}
 

@@ -53,5 +53,29 @@ const hero = document.querySelector('#hero');
 const turnOn = document.querySelector('#turnOn');
 const turnOff = document.querySelector('#turnOff');
 
-hero.addEventListener('mouseenter', ()=>turnOn.play())
-hero.addEventListener('mouseleave', ()=>turnOff.play())
+
+
+
+setTimeout(() => {
+    document.querySelector('.hero').click();
+    document.querySelector('.hero').classList.add('light-on');
+    turnOn.preload = 'auto';
+    turnOff.preload = 'auto';
+    turnOn.muted = false;
+    turnOff.muted = false;
+
+    hero.addEventListener('mouseleave', ({target}) => {
+        if (target.classList.contains('light-on')) {
+            target.classList.remove('light-on')
+            turnOff.play()
+        }
+    })
+    hero.addEventListener('mouseenter', ({target}) => {
+        if (!target.classList.contains('light-on')) {
+            target.classList.add('light-on')
+            turnOn.play()
+        }
+        console.log(!target.classList.contains('light-on'));
+
+    })
+}, 1000);

@@ -74,13 +74,13 @@ randomProjects.forEach((item, index)=>{
 })
 
 gsap.registerPlugin(ScrollTrigger);
+const portfolioItems = gsap.utils.toArray('.works-grid .item');
 
 ScrollTrigger.matchMedia({
     "(max-width:861px)": function () {
-        const items = gsap.utils.toArray('.works-grid .item');
 
-        items.forEach((item, i) => {
-        const anim = gsap.from(item, {opacity: 0, y: 50, scale:.8, duration: .5, delay: i * 0.1, ease: 'expo.out()'});
+      portfolioItems.forEach((item, i) => {
+        const anim = gsap.from(item, {opacity: 0, y: 50, scale:.8, duration: .5, delay: i * 0.15, ease: 'expo.out()'});
             ScrollTrigger.create({
                 trigger: item,
                 animation: anim,
@@ -94,8 +94,7 @@ ScrollTrigger.matchMedia({
         gsap.from(".works-grid .item", {
             scrollTrigger: {
                 trigger: '.works-grid',
-                start: '5% 80%',
-                once: true
+                start: '40% 50%',
             },
             opacity: 0,
             scale: 0,
@@ -114,7 +113,8 @@ ScrollTrigger.matchMedia({
 if(document.querySelector('#team')){
   gsap.from('#team .team-member', {
     scrollTrigger: {
-      trigger: '#team'
+      trigger: '#team',
+      start: 'top 90%'
     },
     scale: 0.8,
     opacity: 0,
@@ -158,6 +158,7 @@ if (document.querySelector('#audio-wave')) {
 let commonEase = 'circ.out';
 let commonX = 50;
 let commonY = 50;
+let animStart = 'top 80%';
 let commonDelayQ = 0.2;
 let fadeInLeft = gsap.utils.toArray('.fade-in-left');
 let fadeInRight = gsap.utils.toArray('.fade-in-right');
@@ -178,7 +179,7 @@ fadeInLeft.forEach((item, i) => {
     const anim = gsap.from(item, {opacity: 0, x: commonX, duration: 1, delay: i * commonDelayQ, ease: commonEase});
     ScrollTrigger.create({
         trigger: item,
-        start: 'bottom 100%',
+        start: animStart,
         animation: anim,
         once: true,
     });
@@ -187,7 +188,7 @@ fadeInRight.forEach((item, i) => {
     const anim = gsap.from(item, {opacity: 0, x: -commonX, duration: 1, delay: i * commonDelayQ, ease: commonEase});
     ScrollTrigger.create({
         trigger: item,
-        start: 'bottom 100%',
+        start: animStart,
         animation: anim,
         once: true,
     });
@@ -197,6 +198,7 @@ fadeInUp.forEach((item, i) => {
     ScrollTrigger.create({
         trigger: item,
         animation: anim,
+        start: animStart,
         once: true,
     });
 });
@@ -205,6 +207,7 @@ fadeInDown.forEach((item, i) => {
     ScrollTrigger.create({
         trigger: item,
         animation: anim,
+        start: animStart,
         once: true,
     });
 });
@@ -213,6 +216,7 @@ blurIn.forEach((item, i) => {
     ScrollTrigger.create({
         trigger: item,
         animation: anim,
+        start: animStart,
         once: true,
     });
 });
