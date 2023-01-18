@@ -55,7 +55,6 @@ const turnOff = document.querySelector('#turnOff');
 
 
 
-
 setTimeout(() => {
     document.querySelector('.header').click();
     document.querySelector('.hero').classList.add('light-on');
@@ -64,17 +63,6 @@ setTimeout(() => {
     turnOn.muted = false;
     turnOff.muted = false;
 
-    hero.addEventListener('mouseleave', ({target}) => {
-        if (target.classList.contains('light-on')) {
-            target.classList.remove('light-on')
-            turnOff.play()
-        }
-    })
-    hero.addEventListener('mouseenter', ({target}) => {
-        if (!target.classList.contains('light-on')) {
-            target.classList.add('light-on')
-            turnOn.play()
-        }
-    })
+    turnOn.play();
 }, 1000);
 
