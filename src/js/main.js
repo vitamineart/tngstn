@@ -158,7 +158,7 @@ if (document.querySelector('#audio-wave')) {
 let commonEase = 'circ.out';
 let commonX = 50;
 let commonY = 50;
-let animStart = 'top 80%';
+let animStart = '20% 80%';
 let commonDelayQ = 0.2;
 let fadeInLeft = gsap.utils.toArray('.fade-in-left');
 let fadeInRight = gsap.utils.toArray('.fade-in-right');

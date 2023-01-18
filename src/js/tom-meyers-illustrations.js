@@ -57,7 +57,7 @@ const turnOff = document.querySelector('#turnOff');
 
 
 setTimeout(() => {
-    document.querySelector('.hero').click();
+    document.querySelector('.header').click();
     document.querySelector('.hero').classList.add('light-on');
     turnOn.preload = 'auto';
     turnOff.preload = 'auto';
@@ -75,7 +75,6 @@ setTimeout(() => {
             target.classList.add('light-on')
             turnOn.play()
         }
-        console.log(!target.classList.contains('light-on'));
-
     })
 }, 1000);
+

@@ -9,15 +9,14 @@ prepend preload
 
 
 
-
 append head
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print"  onload="this.media='all'"/>
 
     style.
         .hero-overlay {
             background: radial-gradient(40% 60% at 30% 30%, #242424, #000);
-            opacity: .97;
-            mix-blend-mode: darken;
+            opacity: .94;
+            mix-blend-mode: hard-light;
         }
         .hero-desktop {
 
@@ -70,11 +69,13 @@ append head
         }
 
 block page
-
-
     .hero(class="relative group" id="hero")
-        img(src="media/tom-meyer/Hero@1920.jpg" srcset="media/tom-meyer/Hero@660.jpg 660w, media/tom-meyer/Hero@782.jpg 782w, media/tom-meyer/Hero@1000.jpg 1000w, media/tom-meyer/Hero@1441.jpg 1441w, media/tom-meyer/Hero@1920.jpg 1920w, media/tom-meyer/Hero@2881.jpg 2881w" alt="Hero" height="1217" width="1920" class="hero-desktop w-full relative z-0 object-cover")
-        img(src="media/tom-meyer/book@1024.jpg" srcset="media/tom-meyer/book@360.jpg 360w, media/tom-meyer/book@480.jpg 480w, media/tom-meyer/book@600.jpg 600w, media/tom-meyer/book@800.jpg 800w, media/tom-meyer/book@1024.jpg 1024w, media/tom-meyer/book@1318.jpg 1318w" sizes="(max-width: 500px) 33vw, (max-width: 600px) 25vw, 20vw" width="400" height="572" class="absolute hero-book " alt="Robert Finn Book")
+        +image({
+            name: 'Hero',
+            ext: 'jpg',
+        })(alt="Hero" height="1217" width="1920" class="hero-desktop w-full relative z-0 object-cover" src="media/tom-meyer/Hero@1920.jpg")
+
+        img(src="media/tom-meyer/book@1024.jpg" srcset="media/tom-meyer/book@360.jpg 360w, media/tom-meyer/book@480.jpg 480w, media/tom-meyer/book@600.jpg 600w, media/tom-meyer/book@800.jpg 800w, media/tom-meyer/book@1024.jpg 1024w" sizes="(max-width: 500px) 33vw, (max-width: 600px) 25vw, 20vw" width="400" height="572" class="absolute hero-book " alt="Robert Finn Book")
         div(class="hero-overlay absolute w-full h-full inset-0 z-10 transition duration-500")
 
     div(
@@ -172,7 +173,7 @@ block page
             +image({
                 name:'pen',
                 ext: 'png',
-                resolutions: [619,825,1024,1237,1650,1920,2474]
+                resolutions: [619,825,1024,1237,1650,1920]
             })(sizes="(max-width:1279px) 80vw, 825px" alt="Pen" class="xl:mt-20" width="825" height="130" class=" relative  z-10 mt-10 sm:mt-16  mx-auto " id="pen")
             style.
                 #pen {
@@ -404,7 +405,7 @@ block page
                                     height: 664px;
                                 }
                             }
-                        img(loading="lazy" src="media/tom-meyer/book-image@879.jpg" srcset="media/tom-meyer/book-image@660.jpg 660w, media/tom-meyer/book-image@879.jpg 879w, media/tom-meyer/book-image@1319.jpg 1319w, media/tom-meyer/book-image@1758.jpg 1758w, media/tom-meyer/book-image@2637.jpg 2637w, media/tom-meyer/book-image@3516.jpg 3516w" sizes="(max-width: 639px) 90vw, (max-width: 1600px) 45vw,  46vw" alt="Book Image" width="879" height="664" class="mx-auto sm:float-right sm:ml-10 sm:mb-10 -mt-12 mb-8 sm:-mt-20 md:-mt-28 lg:absolute sm:w-1/2 lg:object-cover object-left" id="book-image")
+                        img(loading="lazy" src="media/tom-meyer/book-image@879.jpg" srcset="media/tom-meyer/book-image@660.jpg 660w, media/tom-meyer/book-image@879.jpg 879w, media/tom-meyer/book-image@1319.jpg 1319w, media/tom-meyer/book-image@1758.jpg 1758w" sizes="(max-width: 639px) 90vw, (max-width: 1600px) 45vw,  46vw" alt="Book Image" width="879" height="664" class="mx-auto sm:float-right sm:ml-10 sm:mb-10 -mt-12 mb-8 sm:-mt-20 md:-mt-28 lg:absolute sm:w-1/2 lg:object-cover object-left" id="book-image")
 
                         p It is rare for an art form to have made an impact academically, culturally, socially, economically, and as commercial art in advertising.
                         p This target audience is familiar with, and even wistful about cartoons. They have grown up with cartoons whether in newspapers or on television. Since their childhoods, they have associated cartoons with laughter, happiness and fun.

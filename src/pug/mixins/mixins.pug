@@ -119,6 +119,7 @@ mixin iconMulti(x)
 
 
 mixin image(x)
+    - let resolutions = x.resolutions || [640, 768, 1024, 1366, 1600, 1920];
     img(
         id=x.id
         width=x.width
@@ -128,7 +129,7 @@ mixin image(x)
         loading = x.loading || 'lazy'
         srcset= `
             ${
-                x.resolutions.map((resolution, index, arr) => {
+                resolutions.map((resolution, index, arr) => {
                     return `${mediaFolder}${x.name}@${resolution}.${x.ext} ${resolution}w`
                 })
             }
