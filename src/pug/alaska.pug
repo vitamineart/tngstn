@@ -33,24 +33,7 @@ append head
                 min-height: 800px;
             }
         }
-        .hero-ship {
-            width: 70%;
-            max-width: 1235px;
-        }
-        @media (min-width: 640px){
-            .hero-ship {
-                width: 60%;
-            }
-        }
-        @media (min-width: 768px){
-            .hero-ship {
-                width: 50%;
-            }
-        }
-        @media (min-width: 1024px){
-            .hero-ship {
-            }
-        }
+
         @media (min-width: 1280px){
             .hero-ship {
                 max-width: 1235px;
@@ -58,7 +41,7 @@ append head
         }
 
 block page
-    .hero(class="relative pt-px z-0" )
+    .hero(class="relative pt-px z-0 overflow-x-hidden" )
         div(class="absolute inset-0 z-50")
             +page-title({
                 class:' lg:mt-5 xl:mt-10 2xl:mt-16 z-10',
@@ -71,9 +54,9 @@ block page
                 audio: '#',
             })
         div(class="relative z-0")
-            img(src="../media/alaska/hero-bg.svg", alt="Hero Background" class="object-contain object-bottom relative z-0 hero-bg w-full")
-            img(src="../media/alaska/hero-ship.svg", alt="Hero Ship" class="w-1/2 hero-ship absolute z-10 -left-1/2 bottom-0" width="1235" height="380")
-        img(src="../media/alaska/hero-waves.svg", alt="Waves" class="relative z-20 object-cover w-full -mt-2")
+            img(src="../media/alaska/hero-bg-night.svg", alt="Hero Background" class="relative z-0 hero-bg w-full object-contain object-bottom")
+            img(src="../media/alaska/hero-ship-night.svg", alt="Hero Ship" class="hero-ship absolute z-10 -left-1/2 bottom-0 w-10/12 xs:w-2/3 sm:w-1/2" width="1235" height="380")
+        img(src="../media/alaska/hero-waves-night.svg", alt="Waves" class="relative z-20 object-cover w-full -mt-2")
 
 
         //- img(src="../media/alaska/Ship_R-01.svg", alt="Ship" width="718" height="225" class="absolute left-5 top-1/2 z-10")
@@ -221,9 +204,36 @@ block page
             svg(class="high-wave-edge -scale-100 relative top-5 z-10 w-full h-5")
                 path(fill="#fff" d="M0 3.5V20h1920V6.631c-3.47-.512-6.93-1.555-10.4-3.13-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.53 4.666-30.8 0-10.27-4.668-20.53-4.668-30.8 0-10.27 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0-10.267 4.666-20.533 4.666-30.8 0-10.267-4.668-20.533-4.668-30.8 0C20.533 8.166 10.267 8.166 0 3.5Z")
 
-        section(class="relative py-20 " style={
-            background: '#5782B7'
-        })
+        style.
+            :root {
+                --laptop-offset: 35vw;
+            }
+            .website-role-section {
+                background: #5782B7;
+                padding-bottom: var(--laptop-offset);
+            }
+            .website-images-container {
+                margin-bottom: calc(-0.5 * var(--laptop-offset));
+            }
+            @media (min-width:1024px){
+                .website-role-section {
+                    --laptop-offset: 23vw;
+                }
+                .website-images-container {
+                    margin-bottom: calc(-0.4 * var(--laptop-offset));
+                }
+            }
+            @media (min-width:1740px){
+                .website-role-section {
+                    --laptop-offset: 400px;
+                }
+                .website-images-container {
+                    margin-bottom: -240px;
+                }
+
+            }
+
+        section(class="website-role-section relative pt-20")
             .container.text-white.z-10.relative
                 div(class="max-w-2xl mx-auto" style={'max-width': '710px'})
                     header(class="text-3xl font-proxima-bold text-center") Role of the website
@@ -254,27 +264,34 @@ block page
             })(class="absolute inset-0 w-full h-full z-0 mix-blend-luminosity opacity-30 object-cover")
 
 
-        section(class="py-10 lg:py-20"
+        section(id="laptop-section" class="pt-px pb-10 lg:pb-20 relative"
             style={
                 'background':'radial-gradient(40% 50% at 50% 0%, #efefef, #fff0), radial-gradient(40% 50% at 50% 100%, #efefef, #fff0)'
 
             })
-                div(class="flex items-center")
-                    +image({
-                        name: 'save-ferry-page1',
-                        ext: 'jpg',
-                        resolutions: [672]
-                    })(width="672" height="420")
-                    +image({
-                        name: 'save-ferry-laptop',
-                        ext: 'png',
-                        resolutions: [640, 768, 1024, 1366, 1600, 1920]
-                    })(width="1115" height="614" class="")
+
+                div(class="relative -translate-y-1/2 mx-auto website-images-container" style="max-width: 1740px;")
+                    div(class="save-ferry-laptop-shadow absolute inset-0 m-auto w-9/12 lg:w-1/2 h-4/5 opacity-70 bg-black z-10" style={
+                        filter: "blur(25px)",
+                    })
                     +image({
                         name: 'save-ferry-page2',
                         ext: 'jpg',
                         resolutions: [672]
-                    })(width="672" height="420")
+                    })(width="672" height="420" class="absolute w-1/2 lg:w-1/3 -left-4 lg:left-12 top-1/2 -translate-y-1/2 z-0" src="../media/alaska/save-ferry-page2@672.jpg" style={
+                        filter: "drop-shadow(10px 3px 10px hsla(0,0%,0%,.5))"
+                    })
+                    +image({
+                        name: 'save-ferry-laptop',
+                        ext: 'png',
+                    })(width="1115" height="614" class="save-ferry-laptop relative w-full lg:w-2/3 m-auto inset-0 z-20" )
+                    +image({
+                        name: 'save-ferry-page1',
+                        ext: 'jpg',
+                        resolutions: [672]
+                    })(width="672" height="420" class="absolute w-1/2 lg:w-1/3 -right-2 lg:right-12 top-1/2 -translate-y-1/2 z-0" src="../media/alaska/save-ferry-page1@672.jpg" style={
+                        filter: "drop-shadow(-10px 3px 10px hsla(0,0%,0%,.5))"
+                    })
 
                 .container
                     p(class="mx-auto text-current border-current border-4 py-4 px-6 xs:w-11/12 sm:w-10/12 md:w-8/12 lg:w-auto md:px-10 md:py-6 rounded font-proxima-bold  text-xl lg:text-2xl xl:text-3xl mb-12" style="color: #628FC7; max-width: 613px") After a one and a half year campaign, the website had achieved its goal, and was retired.
