@@ -1,12 +1,12 @@
 header(class="header relative z-50 py-4 bg-white" class=`${headerShadow === false ? '' : 'header-shadow'}`)
     .container.flex.justify-between.items-center
-        a(class=" logo w-36 md:w-44 h-12 md:h-14" href="/")
+        a(class=" logo w-36 md:w-44 h-12 md:h-14" href="/" aria-label="Tungsten Logo")
             +iconMulti({
                 icon: "logo",
                 class: 'w-full h-full'
             })
 
-        a(class="nav-menu w-12 md:w-14 h-6 md:h-7 text-blue hover:text-blue-light" href="mailto:hello@tngstn.com" target="_blank" rel="noopener noreferrer")
+        a(class="nav-menu w-12 md:w-14 h-6 md:h-7 text-blue hover:text-blue-light" href="mailto:hello@tngstn.com" target="_blank" rel="noopener noreferrer" aria-label="Contact Us")
             +iconMono({
                 icon:"envelope-closed",
                 class: 'fill-transparent stroke-4 stroke-current w-full h-full'
