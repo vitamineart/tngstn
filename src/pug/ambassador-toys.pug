@@ -5,7 +5,7 @@ block variables
 prepend preload
 
 append head
-    script(src="js/ambassador-toys.js" defer)
+
 
 block page
     div(class="hero relative grid overflow-hidden bg-gradient-to-b from-blue-dark via-[#004B80] to-blue-light")
@@ -46,7 +46,7 @@ block page
 
     article(class=" page-content leading-relaxed overflow-hidden")
         .container.flow-root
-            img(src="media/ambassador-toys/pinguin@224.png", srcset="media/ambassador-toys/pinguin@224.png 224w, media/ambassador-toys/pinguin@288.png 288w, media/ambassador-toys/pinguin@432.png 432w, media/ambassador-toys/pinguin@448.png 448w, media/ambassador-toys/pinguin@576.png 576w, media/ambassador-toys/pinguin@672.png 672w, media/ambassador-toys/pinguin@720.png 720w", sizes="(max-width: 480px) 144px, (max-width: 768px) 192px, 224px", alt="Pinguin Toy" class="float-right shape-outside -mr-12 w-36 xs:-mr-10 xs:w-48 md:w-56 md:mr-0" width="600" height="1156" data-aos="fade-left")
+            img(src="media/ambassador-toys/pinguin@224.png", srcset="media/ambassador-toys/pinguin@224.png 224w, media/ambassador-toys/pinguin@288.png 288w, media/ambassador-toys/pinguin@432.png 432w, media/ambassador-toys/pinguin@448.png 448w, media/ambassador-toys/pinguin@576.png 576w, media/ambassador-toys/pinguin@672.png 672w, media/ambassador-toys/pinguin@720.png 720w", sizes="(max-width: 480px) 144px, (max-width: 768px) 192px, 224px", alt="Pinguin Toy" class="float-right shape-outside -mr-12 w-36 xs:-mr-10 xs:w-48 md:w-56 md:mr-0" width="600" height="1156" id="pinguin")
             p.drop-cap(style="--color: hsla(205, 74%, 47%, 1)").
                 For years, the stores had relied on TV stations or the in-house graphics departments of newspapers to create the ads. (Most publications will offer this service if you buy space from them.)
             p.
@@ -70,11 +70,41 @@ block page
                     img(loading="lazy" src="media/ambassador-toys/toys_works/catchThem@1200.jpg", srcset="media/ambassador-toys/toys_works/catchThem@300.jpg 300w, media/ambassador-toys/toys_works/catchThem@600.jpg 600w, media/ambassador-toys/toys_works/catchThem@800.jpg 800w, media/ambassador-toys/toys_works/catchThem@1000.jpg 1000w, media/ambassador-toys/toys_works/catchThem@1200.jpg 1200w, media/ambassador-toys/toys_works/catchThem@1519.jpg 1519w, media/ambassador-toys/toys_works/catchThem@1920.jpg 1920w", sizes="(max-width: 1024px) 90vw, 635px" alt="" width="631" height="213" class="rotate-1 shadow-2xl mt-10 sm:-mr-10 ml-auto max-w" )
                 img(loading="lazy" src="media/ambassador-toys/two_clouds.png", alt="" class="absolute inset-0 -left-32 -z-10" data-aos="zoom-in-right" data-aos-duration="700")
 
-            div(class="relative w-96 aspect-square mx-auto sm:float-left -left-10 xs:left-auto" style="shape-outside: circle(50%); " data-aos="fade-right" data-aos-duration="500" data-aos-delay="100")
-                div(class=" absolute z-10 inset-0 bottom-3 right-2 m-auto w-72 h-36 text-white uppercase text-xl font-proxima-bold text-center leading-relaxed rounded-full").
-                    Tungsten has years of experience creating distinctive/memorable  advertising ideas for uniquely San Francisco brands.
-                //- img(src="media/ambassador-toys/BlueCircleStars.svg", alt="" class="-left-8 absolute z-0 scale-110 sm:scale-105" loading="lazy" width="402" height="374")
-                <svg width="402" height="374" viewBox="0 0 402 374" fill="none" class="-left-10 absolute z-0 scale-95 sm:scale-100"> <circle cx="102.5" cy="108.5" r="102.5" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="102.5" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="102.5" fill="#36C0C8"/> <circle cx="102.5" cy="108.5" r="71.75" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="71.75" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="71.75" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="41.7321" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="41.7321" fill="#DB5836"/> <circle cx="102.5" cy="108.5" r="41.7321" fill="#F9E75C"/> <circle cx="227.5" cy="199.5" r="174.5" fill="url(#paint0_linear_1961_1168)"/> <path d="M330.656 12.6562C331.686 11.0413 334.167 11.5595 334.355 13.4288L336.213 31.9242C336.297 32.7635 336.913 33.443 337.747 33.6171L356.955 37.6294C358.882 38.032 359.051 40.6673 357.197 41.4108L339.385 48.5538C338.533 48.8952 338.004 49.7514 338.094 50.6423L339.913 68.7553C340.104 70.6532 337.725 71.7624 336.42 70.3839L323.182 56.3942C322.626 55.8067 321.753 55.6243 320.98 55.9343L302.576 63.3144C300.763 64.0417 299.123 62.0928 300.169 60.4532L310.15 44.8053C310.641 44.0356 310.556 43.0512 309.944 42.404L297.131 28.864C295.798 27.4545 297.163 25.1399 299.091 25.5425L318.299 29.5547C319.133 29.7289 320.002 29.3596 320.464 28.6345L330.656 12.6562Z" fill="#F9E75C"/> <path d="M221.178 54.7359C221.162 52.86 223.59 52.1057 224.79 53.6142L227.572 57.1115C228.11 57.7885 229.019 58.073 229.834 57.8198L234.023 56.5186C235.9 55.9357 237.51 58.0913 236.338 59.6179L233.919 62.767C233.382 63.4659 233.403 64.4443 233.971 65.158L236.536 68.3831C237.752 69.9118 236.315 71.9986 234.429 71.4447L229.916 70.12C229.107 69.8826 228.249 70.1491 227.756 70.7907L225.006 74.3711C223.856 75.868 221.359 75.0029 221.342 73.1018L221.306 69.0912C221.298 68.2037 220.683 67.4098 219.802 67.1513L215.833 65.9861C213.908 65.4213 213.801 62.7991 215.678 62.2161L219.867 60.915C220.683 60.6618 221.225 59.9268 221.217 59.0849L221.178 54.7359Z" fill="#F9E75C"/> <defs> <linearGradient id="paint0_linear_1961_1168" x1="227.5" y1="25" x2="227.5" y2="374" gradientUnits="userSpaceOnUse"> <stop stop-color="#174375"/> <stop offset="1" stop-color="#3378A8"/> </linearGradient> </defs> </svg>
+
+            style.
+                #blue-circle-stars-message {
+                    scale: .9;
+                    left: 50%;
+                    translate: -53% 0;
+                }
+                @media (min-width: 430px){
+                    #blue-circle-stars-message {
+                        scale: 1;
+                        left: auto;
+                        translate: 0 0;
+                    }
+                }
+
+            div(class="relative w-84 xs:w-96 aspect-square mx-auto sm:float-left" style="shape-outside: circle(50%); " id="blue-circle-stars-message")
+                div(class="blue-circle-blue grid place-items-center relative z-10 w-90 h-90 text-white uppercase text-xl font-proxima-bold text-center leading-relaxed rounded-full message mx-auto" style={
+                    'background':'linear-gradient(#174375, #3378A8)'
+                })
+                    span(class="px-10 pt-6") Tungsten has years of experience creating distinctive/memorable  advertising ideas for uniquely San Francisco brands.
+                div( class="absolute -left-12 -top-3 z-0 w-7/12 aspect-square blue-circle-circles ")
+                    div(class="absolute m-auto z-0 inset-0 rounded-full blue-circle-circle w-full h-full"  style="background-color: #36C0C8" data-depth=".1")
+                    div(class="absolute m-auto z-10 inset-0 rounded-full blue-circle-circle w-2/3 h-2/3" style="background-color: #DB5836" data-depth=".2")
+                    div(class="absolute m-auto z-20 inset-0 rounded-full blue-circle-circle w-2/5 h-2/5" style="background-color: #F9E75C" data-depth=".3")
+
+                div(class="blue-circle-stars z-30 absolute left-5/12 right-2 top-0 w-1/2 flex justify-between")
+                    svg(data-depth="0.1" class="blue-circle-star z-20 mt-10 absolute" width="23" height="24" fill="none" viewBox="0 0 23 24")
+                        path(fill="#F9E75C"  d="M7.178 2.736C7.162.86 9.59.106 10.79 1.614l2.782 3.497a2.112 2.112 0 0 0 2.262.709l4.19-1.301c1.876-.583 3.486 1.572 2.313 3.099l-2.418 3.149c-.537.699-.516 1.677.052 2.391l2.565 3.225c1.216 1.529-.22 3.616-2.107 3.062l-4.513-1.325c-.81-.237-1.667.03-2.16.67l-2.75 3.581c-1.15 1.497-3.647.632-3.664-1.27l-.036-4.01c-.008-.887-.623-1.681-1.504-1.94l-3.97-1.165c-1.924-.565-2.031-3.187-.154-3.77l4.19-1.301a1.894 1.894 0 0 0 1.35-1.83l-.04-4.35Z")
+
+                    svg(data-depth="0.4" class="blue-circle-star z-20 ml-18 -mt-2 absolute" width="63" height="60" fill="none" viewBox="0 0 63 60")
+                        path(fill="#F9E75C" d="M34.656 1.656c1.03-1.615 3.51-1.096 3.699.773l1.858 18.495c.084.84.7 1.519 1.533 1.693l19.208 4.012c1.928.403 2.097 3.038.243 3.782l-17.813 7.143c-.85.341-1.38 1.197-1.29 2.088l1.82 18.113c.19 1.898-2.19 3.007-3.494 1.629l-13.238-13.99a2 2 0 0 0-2.202-.46l-18.404 7.38c-1.813.728-3.453-1.221-2.408-2.86l9.981-15.649c.491-.77.407-1.754-.205-2.401L1.13 17.864c-1.334-1.41.032-3.724 1.96-3.322l19.208 4.013a2.079 2.079 0 0 0 2.165-.92l10.193-15.98Z")
+
+
+
+
             p(class="sm:!mt-20").
                 Tungsten gave the brand a distinctive look, voice, style, and identity. The creative gives the brand an image that is charming,  irreverent, witty, unpredictable, sometimes wry, always cerebral, independent and premium.
             p.
@@ -98,7 +128,7 @@ block page
             .container.relative.z-10
                 div(class="-left-2 -top-36 scale-75 sm:scale-100 sm:left-10 sm:-top-36 absolute z-0")
                     img(loading="lazy" src="media/ambassador-toys/butterfly@202.png" srcset="media/ambassador-toys/butterfly@101.png 101w, media/ambassador-toys/butterfly@152.png 152w, media/ambassador-toys/butterfly@202.png 202w, media/ambassador-toys/butterfly@304.png 304w, media/ambassador-toys/butterfly@404.png 404w, media/ambassador-toys/butterfly@606.png 606w, media/ambassador-toys/butterfly@804.png 804w" sizes="(max-width:640px) 151px, 202px" alt="Butterfly Image" class="butterfly" width="202" height="202" data-aos="zoom-in-up")
-                div(class="toys-works-grid relative z-10 sm:-mt-8 flex flex-wrap justify-center sm:grid grid-cols-12 gap-6 sm:gap-8 place-items-center drop-shadow-xl  grid-flow-row-dense ")
+                div(class="toys-works-grid relative z-10 sm:-mt-8 flex flex-wrap justify-center sm:grid grid-cols-12 gap-6 sm:gap-8 place-items-center  grid-flow-row-dense ")
                     a(href="media/ambassador-toys/toys_works/bestSeat@3x.jpg" data-fslightbox="gallery" class="col-span-8 row-span-4 sm:col-span-4 sm:row-span-3 sm:place-self-end")
                         img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/bestSeat.jpg", alt="Best Seat Image" width="226" height="146" style="transform: rotate(-1.68deg)")
                     a(href="media/ambassador-toys/toys_works/diabolicalPieces@3x.jpg" data-fslightbox="gallery" class="col-span-4 row-span-4 sm:col-span-3 sm:row-span-3 sm:self-start")
@@ -133,7 +163,7 @@ block page
                         img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/catchThem@600.jpg", alt="Catch Them While You Can Image" style=" transform: rotate(0.87deg)" width="631" height="213")
 
 
-                div(class="toys-works-grid grid gap-y-8 place-content-center place-items-center drop-shadow-2xl mt-10" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))")
+                div(class="toys-works-grid grid gap-y-8 place-content-center place-items-center mt-10" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))")
                     a(href="media/ambassador-toys/toys_works/littleGreenThumbs@3x.jpg" data-fslightbox="gallery" class="min-w-max md:justify-self-end" )
                         img(class="shadow" loading="lazy" src="media/ambassador-toys/toys_works/littleGreenThumbs.jpg", alt="Little Green Thumbs Image"  width="249" height="128" )
                     a(href="media/ambassador-toys/toys_works/rainGear@3x.jpg" data-fslightbox="gallery" class="min-w-max " )
@@ -321,6 +351,8 @@ append footer_scripts
         }
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.js" integrity="sha512-EqNNJuepkw5P9vxCml8eBk7C4Ld+4kAnvzOD/jG21rkxWPILGoQa5EvD62UieiJF0u3xoQrcVnce4i83VnYj/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" async)
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js" defer)
+    script(src="js/ambassador-toys.js" defer)
 
 
 

@@ -1,14 +1,18 @@
-gsap.from('#alaska-logo', {
-    scrollTrigger: {
-      trigger: '#alaska-logo',
-    },
-    rotate: 360,
-    filter: 'blur(10px)',
-    scale: 0,
-    opacity: 0,
-    duration: 2,
-    ease: 'expo.out()'
-  })
+const sealTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#alaska-state-seal',
+    start: 'top 50%',
+  },
+})
+sealTl.from('#alaska-state-seal', {
+  scale: 2,
+  opacity: 0,
+  duration: .6,
+  ease: 'back.out(1.4)'
+}).from('#alaska-state-seal', {
+  rotate: 20,
+  duration: 0.4
+}, "<")
 
 
   document.addEventListener("DOMContentLoaded", function() {
@@ -51,6 +55,7 @@ gsap.fromTo('.hero-ship', {
 
 
 
+
 const alaskaTl = gsap.timeline({
   scrollTrigger: {
     trigger: '#alaska-map',
@@ -84,9 +89,9 @@ alaskaTl.from('#alaska-map', {
   stagger: .1
 }, "0.7")
 .from('#alaska-map .lines > path', {
-  'stroke-width': 10,
   opacity: 0,
-  duration: 1,
+  duration: 2,
+  ease: 'expo.out',
   stagger: .2
 }, "3")
 .from('#alaska-map .routes .route', {
@@ -109,53 +114,85 @@ const mapLabels = document.querySelectorAll('#alaska-map .cities-labels .label')
 const alaskaRoutes = document.querySelectorAll('#alaska-map .route');
 const routeLines = document.querySelectorAll('#alaska-map .lines path');
 
+
 mapLabels.forEach(item=>{
   item.addEventListener('mouseenter', ({target})=>{
-    routeLines.forEach(line=>gsap.set(line, {'stroke-width':2, filter: 'blur(0)', opacity: 0}))
-    alaskaRoutes.forEach(route=>gsap.set(route, {opacity:0.2}))
+
+    gsap.to(mapLabels, {opacity: 0.2, duration: 0.7})
+    gsap.to(target, {opacity: 1, duration: 0.7})
+    gsap.to(alaskaRoutes, {opacity:0.2, duration: .15});
 
     const labelRoutes = target.dataset.route.split(' ');
-    routeLines.forEach(line=>{
+
+    routeLines.forEach( line => {
+
       if(labelRoutes.includes(line.dataset.route)) {
-        line.style.opacity = 1;
-        gsap.from(line, {'stroke-width':20, filter: 'blur(5px)', duration: 1, ease: 'expo.out'})
+        line.style.setProperty("transition", ".9s ease-out");
+        gsap.set(line, {
+          'stroke-dashoffset':1,
+          opacity: 0,
+          onComplete: ()=>{
+            gsap.set(line, {
+              'stroke-dashoffset':0,
+              opacity: 1
+            })
+          }
+        })
+      } else {
+        gsap.set(line, {
+          'stroke-dashoffset':1,
+          opacity: 0
+        })
       }
     })
-    alaskaRoutes.forEach(route=>{
+
+    alaskaRoutes.forEach( route => {
       if(labelRoutes.includes(route.id)){
-        route.style.opacity = 1;
+        gsap.to(route, {opacity:1, duration: .7, ease: 'circ.out'})
+      } else {
+        gsap.to(route, {opacity:0.2, duration: .7, ease: 'circ.out'})
       }
     })
 
   })
-  item.addEventListener('mouseleave', ({target})=>{
-    routeLines.forEach(line=>gsap.set(line, {opacity: 1}))
-    alaskaRoutes.forEach(route=>gsap.set(route, {opacity: 1}))
+  item.addEventListener('mouseleave', ()=>{
+    gsap.set(routeLines, {'stroke-dashoffset':0, opacity: 1})
+    alaskaRoutes.forEach(route=>gsap.to(route, {opacity: 1, duration: .7, ease: 'circ.out'}))
+    gsap.to(mapLabels, {opacity: 1, duration: 0.7, ease: 'circ.out'})
+
   })
 })
+
+
 alaskaRoutes.forEach(route=>{
+
   route.addEventListener('mouseenter', ({target})=>{
-    routeLines.forEach(line=>gsap.set(line, {'stroke-width':2, filter: 'blur(0)', opacity: 0}))
     const filtreredLine = Array.from(routeLines).filter((line) => line.dataset.route === target.id)[0]
-    filtreredLine.style.opacity = 1;
-    gsap.from(filtreredLine, {'stroke-width':20, filter: 'blur(5px)', duration: 1, ease: 'expo.out'})
 
+    filtreredLine.style.setProperty("transition", ".9s ease-out");
 
+    gsap.set(routeLines,{
+      'stroke-dashoffset':1,
+      opacity: 0
+    })
+    gsap.set(filtreredLine, {
+      'stroke-dashoffset':0,
+      opacity: 1
+  })
+
+    mapLabels.forEach(label=>gsap.to(label, {opacity:0.2}))
     const routeCities = target.dataset.cities.split(" ");
-    mapLabels.forEach(label=>gsap.set(label, {opacity:0.2}))
-
-
     mapLabels.forEach(label=>{
       if(routeCities.includes(label.id)) {
-        label.style.opacity = 1;
+        gsap.to(label, {opacity: 1,  duration: .7})
       }
     })
 
   })
 
   route.addEventListener('mouseleave', ({target})=>{
-    mapLabels.forEach(label=>label.style.opacity = 1)
-    routeLines.forEach(line=>line.style.opacity = 1)
+    gsap.to(mapLabels, {opacity: 1,  duration: .7})
+    gsap.set(routeLines, {'stroke-dashoffset':0, opacity: 1})
   })
 
 
