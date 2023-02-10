@@ -1,66 +1,69 @@
 -
+    const thumbsFolder = 'media/projects/';
+    mediaFolder = thumbsFolder;
     const projects = [
-        {
-            category: 'Telecom',
-            name: 'Maritime White Papers',
-            image: 'media/works_clients_item1.jpg',
-            url: 'white-paper.html'
-        },
         {
             category: 'Telecom',
             name: 'Cobham SeaTel Brand',
             type: 'Web',
-            image: 'media/works_clients_item4.jpg',
-            url: 'cobham-seatel-brand.html'
+            image: `cobham-brand`,
+            url: `cobham-seatel-brand.html`
         },
         {
             category: 'Telecom',
             name: 'Davis Instruments',
             type: 'Web',
-            image: 'media/works_clients_item7.jpg',
-            url: 'davis-instruments.html'
+            image: `davis-instruments`,
+            url: `davis-instruments.html`
         },
         {
             category: 'Telecom',
             name: 'Ambassador Toys',
             type: 'Print',
-            image: 'media/works_clients_item8.jpg',
-            url: 'ambassador-toys.html'
+            image: `ambassador-toys`,
+            url: `ambassador-toys.html`
         },
         {
             category: 'Telecom',
             name: 'Cobham Seatel Datasheets',
             type: 'Print',
-            image: 'media/works_clients_item9.jpg',
-            url: 'cobham-seatel-datasheets.html'
+            image: `cobham-datasheets`,
+            url: `cobham-seatel-datasheets.html`
         },
         {
             category: 'Telecom',
             name: 'Tom Meyer\'s Illustrations',
             type: 'Print',
-            image: 'media/works_clients_item10.jpg',
-            url: 'tom-meyers-illustrations.html'
+            image: `tom-meyer`,
+            url: `tom-meyers-illustrations.html`
         },
         {
             category: 'Telecom',
             name: 'Shamann Walton',
             type: 'Print',
-            image: 'media/works_clients_item11.jpg',
-            url: 'shamann-walton.html'
+            image: `shamann-walton`,
+            url: `shamann-walton.html`
         },
         {
             category: 'Telecom',
             name: 'Porziuncola',
             type: 'Print',
-            image: 'media/works_clients_item12.jpg',
-            url: 'porziuncola.html'
+            image: `porziuncola`,
+            url: `porziuncola.html`
         },
         {
             category: 'Telecom',
             name: 'Alaska',
             type: 'web',
-            image: 'media/works_clients_item3.jpg',
-            url: 'alaska.html'
+            image: `alaska`,
+            url: `alaska.html`
+        },
+        {
+            category: 'Telecom',
+            name: 'New Delhi Restaurant',
+            type: 'web',
+            image: `new-delhi`,
+            url: `new-delhi.html`
         },
     ]
 
@@ -70,20 +73,25 @@
 
 
 section(class="py-10 md:py-16")
-    .container
-        header.text-blue.font-proxima-bold.text-3xl.text-center Our Work and Clients
-        div(class="works-grid grid gap-2 md:gap-4 mt-6 md:mt-10")
+    .container.max-w-7xl
+        if currentUrl !== '/'
+            header.text-blue.font-proxima-bold.text-3xl.text-center Our Work and Clients
+        div(class=`works-grid grid gap-3 md:gap-4 ${currentUrl !== '/' ? 'mt-6 md:mt-10' : ''} `)
             each project in filteredProjects
                 a.item(
                     href=project.url
                     class="m-auto max-w-sm sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity min-w-fit"
                 )
-                    .overlay(class="absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change: opacity")
-                        .text(class="text-center text-white tracking-wide" style="text-shadow: 0 1px 5px var(--c-blue-dark);")
-                            div(class="project-category text-xs transition-transform-opacity will-change-transform-opacity uppercase -translate-x-3 duration-500 opacity-0 group-hover:opacity-100 group-hover:transform-none")= project.category
+                    .overlay(class="absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)")
+                        .text(class="text-center text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);")
+                            div(class="project-category text-xs transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-100 group-hover:transform-none")= project.category
                             div(class="project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100")= project.name
-                            div(class="project-type translate-x-3 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-100")= project.type
-                    img(loading="lazy" width="470" height="262" src=`${project.image}` alt=`${project.name} Image` class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-110 group-hover:rotate-1" style="transition-property: color, transform")
+                            div(class="project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-100")= project.type
+                    +image({
+                        name: `${project.image}`,
+                        ext: 'jpg',
+                        resolutions: [510, 780]
+                    })(class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-110 group-hover:rotate-1" style="transition-property: color, transform" width="390" height="217" alt=`${project.name}` src=`${thumbsFolder + project.image}@390.jpg` sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px")
 
 
 

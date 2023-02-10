@@ -6,140 +6,47 @@ block variables
 
 prepend preload
 
+append preload
 
 
 
-append head
 
-
+prepend head
     style.
+        #title {
+            max-width: 16ch;
+            font-size: clamp(2.2rem, 11vw, 3.75rem);
+        }
+
 
 block page
-    style.
-        @media (max-width: 768px) {
-            .hero-bg {
-                height: max(50vh, 400px);
-                object-position: 70%;
-            }
-        }
-    //- +image({
-    //-     src: `${mediaFolder}hero_mobile@360.jpg`,
-    //-     width: 200,
-    //-     name: 'hero_mobile',
-    //-     ext: 'jpg',
-    //-     srcset: {
-    //-         resolutions: [360, 540, 640, 720, 1080, 1280, 1440, 1920]
-    //-     }
-    //- })
 
-    .hero(class="relative")
-        - let heroImgDesktop = { name: 'hero', resolutions: [1500, 1920, 2500, 3000, 3873, 5000] } ;
-        - let heroImgTablet = { name: 'hero_tablet', resolutions: [768, 1024, 1152, 1300, 1536, 2304, 3072] };
-        picture
-            source(
-                media="(min-width: 1280px)"
-                srcset=`
-                        ${
-                            heroImgDesktop.resolutions.map((res, index, arr)=>{
-                                return `${mediaFolder}${heroImgDesktop.name}@${res}.jpg ${res}w`
-                            })
-                        }
-                    `
-                width="1920"
-                height="592"
-            )
-            source(
-                media="(min-width: 640px)"
-                srcset=`
-                        ${
-                            heroImgTablet.resolutions.map((res, index, arr)=>{
-                                return `${mediaFolder}${heroImgTablet.name}@${res}.jpg ${res}w`
-                            })
-                        }
-                    `
-                width="1024"
-                height="514"
-            )
-            +image({
-                name: 'hero_mobile',
-                ext: 'jpg',
-                src:`${mediaFolder}hero_mobile@360.jpg`,
-                resolutions: [360, 540, 640, 720, 1080, 1280, 1440, 1920],
-                alt:"Hero Bg",
-                width:"360",
-                height:"239",
-                loading: 'auto',
-                class:"w-full hero-bg object-cover"
+
+    .hero(class="relative flex flex-col")
+        .container(class="absolute inset-0 w-full m-auto z-10 flex flex-col justify-end items-start")
+            button(id='read-more-button' class='mb-3 lg:mb-4 xl:mb-5 2xl:mb-5 px-5 py-2 lg:px-8 lg:py-4 text-lg lg:text-xl xl:text-2xl font-proxima-bold flex items-center bg-gradient-to-t from-white/20 to-white/50 group border-2 border-white/50' style={
+                color: '#006EC6',
+                'border-radius': '34px',
+                filter:'drop-shadow(5px 5px 2px hsla(0, 0%, 0%, .1))'
             })
+                span Discover Tungsten
+                svg( fill="none" viewBox="0 0 19 19" class="ml-4 stroke-1 stroke-current fill-current group-hover:translate-x-1 transition-transform w-4 h-4 xl:w-5 xl:h-5")
+                    path( d="m9.5 19-1.692-1.663 6.65-6.65H0V8.313h14.458l-6.65-6.65L9.5 0 19 9.5 9.5 19Z")
+        picture
+            source(media="(max-width: 767px)" srcset=`../media/home/tngstn-mobile@520.jpg 520w, ../media/home/tngstn-mobile@640.jpg 640w, ../media/home/tngstn-mobile@768.jpg 768w` width="768" height="458")
+            +image({
+                name: 'tngstn',
+                ext: 'jpg',
+                alt:"Tungsten",
+                resolutions:[1024, 1366, 1600, 1920],
+                width:"1920",
+                height:"566",
+                loading: 'auto',
 
-        div(class="grid place-items-center absolute z-10 inset-0 w-full h-full text-white text-center bg-black/20 hover:bg-black/30 transition-colors duration-500")
-            div(class="hero-title-container max-w-prose px-6 xs:px-8 lg:px-0")
-                style.
-                    .hero-title {
-                        --t-hero-header: 22px;
-                        font-size: var(--t-hero-header);
-                        line-height: 1.1;
-                    }
+            })(id="tngst-hero" class="w-full h-full inset-0 hero-bg object-cover z-0 object-center")
 
-                    @media (min-width:380px){
-                        .hero-title {
-                            --t-hero-header: 23px;
-                        }
-                    }
-                    @media (min-width:420px){
-                        .hero-title {
-                            --t-hero-header: 24px;
-                        }
-                    }
-                    @media (min-width:480px){
-                        .hero-title {
-                            line-height: 1.2;
-                            --t-hero-header: 25px;
-                        }
-                    }
-                    @media (min-width:1400px){
-                         .hero-title {
-                            --t-hero-header: 30px;
-                        }
-                    }
-                    #read-more-button {
-                        filter: drop-shadow(0 4px 10px #00000023);
-                        color: #006ec6;
-                    }
-                    #read-more-button:hover {
-                        background-color: #2e85cb;
-                        color: #fff;
-                    }
-                    #read-more-button:active {
-                        background-color: #071f51;
-                    }
-                    #read-more-button:active + .read-more-arrow {
-                        stroke: #071f51;
-                    }
-                    #read-more .read-more-arrow {
-                        rotate: 180deg;
-                        transition: rotate .3s ease-in-out;
-                    }
-                    #read-more.opened .read-more-arrow {
-                        rotate: 0deg;
-                    }
-                header(
-                    class="hero-title"
-                    style={ 'text-transform': 'uppercase' }
-                ) Hello, <div class="font-proxima-bold" style="font-size: calc(1.7*var(--t-hero-header))"> we are Tungsten </div>and Welcome to our Creative&nbsp;World
 
-                p(class="mt-4 text-sm xs:text-base sm:text-lg") We are an advertising agency who solves marketing problems for our clients trough multilpe channels of communication.
 
-                div(class="flex flex-col items-center" id="read-more")
-                    button(
-                        id="read-more-button"
-                        class="rounded-xl bg-white px-3 py-2.5 lg:px-5 lg:py-4 my-6 transition-colors duration-150"
-                    ) Meet Us
-
-                    +iconMono({
-                        icon: 'dropdown-arrow',
-                        class:'read-more-arrow fill-transparent stroke-white stroke-1 w-4 h-3 inline-block '
-                    })
 
 
 
@@ -149,74 +56,42 @@ block page
         style="height: 0; transition: height .5s ease-in-out;"
     )
         div(class="expander")
-            +page-title({
-                h1: 'A Great Idea is a Great Equalizer. ',
-                style: 'padding-bottom: 25px;'
-            })
-            .container(class=" relative mb-10 lg:mb-20 ")
-                div(class="text-blue-dark font-proxima-bold text-base xs:text-lg lg:text-xl xl:text-2xl mb-6") Tungsten is an advertising agency. We solve marketing problems for our clients
-                p
-                    b On the Internet, nobody knows you're a dog.
 
-                p They don't know if you're David. And they don't know that you're Goliath. <br> Big brands, small brands, they’re all equal in the eyes of the web.
+            .container(class=" relative mb-10 lg:mb-20 flow-root" style="max-width: 696px;")
+                h1(id="title" class="leading-none mt-8 sm:mt-10 md:mt-12 xl:mt-14 font-proxima-bold text-blue-dark").
+                    <span style="color: #315BA9;"> A Great Idea is a</span>
+                    Great Equalizer
+                div(class="text-blue-dark uppercase font-proxima-bold text-base xs:text-lg lg:text-xl xl:text-2xl mt-5") Tungsten is an advertising agency. We solve marketing problems for our clients
 
-                p With a great advertising idea, any brand can win.
+                p(class="text-blue-dark text-base xs:text-lg lg:text-xl xl:text-2xl font-proxima-bold mt-5 mb-6 lg:mb-10") Today, any brand can win in the marketplace with a powerful brand idea.
 
-                p The power of ideas, and the tools of technology are available to all of us.
+                p Ideas are what hold consumer attention.
+                p Big brands, small brands, they’re all equal in the eyes of the web.
+                div(class="xs:float-right text-xl border-l-4 border-current pl-4 xs:ml-4 my-5" style="max-width: 240px; color: #CB2866;")
+                    span(class="uppercase font-proxima-bold") "In a [FREE MARKET] economy, the most valuable resource is people's attention." <br>
+                    em() - Wally Olens
+                p A company can win a global market, or create a new market. It can do it quickly, at relatively low cost, and from anywhere in the world.
+                p What sets a brand apart, is a great advertising idea. A great idea is a great equalizer, and a great differentiator. Ideas can disrupt markets and scramble old equations.
+                p Ideas enable brands to communicate with consumers more persuasively and memorably. With greater engagement and recall.
+                p Whether online, in print, on TV or on radio, any advertising message is infinitely more effective when it has a great creative idea behind it. That's how brands engage, enthrall, and connect with their consumers. That's how brands hold their consumers' attention.
+            div(style="background: radial-gradient(70% 70% at 50%, #4870BA 0%, #19438F 100%); " class="py-10 lg:pt-20 lg:pb-16")
+                .container(class="text-white" style="max-width: 696px;")
+                    b(class="text-2xl") Ideas give the advantage to the disrupter, not the disrupted.
+                    p(class="mt-0") That's why brands need Tungsten: the ideas agency.
 
-                p The traditional advantages of scale, redundant resources, captive talent, proprietary know-how, or access to capital, matter much less today than they once did.
+                    p At Tungsten, we think of ideas all day. It's what we do. We create ideas for all types of brands and products. Mostly big ideas that a client can confidently put their resources behind. But sometimes, bite-sized ideas for that fleeting tactical opportunity presented by a trending hashtag.
 
-                p Today, a brand can win in the marketplace with a powerful brand idea. That's all you need. A great idea.
+                    p Ideas are who we are. What we live for. It's why we call ourselves Tungsten.
 
-                p Ideas are what hold people's attention.
+                    p Ideas, you see, are represented by the light bulb. And at the heart of a light bulb, there is the filament. Made of... yes, made of tungsten.
 
-                p Great advertising ideas brought to light by digital media, allow any brand to capture the consumer's attention. A company can win a global market, or create a new market. It can do it quickly, at relatively low cost, and from anywhere in the world.
+                    p That's why we named ourselves Tungsten.
 
-                p Whether an advertising idea is executed online, in print, on TV or radio, today's technologies allow us to communicate with consumers ever more effectively and persuasively. In less time. At lower budgets. With higher production values. Leading to greater engagement because the brand is perceived as polished, trusted, and reliable.
+                    p To remind ourselves every minute of every day that anything we do, any ad we create, any work that leaves our door, must at its heart have a strong brand idea. Nothing less will do.
 
-                p Any marketer can do this faster, cheaper and better than before. We live in the best of times. Disruption gifts us with new opportunities. And scrambles the old equations. Who's the David? Who's the Goliath?
+                    p A great idea is not just a brand differentiator. It's a great equalizer. An ad with a strong idea penetrates the media clutter with memorable and distinctive messaging that triggers consumer desire, moves you, makes you laugh, makes you buy, makes you donate, makes you join a social trend, adopt a puppy, cut carbon, buy a car, or try a new candy bar.
 
-                p It's up for grabs.
-
-                p In an ever fragmenting media landscape, new opportunities present themselves continually. New technology tools continue to be invented, put in the cloud, democratized and made available to everyone. We all have powerful tools at our disposal that allow us to identify and target consumers with near perfect precision. We can all target consumers with dynamic creative right down to individualized messaging. We all have the tools that can crunch zigabytes of big data to tease out consumer insights. What a golden age.
-
-                p Yes, we can all do what we can all do. And that's why the only thing that sets a brand apart from its competitor, is a great advertising idea. A great idea is a great equalizer and a great differentiator.
-
-                p Companies go to market with just an idea. And win. The idea is the weapon. Today, the advantage lies with the disrupter, not the disrupted. With the nimble, the agile, the brave, the foresightful. The advantage lies with those with the ideas.
-
-                p Because everything else, everyone has.
-
-                p How Many Ideas Does A Brand Need?
-
-                p While the tools and technologies are available to all marketers, great ideas aren't equally plentiful.
-
-                p Any advertising message is infinitely more effective when it has a great creative idea behind it. That's how brands engage, enthrall, and connect with their consumers. That's how brands hold their consumers' attention.
-
-                p We're in a time where brands need a constant stream of ideas, and not just the big one.
-
-                p Brands need big ideas, they need little ideas, tactical ideas, medium-sized ideas - brands need lots and lots of ideas to tell their stories at every consumer touch-point.
-
-                p All these ideas work together, converging as one persistent theme, leaving a consistent narrative in the mind of the consumer.
-
-                p That's important, because in an ever fragmenting media landscape with multiple consumer touch-points, a well-expressed idea unites consumers around shared values and ideals, making them identify strongly with the brand.
-
-                p That's why brands need Tungsten: the ideas agency.
-
-                p At Tungsten, we think of ideas all day. It's what we do. We create ideas for all types of brands and products. Mostly big ideas that a client can confidently put their resources behind. But sometimes, bite-sized ideas for that fleeting tactical opportunity presented by a trending hashtag.
-
-                p Ideas are who we are. What we live for. It's why we call ourselves Tungsten.
-
-                p Ideas, you see, are represented by the light bulb. And at the heart of a light bulb, is a filament. Made of... yes, made of Tungsten.
-
-                p That's why we named ourselves Tungsten.
-
-                p To remind ourselves every minute of every day that anything we do, any ad we create, any work that leaves our door, must at its heart have a strong brand idea. Nothing less will do. Because then, we wouldn't be true to our name.
-
-                p As true adverting professionals, we know that a good idea, well articulated and implemented, is more effective for a brand than chasing the shiny new technology fad.
-
-                p A great idea is not just a brand differentiator. It's a great equalizer. An ad with a strong idea penetrates the media clutter with memorable and distinctive advertising that triggers consumer desire, moves you, makes you laugh, makes you buy, makes you donate, makes you join a social trend, adopt a puppy, cut carbon, bye a car, or try a new candy bar. That's the power and beauty of an idea.
-
-
+                    button(class="mx-auto block py-3 px-5 rounded-full border-2 border-current font-proxima-bold uppercase mt-5 lg:mt-10" style="filter: drop-shadow(0 1px 2px var(--c-blue-dark)/20)") Contact
 
 
 

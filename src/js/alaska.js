@@ -96,10 +96,14 @@ alaskaTl.from('#alaska-map', {
 }, "3")
 .from('#alaska-map .routes .route', {
   opacity: 0,
-  scale: .7,
+  scale: .8,
   transformOrigin: 'center',
-  duration: 1,
-  stagger: .1
+  duration: .5,
+  stagger: {
+    amount: 0.4,
+    grid: 'auto',
+    from: 'random',
+  }
 }, "<")
 
 
@@ -113,13 +117,14 @@ alaskaTl.from('#alaska-map', {
 const mapLabels = document.querySelectorAll('#alaska-map .cities-labels .label');
 const alaskaRoutes = document.querySelectorAll('#alaska-map .route');
 const routeLines = document.querySelectorAll('#alaska-map .lines path');
+const cities = document.querySelectorAll('#alaska-map .cities .city');
 
 
 mapLabels.forEach(item=>{
   item.addEventListener('mouseenter', ({target})=>{
 
-    gsap.to(mapLabels, {opacity: 0.2, duration: 0.7})
-    gsap.to(target, {opacity: 1, duration: 0.7})
+    gsap.to(mapLabels, {opacity: 0.2, duration: 0.7, ease: 'circ.in'})
+    gsap.to(target, {opacity: 1, duration: 0.7, ease: 'circ.out'})
     gsap.to(alaskaRoutes, {opacity:0.2, duration: .15});
 
     const labelRoutes = target.dataset.route.split(' ');
@@ -154,12 +159,12 @@ mapLabels.forEach(item=>{
       }
     })
 
+
   })
   item.addEventListener('mouseleave', ()=>{
     gsap.set(routeLines, {'stroke-dashoffset':0, opacity: 1})
     alaskaRoutes.forEach(route=>gsap.to(route, {opacity: 1, duration: .7, ease: 'circ.out'}))
     gsap.to(mapLabels, {opacity: 1, duration: 0.7, ease: 'circ.out'})
-
   })
 })
 
@@ -180,11 +185,11 @@ alaskaRoutes.forEach(route=>{
       opacity: 1
   })
 
-    mapLabels.forEach(label=>gsap.to(label, {opacity:0.2}))
+    mapLabels.forEach(label=>gsap.to(label, {opacity:0.2, duration: 0.7, ease: 'circ.in'}))
     const routeCities = target.dataset.cities.split(" ");
     mapLabels.forEach(label=>{
       if(routeCities.includes(label.id)) {
-        gsap.to(label, {opacity: 1,  duration: .7})
+        gsap.to(label, {opacity: 1,  duration: .7, ease: 'circ.out'})
       }
     })
 
@@ -197,3 +202,6 @@ alaskaRoutes.forEach(route=>{
 
 
 })
+
+
+

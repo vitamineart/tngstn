@@ -22,7 +22,8 @@ html(lang="en")
             block page
 
 
-        include ../chunk/have_question
+        if currentUrl !== "/"
+            include ../chunk/have_question
         include ../chunk/works_clients
         include ../chunk/footer
 

@@ -84,7 +84,6 @@ ScrollTrigger.matchMedia({
             ScrollTrigger.create({
                 trigger: item,
                 animation: anim,
-                toggleActions: 'play none none none',
                 once: true,
             });
         });
@@ -94,7 +93,7 @@ ScrollTrigger.matchMedia({
         gsap.from(".works-grid .item", {
             scrollTrigger: {
                 trigger: '.works-grid',
-                start: '40% 50%',
+                start: '30% 90%',
             },
             opacity: 0,
             scale: 0,
@@ -155,54 +154,78 @@ if (document.querySelector('#audio-wave')) {
 }
 
 // common entrance animations
-let commonEase = 'circ.out';
-let commonX = 50;
-let commonY = 50;
-let animStart = '20% 80%';
-let commonDelayQ = 0.2;
-let fadeInLeft = gsap.utils.toArray('.fade-in-left');
-let fadeInRight = gsap.utils.toArray('.fade-in-right');
-let fadeInUp = gsap.utils.toArray('.fade-in-up');
-let fadeInDown = gsap.utils.toArray('.fade-in-down');
-let fadeIn = gsap.utils.toArray('.fade-in');
-let blurIn = gsap.utils.toArray('.blur-in');
+if(document.querySelectorAll('.fade-in-left, .fade-in-right, .fade-in-up, .fade-in-down, .fade-in, .blur-in')){
+  let commonEase = 'circ.out';
+  let commonX = 50;
+  let commonY = 50;
+  let animStart = '20% 80%';
+  let commonDelayQ = 0.2;
+  let fadeInLeft = gsap.utils.toArray('.fade-in-left');
+  let fadeInRight = gsap.utils.toArray('.fade-in-right');
+  let fadeInUp = gsap.utils.toArray('.fade-in-up');
+  let fadeInDown = gsap.utils.toArray('.fade-in-down');
+  let fadeIn = gsap.utils.toArray('.fade-in');
+  let blurIn = gsap.utils.toArray('.blur-in');
 
 fadeIn.forEach((item, i) => {
-    const anim = gsap.from(item, {opacity: 0, duration: 1, delay: i * commonDelayQ, ease: commonEase});
-    ScrollTrigger.create({
-        trigger: item,
-        animation: anim,
-        once: true,
-    });
+  const anim = gsap.from(item, {
+    opacity: 0,
+    duration: 1,
+    delay: i * commonDelayQ,
+    ease: commonEase
+  });
+  ScrollTrigger.create({
+    trigger: item,
+    animation: anim,
+    once: true,
+  });
 });
 fadeInLeft.forEach((item, i) => {
-    const anim = gsap.from(item, {opacity: 0, x: commonX, duration: 1, delay: i * commonDelayQ, ease: commonEase});
-    ScrollTrigger.create({
-        trigger: item,
-        start: animStart,
-        animation: anim,
-        once: true,
-    });
+  const anim = gsap.from(item, {
+    opacity: 0,
+    x: commonX,
+    duration: 1,
+    delay: i * commonDelayQ,
+    ease: commonEase
+  });
+  ScrollTrigger.create({
+    trigger: item,
+    start: animStart,
+    animation: anim,
+    once: true,
+  });
 });
 fadeInRight.forEach((item, i) => {
-    const anim = gsap.from(item, {opacity: 0, x: -commonX, duration: 1, delay: i * commonDelayQ, ease: commonEase});
-    ScrollTrigger.create({
-        trigger: item,
-        start: animStart,
-        animation: anim,
-        once: true,
-    });
+  const anim = gsap.from(item, {
+    opacity: 0,
+    x: -commonX,
+    duration: 1,
+    delay: i * commonDelayQ,
+    ease: commonEase
+  });
+  ScrollTrigger.create({
+    trigger: item,
+    start: animStart,
+    animation: anim,
+    once: true,
+  });
 });
 fadeInUp.forEach((item, i) => {
-    const anim = gsap.from(item, {opacity: 0, y: commonY, duration: 1, delay: i * commonDelayQ, ease: commonEase});
-    ScrollTrigger.create({
-        trigger: item,
-        animation: anim,
-        start: animStart,
-        once: true,
-    });
+  const anim = gsap.from(item, {
+    opacity: 0,
+    y: commonY,
+    duration: 1,
+    delay: i * commonDelayQ,
+    ease: commonEase
+  });
+  ScrollTrigger.create({
+    trigger: item,
+    animation: anim,
+    start: animStart,
+    once: true,
+  });
 });
-fadeInDown.forEach((item, i) => {
+  fadeInDown.forEach((item, i) => {
     const anim = gsap.from(item, {opacity: 0, y: -commonY, duration: 1, delay: i * commonDelayQ, ease: commonEase});
     ScrollTrigger.create({
         trigger: item,
@@ -210,8 +233,8 @@ fadeInDown.forEach((item, i) => {
         start: animStart,
         once: true,
     });
-});
-blurIn.forEach((item, i) => {
+  });
+  blurIn.forEach((item, i) => {
     const anim = gsap.from(item, {opacity: 0, scale: 0.8, filter: 'blur(10px)', duration: 1, delay: i * commonDelayQ, ease: commonEase});
     ScrollTrigger.create({
         trigger: item,
@@ -219,8 +242,56 @@ blurIn.forEach((item, i) => {
         start: animStart,
         once: true,
     });
-});
+  });
+}
 
 
 
 
+
+gsap.to('.logo-svg .rainbow .ray', {
+    keyframes: {
+      "0%": {scale: 1,filter:'brightness(100%) saturate(100%)'},
+      "50%": {scale: 1.3, filter:'brightness(120%) saturate(120%)'},
+      "100%": {scale: 1,filter:'brightness(100%) saturate(100%)'}
+    },
+    ease: 'power1.out',
+    transformOrigin: 'center',
+    duration: .7,
+    stagger: -0.08,
+    repeat: -1,
+    repeatDelay: 20,
+    delay: 20
+})
+gsap.to('.logo-svg .rainbow .ray', {
+    keyframes: {
+      "0%": {filter:'brightness(100%) saturate(100%)'},
+      "50%": {filter:'brightness(130%) saturate(110%)'},
+      "100%": {filter:'brightness(100%) saturate(100%)'}
+    },
+    ease: 'circ.out',
+    transformOrigin: 'center',
+    duration: .5,
+    stagger: .05,
+    repeat: -1,
+    repeatDelay: 10,
+    delay: 30
+})
+
+gsap.to('.logo-svg .text', {
+  opacity: 1,
+  duration: .5
+})
+gsap.fromTo('.logo-svg .text .letter', {
+  transformOrigin: 'center',
+  opacity: 0,
+  scale: .5,
+  x: -15,
+}, {
+  opacity: 1,
+  scale: 1,
+  x: 0,
+  ease: 'expo.out',
+  duration: 2,
+  stagger: .1
+})
