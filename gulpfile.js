@@ -76,6 +76,8 @@ function devHTML() {
     .pipe(dest(options.paths.dist.base));
 }
 
+
+
 function devStyles() {
   const tailwindcss = require("tailwindcss");
   return src(`${options.paths.src.css}/**/*.scss`)
@@ -274,6 +276,10 @@ function prodFonts() {
     dest(options.paths.build.fonts)
   );
 }
+function moveRobotsTXT() {
+  return src(`${options.paths.src.base}/robots.txt`)
+    .pipe(dest(options.paths.build.base))
+}
 
 function prodClean() {
   console.log(
@@ -331,7 +337,8 @@ exports.prod = series(
     prodImages,
     prodSVGSprite,
     prodFonts,
-    prodHTML
+    prodHTML,
+    moveRobotsTXT
   ), //Run All tasks in parallel
   // criticalCSS,
   buildFinish
@@ -340,3 +347,4 @@ exports.prod = series(
 exports.devImages = devImages;
 exports.devClean = devClean;
 exports.prodSVGSprite = prodSVGSprite;
+exports.moveRobotsTXT = moveRobotsTXT;
