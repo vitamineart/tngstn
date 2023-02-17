@@ -82,19 +82,13 @@ alaskaTl.from('#alaska-map', {
   ease: 'power1.out',
   stagger: .02
 }, "<50%")
-.from('#alaska-map .cities-labels > .label', {
-  y: 20,
-  opacity: 0,
-  duration: 1,
-  stagger: .1
-}, "0.7")
 .from('#alaska-map .lines > path', {
   opacity: 0,
   duration: 2,
   ease: 'expo.out',
   stagger: .2
 }, "3")
-.from('#alaska-map .routes .route', {
+.from('#ferry-routes .route', {
   opacity: 0,
   scale: .8,
   transformOrigin: 'center',
@@ -114,8 +108,8 @@ alaskaTl.from('#alaska-map', {
 
 
 // routes, cities filtering
-const mapLabels = document.querySelectorAll('#alaska-map .cities-labels .label');
-const alaskaRoutes = document.querySelectorAll('#alaska-map .route');
+const mapLabels = document.querySelectorAll('#cities-labels .label');
+const alaskaRoutes = document.querySelectorAll('#ferry-routes .route');
 const routeLines = document.querySelectorAll('#alaska-map .lines path');
 const cities = document.querySelectorAll('#alaska-map .cities .city');
 
@@ -123,8 +117,7 @@ const cities = document.querySelectorAll('#alaska-map .cities .city');
 mapLabels.forEach(item=>{
   item.addEventListener('mouseenter', ({target})=>{
 
-    gsap.to(mapLabels, {opacity: 0.2, duration: 0.7, ease: 'circ.in'})
-    gsap.to(target, {opacity: 1, duration: 0.7, ease: 'circ.out'})
+    target.classList.add('active');
     gsap.to(alaskaRoutes, {opacity:0.2, duration: .15});
 
     const labelRoutes = target.dataset.route.split(' ');
@@ -164,15 +157,15 @@ mapLabels.forEach(item=>{
   item.addEventListener('mouseleave', ()=>{
     gsap.set(routeLines, {'stroke-dashoffset':0, opacity: 1})
     alaskaRoutes.forEach(route=>gsap.to(route, {opacity: 1, duration: .7, ease: 'circ.out'}))
-    gsap.to(mapLabels, {opacity: 1, duration: 0.7, ease: 'circ.out'})
+    mapLabels.forEach(label=>label.classList.remove('active'))
   })
 })
 
 
-alaskaRoutes.forEach(route=>{
+alaskaRoutes.forEach( route => {
 
-  route.addEventListener('mouseenter', ({target})=>{
-    const filtreredLine = Array.from(routeLines).filter((line) => line.dataset.route === target.id)[0]
+  route.addEventListener('mouseenter', ({ target })=>{
+    const filtreredLine = Array.from(routeLines).filter(( line ) => line.dataset.route === target.id)[0]
 
     filtreredLine.style.setProperty("transition", ".9s ease-out");
 
@@ -185,18 +178,18 @@ alaskaRoutes.forEach(route=>{
       opacity: 1
   })
 
-    mapLabels.forEach(label=>gsap.to(label, {opacity:0.2, duration: 0.7, ease: 'circ.in'}))
+    mapLabels.forEach(label=>label.classList.remove('active'))
     const routeCities = target.dataset.cities.split(" ");
     mapLabels.forEach(label=>{
       if(routeCities.includes(label.id)) {
-        gsap.to(label, {opacity: 1,  duration: .7, ease: 'circ.out'})
+        label.classList.add('active')
       }
     })
 
   })
 
   route.addEventListener('mouseleave', ({target})=>{
-    gsap.to(mapLabels, {opacity: 1,  duration: .7})
+    mapLabels.forEach(label=>label.classList.remove('active'))
     gsap.set(routeLines, {'stroke-dashoffset':0, opacity: 1})
   })
 
@@ -205,3 +198,19 @@ alaskaRoutes.forEach(route=>{
 
 
 
+const svgElement = document.querySelector('#alaska-map'); // Get the SVG element
+const [, , originalWidth, originalHeight] = svgElement.getAttribute("viewBox").split(" ").map(Number);
+
+
+console.log(originalWidth, originalHeight);
+// svgElement.addEventListener("mouseenter", (event) => {
+//   const {top, left, width, height} = svgElement.getBoundingClientRect();
+
+//   const eventTop = event.clientY - top;
+//   const eventLeft = event.clientX - left;
+
+//   svgElement.setAttribute("viewBox", `${eventLeft / width * originalWidth - originalWidth / 4} ${eventTop / height * originalHeight - originalHeight / 4} ${originalWidth / 2} ${originalHeight / 2}`)
+// });
+// svgElement.addEventListener("mouseleave", () => {
+//   svgElement.setAttribute("viewBox", `0 0 ${originalWidth} ${originalHeight}`);
+// });

@@ -47,12 +47,12 @@ header.header-shadow {
   color: var(--color);
 }
 
-.works-grid {
+.projects-grid {
   --grid-fit: auto-fit;
   grid-template-columns: repeat(var(--grid-fit), minmax(250px, 1fr));
 }
 @media (min-width: 1024px) {
-  .works-grid {
+  .projects-grid {
     --grid-fit: 3;
   }
 }

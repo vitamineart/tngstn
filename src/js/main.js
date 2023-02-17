@@ -60,21 +60,21 @@ AOS.init({
 
 
 // random appear of works-clients grid
-const projects = Array.from(document.querySelectorAll('.works-grid .item'));
+const projects = Array.from(document.querySelectorAll('.projects-grid .item'));
 const randomProjects = projects.sort(randomizeFunc);
 
 function randomizeFunc(a, b) {
   return 0.5 - Math.random();
 }
 
-document.querySelector('.works-grid').innerHTML = '';
+document.querySelector('.projects-grid').innerHTML = '';
 randomProjects.forEach((item, index)=>{
-    document.querySelector('.works-grid').appendChild(item)
+    document.querySelector('.projects-grid').appendChild(item)
     // item.classList.add(`item-${index+1}`)
 })
 
 gsap.registerPlugin(ScrollTrigger);
-const portfolioItems = gsap.utils.toArray('.works-grid .item');
+const portfolioItems = gsap.utils.toArray('.projects-grid .item');
 
 ScrollTrigger.matchMedia({
     "(max-width:861px)": function () {
@@ -90,10 +90,10 @@ ScrollTrigger.matchMedia({
     },
     "(min-width:862px)": function () {
 
-        gsap.from(".works-grid .item", {
+        gsap.from(".projects-grid .item", {
             scrollTrigger: {
-                trigger: '.works-grid',
-                start: '30% 90%',
+                trigger: '.projects-grid',
+                start: '0% 90%',
             },
             opacity: 0,
             scale: 0,

@@ -1,9 +1,13 @@
 extends ./layout/base
 block variables
-    - var pageTitle = 'Tungsten Advertising Case Study | Cobham SeaTel Brand Page'
+    - let pageTitle = 'Tungsten Advertising Agency Case Study | Cobham Maritime Satellite Communications Equipment'
+    - let metaDescription = 'Cobham is a world-leader in self-stabilizing maritime satellite antennae, providing communication solutions for the maritime industry. Tungsten Advertising Agency helped the brand reach all consumer touch-points, worldwide.'
+    - let keywords
     - let currentUrl = 'cobham-seatel-brand.html'
+    - let mediaFolder = '../media/cobham-brand/'
 
 prepend preload
+    link(rel="preload" href=`${mediaFolder}cobham-brand-hero-bg-whale.mp4` as="video" type="video/mp4")
 
 append head
     style.
@@ -30,6 +34,7 @@ append head
         }
         #cobham-seatel-brand-hero-video {
             min-height: 700px;
+            pointer-events:none;
         }
 
 block page
@@ -62,8 +67,8 @@ block page
 
             section(class="text-white pb-12 md:pb-24 relative")
                 .container.flow-root
-                    img(loading="lazy" src="media/cobham-brand/compass.svg" width="395" height="391" class="-rotate-2 float-right shape-outside w-48 sm:w-56 md:w-64 lg:w-auto -mr-24 sm:-mr-20 xl:-mr-48 relative z-0 mix-blend-overlay lg:mix-blend-multiply opacity-30 " style={filter: 'drop-shadow(0 0 50px #fff)'})
-                    img(loading="lazy" src="media/cobham-brand/Seatel_Dome@340.png", srcset="media/cobham-brand/Seatel_Dome@340.png 340w, media/cobham-brand/Seatel_Dome@392.png 392w", sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 288px", alt="Sea Tel Dome Image" class="float-right shape-outside -mr-32 xl:-mr-48 w-48 sm:w-56 md:w-64 lg:w-72 relative z-10 mt-24 lg:mt-48 lg:-mr-56" width="392" height="407")
+                    img(loading="lazy" alt="Wind Rose" src="media/cobham-brand/windrose.svg" width="395" height="391" class="-rotate-2 float-right shape-outside w-48 sm:w-56 md:w-64 lg:w-auto -mr-24 sm:-mr-20 xl:-mr-48 relative z-0 mix-blend-overlay lg:mix-blend-multiply opacity-30 " style={filter: 'drop-shadow(0 0 50px #fff)'})
+                    img(loading="lazy" src="media/cobham-brand/ST4012@340.png", srcset="media/cobham-brand/ST4012@340.png 340w, media/cobham-brand/ST4012@392.png 392w", sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 288px", alt="Cobham Sea Tel 4012 dome" class="float-right shape-outside -mr-32 xl:-mr-48 w-48 sm:w-56 md:w-64 lg:w-72 relative z-10 mt-24 lg:mt-48 lg:-mr-56" width="392" height="407")
                     p.drop-cap(style="--color: #fff;").
                         When on land, we're familiar with dish antennae. Look through your  window, and you might spot one on the wall across the street, pointing at the sky, receiving satellite TV and internet straight from space.
                     p.
@@ -236,40 +241,45 @@ block page
             section(class="pt-6 pb-8 xs:pt-8 xs:pb-12 sm:pt-14 md:pt-8 lg:pt-4 lg:pb-24 bg-white relative z-10 overflow-hidden")
                 .container.relative
                     div(class="relative translate-y-16 xs:translate-y-0 md:absolute md:translate-x-20 md:translate-y-48 lg:translate-y-32 xl:translate-y-28 ")
-                        img(src="media/cobham-brand/SeaTel_Dome_Antenna.png", alt="SeaTel_Dome_Antenna Image" loading="lazy" class="relative" id="domeAntennaImage" width="432" height="356")
+                        img(src="../media/cobham-brand/ST-6012-antenna-and-dome.png", alt="Cobham Sea Tel 6012 antenna and dome" loading="lazy" class="relative" id="domeAntennaImage" width="432" height="356")
                         div(id="circleShips" class="absolute aspect-square")
                             -
                                 const ships = [
                                     {
-                                        src:'media/cobham-brand/Ship1.svg',
+                                        src:'../media/cobham-brand/icon-private-yacht.svg',
+                                        imgAlt: 'Sketch of private yacht',
                                         width: 123,
                                         height: 50,
                                         animationOrder: 1,
                                         id: 'Leisure'
                                     },
                                     {
-                                        src:'media/cobham-brand/Ship2.svg',
+                                        src:'../media/cobham-brand/icon-cruise-ship.svg',
+                                        imgAlt: 'Sketch of cruise ship',
                                         width: 135,
                                         height: 50,
                                         animationOrder: 2,
                                         id: 'Commercial'
                                     },
                                     {
-                                        src:'media/cobham-brand/Ship3.svg',
+                                        src:'../media/cobham-brand/icon-military-vessel.svg',
+                                        imgAlt: 'Sketch of military vessel',
                                         width: 119,
                                         height: 46,
                                         animationOrder: 3,
                                         id: 'Military'
                                     },
                                     {
-                                        src:'media/cobham-brand/Ship4.svg',
+                                        src:'../media/cobham-brand/icon-oil-tanker.svg',
+                                        imgAlt: 'Sketch of oil tanker',
                                         width: 133,
                                         height: 48,
                                         animationOrder: 4,
                                         id: 'Oil_Gas'
                                     },
                                     {
-                                        src:'media/cobham-brand/Ship5.svg',
+                                        src:'../media/cobham-brand/icon-fishery.svg',
+                                        imgAlt: 'Sketch of fishery',
                                         width: 116,
                                         height: 71,
                                         animationOrder: 5,
@@ -280,7 +290,7 @@ block page
                             each ship, index in ships
                                 div(class="circleShip absolute top-1/3 left-1/3 group" data-id=`${ship.id}`)
                                     div(class="circleShip-inner rounded-full relative  w-30 xs:w-32 sm:w-40 aspect-square z-10 grid place-items-center p-1 xs:p-4 after:absolute after:w-1/2 after:h-1/2 after:rounded-full  after:inline-grid after:-z-10 before:absolute before:w-1/2 before:h-1/2 before:rounded-full  before:inline-grid before:-z-20" style=`transform: rotate(${(index+1)*47}deg) translate(clamp(170px, 35vw, 250px))`)
-                                        img(loading="lazy" src=`${ship.src}`, alt=`${ship.id} Ship Image` style=`transform: rotate(${(index+1)*-47+321}deg)` class="circleShip-image w-5/6 xs:w-auto z-10 relative" width=`${ship.width}` height=`${ship.height}`)
+                                        img(loading="lazy" src=`${ship.src}`, alt=`${ship.imgAlt}` style=`transform: rotate(${(index+1)*-47+321}deg)` class="circleShip-image w-5/6 xs:w-auto z-10 relative" width=`${ship.width}` height=`${ship.height}`)
                                         div(class="bg-white absolute w-full h-full inset-0 -z-10 rounded-full")
 
                     div(class="lg:text-right")
@@ -295,8 +305,13 @@ block page
 
             style.
                 #seaSurface {
-                    top: 60px;
+                    top: 100px;
                     height: 600px;
+                }
+                @media (min-width:768px){
+                    #seaSurface {
+                        top: 60px;
+                    }
                 }
                 @media (min-width:1024px){
                     #seaSurface {
@@ -318,10 +333,14 @@ block page
 
 
             section(class="-mt-10 py-16 xs:py-18 sm:py-24 lg:py-36 relative overflow-hidden z-0")
-                div(class="mx-auto max-w-xl font-proxima-bold relative z-10 text-sm sm:text-base lg:text-xl text-white text-center px-6 blur-in" style="text-shadow: 0 0 5px #071f5155;").
+                div(class="mx-auto max-w-xl mt-10 font-proxima-bold relative z-10 text-sm sm:text-base lg:text-xl text-white text-center px-6 blur-in" style="text-shadow: 0 0 5px #071f5155;").
                     Tungsten has rare knowledge and expertise in maritime and satellite communications products and services. If you are a marketer with a maritime product targeted at a specific geo or worldwide, Tungsten would like the opportunity to talk to you about your brand, regardless of where in  the world your company is headquartered. We're in San Francisco, California
                 div(class="shadow absolute inset-0 w-full h-full z-40 pointer-events-none" style="box-shadow: inset 0 0 9vw #223F7B;")
-                img(src="media/cobham-brand/SeaSurface@1920.jpg", srcset="../media/cobham-brand/SeaSurface@480.jpg 480w, media/cobham-brand/SeaSurface@640.jpg 640w, media/cobham-brand/SeaSurface@780.jpg 780w, media/cobham-brand/SeaSurface@900.jpg 900w, media/cobham-brand/SeaSurface@1200.jpg 1200w, media/cobham-brand/SeaSurface@1920.jpg 1920w", alt="Sea Surface Image" loading="lazy" class="z-0 absolute w-full h-full object-cover inset-0 opacity-90 parallax" width="1920" height="1148" data-speed="-0.04" id="seaSurface")
+                +image({
+                    ext: 'jpg',
+                    name: 'sunset-wave',
+                    resolutions: [480, 640, 780, 900, 1200, 1920]
+                })(src="../media/cobham-brand/sunset-wave@1920.jpg" class="z-0 absolute w-full h-full object-cover inset-0 opacity-90 parallax" width="1920" height="1148" data-speed="-0.04" id="seaSurface" alt="Dramatic wave with sunset sky")
 
 
     //- -
