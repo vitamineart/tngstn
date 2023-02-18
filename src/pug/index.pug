@@ -24,6 +24,7 @@ prepend head
         }
 
 
+
 block page
 
 
@@ -34,19 +35,20 @@ block page
                 'border-radius': '34px',
                 filter:'drop-shadow(5px 5px 2px hsla(0, 0%, 0%, .1))'
             })
-                span Discover Tungsten
+                span.text Discover Tungsten
                 svg( fill="none" viewBox="0 0 19 19" class="ml-4 stroke-1 icon-arrow stroke-current fill-current group-hover:translate-x-1 duration-500 transition-transform w-4 h-4 xl:w-5 xl:h-5")
                     path( d="m9.5 19-1.692-1.663 6.65-6.65H0V8.313h14.458l-6.65-6.65L9.5 0 19 9.5 9.5 19Z")
         picture
             source(media="(max-width: 767px)" srcset=`../media/home/lightbulb-mobile@520.jpg 520w, ../media/home/lightbulb-mobile@640.jpg 640w, ../media/home/lightbulb-mobile@768.jpg 768w` width="768" height="458")
             +image({
+                dir: mediaFolder,
                 name: 'lightbulb',
                 ext: 'jpg',
                 alt:"Glowing lightbulb with filament made of tungsten ",
                 resolutions:[1024, 1366, 1600, 1920],
                 width:"1920",
                 height:"566",
-                loading: 'auto',
+                loading: 'eager',
 
             })(id="tngst-hero" class="w-full h-full inset-0 hero-bg object-cover z-0 object-center")
 

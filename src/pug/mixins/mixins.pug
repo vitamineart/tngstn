@@ -125,12 +125,12 @@ mixin image(x)
         width=x.width
         height=x.height
         alt=x.alt
-        src=x.src
+        src = x.src || `${x.dir}${x.name}@${resolutions[ resolutions.length - 1 ]}.${x.ext}`
         loading = x.loading || 'lazy'
         srcset= `
             ${
                 resolutions.map((resolution, index, arr) => {
-                    return `${mediaFolder}${x.name}@${resolution}.${x.ext} ${resolution}w`
+                    return `${x.dir}${x.name}@${resolution}.${x.ext} ${resolution}w`
                 })
             }
         `

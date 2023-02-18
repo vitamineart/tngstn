@@ -1,12 +1,12 @@
 -
     const thumbsFolder = 'media/projects/';
-    mediaFolder = thumbsFolder;
     const projects = [
         {
             category: 'satellite communications',
             name: 'Cobham',
             type: 'Brand Advertising',
-            image: `cobham-brand`,
+            imageDir: `cobham-brand/`,
+            image: `luxury-yacht`,
             imgAlt: `Leisure yacht with two Cobham maritime antenna on mast`,
             url: `cobham-seatel-brand.html`
         },
@@ -14,7 +14,8 @@
             category: 'satellite communications',
             name: 'Cobham',
             type: 'Data Sheets, Print',
-            image: `cobham-datasheets`,
+            imageDir: `cobham-datasheets/`,
+            image: `sea-tel-4012`,
             altTag: `Technical illustration of Cobham maritime satellite communications antenna`,
             url: `cobham-seatel-datasheets.html`
         },
@@ -22,7 +23,8 @@
             category: 'satellite communications',
             name: 'Cobham',
             type: 'White Papers, Print',
-            image: `cobham-datasheets`,
+            imageDir: `cobham-datasheets/`,
+            image: `sea-tel-4012`,
             altTag: `Technical illustration of Cobham maritime satellite communications antenna`,
             url: `white-paper.html`
         },
@@ -30,7 +32,8 @@
             category: 'industrial',
             name: 'Davis Instruments',
             type: 'Video',
-            image: `davis-instruments`,
+            imageDir: `davis-instruments/`,
+            image: `wallenda-in-vegas`,
             imgAlt: `Tightrope walker Nik Wallenda traversing a wire over Las Vegas`,
             url: `davis-instruments.html`
         },
@@ -38,7 +41,8 @@
             category: 'Retail',
             name: 'Ambassador Toys',
             type: 'Newspaper, Web',
-            image: `ambassador-toys`,
+            imageDir: `ambassador-toys/`,
+            image: `sf-giants-teddy-bear`,
             imgAlt: `Teddy bear floating on clouds, wearing San Francisco Giants shirt and cap`,
             url: `ambassador-toys.html`
         },
@@ -46,7 +50,8 @@
             category: 'financial services',
             name: 'Pacific Equity Partners',
             type: 'Hand Illustration',
-            image: `tom-meyer`,
+            imageDir: `tom-meyer/`,
+            image: `tom-meyer-drawing`,
             imgAlt: `Hand-drawn cartoon illustration by Tom Meyer, alongside a Rotring pen.`,
             url: `tom-meyers-illustrations.html`
         },
@@ -54,7 +59,8 @@
             category: 'political advertising',
             name: 'Shamann Walton',
             type: 'Television Commercial',
-            image: `shamann-walton`,
+            imageDir: `shamann-walton/`,
+            image: `multi-racial-fists`,
             imgAlt: 'Four multi-racial fists, with political sticker on back of each hand.',
             url: `shamann-walton.html`
         },
@@ -62,6 +68,7 @@
             category: 'non-profit',
             name: 'Porziuncola Nuova',
             type: 'Print, Collateral',
+            imageDir: `porziuncola/`,
             image: `porziuncola`,
             imgAlt: `Fresco on façade of Porziuncola, depicting St. Francis receiving “Pardon of Assisi" from Christ`,
             url: `porziuncola.html`
@@ -70,7 +77,8 @@
             category: 'non-profit',
             name: 'Friends of Alaska Marine Highway System',
             type: 'Website, Digital Marketing',
-            image: `alaska`,
+            imageDir: `alaska/`,
+            image: `mv-malaspina`,
             imgAlt: `Illustration of Alaskan ferry MV Malaspina`,
             url: `alaska.html`
         },
@@ -78,6 +86,7 @@
             category: 'Telecom',
             name: 'New Delhi Restaurant',
             type: 'Web',
+            imageDir: `new-delhi/`,
             image: `new-delhi`,
             url: `new-delhi.html`
         },
@@ -97,6 +106,7 @@ section(class="py-10 md:py-16")
                 a.item(
                     href=project.url
                     class="m-auto max-w-sm sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity min-w-fit"
+                    style={opacity: 0}
                 )
                     .overlay(class="absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)")
                         .text(class="text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);")
@@ -104,10 +114,11 @@ section(class="py-10 md:py-16")
                             div(class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100")= project.name
                             div(class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70")= project.type
                     +image({
+                        dir: thumbsFolder + project.imageDir,
                         name: `${project.image}`,
                         ext: 'jpg',
                         resolutions: [510, 780]
-                    })(class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" style="transition-property: color, transform" width="390" height="217" alt=`${project.imgAlt}` src=`${thumbsFolder + project.image}@390.jpg` sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px")
+                    })(class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" style="transition-property: color, transform" width="390" height="217" alt=`${project.imgAlt}`  sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px")
 
 
 

@@ -74,37 +74,48 @@ randomProjects.forEach((item, index)=>{
 })
 
 gsap.registerPlugin(ScrollTrigger);
-const portfolioItems = gsap.utils.toArray('.projects-grid .item');
 
 ScrollTrigger.matchMedia({
     "(max-width:861px)": function () {
-
-      portfolioItems.forEach((item, i) => {
-        const anim = gsap.from(item, {opacity: 0, y: 50, scale:.8, duration: .5, delay: i * 0.15, ease: 'expo.out()'});
-            ScrollTrigger.create({
-                trigger: item,
-                animation: anim,
-                once: true,
-            });
+      projects.forEach((project, i) => {
+        const anim = gsap.fromTo(project, {
+          opacity: 0,
+          y: 50,
+          scale:.8,
+        }, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: .5,
+          delay: i * 0.15,
+          ease: 'circ.out()'
         });
+        ScrollTrigger.create({
+            trigger: project,
+            animation: anim,
+            once: true,
+        });
+      });
     },
     "(min-width:862px)": function () {
-
-        gsap.from(".projects-grid .item", {
-            scrollTrigger: {
-                trigger: '.projects-grid',
-                start: '0% 90%',
-            },
-            opacity: 0,
-            scale: 0,
+        const anim = gsap.fromTo(projects, {
+          opacity: 0,
+          scale: 0,
+        },{
+            opacity: 1,
+            scale: 1,
             duration: 1.8,
+            ease: 'expo.out()',
             stagger: {
                 amount: .7,
                 from:"random",
                 grid:"auto"
             },
-            ease: 'expo.out()'
-
+        })
+        ScrollTrigger.create({
+            trigger: '.projects-grid',
+            start: '0% 90%',
+            animation: anim
         })
     }
 })
@@ -278,20 +289,25 @@ gsap.to('.logo-svg .rainbow .ray', {
     delay: 30
 })
 
-gsap.to('.logo-svg .text', {
-  opacity: 1,
-  duration: .5
-})
-gsap.fromTo('.logo-svg .text .letter', {
-  transformOrigin: 'center',
-  opacity: 0,
-  scale: .5,
-  x: -15,
-}, {
-  opacity: 1,
-  scale: 1,
-  x: 0,
-  ease: 'expo.out',
-  duration: 2,
-  stagger: .1
-})
+const logoText = document.querySelector('.logo-svg .text');
+if(logoText) {
+  const logoTextTl = gsap.timeline()
+  logoTextTl.to('.logo-svg .text', {
+    opacity: 1,
+    duration: 7,
+    delay: 10
+  })
+  .fromTo('.logo-svg .text .letter', {
+    transformOrigin: 'center',
+    opacity: 0,
+    scale: .5,
+    x: -15,
+  }, {
+    opacity: 1,
+    scale: 1,
+    x: 0,
+    ease: 'expo.out',
+    duration: 2,
+    stagger: .1
+  }, "<50%")
+}
