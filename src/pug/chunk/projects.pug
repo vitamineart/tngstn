@@ -4,7 +4,7 @@
         {
             category: 'satellite communications',
             name: 'Cobham',
-            type: 'Brand Advertising',
+            medium: 'Brand Advertising',
             imageDir: `cobham-brand/`,
             image: `luxury-yacht`,
             imgAlt: `Leisure yacht with two Cobham maritime antenna on mast`,
@@ -13,7 +13,7 @@
         {
             category: 'satellite communications',
             name: 'Cobham',
-            type: 'Data Sheets, Print',
+            medium: 'Data Sheets, Print',
             imageDir: `cobham-datasheets/`,
             image: `sea-tel-4012`,
             altTag: `Technical illustration of Cobham maritime satellite communications antenna`,
@@ -22,7 +22,7 @@
         {
             category: 'satellite communications',
             name: 'Cobham',
-            type: 'White Papers, Print',
+            medium: 'White Papers, Print',
             imageDir: `cobham-datasheets/`,
             image: `sea-tel-4012`,
             altTag: `Technical illustration of Cobham maritime satellite communications antenna`,
@@ -31,7 +31,7 @@
         {
             category: 'industrial',
             name: 'Davis Instruments',
-            type: 'Video',
+            medium: 'Video',
             imageDir: `davis-instruments/`,
             image: `wallenda-in-vegas`,
             imgAlt: `Tightrope walker Nik Wallenda traversing a wire over Las Vegas`,
@@ -40,7 +40,7 @@
         {
             category: 'Retail',
             name: 'Ambassador Toys',
-            type: 'Newspaper, Web',
+            medium: 'Newspaper, Web',
             imageDir: `ambassador-toys/`,
             image: `sf-giants-teddy-bear`,
             imgAlt: `Teddy bear floating on clouds, wearing San Francisco Giants shirt and cap`,
@@ -49,7 +49,7 @@
         {
             category: 'financial services',
             name: 'Pacific Equity Partners',
-            type: 'Hand Illustration',
+            medium: 'Hand Illustration',
             imageDir: `tom-meyer/`,
             image: `tom-meyer-drawing`,
             imgAlt: `Hand-drawn cartoon illustration by Tom Meyer, alongside a Rotring pen.`,
@@ -58,7 +58,7 @@
         {
             category: 'political advertising',
             name: 'Shamann Walton',
-            type: 'Television Commercial',
+            medium: 'Television Commercial',
             imageDir: `shamann-walton/`,
             image: `multi-racial-fists`,
             imgAlt: 'Four multi-racial fists, with political sticker on back of each hand.',
@@ -67,7 +67,7 @@
         {
             category: 'non-profit',
             name: 'Porziuncola Nuova',
-            type: 'Print, Collateral',
+            medium: 'Print, Collateral',
             imageDir: `porziuncola/`,
             image: `porziuncola`,
             imgAlt: `Fresco on façade of Porziuncola, depicting St. Francis receiving “Pardon of Assisi" from Christ`,
@@ -76,7 +76,7 @@
         {
             category: 'non-profit',
             name: 'Friends of Alaska Marine Highway System',
-            type: 'Website, Digital Marketing',
+            medium: 'Website, Digital Marketing',
             imageDir: `alaska/`,
             image: `mv-malaspina`,
             imgAlt: `Illustration of Alaskan ferry MV Malaspina`,
@@ -85,7 +85,7 @@
         {
             category: 'Telecom',
             name: 'New Delhi Restaurant',
-            type: 'Web',
+            medium: 'Web',
             imageDir: `new-delhi/`,
             image: `new-delhi`,
             url: `new-delhi.html`
@@ -112,7 +112,7 @@ section(class="py-10 md:py-16")
                         .text(class="text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);")
                             div(style="font-size: 11px;" class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none")= project.category
                             div(class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100")= project.name
-                            div(class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70")= project.type
+                            div(class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70")= project.medium
                     +image({
                         dir: thumbsFolder + project.imageDir,
                         name: `${project.image}`,

@@ -1,6 +1,7 @@
 extends ./layout/base
 block variables
-    - var pageTitle = 'Tungsten Advertising Case Study | Tom Meyers Illustrations'
+    - let pageTitle = 'Tungsten Advertising Case Study | Financial Planning and Wealth Management from Pacific Equity Partners'
+    - let metaDescription = 'Learn about Pacific Equity Partners, a financial brokerage that uses the power of cartoon illustrations to make personal finance and wealth management easy to understand. See our case study and portfolio of work for this client.'
     - let currentUrl = 'tom-meyers-illustrations.html'
     - let mediaFolder = '../media/tom-meyer/'
 
@@ -71,12 +72,13 @@ append head
 block page
     .hero(class="relative group" id="hero")
         +image({
-            name: 'Hero',
+            dir: mediaFolder,
+            name: `artist's-desk`,
             ext: 'jpg',
             loading: 'eager',
-        })(alt="Hero" height="1217" width="1920" class="hero-desktop w-full relative z-0 object-cover" src="media/tom-meyer/Hero@1920.jpg")
+        })(alt="Artist's desk illuminated by a table-lamp, with artist's hands visible in frame as he draws an illustration using a Rotring pencil." height="1217" width="1920" class="hero-desktop w-full relative z-0 object-cover" src="media/tom-meyer/Hero@1920.jpg")
 
-        img(src="media/tom-meyer/book@1024.jpg" srcset="media/tom-meyer/book@360.jpg 360w, media/tom-meyer/book@480.jpg 480w, media/tom-meyer/book@600.jpg 600w, media/tom-meyer/book@800.jpg 800w, media/tom-meyer/book@1024.jpg 1024w" sizes="(max-width: 500px) 33vw, (max-width: 600px) 25vw, 20vw" width="400" height="572" class="absolute hero-book " alt="Robert Finn Book")
+        img(src="media/tom-meyer/book@1024.jpg" srcset="media/tom-meyer/book@360.jpg 360w, media/tom-meyer/book@480.jpg 480w, media/tom-meyer/book@600.jpg 600w, media/tom-meyer/book@800.jpg 800w, media/tom-meyer/book@1024.jpg 1024w" sizes="(max-width: 500px) 33vw, (max-width: 600px) 25vw, 20vw" width="400" height="572" class="absolute hero-book " alt="Robert Finn Book" loading="eager")
         div(class="hero-overlay absolute w-full h-full inset-0 z-10 transition duration-500")
 
     div(
@@ -146,10 +148,11 @@ block page
                     }
 
                 +image({
-                    name: 'TungstenRuins-cropped',
+                    dir: mediaFolder,
+                    name: 'ruins-tom-meyer',
                     ext: 'png',
                     resolutions: [600,800,900,1000,1200,1338,1500,1800]
-                })(src="media/tom-meyer/TungstenRuins-cropped@600.png" sizes="(max-width: 639px) 300px, (max-width: 767px) 400px, (max-width: 1023px) 500px, (max-width: 1279px) 600px, 669px" alt="Tungsten Ruins" width="669" height="926" class="mt-4 self-center xs:float-right shape-outside" id="tngstn-ruins")
+                })(src="media/tom-meyer/ruins-tom-meyer@600.png" sizes="(max-width: 639px) 300px, (max-width: 767px) 400px, (max-width: 1023px) 500px, (max-width: 1279px) 600px, 669px" alt="Cartoon of middle-aged couple standing at base of ancient ruins as they stare up at a sign reading 'Caesar & Brutus Brokerage.'" width="669" height="926" class="mt-4 self-center xs:float-right shape-outside" id="tngstn-ruins")
 
                 div(class="mt-16 md:mt-24 xl:mt-32 -order-1 relative")
                     p(class="drop-cap first-letter:!mr-5 sm:flex-2 " style="--color: #000").
@@ -172,10 +175,11 @@ block page
 
 
             +image({
-                name:'pen',
+                dir: mediaFolder,
+                name:'rotring',
                 ext: 'png',
-                resolutions: [619,825,1024,1237,1650,1920]
-            })(sizes="(max-width:1279px) 80vw, 825px" alt="Pen" class="xl:mt-20" width="825" height="130" class=" relative  z-10 mt-10 sm:mt-16  mx-auto " id="pen")
+                resolutions: [619, 825, 1024, 1237, 1650, 1920]
+            })(sizes="(max-width:1279px) 80vw, 825px" alt="Rotring 600 HB Pencil" class="xl:mt-20" width="825" height="130" class=" relative  z-10 mt-10 sm:mt-16  mx-auto " id="pen")
             style.
                 #pen {
                     width: 80vw;
@@ -214,12 +218,14 @@ block page
 
             div(class="paper absolute inset-0 w-full h-full z-0")
                 +image({
+                    dir: mediaFolder,
                     name:'paper-texture',
                     ext: 'jpg',
                     resolutions:[633,949,1264,1600,1920],
                 })(src="media/tom-meyer/paper-texture@1264.jpg" alt="Paper" class="paper-texture absolute w-full h-full object-cover inset-0 z-0" width="1264" height="1790")
 
                 +image({
+                    dir: mediaFolder,
                     name:'paper_edge',
                     ext: 'png',
                     src: "media/tom-meyer/paper_edge@1920.png",
@@ -266,10 +272,10 @@ block page
                     }
                 }
             +image({
-                name: 'desktop',
+                dir: mediaFolder,
+                name: 'napkin-sketch',
                 ext: 'jpg',
-                resolutions: [640,768,1024,1366,1600,1920,2600,4096],
-            })(src="media/tom-meyer/desktop@1920.jpg" alt="Desktop" id="desktop-image" class="absolute lg:relative object-cover parallax w-full" data-speed="0.08")
+            })(alt="Artist's work desk with draft sketches for a cartoon drawing" id="desktop-image" class="absolute lg:relative object-cover parallax w-full" data-speed="0.08")
 
         section(class="relative z-10 torn-section")
             style.
@@ -351,12 +357,13 @@ block page
                                     }
                                 }
                             picture
-                                source(media="(min-width:640px)" srcset="media/tom-meyer/JigsawArtboard@868.png 868w, media/tom-meyer/JigsawArtboard@1303.png 1303w" sizes="380px, (min-width:768px) 400px, (min-width:900px) 450px, (min-width:1024px) 500px, (min-width:1280px) 600px, (min-width:1400px) 650px" width="650" height="1001" )
+                                source(media="(min-width:640px)" srcset="media/tom-meyer/cartoon-on-easel@868.png 868w, media/tom-meyer/cartoon-on-easel@1303.png 1303w" sizes="380px, (min-width:768px) 400px, (min-width:900px) 450px, (min-width:1024px) 500px, (min-width:1280px) 600px, (min-width:1400px) 650px" width="650" height="1001" )
                                 +image({
-                                    name: 'JigsawArtboard-mobile',
+                                    dir: mediaFolder,
+                                    name: 'cartoon-on-easel-mobile',
                                     ext: 'png',
                                     resolutions: [640, 768, 900, 1140],
-                                })(src="../media/tom-meyer/JigsawArtboard-mobile@1200.png" sizes="85vw, (min-width:428px) 380px" alt="Art Board" class=" mx-auto mb-2 mt-5 sm:m-0 sm:w-4/5 sm:absolute z-0" id="artboard-jigsaw" width="591" height="644" )
+                                })(src="../media/tom-meyer/cartoon-on-easel-mobile@1200.png" sizes="85vw, (min-width:428px) 380px" alt='Easel displaying a cartoon by Tom Meyers showing a man sitting across the desk from a broker who is listening carefully. Speech blurb from the man says, "I like this broker."' class=" mx-auto mb-2 mt-5 sm:m-0 sm:w-4/5 sm:absolute z-0" id="artboard-jigsaw" width="591" height="644" )
 
                             p(class="-order-1") Why did Tungsten choose to put so much thought into cartoons for this book? Well, cartoons have qualities that make them an ideal medium to reach and influence a wide general public.
                             p But cartoons are also especially suitable when communicating to a target audience of intelligent, educated, social elites: and this was the demographic for the client's financial planning services.
@@ -406,7 +413,12 @@ block page
                                     height: 664px;
                                 }
                             }
-                        img(loading="lazy" src="media/tom-meyer/book-image@879.jpg" srcset="media/tom-meyer/book-image@660.jpg 660w, media/tom-meyer/book-image@879.jpg 879w, media/tom-meyer/book-image@1319.jpg 1319w, media/tom-meyer/book-image@1758.jpg 1758w" sizes="(max-width: 639px) 90vw, (max-width: 1600px) 45vw,  46vw" alt="Book Image" width="879" height="664" class="mx-auto sm:float-right sm:ml-10 sm:mb-10 -mt-12 mb-8 sm:-mt-20 md:-mt-28 lg:absolute sm:w-1/2 lg:object-cover object-left" id="book-image")
+                        +image({
+                            dir: mediaFolder,
+                            name: 'robert-finn-book',
+                            ext: 'jpg',
+                            resolutions: [660, 879, 1319, 1758]
+                        })(src="media/tom-meyer/robert-finn-book@879.jpg" sizes="(max-width: 639px) 90vw, (max-width: 1600px) 45vw,  46vw" alt="Open book with cartoon illustration on left page, and text on right hand side." width="879" height="664" class="mx-auto sm:float-right sm:ml-10 sm:mb-10 -mt-12 mb-8 sm:-mt-20 md:-mt-28 lg:absolute sm:w-1/2 lg:object-cover object-left" id="book-image")
 
                         p It is rare for an art form to have made an impact academically, culturally, socially, economically, and as commercial art in advertising.
                         p This target audience is familiar with, and even wistful about cartoons. They have grown up with cartoons whether in newspapers or on television. Since their childhoods, they have associated cartoons with laughter, happiness and fun.
@@ -427,30 +439,34 @@ block page
                 -
                     const imagesGrid = [
                         {
-                            image: 'TungstenRuins',
                             title: 'Ruins',
+                            image: 'tom-meyer-ruins',
+                            imgAlt: 'Cartoon titled "Ruins," showing middle-aged couple standing at base of ancient ruins, looking up at a sign reading "Caesar & Brutus Brokerage."',
                             content: 'The simplicity of cartoons is what makes them so effective for mass communication. The more complex the concept to be communicated, the greater must be the simplicity of the drawing.'
                         },
                         {
-                            image: 'TungstenBrokerGod',
                             title: 'Moneybag',
+                            image: 'tom-meyer-moneybags',
+                            imgAlt: 'Cartoon titled "Moneybags," showing a man lying prostrate before a broker, offering him a bagful of money.',
                             content: 'For the most part, cartoons are composed of two elements: caricature, which parodies the individual, and allusion, which creates the situation or context into which the individual is placed.'
                         },
                         {
-                            image: 'TungstenEarBroker',
                             title: 'Big Ear',
+                            image: 'tom-meyer-big-ear',
+                            imgAlt: 'Cartoon titled "Big Ear" showing a man sitting across a desk from a broker who has a huge ear, and is listening carefully. Speech blurb from the man says, "I like this broker."',
                             content: 'Cartoons use exaggeration for effect, as seen in the physical features of the characters, and the scale of the humor. Yet, a cartoon must make a realistic appeal to the target audience. While this cartoon appears to underplay the severity of a situation, it is actually establishing the severity of that situation.'
                         },
                         {
-                            image: 'TungstenJigsawBroker',
                             title: 'Jigsaw',
+                            image: 'tom-meyer-jigsaw',
+                            imgAlt: 'Cartoon titled "Jigsaw" showing a couple sitting across the desk from a broker, as speech blurb from the broker says, "Let\'s start with my commission."',
                             content: 'This sequence of cartoons helps the target audience understand and interpret the landscape of financial services firms. The illustrations appeal to the audiences\'past experiences with financial brokers. While this cartoon is a reflection of the general state of the financial industry, the reader‘s state of mind is also reflected in the cartoon.'
                         },
                     ]
                 each item in imagesGrid
                     div(class="item mx-auto mt-10 first:mt-0 xs:mt-0 sm:col-span-4" style="max-width: 252px;")
-                        div(class="image bg-purple-200")
-                            img(loading="lazy" src=`media/tom-meyer/${item.image}@2x.jpg` srcset=`media/tom-meyer/${item.image}@2x.jpg 2x, media/tom-meyer/${item.image}@3x.jpg 3x, media/tom-meyer/${item.image}@4x.jpg 4x` sizes="(max-width: 479px) 252px, (max-width:592px) 43vw, (max-width: 639px) 252px, (max-width: 710px) 216px, (max-width:767px) 31vw, 252px" alt=`${item.title}` width="252" height="349" class="shadow-cardshadow w-full sm:w-auto")
+                        div(class="image")
+                            img(loading="lazy" src=`media/tom-meyer/${item.image}@2x.jpg` srcset=`media/tom-meyer/${item.image}@2x.jpg 2x, media/tom-meyer/${item.image}@3x.jpg 3x, media/tom-meyer/${item.image}@4x.jpg 4x` sizes="(max-width: 479px) 252px, (max-width:592px) 43vw, (max-width: 639px) 252px, (max-width: 710px) 216px, (max-width:767px) 31vw, 252px" alt=`${item.imgAlt}` width="252" height="349" class="shadow-cardshadow w-full sm:w-auto")
                         b(class="mt-5 block ")= item.title
                         div(class="bg-current w-2 h-0.5 block my-3" style="color: #D85427;")
                         p(class="!mt-0")= item.content
@@ -460,14 +476,15 @@ block page
         div(class="max-w-4xl mx-auto z-10 relative mt-8 sm:mt-12")
             .flex(class="flex-col sm:flex-row items-center relative mx-auto  z-10 sm:pt-8 sm:pl-16 md:pl-24 sm:pr-20 sm:pb-20 lg:pb-28 gap-4 sm:gap-6 " style="max-width: 749px;")
                 +image({
-                    name: 'TomMeyer',
+                    dir: mediaFolder,
+                    name: 'tom-meyer-headshot',
                     ext: 'png',
                     resolutions: [394, 526, 788],
                     width: 263,
                     height: 313
                 })(
                     src="media/tom-meyer/TomMeyer@263.png"
-                    alt="Tom Meyer"
+                    alt="Headshot of cartoonist Tom Meyer smiling into camera."
                     sizes="(max-width:350px) 71vw, 263px"
                     class="fade-in-right relative w-40 xs:w-48 mx-auto mt-10 sm:mt-0"
                 )
@@ -513,26 +530,14 @@ block page
                         height: 380px;
                     }
                 }
-            +picture({
-                media: [
-                    {
-                        screenWidth: 640,
-                        resolutions: [1817, 3700],
-                        name: 'curved-paper',
-                        ext: 'png',
-                        width: 1817,
-                        height: 1002,
-                        sizes: '(max-width: 700px) 100vw, 697px'
-                    },
-                ],
-                mobileName: 'curved-paper-mobile',
-                mobileExt: 'png',
-                mobileResolutions: [1003, 2004],
-                mobileWidth:1003,
-                mobileHeight:1818,
-                alt:"Curved Paper",
-                class: 'curved-paper-mobile absolute inset-0 md:w-full h-full z-0 object-contain'
-            })
+            picture
+                source(media="(min-width: 640px)" srcset=`${mediaFolder}curved-paper@1817.png 1817w, ${mediaFolder}curved-paper@3700.png 3700w` sizes='(max-width: 700px) 100vw, 697px'  width="817" height="1002")
+                +image({
+                    dir: mediaFolder,
+                    name: 'curved-paper-mobile',
+                    ext: 'png',
+                    resolutions: [1003, 2004],
+                })(class='curved-paper-mobile absolute inset-0 md:w-full h-full z-0 object-contain' alt="Curved Paper" width="1003" height="1818")
 
         style.
             .tom-paper-bg {
@@ -567,7 +572,7 @@ block page
                 role: "Illustrator",
                 name: "Tom Meyer",
                 contacts: {
-                    web: "https://www.meyertoons.com/content.html?page=2",
+                    //- web: "https://www.meyertoons.com/content.html?page=2",
                 }
             },
             {
@@ -575,6 +580,7 @@ block page
                 name: "Mukul Bakshi",
                 contacts: {
                     linkedin: "https://www.linkedin.com/in/mukulbakshi/",
+                    web: 'https://www.mukulbakshi.com'
                 }
             },
             {
