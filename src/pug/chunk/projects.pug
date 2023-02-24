@@ -105,7 +105,7 @@ section(class="py-10 md:py-16")
             each project in filteredProjects
                 a.item(
                     href=project.url
-                    class="m-auto max-w-sm sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity min-w-fit"
+                    class="m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border"
                     style={opacity: 0}
                 )
                     .overlay(class="absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)")
