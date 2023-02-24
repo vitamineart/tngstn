@@ -141,6 +141,7 @@ block page
                         }
                     }
                 +image({
+                    dir: mediaFolder,
                     name: 'ferry',
                     ext: 'jpg',
                     width: 782,
@@ -234,7 +235,7 @@ block page
 
             }
 
-        section(class="website-role-section relative pt-20")
+        section(class="website-role-section relative pt-20 overflow-hidden")
             .container.text-white.z-10.relative
                 div(class="max-w-2xl mx-auto" style={'max-width': '710px'})
                     header(class="text-3xl font-proxima-bold text-center") Role of the website
@@ -259,10 +260,11 @@ block page
                             div(class="text-base px-4 xs:px-0 xl:text-lg font-proxima-bold uppercase text-center mt-4 md:mt-9 max-w-xs mx-auto") !{goal.content}
 
             +image({
+                dir: mediaFolder,
                 name: 'alaska-blue-bg',
                 ext: 'jpg',
                 resolutions: [640, 768, 1024, 1366, 1600, 1920]
-            })(class="absolute inset-0 w-full h-full z-0 mix-blend-luminosity opacity-30 object-cover" alt="Alaska Blue Background")
+            })(class="absolute inset-0 w-full h-full z-0 mix-blend-luminosity opacity-30 object-cover" alt="Alaska Blue Background" id="alaska-blue-bg" style="scale: 1.2")
 
 
         section(id="laptop-section" class="pt-px pb-10 lg:pb-20 relative"
@@ -276,26 +278,29 @@ block page
                         filter: "blur(25px)",
                     })
                     +image({
+                        dir: mediaFolder,
                         alt: 'Save Alaska\'s Ferries Website Page 2',
                         name: 'save-ferry-page2',
                         ext: 'jpg',
                         resolutions: [672]
                     })(width="672" height="420" class="absolute w-1/2 lg:w-1/3 -left-4 lg:left-12 top-1/2 -translate-y-1/2 z-0" src="../media/alaska/save-ferry-page2@672.jpg" style={
                         filter: "drop-shadow(10px 3px 10px hsla(0,0%,0%,.5))"
-                    })
+                    } id="save-ferry-page2")
                     +image({
+                        dir: mediaFolder,
                         alt: 'Save Alaska\'s Ferries Website Page 1',
                         name: 'save-ferry-laptop',
                         ext: 'png',
-                    })(width="1115" height="614" class="save-ferry-laptop relative w-full lg:w-2/3 m-auto inset-0 z-20" )
+                    })(width="1115" height="614" class="save-ferry-laptop relative w-full lg:w-2/3 m-auto inset-0 z-20" id="save-ferry-laptop")
                     +image({
+                        dir: mediaFolder,
                         alt: 'Save Alaska\'s Ferries Website Page 3',
                         name: 'save-ferry-page1',
                         ext: 'jpg',
                         resolutions: [672]
                     })(width="672" height="420" class="absolute w-1/2 lg:w-1/3 -right-2 lg:right-12 top-1/2 -translate-y-1/2 z-0" src="../media/alaska/save-ferry-page1@672.jpg" style={
                         filter: "drop-shadow(-10px 3px 10px hsla(0,0%,0%,.5))"
-                    })
+                    } id="save-ferry-page1")
 
                 .container
                     p(class="mx-auto text-current border-current border-4 py-4 px-6 xs:w-11/12 sm:w-10/12 md:w-8/12 lg:w-auto md:px-10 md:py-6 rounded font-proxima-bold  text-xl lg:text-2xl xl:text-3xl mb-12" style="color: #628FC7; max-width: 613px") After a one-and-a-half year campaign, the website had achieved its goal, and was retired.
@@ -954,6 +959,7 @@ block page
             ) Inlandboatmen’s Union of the Pacific International Organization of Masters, Mates and Pilots Marine Engineers’ Beneficial Association
 
             +image({
+                dir: mediaFolder,
                 alt: 'Alaska\'s Pilots Union',
                 name: 'pilots',
                 ext: 'jpg',

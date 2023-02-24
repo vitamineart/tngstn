@@ -54,6 +54,36 @@ gsap.fromTo('.hero-ship', {
 
 
 
+// alaska-blue-bg
+gsap.from('#alaska-blue-bg', {
+  scrollTrigger: {
+    trigger: '.website-role-section',
+    scrub: 5,
+    start: '20% 90%',
+    end: '80% 0%',
+  },
+  opacity: 0,
+  y: -200,
+})
+
+const saveFerryTrigger = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#save-ferry-laptop',
+    scrub: 3,
+    end: '90% 90%',
+  },
+}).from('#save-ferry-laptop', {
+  scale: 0.9
+}).from('#save-ferry-page1', {
+  scale: .8,
+  xPercent: -60,
+  ease: 'circ.out()'
+}, "<").from('#save-ferry-page2', {
+  scale: .8,
+  xPercent: 60,
+  ease: 'circ.out()'
+}, "<")
+
 
 
 const alaskaTl = gsap.timeline({

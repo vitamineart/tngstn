@@ -33,10 +33,11 @@ readMoreButton.addEventListener("click", function ({target}) {
 
 });
 
-window.addEventListener('resize', ()=>{
+window.addEventListener('resize', () => {
     if(!content.clientHeight == 0) {
-        readMoreButtonText.textContent = 'Discover Tungsten'
-        content.style.height = 0
+        readMoreButtonText.textContent = 'Discover Tungsten';
+        content.style.height = 0;
+        readMoreButton.classList.remove('opened');
     }
 
 })
