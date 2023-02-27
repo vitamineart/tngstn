@@ -514,11 +514,32 @@ block page
                 img(loading="lazy" src="media/shamann-walton/Badges_bg@1920.jpg", srcset="media/shamann-walton/Badges_bg@600.jpg 600w, media/shamann-walton/Badges_bg@800.jpg 800w, media/shamann-walton/Badges_bg@1000.jpg 1000w, media/shamann-walton/Badges_bg@1200.jpg 1200w, media/shamann-walton/Badges_bg@1920.jpg 1920w", alt="Badges Bg" width="1920" height="723" class="absolute w-full h-full inset-0 z-0 object-cover" data-aos="zoom-out" data-aos-delay="300")
 
         section(class="py-12 lg:py-20 relative" style="background-color: hsla(284, 64%, 25%, 0.63);")
+            style.
+                #walton-circle-image {
+                    margin-top: 100vw;
+                }
+                @media (min-width:480px) {
+                    #walton-circle-image {
+                        margin-top: 70vw;
+                    }
+                }
+                @media (min-width:550px) {
+                    #walton-circle-image {
+                        margin-top: 0;
+                    }
+                }
+
+                @media (min-width:1024px) {
+                    #walton-circle-image {
+                        margin-top: 0;
+                    }
+                }
+
             div(class="pattern w-full h-full absolute inset-0 z-0 mix-blend-darken " style="background: url(media/shamann-walton/pattern.png) left top no-repeat; background-size: cover;")
             .container.text-white.z-10.relative
                 header(class="text-4xl lg:text-5xl font-proxima-bold") Television and the power of shared experience
                 p Try for a moment to recall a time when you saw a movie in a  theater.
-                img(loading="lazy" src="media/shamann-walton/walton-circle-image@802.png" srcset="media/shamann-walton/walton-circle-image@600.png 600w, media/shamann-walton/walton-circle-image@802.png 802w, media/shamann-walton/walton-circle-image@1200.png 1200w, media/shamann-walton/walton-circle-image@1600.png 1600w" id="walton-circle-image" sizes="(max-width: 640px) 85vw, (max-width:1024px) 90vw, 802px" class="border-5 lg:border-8 border-current text-violet-100 rounded-full shadow-2xl float-right shape-outside -mr-32 xs:-mr-48 sm:-mr-56 lg:-mr-64 scale-95 " width="802" height="802" style="max-width: 802px !important; ")
+                img(loading="lazy" src="media/shamann-walton/walton-circle-image@802.png" srcset="media/shamann-walton/walton-circle-image@600.png 600w, media/shamann-walton/walton-circle-image@802.png 802w, media/shamann-walton/walton-circle-image@1200.png 1200w, media/shamann-walton/walton-circle-image@1600.png 1600w" id="walton-circle-image" sizes="(max-width: 640px) 85vw, (max-width:1024px) 90vw, 802px" class="w-5/6 sm:w-full border-5 lg:border-8 border-current text-violet-100 rounded-full shadow-2xl float-right shape-outside -mr-32 xs:-mr-48 sm:-mr-56 lg:-mr-64 scale-95 " width="802" height="802" style="max-width: 802px !important; ")
                 p When we're seeing a movie in a sold-out theater, we  have a very different experience than when we watch it alone  at home, on our favorite couch.
                 p When we collectively experience the same emotion as  everyone else around us, that experience is indelible. Sports matches, rock concerts, solar eclipses, Princess Diana's  funeral, these are the defining moments of our lives. Where  were you when the second plane struck?
                 p Meanwhile, a 30-second Super Bowl commercial costs $7 million because nothing else delivers an audience of 100  million viewers, instantly catapulting the brand into the national discourse for weeks to come. What a bargain.

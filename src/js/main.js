@@ -71,7 +71,7 @@ ScrollTrigger.matchMedia({
         const anim = gsap.fromTo(project, {
           opacity: 0,
           y: 50,
-          scale:.8,
+          scale:0,
         }, {
           opacity: 1,
           y: 0,

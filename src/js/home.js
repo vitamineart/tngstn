@@ -12,15 +12,15 @@ readMoreButton.addEventListener("click", function ({target}) {
 
 
         // readMoreButton.scrollIntoView({behavior: "smooth"});
-        gsap.to(window, {
-            duration: 2,
-            ease: 'power2.inOut',
-            scrollTo: {
-                y: readMoreButton,
-                offsetY: 15,
-                autoKill: true,
-            }
-        })
+        // gsap.to(window, {
+        //     duration: 2,
+        //     ease: 'power2.inOut',
+        //     scrollTo: {
+        //         y: readMoreButton,
+        //         offsetY: 15,
+        //         autoKill: true,
+        //     }
+        // })
 
         // var scrollButton = readMoreButton.offsetTop;
         // window.scrollTo({ top: scrollButton, behavior: 'smooth',  });
