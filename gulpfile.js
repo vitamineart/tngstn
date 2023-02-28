@@ -111,6 +111,20 @@ function devFonts() {
     dest(options.paths.dist.fonts)
   );
 }
+function devFavicon() {
+  return src([
+    `${options.paths.src.base}/apple-touch-icon.png`,
+    `${options.paths.src.base}/favicon.png`,
+    `${options.paths.src.base}/favicon.svg`,
+    `${options.paths.src.base}/mask-icon.svg`,
+  ])
+    .pipe(dest(options.paths.dist.base))
+}
+
+function moveManifest() {
+  return src(`${options.paths.src.base}/manifest.json`)
+    .pipe(dest(options.paths.dist.base))
+}
 //svg sprite-mono task
 function svgSpriteMono() {
   return src(`${options.paths.src.media}/icons/mono/*.svg`)
@@ -276,10 +290,24 @@ function prodFonts() {
     dest(options.paths.build.fonts)
   );
 }
+function moveManifestProd() {
+  return src(`${options.paths.src.base}/manifest.json`)
+    .pipe(dest(options.paths.build.base))
+}
+function prodFavicon() {
+  return src([
+    `${options.paths.src.base}/apple-touch-icon.png`,
+    `${options.paths.src.base}/favicon.png`,
+    `${options.paths.src.base}/favicon.svg`,
+    `${options.paths.src.base}/mask-icon.svg`,
+  ])
+    .pipe(dest(options.paths.build.base))
+}
 function moveRobotsTXT() {
   return src(`${options.paths.src.base}/robots.txt`)
     .pipe(dest(options.paths.build.base))
 }
+
 
 function prodClean() {
   console.log(
@@ -323,6 +351,8 @@ exports.default = series(
     svgSpriteMono,
     svgSpriteMulti,
     devFonts,
+    devFavicon,
+    moveManifest,
     devHTML
   ), //Run All tasks in parallel
   livePreview, // Live Preview Build
@@ -338,6 +368,7 @@ exports.prod = series(
     prodSVGSprite,
     prodFonts,
     prodHTML,
+    moveManifestProd,
     moveRobotsTXT
   ), //Run All tasks in parallel
   // criticalCSS,
@@ -348,3 +379,5 @@ exports.devImages = devImages;
 exports.devClean = devClean;
 exports.prodSVGSprite = prodSVGSprite;
 exports.moveRobotsTXT = moveRobotsTXT;
+exports.moveManifestProd = moveManifestProd;
+exports.prodFavicon = prodFavicon;

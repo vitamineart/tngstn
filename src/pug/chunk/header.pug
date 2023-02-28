@@ -1,11 +1,11 @@
 header(class="header relative z-50 py-0 xs:py-1 sm:py-2 md:py-3 lg:py-4 bg-white" class=`${headerShadow === false ? '' : 'header-shadow'}`)
     .container.flex.justify-between.items-center.max-w-7xl
-        a(class="logo" href="/" aria-label="Circular multi-color logo for Tungsten Advertising Agency")
+        a(class=`logo` href="/" aria-label="Circular multi-color logo for Tungsten Advertising Agency" style=`width: ${ currentUrl == '/' ? '55' : '170' }px`)
             //- +iconMulti({
             //-     icon: "logo",
             //-     class: 'w-full h-full'
             //- })
-            svg(xmlns="http://www.w3.org/2000/svg" class=`logo-svg w-2/3 xs:w-5/6 sm:w-auto` width=`${ currentUrl == '/' ? '55' : '170'}` height="55" fill="none" viewBox=`0 0 ${currentUrl == '/' ? '55' : '170'} 55`)
+            svg(xmlns="http://www.w3.org/2000/svg" class=`logo-svg w-5/6 sm:w-auto` width=`${ currentUrl == '/' ? '55' : '170'}` height="55" fill="none" viewBox=`0 0 ${currentUrl == '/' ? '55' : '170'} 55`)
                 g(class="rainbow")
                     path(fill="#000" d="m24.877 5.827-.263-3.404-2.363.425.919 3.274 1.706-.295Zm.196 1.932-1.575.295 1.575 8.053.788-.164-.788-8.184Z" class="ray")
                     path(fill="#305BA7" d="M23.301 15.42 17.263 2.488l3.61-1.375 3.38 13.947-.952.36Z" class="ray")

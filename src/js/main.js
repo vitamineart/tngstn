@@ -1,5 +1,4 @@
-gsap.registerPlugin(ScrollToPlugin);
-
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 // Set a variable for our button element.
 const scrollToTopButton = document.getElementById("go-to-top");
@@ -27,7 +26,7 @@ scrollToTopButton.onclick = function (e) {
     ease: 'power3.inOut',
     scrollTo: {
         y: 0,
-        autoKill: true,
+        // autoKill: true,
     }
   })
 };
@@ -63,7 +62,7 @@ randomProjects.forEach((item, index)=>{
     // item.classList.add(`item-${index+1}`)
 })
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 ScrollTrigger.matchMedia({
     "(max-width:861px)": function () {
