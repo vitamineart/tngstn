@@ -369,7 +369,8 @@ exports.prod = series(
     prodFonts,
     prodHTML,
     moveManifestProd,
-    moveRobotsTXT
+    moveRobotsTXT,
+    prodFavicon
   ), //Run All tasks in parallel
   // criticalCSS,
   buildFinish
