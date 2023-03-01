@@ -346,13 +346,23 @@ logosTl.from('.tv-logo', {
 
 
 
+gsap.from("#golden-gate-bg", {
+  scrollTrigger: {
+    trigger: "#golden-gate-bg",
+    scrub: 3,
+    end: '60% 80%'
+  },
+  scale: 2,
+  opacity: 0
+})
+
 gsap.from("#walton-circle-image", {
   scrollTrigger: {
     trigger: "#walton-circle-image",
     start: '-50px 100%'
   },
   opacity: 0,
-  filter: 'grayscale(1) blur(5px)',
+  filter: 'grayscale(1)',
   xPercent: 15,
   duration: 1,
   ease: "quad.0ut"
@@ -425,4 +435,22 @@ const closePopup = () => {
 
 
 
-
+const closingMessageTL = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#walton-closing-message',
+  },
+})
+.from('#walton-closing-message', {
+  opacity: 0,
+  duration: 1,
+  rotateX: 90,
+  ease: 'back.out(1.4)'
+}).from('#walton-closing-message-content', {
+  opacity: 0,
+  duration: 1.2,
+  scale: .8,
+  ease: 'expo.out'
+}, "<50%").from('#walton-closing-message-bg', {
+  opacity: 0,
+  scale: 1.1,
+}, "0.3")

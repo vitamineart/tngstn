@@ -42,11 +42,6 @@ window.onload = function () {
 };
 
 
-AOS.init({
-  once: true
-});
-
-
 
 // random appear of works-clients grid
 const projects = Array.from(document.querySelectorAll('.projects-grid .item'));

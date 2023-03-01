@@ -1,12 +1,12 @@
 extends ./layout/base
 block variables
-    - var pageTitle = 'Tungsten Advertising Case Study | Cobham SeaTel Data Sheets'
+    - let pageTitle = `Tungsten's Data Sheet Services: Technical Product Information for Procurement Decisions`
     - let currentUrl = 'cobham-seatel-datasheets.html'
+    - let metaDescription = 'Looking for an agency to create detailed technical information on your product? Tungsten specializes in designing data sheets that provide the information needed for procurement decisions. Entrust us with your B2B communication needs.'
 
 
 prepend preload
-    script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer)
-    script(src="js/cobham-seatel-datasheets.js" defer)
+
 
 append head
     style.
@@ -29,10 +29,9 @@ append head
 block page
     div(class="hero overflow-hidden")
         picture
-            source(srcset="media/cobham-datasheets/Cobham_DataSheets_hero_xs@290.jpg 290w, media/cobham-datasheets/Cobham_DataSheets_hero_xs@436.jpg 436w, media/cobham-datasheets/Cobham_DataSheets_hero_xs@580.jpg 580w, media/cobham-datasheets/Cobham_DataSheets_hero_xs@720.jpg 720w, media/cobham-datasheets/Cobham_DataSheets_hero_xs@1080.jpg 1080w, media/cobham-datasheets/Cobham_DataSheets_hero_xs@1440.jpg 1440w" alt="SeaTel Data Sheets Hero Image" media="(max-width:600px)")
-            source(srcset="media/cobham-datasheets/Cobham_DataSheets_hero_sm@400.jpg 400w, media/cobham-datasheets/Cobham_DataSheets_hero_sm@617.jpg 617w, media/cobham-datasheets/Cobham_DataSheets_hero_sm@926.jpg 926w, media/cobham-datasheets/Cobham_DataSheets_hero_sm@1234.jpg 1234w, media/cobham-datasheets/Cobham_DataSheets_hero_sm@1851.jpg 1851w" alt="SeaTel Data Sheets Hero Image" media="(max-width:1024px)")
-            source(srcset="media/cobham-datasheets/Cobham_DataSheets_hero@1441.jpg 1441w, media/cobham-datasheets/Cobham_DataSheets_hero@1920.jpg 1920w" alt="SeaTel Data Sheets Hero Image")
-            img(src="media/cobham-datasheets/Cobham_DataSheets_hero@1920.jpg" , alt="SeaTel Data Sheets Hero Image" width="1920" height="773")
+            source(srcset="media/cobham-datasheets/ST3011-data-sheets_xs@290.jpg 290w, media/cobham-datasheets/ST3011-data-sheets_xs@436.jpg 436w, media/cobham-datasheets/ST3011-data-sheets_xs@580.jpg 580w, media/cobham-datasheets/ST3011-data-sheets_xs@720.jpg 720w, media/cobham-datasheets/ST3011-data-sheets_xs@1080.jpg 1080w, media/cobham-datasheets/ST3011-data-sheets_xs@1440.jpg 1440w" media="(max-width:600px)")
+            source(srcset="media/cobham-datasheets/ST3011-data-sheets_sm@400.jpg 400w, media/cobham-datasheets/ST3011-data-sheets_sm@617.jpg 617w, media/cobham-datasheets/ST3011-data-sheets_sm@926.jpg 926w, media/cobham-datasheets/ST3011-data-sheets_sm@1234.jpg 1234w, media/cobham-datasheets/ST3011-data-sheets_sm@1851.jpg 1851w" media="(max-width:1024px)")
+            img(src="media/cobham-datasheets/ST3011-data-sheets@1920.jpg" srcset="media/cobham-datasheets/ST3011-data-sheets@1441.jpg 1441w, media/cobham-datasheets/ST3011-data-sheets@1920.jpg 1920w" alt="Stack of printed data sheets for Cobham 3011, 3-Axis marine stabilized antenna system." width="1920" height="773")
         svg(class="hero-ellipse" fill="none" viewBox="0 0 2219 153")
             ellipse(cx="1109.37" cy="76.27" fill="#fff" rx="1109.37" ry="76.27")
 
@@ -51,35 +50,28 @@ block page
 
     article(class=" page-content mt-10 lg:mt-20 xl:mt-24 leading-normal overflow-hidden")
         .container.flow-root
-            p.drop-cap(style="--color: hsla(207, 100%, 39%, 1)").
-                As the world leader in satellite communications, Cobham is constantly releasing new products featuring industry-leading technologies. Decision-makers across multiple industries seek to understand these products and their place within the satellite communications eco-system.
+            p.drop-cap(style="--color: hsla(207, 100%, 39%, 1)") As the world leader in satellite communications, Cobham is constantly releasing new products featuring industry-leading technologies. Decision-makers across multiple industries seek to understand these products and their place within the satellite communications eco-system.
 
             -
-                    const datasheetReferred = [
-                        "Specifications Sheet",
-                        "Features Document",
-                        "Specs",
-                        "Engineering Data",
-                        "Technical Summary"
-                    ]
+                const datasheetReferred = [
+                    "Specifications Sheet",
+                    "Features Document",
+                    "Specs",
+                    "Engineering Data",
+                    "Technical Summary"
+                ]
 
-            div(class="md:float-right my-5 mx-auto md:m-5 lg:m-8 text-base text-center font-proxima-bold leading-tight max-w-sm lg:max-w-max border-2 border-blue-light" data-aos-duration="2000" data-aos="zoom-in")
-                div(class=" bg-blue-light text-white px-8 lg:px-12.5 py-4" data-aos-duration="1500" data-aos="fade-in").
-                    Data sheet are also referred to as:
+            div(class="md:float-right my-5 mx-auto md:m-5 lg:m-8 text-base text-center font-proxima-bold leading-tight max-w-sm lg:max-w-max border-2 border-blue-light fade-in-left")
+                div(class=" bg-blue-light text-white px-8 lg:px-12.5 py-4" ) Data sheet are also referred to as:
                 each name, index in datasheetReferred
-                    div(class="odd:bg-gray-light text-blue-light px-8 lg:px-12.5 py-4" data-aos-duration="2000" data-aos="fade-in" data-aos-delay=`${150*(index+1)}`)= name
+                    div(class="odd:bg-gray-light text-blue-light px-8 lg:px-12.5 py-4 blur-in" )= name
 
-            p.
-                These decision-makers include Cobham's dealer network, the IT departments of potential client companies, and the wider satcom industry.
+            p These decision-makers include Cobham's dealer network, the IT departments of potential client companies, and the wider satcom industry.
 
-            p.
-                Data sheets are the most technical part of product description and documentation. They can be used for commercial or technical communication. A data sheet describes the characteristics of a product, component, or software, in stark, technical outline, devoid of product promotion.
-            p.
-                Data sheets are now so standardized that experienced decision-makers expect specific information displayed in a familiar format, and in conventional language. It has to be exact, concise, and presented in a factual tone using hard data.
-            p.
-                A well-written and well-designed data sheet follows a formal structure with strict taxonomy, enabling the reader to glean the information with a quick scan. This helps when making comparisons with other products.
-            p.
-                When a buyer is making a major investment in software or hardware, the stakes can be high enough that several people may be assigned to a buying team, and there are significant consequences for choosing the wrong solution to a problem.
+            p Data sheets are the most technical part of product description and documentation. They can be used for commercial or technical communication. A data sheet describes the characteristics of a product, component, or software, in stark, technical outline, devoid of product promotion.
+            p Data sheets are now so standardized that experienced decision-makers expect specific information displayed in a familiar format, and in conventional language. It has to be exact, concise, and presented in a factual tone using hard data.
+            p A well-written and well-designed data sheet follows a formal structure with strict taxonomy, enabling the reader to glean the information with a quick scan. This helps when making comparisons with other products.
+            p When a buyer is making a major investment in software or hardware, the stakes can be high enough that several people may be assigned to a buying team, and there are significant consequences for choosing the wrong solution to a problem.
 
         link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload='this.media="all"')
         style.
@@ -184,19 +176,19 @@ block page
                     //- Slides
                     -
                         const datasheets = [
-                            { model: '3011' },
-                            { model: '3612' },
-                            { model: '6012' },
-                            { model: '9711' },
-                            { model: 'ST88' },
-                            { model: 'ST94' },
-                            { model: 'ST144' }
+                            { model: '3011', altImg: 'Data sheet for Cobham 3011, 3-Axis marine stabilized antenna system compatible with Ku-band satellites' },
+                            { model: '3612', altImg: 'Data sheet for Cobham 3612, 3-Axis marine stabilized antenna system compatible with Ku-band satellites' },
+                            { model: '6012', altImg: 'Data sheet for Cobham 6012, 3-Axis marine stabilized antenna system compatible with Ku-band satellites' },
+                            { model: '9711', altImg: 'Data sheet for Cobham 9711 TxRx, 3-Axis marine stabilized antenna system compatible with C- or Ku-band satellites' },
+                            { model: 'ST88', altImg: 'Data sheet for Cobham ST88, 3-Axis marine stabilized antenna system compatible with C-Band and Ku-Band satellites' },
+                            { model: 'ST94', altImg: 'Data sheet for Cobham ST94, 3-Axis marine stabilized antenna system compatible with C-Band and Ku-Band satellites' },
+                            { model: 'ST144', altImg: 'Data sheet for Cobham ST144, 3-Axis marine stabilized antenna system compatible with C-Band and Ku-Band satellites' }
                         ]
                         const reverseDatasheets = datasheets.reverse();
                     each datasheet in reverseDatasheets
                         .swiper-slide
                             a(href=`../media/cobham-datasheets/datasheets/${datasheet.model}.pdf` target="_blank")
-                                img(loading="lazy" src=`../media/cobham-datasheets/datasheets/${datasheet.model}@1082.jpg`, srcset=`../media/cobham-datasheets/datasheets/${datasheet.model}@360.jpg 360w, ../media/cobham-datasheets/datasheets/${datasheet.model}@600.jpg 600w, ../media/cobham-datasheets/datasheets/${datasheet.model}@800.jpg 800w, ../media/cobham-datasheets/datasheets/${datasheet.model}@1082.jpg 1082w`, sizes="(max-width:1200px) 33.33vw, 541px" class="mx-auto swiper-lazy shadow-lg" width="541" height="699" )
+                                img(loading="lazy" src=`../media/cobham-datasheets/datasheets/${datasheet.model}@1082.jpg`, srcset=`../media/cobham-datasheets/datasheets/${datasheet.model}@360.jpg 360w, ../media/cobham-datasheets/datasheets/${datasheet.model}@600.jpg 600w, ../media/cobham-datasheets/datasheets/${datasheet.model}@800.jpg 800w, ../media/cobham-datasheets/datasheets/${datasheet.model}@1082.jpg 1082w`, sizes="(max-width:1200px) 33.33vw, 541px" class="mx-auto swiper-lazy shadow-lg" width="541" height="699" alt=`${datasheet.altImg}`)
                                 //- .swiper-lazy-preloader
 
                 //- navigation buttons
@@ -210,14 +202,10 @@ block page
 
 
         .container
-            p.
-                A good data sheet must not neglect small features that could be a consideration for the user of the product. It offers technical details substantial enough to enable a potential buyer to evaluate the product, or to equip an engineer to understand the role of the component in the overall system.
-            p.
-                As the headline on this page tells us, a data sheet occupies the space between a product brochure that highlights features and benefits, and a technical white paper or an instruction manual. The examples of data sheets on this page were created by Tungsten for different models of Cobham's self-stabilizing maritime satellite antennae.
-            p.
-                As a full-service advertising agency, Tungsten created communication materials for every stage of the customer's buying process. The data sheets displayed here represent a type of product communication that has a distinct place amongst other materials Tungsten created for Cobham, ranging from technical videos to training emulator, to magazine advertisements published worldwide.
-            p.mb-10.
-                Once designed, these data sheets were printed at an offset printing press, and distributed at trade shows in addition to being made available for electronic download.
+            p A good data sheet must not neglect small features that could be a consideration for the user of the product. It offers technical details substantial enough to enable a potential buyer to evaluate the product, or to equip an engineer to understand the role of the component in the overall system.
+            p As the headline on this page tells us, a data sheet occupies the space between a product brochure that highlights features and benefits, and a technical white paper or an instruction manual. The examples of data sheets on this page were created by Tungsten for different models of Cobham's self-stabilizing maritime satellite antennae.
+            p As a full-service advertising agency, Tungsten created communication materials for every stage of the customer's buying process. The data sheets displayed here represent a type of product communication that has a distinct place amongst other materials Tungsten created for Cobham, ranging from technical videos to training emulator, to magazine advertisements published worldwide.
+            p.mb-10 Once designed, these data sheets were printed at an offset printing press, and distributed at trade shows in addition to being made available for electronic download.
 
 
 
@@ -234,7 +222,7 @@ block page
                 role: "Creative Director",
                 name:"Stuart Silberman",
                 contacts: {
-                    linkedin: "https://www.linkedin.com/in/stuart_silberman/"
+                    //- linkedin: "https://www.linkedin.com/in/stuart_silberman/"
                 }
             },
             {
@@ -246,8 +234,9 @@ block page
 
 
 append footer_scripts
-
+    script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer)
     script(src="js/simpleParallax.js" defer)
+    script(src="js/cobham-seatel-datasheets.js" defer)
 
 
 
