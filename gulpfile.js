@@ -106,20 +106,21 @@ function devImages() {
     .pipe(newer(options.paths.dist.media))
     .pipe(dest(options.paths.dist.media));
 }
+
 function devFonts() {
   return src(`${options.paths.src.fonts}/*`).pipe(
     dest(options.paths.dist.fonts)
   );
 }
-function devFavicon() {
-  return src([
-    `${options.paths.src.base}/apple-touch-icon.png`,
-    `${options.paths.src.base}/favicon.png`,
-    `${options.paths.src.base}/favicon.svg`,
-    `${options.paths.src.base}/mask-icon.svg`,
-  ])
-    .pipe(dest(options.paths.dist.base))
-}
+// function devFavicon() {
+//   return src([
+//     `${options.paths.src.base}/apple-touch-icon.png`,
+//     `${options.paths.src.base}/favicon.png`,
+//     `${options.paths.src.base}/favicon.svg`,
+//     `${options.paths.src.base}/mask-icon.svg`,
+//   ])
+//     .pipe(dest(options.paths.dist.base))
+// }
 
 function moveManifest() {
   return src(`${options.paths.src.base}/manifest.json`)
@@ -294,15 +295,15 @@ function moveManifestProd() {
   return src(`${options.paths.src.base}/manifest.json`)
     .pipe(dest(options.paths.build.base))
 }
-function prodFavicon() {
-  return src([
-    `${options.paths.src.base}/apple-touch-icon.png`,
-    `${options.paths.src.base}/favicon.png`,
-    `${options.paths.src.base}/favicon.svg`,
-    `${options.paths.src.base}/mask-icon.svg`,
-  ])
-    .pipe(dest(options.paths.build.base))
-}
+// function prodFavicon() {
+//   return src([
+//     `${options.paths.src.base}/media/apple-touch-icon.png`,
+//     `${options.paths.src.base}/media/favicon.png`,
+//     `${options.paths.src.base}/media/favicon.svg`,
+//     `${options.paths.src.base}/media/mask-icon.svg`,
+//   ])
+//     .pipe(dest(options.paths.build.base))
+// }
 function moveRobotsTXT() {
   return src(`${options.paths.src.base}/robots.txt`)
     .pipe(dest(options.paths.build.base))
@@ -351,7 +352,6 @@ exports.default = series(
     svgSpriteMono,
     svgSpriteMulti,
     devFonts,
-    devFavicon,
     moveManifest,
     devHTML
   ), //Run All tasks in parallel
@@ -370,7 +370,7 @@ exports.prod = series(
     prodHTML,
     moveManifestProd,
     moveRobotsTXT,
-    prodFavicon
+    // prodFavicon
   ), //Run All tasks in parallel
   // criticalCSS,
   buildFinish
@@ -381,4 +381,4 @@ exports.devClean = devClean;
 exports.prodSVGSprite = prodSVGSprite;
 exports.moveRobotsTXT = moveRobotsTXT;
 exports.moveManifestProd = moveManifestProd;
-exports.prodFavicon = prodFavicon;
+// exports.prodFavicon = prodFavicon;

@@ -2,7 +2,7 @@
     "name": "Tungsten",
     "short_name": "tngstn",
     "icons": [{
-        "src": "apple-touch-icon.png",
+        "src": "media/apple-touch-icon.png",
         "sizes": "512x512"
     }],
     "background_color": "#ffffff",
