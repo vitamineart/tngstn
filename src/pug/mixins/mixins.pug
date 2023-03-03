@@ -1,5 +1,5 @@
 mixin page-title(u)
-    header(class="page-title pt-8 pb-6 relative" class=u.class style=u.style)
+    header(class="page-title pt-5 pb-4 sm:pt-8 sm:pb-6 relative" class=u.class style=u.style)
         .container
             if u.tagClient
                 div(class=`tag-client relative inline-block font-proxima-bold px-2 py-0.5 ${u.inverted ? 'bg-white text-blue' : 'bg-blue-light text-white'} ${u.tagClass || ''}` style=u.tagStyle)= u.tagClient

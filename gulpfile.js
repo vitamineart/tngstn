@@ -272,10 +272,11 @@ function prodScripts() {
 
 function prodImages() {
   return src([
-    options.paths.dist.media + "/**/*",
-    `!${options.paths.dist.media}/icons/**`,
-    `!${options.paths.dist.media}/icons`,
+    `${options.paths.src.media}/**/*`,
+    `!${options.paths.src.media}/icons/**`,
+    `!${options.paths.src.media}/icons`,
   ])
+    .pipe(newer(options.paths.build.media))
     .pipe(size({ title: "Before WEBP conversion " }))
     .pipe(webp())
     .pipe(size({ title: "After WEBP conversion " }))

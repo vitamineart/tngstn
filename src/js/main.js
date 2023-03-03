@@ -162,6 +162,7 @@ if(document.querySelectorAll('.fade-in-left, .fade-in-right, .fade-in-up, .fade-
   let fadeIn = gsap.utils.toArray('.fade-in');
   let blurIn = gsap.utils.toArray('.blur-in');
 
+
 fadeIn.forEach((item, i) => {
   const anim = gsap.from(item, {
     opacity: 0,
