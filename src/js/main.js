@@ -150,7 +150,7 @@ if (document.querySelector('#audio-wave')) {
 
 // common entrance animations
 if(document.querySelectorAll('.fade-in-left, .fade-in-right, .fade-in-up, .fade-in-down, .fade-in, .blur-in')){
-  let commonEase = 'circ.out';
+  let commonEase = 'power2.out';
   let commonX = 50;
   let commonY = 50;
   let animStart = '20% 80%';
