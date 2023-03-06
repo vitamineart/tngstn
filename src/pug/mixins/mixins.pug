@@ -89,9 +89,10 @@ mixin team-member(x)
     .team-contacts.flex.items-center
         - let social = Object(x.contacts)
         each val, key in social
-            a(href=`${val}` class="text-gray-light hover:text-blue-light mx-1 transition-colors" target="_blank")
+            a(href=`${val}` class="text-gray-light hover:text-blue-light transition-colors w-11 h-11 p-2" target="_blank" aria-label=`${x.name + ' ' +  key}`)
                 +iconMono({
                     icon: key,
+                    class: 'w-full h-full fill-current'
                 })
 
 
