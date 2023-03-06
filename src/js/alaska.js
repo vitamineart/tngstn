@@ -120,11 +120,11 @@ alaskaTl.from('#alaska-map', {
 }, "3")
 .from('#ferry-routes .route', {
   opacity: 0,
-  scale: .8,
+  scale: .9,
   transformOrigin: 'center',
-  duration: .5,
+  duration: 1,
   stagger: {
-    amount: 0.4,
+    amount: 0.2,
     grid: 'auto',
     from: 'random',
   }

@@ -283,9 +283,7 @@ block page
                         name: 'save-ferry-page2',
                         ext: 'jpg',
                         resolutions: [672]
-                    })(width="672" height="420" class="absolute w-1/2 lg:w-1/3 -left-4 lg:left-12 top-1/2 -translate-y-1/2 z-0" src="../media/alaska/save-ferry-page2@672.jpg" style={
-                        filter: "drop-shadow(10px 3px 10px hsla(0,0%,0%,.5))"
-                    } id="save-ferry-page2")
+                    })(width="672" height="420" class="absolute w-1/2 lg:w-1/3 -left-4 lg:left-12 top-1/2 -translate-y-1/2 z-0" style="filter: drop-shadow(10px 3px 10px hsl(0 0% 0% / 0.5))" id="save-ferry-page2")
                     +image({
                         dir: mediaFolder,
                         alt: 'Save Alaska\'s Ferries Website Page 1',
@@ -298,9 +296,7 @@ block page
                         name: 'save-ferry-page1',
                         ext: 'jpg',
                         resolutions: [672]
-                    })(width="672" height="420" class="absolute w-1/2 lg:w-1/3 -right-2 lg:right-12 top-1/2 -translate-y-1/2 z-0" src="../media/alaska/save-ferry-page1@672.jpg" style={
-                        filter: "drop-shadow(-10px 3px 10px hsla(0,0%,0%,.5))"
-                    } id="save-ferry-page1")
+                    })(width="672" height="420" class="absolute w-1/2 lg:w-1/3 -right-2 lg:right-12 top-1/2 -translate-y-1/2 z-0" src="../media/alaska/save-ferry-page1@672.jpg" style="filter: drop-shadow(10px 3px 10px hsl(0 0% 0% / 0.5))" id="save-ferry-page1")
 
                 .container
                     p(class="mx-auto text-current border-current border-4 py-4 px-6 xs:w-11/12 sm:w-10/12 md:w-8/12 lg:w-auto md:px-10 md:py-6 rounded font-proxima-bold  text-xl lg:text-2xl xl:text-3xl mb-12" style="color: #628FC7; max-width: 613px") After a one-and-a-half year campaign, the website had achieved its goal, and was retired.
@@ -892,7 +888,7 @@ block page
                             id=city.id
                             data-route=city.route
                             style={
-                                'filter':'drop-shadow(0 2px 5px hsl(0 0% 0% / .15))'
+                                'filter':'drop-shadow(0 2px 5px hsla(0, 0%, 0%, .15))'
                             }
                         )
                             img(src=`${mediaFolder}${city.id == 'sitka' ? 'pelican' : city.id }@124.png` width="62" height="62" alt=`${city.id}-icon` class="icon-label flex-none mr-4")
@@ -902,12 +898,9 @@ block page
                     each route in routes
                         div(
                             class="route cursor-default group flex items-center bg-white hover:bg-current text-current hover:text-white duration-200 transition-colors rounded-full px-3 xs:px-5 py-2"
-                            style={
-                                'color': route.bg,
-                                'filter':'drop-shadow(0 2px 5px hsl(0 0% 0% / .15))'
-                            }
+                            style=`color: ${route.bg}; filter: drop-shadow(0 2px 5px hsla(0, 0%, 0%, .15));`
                             id=route.id
-                            data-cities=`${route.cities}`
+                            data-cities=route.cities
                         )
                             svg(width="25" height="10" fill="none" viewBox="0 0 25 10" class="icon-ship transition-colors duration-200 fill-current group-hover:fill-white mr-4")
                                 path( fill-rule="evenodd" d="M9.986 0H6.657v2.288H3.12v2.289H0l1.04 5.409h19.763l3.953-5.41h-4.577V2.289H9.986V0ZM5.2 7.281a.416.416 0 1 0-.832 0 .416.416 0 0 0 .832 0Zm7.905-.416a.416.416 0 1 1 0 .832.416.416 0 0 1 0-.832Zm4.577.416a.416.416 0 1 0-.832 0 .416.416 0 0 0 .832 0Zm-8.738-.416a.416.416 0 1 1 0 .832.416.416 0 0 1 0-.832Z" clip-rule="evenodd")
