@@ -100,8 +100,8 @@ mixin team(team)
     div(class="container py-12 md:py-20")
         #team.max-w-lg.mx-auto
             each teamMember, index in team
-                div(class="border-b py-2 last:border-0 will-change-transform-opacity team-member")
-                    .flex.items-center.justify-between
+                div(class="border-b last:border-0 will-change-transform-opacity team-member")
+                    .flex.items-center.justify-between(style="min-height: 45px;")
                         +team-member(teamMember)
                     if teamMember.comment
                         .clients-comment.text-xs.text-gray-400.mt-2 !{teamMember.comment}

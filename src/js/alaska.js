@@ -69,7 +69,7 @@ gsap.from('#alaska-blue-bg', {
 const saveFerryTrigger = gsap.timeline({
   scrollTrigger: {
     trigger: '#save-ferry-laptop',
-    scrub: 3,
+    scrub: true,
     end: '90% 90%',
   },
 }).from('#save-ferry-laptop', {
@@ -138,6 +138,8 @@ alaskaTl.from('#alaska-map', {
 
 
 // routes, cities filtering
+const map = document.querySelector('#alaska-map');
+const initialMapViewBox = map.getAttribute('viewBox');
 const mapLabels = document.querySelectorAll('#cities-labels .label');
 const alaskaRoutes = document.querySelectorAll('#ferry-routes .route');
 const routeLines = document.querySelectorAll('#alaska-map .lines path');
@@ -182,12 +184,28 @@ mapLabels.forEach(item=>{
       }
     })
 
+    if (window.innerWidth < 1024) {
+      gsap.to(map, {
+        attr:{viewBox: target.dataset.viewbox},
+        duration: 1,
+        ease: 'circ.inOut',
+      })
+    }
+
 
   })
   item.addEventListener('mouseleave', ()=>{
     gsap.set(routeLines, {'stroke-dashoffset':0, opacity: 1})
     alaskaRoutes.forEach(route=>gsap.to(route, {opacity: 1, duration: .7, ease: 'circ.out'}))
     mapLabels.forEach(label=>label.classList.remove('active'))
+    // map.setAttribute("viewBox", `300 0 1939 1179`);
+    if (window.innerWidth < 1024) {
+      gsap.to(map, {
+        attr:{ viewBox: initialMapViewBox },
+        duration: 1,
+        ease: 'circ.inOut',
+      });
+    }
   })
 })
 
@@ -215,12 +233,25 @@ alaskaRoutes.forEach( route => {
         label.classList.add('active')
       }
     })
-
+    if (window.innerWidth < 1024) {
+      gsap.to(map, {
+        attr:{viewBox: target.dataset.viewbox},
+        duration: 1,
+        ease: 'circ.inOut',
+      })
+    }
   })
 
   route.addEventListener('mouseleave', ({target})=>{
     mapLabels.forEach(label=>label.classList.remove('active'))
     gsap.set(routeLines, {'stroke-dashoffset':0, opacity: 1})
+    if (window.innerWidth < 1024) {
+      gsap.to(map, {
+        attr:{ viewBox: initialMapViewBox },
+        duration: 1,
+        ease: 'circ.inOut',
+      });
+    }
   })
 
 
@@ -228,11 +259,10 @@ alaskaRoutes.forEach( route => {
 
 
 
-const svgElement = document.querySelector('#alaska-map'); // Get the SVG element
-const [, , originalWidth, originalHeight] = svgElement.getAttribute("viewBox").split(" ").map(Number);
 
 
-console.log(originalWidth, originalHeight);
+
+// console.log(originalWidth, originalHeight);
 // svgElement.addEventListener("mouseenter", (event) => {
 //   const {top, left, width, height} = svgElement.getBoundingClientRect();
 
@@ -244,3 +274,4 @@ console.log(originalWidth, originalHeight);
 // svgElement.addEventListener("mouseleave", () => {
 //   svgElement.setAttribute("viewBox", `0 0 ${originalWidth} ${originalHeight}`);
 // });
+

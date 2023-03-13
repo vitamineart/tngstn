@@ -91,17 +91,19 @@ block page
 
             style.
                 #circleShips {
-                    width: 300px;
+                    width: 270px;
                     transform:rotate(39deg);
-                    left: 70px;
+                    left: 80px;
                     right: 0;
                     top: 0;
                 }
                 #domeAntennaImage {
                     top:40px;
-                    left: 28vw;
+                    left: 45%;
+                    translate: -20% 0;
                     right: 0;
                     width: 300px;
+                    scale: .9;
                 }
 
                 @media (min-width: 480px){
@@ -113,13 +115,14 @@ block page
                     }
                     #domeAntennaImage {
                         width: 400px;
-                        top: 120px;
-                        right: 0;
+                        top: 110px;
+                        scale: .8;
                     }
                 }
                 @media (min-width: 640px){
                     #domeAntennaImage {
                         top: 135px;
+                        scale: 0.9;
                     }
                 }
                 @media (min-width: 768px){
@@ -130,8 +133,9 @@ block page
                     }
                     #domeAntennaImage {
                         top: 0;
-                        left: 70px;
+                        left: 140px;
                         width: auto;
+                        scale: 1;
                     }
                 }
                 @media (min-width: 1024px){
@@ -140,8 +144,9 @@ block page
                         top: 30px;
                     }
                     #domeAntennaImage {
-                        top: 65px;
+                        top: 60px;
                         left: 66px;
+                        translate: 0 0;
                     }
                 }
                 @media (min-width: 1280px){
@@ -151,7 +156,7 @@ block page
                     }
                     #domeAntennaImage {
                         top: 80px;
-                        left: -10px;
+                        left: -30px;
                     }
                 }
                 .ship-category {

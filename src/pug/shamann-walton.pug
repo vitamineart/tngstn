@@ -1,12 +1,13 @@
 extends ./layout/base
 block variables
-    - var pageTitle = 'Tungsten Advertising Case Study | Shamann Walton for San Francisco Supervisor | Television Commercial'
+    - let pageTitle = 'Tungsten Advertising Case Study | Shamann Walton for San Francisco Supervisor | Television Commercial'
     - let currentUrl = 'shamann-walton.html'
     - let metaDescription = 'Learn how Tungsten helped Shamann Walton win the election for San Francisco City Supervisor in a crowded field with targeted media planning and a heavy reliance on television advertising. Discover the strategy behind the successful political campaign in District 10.'
+    - let mediaFolder = 'media/shamann-walton/'
 
 prepend preload
-    //- //- link(rel="preload" as="image" href="https://i.ytimg.com/vi_webp/0puWSusGbOA/hqdefault.webp")
-    script(type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js" defer)
+    //- link(rel="preload" as="image" href="https://i.ytimg.com/vi_webp/rHQnWL0zY8U/hqdefault.webp")
+    //- <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js" defer></script>
 
 
 
@@ -20,6 +21,7 @@ append head
             --c-walton-violet: #604B8D;
             --c-walton-purple: #744E9F;
         }
+    //- style.
         .hero {
             background-image: url(media/shamann-walton/Walton-Hero-Bg.jpg);
             background-position: 28% 50%;
@@ -53,11 +55,18 @@ block page
                     Seven candidates were running for the position of Supervisor of District 10 in San Francisco. Polls showed three of them tied at first place.
                 p.mt-5.
                     That day, the Labor Council of San Francisco - a Political Action Committee - asked Tungsten to create and place a television commercial to help the candidate they were supporting, Shamann Walton, win the election.
-        .video-container.aspect-video.absolute.inset-0.w-full.h-full.z-0
+        .video-container.absolute.inset-0.w-full.h-full.z-0
             div(class="overlay absolute inset-0 w-full h-full bg-black/60 z-10 " style="backdrop-filter: blur(1px) saturate(0.7);")
-            iframe(src="https://www.youtube.com/embed/rHQnWL0zY8U?controls=0&autoplay=1&mute=1&playsinline=1&loop=1" class="absolute w-full h-full inset-0 object-cover z-0 yt_player_iframe" title="30-second television commercial for Shamann Walton for Supervisor, created by Tungsten Advertising agency.")
+            iframe(src="https://www.youtube.com/embed/rHQnWL0zY8U?controls=0&autoplay=1&mute=1&playsinline=1&loop=1&rel=0" class="absolute w-full h-full inset-0 object-cover z-0 yt_player_iframe" title="30-second television commercial for Shamann Walton for Supervisor, created by Tungsten Advertising agency.")
+            //- <lite-youtube class="yt_player_iframe absolute inset-0 m-auto" videoid="rHQnWL0zY8U" videotitle="30-second television commercial for Shamann Walton for Supervisor, created by Tungsten Advertising agency" autoload params="autoplay=1&controls=0" style="background-image: url(https://i.ytimg.com/vi_webp/rHQnWL0zY8U/hqdefault.webp)">
+            //-     <a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=rHQnWL0zY8U">Watch on YouTube: "30-second television commercial for Shamann Walton for Supervisor, created by Tungsten Advertising agency"</a>
+            //- </lite-youtube>
 
-    img(src="media/shamann-walton/walton-hands-logos@1921.jpg" srcset="media/shamann-walton/walton-hands-logos@400.jpg 400w, media/shamann-walton/walton-hands-logos@600.jpg 600w, media/shamann-walton/walton-hands-logos@800.jpg 800w, media/shamann-walton/walton-hands-logos@1200.jpg 1200w, media/shamann-walton/walton-hands-logos@1921.jpg 1921w, media/shamann-walton/walton-hands-logos@3842.jpg 3842w" width="1921" height="524" class="object-cover" style="min-height: 130px;" alt="Four multi-racial fists, with political sticker on back of each hand.")
+    +image({
+        dir: mediaFolder,
+        ext: 'jpg',
+        name: 'multi-racial-fists',
+    })( width="1920" height="524" class="object-cover w-full" style="min-height: 130px;" alt="Four multi-racial fists, with political sticker on back of each hand.")
 
 
 
@@ -152,9 +161,9 @@ block page
                     div(class="border-2 border-dotted border-blue rounded-full absolute inset-0 m-auto z-10 map-container-circle" style="--size: 44%;")
                     div(class="border border-dotted border-blue rounded-full absolute inset-0 m-auto z-10 map-container-circle" style="--size: 22%;" )
                     div(class="rounded-full absolute z-10" id="san-francisco-pin" )
-                    img(loading="lazy" src="media/shamann-walton/san-francisco-city-map.png" id="san-francisco-city-map" width="140" height="201" class="absolute z-10" )
+                    img(loading="lazy" src="media/shamann-walton/san-francisco-city-map.png" id="san-francisco-city-map" width="140" height="201" class="absolute z-10" alt="San Francisco Map")
                     div(class="absolute inset-0 m-auto z-10 w-6 h-6 bg-blue " id="map-container-center" )
-                    img(loading="lazy" src="media/shamann-walton/SanFranciscoMap@620.png", srcset="media/shamann-walton/SanFranciscoMap@540.png 540w, media/shamann-walton/SanFranciscoMap@620.png 620w, media/shamann-walton/SanFranciscoMap@930.png 930w, media/shamann-walton/SanFranciscoMap@1240.png 1240w" alt="San Francisco Map" class="absolute h-full w-full z-0" width="620" height="620" id="map-image")
+                    img(loading="lazy" src="media/shamann-walton/SanFranciscoMap@620.png", srcset="media/shamann-walton/SanFranciscoMap@540.png 540w, media/shamann-walton/SanFranciscoMap@620.png 620w, media/shamann-walton/SanFranciscoMap@930.png 930w, media/shamann-walton/SanFranciscoMap@1240.png 1240w" class="absolute h-full w-full z-0" width="620" height="620" id="map-image" alt="San Francisco Bay Area Map")
 
                 div(class="-mt-72 xs:-mt-36 md:mt-0 relative")
                     div(class="float-right shape-outside-addition-circle rounded-full -mt-4" style="")
@@ -173,15 +182,15 @@ block page
                     div(class="bg-white rounded-md grid place-items-center gap-8 lg:gap-10 py-10 px-8 shadow-xl mx-6 lg:mx-16 xs:w-1/3 sm:w-auto")
                         -
                             var logos = [
-                                {width: 123, height: 43, altImg: 'BET'},
-                                {width: 102, height: 48, altImg: 'CNN'},
-                                {width: 103, height: 45, altImg: 'FOX'},
-                                {width: 67, height: 40, altImg: 'FX'},
-                                {width: 193, height: 32, altImg: 'MSNBC'},
-                                {width: 120, height: 61, altImg: 'KTSF26'}
+                                {width: 123, height: 43, img: 'BET'},
+                                {width: 102, height: 48, img: 'CNN'},
+                                {width: 103, height: 45, img: 'FOX'},
+                                {width: 67, height: 40, img: 'FX'},
+                                {width: 193, height: 32, img: 'MSNBC'},
+                                {width: 120, height: 61, img: 'KTSF26'}
                             ]
                         each logo, index in logos
-                            img(loading="lazy" src=`media/shamann-walton/tv-logo-${index+1}.svg`, width=`${logo.width}`, height=`${logo.height}`, alt=`${logo.altImg} Logo` class="max-w-fit w-full sm:w-auto tv-logo" )
+                            img(loading="lazy" src=`media/shamann-walton/${logo.img}.svg`, width=`${logo.width}`, height=`${logo.height}`, alt=`${logo.img} Logo` class="max-w-fit w-full sm:w-auto tv-logo" )
                     div(class=" pt-8 xs:pt-0 xs:w-2/3 md:w-auto xs:pl-6 sm:pl-10 md:pl-16 lg:pl-20")
                         p.
                             But with only six days for the ads to take effect, we calculated that exclusive use of TV would be the best way to spend the media budget.
@@ -223,7 +232,7 @@ block page
                     p No.
                     p You'll never see that happen.
 
-                div(class="text-center sm:text-left mx-auto border-t-2 sm:border-l-[4px] sm:border-t-0 mt-10 border-current sm:pl-5 pt-5 sm:py-6 w-10/12 sm:w-1/2  font-proxima-bold text-lg lg:text-xl -tracking-tight " style="color: var(--c-walton-violet);").
+                div(class="border-l-4 mt-10 border-current pl-6 py-6 w-10/12 sm:w-1/2  font-proxima-bold text-lg lg:text-xl -tracking-tight " style="color: var(--c-walton-violet);").
                     When a voter sees a political candidate advertising in mass media, it  leaves the voter with a different perception of the candidate's  viability than if they were to see the same exact message on Facebook  or other online channels.
         section(class="pt-0 pb-12 sm:py-12 lg:py-20 relative text-white" style="background-color: var(--c-walton-violet);")
             style.
@@ -242,7 +251,7 @@ block page
                 }
 
             div(id="waltons-people-image" class=" sm:float-right lg:float-none sm:mx-7 lg:mx-0 sm:mb-5 lg:absolute lg:-translate-y-1/2 top-1/2 right-10 block mx-auto w-full sm:w-1/2 md:shadow-lg")
-                img(loading="lazy"  src="media/shamann-walton/waltons_people@430.jpg", srcset="media/shamann-walton/waltons_people@646.jpg 646w, media/shamann-walton/waltons_people@860.jpg 860w, media/shamann-walton/waltons_people@1290.jpg 1290w, media/shamann-walton/waltons_people@1720.jpg 1720w, media/shamann-walton/waltons_people@2580.jpg 2580w" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 45vw, 46.5vw" alt="Candidate Shamann Walton poses with eight multi-racial supporters, holding signs" class="w-full h-full object-cover xl:object-top border-none" width="860" height="613")
+                img(loading="lazy"  src="media/shamann-walton/waltons_people@1290.jpg", srcset="media/shamann-walton/waltons_people@646.jpg 646w, media/shamann-walton/waltons_people@860.jpg 860w, media/shamann-walton/waltons_people@1290.jpg 1290w, media/shamann-walton/waltons_people@1720.jpg 1720w" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 45vw, 46.5vw" alt="Candidate Shamann Walton poses with eight multi-racial supporters, holding signs" class="w-full h-full object-cover xl:object-top border-none" width="860" height="613")
 
             div(class="container lg:flex")
                 div(class="w-full mt-8 sm:mt-0 lg:w-1/2 pr-5")
@@ -475,9 +484,9 @@ block page
 
 
 
-                img(loading="lazy" src="media/shamann-walton/mass_media_circle@841.png", srcset="media/shamann-walton/mass_media_circle@620.png 620w, media/shamann-walton/mass_media_circle@841.png 841w, media/shamann-walton/mass_media_circle@1200.png 1200w, media/shamann-walton/mass_media_circle@1682.png 1682w", sizes="(max-width: 640px) 441px, (max-width: 768px) 541px, (max-width: 1024px) 80vw, 841px" alt="Mass Media" id="mass_media_circle" class="shape-outside float-right border-12 border-white shadow-2xl absolute -z-10 aspect-square rounded-full" width="841" height="841")
+                img(loading="lazy" src="media/shamann-walton/mass_media_circle@841.png", srcset="media/shamann-walton/mass_media_circle@620.png 620w, media/shamann-walton/mass_media_circle@841.png 841w, media/shamann-walton/mass_media_circle@1200.png 1200w, media/shamann-walton/mass_media_circle@1682.png 1682w", sizes="(max-width: 640px) 441px, (max-width: 768px) 541px, (max-width: 1024px) 80vw, 841px" alt="mass-media channels including New York Times, Washington Post, ABC News, etc." id="mass_media_circle" class="shape-outside float-right border-12 border-white shadow-2xl absolute -z-10 aspect-square rounded-full" width="841" height="841")
 
-                div(id="megaphone-container" class="lg:-ml-7 mt-10 flow-root" )
+                div(id="megaphone-container" class="lg:-ml-7 mt-10 flow-root" title="Megaphone")
                     div(class="bubble-container z-10 relative max-w-2xl -mb-8 -ml-10 md:ml-0 -mr-4 lg:ml-8")
                         div(class="bubble shadow-xl relative z-40 font-proxima-bold text-base sm:text-lg lg:text-xl px-10 py-7" style="background-color: #EAC31F;")
                             p For over a half century it’s been well-known to advertising agency  media planners that when a consumer sees an ad in three different  mediums, the consumer will have higher recall of that ad than when  they see the same ad multiple times in the same medium.
@@ -492,7 +501,7 @@ block page
 
 
 
-                    img(id="megaphone" loading="lazy" src="media/shamann-walton/megaphone@324.png" srcset="media/shamann-walton/megaphone@324.png 324w, media/shamann-walton/megaphone@487.png 487w, media/shamann-walton/megaphone@648.png 648w, media/shamann-walton/megaphone@972.png 972w, media/shamann-walton/megaphone@1296.png 1296w, media/shamann-walton/megaphone@1944.png 1944w" class="relative z-0 float-right shape-outside md:w-2/3 xl:max-w-max md:-mb-24" width="648" height="613")
+                    img(id="megaphone" loading="lazy" src="../media/shamann-walton/megaphone.svg" class="relative z-0 float-right shape-outside md:w-2/3 xl:max-w-max md:-mb-24" width="648" height="613" alt="Megaphone")
                     p(class=" lg:ml-7 !mt-20 xs:!mt-32 lg:!mt-32") For instance, if a media budget is spread across three media:  let's say, a primary medium of TV, some support media like online, and also some billboard and bus stop shelters, and if the consumer sees the ad once in each medium, that individual is more likely to remember the brand and its  message, than someone who has seen the same ad three times  on TV. Or three times on billboards. Or thrice online.
 
         section(class="py-12 lg:py-20 relative group overflow-hidden  ")
@@ -547,7 +556,7 @@ block page
                 p Because a full-page newspaper ad brings a gravity, a self assurance, and a respectability that an online banner ad  cannot.
                 p In the 2020s, cinema, radio, outdoor and TV  continue to retain their place in the media mix. New digital  options add to the media planner's toolkit, but rarely replace  existing channels.
                 p Can anyone name a medium that was once dominant, but no  longer exists? Even the poster is still around.
-            img(class="pattern w-full h-full absolute inset-0 z-0 mix-blend-darken object-cover object-left" src="../media/shamann-walton/pattern.png" loading="lazy")
+            img(class="pattern w-full h-full absolute inset-0 z-0 mix-blend-darken object-cover object-left" src="../media/shamann-walton/pattern.png" alt="Geometric Texture for Section" loading="lazy")
 
         section(class="py-12 lg:py-20 relative")
             .container(style="perspective:800px;")

@@ -253,10 +253,6 @@ observer.observe(target);
 
 
 
-gsap.registerPlugin(ScrollTrigger);
-
-
-
 const mapTl = gsap.timeline({
   scrollTrigger: {
     trigger: '#map-container',
@@ -422,6 +418,7 @@ const openPopup = () => {
   player.src = 'https://www.youtube.com/embed/rHQnWL0zY8U?autoplay=1&playsinline=1';
   player.setAttribute('allowfullscreen', 'allowfullscreen');
   popup.appendChild(player)
+
 }
 
 const closePopup = () => {
