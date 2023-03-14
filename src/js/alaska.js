@@ -2,18 +2,25 @@ const sealTl = gsap.timeline({
   scrollTrigger: {
     trigger: '#alaska-state-seal',
     start: 'top 50%',
+
   },
+
 })
 sealTl.from('#alaska-state-seal', {
-  scale: 2,
+  scale: 1.5,
   opacity: 0,
   duration: .6,
-  ease: 'back.out(1.4)'
+  ease: 'back.out(1.4)',
 }).from('#alaska-state-seal', {
   rotate: 20,
   duration: 0.4
 }, "<")
-
+.to('#seal-container > div', {
+  y: "+=20",
+  yoyo: true,
+  duration: 0.1,
+  repeat: 2
+}, "<0.35")
 
   document.addEventListener("DOMContentLoaded", function() {
     var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
@@ -66,6 +73,29 @@ gsap.from('#alaska-blue-bg', {
   y: -200,
 })
 
+const websiteRoleTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.website-role-grid',
+  },
+}).from('.website-role-grid > div .bg-white',{
+  scale: 0.7,
+  opacity: 0,
+  duration: 1,
+  stagger: .1
+}).from('.website-role-grid > div img',{
+  opacity: 0,
+  scale: .5,
+  duration: 1,
+  stagger: .1
+}, "<50%")
+.from('.website-role-grid > div .content',{
+  opacity: 0,
+  y: 10,
+  duration: 1,
+  stagger: .1
+}, "<50%")
+
+
 const saveFerryTrigger = gsap.timeline({
   scrollTrigger: {
     trigger: '#save-ferry-laptop',
@@ -92,10 +122,15 @@ const alaskaTl = gsap.timeline({
     start: 'top 90%',
   },
 })
-alaskaTl.from('#alaska-map', {
+.fromTo('#cities-labels .label', {
   opacity: 0,
-  duration: 3
-})
+}, {
+  opacity: 1,
+  duration: .5,
+  ease: 'circ.out',
+  stagger: .1
+
+}, "<50%")
 .from('#alaska-map .cities > g > circle', {
   transformOrigin: 'center',
   opacity: 0,
@@ -122,7 +157,7 @@ alaskaTl.from('#alaska-map', {
   opacity: 0,
   scale: .9,
   transformOrigin: 'center',
-  duration: 1,
+  duration: .7,
   stagger: {
     amount: 0.2,
     grid: 'auto',

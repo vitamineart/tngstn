@@ -1,6 +1,7 @@
 extends ./layout/base
 block variables
-    - var pageTitle = 'Tungsten Advertising Case Study | Alaska Maritime Highway System'
+    - let pageTitle = 'Tungsten Advertising Case Study | Friends of Alaska Marine Highway System'
+    - let metaDescription = 'Learn how Tungsten Advertising helped save the Alaska Marine Highway System with a successful petition campaign and website. Support affordable transportation in Alaska.'
     - let mediaFolder = 'media/alaska/';
     - let currentUrl = 'alaska.html';
     - let headerShadow = false;
@@ -41,7 +42,7 @@ block page
                 max-width: 1235px;
             }
         }
-    .hero(class="relative pt-px z-0 overflow-x-hidden" )
+    .hero(class="relative pt-px z-0 overflow-x-hidden" title="Illustrated scene of a bay in Alaska with mountains in background as a ferry named MV Malaspina sails across the screen.")
         div(class="absolute inset-0 z-50")
             +page-title({
                 class:' lg:mt-5 xl:mt-10 2xl:mt-16 z-10',
@@ -93,12 +94,12 @@ block page
     article( class="page-content leading-normal overflow-x-hidden relative z-10" )
         .container.relative
             p.drop-cap.relative(style="--color: var(--c-blue-light);") The Alaska Marine Highway System has provided affordable transit for Alaska's people for decades. The public ferry is an essential part of Alaska's social fabric.
-                svg(width="187" height="9" fill="none" viewBox="0 0 187 9" class="wave absolute -left-1/3 top-2 fade-in-right hidden xl:block")
+                svg(width="187" height="9" fill="none" viewBox="0 0 187 9" class="wave absolute -left-1/3 top-2  hidden xl:block")
                     path(stroke="#628FC7" d="M1 4.5c10.267 4.667 20.533 4.667 30.8 0s20.533-4.667 30.8 0 20.533 4.667 30.8 0 20.533-4.667 30.8 0 20.533 4.667 30.8 0 20.533-4.667 30.8 0")
 
             p.relative Ferries move cargo, groceries, entire households, local sports teams, medical supplies and patients – residents take the ferry for health care services in bigger cities. Ferry travel is statistically safer, environmentally friendly, and cost-effective for Alaskan families and businesses.
 
-                svg(width="187" height="9" fill="none" viewBox="0 0 187 9" class="wave absolute -left-1/2 top-2 fade-in-right hidden xl:block")
+                svg(width="187" height="9" fill="none" viewBox="0 0 187 9" class="wave absolute -left-1/2 top-2  hidden xl:block")
                     path(stroke="#628FC7" d="M1 4.5c10.267 4.667 20.533 4.667 30.8 0s20.533-4.667 30.8 0 20.533 4.667 30.8 0 20.533-4.667 30.8 0 20.533 4.667 30.8 0 20.533-4.667 30.8 0")
 
 
@@ -108,7 +109,7 @@ block page
 
 
         div(class="relative")
-            .container.flow-root.pb-20
+            .container.flow-root.pb-20#seal-container
                 style.
                     .ferry {
                         filter: saturate(1.3) hue-rotate(-10deg) contrast(1.1);
@@ -161,7 +162,7 @@ block page
                     }
                 +image({
                     dir: mediaFolder,
-                    name: 'ferry',
+                    name: 'leconte-ferry',
                     ext: 'jpg',
                     width: 782,
                     height: 479,
@@ -169,6 +170,7 @@ block page
                     alt: 'Alaska Ferry'
                 })(class="ferry sm:border border-black mx-auto md:float-right lg:float-none relative z-10 lg:absolute md:object-cover md:object-left"
                     sizes="100vw, (min-width: 640px) 91.4vw, (min-width: 768px) 54vw, (min-width: 1024px) 47vw, (min-width: 1630px) 782px"
+                    alt="AMHS ferry named LeConte waits for passengers to board at ferry landing."
                 )
                 div(class="lg:w-1/2 pr-8")
                     div(class="border-current border-l-4 text-blue-light pl-4 font-proxima-bold text-xl mt-10 md:mt-6 lg:mt-12") In areas where the roads end at the water, ferries connect cities and bring visitors to tourist towns along 3,500 miles of scenic coastline.
@@ -181,7 +183,7 @@ block page
                         width="343"
                         height="338"
                         src=`${mediaFolder}alaska-state-seal.svg`,
-                        alt="The Seal of State Alaska"
+                        alt="The Seal of the State of Alaska"
                         class="mt-4 mx-auto sm:ml-10 lg:ml-16 xs:-translate-x-4 xs:w-1/2 sm:w-auto xs:float-left md:float-none"
                         style={
                             'shape-outside': 'circle(50%)',
@@ -192,7 +194,7 @@ block page
                     )
                     div(class="mt-4 sm:mt-10 md:mt-0 md:text-right md:mr-8 lg:mr-14 lg:ml-10")
                         p(class=" relative ") Friends of Alaska Marine Highway System was formed in response to this threat. This broad and powerful coalition of citizens and organizations from across Alaska comprises municipalities, community organizations, labor groups and other interested parties who care deeply about affordable transportation for Alaskans.
-                            svg(width="187" height="9" fill="none" viewBox="0 0 187 9" class="wave absolute -right-2/3 -bottom-3 fade-in-left hidden xl:block")
+                            svg(width="187" height="9" fill="none" viewBox="0 0 187 9" class="wave absolute -right-2/3 -bottom-3  hidden xl:block")
                                 path(stroke="#628FC7" d="M1 4.5c10.267 4.667 20.533 4.667 30.8 0s20.533-4.667 30.8 0 20.533 4.667 30.8 0 20.533-4.667 30.8 0 20.533 4.667 30.8 0 20.533-4.667 30.8 0")
 
                         p(class="mt-4 sm:mt-10 ") The objective of Friends of Alaska Marine Highway System was to bring one voice to the Alaskan communities toward restoring full service and funding to the Alaska Marine Highway System.
@@ -206,13 +208,13 @@ block page
         )
             .container
                 header(
-                    class="text-3xl xl:text-4xl 2xl:text-5xl font-proxima-bold text-center fade-in-up"
+                    class="text-3xl xl:text-4xl 2xl:text-5xl font-proxima-bold text-center "
                     style={
                         'color': 'var(--c-alaska-iceblue)'
                     }
                 ) Visual Identity Design
 
-                video(autoplay muted playsinline class="mx-auto mix-blend-multiply lazy" width="320" height="320" style="min-height: 320px;")
+                video(autoplay muted playsinline class="mx-auto mix-blend-multiply lazy" width="320" height="320" style="min-height: 320px;" title="Logo of the Friends of Alaska Marine Highway System")
                     source(data-src="media/alaska/AnimatedLogoforAlaska.mp4" type="video/mp4")
 
                 div(class="")
@@ -221,7 +223,7 @@ block page
                         path(d="M8.60596 64.4668H16.0269L23.896 107H17.3716L16.2012 99.3799H8.43164L7.31104 107H0.761719L8.60596 64.4668ZM15.4541 94.5239L12.4658 73.332H12.1919L9.17871 94.5239H15.4541ZM28.0298 64.4668H34.4795V101.92H43.27V107H28.0298V64.4668ZM52.0356 64.4668H59.4565L67.3257 107H60.8013L59.6309 99.3799H51.8613L50.7407 107H44.1914L52.0356 64.4668ZM58.8838 94.5239L55.8955 73.332H55.6216L52.6084 94.5239H58.8838ZM69.8159 98.3838C69.8159 97.4707 69.8657 96.6323 69.9653 95.8687C70.0815 95.0884 70.2476 94.25 70.4634 93.3535H75.4688V95.4204C75.4688 96.5659 75.5352 97.5786 75.668 98.4585C75.8174 99.3384 76.0498 100.085 76.3652 100.7C76.6973 101.297 77.1289 101.754 77.6602 102.069C78.208 102.368 78.8721 102.518 79.6523 102.518C80.8809 102.518 81.8188 102.186 82.4663 101.521C83.1138 100.841 83.4375 99.853 83.4375 98.5581C83.4375 97.894 83.3877 97.2881 83.2881 96.7402C83.2051 96.1758 83.0474 95.6196 82.8149 95.0718C82.5991 94.5239 82.3003 93.9512 81.9185 93.3535C81.5366 92.7393 81.0469 92.0586 80.4492 91.3115L73.7256 83.3179C72.5303 81.7905 71.6089 80.2549 70.9614 78.7109C70.314 77.1504 69.9902 75.4902 69.9902 73.7305C69.9902 72.3193 70.2061 71.0244 70.6377 69.8457C71.0859 68.667 71.7251 67.6543 72.5552 66.8076C73.3853 65.9443 74.4062 65.2803 75.6182 64.8154C76.8467 64.334 78.2329 64.0933 79.7769 64.0933C81.6528 64.0933 83.2134 64.3589 84.4585 64.8901C85.7202 65.4214 86.7246 66.1187 87.4717 66.9819C88.2188 67.8452 88.7417 68.8164 89.0405 69.8955C89.356 70.958 89.5137 72.0288 89.5137 73.1079C89.5137 74.021 89.439 74.8677 89.2896 75.6479C89.1567 76.4116 88.999 77.2583 88.8164 78.188H83.8359V76.1709C83.8359 73.9131 83.5122 72.1865 82.8647 70.9912C82.2173 69.7793 81.1631 69.1733 79.7021 69.1733C78.4902 69.1733 77.5854 69.5137 76.9878 70.1943C76.3901 70.8584 76.0913 71.7549 76.0913 72.8838C76.0913 73.4814 76.1328 74.021 76.2158 74.5024C76.3154 74.9839 76.4482 75.4321 76.6143 75.8472C76.7969 76.2456 77.0127 76.6357 77.2617 77.0176C77.5107 77.3994 77.793 77.7979 78.1084 78.2129L85.604 87.2773C86.9653 89.0537 88.0112 90.7637 88.7417 92.4072C89.4722 94.0342 89.8374 95.7607 89.8374 97.5869C89.8374 99.0977 89.5967 100.459 89.1152 101.671C88.6504 102.883 87.978 103.912 87.0981 104.759C86.2183 105.605 85.1558 106.261 83.9106 106.726C82.6655 107.174 81.2627 107.398 79.7021 107.398C77.7764 107.398 76.1743 107.141 74.896 106.626C73.6343 106.112 72.6216 105.431 71.8579 104.584C71.1108 103.738 70.5796 102.775 70.2642 101.696C69.9653 100.617 69.8159 99.5127 69.8159 98.3838ZM95.2661 64.4668H101.716V83.0439H101.915L109.286 64.4668H115.711L107.493 84.4136L116.632 107H109.734L101.915 86.7544H101.716V107H95.2661V64.4668ZM125 64.4668H132.42L140.29 107H133.765L132.595 99.3799H124.825L123.705 107H117.155L125 64.4668ZM131.848 94.5239L128.859 73.332H128.585L125.572 94.5239H131.848ZM155.331 64.4668H163.748L167.832 80.9272C168.263 82.7534 168.604 84.4966 168.853 86.1567C169.102 87.8003 169.342 89.3525 169.575 90.8135H169.774C170.006 89.3525 170.247 87.8003 170.496 86.1567C170.745 84.4966 171.085 82.7534 171.517 80.9272L175.726 64.4668H183.968V107H177.942V92.9302C177.942 90.772 177.958 88.6968 177.992 86.7046C178.042 84.7124 178.1 82.8862 178.166 81.2261C178.232 79.5493 178.307 78.0718 178.39 76.7935C178.473 75.5151 178.548 74.5024 178.614 73.7554H178.141L171.716 101.521H167.632L161.158 73.7554H160.685C160.751 74.5024 160.826 75.5151 160.909 76.7935C160.992 78.0718 161.066 79.5493 161.133 81.2261C161.199 82.8862 161.249 84.7124 161.282 86.7046C161.332 88.6968 161.357 90.772 161.357 92.9302V107H155.331V64.4668ZM195.921 64.4668H203.342L211.211 107H204.687L203.517 99.3799H195.747L194.626 107H188.077L195.921 64.4668ZM202.77 94.5239L199.781 73.332H199.507L196.494 94.5239H202.77ZM215.345 64.4668H222.343C223.14 64.4668 224.011 64.5 224.958 64.5664C225.92 64.6328 226.875 64.7988 227.821 65.0645C228.784 65.3135 229.706 65.6953 230.585 66.21C231.482 66.7246 232.271 67.4302 232.951 68.3267C233.648 69.2231 234.205 70.3521 234.62 71.7134C235.035 73.0581 235.242 74.6934 235.242 76.6191V77.6899C235.242 80.9272 234.777 83.5669 233.848 85.6089C232.918 87.6343 231.548 89.0952 229.739 89.9917L236.562 107H229.739L224.086 91.0874H221.67V107H215.345V64.4668ZM222.642 86.4307C223.771 86.4307 224.725 86.3062 225.505 86.0571C226.286 85.8081 226.917 85.3931 227.398 84.812C227.879 84.2144 228.228 83.4341 228.444 82.4712C228.66 81.4917 228.768 80.2881 228.768 78.8604V75.4985C228.768 74.4028 228.668 73.4565 228.469 72.6597C228.27 71.8628 227.929 71.207 227.448 70.6924C226.983 70.1777 226.36 69.7959 225.58 69.5469C224.8 69.2979 223.82 69.1733 222.642 69.1733H221.67V86.4307H222.642ZM241.443 64.4668H247.893V107H241.443V64.4668ZM255.189 64.4668H260.418L270.728 92.9302H270.877C270.828 92.2661 270.761 91.5273 270.678 90.7139C270.595 89.9004 270.521 88.979 270.454 87.9497C270.388 86.9038 270.33 85.7251 270.28 84.4136C270.23 83.1021 270.205 81.6245 270.205 79.981V64.4668H275.982V107H270.703L260.443 79.2837H260.244C260.294 80.0308 260.36 80.8442 260.443 81.7241C260.526 82.5874 260.601 83.6084 260.667 84.7871C260.734 85.9658 260.792 87.3438 260.842 88.9209C260.892 90.4814 260.917 92.3408 260.917 94.499V107H255.189V64.4668ZM283.279 64.4668H299.042V69.5469H289.729V82.272H296.925V87.3521H289.729V101.92H299.291V107H283.279V64.4668ZM314.855 64.4668H321.305V82.272H328.95V64.4668H335.399V107H328.95V87.3521H321.305V107H314.855V64.4668ZM342.746 64.4668H349.195V107H342.746V64.4668ZM365.083 107.398C364.585 107.398 364.004 107.34 363.34 107.224C362.676 107.125 361.987 106.9 361.273 106.552C360.576 106.203 359.887 105.713 359.206 105.083C358.525 104.435 357.911 103.588 357.363 102.542C356.832 101.48 356.4 100.185 356.068 98.6577C355.736 97.1138 355.57 95.2793 355.57 93.1543V78.0884C355.57 75.9468 355.745 74.1206 356.093 72.6099C356.442 71.0825 356.907 69.8042 357.488 68.7749C358.069 67.729 358.733 66.8989 359.48 66.2847C360.244 65.6704 361.032 65.2056 361.846 64.8901C362.659 64.5581 363.464 64.3423 364.261 64.2427C365.058 64.1431 365.797 64.0933 366.478 64.0933C368.204 64.0933 369.657 64.334 370.835 64.8154C372.031 65.2803 372.994 65.9277 373.724 66.7578C374.471 67.5713 375.002 68.5259 375.318 69.6216C375.65 70.7173 375.816 71.8794 375.816 73.1079C375.816 74.021 375.758 74.8677 375.642 75.6479C375.542 76.4116 375.401 77.2583 375.218 78.188H370.063V76.1709C370.063 71.5059 368.81 69.1733 366.303 69.1733C365.623 69.1733 365.033 69.2896 364.535 69.522C364.037 69.7544 363.622 70.1528 363.29 70.7173C362.958 71.2651 362.709 71.9956 362.543 72.9087C362.394 73.8218 362.319 74.959 362.319 76.3203V95.5947C362.319 96.9229 362.394 98.0269 362.543 98.9067C362.709 99.7866 362.95 100.492 363.265 101.023C363.597 101.555 364.004 101.937 364.485 102.169C364.983 102.385 365.573 102.493 366.253 102.493C366.967 102.493 367.582 102.31 368.096 101.945C368.611 101.563 369.034 101.048 369.366 100.401C369.698 99.7534 369.939 98.9897 370.088 98.1099C370.254 97.23 370.337 96.2754 370.337 95.2461V89.6929H367.025V85.4595H376.613V107H372.33L371.632 102.966C370.819 104.543 369.881 105.68 368.818 106.377C367.772 107.058 366.527 107.398 365.083 107.398ZM382.589 64.4668H389.039V82.272H396.684V64.4668H403.134V107H396.684V87.3521H389.039V107H382.589V64.4668ZM407.766 64.4668H413.941L416.805 90.166L417.129 96.1675H417.751L418.349 89.4189L422.931 64.4668H428.086L432.469 89.4189L432.967 96.1675H433.614L433.913 90.166L436.528 64.4668H442.729L436.777 107H430.228L426.716 86.5552L425.621 77.665H425.123L424.052 86.5552L420.366 107H413.892L407.766 64.4668ZM452.017 64.4668H459.438L467.307 107H460.783L459.612 99.3799H451.843L450.722 107H444.173L452.017 64.4668ZM458.865 94.5239L455.877 73.332H455.603L452.59 94.5239H458.865ZM476.496 92.8306L467.93 64.4668H474.429L479.634 84.812H479.933L485.087 64.4668H491.562L482.946 92.8306V107H476.496V92.8306Z" fill="#628FC7")
 
 
-                div(class="mx-auto mt-10 lg:mt-20 mb-10 max-w-3xl fade-in-up") For the campaign to succeed, it was important for the brand to have a strong visual identity. A consistent logo, color palette, typography, and tone-of-voice are essential if a campaign is to appear authoritative, professional, and winnable. A strong visual identity amplifies the campaign’s voice and message. It gives the public greater confidence to sign a petition in support of the campaign, or make a donation.
+                div(class="mx-auto mt-10 lg:mt-20 mb-10 max-w-3xl ") For the campaign to succeed, it was important for the brand to have a strong visual identity. A consistent logo, color palette, typography, and tone-of-voice are essential if a campaign is to appear authoritative, professional, and winnable. A strong visual identity amplifies the campaign’s voice and message. It gives the public greater confidence to sign a petition in support of the campaign, or make a donation.
 
 
             svg(width="100%" height="20" class="high-wave-edge -scale-y-100 relative z-10 w-full top-4")
@@ -266,30 +268,30 @@ block page
                     header(class="text-3xl font-proxima-bold text-center") Role of the website
                     p(class="mt-12") The website served as a central hub for communicating with the Alaskan public, fundraising, disseminating information to the press, and mobilizing supporters. The website was the primary way of sharing updates, news, and information about events. Thousands of signatures were collected for an online petition. And thousands more Alaskans used an online form to email their representative.
 
-                div(class="grid gap-10 sm:grid-cols-3 mt-20 mx-auto")
+                div(class="grid website-role-grid gap-10 sm:grid-cols-3 mt-20 mx-auto")
                     -
                         let goals = [
-                            {icon: 'petition', content: 'Host a petition <br> and online signature drive'},
-                            {icon: 'donations', content: 'Collect donations'},
-                            {icon: 'network', content: 'Circulate information <br> to Alaskans about the progress of the campaign'},
+                            {icon: 'petition', content: 'Host a petition <br> and online signature drive', altImg: 'Line drawing of a petition being signed'},
+                            {icon: 'donations', content: 'Collect donations', altImg: 'Line drawing of hand putting coin into donation box'},
+                            {icon: 'network', content: 'Circulate information <br> to Alaskans about the progress of the campaign', altImg: 'Line drawing of nodes of connected people'},
                         ]
                     each goal in goals
-                        div(class="fade-in-left")
+                        div(class="")
                             div(
-                                class="bg-white w-40 h-40 xl:w-48 xl:h-48 rounded-full grid place-items-center mx-auto"
+                                class="bg-white w-28 h-28 xs:w-36 xs:h-36 md:w-40 md:h-40 xl:w-48 xl:h-48 rounded-full grid place-items-center mx-auto"
                                 style={
-                                    filter: 'drop-shadow(5px 5px 4px hsla(0,0%,0%,.3))'
+                                    filter: 'drop-shadow(5px 5px 4px hsla(0,0%,0%,.2))'
                                 }
                             )
-                                img(src=`${mediaFolder}icon-${goal.icon}.svg` width="516" height="516" class="w-1/2" alt=`${goal.icon[0].toUpperCase()}${goal.icon.slice(1)} Icon` loading="lazy")
-                            div(class="text-base px-4 xs:px-0 xl:text-lg font-proxima-bold uppercase text-center mt-4 md:mt-9 max-w-xs mx-auto") !{goal.content}
+                                img(src=`${mediaFolder}icon-${goal.icon}.svg` width="516" height="516" class="w-1/2" alt=goal.altImg loading="lazy")
+                            div(class="content text-base px-4 xs:px-0 xl:text-lg font-proxima-bold uppercase text-center mt-4 md:mt-9 max-w-xs mx-auto" style="text-shadow: 0 1px 3px #426490") !{goal.content}
 
             +image({
                 dir: mediaFolder,
                 name: 'alaska-blue-bg',
                 ext: 'jpg',
                 resolutions: [640, 768, 1024, 1366, 1600, 1920]
-            })(class="absolute inset-0 w-full h-full z-0 mix-blend-luminosity opacity-30 object-cover" alt="Alaska Blue Background" id="alaska-blue-bg" style="scale: 1.2")
+            })(class="absolute inset-0 w-full h-full z-0 mix-blend-luminosity opacity-30 object-cover" alt="Satelite Photo - Alaska, blueshaded" id="alaska-blue-bg" style="scale: 1.2")
 
 
         section(id="laptop-section" class="pt-px pb-10 lg:pb-20 relative"
@@ -304,20 +306,20 @@ block page
                     })
                     +image({
                         dir: mediaFolder,
-                        alt: 'Save Alaska\'s Ferries Website Page 2',
+                        alt: 'Alaska Marine Highway System website designed by Tungsten Advertising agency',
                         name: 'save-ferry-page2',
                         ext: 'jpg',
                         resolutions: [672]
                     })(width="672" height="420" class="absolute w-1/2 lg:w-1/3 -left-4 lg:left-12 top-1/2 -translate-y-1/2 z-0" style="filter: drop-shadow(10px 3px 10px hsl(0 0% 0% / 0.5))" id="save-ferry-page2")
                     +image({
                         dir: mediaFolder,
-                        alt: 'Save Alaska\'s Ferries Website Page 1',
+                        alt: 'Laptop displaying Friends of Alaska Marine Highway System website designed by Tungsten Advertising agency',
                         name: 'save-ferry-laptop',
                         ext: 'png',
                     })(width="1115" height="614" class="save-ferry-laptop relative w-full lg:w-2/3 m-auto inset-0 z-20" id="save-ferry-laptop")
                     +image({
                         dir: mediaFolder,
-                        alt: 'Save Alaska\'s Ferries Website Page 3',
+                        alt: 'Alaska Marine Highway System website designed by Tungsten Advertising agency',
                         name: 'save-ferry-page1',
                         ext: 'jpg',
                         resolutions: [672]
@@ -372,7 +374,7 @@ block page
                         stroke-dasharray:1;
                         stroke-dashoffset:0;
                     }
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  fill="none" viewBox="300 0 1939 1179" id="alaska-map" class="w-full relative z-0">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  fill="none" viewBox="300 0 1939 1179" id="alaska-map" class="w-full relative z-0" title="Map of Alaska showing the cities that participated in the campaign, and ferry routes that connect them.">
                     <g class="alaska-map">
                         <g class="map">
                             <path fill="#E4E4E4" d="m1243.44 654.518-.11.539.41.078.36-1.886.54.105-.08.404.41.079-.51.46-.08.404.4.079.44.644.1-.539.41.078-.11.539 1.05-.355.4.079-.1.538.54.105-.62.299-.4-.078-.19.943.33.482.54.105.08-.404.4.079-.26 1.347.4.078.46.509.26-1.347.41.079.08-.404-.3-.617.4.078.48-.325.19-.943.62-.299.18-.943-.54-.105-.48.325.15-.808-.4-.079.11-.538.4.078.08-.404.4.079-.32-.483.1-.539.41.079.61-.299.19-.943.48-.326.1-.539-.4-.078.08-.404.4.078.49-.325.18-.943.62-.299.36-1.886-.94-.184-.08.405-.94-.184-.18.943-.41-.079.08-.404-.3-.617.48-.326.59-.864.94.184.08-.405.95.184.18-.943-.46-.509-.33-.483.11-.539.4.079.16-.808-.3-.617-.4-.079-.19.943-.54-.105.08-.404-.3-.618.08-.404-.3-.617.16-.808-.62.299-.4-.079-.08.404.3.618-.18.943-.49.325.95.184-.62.299.43.644-.16.808-1.34-.262-.11.538-.54-.104.63-3.233-.51.46-.26 1.347-.54-.105-.15.808-.41-.078-.44 2.29-.41-.079-.18.943.91-.382.08-.404.54.105-.08.404.4.079-.1.539-.48.325-1.35-.262-.18.943-.54-.105-.08.404.94.184.08-.405.33.483-.19.943-.4-.078.08-.405-.41-.078-.61.299-.19.943.46.509.41.078.48-.325.54.105.59-.864.53.104.49-.325-.08.404.4.079-.08.404-.4-.079-.1.539-.49.325-.54-.104-.26 1.347-.4-.079.08-.404-.44-.644-.1.539-.41-.079.11-.538-.41-.079-.1.539-.62.299-.51.46.19-.943-.54-.105-.08.405-.51.46.4.078-.07.404-.49.326-.36 1.886-.41-.079.33.483Zm7.54-24.396.62-.299.18-.943-.54-.105-.26 1.347Zm.88-1.646-.54-.105.46.509.41.079-.33-.483Z" />
@@ -834,7 +836,7 @@ block page
                             margin-top: -100px;
                         }
                         #cities-labels {
-                            top: 27vw;
+                            top: 25vw;
                             right: 33vw;
                         }
                         #cities-labels .label {
@@ -852,13 +854,11 @@ block page
                     }
                     @media (min-width:1100px){
                         #cities-labels {
-                            top:26vw;
                             right: 33vw;
                         }
                     }
                     @media (min-width:1280px){
                         #cities-labels {
-                            top: 25vw;
                             right: 35vw;
                         }
                     }
@@ -936,7 +936,7 @@ block page
                     }
                 }
             div(
-                class="mx-auto max-w-sm px-5 xs:p-0 text-center text-white relative z-10 font-proxima-bold blur-in"
+                class="mx-auto max-w-sm px-5 xs:p-0 text-center text-white relative z-10 font-proxima-bold "
                 style={
                     'text-shadow': '0 1px 1px #2f217c55, 0 2px 10px #2f217cff',
                     'font-size': '22px',
@@ -946,13 +946,13 @@ block page
 
             +image({
                 dir: mediaFolder,
-                alt: 'Alaska\'s Pilots Union',
+                alt: 'Close shot of two crew members navigating ferry at twilight.',
                 name: 'pilots',
                 ext: 'jpg',
                 width: 1920,
                 height: 1000,
                 src: `${mediaFolder}pilots@1920.jpg`,
-                resolutions: [350,540,720,960,1441,1920,2880,3840],
+                resolutions: [350,540,720,960,1441,1920,2880],
             })(id="pilots" data-speed="-0.1" class="z-0 absolute w-full h-full object-cover inset-0 opacity-90 parallax" style={
                 filter: 'saturate(1.1) brightness(1.1) contrast(1.3)'
             })
