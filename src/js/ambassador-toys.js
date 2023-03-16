@@ -28,7 +28,7 @@ for (var i = 0; i < 25; i++) {
 
 
 
-const parallaxInit = () => {
+const blueCircleParallaxInit = () => {
   const circles = document.querySelector('.blue-circle-circles')
   const parallaxCircles = new Parallax(circles);
 
@@ -36,17 +36,60 @@ const parallaxInit = () => {
   const parallaxStars = new Parallax(stars);
 }
 
+const newspapersParallaxInit = () => {
+  const newspapers = document.querySelector('#news-paper-ad')
+  const parallaxNewspapers = new Parallax(newspapers, {
+    selector: '#paper-plane, #ad-clouds'
+  });
+
+}
+
 
 const blueCircleTl = gsap.timeline({
   scrollTrigger: {
     trigger: '#blue-circle-stars-message',
-    start: 'top 80%',
+    start: '30% 90%',
   },
-  onComplete: parallaxInit,
+  onComplete: blueCircleParallaxInit,
   defaults : {
     transformOrigin: '50% 50%',
   }
 })
+
+const newspapersEntranceTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#news-paper-ad-bear',
+    start: '80% bottom'
+  },
+  onComplete: newspapersParallaxInit,
+  defaults: {
+    transformOrigin: '50% 50%',
+  }
+}).from('#news-paper-ad-bear', {
+  opacity: 0,
+  x: 200,
+  scale: 2,
+  rotate: 360,
+  duration: 1,
+  ease: 'expo.inOut'
+})
+.from('#news-paper-ad-butterfly', {
+  opacity: 0,
+  scale: 2,
+  x: -200,
+  rotate: 360,
+  duration: 1,
+  ease: 'expo.inOut'
+})
+.from('#paper-plane', {
+  x: -200,
+  opacity: 0,
+  scaleX: 0.7,
+  rotate: 25,
+  duration: 1,
+  ease: 'circ.out'
+}, "<")
+
 
 blueCircleTl.from('#blue-circle-stars-message', {
   opacity: 0,
@@ -98,10 +141,21 @@ gsap.from('.toys-works-grid > a', {
   scrollTrigger: {
     trigger: '.toys-works-grid'
   },
-  scale: 1.5,
   opacity:0,
+  scale: 0,
+  x: 'random(-100, 100, 10)',
+  y: 'random(-100, 100, 10)',
+  rotateX: 'random(-90, 90, 15)',
+  rotateY: 'random(-90, 90, 15)',
   duration: 1,
   stagger: .1,
   ease: 'expo.out'
+})
+
+scrollEntranceAnimate('#red-car', {
+  opacity: 0,
+  x: -20,
+  scale: 0.7,
+  duration: 1
 })
 

@@ -148,100 +148,19 @@ if (document.querySelector('#audio-wave')) {
   })
 }
 
-// common entrance animations
-if(document.querySelectorAll('.fade-in-left, .fade-in-right, .fade-in-up, .fade-in-down, .fade-in, .blur-in')){
-  let commonEase = 'power2.out';
-  let commonX = 50;
-  let commonY = 50;
-  let animStart = '20% 80%';
-  let commonDelayQ = 0.2;
-  let fadeInLeft = gsap.utils.toArray('.fade-in-left');
-  let fadeInRight = gsap.utils.toArray('.fade-in-right');
-  let fadeInUp = gsap.utils.toArray('.fade-in-up');
-  let fadeInDown = gsap.utils.toArray('.fade-in-down');
-  let fadeIn = gsap.utils.toArray('.fade-in');
-  let blurIn = gsap.utils.toArray('.blur-in');
 
+function scrollEntranceAnimate (elements, animationProps = {opacity: 0, duration: 1.5, ease: 'power2.out'}, triggerStart ) {
+  animateEls = gsap.utils.toArray(elements);
 
-fadeIn.forEach((item, i) => {
-  const anim = gsap.from(item, {
-    opacity: 0,
-    duration: 1,
-    delay: i * commonDelayQ,
-    ease: commonEase
-  });
-  ScrollTrigger.create({
-    trigger: item,
-    animation: anim,
-    once: true,
-  });
-});
-fadeInLeft.forEach((item, i) => {
-  const anim = gsap.from(item, {
-    opacity: 0,
-    x: commonX,
-    duration: 1,
-    delay: i * commonDelayQ,
-    ease: commonEase
-  });
-  ScrollTrigger.create({
-    trigger: item,
-    start: animStart,
-    animation: anim,
-    once: true,
-  });
-});
-fadeInRight.forEach((item, i) => {
-  const anim = gsap.from(item, {
-    opacity: 0,
-    x: -commonX,
-    duration: 1,
-    delay: i * commonDelayQ,
-    ease: commonEase
-  });
-  ScrollTrigger.create({
-    trigger: item,
-    start: animStart,
-    animation: anim,
-    once: true,
-  });
-});
-fadeInUp.forEach((item, i) => {
-  const anim = gsap.from(item, {
-    opacity: 0,
-    y: commonY,
-    duration: 1,
-    delay: i * commonDelayQ,
-    ease: commonEase
-  });
-  ScrollTrigger.create({
-    trigger: item,
-    animation: anim,
-    start: animStart,
-    once: true,
-  });
-});
-  fadeInDown.forEach((item, i) => {
-    const anim = gsap.from(item, {opacity: 0, y: -commonY, duration: 1, delay: i * commonDelayQ, ease: commonEase});
-    ScrollTrigger.create({
-        trigger: item,
-        animation: anim,
-        start: animStart,
-        once: true,
-    });
-  });
-  blurIn.forEach((item, i) => {
-    const anim = gsap.from(item, {opacity: 0, scale: 0.8, filter: 'blur(10px)', duration: 1, delay: i * commonDelayQ, ease: commonEase});
-    ScrollTrigger.create({
-        trigger: item,
-        animation: anim,
-        start: animStart,
-        once: true,
-    });
-  });
+  animateEls.forEach(el => {
+      const anim = gsap.from(el, animationProps);
+      ScrollTrigger.create({
+          trigger: el,
+          animation: anim,
+          start: triggerStart || '50% bottom',
+      });
+  })
 }
-
-
 
 
 

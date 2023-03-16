@@ -29,10 +29,9 @@ append head
 block page
     div(class="hero overflow-hidden")
         picture
-            source(srcset="media/cobham-datasheets/ST3011-data-sheets_xs@290.jpg 290w, media/cobham-datasheets/ST3011-data-sheets_xs@436.jpg 436w, media/cobham-datasheets/ST3011-data-sheets_xs@580.jpg 580w, media/cobham-datasheets/ST3011-data-sheets_xs@720.jpg 720w, media/cobham-datasheets/ST3011-data-sheets_xs@1080.jpg 1080w, media/cobham-datasheets/ST3011-data-sheets_xs@1440.jpg 1440w" media="(max-width:600px)")
-            source(srcset="media/cobham-datasheets/ST3011-data-sheets_sm@400.jpg 400w, media/cobham-datasheets/ST3011-data-sheets_sm@617.jpg 617w, media/cobham-datasheets/ST3011-data-sheets_sm@926.jpg 926w, media/cobham-datasheets/ST3011-data-sheets_sm@1234.jpg 1234w, media/cobham-datasheets/ST3011-data-sheets_sm@1851.jpg 1851w" media="(max-width:1024px)")
+            source(srcset="media/cobham-datasheets/ST3011-data-sheets_sm@640.jpg 640w, media/cobham-datasheets/ST3011-data-sheets_sm@768.jpg 768w, media/cobham-datasheets/ST3011-data-sheets_sm@1024.jpg 1024w, media/cobham-datasheets/ST3011-data-sheets_sm@1234.jpg 1234w, media/cobham-datasheets/ST3011-data-sheets_sm@1851.jpg 1851w" media="(max-width:1024px)")
             img(src="media/cobham-datasheets/ST3011-data-sheets@1920.jpg" srcset="media/cobham-datasheets/ST3011-data-sheets@1441.jpg 1441w, media/cobham-datasheets/ST3011-data-sheets@1920.jpg 1920w" alt="Stack of printed data sheets for Cobham 3011, 3-Axis marine stabilized antenna system." width="1920" height="773" class="w-full")
-        svg(class="hero-ellipse" fill="none" viewBox="0 0 2219 153")
+        svg(class="hero-ellipse" fill="none" viewBox="0 0 2219 153" style="aspect-ratio: 2219 / 153;")
             ellipse(cx="1109.37" cy="76.27" fill="#fff" rx="1109.37" ry="76.27")
 
 
@@ -61,10 +60,10 @@ block page
                     "Technical Summary"
                 ]
 
-            div(class="md:float-right my-5 mx-auto md:m-5 lg:m-8 text-base text-center font-proxima-bold leading-tight max-w-sm lg:max-w-max border-2 border-blue-light fade-in-left")
+            div(class="md:float-right my-5 mx-auto md:m-5 lg:m-8 text-base text-center font-proxima-bold leading-tight max-w-sm lg:max-w-max border-2 border-blue-light" id="datasheets-list")
                 div(class=" bg-blue-light text-white px-8 lg:px-12.5 py-4" ) Data sheet are also referred to as:
                 each name, index in datasheetReferred
-                    div(class="odd:bg-gray-light text-blue-light px-8 lg:px-12.5 py-4 blur-in" )= name
+                    div(class="odd:bg-gray-light text-blue-light px-8 lg:px-12.5 py-4" )= name
 
             p These decision-makers include Cobham's dealer network, the IT departments of potential client companies, and the wider satcom industry.
 
@@ -167,8 +166,8 @@ block page
             svg(class="ellipse absolute bottom-0 w-full top-auto z-50 scale-110 translate-y-1/2" fill="none" viewBox="0 0 2219 153")
                 ellipse(cx="1109.37" cy="76.27" fill="#fff" rx="1109.37" ry="76.27")
             .absolute.w-full.h-full.inset-0
-                img(srcset="../media/cobham-datasheets/SeaTelSliderBg_Sea@400.jpg 400w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@600.jpg 600w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@600.jpg 600w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@800.jpg 800w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@1000.jpg 1000w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@1200.jpg 1200w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@1600.jpg 1600w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@2000.jpg 2000w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@3000.jpg 3000w" src="../media/cobham-datasheets/SeaTelSliderBg_Sea@2000.jpg", alt="SeaTelSliderBg Sea" loading="lazy" class="parallax absolute inset-0 w-full h-full object-cover" id="seaBg" data-speed="0.2")
-                img(srcset="../media/cobham-datasheets/SeaTelSliderBg_WoodTable@400.png 400w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@600.png 600w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@600.png 600w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@800.png 800w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@1000.png 1000w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@1200.png 1200w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@1600.png 1600w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@2000.png 2000w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@3000.png 3000w" src="../media/cobham-datasheets/SeaTelSliderBg_WoodTable@2000.png", alt="SeaTelSliderBg Sea" loading="lazy" class="parallax absolute w-full h-1/3 object-cover" id="woodTableBg" data-speed="0.04")
+                img(srcset="../media/cobham-datasheets/SeaTelSliderBg_Sea@400.jpg 400w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@600.jpg 600w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@600.jpg 600w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@800.jpg 800w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@1000.jpg 1000w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@1200.jpg 1200w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@1600.jpg 1600w, ../media/cobham-datasheets/SeaTelSliderBg_Sea@2000.jpg 2000w" src="../media/cobham-datasheets/SeaTelSliderBg_Sea@2000.jpg", alt="SeaTelSliderBg Sea" loading="lazy" class="parallax absolute inset-0 w-full h-full object-cover" id="seaBg" data-speed="0.2")
+                img(srcset="../media/cobham-datasheets/SeaTelSliderBg_WoodTable@400.png 400w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@600.png 600w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@600.png 600w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@800.png 800w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@1000.png 1000w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@1200.png 1200w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@1600.png 1600w, ../media/cobham-datasheets/SeaTelSliderBg_WoodTable@2000.png 2000w" src="../media/cobham-datasheets/SeaTelSliderBg_WoodTable@2000.png", alt="SeaTelSliderBg Sea" loading="lazy" class="parallax absolute w-full h-1/3 object-cover" id="woodTableBg" data-speed="0.04")
 
             //- Slider main container
             div(class="pdf-slider-main")

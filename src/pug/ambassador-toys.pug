@@ -1,7 +1,12 @@
 extends ./layout/base
 block variables
-    - var pageTitle = 'Tungsten Advertising Case Study | Ambassador Toys'
+    - let pageTitle = 'Case Study: How Tungsten Helped a San Francisco Toy Store Get Noticed'
+    - let metaDescription = `Learn how Tungsten, a San Francisco advertising agency, helped a retail toy store gain a consistent brand image and message. Tungsten's strategy to differentiate the store from competitors with newspaper ads, captured the attention of SF Chronicle readers. `
     - let currentUrl = 'ambassador-toys.html';
+    - let mediaFolder = '../media/ambassador-toys/';
+
+
+
 prepend preload
 
 append head
@@ -45,7 +50,7 @@ block page
 
     article(class=" page-content leading-relaxed overflow-hidden")
         .container.flow-root
-            img(src="media/ambassador-toys/pinguin@224.png", srcset="media/ambassador-toys/pinguin@224.png 224w, media/ambassador-toys/pinguin@288.png 288w, media/ambassador-toys/pinguin@432.png 432w, media/ambassador-toys/pinguin@448.png 448w, media/ambassador-toys/pinguin@576.png 576w, media/ambassador-toys/pinguin@672.png 672w, media/ambassador-toys/pinguin@720.png 720w", sizes="(max-width: 480px) 144px, (max-width: 768px) 192px, 224px", alt="Pinguin Toy" class="float-right shape-outside -mr-12 w-36 xs:-mr-10 xs:w-48 md:w-56 md:mr-0" width="600" height="1156" id="pinguin")
+            img(src="media/ambassador-toys/pinguin@224.png", srcset="media/ambassador-toys/pinguin@224.png 224w, media/ambassador-toys/pinguin@288.png 288w, media/ambassador-toys/pinguin@432.png 432w, media/ambassador-toys/pinguin@448.png 448w, media/ambassador-toys/pinguin@576.png 576w, media/ambassador-toys/pinguin@672.png 672w, media/ambassador-toys/pinguin@720.png 720w", sizes="(max-width: 480px) 144px, (max-width: 768px) 192px, 224px", alt="Rare and collectable Steiff plush toy penguin" class="float-right shape-outside -mr-12 w-36 xs:-mr-10 xs:w-48 md:w-56 md:mr-0" width="600" height="1156" id="pinguin")
             p.drop-cap(style="--color: hsla(205, 74%, 47%, 1)").
                 For years, the stores had relied on TV stations or the in-house graphics departments of newspapers to create the ads. (Most publications will offer this service if you buy space from them.)
             p.
@@ -60,14 +65,22 @@ block page
             p.
                 The brand is targeted toward parents that are predominantly  affluent, internationally aware, environmentally conscious, and  who seek toys for their children that can be described as wise, useful, having longevity, stimulating the imagination. Toys that are social and interactive.
 
-            div.relative.my-10
+            div.relative.my-10(id="news-paper-ad")
                 div.relative.flex.items-center
-                    div(data-aos="zoom-out" class="relative z-10")
-                        img(loading="lazy" src="media/ambassador-toys/toys_works/bearNecessities@1200.jpg", srcset="media/ambassador-toys/toys_works/bearNecessities@300.jpg 300w, media/ambassador-toys/toys_works/bearNecessities@600.jpg 600w, media/ambassador-toys/toys_works/bearNecessities@800.jpg 800w, media/ambassador-toys/toys_works/bearNecessities@1000.jpg 1000w, media/ambassador-toys/toys_works/bearNecessities@1200.jpg 1200w, media/ambassador-toys/toys_works/bearNecessities@1519.jpg 1519w, media/ambassador-toys/toys_works/bearNecessities@2025.jpg 2025w" sizes="(max-width: 1024px) 62vw,  522px" alt="" width="514" height="174" class="-rotate-3 shadow-2xl flex-none relative z-20" )
-                    img(loading="lazy" src="media/ambassador-toys/paper_plane.png", alt="" class="flex-none h-max" width="199" height="85" data-aos="zoom-out-right" data-aos-delay="550" class="w-3/12 md:w-auto")
-                div(data-aos="zoom-out" data-aos-data-aos-delay="350" class="z-30 relative")
-                    img(loading="lazy" src="media/ambassador-toys/toys_works/catchThem@1200.jpg", srcset="media/ambassador-toys/toys_works/catchThem@300.jpg 300w, media/ambassador-toys/toys_works/catchThem@600.jpg 600w, media/ambassador-toys/toys_works/catchThem@800.jpg 800w, media/ambassador-toys/toys_works/catchThem@1000.jpg 1000w, media/ambassador-toys/toys_works/catchThem@1200.jpg 1200w, media/ambassador-toys/toys_works/catchThem@1519.jpg 1519w, media/ambassador-toys/toys_works/catchThem@1920.jpg 1920w", sizes="(max-width: 1024px) 90vw, 635px" alt="" width="631" height="213" class="rotate-1 shadow-2xl mt-10 sm:-mr-10 ml-auto max-w" )
-                img(loading="lazy" src="media/ambassador-toys/two_clouds.png", alt="" class="absolute inset-0 -left-32 -z-10" data-aos="zoom-in-right" data-aos-duration="700")
+                    div(class="relative z-10 -rotate-3 ")
+                        //- TODO:
+                        //- revise newspaper ads animation, parallax on mouse move
+                        img(loading="lazy" src="media/ambassador-toys/toys_works/bearNecessities@1200.jpg", srcset="media/ambassador-toys/toys_works/bearNecessities@300.jpg 300w, media/ambassador-toys/toys_works/bearNecessities@600.jpg 600w, media/ambassador-toys/toys_works/bearNecessities@800.jpg 800w, media/ambassador-toys/toys_works/bearNecessities@1000.jpg 1000w, media/ambassador-toys/toys_works/bearNecessities@1200.jpg 1200w, media/ambassador-toys/toys_works/bearNecessities@1519.jpg 1519w, media/ambassador-toys/toys_works/bearNecessities@2025.jpg 2025w" sizes="(max-width: 1024px) 62vw,  522px" alt=`Horizontal newspaper advertisement featuring San Francisco Giants teddy bear by Gund, with headline "The Bear Necessities of the Little Giants Fan."` width="514" height="174" class="shadow-2xl flex-none" id="news-paper-ad-bear" data-depth="0.2")
+                    img(loading="lazy" src="media/ambassador-toys/paper_plane.png", alt="Paper Plane Image" class="flex-none h-max" width="199" height="85" class="w-3/12 md:w-auto" id="paper-plane" data-depth="0.05")
+                div(class="z-30 relative")
+                    +image({
+                        dir: mediaFolder+'toys_works/',
+                        ext: 'jpg',
+                        name: 'catchThem',
+                        resolutions: [600, 800, 942]
+                    })(sizes="(max-width: 1024px) 90vw, 635px" alt=`Horizontal newspaper advertisement featuring butterfly shaped kite, with headline "Catch Them While You Can."` width="631" height="213" class="rotate-1 shadow-2xl mt-10 sm:-mr-10 ml-auto max-w" id="news-paper-ad-butterfly")
+                div(class="absolute inset-0 -left-32 -z-10")
+                    img(loading="lazy" src="media/ambassador-toys/two_clouds.png", alt="Clouds" class="" id="ad-clouds" data-depth="0.6" width="869" height="335")
 
 
             style.
@@ -121,63 +134,68 @@ block page
                     Whether your product is exclusive to San Francisco or  distributed across the world, we would love to hear from you  about your brand and share ideas on how advertising can help achieve your company's business objectives.
                 div(class="absolute bottom-0 right-0 w-full left-0 z-0")
                     img(loading="lazy" src="media/ambassador-toys/LightBulb.svg" width="77" height="113" class="z-10 lightbulb absolute left-1/2 -ml-20  bottom-2 md:bottom-8 hidden xs:inline-block scale-50 sm:scale-75 md:scale-100")
-                    img(loading="lazy" src="media/ambassador-toys/Robot@301.png" srcset="media/ambassador-toys/Robot@151.png 151w, media/ambassador-toys/Robot@227.png 227w, media/ambassador-toys/Robot@452.png 452w, media/ambassador-toys/Robot@602.png 602w" alt="Robot Girl Image" class="absolute -right-10 md:-right-20 lg:-right-28 -bottom-1 xs:-bottom-5 md:-bottom-10 lg:bottom-0 left-auto w-48 sm:w-1/3 md:w-64 lg:w-72 z-20" width="301" height="466" )
-                    img(loading="lazy" src="media/ambassador-toys/Rainbow_clouds_bg.png" class="absolute right-0 -bottom-2 z-0" alt="Rainbow Clouds Image")
+                    img(loading="lazy" src="media/ambassador-toys/Robot@602.png"  alt="Pink toy maid robot" class="absolute -right-10 md:-right-20 lg:-right-28 -bottom-1 xs:-bottom-5 md:-bottom-10 lg:bottom-0 left-auto w-48 sm:w-1/3 md:w-64 lg:w-72 z-20" width="301" height="466" )
+                    img(loading="lazy" src="media/ambassador-toys/Rainbow_clouds_bg.png" class="absolute right-0 -bottom-2 z-0" alt="Rainbow")
         div(class="pt-14 sm:pt-20 relative bg-repeat blue-bg after:absolute after:inset-0 after:w-full after:h-full after:z-0 after:bg-repeat after:opacity-20 after:mix-blend-overlay")
             .container.relative.z-10
                 div(class="-left-2 -top-36 scale-75 sm:scale-100 sm:left-10 sm:-top-36 absolute z-0")
-                    img(loading="lazy" src="media/ambassador-toys/butterfly@202.png" srcset="media/ambassador-toys/butterfly@101.png 101w, media/ambassador-toys/butterfly@152.png 152w, media/ambassador-toys/butterfly@202.png 202w, media/ambassador-toys/butterfly@304.png 304w, media/ambassador-toys/butterfly@404.png 404w, media/ambassador-toys/butterfly@606.png 606w, media/ambassador-toys/butterfly@804.png 804w" sizes="(max-width:640px) 151px, 202px" alt="Butterfly Image" class="butterfly" width="202" height="202" data-aos="zoom-in-up")
+                    img(loading="lazy" src="media/ambassador-toys/butterfly@202.png" srcset="media/ambassador-toys/butterfly@101.png 101w, media/ambassador-toys/butterfly@152.png 152w, media/ambassador-toys/butterfly@202.png 202w, media/ambassador-toys/butterfly@304.png 304w, media/ambassador-toys/butterfly@404.png 404w, media/ambassador-toys/butterfly@606.png 606w, media/ambassador-toys/butterfly@804.png 804w" sizes="(max-width:640px) 151px, 202px" alt="Butterfly Image" class="butterfly" width="202" height="202")
                 div(class="toys-works-grid relative z-10 sm:-mt-8 flex flex-wrap justify-center sm:grid grid-cols-12 gap-6 sm:gap-8 place-items-center  grid-flow-row-dense ")
                     a(href="media/ambassador-toys/toys_works/bestSeat@3x.jpg" data-fslightbox="gallery" class="col-span-8 row-span-4 sm:col-span-4 sm:row-span-3 sm:place-self-end")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/bestSeat.jpg", alt="Best Seat Image" width="226" height="146" style="transform: rotate(-1.68deg)")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/bestSeat.jpg", alt=`Horizontal newspaper advertisement featuring San Francisco Giants Director's Chair, with headline "Best Seat in Town."` width="226" height="146" style="transform: rotate(-1.68deg)")
                     a(href="media/ambassador-toys/toys_works/diabolicalPieces@3x.jpg" data-fslightbox="gallery" class="col-span-4 row-span-4 sm:col-span-3 sm:row-span-3 sm:self-start")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/diabolicalPieces.jpg", alt="Diabolical Pieces Image" width="180" height="176")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/diabolicalPieces.jpg", alt=`B&W half-page newspaper advertisement featuring Batman Lego set, with headline "1045 Diabolical Pieces. Holy *@#*!"` width="180" height="176")
                     a(href="media/ambassador-toys/toys_works/giraffeAd@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-2 sm:self-start")
-                        img(class=" shadow-xl " loading="lazy" src="media/ambassador-toys/toys_works/giraffeAd.jpg", alt="Girafee Ad Image" style=" transform: rotate(1.29deg) " width="298" height="102")
+                        img(class=" shadow-xl " loading="lazy" src="media/ambassador-toys/toys_works/giraffeAd.jpg", alt=`Horizontal newspaper advertisement featuring toy giraffe on red wheels, with headline "Love at first pull."` style=" transform: rotate(1.29deg) " width="298" height="102")
                     a(href="media/ambassador-toys/toys_works/zeroEmissionVehicle@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-3 sm:row-span-3 sm:self-start" style="grid-column-start: 1")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/zeroEmissionVehicle.jpg", alt="Zero Emission Vehicle Image" width="181" height="146")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/zeroEmissionVehicle.jpg", alt=`B&W newspaper advertisement featuring red Radio Flyer toy wagon, with headline "Zero-Emission Vehicle."` width="181" height="146")
                     a(href="media/ambassador-toys/toys_works/randomActs@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-4 sm:row-span-3")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/randomActs.jpg", alt="Random Acts of Hugging Image" width="249" height="161")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/randomActs.jpg", alt=`B&W half-page newspaper advertisement featuring Gund teddy bear, with headline "Commit Random Acts of Hugging"` width="249" height="161")
                     a(href="media/ambassador-toys/toys_works/easyRider@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-3 sm:self-start sm:justify-self-start" style="grid-row-start: 3; grid-column-start: 8")
                         img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/easyRider.jpg", alt="Easy Rider Image"  width="280" height="145")
                     a(href="media/ambassador-toys/toys_works/bearNecessities@2025.jpg" data-fslightbox="gallery" class=" sm:col-span-4 sm:row-span-1 sm:place-self-start" style="grid-column-start: 1")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/bearNecessities@800.jpg", alt="Bear Necessities Image" width="514" height="174" style="transform: rotate(0.44deg)")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/bearNecessities@800.jpg", alt=`Horizontal newspaper advertisement featuring San Francisco Giants teddy bear by Gund, with headline "The Bear Necessities of the Little Giants Fan."` width="514" height="174" style="transform: rotate(0.44deg)")
                     a(href="media/ambassador-toys/toys_works/paparazzis@3x.jpg" data-fslightbox="gallery" class=" row-span-1 sm:col-span-3 sm:row-span-2 sm:self-start")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/paparazzis.jpg", alt="Paparazzis Image" width="170" height="137")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/paparazzis.jpg", alt=`B&W newspaper advertisement featuring Miss Piggy & Kermit the Frog dressed up for a party, with headline "Paparazzis? Bring it On!"` width="170" height="137")
                     a(href="media/ambassador-toys/toys_works/notDoWindows@3x.jpg" data-fslightbox="gallery" class=" row-span-1 sm:col-span-4 sm:row-span-3 justify-self-end sm:-translate-y-16 " style="grid-row-start: 6; grid-column-start: 8")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/notDoWindows.jpg", alt="I don not do Windows Image" width="273" height="140")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/notDoWindows.jpg", alt=`Horizontal newspaper advertisement featuring Pink toy maid robot, with headline "I... DO... NOT... DO... WINDOWS"` width="273" height="140")
                     a(href="media/ambassador-toys/toys_works/RadarDetector@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-2 sm:place-self-center sm:-translate-y-10" style="grid-row-start: 8; grid-column-start: 8;")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/RadarDetector.jpg", alt="Radar Detector Not Included Image" style=" transform: rotate(-0.35deg)" width="307" height="102")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/RadarDetector.jpg", alt=`Horizontal newspaper advertisement featuring boy sitting in red toy sports car, with headline "Radar Detector Not Included."` style=" transform: rotate(-0.35deg)" width="307" height="102")
                     a(href="media/ambassador-toys/toys_works/crumpledCasuals@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-2 sm:row-span-8 sm:self-start" style="grid-row-start: 8; grid-row-end: 14")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/crumpledCasuals.jpg", alt="Crumpled Casuals Image"  width="107" height="408")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/crumpledCasuals.jpg", alt=`Vertical newspaper advertisement featuring rare and collectable Steiff plush toy penguin, with headline "Out: crumpled casuals. In: crisp formals."`  width="107" height="408")
                     a(href="media/ambassador-toys/toys_works/semiFormalDinner@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-3 sm:row-span-2 place-self-start sm:-translate-y-9 sm:-translate-x-3 " style="grid-column-start: 3; grid-row-start: 9;")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/semiFormalDinner.jpg", alt="Formal Dinner Image" width="186" height="97")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/semiFormalDinner.jpg", alt=`Horizontal newspaper advertisement featuring baby's bib with truck printed on front, and headline "Semi formal dinner."` width="186" height="97")
                     a(href="media/ambassador-toys/toys_works/kungShi@3x.jpg" data-fslightbox="gallery" class=" sm:col-span-2 sm:row-span-4 place-self-center sm:place-self-start sm:scale-150 sm:translate-y-3 " style="grid-column-start: 6; grid-row-start: 9;")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/kungShi.jpg", alt="Kung Shi Image" style=" transform: rotate(-0.82deg)"  width="180" height="203")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/kungShi.jpg", alt=`Color newspaper advertisement featuring three Chinese dolls and dragon, with headline "Kung-Hsi Fa-Ts' Ai!"` style=" transform: rotate(-0.82deg)"  width="180" height="203")
                     a(href="media/ambassador-toys/toys_works/ChinesePoster@3x.jpg" data-fslightbox="gallery" class="sm:col-span-3 sm:row-span-4 place-self-start sm:-translate-x-4 sm:-translate-y-8" style="grid-column-start: 3; grid-row-start: 11;")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/ChinesePoster.jpg", alt="Chinese Poster Image" width="183" height="275" )
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/ChinesePoster.jpg", alt=`Color full-page magazine advertisement featuring three Chinese dolls and dragon, with headline "Kung-Hsi Fa-Ts' Ai!"` width="183" height="275" )
                     a(href="media/ambassador-toys/toys_works/rakeInFun@3x.jpg" data-fslightbox="gallery" class="sm:col-span-3 sm:row-span-3 self-start sm:-translate-y-10 " style="grid-row-start: 10; grid-column-start: 9;")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/rakeInFun.jpg", alt="Rake in the Fun Image"  width="223" height="179" style="transform: rotate(0.13deg)")
+                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/rakeInFun.jpg", alt=`B&W newspaper advertisement featuring toy gardening rake, with headline "Rake In The Fun."`  width="223" height="179" style="transform: rotate(0.13deg)")
                     a(href="media/ambassador-toys/toys_works/catchThem@1920.jpg" data-fslightbox="gallery" class=" sm:col-span-5 sm:row-span-3 sm:scale-150 lg:scale-125" style="grid-row-start: 12; grid-column-start: 7")
-                        img(class="shadow-xl" loading="lazy" src="media/ambassador-toys/toys_works/catchThem@600.jpg", alt="Catch Them While You Can Image" style=" transform: rotate(0.87deg)" width="631" height="213")
+                        +image({
+                            dir: mediaFolder+'toys_works/',
+                            name: 'catchThem',
+                            ext: 'jpg',
+                            resolutions: [600, 800, 942]
+                        })(class="shadow-xl" alt=`Horizontal newspaper advertisement featuring butterfly shaped kite, with headline "Catch Them While You Can."` style=" transform: rotate(0.87deg)" width="631" height="213")
 
 
                 div(class="toys-works-grid grid gap-y-8 place-content-center place-items-center mt-10" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))")
                     a(href="media/ambassador-toys/toys_works/littleGreenThumbs@3x.jpg" data-fslightbox="gallery" class="min-w-max md:justify-self-end" )
-                        img(class="shadow" loading="lazy" src="media/ambassador-toys/toys_works/littleGreenThumbs.jpg", alt="Little Green Thumbs Image"  width="249" height="128" )
+                        img(class="shadow" loading="lazy" src="media/ambassador-toys/toys_works/littleGreenThumbs.jpg", alt=`Horizontal newspaper advertisement featuring toy gardening tools, with headline "For the Little Green Thumbs in Your House."`  width="249" height="128" )
                     a(href="media/ambassador-toys/toys_works/rainGear@3x.jpg" data-fslightbox="gallery" class="min-w-max " )
-                        img(class="shadow" loading="lazy" src="media/ambassador-toys/toys_works/rainGear.jpg", alt="Rain Gear Image"  width="170" height="136" )
+                        img(class="shadow" loading="lazy" src="media/ambassador-toys/toys_works/rainGear.jpg", alt=`B&W newspaper advertisement featuring child's Wellington boots in Jersey Cow pattern, with headline "Rain Gear That's Udderly Cool."`  width="170" height="136" )
                     a(href="media/ambassador-toys/toys_works/Pandamonium@3x.jpg" data-fslightbox="gallery" class="min-w-max lg:justify-self-start ")
-                        img(class="shadow" loading="lazy" src="media/ambassador-toys/toys_works/Pandamonium.jpg", alt="Pandamonium Image"  width="170" height="136" )
+                        img(class="shadow" loading="lazy" src="media/ambassador-toys/toys_works/Pandamonium.jpg", alt=`B&W newspaper advertisement featuring child's umbrella with panda design, and headline "When It Rains, It's Pandemonium."`  width="170" height="136" )
                     a(href="media/ambassador-toys/toys_works/AT-toydetailpage@3x.jpg" data-fslightbox="gallery" class="min-w-max ")
-                        img(class="relative" loading="lazy" src="media/ambassador-toys/toys_works/AT-toydetailpage.jpg", alt="Ambassador Toys Detail Page Image"  width="242" height="182" style="transform: rotate(-0.88deg)")
+                        img(class="relative" loading="lazy" src="media/ambassador-toys/toys_works/AT-toydetailpage.jpg", alt=`Screenshot of product page on website.`  width="242" height="182" style="transform: rotate(-0.88deg)")
                     a(href="media/ambassador-toys/toys_works/AT-home@3x.jpg" data-fslightbox="gallery" class="min-w-max " )
-                        img(class="relative" loading="lazy" src="media/ambassador-toys/toys_works/AT-home.jpg", alt="Ambassador Toys Homepage Image"  width="233" height="184" )
+                        img(class="relative" loading="lazy" src="media/ambassador-toys/toys_works/AT-home.jpg", alt=`Screenshot of website homepage.`  width="233" height="184" )
                     a(href="media/ambassador-toys/toys_works/at-toyshome@3x.jpg" data-fslightbox="gallery" class="min-w-max " )
-                        img(class="relative" loading="lazy" src="media/ambassador-toys/toys_works/at-toyshome.jpg", alt="AT Toys Home Image"  width="245" height="184" style=" transform: rotate(1.3deg)")
+                        img(class="relative" loading="lazy" src="media/ambassador-toys/toys_works/at-toyshome.jpg", alt=`Screenshot of search results page on website.`  width="245" height="184" style=" transform: rotate(1.3deg)")
 
                 div(style="transform: translateY(16px)")
-                    img(loading="lazy" src="media/ambassador-toys/redCar.png" srcset="media/ambassador-toys/redCar.png 594w, media/ambassador-toys/redCar@1.5x.png 891w, media/ambassador-toys/redCar@2x.png 1188w, media/ambassador-toys/redCar@3x.png 1782w,"  width="550" height="305" alt="Boy in Red Car" class="mx-auto relative"  data-aos="zoom-in-right")
+                    img(loading="lazy" src="media/ambassador-toys/redCar.png" srcset="media/ambassador-toys/redCar.png 594w, media/ambassador-toys/redCar@1.5x.png 891w, media/ambassador-toys/redCar@2x.png 1188w" sizes="90vw, (min-width: 600px) 550px"  width="550" height="305" alt=`Boy sitting in red toy sports car` class="mx-auto relative"  id="red-car")
 
     //- -
         const team = [
@@ -318,6 +336,9 @@ append footer_scripts
             transform: translateX(2000px); }
         }
 
+        .toys-works-grid a {
+            filter: drop-shadow(0 0 5px hsla(0, 0%, 0%, .3))
+        }
         .toys-works-grid a img:hover {
             animation: swing;
             animation-iteration-count: 1;

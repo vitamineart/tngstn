@@ -78,3 +78,14 @@ setTimeout(() => {
     })
 }, 1000);
 
+
+scrollEntranceAnimate('#tom-meyer', {
+    opacity: 0,
+    rotateY: -90,
+})
+scrollEntranceAnimate('.tom-meyer-info', {
+    opacity: 0,
+    scale: 0.9,
+    delay: .3,
+    duration: 1
+})

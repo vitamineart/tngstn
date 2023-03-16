@@ -32,7 +32,7 @@ block page
         .container.flow-root
             .drop-cap(style="--color: #3288c3;").
                 Cobham, the world leader in satellite communications, is constantly releasing new technologies that shape the entire eco-system. Decision-makers across multiple industries seek to understand these technologies in an objective way.
-            img(loading="lazy" src="media/white-paper/sea-tel-4012.png" alt="Technical illustration of a Cobham maritime satellite communications antenna" class="shape-outside float-left w-40 sm:w-44 m-4 -ml-10 sm:-ml-12" width="200" height="231")
+            img(loading="lazy" src="media/white-paper/sea-tel-4012.png" alt="Technical illustration of a Cobham maritime satellite communications antenna" class="shape-outside float-left w-40 sm:w-44 m-4 -ml-10 sm:-ml-12" width="200" height="231" id="sea-tel-antenna")
             p White Paper can serve this purpose remarkably well.
             p The format allows information and research findings to be presented dispassionately to anyone interested in studying the technology or its ramifications.
             p The audience includes Cobham's own dealer network, the IT, finance and procurement officers of customer companies, prospective customers, channel partners, journalists, analysts, or investors.
@@ -41,19 +41,18 @@ block page
             .container.border-l-2.border-white.bg
                 p.font-proxima-bold.italic.text-lg The reader of a White Paper is looking to understand how a particular technology, product or method is a superior choice when solving a specific business problem.
 
-        .container.flow-root
-
+        .container.flow-root(style="perspective: 400px;")
             +image({
                 dir: mediaFolder,
                 ext: 'png',
                 name: 'roll-pitch-yaw-graph',
                 resolutions: [630, 945, 1260]
-            })( src="media/white-paper/roll-pitch-yaw-graph@945.png" sizes="315px" alt="Illustration of roll, pitch and yaw movements of an oil tanker" class="shape-outside xs:float-right mx-auto -mt-4 translate-x-5 xs:translate-x-0 mb-4" width="315" height="257")
+            })(src="media/white-paper/roll-pitch-yaw-graph@945.png" sizes="315px" alt="Illustration of roll, pitch and yaw movements of an oil tanker" class="shape-outside xs:float-right mx-auto -mt-4 translate-x-5 xs:translate-x-0 mb-4" width="315" height="257" id="roll-pitch-yaw-graph")
             p White Papers are especially important for highly technical products with long sales cycles, or products used in critical situations. A company investing in such a product will typically go through an extensive decision-making process that spans multiple departments and levels inside the company.
 
             p Some executives on the selection committee will come from non-technical backgrounds, but need to contribute to the buying decision in an informed way. Busy executives seek plain-language explanations, presented in a journalistic or academic style, backed by statistics, facts and references to reliable sources.
 
-            div(class="my-6 md:my-10 max-w-xl mx-auto overflow-hidden bg-white fade-in")
+            div(class="my-6 md:my-10 max-w-xl mx-auto overflow-hidden bg-white" id="whyte-papers")
                 header.uppercase.text-xl.tracking-wide.text-white.bg-blue-light.border-blue-light.p-4.text-center Why Decision Makers Read a White Paper
                 -
                     const why_paper = [
@@ -64,7 +63,7 @@ block page
                         "Short list qualified vendors"
                     ]
                 each reason, index in why_paper
-                    div(class="even:bg-gray-100 last:border-b-gray-300 border-b py-3 px-4 text-lg border-l border-r border-gray-300 will-change-opacity blur-in" )= reason
+                    div(class="even:bg-gray-100 last:border-b-gray-300 border-b py-3 px-4 text-lg border-l border-r border-gray-300 will-change-opacity " )= reason
 
             p White Papers must be carefully written and designed. Key information is presented visually because readers have limited time and attention.
 
@@ -107,7 +106,7 @@ block page
             //- Slider main container
             .pdf-slider-main
                 //- Additional required wrapper
-                .swiper-wrapper.fade-in
+                .swiper-wrapper
                     //- Slides
                     -
                         const iframes = [
@@ -141,13 +140,13 @@ block page
             div(class="pdf-slider-thumbs mt-10 mx-auto w-full sm:w-64 md:w-80")
                 div.swiper-wrapper
                     .swiper-slide.p-1
-                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper1_thumb.jpg" alt="WhitePaper1 Thumbnail" class="thumb active fade-in-left")
+                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper1_thumb.jpg" alt="WhitePaper1 Thumbnail" class="thumb active")
                     .swiper-slide.p-1
-                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper2_thumb.jpg" alt="WhitePaper2 Thumbnail" class="thumb fade-in-left")
+                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper2_thumb.jpg" alt="WhitePaper2 Thumbnail" class="thumb")
                     .swiper-slide.p-1
-                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper3_thumb.jpg" alt="WhitePaper3 Thumbnail" class="thumb fade-in-left")
+                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper3_thumb.jpg" alt="WhitePaper3 Thumbnail" class="thumb")
                     .swiper-slide.p-1
-                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper4_thumb.jpg" alt="WhitePaper4 Thumbnail" class="thumb fade-in-left")
+                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper4_thumb.jpg" alt="WhitePaper4 Thumbnail" class="thumb")
 
         .container.flow-root
             p It's important to note that the White Papers you see here are distinct from the product spec sheets and multiple brochures Tungsten has created for Cobham's individual products. They are different in the audience they appeal to, and in the way they are distributed to the audience.
@@ -157,7 +156,7 @@ block page
                 ext: 'jpg',
                 name: 'roll-pitch-yaw-graph3',
                 resolutions: [500, 708]
-            })(sizes="90vw, (min-width: 768px) 708px" width="708" height="430" class="mx-auto blur-in" alt="Illustration of three vessels with satellite overhead beaming signal as vessels roll, pitch and yaw.")
+            })(sizes="90vw, (min-width: 768px) 708px" width="708" height="430" class="mx-auto " alt="Illustration of three vessels with satellite overhead beaming signal as vessels roll, pitch and yaw." id="roll-pitch-yaw-graph3")
 
             p Most of the White Papers you see on these pages were printed and distributed worldwide at the trade shows Cobham participated in, or were mailed to dealerships, or made available as online PDFs.
 

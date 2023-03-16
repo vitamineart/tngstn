@@ -57,7 +57,7 @@ block page
                     That day, the Labor Council of San Francisco - a Political Action Committee - asked Tungsten to create and place a television commercial to help the candidate they were supporting, Shamann Walton, win the election.
         .video-container.absolute.inset-0.w-full.h-full.z-0
             div(class="overlay absolute inset-0 w-full h-full bg-black/60 z-10 " style="backdrop-filter: blur(1px) saturate(0.7);")
-            iframe(src="https://www.youtube.com/embed/rHQnWL0zY8U?controls=0&autoplay=1&mute=1&playsinline=1&loop=1&rel=0" class="absolute w-full h-full inset-0 object-cover z-0 yt_player_iframe" title="30-second television commercial for Shamann Walton for Supervisor, created by Tungsten Advertising agency.")
+            //- iframe(src="https://www.youtube.com/embed/rHQnWL0zY8U?controls=0&autoplay=1&mute=1&playsinline=1&loop=1&rel=0" class="absolute w-full h-full inset-0 object-cover z-0 yt_player_iframe" title="30-second television commercial for Shamann Walton for Supervisor, created by Tungsten Advertising agency.")
             //- <lite-youtube class="yt_player_iframe absolute inset-0 m-auto" videoid="rHQnWL0zY8U" videotitle="30-second television commercial for Shamann Walton for Supervisor, created by Tungsten Advertising agency" autoload params="autoplay=1&controls=0" style="background-image: url(https://i.ytimg.com/vi_webp/rHQnWL0zY8U/hqdefault.webp)">
             //-     <a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=rHQnWL0zY8U">Watch on YouTube: "30-second television commercial for Shamann Walton for Supervisor, created by Tungsten Advertising agency"</a>
             //- </lite-youtube>
@@ -79,8 +79,8 @@ block page
                     District 10 of San Francisco starts at county line and  runs north along the bay to Dog Patch. It includes  voter banks such as Vietnamese-Americans in Visitation Valley, Chinese-Americans in Bayshore, Black  residents in Bay View, White residents in Dog Patch, and  several other diverse socio-economic groups.
                 p
 
-                div(class="sm:float-left font-proxima-bold text-white py-6 sm:py-8 md:py-10 px-8 sm:px-10  md:px-12 md:max-w-sm my-4 sm:mt-0 sm:mr-8 fade-in-left" style="background-image: linear-gradient(-135deg, hsl(260, 97%, 86%), hsl(259, 33%, 52%))" id="purple-message")
-                    p(class="blur-in") When advertising for an election, television  must be an essential  component of the  media plan. It appeals  disproportionately to  older viewers. An  audience comprising  homeowners and  business owners --  the demographic  most likely to vote.
+                div(class="sm:float-left font-proxima-bold text-white py-6 sm:py-8 md:py-10 px-8 sm:px-10  md:px-12 md:max-w-sm my-4 sm:mt-0 sm:mr-8" style="background-image: linear-gradient(-135deg, hsl(260, 97%, 86%), hsl(259, 33%, 52%))" id="purple-message")
+                    p When advertising for an election, television  must be an essential  component of the  media plan. It appeals  disproportionately to  older viewers. An  audience comprising  homeowners and  business owners --  the demographic  most likely to vote.
 
                 div(class="")
                     p.
@@ -209,11 +209,11 @@ block page
                         "Are so targeted as to cost fractions of a penny per impression ",
                         "Require no budgetary commitments with the platform"
                     ]
-                div(class="w-full xs:w-10/12 sm:w-1/2 lg:w-1/2 mx-auto sm:ml-8 md:ml-10 lg:ml-24 my-6 sm:mt-24 sm:float-right text-center font-proxima-bold leading-tight border-2 border-current fade-in-left" style="color: var(--c-walton-purple); max-width: 430px;")
+                div(class="w-full xs:w-10/12 sm:w-1/2 lg:w-1/2 mx-auto sm:ml-8 md:ml-10 lg:ml-24 my-6 sm:mt-24 sm:float-right text-center font-proxima-bold leading-tight border-2 border-current" style="color: var(--c-walton-purple); max-width: 430px;" id="purple-list")
                     div(class=" text-white px-8 lg:px-12.5 py-4 text-lg lg:text-xl bg-current" style="background-color: var(--c-walton-purple); ").
                         Online ads are easy to implement:
                     each name, index in datasheetReferred
-                        div(class="odd:bg-gray-light/80 px-8 lg:px-12.5 py-4 text-sm lg:text-base lg:!leading-loose border-current fade-in-up")
+                        div(class="odd:bg-gray-light/80 px-8 lg:px-12.5 py-4 text-sm lg:text-base lg:!leading-loose border-current")
                             span.text-black= name
 
                 div(class="mt-12")

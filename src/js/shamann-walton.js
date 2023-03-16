@@ -251,7 +251,35 @@ const observer = new IntersectionObserver((entry, observer) => {
 const target = document.querySelector('#chart-container')
 observer.observe(target);
 
-
+scrollEntranceAnimate('#purple-message', {
+  x: 20,
+  opacity: 0,
+  duration: 1
+})
+scrollEntranceAnimate('#purple-message > p', {
+  x: 30,
+  opacity: 0,
+  filter: 'blur(2px)',
+  duration: 1
+})
+scrollEntranceAnimate('#purple-list', {
+  x: 20,
+  opacity: 0,
+  duration: 1
+})
+gsap.from('#purple-list div', {
+  scrollTrigger: {
+    trigger: '#purple-list',
+    start: '50% bottom'
+  },
+  y: 20,
+  opacity: 0,
+  scale: 0.9,
+  filter: 'blur(2px)',
+  duration: 1,
+  stagger: .1,
+  delay: .1
+})
 
 const mapTl = gsap.timeline({
   scrollTrigger: {

@@ -11,24 +11,37 @@ ships.forEach(ship => {
     })
 })
 
-gsap.registerPlugin(ScrollTrigger);
+const windroseTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '#windrose'
+    }
+}).from('#windrose',{
+    filter: 'blur(5px)',
+    scale: 0.9,
+    opacity: 0,
+    duration: 2,
+    ease: 'circ.out'
+}).from('#ST4012', {
+    opacity: 0,
+    filter: 'blur(5px)',
+    y: 20
+}, "<50%")
 
 const circleTl = gsap.timeline({
     scrollTrigger: {
       trigger: '.circleShip',
+      start: '40% bottom'
     }
   })
-circleTl.from('.circleShip', {
+circleTl.from('#domeAntennaImage', {
+    opacity: 0,
+    duration: 1,
+}).from('.circleShip', {
     opacity: 0,
     scale: 2,
     duration: 1,
     ease: 'expo.out',
     stagger: -0.2
-}).from('.circleShip-image', {
-    opacity: 0,
-    scale: 0,
-    duration: 1,
-    ease: 'expo.out',
-    stagger: -0.2
-}, "<10%")
+})
+
 
