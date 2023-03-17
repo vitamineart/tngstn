@@ -443,7 +443,7 @@ const openPopup = () => {
   document.querySelector('body').classList.add('overflow-hidden')
 
   let player = ytPlayerIframe.cloneNode();
-  player.src = 'https://www.youtube.com/embed/rHQnWL0zY8U?autoplay=1&playsinline=1';
+  player.src = 'https://www.youtube.com/embed/rHQnWL0zY8U?&autoplay=1&playsinline=1&rel=0';
   player.setAttribute('allowfullscreen', 'allowfullscreen');
   popup.appendChild(player)
 
