@@ -433,19 +433,31 @@ const megaTl = gsap.timeline({
 })
 
 const popupOverlay = document.querySelector('.popup-overlay');
+const close = document.querySelector('#close-popup');
 const popup = document.querySelector('#video-popup');
 const ytPlayerIframe = document.querySelector('.yt_player_iframe');
 
 const openPopup = () => {
-  popupOverlay.classList.remove('hidden');
-  popupOverlay.classList.toggle('animate__animated');
-  popup.classList.toggle('hidden');
-  document.querySelector('body').classList.add('overflow-hidden')
-
   let player = ytPlayerIframe.cloneNode();
   player.src = 'https://www.youtube.com/embed/rHQnWL0zY8U?&autoplay=1&playsinline=1&rel=0';
   player.setAttribute('allowfullscreen', 'allowfullscreen');
   popup.appendChild(player)
+
+  popupOverlay.classList.remove('hidden');
+  popup.classList.remove('hidden');
+  gsap.fromTo(popupOverlay, { opacity: 0 }, { opacity: 1, duration: 1 })
+  gsap.fromTo(popup, {
+    opacity: 0, scale: 0.8,
+  },{
+    opacity: 1, scale: 1, duration: 2,
+    onComplete: ()=> {
+      gsap.fromTo(close,{opacity: 0 }, {opacity: 1, duration: 1 })
+    }
+  })
+
+  document.querySelector('body').classList.add('overflow-hidden')
+
+
 
 }
 
@@ -454,7 +466,7 @@ const closePopup = () => {
   popup.classList.add('hidden');
   popup.querySelector('.yt_player_iframe').remove()
   document.querySelector('body').classList.remove('overflow-hidden')
-
+  gsap.set(close,{opacity: 0 })
 }
 
 

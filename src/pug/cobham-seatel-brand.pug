@@ -164,13 +164,15 @@ block page
                     z-index: 1;
                     text-shadow: 0 0 13px #fff, 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff;
                     transition: .3s;
-                    backdrop-filter: blur(1px) brightness(2);
-                    box-shadow: 0 0 10px #fff, 0 0 2px #fff, 0 0 5px #fff,;
+                    backdrop-filter: blur(2px) brightness(2);
+                    box-shadow: 0 0 10px #fff, 0 0 2px #fff, 0 0 5px #fff;
                     padding:0 2px;
+                    background: transparent;
                 }
                 .highlighted {
-                    animation-name: highlightWord;
-                    animation-iteration-count: 1;
+                    scale: 2;
+                    //- animation-name: highlightWord;
+                    //- animation-iteration-count: 1;
                     animation-timing-function: cubic-bezier(0.02, 0.9, 0.83, 0.99);
                     animation-duration: 3000ms;
                     color: hsl(198, 92%, 48%);
@@ -244,7 +246,7 @@ block page
                 pattern(width="375" height="20" viewBox="0 0 375 20" id="pattern-wave-low" x="0" y="0" fill="none" patternUnits="userSpaceOnUse")
                     path(d="M375 7.02489V20H0V6.98716C28.6667 6.76864 57.3334 5.61046 86.0001 3.51264C150 -1.17088 214 -1.17088 278 3.51264C310.333 5.87879 342.667 7.04954 375 7.02489Z" fill="#fff")
                 rect(x="0" y="0" width="100%" height="100%" fill="url(#pattern-wave-low)")
-            svg( class="relative top-px" width="100%" height="34")
+            svg( class="relative top-px" viewBox="0 0 1920 34")
                 path(fill="#fff" d="M192 14.573c-64-19.43-128-19.43-192 0V34h1920V14.573c-64 19.431-128 19.431-192 0-64-19.43-128-19.43-192 0-64 19.431-128 19.431-192 0-64-19.43-128-19.43-192 0-64 19.431-128 19.431-192 0-64-19.43-128-19.43-192 0-64 19.431-128 19.431-192 0-64-19.43-128-19.43-192 0-64 19.431-128 19.431-192 0Z")
 
             section(class="pt-6 pb-8 xs:pt-8 xs:pb-12 sm:pt-14 md:pt-8 lg:pt-4 lg:pb-24 bg-white relative z-10 overflow-hidden")
@@ -309,7 +311,7 @@ block page
                         p.
                             Cobham appointed Tungsten as its advertising agency for the Sea Tel  division, with the objective of creating a powerful central idea for the  brand, and executing that idea across every consumer touch-point,  worldwide. This includes corporate brand-building in trade magazines  published from every shipping center around the globe, tactical advertising  in print, online display advertising, social media in Facebook, Twitter and YouTube, video production, poster design, brochures, pamphlets and  collateral materials, trade-show booth design, fabrication, executing product photography, public relations in maritime and satcom trade journals, white papers for each product, cartography and mapmaking, printing, media planning and worldwide media buying, internal training materials, and all other full-service advertising services that the brand may need.
 
-            svg(viewBox="0 0 1920 34" class="relative z-10 -top-1")
+            svg(viewBox="0 0 1920 34" class="relative z-10")
                 path(fill="#fff" d="M192 19.427c-64 19.43-128 19.43-192 0V0h1920v19.427c-64-19.432-128-19.432-192 0-64 19.43-128 19.43-192 0-64-19.432-128-19.432-192 0-64 19.43-128 19.43-192 0-64-19.432-128-19.432-192 0-64 19.43-128 19.43-192 0-64-19.432-128-19.432-192 0-64 19.43-128 19.43-192 0-64-19.432-128-19.432-192 0Z")
 
             style.

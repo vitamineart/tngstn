@@ -14,8 +14,6 @@ prepend preload
 
 
 append head
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print"  onload="this.media='all'"/>
-
     style.
         :root {
             --c-walton-violet: #604B8D;
@@ -595,14 +593,14 @@ block page
     //-     +team(team)
 
 
-    div(id="video-popup" class="popup fixed inset-10 m-auto max-w-7xl aspect-video z-[51] hidden animate__animated animate__fadeInDown")
-        button(type="button" role="button" onClick="closePopup();" id="close-popup" class="text-white hover:text-purple-300")
+    div(id="video-popup" class="popup fixed inset-10 m-auto max-w-7xl aspect-video hidden" style="z-index: 51; opacity:0;")
+        button(type="button" role="button" onClick="closePopup();" id="close-popup" class="text-white hover:text-purple-300" style="opacity:0;")
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" class="top-0 right-0 absolute -translate-y-9 translate-x-9">
                 <path d="M29.5834 3.35413L26.6459 0.416626L15 12.0625L3.35419 0.416626L0.416687 3.35413L12.0625 15L0.416687 26.6458L3.35419 29.5833L15 17.9375L26.6459 29.5833L29.5834 26.6458L17.9375 15L29.5834 3.35413Z" fill="currentColor"/></svg>
+        div(class="absolute inset-0 m-auto text-white text-center h-10 w-30 -z-10") Loading...
 
 
-
-    div(class="popup-overlay fixed inset-0 w-full h-full z-50 animate__fadeIn hidden p-20" style="background: radial-gradient(hsla(259, 41%, 12%, .95), hsl(268, 44%, 17%, .95) )" onClick="closePopup()")
+    div(class="popup-overlay fixed inset-0 w-full h-full p-20 hidden" style="z-index: 50; background: radial-gradient(hsla(259, 41%, 12%, .95), hsl(268, 44%, 17%, .95) ); backdrop-filter: blur(2px); " onClick="closePopup()")
 
 append footer_scripts
     script(src="https://d3js.org/d3.v4.min.js" defer)
