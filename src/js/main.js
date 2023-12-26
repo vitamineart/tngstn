@@ -227,11 +227,12 @@ const snowFlakeLogo = document.querySelector("#snowFlakeLogo");
 const blurFlakeLogo = 2;
 const saturateFlakeLogo = 1.5;
 const brightnessFlakeLogo = 1.8;
+const snowFlakeLogoDuration = 2;
 
 const snowFlakeLogoTl = gsap.timeline({
   delay: 5,
   repeat: -1,
-  repeatDelay: 3,
+  repeatDelay: 5,
   yoyo: true
 });
 
@@ -247,7 +248,7 @@ snowFlakeLogoTl
       filter: `blur(${blurFlakeLogo}px) saturate(${saturateFlakeLogo}) brightness(${brightnessFlakeLogo})`,
       opacity: 0,
       rotate: -2500,
-      duration: 3,
+      duration: snowFlakeLogoDuration,
       ease: "cubic.in"
     }
   )
@@ -263,10 +264,10 @@ snowFlakeLogoTl
       filter: "blur(0px) saturate(1) brightness(1)",
       opacity: 1,
       rotate: 0,
-      duration: 3,
+      duration: snowFlakeLogoDuration,
       ease: "cubic.out"
     },
-    "<2.5"
+    "<1"
   );
 
 // snowFlakeLogoTl.reverse();
