@@ -22,26 +22,54 @@ block page
         content: `When you're a <span class="text-blue-light">tightrope walker</span> traversing the <span class="text-blue-light">Grand Canyon</span>, a surprise gush of wind can mean the end of your world.`,
         class:'bg-gray-light py-6 sm:py-10'
     })
-
+    style.
+        #DI-weather-monitoring-station,
+        #DI-domestic-monitoring-station,
+        #nik-wallenda {
+            width: 200px;
+            --shift: -40px;
+        }
+        #DI-weather-monitoring-station {
+            margin-left: var(--shift);
+        }
+        #DI-domestic-monitoring-station,
+        #nik-wallenda {
+            margin-right: var(--shift);
+        }
+        @media (min-width:380px) {
+            #DI-domestic-monitoring-station,
+            #DI-weather-monitoring-station,
+            #nik-wallenda {
+                --shift: -20px;
+            }
+        }
+        @media (min-width:480px) {
+            #DI-domestic-monitoring-station,
+            #DI-weather-monitoring-station,
+            #nik-wallenda {
+                width: 256px;
+                --shift: 0;
+            }
+        }
     article.page-content.mt-10.leading-relaxed.overflow-hidden
         .container.flow-root
             p.drop-cap(style="--color: #338bc8;") Often, the safe landing of a passenger plane, or the return home of a fire-fighter, or even the success of a wine label depend on precise second-by-second data of hyper-local weather conditions.
-            p But weather isn't just for dare-devils and critical infrastructure. We all have an interest in local weather.
-            img(loading="lazy" src="media/davis-instruments/DI-weather-monitoring-station.png" alt="Davis Instruments industrial real-time weather monitoring station" width="256" height="255" class="shape-outside float-left mr-2 w-40 xs:w-44 sm:w-48 md:w-56 mt-4 -ml-5" id="DI-weather-monitoring-station")
-            p You and I would like to know if we should leave home with an umbrella today. That’s why TV stations install weather stations on their roof-tops.
-            p Schools install weather stations for K-12 STEM students. Hobbyists have them at home, and storm chasers put them on top of their trucks. Surfer Jack O'Neill had one in his garden. Take a walk in a park and you might spot one, left there by a horticulturist.
-            img(loading="lazy" src="media/davis-instruments/nik-wallenda.png" alt="Head shot of tightrope walker Nik Wallenda" class="shape-outside float-right -mr-12 w-48 sm:w-60 lg:w-64 sm:mr-0 " width="256" height="278" id="nik-wallenda")
-            p Coming back to King-of-the-Wire Nik Wallenda, he needs to know if humidity could make his tightrope slippery. His life depends on it. So he depends on Davis.
-            p For over 50-years, Davis Instruments has been a leader in precision weather stations. Industries around the world rely on Davis for making critical decisions that require real-time weather monitoring.
+            p(class="mt-4 md:mt-6") But weather isn't just for dare-devils and critical infrastructure. We all have an interest in local weather.
+            img(loading="lazy" src="media/davis-instruments/DI-weather-monitoring-station.png" alt="Davis Instruments industrial real-time weather monitoring station" width="256" height="255" class="shape-outside float-left mr-2 mt-4" id="DI-weather-monitoring-station" data-shape="media/davis-instruments/DI-weather-monitoring-station-shape.svg")
+            p(class="mt-4 md:mt-6") You and I would like to know if we should leave home with an umbrella today. That’s why TV stations install weather stations on their roof-tops.
+            p(class="mt-4 md:mt-6") Schools install weather stations for K-12 STEM students. Hobbyists have them at home, and storm chasers put them on top of their trucks. Surfer Jack O'Neill had one in his garden. Take a walk in a park and you might spot one, left there by a horticulturist.
+            img(loading="lazy" src="media/davis-instruments/nik-wallenda.png" alt="Head shot of tightrope walker Nik Wallenda" class="float-right" width="256" height="278" id="nik-wallenda" style="shape-outside: circle(50%); shape-margin:10px;")
+            p(class="mt-4 md:mt-6") Coming back to King-of-the-Wire Nik Wallenda, he needs to know if humidity could make his tightrope slippery. His life depends on it. So he depends on Davis.
+            p(class="mt-4 md:mt-6") For over 50-years, Davis Instruments has been a leader in precision weather stations. Industries around the world rely on Davis for making critical decisions that require real-time weather monitoring.
         .bg-gray-dark.my-10.py-8
             .container
                 .border-l-2.pl-10.border-white.text-white.text-xl.font-proxima-bold.
                     Davis Instruments hired Tungsten as its advertising agency to differentiate the brand by product attributes, company values, and history.
 
         .container
-            p Tungsten created a central idea that captured real users using the product in real-life situations, and putting their trust in Davis. The concept was executed in dramatic and memorable video productions. These videos are endorsements from professionals at the "top of their field", where weather can have a critical outcome on success.
-            img(loading="lazy" src="media/davis-instruments/DI-domestic-weather-monitoring-station.png" alt="Davis Instruments domestic real-time weather monitoring station" class="shape-outside float-right w-40 -mr-5 sm:mr-0 sm:w-52 md:w-60 lg:w-64" width="256" height="224" id="DI-domestic-monitoring-station")
-            p Tungsten's experience in consumer IoT technology makes it particularly suited for engineering products. If you are a marketer with a product targeted at a specific region of the world, or worldwide, Tungsten would like the opportunity to talk to you about your brand, regardless of where on the globe your company is headquartered. We're in San Francisco, and work with clients across the world.
+            p(class="mt-4 md:mt-6") Tungsten created a central idea that captured real users using the product in real-life situations, and putting their trust in Davis. The concept was executed in dramatic and memorable video productions. These videos are endorsements from professionals at the "top of their field", where weather can have a critical outcome on success.
+            img(loading="lazy" src="media/davis-instruments/DI-domestic-weather-monitoring-station.png" alt="Davis Instruments domestic real-time weather monitoring station" class="shape-outside float-right" width="256" height="224" id="DI-domestic-monitoring-station" data-shape="../media/davis-instruments/DI-domestic-wather-monitoring-station-shape.svg")
+            p(class="mt-4 md:mt-6") Tungsten's experience in consumer IoT technology makes it particularly suited for engineering products. If you are a marketer with a product targeted at a specific region of the world, or worldwide, Tungsten would like the opportunity to talk to you about your brand, regardless of where on the globe your company is headquartered. We're in San Francisco, and work with clients across the world.
 
     -
         const team = [

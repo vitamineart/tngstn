@@ -15,22 +15,24 @@ html(lang="en")
         title= pageTitle
 
         block preload
-            link(rel="preload" href="fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin)
-            link(rel="preload" href="fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin)
+            link(rel="preload" href="fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high")
+            link(rel="preload" href="fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high")
             style.font-style.
                 @font-face { font-family: "ProximaNovaA-Bold"; src: url('fonts/ProximaNovaABold.woff2') format('woff2'), url('fonts/ProximaNovaABold.woff') format('woff'); font-display: swap; } @font-face { font-family: "ProximaNovaA-Regular"; src: url('fonts/ProximaNovaARegular.woff2') format('woff2'), url('fonts/ProximaNovaARegular.woff') format('woff'); font-display: swap;}
         block head
             link(href="css/style.css" rel="stylesheet")
 
-    body
+    body(class="font-proxima")
         include ../chunk/header
-        main
+        main(class="relative pt-px")
             block page
 
 
         if currentUrl !== "/"
             include ../chunk/have_question
+
         include ../chunk/projects
+
         include ../chunk/footer
 
         block footer_scripts

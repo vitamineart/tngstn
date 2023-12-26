@@ -7,7 +7,7 @@ block variables
     - let mediaFolder = '../media/cobham-brand/'
 
 prepend preload
-    link(rel="preload" href=`${mediaFolder}cobham-brand-hero-bg-whale.mp4` as="video" type="video/mp4")
+    //- link(rel="preload" href=`${mediaFolder}cobham-brand-hero-bg-whale.mp4` as="video" type="video/mp4")
 
 append head
     style.
@@ -67,22 +67,36 @@ block page
 
             section(class="text-white pb-12 md:pb-24 relative")
                 .container.flow-root
-                    img(loading="lazy" alt="Wind Rose" src="media/cobham-brand/windrose.svg" width="395" height="391" class="-rotate-2 float-right shape-outside w-48 sm:w-56 md:w-64 lg:w-auto -mr-24 sm:-mr-20 xl:-mr-48 relative z-0 mix-blend-overlay lg:mix-blend-multiply opacity-30 " style={filter: 'drop-shadow(0 0 50px #fff)'} id="windrose")
-                    img(loading="lazy" src="media/cobham-brand/ST4012@340.png", srcset="media/cobham-brand/ST4012@340.png 340w, media/cobham-brand/ST4012@392.png 392w", sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 288px", alt="Cobham Sea Tel 4012 dome" class="float-right shape-outside -mr-32 xl:-mr-48 w-48 sm:w-56 md:w-64 lg:w-72 relative z-10 mt-24 lg:mt-48 lg:-mr-56" width="392" height="407" id="ST4012")
-                    p.drop-cap(style="--color: #fff;").
-                        When on land, we're familiar with dish antennae. Look through your  window, and you might spot one on the wall across the street, pointing at the sky, receiving satellite TV and internet straight from space.
-                    p.
-                        But that won't work on a boat. A boat will constantly yaw, pitch, and roll. It will heave up and down. It could be pointing east one day, and west on the return voyage. No antenna can keep eye-contact with the satellite under those conditions.
-                    p.
-                        In the early years of satellite communications, Robert J. Matthews invented  an antenna that remained stable by relying on the principle of inertia.
-                    p.
-                        He founded Sea Tel, Inc. to manufacture and market the antenna. Today, Sea Tel is part of Cobham plc, a British manufacturing company, and world-leader in air-to-air refueling systems.
-                    p.
-                        Robert Matthews had designed a dish that would remain perfectly still  even when the vessel under the antenna was being tossed about in a storm.
-                    p.
-                        Nowadays as you can imagine, almost any vessel, any distance from shore will use a self-stabilizing maritime satellite antenna. Leisure yachts use them, aircraft carriers use them. So do fisheries, oil-tankers, cruise and  cargo ships.
-                    p.
-                        Robert Matthews' invention meant that nascent satellite communications technology could be applied to the maritime industry.
+                    style.
+                        #ST4012{
+                            width: clamp(192px, 33vw, 288px);
+                            margin-right: clamp(-128px, -40vw, -50px);
+                            margin-top: 100px;
+                            @media (width > 1023px) {
+                                margin-right: -200px;
+                                margin-top: 200px;
+                            }
+
+                        }
+                        #windrose {
+                            width: clamp(192px, 30vw, 395px);
+                            margin-right: clamp(-90px, -30vw, -50px);
+                            shape-outside: circle(50%);
+                        }
+                    img(loading="lazy" alt="Wind Rose" src="media/cobham-brand/windrose.svg" width="395" height="391" class="float-right relative z-0 mix-blend-overlay lg:mix-blend-multiply opacity-30 " style={filter: 'drop-shadow(0 0 50px #fff)'} id="windrose")
+                    +image({
+                        dir: mediaFolder,
+                        resolutions: [384,576,864],
+                        name: 'ST4012',
+                        ext: 'png'
+                    })(src="media/cobham-brand/ST4012@340.png"  sizes="(max-width: 581px) 192px, (max-width: 873px) 33vw, 288px", alt="Cobham Sea Tel 4012 dome" class="float-right shape-outside relative z-10" width="392" height="407" id="ST4012" data-shape="../media/cobham-brand/ST4012-shape.svg")
+                    p.drop-cap(style="--color: #fff;") When on land, we're familiar with dish antennae. Look through your  window, and you might spot one on the wall across the street, pointing at the sky, receiving satellite TV and internet straight from space.
+                    p(class="mt-4 md:mt-6") But that won't work on a boat. A boat will constantly yaw, pitch, and roll. It will heave up and down. It could be pointing east one day, and west on the return voyage. No antenna can keep eye-contact with the satellite under those conditions.
+                    p(class="mt-4 md:mt-6") In the early years of satellite communications, <b>Robert J. Matthews</b> invented  an antenna that remained stable by relying on the principle of inertia.
+                    p(class="mt-4 md:mt-6") He founded Sea Tel, Inc. to manufacture and market the antenna. Today, Sea Tel is part of Cobham plc, a British manufacturing company, and world-leader in air-to-air refueling systems.
+                    p(class="mt-4 md:mt-6") Robert Matthews had designed a dish that would remain perfectly still  even when the vessel under the antenna was being tossed about in a storm.
+                    p(class="mt-4 md:mt-6") Nowadays as you can imagine, almost any vessel, any distance from shore will use a self-stabilizing maritime satellite antenna. Leisure yachts use them, aircraft carriers use them. So do fisheries, oil-tankers, cruise and  cargo ships.
+                    p(class="mt-4 md:mt-6") Robert Matthews' invention meant that nascent satellite communications technology could be applied to the maritime industry.
 
 
 
@@ -305,11 +319,17 @@ block page
                                         div(class="bg-white absolute w-full h-full inset-0 -z-10 rounded-full")
 
                     div(class="lg:text-right")
-                        img(loading="lazy" src="media/cobham-brand/DomeAntennaShape.png", alt="Dome Antenna Shape" width="622" height="688" class="hidden md:block float-left shape-outside -z-10 relative md:-ml-5 xl:-ml-28 opacity-0")
+                        style.
+                            #DomeAntennaShape {
+                                width: clamp(450px, 70vw, 500px);
+                                margin-top: 60px;
+                                margin-left: 40px;
+                                margin-bottom: 60px;
+                            }
+                        img(loading="lazy" src="../media/cobham-brand/DomeAntennaShape.svg" data-shape="media/cobham-brand/DomeAntennaShape.svg" alt="Dome Antenna Shape" width="498" height="567" class="hidden md:block float-left shape-outside -z-10 relative opacity-0" id="DomeAntennaShape")
                         p(class="pt-64 xs:pt-56 sm:pt-72 md:pt-12 lg:pt-24").
                             Sea Tel antennas were adopted on every type of vessel, resulting in five distinct market segments: <span id="Leisure" class="font-proxima-bold transition-all inline-block ship-category">Leisure Yachts</span>, <span id="Commercial" class="font-proxima-bold transition-all inline-block ship-category">Commercial Vessels</span> (cruise and cargo ships), <span id="Military" class="font-proxima-bold transition-all inline-block ship-category">Military</span>, <span id="Oil_Gas" class="font-proxima-bold transition-all inline-block ship-category">Oil & Gas,</span> and <span id="Fisheries" class="font-proxima-bold transition-all inline-block ship-category">Fisheries</span>. Soon, the brand was being marketed across the world -- anywhere there is shipping, with a product line of 32 different models designed for every type of maritime application. Sea Tel gained immediate majority market share.
-                        p.
-                            Cobham appointed Tungsten as its advertising agency for the Sea Tel  division, with the objective of creating a powerful central idea for the  brand, and executing that idea across every consumer touch-point,  worldwide. This includes corporate brand-building in trade magazines  published from every shipping center around the globe, tactical advertising  in print, online display advertising, social media in Facebook, Twitter and YouTube, video production, poster design, brochures, pamphlets and  collateral materials, trade-show booth design, fabrication, executing product photography, public relations in maritime and satcom trade journals, white papers for each product, cartography and mapmaking, printing, media planning and worldwide media buying, internal training materials, and all other full-service advertising services that the brand may need.
+                        p(class="mt-4 md:mt-6") Cobham appointed Tungsten as its advertising agency for the Sea Tel  division, with the objective of creating a powerful central idea for the  brand, and executing that idea across every consumer touch-point,  worldwide. This includes corporate brand-building in trade magazines  published from every shipping center around the globe, tactical advertising  in print, online display advertising, social media in Facebook, Twitter and YouTube, video production, poster design, brochures, pamphlets and  collateral materials, trade-show booth design, fabrication, executing product photography, public relations in maritime and satcom trade journals, white papers for each product, cartography and mapmaking, printing, media planning and worldwide media buying, internal training materials, and all other full-service advertising services that the brand may need.
 
             svg(viewBox="0 0 1920 34" class="relative z-10")
                 path(fill="#fff" d="M192 19.427c-64 19.43-128 19.43-192 0V0h1920v19.427c-64-19.432-128-19.432-192 0-64 19.43-128 19.43-192 0-64-19.432-128-19.432-192 0-64 19.43-128 19.43-192 0-64-19.432-128-19.432-192 0-64 19.43-128 19.43-192 0-64-19.432-128-19.432-192 0-64 19.43-128 19.43-192 0-64-19.432-128-19.432-192 0Z")

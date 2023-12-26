@@ -30,10 +30,11 @@ block page
 
     .hero(class="relative flex flex-col")
         .container(class="max-w-7xl absolute inset-0 w-full m-auto z-10 flex flex-col justify-end items-start")
-            button(id='read-more-button' class='mb-3 lg:mb-4 xl:mb-5 2xl:mb-5 px-5 py-2 lg:px-8 lg:py-4 text-lg lg:text-xl xl:text-2xl font-proxima-bold flex items-center bg-gradient-to-t from-white/20 to-white/50 group border-2 border-white/50' style={
+            button(id='read-more-button' class='mb-3 lg:mb-4 xl:mb-5 2xl:mb-5 px-5 py-2 lg:px-8 lg:py-4 text-lg lg:text-xl xl:text-2xl font-proxima-bold flex items-center group border-2 border-white/50' style={
                 color: '#006EC6',
                 'border-radius': '34px',
-                filter:'drop-shadow(5px 5px 2px hsla(0, 0%, 0%, .1))'
+                filter:'drop-shadow(5px 5px 2px hsla(0, 0%, 0%, .1))',
+                background: 'linear-gradient(0deg, hsla(0, 0%, 100%, .2), hsla(0, 0%, 100%, .5))'
             })
                 span.text Discover Tungsten
                 svg( fill="none" viewBox="0 0 19 19" class="ml-4 stroke-1 icon-arrow stroke-current fill-current group-hover:translate-x-1 duration-500 transition-transform w-4 h-4 xl:w-5 xl:h-5")

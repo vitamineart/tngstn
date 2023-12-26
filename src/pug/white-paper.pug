@@ -6,7 +6,7 @@ block variables
     - let metaDescription = `Tungsten, a full-service advertising agency, specializes in creating White Papers for B2B clients. Our White Papers turn complex technical information into easy-to-understand language, positioning our clients as thought leaders in their industry. Browse our portfolio of White Papers for examples of our work.`
 
 prepend preload
-    link(rel="preload" as="image" imagesrcset=`../media/white-paper/white-papers@640.jpg 640w, ../media/white-paper/white-papers@768.jpg 768w, ../media/white-paper/white-papers@1024.jpg 1024w, ../media/white-paper/white-papers@1366.jpg 1366w, ../media/white-paper/white-papers@1600.jpg 1600w, ../media/white-paper/white-papers@1920.jpg 1920w` imagesizes="100vw" width="1920" height="834")
+    link(rel="preload" as="image" imagesrcset=`../media/white-paper/white-papers@640.jpg 640w, ../media/white-paper/white-papers@768.jpg 768w, ../media/white-paper/white-papers@1024.jpg 1024w, ../media/white-paper/white-papers@1366.jpg 1366w, ../media/white-paper/white-papers@1600.jpg 1600w, ../media/white-paper/white-papers@1920.jpg 1920w` width="1920" height="834")
 
 append head
 
@@ -18,6 +18,7 @@ block page
         ext: 'jpg',
         name: 'white-papers',
     })(alt="Display of multiple white papers design by Tungsten advertising agency for Cobham" width="1920" height="834" class="w-full")
+
     +page-title({
         tagClient: 'Cobham',
         h1: 'White Papers Turn <br> Techspeak Into English.',
@@ -27,19 +28,23 @@ block page
         content: `A White Paper is an <span class="text-blue-light">informational document</span> that explains and illuminates a particular aspect of a company's business. It is <span class="text-blue-light">objective</span>. White Papers are written to inform the reader concisely about a <span class="text-blue-light">complex issue</span>, and to present the issuing body's philosophy on the subject. The purpose is to help readers <span class="text-blue-light">understand an issue</span>, solve a problem, or make a decision.`,
         class: 'py-6 sm:py-8 bg-gray-100',
     })
-
+    style.
+        #sea-tel-antenna {
+            margin-left: min(-5vw, -50px);
+        }
     article.page-content.mt-10.leading-relaxed.overflow-hidden
         .container.flow-root
             .drop-cap(style="--color: #3288c3;").
                 Cobham, the world leader in satellite communications, is constantly releasing new technologies that shape the entire eco-system. Decision-makers across multiple industries seek to understand these technologies in an objective way.
-            img(loading="lazy" src="media/white-paper/sea-tel-4012.png" alt="Technical illustration of a Cobham maritime satellite communications antenna" class="shape-outside float-left w-40 sm:w-44 m-4 -ml-10 sm:-ml-12" width="200" height="231" id="sea-tel-antenna")
-            p White Paper can serve this purpose remarkably well.
-            p The format allows information and research findings to be presented dispassionately to anyone interested in studying the technology or its ramifications.
-            p The audience includes Cobham's own dealer network, the IT, finance and procurement officers of customer companies, prospective customers, channel partners, journalists, analysts, or investors.
+
+            img(loading="lazy" src="media/white-paper/sea-tel-4012.png" alt="Technical illustration of a Cobham maritime satellite communications antenna" class="shape-outside float-left m-4 "  data-shape="../media/white-paper/sea-tel-4012-shape.svg" width="200" height="231" id="sea-tel-antenna")
+            p(class="mt-4 md:mt-6") White Paper can serve this purpose remarkably well.
+            p(class="mt-4 md:mt-6") The format allows information and research findings to be presented dispassionately to anyone interested in studying the technology or its ramifications.
+            p(class="mt-4 md:mt-6") The audience includes Cobham's own dealer network, the IT, finance and procurement officers of customer companies, prospective customers, channel partners, journalists, analysts, or investors.
 
         .py-10.bg-blue-light.text-white.my-8
             .container.border-l-2.border-white.bg
-                p.font-proxima-bold.italic.text-lg The reader of a White Paper is looking to understand how a particular technology, product or method is a superior choice when solving a specific business problem.
+                p(class="mt-4 md:mt-6  font-proxima-bold italic text-lg") The reader of a White Paper is looking to understand how a particular technology, product or method is a superior choice when solving a specific business problem.
 
         .container.flow-root(style="perspective: 400px;")
             +image({
@@ -47,10 +52,10 @@ block page
                 ext: 'png',
                 name: 'roll-pitch-yaw-graph',
                 resolutions: [630, 945, 1260]
-            })(src="media/white-paper/roll-pitch-yaw-graph@945.png" sizes="315px" alt="Illustration of roll, pitch and yaw movements of an oil tanker" class="shape-outside xs:float-right mx-auto -mt-4 translate-x-5 xs:translate-x-0 mb-4" width="315" height="257" id="roll-pitch-yaw-graph")
-            p White Papers are especially important for highly technical products with long sales cycles, or products used in critical situations. A company investing in such a product will typically go through an extensive decision-making process that spans multiple departments and levels inside the company.
+            })(src="media/white-paper/roll-pitch-yaw-graph@945.png" sizes="315px" alt="Illustration of roll, pitch and yaw movements of an oil tanker" class="shape-outside xs:float-right mx-auto -mt-4 translate-x-5 xs:translate-x-0 mb-4" width="315" height="257" id="roll-pitch-yaw-graph" data-shape="../media/white-paper/roll-pitch-yaw-graph-shape.svg")
+            p(class="mt-4 md:mt-6") White Papers are especially important for highly technical products with long sales cycles, or products used in critical situations. A company investing in such a product will typically go through an extensive decision-making process that spans multiple departments and levels inside the company.
 
-            p Some executives on the selection committee will come from non-technical backgrounds, but need to contribute to the buying decision in an informed way. Busy executives seek plain-language explanations, presented in a journalistic or academic style, backed by statistics, facts and references to reliable sources.
+            p(class="mt-4 md:mt-6") Some executives on the selection committee will come from non-technical backgrounds, but need to contribute to the buying decision in an informed way. Busy executives seek plain-language explanations, presented in a journalistic or academic style, backed by statistics, facts and references to reliable sources.
 
             div(class="my-6 md:my-10 max-w-xl mx-auto overflow-hidden bg-white" id="whyte-papers")
                 header.uppercase.text-xl.tracking-wide.text-white.bg-blue-light.border-blue-light.p-4.text-center Why Decision Makers Read a White Paper
@@ -65,13 +70,17 @@ block page
                 each reason, index in why_paper
                     div(class="even:bg-gray-100 last:border-b-gray-300 border-b py-3 px-4 text-lg border-l border-r border-gray-300 will-change-opacity " )= reason
 
-            p White Papers must be carefully written and designed. Key information is presented visually because readers have limited time and attention.
+            p(class="mt-4 md:mt-6") White Papers must be carefully written and designed. Key information is presented visually because readers have limited time and attention.
 
-            p This is not just dressing up, but making meaningful. Tungsten visualized the content with specially created graphics, sidebars, callouts, boxes, bullets and other visual devices to direct the attention of a reader scanning through the content.
+            p(class="mt-4 md:mt-6") This is not just dressing up, but making meaningful. Tungsten visualized the content with specially created graphics, sidebars, callouts, boxes, bullets and other visual devices to direct the attention of a reader scanning through the content.
 
-            p Tungsten has created White Papers for Cobham products ranging from complex satellite antenna systems to individual technologies. Mostly designed for B2B audiences, these papers use facts and logic to establish thought leadership, and position Cobham as a trusted advisor.
+            p(class="mt-4 md:mt-6") Tungsten has created White Papers for Cobham products ranging from complex satellite antenna systems to individual technologies. Mostly designed for B2B audiences, these papers use facts and logic to establish thought leadership, and position Cobham as a trusted advisor.
 
-        div(class="my-10 lg:my-20 bg-gradient-to-b from-gray-300 via-gray-100 to-gray-300 p-10 lg:p-20 relative shadow-inner")
+        style.
+            #pdf-view-container {
+                background: linear-gradient(#d1d5db, #f3f4f6, #d1d5db);
+            }
+        div(class="my-10 lg:my-20 p-10 lg:p-20 relative shadow-inner" id="pdf-view-container")
             link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload='this.media="all"')
             style.
                 .pdf-slider-main .swiper-slide {
@@ -158,9 +167,9 @@ block page
                 resolutions: [500, 708]
             })(sizes="90vw, (min-width: 768px) 708px" width="708" height="430" class="mx-auto " alt="Illustration of three vessels with satellite overhead beaming signal as vessels roll, pitch and yaw." id="roll-pitch-yaw-graph3")
 
-            p Most of the White Papers you see on these pages were printed and distributed worldwide at the trade shows Cobham participated in, or were mailed to dealerships, or made available as online PDFs.
+            p(class="mt-4 md:mt-6") Most of the White Papers you see on these pages were printed and distributed worldwide at the trade shows Cobham participated in, or were mailed to dealerships, or made available as online PDFs.
 
-            p Tungsten brings objective input to a brand. These beautiful examples of marketing communications are a result of Tungsten's close working relationship with its client, and a deep understanding of the client's business, technology, and target audiences.
+            p(class="mt-4 md:mt-6") Tungsten brings objective input to a brand. These beautiful examples of marketing communications are a result of Tungsten's close working relationship with its client, and a deep understanding of the client's business, technology, and target audiences.
         </div>
 
 

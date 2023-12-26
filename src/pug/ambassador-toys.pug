@@ -10,11 +10,14 @@ block variables
 prepend preload
 
 append head
-
+    style.
+        .hero {
+            background: linear-gradient(var(--c-blue-dark), #004B80, var(--c-blue-light))
+        }
 
 block page
-    div(class="hero relative grid overflow-hidden bg-gradient-to-b from-blue-dark via-[#004B80] to-blue-light" title="Logo floats amongst clouds in starlit sky, with shimmering moon, and a heavenly feel.")
-        img(src="media/ambassador-toys/AmbassadorToysLogo@500.png", srcset="media/ambassador-toys/AmbassadorToysLogo@252.png 300w, media/ambassador-toys/AmbassadorToysLogo@378.png 378w, media/ambassador-toys/AmbassadorToysLogo@500.png 500w, media/ambassador-toys/AmbassadorToysLogo@500.png 500w, media/ambassador-toys/AmbassadorToysLogo@755.png 755w, media/ambassador-toys/AmbassadorToysLogo@1006.png 1006w, media/ambassador-toys/AmbassadorToysLogo@1509.png 1509w" sizes="(max-width:640px) 256px, (max-width:1024px) 288px, 503px" alt="Ambassador Logo Image" class="absolute inset-0 m-auto z-50 w-64 xs:w-72 sm:w-96 lg:w-[503px] toys-logo -translate-y-2 xs:-translate-y-5 sm:-translate-y-10 lg:-translate-y-16" width="503" height="162")
+    div(class="hero relative grid overflow-hidden" title="Logo floats amongst clouds in starlit sky, with shimmering moon, and a heavenly feel.")
+        img(src="media/ambassador-toys/AmbassadorToysLogo@500.png", srcset="media/ambassador-toys/AmbassadorToysLogo@252.png 252w, media/ambassador-toys/AmbassadorToysLogo@378.png 378w, media/ambassador-toys/AmbassadorToysLogo@500.png 500w, media/ambassador-toys/AmbassadorToysLogo@755.png 755w, media/ambassador-toys/AmbassadorToysLogo@1006.png 1006w, media/ambassador-toys/AmbassadorToysLogo@1509.png 1509w" sizes="(max-width:640px) 256px, (max-width:1024px) 288px, 503px" alt="Ambassador Logo Image" class="absolute inset-0 m-auto z-50 w-64 xs:w-72 sm:w-96 lg:w-[503px] toys-logo -translate-y-2 xs:-translate-y-5 sm:-translate-y-10 lg:-translate-y-16" width="503" height="162")
         div(class="clouds absolute top-2/3 sm:top-1/2 left-0 right-0 bottom-0 w-full overflow-hidden z-20")
             img(src="media/ambassador-toys/cloud_01.svg", class="absolute cloud" alt="Cloud" style="--top: 35px; --delay: -2s; --duration: 1")
             img(src="media/ambassador-toys/cloud_02.svg", class="absolute cloud " alt="Cloud" style="--top: 20px; --delay: -1.3s; --duration: 1")
@@ -50,20 +53,14 @@ block page
 
     article(class=" page-content leading-relaxed overflow-hidden")
         .container.flow-root
-            img(src="media/ambassador-toys/pinguin@224.png", srcset="media/ambassador-toys/pinguin@224.png 224w, media/ambassador-toys/pinguin@288.png 288w, media/ambassador-toys/pinguin@432.png 432w, media/ambassador-toys/pinguin@448.png 448w, media/ambassador-toys/pinguin@576.png 576w, media/ambassador-toys/pinguin@672.png 672w, media/ambassador-toys/pinguin@720.png 720w", sizes="(max-width: 480px) 144px, (max-width: 768px) 192px, 224px", alt="Rare and collectable Steiff plush toy penguin" class="float-right shape-outside -mr-12 w-36 xs:-mr-10 xs:w-48 md:w-56 md:mr-0" width="600" height="1156" id="pinguin")
-            p.drop-cap(style="--color: hsla(205, 74%, 47%, 1)").
-                For years, the stores had relied on TV stations or the in-house graphics departments of newspapers to create the ads. (Most publications will offer this service if you buy space from them.)
-            p.
-                This led to fragmented creative executions. Each ad had a different message and a different look.
+            img(src="media/ambassador-toys/pinguin@224.png" data-shape="../media/ambassador-toys/pinguin-shape.svg" srcset="media/ambassador-toys/pinguin@224.png 224w, media/ambassador-toys/pinguin@288.png 288w, media/ambassador-toys/pinguin@432.png 432w, media/ambassador-toys/pinguin@448.png 448w, media/ambassador-toys/pinguin@576.png 576w, media/ambassador-toys/pinguin@672.png 672w, media/ambassador-toys/pinguin@720.png 720w", sizes="(max-width: 480px) 144px, (max-width: 768px) 192px, 224px", alt="Rare and collectable Steiff plush toy penguin" class="float-right shape-outside -mr-12 w-36 xs:-mr-10 xs:w-48 md:w-56 md:mr-0" width="600" height="1156" id="pinguin")
+            p.drop-cap(style="--color: hsla(205, 74%, 47%, 1)") For years, the stores had relied on TV stations or the in-house graphics departments of newspapers to create the ads. (Most publications will offer this service if you buy space from them.)
+            p(class="mt-4 md:mt-6") This led to fragmented creative executions. Each ad had a different message and a different look.
 
-            p.
-                Although the retail store had a sizable media spend, it was not  resulting in a unified brand image. In fact, it may have been doing the opposite. Disparate creative executions produced by  different publications were likely eroding and fragmenting the  brand's image in the mind of the consumer.
-            p.
-                Tungsten's immediate task was to give the brand a central idea, and execute that idea across multiple consumer touch-points, so  that the brand had a consistent message and image.
-            p.
-                What differentiates this chain from other toy retailers is that it has the finest collection of high quality, intellectually stimulating, often unusual toys. Toys designed to make the child think, engage, and grow.
-            p.
-                The brand is targeted toward parents that are predominantly  affluent, internationally aware, environmentally conscious, and  who seek toys for their children that can be described as wise, useful, having longevity, stimulating the imagination. Toys that are social and interactive.
+            p(class="mt-4 md:mt-6") Although the retail store had a sizable media spend, it was not  resulting in a unified brand image. In fact, it may have been doing the opposite. Disparate creative executions produced by  different publications were likely eroding and fragmenting the  brand's image in the mind of the consumer.
+            p(class="mt-4 md:mt-6") Tungsten's immediate task was to give the brand a central idea, and execute that idea across multiple consumer touch-points, so  that the brand had a consistent message and image.
+            p(class="mt-4 md:mt-6") What differentiates this chain from other toy retailers is that it has the finest collection of high quality, intellectually stimulating, often unusual toys. Toys designed to make the child think, engage, and grow.
+            p(class="mt-4 md:mt-6") The brand is targeted toward parents that are predominantly  affluent, internationally aware, environmentally conscious, and  who seek toys for their children that can be described as wise, useful, having longevity, stimulating the imagination. Toys that are social and interactive.
 
             div.relative.my-10(id="news-paper-ad")
                 div.relative.flex.items-center
@@ -117,21 +114,15 @@ block page
 
 
 
-            p(class="sm:!mt-20").
-                Tungsten gave the brand a distinctive look, voice, style, and identity. The creative gives the brand an image that is charming,  irreverent, witty, unpredictable, sometimes wry, always cerebral, independent and premium.
-            p.
-                It differentiates the retail chain from “big-box” competitors like  Walmart by communicating the value of toys. And the values of the retail store. And by emphasizing values like quality of build, and quality of emotional engagement.
-            p.
-                Each ad is topical and based on current events and seasons. This strategy allowed Tungsten to demonstrate the wide range of toys the stores carry, and to show that this retailer offers a hand picked selection that appeals to its faithful target audience.
+            p(class="sm:!mt-20") Tungsten gave the brand a distinctive look, voice, style, and identity. The creative gives the brand an image that is charming,  irreverent, witty, unpredictable, sometimes wry, always cerebral, independent and premium.
+            p(class="mt-4 md:mt-6") It differentiates the retail chain from “big-box” competitors like  Walmart by communicating the value of toys. And the values of the retail store. And by emphasizing values like quality of build, and quality of emotional engagement.
+            p(class="mt-4 md:mt-6") Each ad is topical and based on current events and seasons. This strategy allowed Tungsten to demonstrate the wide range of toys the stores carry, and to show that this retailer offers a hand picked selection that appeals to its faithful target audience.
 
             div(class="relative mt-10 lg:mt-16 pb-24 sm:pb-36 lg:pb-48 min-h-max" style="text-shadow: 0 0 10px #fff;")
 
-                p(class="sm:w-10/12 lg:w-11/12 relative z-50").
-                    Readers of the San Francisco Chronicle found these ads so enjoyable that they looked forward to the new creative every time the weekly ad was published on Tuesday mornings.
-                p(class="w-11/12 sm:pr-0 sm:w-10/12 relative z-50").
-                    Tungsten has years of experience creating distinctive/memorable  advertising ideas for uniquely San Francisco brands.
-                p(class="w-7/12 xs:w-8/12 sm:w-9/12 relative z-50" ).
-                    Whether your product is exclusive to San Francisco or  distributed across the world, we would love to hear from you  about your brand and share ideas on how advertising can help achieve your company's business objectives.
+                p(class="sm:w-10/12 lg:w-11/12 relative z-50 mt-4 md:mt-6")  Readers of the San Francisco Chronicle found these ads so enjoyable that they looked forward to the new creative every time the weekly ad was published on Tuesday mornings.
+                p(class="w-11/12 sm:pr-0 sm:w-10/12 relative z-50 mt-4 md:mt-6") Tungsten has years of experience creating distinctive/memorable  advertising ideas for uniquely San Francisco brands.
+                p(class="w-7/12 xs:w-8/12 sm:w-9/12 relative z-50 mt-4 md:mt-6" ) Whether your product is exclusive to San Francisco or  distributed across the world, we would love to hear from you  about your brand and share ideas on how advertising can help achieve your company's business objectives.
                 div(class="absolute bottom-0 right-0 w-full left-0 z-0")
                     img(loading="lazy" src="media/ambassador-toys/LightBulb.svg" width="77" height="113" class="z-10 lightbulb absolute left-1/2 -ml-20  bottom-2 md:bottom-8 hidden xs:inline-block scale-50 sm:scale-75 md:scale-100")
                     img(loading="lazy" src="media/ambassador-toys/Robot@602.png"  alt="Pink toy maid robot" class="absolute -right-10 md:-right-20 lg:-right-28 -bottom-1 xs:-bottom-5 md:-bottom-10 lg:bottom-0 left-auto w-48 sm:w-1/3 md:w-64 lg:w-72 z-20" width="301" height="466" )

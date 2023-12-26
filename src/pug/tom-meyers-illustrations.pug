@@ -11,8 +11,6 @@ prepend preload
 
 
 append head
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print"  onload="this.media='all'"/>
-
     style.
         .hero-overlay {
             background: radial-gradient(40% 60% at 30% 30%, #242424, #000);
@@ -59,8 +57,6 @@ append head
         }
         @media (min-width: 601px){
             .hero-book {
-
-
                 left: 18%;
                 top: 37%;
                 width: 20%;
@@ -152,26 +148,47 @@ block page
                     name: 'ruins-tom-meyer',
                     ext: 'png',
                     resolutions: [600,800,900,1000,1200,1338,1500,1800]
-                })(src="media/tom-meyer/ruins-tom-meyer@600.png" sizes="(max-width: 639px) 300px, (max-width: 767px) 400px, (max-width: 1023px) 500px, (max-width: 1279px) 600px, 669px" alt="Cartoon of middle-aged couple standing at base of ancient ruins as they stare up at a sign reading 'Caesar & Brutus Brokerage.'" width="669" height="926" class="mt-4 self-center xs:float-right shape-outside" id="tngstn-ruins")
+                })(src="media/tom-meyer/ruins-tom-meyer@600.png" sizes="(max-width: 639px) 300px, (max-width: 767px) 400px, (max-width: 1023px) 500px, (max-width: 1279px) 600px, 669px" alt="Cartoon of middle-aged couple standing at base of ancient ruins as they stare up at a sign reading 'Caesar & Brutus Brokerage.'" width="669" height="926" class="mt-4 self-center xs:float-right shape-outside" id="tngstn-ruins" data-shape="../media/tom-meyer/ruins-shape.svg")
 
+                style.
+                    #dropcap {
+                        translate: -22% -16%;
+                        filter: blur(0.2px);
+                        top: 0;
+                        left: 0;
+                    }
+                    .dropcap-path {
+                        stroke-dasharray: 1;
+                        stroke-dashoffset: 1;
+                    }
+                    .dropcap-path-animate {
+                        animation: dash 1s ease-in-out forwards;
+                    }
+                    @keyframes dash {
+                        from {
+                            stroke-dashoffset: 1;
+                        }
+                        to {
+                            stroke-dashoffset: 0;
+                        }
+                    }
                 div(class="mt-16 md:mt-24 xl:mt-32 -order-1 relative")
-                    p(class="drop-cap first-letter:!mr-5 sm:flex-2 " style="--color: #000").
-                        For four weeks, every Sunday morning, Tom Meyer brewed himself a cup of coffee and sat down at his kitchen table to conceptualize and create an illustration for a book on personal finance.
-                    img(loading="lazy" src="media/tom-meyer/dropcap.png", alt="F Frame" class="absolute -top-10 animate__animated" id="dropcap")
+                    p(class="drop-cap first-letter:!mr-5 sm:flex-2 relative" style="--color: #000") For four weeks, every Sunday morning, Tom Meyer brewed himself a cup of coffee and sat down at his kitchen table to conceptualize and create an illustration for a book on personal finance.
+                        <svg xmlns="http://www.w3.org/2000/svg" width="91" height="96" fill="none" viewBox="0 0 91 96" id="dropcap" stroke-width="1" stroke="black" class="absolute">
+                            <path class="dropcap-path dropcap-path-1" pathLength="1" d="M86.225 86.394c-29.947-2.112-62.87 3.831-78.069 8.073-1.264.353-2.532-.559-2.584-1.87L3.918 50.716 1.128 5.371A2 2 0 0 1 3.07 3.249l79.207-2.115a1.993 1.993 0 0 1 2.019 1.66c5.093 30.352 4.157 57.192 4.099 81.593a2.023 2.023 0 0 1-2.17 2.007Z"/>
+                            <path class="dropcap-path dropcap-path-2" pathLength="1" d="M85.707 88.059c-30.921-3.553-65.672 2.457-80.582 6.239a1.002 1.002 0 0 1-1.255-.985c.089-5.707.403-28.73-.021-44.195C3.407 33.05 1.727 9.845 1.342 4.668a.991.991 0 0 1 .988-1.063l82.576-.976a1 1 0 0 1 1.002.87c4.082 31.29.022 58.365.922 83.521.022.618-.51 1.11-1.123 1.039Z"/>
+                        </svg>
 
-                    p(class="").
-                        Tom Meyer is a nationally syndicated political cartoonist with a mastery over the power of observational comedy.
+
+                    p(class="mt-4 md:mt-6") Tom Meyer is a nationally syndicated political cartoonist with a mastery over the power of observational comedy.
 
 
-                p(class="pt-5").
-                    Cartoons take up just four pages of this 120 page book, but they have an outsized impact:
-                p(class="").
-                    - A reader might not always read a full chapter. But with the aid of a cartoon illustration they will understand the main point of the chapter, even when they don't have background on the topic.
-                p(class="").
-                    - The book carries a sequence of four cartoons, each cartoon nudging the reader along to the next chapter, and helping hold the narrative together. Human beings are hardwired for linear narrative story-telling. A sequence of cartoons makes the text easier to follow, and more memorable.
-                p(class="") - The presence of cartoons in a book makes the audience more accepting of the opinions expressed by the author in the written text. The reader experiences an instant sense of relief and gratitude for a light moment in a book on the serious topics of wealth management and estate planning.
-                p The cartoons relax the reader, and diffuse any reluctance to reading through the long text.
-                p - The book’s author expresses strong opinions that differentiate him from the approaches of other financial brokers. The message embedded in a cartoon however, is perceived by the reader to be an unbiased and objective view of a situation.
+                p(class="mt-4 md:mt-6") Cartoons take up just four pages of this 120 page book, but they have an outsized impact:
+                p(class="mt-4 md:mt-6") - A reader might not always read a full chapter. But with the aid of a cartoon illustration they will understand the main point of the chapter, even when they don't have background on the topic.
+                p(class="mt-4 md:mt-6") - The book carries a sequence of four cartoons, each cartoon nudging the reader along to the next chapter, and helping hold the narrative together. Human beings are hardwired for linear narrative story-telling. A sequence of cartoons makes the text easier to follow, and more memorable.
+                p(class="mt-4 md:mt-6") - The presence of cartoons in a book makes the audience more accepting of the opinions expressed by the author in the written text. The reader experiences an instant sense of relief and gratitude for a light moment in a book on the serious topics of wealth management and estate planning.
+                p(class="mt-4 md:mt-6") The cartoons relax the reader, and diffuse any reluctance to reading through the long text.
+                p(class="mt-4 md:mt-6") - The book’s author expresses strong opinions that differentiate him from the approaches of other financial brokers. The message embedded in a cartoon however, is perceived by the reader to be an unbiased and objective view of a situation.
 
 
             +image({
@@ -366,7 +383,7 @@ block page
                                 })(src="../media/tom-meyer/cartoon-on-easel-mobile@1200.png" sizes="85vw, (min-width:428px) 380px" alt='Easel displaying a cartoon by Tom Meyers showing a man sitting across the desk from a broker who is listening carefully. Speech blurb from the man says, "I like this broker."' class=" mx-auto mb-2 mt-5 sm:m-0 sm:w-4/5 sm:absolute z-0" id="artboard-jigsaw" width="591" height="644" )
 
                             p(class="-order-1") Why did Tungsten choose to put so much thought into cartoons for this book? Well, cartoons have qualities that make them an ideal medium to reach and influence a wide general public.
-                            p But cartoons are also especially suitable when communicating to a target audience of intelligent, educated, social elites: and this was the demographic for the client's financial planning services.
+                            p(class="mt-4 md:mt-6") But cartoons are also especially suitable when communicating to a target audience of intelligent, educated, social elites: and this was the demographic for the client's financial planning services.
             svg(class="-mt-1 w-full torn-section-bottom-edge" fill="none" viewBox="0 0 1920 62")
                 path(fill="#D85427" d="M1906.06 42.624c-2.96-.796-6.22-.663-9.49-.398-4.15.398-8.3.53-11.86-.53a98 98 0 0 1-12.45-.797c-2.37.265-4.74 0-6.82-.265-8.9-.93-17.5-.93-26.09.53-2.08.398-3.86.531-5.93.398-8.6-.132-17.2 0-25.51-.53-13.64-.796-26.98-.266-40.32-.133-5.04 1.725-10.38 1.99-16.02.796-9.19 1.194-18.38.664-27.57.796-6.23.133-12.75.266-18.68-.796-1.19-.265-2.38-.53-3.56-.796-.59.133-1.19 0-1.78-.133-8.9-.265-17.5-.929-26.39.266-3.86.53-8.3 0-12.16-.398-7.12-.797-12.75-2.654-18.38-4.512-9.2-.398-18.09.796-27.28-.266-.3 0-.6.133-.89.133-2.08-.663-5.34.133-7.42-.663-1.78-.664-3.85-.266-5.93-.399h-.29c-1.19 0-2.38.133-3.56.266-.89.133-1.48.133-2.37.133h-5.64c-.89 0-1.48-.133-2.07-.266-1.78-.398-3.86-.398-5.64-.663-.89 0-1.78-.266-2.37-.266-13.94-1.062-27.87-.796-41.81-1.194-2.37 0-4.74 0-7.12.133-7.71-.399-15.71.928-23.42-.399-.3-.398-.59-.796-.89-1.194-2.37 0-4.45-.265-6.52-.398-.3.133-.6.265-.89.53-.89.532-2.38.664-3.86.664-10.97.133-21.94-.796-32.91 0-6.53.531-13.05.531-19.57.266-1.49-.266-2.67-.664-3.27-1.327v-.133c-4.15-.133-8-.398-12.15-.53h-6.23c-1.48 0-2.97.132-4.45.265-2.37.265-5.34 0-7.41-.797-2.37-.265-5.04-.53-7.41-.928-.89.265-1.49.663-2.38 1.061-2.07.53-4.44.929-6.82.664-8.89-.797-17.49 0-26.09 1.061-1.78.266-3.26.531-5.04.796-.89.133-1.48.133-2.37.266-5.04.398-10.09.796-15.13 1.46-1.48.265-2.96.398-4.74.53-.89.133-1.48.133-2.37.266-7.71.265-15.13 1.46-22.84.663-4.74-.265-9.19 1.195-14.23.797-11.86.928-24.31 1.194-35.88 3.052-2.07 0-4.15-.266-6.23-.266-3.26.398-6.52.664-9.78.531-.89.266-1.78.664-2.67 1.062-2.07 0-4.15.132-6.23.398-.89 0-1.78 0-2.37-.133-2.07-.265-4.45-.133-6.52-.53-19.57.53-39.14.795-58.71 1.06-29.95.532-59.6 1.328-88.96 3.451-.89.133-2.08.133-2.97.133-21.05-.796-42.1-2.521-63.15-1.194-1.49 0-3.27-.133-4.75-.266h-3.26c-2.97 0-5.93-.265-8.304.531-8.302-1.327-17.198-.663-25.797-1.725-3.559-.398-7.413 0-11.268.53-7.413.93-15.123.93-22.536.399-6.524-.531-12.751-.398-19.274-.266-6.524 0-13.344.133-19.571-1.061-2.075.133-4.151.398-6.227.663l-.889.133h-1.483c-.593 0-1.186-.133-1.483-.265l-.889-.133-.89-.133c-.593-.133-.889-.265-1.482-.398l-1.779-.398c-.297 0-.593-.133-.593-.133a8.054 8.054 0 0 1-3.559 0h-.889c-.89 0-1.483.133-2.373.133-2.668.265-5.041.265-7.413-.266-.296-.132-.593-.265-.889-.132-1.186-.133-1.779-.398-2.372-.796-7.414-1.858-15.716-2.522-24.019-2.92-2.372-.133-4.744 0-7.117-.265-.889.133-1.779.265-2.372.398-13.047-1.327-26.094-2.654-39.141-4.114-5.634-1.194-12.157-.53-17.791-1.858-2.669-.265-4.745-.929-7.413-1.327a4.33 4.33 0 0 0-1.78.398h-2.668c-.89 0-1.483 0-1.186-.265-1.186 0-2.076 0-2.966-.398-.296-.133-.889-.133-1.186-.133-2.372-.663-5.337.266-7.413-.796-.593-.398-1.482-.796-2.076-1.327-1.779 0-3.261-.133-5.04-.133l-1.78-.796c-7.116-1.725-14.529-2.654-22.832-1.725-2.372.265-5.337.133-8.006-.133-7.413-.796-15.123-1.061-22.832-1.061-7.117 0-14.234-.664-21.054-1.062-12.454-.664-24.908 0-37.065-.133-2.076.664-4.448.664-6.82.664-14.826.132-29.06 1.46-42.403 4.114a62.715 62.715 0 0 1-7.413.796c-.593.265-1.186.663-1.483 1.061-.593.266-1.483.398-2.372.531a16.248 16.248 0 0 1-3.558.398h-.594c-1.482 1.195-5.04 1.062-7.709 1.195-21.35 1.061-42.697 2.654-63.454 4.91-2.965.663-6.227.928-9.489.398-.593-.133-1.186-.133-1.779-.266-2.965.664-6.227 1.46-9.192 2.123-1.779.399-3.559.664-5.634.93-9.489.663-18.681.796-28.17.663-1.779-.265-3.855-.133-5.634-.265a15.939 15.939 0 0 0-3.855 1.194c-38.251-.664-76.206-1.062-114.458.265a156.162 156.162 0 0 1-22.239 1.195c-4.745.53-9.489 1.327-13.937 2.388-5.931.398-11.861.93-17.495 1.46v.133c-5.93-.797-12.158.132-17.792-.664-2.965-.265-5.93-.663-8.896-.929-.593 0-1.186.133-1.779.133h-1.186c-.296 0-.593.133-.593.133-.889 0-1.483 0-2.372-.133 0 0-.297 0-.297-.133h-10.081c-.594.133-1.187.266-2.076.266h-2.076v.265c-.593 1.725-3.855 2.389-7.116 2.389-11.268.398-22.24.929-33.508 1.592-1.779.133-3.558 0-4.744-.398a5.401 5.401 0 0 1-1.186.398c-2.669.133-5.338 0-8.006.133-26.391 1.46-50.409 2.92-74.131 5.175-5.634.531-10.675 1.725-16.309 1.725-13.64-.132-26.687 1.46-40.03 2.389-2.076.133-4.449 0-6.524.398-.593 0-1.186 0-1.78-.133-3.558.399-7.116.93-10.378 1.593-2.372.265-4.448.133-6.227-.93-2.668-.132-5.04.266-7.71.664L0 0h1919.99l.01 43.288c-4.74.265-9.19-.398-13.94-.664ZM748.434 27.231l.889.398c0-.266-.593-.398-.889-.398Z")
 
@@ -421,8 +438,8 @@ block page
                         })(src="media/tom-meyer/robert-finn-book@879.jpg" sizes="(max-width: 639px) 90vw, (max-width: 1600px) 45vw,  46vw" alt="Open book with cartoon illustration on left page, and text on right hand side." width="879" height="664" class="mx-auto sm:float-right sm:ml-10 sm:mb-10 -mt-12 mb-8 sm:-mt-20 md:-mt-28 lg:absolute sm:w-1/2 lg:object-cover object-left" id="book-image")
 
                         p It is rare for an art form to have made an impact academically, culturally, socially, economically, and as commercial art in advertising.
-                        p This target audience is familiar with, and even wistful about cartoons. They have grown up with cartoons whether in newspapers or on television. Since their childhoods, they have associated cartoons with laughter, happiness and fun.
-                        p Most importantly, the most vital role for cartoons in this book is to unite the readers behind a common point-of-view which the readers collectively share between themselves, and with the author.
+                        p(class="mt-4 md:mt-6") This target audience is familiar with, and even wistful about cartoons. They have grown up with cartoons whether in newspapers or on television. Since their childhoods, they have associated cartoons with laughter, happiness and fun.
+                        p(class="mt-4 md:mt-6") Most importantly, the most vital role for cartoons in this book is to unite the readers behind a common point-of-view which the readers collectively share between themselves, and with the author.
 
         section(class="pt-12 pb-20 xs:pb-24 sm:pb-30 lg:pt-24 lg:pb-34 xl:pb-36 2xl:pb-40 " style="background-color: #EAEAEA;")
             style.

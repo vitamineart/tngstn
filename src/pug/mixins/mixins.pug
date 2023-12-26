@@ -78,7 +78,7 @@ mixin page-title(u)
 
 
 mixin lead-in(u)
-    div(class=`lead-in ${ u.bold === false ? 'font-proxima' : 'font-proxima-bold' } text-lg lg:text-xl` class=u.class  style=u.style)&attributes(attributes)
+    div(class=`lead-in ${ u.bold === false ? 'font-proxima' : 'font-proxima-bold' }` class=u.class  style=u.style)&attributes(attributes)
         .container.
             !{u.content}
 
@@ -118,9 +118,18 @@ mixin iconMulti(x)
         use(xlink:href=`media/icons/icons-sprite-multi.svg#${x.icon}`)
 
 
+mixin imgBlur(x)
+    div(
+        class="blur-load"
+        style=`background-image: url(${ x.thumb })`
+    )&attributes(attributes)
+        block
+
+
 
 mixin image(x)
     - let resolutions = x.resolutions || [640, 768, 1024, 1366, 1600, 1920];
+    - let isForRetina = resolutions.includes('2x');
     img(
         id=x.id
         width=x.width
@@ -131,12 +140,13 @@ mixin image(x)
         srcset= `
             ${
                 resolutions.map((resolution, index, arr) => {
-                    return `${x.dir}${x.name}@${resolution}.${x.ext} ${resolution}w`
+                    return `${x.dir}${x.name}@${resolution}.${x.ext} ${isForRetina ? `${resolution}` : `${resolution}w`}`
                 })
             }
         `
         sizes=x.sizes
     )&attributes(attributes)
+
 
 
 

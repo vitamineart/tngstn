@@ -67,10 +67,10 @@ block page
 
             p These decision-makers include Cobham's dealer network, the IT departments of potential client companies, and the wider satcom industry.
 
-            p Data sheets are the most technical part of product description and documentation. They can be used for commercial or technical communication. A data sheet describes the characteristics of a product, component, or software, in stark, technical outline, devoid of product promotion.
-            p Data sheets are now so standardized that experienced decision-makers expect specific information displayed in a familiar format, and in conventional language. It has to be exact, concise, and presented in a factual tone using hard data.
-            p A well-written and well-designed data sheet follows a formal structure with strict taxonomy, enabling the reader to glean the information with a quick scan. This helps when making comparisons with other products.
-            p When a buyer is making a major investment in software or hardware, the stakes can be high enough that several people may be assigned to a buying team, and there are significant consequences for choosing the wrong solution to a problem.
+            p(class="mt-4 md:mt-6") Data sheets are the most technical part of product description and documentation. They can be used for commercial or technical communication. A data sheet describes the characteristics of a product, component, or software, in stark, technical outline, devoid of product promotion.
+            p(class="mt-4 md:mt-6") Data sheets are now so standardized that experienced decision-makers expect specific information displayed in a familiar format, and in conventional language. It has to be exact, concise, and presented in a factual tone using hard data.
+            p(class="mt-4 md:mt-6") A well-written and well-designed data sheet follows a formal structure with strict taxonomy, enabling the reader to glean the information with a quick scan. This helps when making comparisons with other products.
+            p(class="mt-4 md:mt-6") When a buyer is making a major investment in software or hardware, the stakes can be high enough that several people may be assigned to a buying team, and there are significant consequences for choosing the wrong solution to a problem.
 
         link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload='this.media="all"')
         style.
@@ -106,6 +106,10 @@ block page
                 height: 62px;
                 background-color: hsla(0, 50%,100%, .7);
                 backdrop-filter: blur(2px);
+            }
+            :is(.swiper-button-prev, .swiper-button-next ) .swiper-button-arrow {
+                width: 60%;
+                height: 60%;
             }
             .swiper-button-prev:after,
             .swiper-button-next:after {
@@ -192,19 +196,19 @@ block page
 
                 //- navigation buttons
                 div(class=" swiper-button-prev rounded-lg text-blue-light")
-                    svg(width="19" height="34" viewBox="0 0 19 34" fill="none")
+                    svg(width="19" height="34" viewBox="0 0 19 34" fill="none" class="swiper-button-arrow")
                         path(d="M2.25 17L1.54289 16.2929L0.835786 17L1.54289 17.7071L2.25 17ZM17.0429 0.792893L1.54289 16.2929L2.95711 17.7071L18.4571 2.20711L17.0429 0.792893ZM1.54289 17.7071L17.0429 33.2071L18.4571 31.7929L2.95711 16.2929L1.54289 17.7071Z" fill="currentColor")
 
                 div(class=" swiper-button-next rounded-lg text-blue-light")
-                    svg(width="19" height="34" viewBox="0 0 19 34" fill="none")
+                    svg(width="19" height="34" viewBox="0 0 19 34" fill="none" class="swiper-button-arrow")
                         path(d="M16.75 17L17.4571 16.2929L18.1642 17L17.4571 17.7071L16.75 17ZM1.95711 0.792893L17.4571 16.2929L16.0429 17.7071L0.542893 2.20711L1.95711 0.792893ZM17.4571 17.7071L1.95711 33.2071L0.542893 31.7929L16.0429 16.2929L17.4571 17.7071Z" fill="currentColor")
 
 
         .container
             p A good data sheet must not neglect small features that could be a consideration for the user of the product. It offers technical details substantial enough to enable a potential buyer to evaluate the product, or to equip an engineer to understand the role of the component in the overall system.
-            p As the headline on this page tells us, a data sheet occupies the space between a product brochure that highlights features and benefits, and a technical white paper or an instruction manual. The examples of data sheets on this page were created by Tungsten for different models of Cobham's self-stabilizing maritime satellite antennae.
-            p As a full-service advertising agency, Tungsten created communication materials for every stage of the customer's buying process. The data sheets displayed here represent a type of product communication that has a distinct place amongst other materials Tungsten created for Cobham, ranging from technical videos to training emulator, to magazine advertisements published worldwide.
-            p.mb-10 Once designed, these data sheets were printed at an offset printing press, and distributed at trade shows in addition to being made available for electronic download.
+            p(class="mt-4 md:mt-6") As the headline on this page tells us, a data sheet occupies the space between a product brochure that highlights features and benefits, and a technical white paper or an instruction manual. The examples of data sheets on this page were created by Tungsten for different models of Cobham's self-stabilizing maritime satellite antennae.
+            p(class="mt-4 md:mt-6") As a full-service advertising agency, Tungsten created communication materials for every stage of the customer's buying process. The data sheets displayed here represent a type of product communication that has a distinct place amongst other materials Tungsten created for Cobham, ranging from technical videos to training emulator, to magazine advertisements published worldwide.
+            p(class="mb-10 mt-4 md:mt-6") Once designed, these data sheets were printed at an offset printing press, and distributed at trade shows in addition to being made available for electronic download.
 
 
 
@@ -233,7 +237,7 @@ block page
 
 
 append footer_scripts
-    script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer)
+    script(src="https://unpkg.com/swiper@11/swiper-bundle.min.js" defer)
     script(src="js/simpleParallax.js" defer)
     script(src="js/cobham-seatel-datasheets.js" defer)
 
