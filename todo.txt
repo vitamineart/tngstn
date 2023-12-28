@@ -6,4 +6,5 @@
 4) add updated gulpfile.js to UPWORK Template (update)
 5) Rethink using styles (use inline styles instead of particular classes)
 6) Consider possibility of separating CSS: separate file for each page, with criticalCSS. This should exclude unused CSS + fast page loading
-7) Considerpossibility of separating all the pages with assets by folder: separate folder for each page
+7) Consider possibility of separating all the pages with assets by folder: separate folder for each page
+
