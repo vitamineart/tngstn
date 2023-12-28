@@ -1,7 +1,7 @@
 {
-  "name": "gulp-with-tailwindcss",
-  "version": "1.2.0",
-  "description": "TailwindCSS StarterKit with Gulp 4",
+  "name": "tungsten",
+  "version": "1.0.0",
+  "description": "Tungsten Advertising website",
   "main": "gulpfile.js",
   "dependencies": {
     "swiper": "^7.4.1"
@@ -44,7 +44,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manjumjn/gulp-with-tailwindcss.git"
+    "url": "git+https://github.com/vitamineart/tngstn"
   },
   "keywords": [
     "gulp",
@@ -53,10 +53,7 @@
     "tailwindcss",
     "sass"
   ],
-  "author": "Manjunath G",
+  "author": "Artiom F",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/manjumjn/gulp-with-tailwindcss/issues"
-  },
-  "homepage": "https://github.com/manjumjn/gulp-with-tailwindcss#readme"
+  "homepage": "https://github.com/vitamineart/tngstn"
 }
