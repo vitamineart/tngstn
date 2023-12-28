@@ -2,7 +2,7 @@
 
 ## 2 Branches:
 
-### `dev` - for development
+### `dev` - for development, testing, preview
 
 This branch is 'wired' to https://github.com/vitamineart/tngstn repo (it has only one default branch - `dev`). Changes from the repo are automatically being deployed to tngstn.netlify.app website for preview.
 
