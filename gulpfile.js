@@ -366,11 +366,11 @@ exports.prod = series(
     prodSVGSprite,
     prodFonts,
     prodHTML,
-    moveManifestProd,
-    moveRobotsTXT
+    moveManifestProd
+    // moveRobotsTXT
     // prodFavicon
   ), //Run All tasks in parallel
-  criticalCSS,
+  // criticalCSS,
   buildFinish
 );
 
