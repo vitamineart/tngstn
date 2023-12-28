@@ -2,14 +2,22 @@
 
 ## 2 Branches:
 
-### `dev` - for development.
+### `dev` - for development
 
-This branch is 'wired' to https://github.com/vitamineart/tngstn repo (it has only one default branch - `dev`). Changes from the repo are automatically being deployed to tngstn.netlify.app preview website.
+This branch is 'wired' to https://github.com/vitamineart/tngstn repo (it has only one default branch - `dev`). Changes from the repo are automatically being deployed to tngstn.netlify.app website for preview.
 
-### `main` - for production.
+### `main` - for production
 
 This branch is 'wired' to https://github.com/tungstenadvertising/tngstn (it has only one default branch - `main`) production website.
 ![Alt text](2_branches_workflow.png)
+
+### how to
+
+Set the preferred remote for the current (checked out) branch:
+`git branch --set-upstream-to <remote-name>/<branch-name>`
+
+Validate the branch is setup with the correct upstream remote:
+`git branch -vv`
 
 ## Based on Gulp with TailwindCSS Starter Kit
 
