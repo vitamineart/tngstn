@@ -2,8 +2,13 @@
 
 ## 2 Branches:
 
-`dev` - for development. This branch is 'wired' to https://github.com/vitamineart/tngstn repo (it has only one default branch - `dev`). Changes from the repo are automatically being deployed to tngstn.netlify.app preview website.
-`main` - for production. This branch is 'wired' to https://github.com/tungstenadvertising/tngstn (it has only one default branch - `main`) production website.
+### `dev` - for development.
+
+This branch is 'wired' to https://github.com/vitamineart/tngstn repo (it has only one default branch - `dev`). Changes from the repo are automatically being deployed to tngstn.netlify.app preview website.
+
+### `main` - for production.
+
+This branch is 'wired' to https://github.com/tungstenadvertising/tngstn (it has only one default branch - `main`) production website.
 ![Alt text](2_branches_workflow.png)
 
 ## Based on Gulp with TailwindCSS Starter Kit
