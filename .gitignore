@@ -2,5 +2,5 @@ node_modules
 dist
 *.workspace
 .DS_Store
-robots.txt
+
 todo.txt
