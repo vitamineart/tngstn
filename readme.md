@@ -1,26 +1,39 @@
-<!-- # Gulp with TailwindCSS Starter Kit
+# Updates Workflow
+
+## 2 Branches:
+
+`dev` - for development. This branch is 'wired' to https://github.com/vitamineart/tngstn repo (it has only one default branch - `dev`). Changes from the repo are automatically being deployed to tngstn.netlify.app preview website.
+`main` - for production. This branch is 'wired' to https://github.com/tungstenadvertising/tngstn (it has only one default branch - `main`) production website.
+![Alt text](2_branches_workflow.png)
+
+## Based on Gulp with TailwindCSS Starter Kit
 
 Gulp with TailwindCSS Starter Kit ( Updated with [TailwindCSS JIT](https://github.com/tailwindlabs/tailwindcss-jit) )- A repo which makes your development easier with predefined gulp tasks that help you to use [tailwindcss](https://github.com/tailwindcss/tailwindcss) with simple npm commands
 
 ## Usage
 
 1. Install Dev Depedencies
+
 ```sh
 npm install // or yarn install
 ```
+
 2. To start development and server for live preview
+
 ```sh
 npm run dev // or yarn dev
 ```
+
 3. To generate minifed files for production server
+
 ```sh
 npm run prod // or yarn prod
 ```
 
 # Configuration
 
-
 To change the path of files and destination/build folder, edit options in **config.js** file
+
 ```sh
 {
   config: {
@@ -50,4 +63,4 @@ To change the path of files and destination/build folder, edit options in **conf
   }
   ...
 }
-``` -->
+```
