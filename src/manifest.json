@@ -1,10 +1,17 @@
 {
   "name": "Tungsten",
   "short_name": "tngstn",
+  "start_url": "https://tngstn.netlify.app",
   "icons": [
     {
-      "src": "media/apple-touch-icon.webp",
+      "src": "media/apple-touch-icon.png",
       "sizes": "512x512"
+    },
+    {
+      "src": "media/mask-icon.png",
+      "sizes": "512x512",
+      "type": "image/svg",
+      "purpose": "any maskable"
     }
   ],
   "background_color": "#ffffff",
