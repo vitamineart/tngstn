@@ -5,7 +5,8 @@
   "icons": [
     {
       "src": "media/apple-touch-icon.png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any"
     },
     {
       "src": "media/mask-icon.png",
