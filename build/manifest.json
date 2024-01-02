@@ -9,6 +9,11 @@
       "purpose": "any"
     },
     {
+      "src": "media/favicon.svg",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
       "src": "media/mask-icon.png",
       "sizes": "512x512",
       "type": "image/svg",
