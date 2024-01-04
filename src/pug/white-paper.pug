@@ -1,9 +1,10 @@
 extends ./layout/base
 block variables
     - let pageTitle = `Tungsten's White Papers Services: Turning Techspeak into English`
-    - let currentUrl = 'white-paper.html'
-    - let mediaFolder = 'media/white-paper/'
     - let metaDescription = `Tungsten, a full-service advertising agency, specializes in creating White Papers for B2B clients. Our White Papers turn complex technical information into easy-to-understand language, positioning our clients as thought leaders in their industry. Browse our portfolio of White Papers for examples of our work.`
+    - let mediaFolder = 'media/white-paper/'
+    - let currentUrl = 'white-paper'
+    - let ogImage = 'media/projects/cobham-white-papers/white-papers@936.jpg'
 
 prepend preload
     link(rel="preload" as="image" imagesrcset=`../media/white-paper/white-papers@640.jpg 640w, ../media/white-paper/white-papers@768.jpg 768w, ../media/white-paper/white-papers@1024.jpg 1024w, ../media/white-paper/white-papers@1366.jpg 1366w, ../media/white-paper/white-papers@1600.jpg 1600w, ../media/white-paper/white-papers@1920.jpg 1920w` width="1920" height="834")

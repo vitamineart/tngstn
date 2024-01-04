@@ -2,9 +2,10 @@ extends ./layout/base
 block variables
     - let pageTitle = 'Tungsten Advertising Case Study | Friends of Alaska Marine Highway System'
     - let metaDescription = 'Learn how Tungsten Advertising helped save the Alaska Marine Highway System with a successful petition campaign and website. Support affordable transportation in Alaska.'
+    - let currentUrl = 'alaska';
     - let mediaFolder = 'media/alaska/';
-    - let currentUrl = 'alaska.html';
     - let headerShadow = false;
+    - let ogImage = '../media/projects/alaska/mv-malaspina@936.jpg'
 
 prepend preload
     link(rel="preload" as="image" href=`${mediaFolder}hero-bg.svg`, fetchpriority="high")

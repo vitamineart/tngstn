@@ -1,9 +1,11 @@
 extends ./layout/base
 block variables
     - let pageTitle = `Reviving the Porziuncola: Tungsten Advertising Campaign to Keep San Francisco's Chapel Open`
-    - let currentUrl = 'porziuncola.html';
     - let metaDescription = 'Learn how Tungsten, a San Francisco advertising agency, helped revive the Porziuncola, a chapel honoring Saint Francis, with a creative and successful petition campaign. See how art, design, and storytelling engaged and inspired the public to support the preservation of an historical landmark.';
     - let mediaFolder = 'media/porziuncola/'
+    - let currentUrl = 'porziuncola';
+    - let ogImage = '../media/projects/porziuncola/porziuncola@936.jpg'
+
 
 prepend preload
     script(src="https://unpkg.com/beerslider/dist/BeerSlider.js" defer)
