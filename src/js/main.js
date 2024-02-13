@@ -165,34 +165,35 @@ function scrollEntranceAnimate(elements, animationProps = { opacity: 0, duration
   });
 }
 
-// gsap.to(".logo-svg .rainbow .ray", {
-//   keyframes: {
-//     "0%": { scale: 1, filter: "brightness(100%) saturate(100%)" },
-//     "50%": { scale: 1.3, filter: "brightness(120%) saturate(120%)" },
-//     "100%": { scale: 1, filter: "brightness(100%) saturate(100%)" }
-//   },
-//   ease: "power1.out",
-//   transformOrigin: "center",
-//   duration: 0.7,
-//   stagger: -0.08,
-//   repeat: -1,
-//   repeatDelay: 20,
-//   delay: 20
-// });
-// gsap.to(".logo-svg .rainbow .ray", {
-//   keyframes: {
-//     "0%": { filter: "brightness(100%) saturate(100%)" },
-//     "50%": { filter: "brightness(130%) saturate(110%)" },
-//     "100%": { filter: "brightness(100%) saturate(100%)" }
-//   },
-//   ease: "circ.out",
-//   transformOrigin: "center",
-//   duration: 0.5,
-//   stagger: 0.05,
-//   repeat: -1,
-//   repeatDelay: 10,
-//   delay: 30
-// });
+// logo circular animation
+gsap.to(".logo-svg .rainbow .ray", {
+  keyframes: {
+    "0%": { scale: 1, filter: "brightness(100%) saturate(100%)" },
+    "50%": { scale: 1.2, filter: "brightness(120%) saturate(120%)" },
+    "100%": { scale: 1, filter: "brightness(100%) saturate(100%)" }
+  },
+  ease: "power4.out",
+  transformOrigin: "center",
+  duration: 1.7,
+  stagger: -0.03,
+  repeat: -1,
+  repeatDelay: 20,
+  delay: 20
+});
+gsap.to(".logo-svg .rainbow .ray", {
+  keyframes: {
+    "0%": { filter: "brightness(100%) saturate(100%)" },
+    "50%": { filter: "brightness(130%) saturate(110%)" },
+    "100%": { filter: "brightness(100%) saturate(100%)" }
+  },
+  ease: "circ.out",
+  transformOrigin: "center",
+  duration: 0.5,
+  stagger: 0.05,
+  repeat: -1,
+  repeatDelay: 13,
+  delay: 33
+});
 
 const logoText = document.querySelector(".logo-svg .text");
 if (logoText) {
@@ -222,53 +223,55 @@ if (logoText) {
       "<50%"
     );
 }
-const baseLogo = document.querySelector("#baseLogo");
-const snowFlakeLogo = document.querySelector("#snowFlakeLogo");
-const blurFlakeLogo = 2;
-const saturateFlakeLogo = 1.5;
-const brightnessFlakeLogo = 1.8;
-const snowFlakeLogoDuration = 2;
 
-const snowFlakeLogoTl = gsap.timeline({
-  delay: 5,
-  repeat: -1,
-  repeatDelay: 5,
-  yoyo: true
-});
+// snow Flake Logo Effect - Winter Logo
+// const baseLogo = document.querySelector("#baseLogo");
+// const snowFlakeLogo = document.querySelector("#snowFlakeLogo");
+// const blurFlakeLogo = 2;
+// const saturateFlakeLogo = 1.5;
+// const brightnessFlakeLogo = 1.8;
+// const snowFlakeLogoDuration = 2;
 
-snowFlakeLogoTl
-  .fromTo(
-    snowFlakeLogo,
-    {
-      filter: "blur(0px) saturate(1) brightness(1)",
-      rotate: 0,
-      opacity: 1
-    },
-    {
-      filter: `blur(${blurFlakeLogo}px) saturate(${saturateFlakeLogo}) brightness(${brightnessFlakeLogo})`,
-      opacity: 0,
-      rotate: -2500,
-      duration: snowFlakeLogoDuration,
-      ease: "cubic.in"
-    }
-  )
-  .fromTo(
-    baseLogo,
-    {
-      filter: `blur(${blurFlakeLogo}px) saturate(${saturateFlakeLogo}) brightness(${brightnessFlakeLogo})`,
-      opacity: 0,
-      rotate: 2500,
-      transformOrigin: "center"
-    },
-    {
-      filter: "blur(0px) saturate(1) brightness(1)",
-      opacity: 1,
-      rotate: 0,
-      duration: snowFlakeLogoDuration,
-      ease: "cubic.out"
-    },
-    "<1"
-  );
+// const snowFlakeLogoTl = gsap.timeline({
+//   delay: 5,
+//   repeat: -1,
+//   repeatDelay: 5,
+//   yoyo: true
+// });
+
+// snowFlakeLogoTl
+//   .fromTo(
+//     snowFlakeLogo,
+//     {
+//       filter: "blur(0px) saturate(1) brightness(1)",
+//       rotate: 0,
+//       opacity: 1
+//     },
+//     {
+//       filter: `blur(${blurFlakeLogo}px) saturate(${saturateFlakeLogo}) brightness(${brightnessFlakeLogo})`,
+//       opacity: 0,
+//       rotate: -2500,
+//       duration: snowFlakeLogoDuration,
+//       ease: "cubic.in"
+//     }
+//   )
+//   .fromTo(
+//     baseLogo,
+//     {
+//       filter: `blur(${blurFlakeLogo}px) saturate(${saturateFlakeLogo}) brightness(${brightnessFlakeLogo})`,
+//       opacity: 0,
+//       rotate: 2500,
+//       transformOrigin: "center"
+//     },
+//     {
+//       filter: "blur(0px) saturate(1) brightness(1)",
+//       opacity: 1,
+//       rotate: 0,
+//       duration: snowFlakeLogoDuration,
+//       ease: "cubic.out"
+//     },
+//     "<1"
+//   );
 
 // snowFlakeLogoTl.reverse();
 

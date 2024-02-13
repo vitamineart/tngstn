@@ -706,6 +706,10 @@ block page
             #game {
                 opacity: 1;
                 scale: 1;
+                margin: 0 -15px;
+                @media (width >= 480px){
+                    margin: 0 -5px;
+                }
             }
         }
 
@@ -728,13 +732,21 @@ block page
                         #StoneBowl {
                             translate: 15% 0;
                             margin-top: -41vw;
+                            @media (856px < width <= 1023px) {
+                                margin-top: -37vw;
+                            }
                             @media (width > 1023px) {
                                 margin-top: -330px;
                             }
                         }
                         #StoneHammer {
                             translate: 24% -8%;
+                            width: min(76%, 497px);
+                            z-index: 100;
                         }
+
+
+
                     -
                         let garamMasalaSpices = [
                             {
@@ -744,7 +756,7 @@ block page
                             },
                             {
                                 id: 2,
-                                name: 'Green Cardamon',
+                                name: 'GreenCardamon',
                                 q: '10 gms.'
                             },
                             {
@@ -769,19 +781,122 @@ block page
                             },
                             {
                                 id: 7,
-                                name: 'Crushed Nutmeg',
+                                name: 'Nutmeg',
                                 q: '5-6 gms.'
                             },
                             {
                                 id: 8,
-                                name: 'Bay Leaves',
+                                name: 'BayLeaves',
                                 q: '14-16 nos.'
                             },
                         ]
+                        let crushedSpices = [
+
+                        ]
+                    style.
+                        #game .swiper {
+                            width: clamp(300px, 95vw, 600px);
+                        }
+                        #spiceSliderContainer {
+                            display: grid;
+                            place-items: center;
+                        }
+                        #spiceSlider {
+                            position: absolute;
+                            z-index: 1;
+                            top: 50%;
+                            translate: 0 -50%;
+                            filter: drop-shadow(4px 7px 5px hsla(0deg 0% 0% / 70%));
+                            .swiper-slide {
+                                display: grid;
+                                place-items: center;
+                                transition: .3s ease-out;
+                                scale: .35;
+                                &.swiper-slide-active {
+                                    scale: 1;
+                                }
+                            }
+                        }
+                        #spiceSliderContainer {
+                        }
+                        #spiceSliderStatus {
+                            top: 12%;
+                            inset-inline: auto;
+                            z-index: 10;
+                            font-size: 35px;
+                        }
+                        #spiceSliderIndex {
+                            font-size: clamp(16px, 5vw, 32px);
+                        }
+                        #spiceSliderName {
+                            font-size: clamp(20px, 7vw, 42px);
+                        }
+                        #drag-line {
+                            background-color: hsla(0deg 100% 100% / 20%);
+                            padding: 3px 12px;
+                            top: 70%;
+                            inset-inline: auto;
+                            z-index: 100;
+                            border-radius: 20px;
+                            font-size: 15px;
+                        }
+                        .spiceSliderPrev, .spiceSliderNext {
+                            width: 30%;
+                            height: 90%;
+                            opacity: 0;
+                        }
+                        .spiceSliderPrev {
+                            left: 0;
+                        }
+
+                        .spiceSliderNext {
+                            right: 0;
+                        }
+                        #StoneBowlContainerDropZone {
+                            position: absolute;
+                            width: 70%;
+                            height: 72%;
+                            inset: 0;
+                            margin: auto;
+                            top: 14%;
+                            z-index: 100;
+                            @media (width > 768px){
+                                width: 60%;
+                            }
+                            @media (width > 1024px){
+                                width: 50%;
+                            }
+                            > img {
+                                position: absolute;
+                                inset: 0;
+                                margin: auto;
+                                max-width: 100%;
+                                pointer-events: none;
+                            }
+                        }
+
                     #game.transition-all.duration-300.text-center
-                        <img loading="lazy" id="GaramMasalaBg" class="mx-auto" src="../media/new-delhi/GaramMasalaBg.png" width="596" height="821">
+                        #spiceSliderContainer.relative
+                            #spiceSliderStatus.absolute.text-white
+                                #spiceSliderIndex
+                                #spiceSliderName.font-proxima-bold
+                                #spiceSliderQ
+                            #spiceSlider.swiper
+                                // Additional required wrapper
+                                .swiper-wrapper
+                                    // Slides
+                                    for spice, index in garamMasalaSpices
+                                        .swiper-slide(data-name=spice.name)
+                                            img(src=`${mediaFolder}Rotary Spices/${spice.name}.png` alt=`${spice.name}` id=`${spice.name}` width=246 height=246)
+                                div(class=" spiceSliderPrev absolute bg-red-400 top-1/2 -translate-y-1/2 z-50")
+                                div(class=" spiceSliderNext absolute bg-red-400 top-1/2 -translate-y-1/2 z-50")
+                            div.text-white.absolute#drag-line drag to the stone bowl
+                            <img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBg" class="mx-auto relative z-0" src="../media/new-delhi/GaramMasalaBg.png" width="596" height="821">
+
+
                         #StoneBowlContainer.relative
-                            <img loading="lazy" id="StoneHammer" class="mx-auto z-0 absolute inset-0 m-auto z-10" src="../media/new-delhi/StoneHammer.png" width="497" height="383">
+                            #StoneBowlContainerDropZone.absolute.inset-0.w-full.h-full
+                            <img loading="lazy" id="StoneHammer" class="mx-auto absolute inset-0 m-auto pointer-events-none" src="../media/new-delhi/StoneHammer.png" width="497" height="383">
                             <img loading="lazy" id="StoneBowl" class="mx-auto z-0 relative" src="../media/new-delhi/StoneBowl.png" width="676" height="682">
 
 

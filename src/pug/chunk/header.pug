@@ -1,12 +1,8 @@
 header(class="header relative z-50 py-0 xs:py-1 sm:py-2 md:py-3 lg:py-4 bg-white" class=`${headerShadow === false ? '' : 'header-shadow'}`)
     .container.flex.justify-between.items-center.max-w-7xl
-        //- a(class=`logo relative` href="/" aria-label="Circular multi-color logo for Tungsten Advertising Agency" style=`height: 55px; width: ${ currentUrl == '/' ? '55' : '170' }px`)
-            //- +iconMulti({
-            //-     icon: "logo",
-            //-     class: 'w-full h-full'
-            //- })
-            //- svg(xmlns="http://www.w3.org/2000/svg" class=`absolute inset-0 logo-svg w-5/6 sm:w-auto` width=`${ currentUrl == '/' ? '55' : '170'}` height="55" fill="none" viewBox=`0 0 ${currentUrl == '/' ? '55' : '170'} 55`)
-                g(class="rainbow" style="opacity:0;")
+        a(class=`logo relative` href="/" aria-label="Circular multi-color logo for Tungsten Advertising Agency" style=`height: 55px; width: ${ currentUrl == '/' ? '55' : '170' }px`)
+            svg(xmlns="http://www.w3.org/2000/svg" class=`absolute inset-0 logo-svg w-5/6 sm:w-auto` width=`${ currentUrl == '/' ? '55' : '170'}` height="55" fill="none" viewBox=`0 0 ${currentUrl == '/' ? '55' : '170'} 55`)
+                g(class="rainbow")
                     path(fill="#000" d="m24.877 5.827-.263-3.404-2.363.425.919 3.274 1.706-.295Zm.196 1.932-1.575.295 1.575 8.053.788-.164-.788-8.184Z" class="ray")
                     path(fill="#305BA7" d="M23.301 15.42 17.263 2.488l3.61-1.375 3.38 13.947-.952.36Z" class="ray")
                     path(fill="#F9E75C" d="m17.066 7.726-1.313.753 5.317 8.087.492-.262-4.496-8.578Z" class="ray")
@@ -55,7 +51,7 @@ header(class="header relative z-50 py-0 xs:py-1 sm:py-2 md:py-3 lg:py-4 bg-white
                         path(fill="#1A1A1A" d="M146.863 21.542h7.975a.4.4 0 0 1 .295.13.397.397 0 0 1 .131.295c0 .131-.032.23-.131.295-.098.065-.197.13-.295.13h-7.713l.197-.36v6.548l-.262-.294h6.859a.4.4 0 0 1 .295.13.398.398 0 0 1 .132.295c0 .131-.033.23-.132.295-.098.066-.197.13-.295.13h-6.761l.197-.228v6.678l-.098-.098h7.614a.4.4 0 0 1 .295.131.4.4 0 0 1 .131.295c0 .13-.033.229-.131.294-.098.066-.197.131-.295.131h-7.975a.402.402 0 0 1-.296-.13.4.4 0 0 1-.131-.295V21.967a.4.4 0 0 1 .131-.294c.066-.066.164-.131.263-.131Z" class="letter E")
                         path(fill="#1A1A1A" d="M169.376 21.542c.132 0 .23.032.296.13.065.066.098.164.098.295v13.914c0 .164-.033.262-.131.36-.098.066-.197.131-.295.131-.066 0-.132 0-.164-.033-.066-.032-.132-.065-.165-.13l-9.845-13.423.295-.164V35.98a.298.298 0 0 1-.131.262c-.066.066-.164.098-.295.098-.132 0-.23-.032-.296-.098a.374.374 0 0 1-.098-.262V21.967c0-.163.033-.262.131-.327.099-.066.164-.098.263-.098.065 0 .098 0 .164.032a.59.59 0 0 1 .164.131l9.78 13.292-.164.426V21.934c0-.098.032-.196.131-.294a.374.374 0 0 1 .262-.098Z" class="letter N")
 
-        a(class=`logo relative` href="/" aria-label="Circular multi-color logo for Tungsten Advertising Agency" style="height: 55px; width: 55px")
+        //- a(class=`logo relative` href="/" aria-label="Circular multi-color logo for Tungsten Advertising Agency" style="height: 55px; width: 55px")
             img(src="media/logoSnowFlake.svg" width="auto" height="55" class="absolute inset-0 m-auto w-5/6 sm:w-auto" style="" id="snowFlakeLogo" alt="Circular multi-color logo for Tungsten Advertising Agency" fetchpriority="high" decoding="async")
             img(src="media/Logo.svg" width="auto" height="55" class="absolute inset-0 m-auto w-5/6 sm:w-auto" style="opacity: 0;" id="baseLogo" alt="Circular multi-color logo for Tungsten Advertising Agency" fetchpriority="high" decoding="async")
 
