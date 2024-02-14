@@ -1,4 +1,4 @@
-const swiper = new Swiper(".gallery", {
+const gallerySwiper = new Swiper(".gallery", {
   autoplay: {
     delay: 5000
   },
@@ -53,7 +53,7 @@ const spiceSwiper = new Swiper("#spiceSlider ", {
   watchSlidesProgress: true,
   // touchMoveStopPropagation: true,
   allowTouchMove: false,
-  // simulateTouch: false,
+  simulateTouch: false,
   zoom: true,
   // keyboard: {
   //   enabled: true
@@ -61,15 +61,15 @@ const spiceSwiper = new Swiper("#spiceSlider ", {
   spaceBetween: 0,
   on: {
     init: function (spiceSwiper) {
-      spiceSliderIndex.innerHTML = swiper.activeIndex + 1;
-      spiceSliderName.innerHTML = swiper.slides[swiper.activeIndex].dataset.name;
-      console.log(spiceSwiper.slides[swiper.activeIndex].querySelector("img"));
+      spiceSliderIndex.innerHTML = spiceSwiper.activeIndex + 1;
+      spiceSliderName.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].dataset.name;
+      console.log(spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img"));
       // activeSlideImage.draggable = true;
     }
   }
 });
 
-const activeSlideImage = spiceSwiper.slides[swiper.activeIndex].querySelector("img");
+const spiceImages = document.querySelectorAll("#spiceSlider img");
 
 const spiceSliderPrev = document.querySelector(".spiceSliderPrev");
 const spiceSliderNext = document.querySelector(".spiceSliderNext");
@@ -80,31 +80,34 @@ spiceSliderNext.addEventListener("click", e => {
   spiceSwiper.slideNext();
 });
 
-spiceSwiper.on("slideChange", swiper => {
-  let spiceName = swiper.slides[swiper.activeIndex].dataset.name;
+spiceSwiper.on("slideChange", spiceSwiper => {
+  let spiceName = spiceSwiper.slides[spiceSwiper.activeIndex].dataset.name;
   spiceSliderName.innerHTML = spiceName;
-  spiceSliderIndex.innerHTML = swiper.activeIndex + 1;
-
-  swiper.slides.forEach(slide => {});
+  spiceSliderIndex.innerHTML = spiceSwiper.activeIndex + 1;
+  // spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").draggable = true;
+  spiceSwiper.removeSlide[spiceSwiper.activeIndex - 1];
 });
 
-const spiceImages = document.querySelectorAll("#spiceSlider .swiper-slide img");
 const draggedSpices = [];
 spiceImages.forEach(image => {
+  image.addEventListener("mouseenter", e => {
+    if (draggedSpices.includes(e.target.id)) {
+      e.target.style.cursor = "not-allowed";
+      e.target.draggable = false;
+      console.log(`You already added ${e.target.id}`);
+    } else {
+      e.target.style.cursor = "pointer";
+    }
+  });
   image.addEventListener("dragstart", e => {
     const data = e.dataTransfer.setData("text/plain", e.target.id);
-    if (draggedSpices.includes(e.target.id)) {
-      console.log("You already add the spice");
-      // e.dataTransfer.effectAllowed = "none";
-    } else {
-      // e.dataTransfer.effectAllowed = "move";
-    }
+    e.dataTransfer.effectAllowed = "copy";
   });
 });
 
 dropZone.addEventListener("dragenter", e => {
   const data = e.dataTransfer.getData("text/plain");
-  console.log(data);
+  console.log(e.target.id);
   if (draggedSpices.includes(e.target.id)) {
     console.log("You'already added this spice!");
   }
@@ -113,13 +116,21 @@ dropZone.addEventListener("dragover", e => {
   e.preventDefault();
 });
 dropZone.addEventListener("drop", e => {
-  e.preventDefault();
   const data = e.dataTransfer.getData("text/plain");
   if (!draggedSpices.includes(data)) {
-    const crushedSpice = document.createElement("img");
-    crushedSpice.src = `../media/new-delhi/CrushedSpices/crushed${data}.png`;
-    e.target.appendChild(crushedSpice);
+    const scatteredSpice = document.createElement("img");
+    scatteredSpice.src = `../media/new-delhi/ScatteredSpices/scattered${data}.png`;
+    e.target.appendChild(scatteredSpice);
     draggedSpices.push(data);
+    if (draggedSpices.length == 8) {
+      console.log("Crush them!");
+
+      const crushBtn = document.querySelector("#drag-line");
+      crushBtn.innerText = "Click to crush the spices";
+      crushBtn.style.background = "#fff";
+      crushBtn.style.color = "#000";
+      crushBtn.style.cursor = "pointer";
+    }
   } else {
     console.log("You'already added this spice!");
   }

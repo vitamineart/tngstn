@@ -756,7 +756,7 @@ block page
                             },
                             {
                                 id: 2,
-                                name: 'GreenCardamon',
+                                name: 'Green Cardamon',
                                 q: '10 gms.'
                             },
                             {
@@ -781,18 +781,16 @@ block page
                             },
                             {
                                 id: 7,
-                                name: 'Nutmeg',
+                                name: 'Crushed Nutmeg',
                                 q: '5-6 gms.'
                             },
                             {
                                 id: 8,
-                                name: 'BayLeaves',
+                                name: 'Bay Leaves',
                                 q: '14-16 nos.'
                             },
                         ]
-                        let crushedSpices = [
 
-                        ]
                     style.
                         #game .swiper {
                             width: clamp(300px, 95vw, 600px);
@@ -887,7 +885,7 @@ block page
                                     // Slides
                                     for spice, index in garamMasalaSpices
                                         .swiper-slide(data-name=spice.name)
-                                            img(src=`${mediaFolder}Rotary Spices/${spice.name}.png` alt=`${spice.name}` id=`${spice.name}` width=246 height=246)
+                                            img(src=`${mediaFolder}RotarySpices/${spice.name.split(" ").join("")}.png` alt=`${spice.name}` id=`${spice.name.split(" ").join("")}` width=246 height=246)
                                 div(class=" spiceSliderPrev absolute bg-red-400 top-1/2 -translate-y-1/2 z-50")
                                 div(class=" spiceSliderNext absolute bg-red-400 top-1/2 -translate-y-1/2 z-50")
                             div.text-white.absolute#drag-line drag to the stone bowl
