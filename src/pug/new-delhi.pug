@@ -696,6 +696,7 @@ block page
                 #game {
                     opacity: 0;
                     scale: 0;
+                    height: 0;
                 }
             }
             #cook-btn {
@@ -707,6 +708,7 @@ block page
                 opacity: 1;
                 scale: 1;
                 margin: 0 -15px;
+                height: auto;
                 @media (width >= 480px){
                     margin: 0 -5px;
                 }
@@ -722,7 +724,7 @@ block page
                 p Garam Masala is a fragrant blend of spices commonly used in Indian cuisine.
                 p This magic ingredient enhances the taste and flavor of food. Create your own
                 p Garam Masala blend. Drag and drop the ingredients into the bowl to get started.
-                #cook-garam-masala.pt-10
+                #cook-garam-masala.pt-10.closed
                     button#cook-btn.grid.place-items-center.relative.mx-auto
                         b.text-white.relative.z-10 Try Cooking Indian food
                         <svg xmlns="http://www.w3.org/2000/svg" fill="#860101" stroke="#DEA626" stroke-width="3" viewBox="-5 -5 335 115" class="absolute inset-0">
@@ -795,9 +797,48 @@ block page
                         #game .swiper {
                             width: clamp(300px, 95vw, 600px);
                         }
+                        #crushMessage {
+                            display: none;
+                            position: absolute;
+                            margin: auto;
+                            font-size: clamp(30px, 7vw, 50px);
+                            line-height: clamp(1.1em, 1vw, 1.25em);
+                            width: min(75%, 479px);
+                            z-index: 100;
+                        }
+                        #game.end-game {
+                            #GaramMasalaBg {
+                                position: absolute;
+                                opacity: 0;
+                                scale: 0.9;
+                            }
+                            #GaramMasalaBgEnd {
+                                position: relative;
+                                opacity: 1;
+                                scale: 1;
+                            }
+                            #StoneBowlContainer {
+                                display: none;
+                            }
+                        }
                         #spiceSliderContainer {
                             display: grid;
                             place-items: center;
+                            #GaramMasalaBgContainer {
+                                > img {
+                                    transition: .3s ease;
+                                }
+                            }
+                        }
+                        #GaramMasalaBg {
+                            position: relative;
+                            opacity: 1;
+                            scale: 1;
+                        }
+                        #GaramMasalaBgEnd {
+                            position: absolute;
+                            opacity:0;
+                            scale: 0.9;
                         }
                         #spiceSlider {
                             position: absolute;
@@ -815,8 +856,7 @@ block page
                                 }
                             }
                         }
-                        #spiceSliderContainer {
-                        }
+
                         #spiceSliderStatus {
                             top: 12%;
                             inset-inline: auto;
@@ -828,6 +868,9 @@ block page
                         }
                         #spiceSliderName {
                             font-size: clamp(20px, 7vw, 42px);
+                            &.congratulations {
+                                margin-top: 40px;
+                            }
                         }
                         #drag-line {
                             background-color: hsla(0deg 100% 100% / 20%);
@@ -852,12 +895,13 @@ block page
                         }
                         #StoneBowlContainerDropZone {
                             position: absolute;
-                            width: 70%;
+                            width: min(38vw,70%);
                             height: 72%;
                             inset: 0;
                             margin: auto;
                             top: 14%;
                             z-index: 100;
+                            filter: drop-shadow(0px 0px 2px #666);
                             @media (width > 768px){
                                 width: 60%;
                             }
@@ -873,29 +917,32 @@ block page
                             }
                         }
 
-                    #game.transition-all.duration-300.text-center
+                    #game.text-center
                         #spiceSliderContainer.relative
                             #spiceSliderStatus.absolute.text-white
                                 #spiceSliderIndex
                                 #spiceSliderName.font-proxima-bold
                                 #spiceSliderQ
+                            #crushMessage.text-white Crush them all together until the spices becomes a powder
                             #spiceSlider.swiper
                                 // Additional required wrapper
                                 .swiper-wrapper
                                     // Slides
                                     for spice, index in garamMasalaSpices
                                         .swiper-slide(data-name=spice.name)
-                                            img(src=`${mediaFolder}RotarySpices/${spice.name.split(" ").join("")}.png` alt=`${spice.name}` id=`${spice.name.split(" ").join("")}` width=246 height=246)
+                                            img(src=`${mediaFolder}RotarySpices/${spice.name.split(" ").join("")}.png` alt=`${spice.name}` data-index=`${spice.id}` id=`${spice.name.split(" ").join("")}` width=246 height=246)
                                 div(class=" spiceSliderPrev absolute bg-red-400 top-1/2 -translate-y-1/2 z-50")
                                 div(class=" spiceSliderNext absolute bg-red-400 top-1/2 -translate-y-1/2 z-50")
                             div.text-white.absolute#drag-line drag to the stone bowl
-                            <img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBg" class="mx-auto relative z-0" src="../media/new-delhi/GaramMasalaBg.png" width="596" height="821">
+                            #GaramMasalaBgContainer.relative
+                                <img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBg" class="mx-auto relative z-0" src="../media/new-delhi/GaramMasalaBg.png" width="596" height="821" draggable="false">
+                                <img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBgEnd" class="mx-auto relative z-0" src="../media/new-delhi/end-game-bg.png" width="596" height="821" draggable="false">
 
 
                         #StoneBowlContainer.relative
                             #StoneBowlContainerDropZone.absolute.inset-0.w-full.h-full
-                            <img loading="lazy" id="StoneHammer" class="mx-auto absolute inset-0 m-auto pointer-events-none" src="../media/new-delhi/StoneHammer.png" width="497" height="383">
-                            <img loading="lazy" id="StoneBowl" class="mx-auto z-0 relative" src="../media/new-delhi/StoneBowl.png" width="676" height="682">
+                            <img loading="lazy" id="StoneHammer" class="mx-auto absolute inset-0 m-auto pointer-events-none" src="../media/new-delhi/StoneHammer.png" width="497" height="383" draggable="false">
+                            <img loading="lazy" id="StoneBowl" class="mx-auto z-0 relative" src="../media/new-delhi/StoneBowl.png" width="676" height="682" draggable="false">
 
 
 

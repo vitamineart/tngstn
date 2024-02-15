@@ -1,3 +1,4 @@
+// image gallery
 const gallerySwiper = new Swiper(".gallery", {
   autoplay: {
     delay: 5000
@@ -20,6 +21,7 @@ const gallerySwiper = new Swiper(".gallery", {
   }
 });
 
+// van animation
 gsap.from("#van", {
   scrollTrigger: {
     trigger: "#van",
@@ -32,16 +34,25 @@ gsap.from("#van", {
   ease: "expo.out()"
 });
 
+// ================
+// Garam Masala Game
+const game = document.querySelector("#game");
+const gameHeight = game.getBoundingClientRect();
+const crushMessage = document.querySelector("#crushMessage");
+const crushBtn = document.querySelector("#drag-line");
 const spiceSliderIndex = document.querySelector("#spiceSliderIndex");
 const spiceSliderName = document.querySelector("#spiceSliderName");
 const spiceSliderQ = document.querySelector("#spiceSliderQ");
+let draggedSpices = [];
 const dropZone = document.querySelector("#StoneBowlContainerDropZone");
 const cookBtn = document.querySelector("#cook-btn");
 const cookGaramMasala = document.querySelector("#cook-garam-masala");
 cookBtn.addEventListener("click", function (e) {
-  cookGaramMasala.classList.toggle("closed");
+  cookGaramMasala.classList.remove("closed");
+  gsap.to(window, { duration: 2, scrollTo: { y: cookGaramMasala, offsetY: 0 }, ease: "power2.inOut()" });
 });
 
+// spice rotator
 const spiceSwiper = new Swiper("#spiceSlider ", {
   autoplay: false,
   spaceBetween: 10,
@@ -55,22 +66,21 @@ const spiceSwiper = new Swiper("#spiceSlider ", {
   allowTouchMove: false,
   simulateTouch: false,
   zoom: true,
-  // keyboard: {
-  //   enabled: true
-  // },
+  keyboard: {
+    enabled: true
+  },
   spaceBetween: 0,
   on: {
     init: function (spiceSwiper) {
-      spiceSliderIndex.innerHTML = spiceSwiper.activeIndex + 1;
+      spiceSliderIndex.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").dataset.index;
       spiceSliderName.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].dataset.name;
-      console.log(spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img"));
-      // activeSlideImage.draggable = true;
     }
   }
 });
 
 const spiceImages = document.querySelectorAll("#spiceSlider img");
 
+// define prev next actions
 const spiceSliderPrev = document.querySelector(".spiceSliderPrev");
 const spiceSliderNext = document.querySelector(".spiceSliderNext");
 spiceSliderPrev.addEventListener("click", e => {
@@ -80,15 +90,47 @@ spiceSliderNext.addEventListener("click", e => {
   spiceSwiper.slideNext();
 });
 
+// display status of Spice (name, quantity, number )
 spiceSwiper.on("slideChange", spiceSwiper => {
-  let spiceName = spiceSwiper.slides[spiceSwiper.activeIndex].dataset.name;
-  spiceSliderName.innerHTML = spiceName;
-  spiceSliderIndex.innerHTML = spiceSwiper.activeIndex + 1;
+  spiceSliderName.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].dataset.name;
+  spiceSliderIndex.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").dataset.index;
   // spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").draggable = true;
   spiceSwiper.removeSlide[spiceSwiper.activeIndex - 1];
 });
 
-const draggedSpices = [];
+function restartGame() {
+  spiceSlider.style.display = "block";
+  cookGaramMasala.classList.add("closed");
+  spiceSliderName.classList.remove("congratulations");
+  spiceSwiper.init();
+  spiceSwiper.slideTo(0);
+  spiceSliderName.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].dataset.name;
+  spiceSliderIndex.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").dataset.index;
+  draggedSpices = [];
+  dropZone.innerHTML = "";
+  crushBtn.innerText = "drag to the stone bowl";
+  crushBtn.style.color = "#000";
+  crushBtn.style.background = "#ffffff99";
+  crushBtn.style.cursor = "default";
+  game.classList.remove("end-game");
+  spiceImages.forEach(image => {
+    image.draggable = true;
+  });
+}
+
+function finishCrushing() {
+  game.classList.toggle("end-game");
+  spiceSliderName.classList.add("congratulations");
+  spiceSliderName.innerHTML = "Congratulations!";
+  spiceSliderIndex.innerHTML = 10;
+  crushMessage.style.display = "none";
+  crushBtn.innerText = "End Game";
+  // spiceSwiper.destroy();
+  crushBtn.addEventListener("click", e => restartGame(e), { once: true });
+}
+
+// drag'n'drop actions
+
 spiceImages.forEach(image => {
   image.addEventListener("mouseenter", e => {
     if (draggedSpices.includes(e.target.id)) {
@@ -105,16 +147,18 @@ spiceImages.forEach(image => {
   });
 });
 
-dropZone.addEventListener("dragenter", e => {
-  const data = e.dataTransfer.getData("text/plain");
-  console.log(e.target.id);
-  if (draggedSpices.includes(e.target.id)) {
-    console.log("You'already added this spice!");
-  }
-});
+// dropZone.addEventListener("dragenter", e => {
+//   const data = e.dataTransfer.getData("text/plain");
+//   console.log(e.target.id);
+//   if (draggedSpices.includes(e.target.id)) {
+//     console.log("You'already added this spice!");
+//   }
+// });
+
 dropZone.addEventListener("dragover", e => {
   e.preventDefault();
 });
+
 dropZone.addEventListener("drop", e => {
   const data = e.dataTransfer.getData("text/plain");
   if (!draggedSpices.includes(data)) {
@@ -122,18 +166,21 @@ dropZone.addEventListener("drop", e => {
     scatteredSpice.src = `../media/new-delhi/ScatteredSpices/scattered${data}.png`;
     e.target.appendChild(scatteredSpice);
     draggedSpices.push(data);
+    spiceSwiper.slideNext();
     if (draggedSpices.length == 8) {
-      console.log("Crush them!");
+      spiceSlider.style.display = "none";
+      crushMessage.style.display = "block";
+      spiceSliderName.innerHTML = "";
+      spiceSliderIndex.innerHTML = 9;
 
-      const crushBtn = document.querySelector("#drag-line");
       crushBtn.innerText = "Click to crush the spices";
       crushBtn.style.background = "#fff";
       crushBtn.style.color = "#000";
       crushBtn.style.cursor = "pointer";
+
+      crushBtn.addEventListener("click", e => finishCrushing(e), { once: true });
     }
   } else {
     console.log("You'already added this spice!");
   }
-  spiceSwiper.slideNext();
-  console.log(draggedSpices);
 });
