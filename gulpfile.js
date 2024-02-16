@@ -129,14 +129,16 @@ function compileChunks() {
 
 function devStyles() {
   const tailwindcss = require("tailwindcss");
-  return src(`${options.paths.src.css}/**/*.scss`)
-    .pipe(sass().on("error", sass.logError))
-    .pipe(dest(options.paths.src.css))
-    .pipe(postcss([tailwindcss(options.config.tailwindjs), require("autoprefixer")]))
-    .pipe(concat({ path: "style.css" }))
-    .pipe(cleanCSS())
-    .pipe(dest(options.paths.dist.css))
-    .pipe(browserSync.stream());
+  return (
+    src(`${options.paths.src.css}/**/*.scss`)
+      .pipe(sass().on("error", sass.logError))
+      .pipe(dest(options.paths.src.css))
+      .pipe(postcss([tailwindcss(options.config.tailwindjs), require("autoprefixer")]))
+      .pipe(concat({ path: "style.css" }))
+      // .pipe(cleanCSS())
+      .pipe(dest(options.paths.dist.css))
+      .pipe(browserSync.stream())
+  );
 }
 
 function devScripts() {
@@ -250,23 +252,25 @@ function devClean() {
 
 //Production Tasks (Optimized Build for Live/Production Sites)
 function prodHTML() {
-  return src(`${options.paths.dist.base}/*.html`)
-    .pipe(replace(".png", ".webp"))
-    .pipe(replace(".jpg", ".webp"))
-    .pipe(replace(".jpeg", ".webp"))
-    .pipe(replace("../js", "js"))
-    .pipe(replace("../media", "media"))
-    .pipe(size({ title: "Before html minification " }))
-    .pipe(
-      htmlmin({
-        collapseWhitespace: true,
-        removeComments: true,
-        minifyCSS: true,
-        minifyJS: true
-      })
-    )
-    .pipe(size({ title: "After html minification " }))
-    .pipe(dest(options.paths.build.base));
+  return (
+    src(`${options.paths.dist.base}/*.html`)
+      .pipe(replace(".png", ".webp"))
+      .pipe(replace(".jpg", ".webp"))
+      .pipe(replace(".jpeg", ".webp"))
+      .pipe(replace("../js", "js"))
+      .pipe(replace("../media", "media"))
+      // .pipe(size({ title: "Before html minification " }))
+      // .pipe(
+      //   htmlmin({
+      //     collapseWhitespace: true,
+      //     removeComments: true,
+      //     minifyCSS: true,
+      //     minifyJS: true
+      //   })
+      // )
+      // .pipe(size({ title: "After html minification " }))
+      .pipe(dest(options.paths.build.base))
+  );
 }
 
 function prodStyles() {
@@ -275,6 +279,7 @@ function prodStyles() {
     .pipe(
       purgecss({
         content: ["dist/**/*.{html,js}"],
+        css: ["dist/css/style.css"],
         defaultExtractor: content => {
           const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
           const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [];
@@ -290,7 +295,7 @@ function prodStyles() {
 }
 
 function prodScripts() {
-  return src(`${options.paths.dist.js}/**/*.js`).pipe(uglify()).pipe(dest(options.paths.build.js));
+  return src(`${options.paths.dist.js}/**/*.js`).pipe(replace(".png", ".webp")).pipe(replace(".jpg", ".webp")).pipe(replace(".jpeg", ".webp")).pipe(replace("../js", "js")).pipe(replace("../media", "media")).pipe(uglify()).pipe(dest(options.paths.build.js));
 }
 
 function prodImages() {

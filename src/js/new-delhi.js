@@ -47,6 +47,7 @@ let draggedSpices = [];
 const dropZone = document.querySelector("#StoneBowlContainerDropZone");
 const cookBtn = document.querySelector("#cook-btn");
 const cookGaramMasala = document.querySelector("#cook-garam-masala");
+const garamMasalaSection = document.querySelector("#garam-masala-section");
 cookBtn.addEventListener("click", function (e) {
   cookGaramMasala.classList.remove("closed");
   gsap.to(window, { duration: 2, scrollTo: { y: cookGaramMasala, offsetY: 0 }, ease: "power2.inOut()" });
@@ -72,11 +73,19 @@ const spiceSwiper = new Swiper("#spiceSlider ", {
   spaceBetween: 0,
   on: {
     init: function (spiceSwiper) {
-      spiceSliderIndex.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").dataset.index;
       spiceSliderName.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].dataset.name;
+      spiceSliderIndex.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").dataset.index;
+      spiceSliderQ.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").dataset.q;
     }
   }
 });
+
+// display status of Spice (name, quantity, number )
+function displaySpiceStatus() {
+  spiceSliderName.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].dataset.name;
+  spiceSliderIndex.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").dataset.index;
+  spiceSliderQ.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").dataset.q;
+}
 
 const spiceImages = document.querySelectorAll("#spiceSlider img");
 
@@ -90,12 +99,10 @@ spiceSliderNext.addEventListener("click", e => {
   spiceSwiper.slideNext();
 });
 
-// display status of Spice (name, quantity, number )
 spiceSwiper.on("slideChange", spiceSwiper => {
-  spiceSliderName.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].dataset.name;
-  spiceSliderIndex.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").dataset.index;
+  displaySpiceStatus();
   // spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").draggable = true;
-  spiceSwiper.removeSlide[spiceSwiper.activeIndex - 1];
+  // spiceSwiper.removeSlide[spiceSwiper.activeIndex - 1];
 });
 
 function restartGame() {
@@ -104,8 +111,7 @@ function restartGame() {
   spiceSliderName.classList.remove("congratulations");
   spiceSwiper.init();
   spiceSwiper.slideTo(0);
-  spiceSliderName.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].dataset.name;
-  spiceSliderIndex.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").dataset.index;
+  displaySpiceStatus();
   draggedSpices = [];
   dropZone.innerHTML = "";
   crushBtn.innerText = "drag to the stone bowl";
@@ -116,6 +122,7 @@ function restartGame() {
   spiceImages.forEach(image => {
     image.draggable = true;
   });
+  gsap.to(window, { duration: 2, scrollTo: { y: garamMasalaSection, offsetY: 0 }, ease: "power2.inOut()" });
 }
 
 function finishCrushing() {
@@ -163,7 +170,7 @@ dropZone.addEventListener("drop", e => {
   const data = e.dataTransfer.getData("text/plain");
   if (!draggedSpices.includes(data)) {
     const scatteredSpice = document.createElement("img");
-    scatteredSpice.src = `../media/new-delhi/ScatteredSpices/scattered${data}.png`;
+    scatteredSpice.src = `media/new-delhi/ScatteredSpices/scattered${data}.png`;
     e.target.appendChild(scatteredSpice);
     draggedSpices.push(data);
     spiceSwiper.slideNext();
@@ -172,6 +179,7 @@ dropZone.addEventListener("drop", e => {
       crushMessage.style.display = "block";
       spiceSliderName.innerHTML = "";
       spiceSliderIndex.innerHTML = 9;
+      spiceSliderQ.innerHTML = "";
 
       crushBtn.innerText = "Click to crush the spices";
       crushBtn.style.background = "#fff";
@@ -184,3 +192,14 @@ dropZone.addEventListener("drop", e => {
     console.log("You'already added this spice!");
   }
 });
+
+const gameTitle = document.querySelector("#garam-masala-section h2");
+const gameP = document.querySelectorAll("#garam-masala-section p");
+
+const garamAppearanceTL = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#garamMasala"
+  },
+  defaults: { y: 20, duration: 1, ease: "power3.out()" }
+});
+garamAppearanceTL.from(gameTitle, { opacity: 0 }).from(gameP, { opacity: 0 }, "<50%").from(cookGaramMasala, { opacity: 0 }, "<50%");
