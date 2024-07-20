@@ -63,6 +63,7 @@ block page
         dir: mediaFolder,
         ext: 'jpg',
         name: 'multi-racial-fists',
+        resolutions: 'default'
     })( width="1920" height="524" class="object-cover w-full" style="min-height: 130px;" alt="Four multi-racial fists, with political sticker on back of each hand.")
 
 
@@ -154,9 +155,14 @@ block page
                     div(class="border-2 border-dotted border-blue rounded-full absolute inset-0 m-auto z-10 map-container-circle" style="--size: 44%;")
                     div(class="border border-dotted border-blue rounded-full absolute inset-0 m-auto z-10 map-container-circle" style="--size: 22%;" )
                     div(class="rounded-full absolute z-10" id="san-francisco-pin" )
-                    img(loading="lazy" src="media/shamann-walton/san-francisco-city-map.png" id="san-francisco-city-map" width="140" height="201" class="absolute z-10" alt="San Francisco Map")
+                    +image(src="media/shamann-walton/san-francisco-city-map.png" id="san-francisco-city-map" width="140" height="201" class="absolute z-10" alt="San Francisco Map")
                     div(class="absolute inset-0 m-auto z-10 w-6 h-6 bg-blue " id="map-container-center" )
-                    img(loading="lazy" src="media/shamann-walton/SanFranciscoMap@620.png", srcset="media/shamann-walton/SanFranciscoMap@540.png 540w, media/shamann-walton/SanFranciscoMap@620.png 620w, media/shamann-walton/SanFranciscoMap@930.png 930w, media/shamann-walton/SanFranciscoMap@1240.png 1240w" class="absolute h-full w-full z-0" width="620" height="620" id="map-image" alt="San Francisco Bay Area Map")
+                    +image({
+                        resolutions: [540, 620, 930, 1240],
+                        dir: mediaFolder,
+                        name: 'SanFranciscoMap',
+                        ext: 'png',
+                    })(src="media/shamann-walton/SanFranciscoMap@620.png", class="absolute h-full w-full z-0" width="620" height="620" id="map-image" alt="San Francisco Bay Area Map")
 
                 div(class="-mt-72 xs:-mt-36 md:mt-0 relative")
                     div(class="float-right shape-outside-addition-circle rounded-full -mt-4" style="")

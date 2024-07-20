@@ -7,7 +7,7 @@ block variables
     - let ogImage = 'media/projects/cobham-white-papers/white-papers@936.jpg'
 
 prepend preload
-    link(rel="preload" as="image" imagesrcset=`../media/white-paper/white-papers@640.jpg 640w, ../media/white-paper/white-papers@768.jpg 768w, ../media/white-paper/white-papers@1024.jpg 1024w, ../media/white-paper/white-papers@1366.jpg 1366w, ../media/white-paper/white-papers@1600.jpg 1600w, ../media/white-paper/white-papers@1920.jpg 1920w` width="1920" height="834")
+    link(rel="preload" as="image" imagesrcset=`../media/white-paper/white-papers@640.jpg 640w, ../media/white-paper/white-papers@768.jpg 768w, ../media/white-paper/white-papers@1024.jpg 1024w, ../media/white-paper/white-papers@1366.jpg 1366w, ../media/white-paper/white-papers@1600.jpg 1600w, ../media/white-paper/white-papers@1920.jpg 1920w` width="1920" height="834" fetchpriority="high" decoding="async")
 
 append head
 
@@ -15,7 +15,9 @@ append head
 block page
     +image({
         loading: 'eager',
+        fetchpriority: 'high',
         dir: mediaFolder,
+        resolutions: 'default',
         ext: 'jpg',
         name: 'white-papers',
     })(alt="Display of multiple white papers design by Tungsten advertising agency for Cobham" width="1920" height="834" class="w-full")
@@ -150,13 +152,13 @@ block page
             div(class="pdf-slider-thumbs mt-10 mx-auto w-full sm:w-64 md:w-80")
                 div.swiper-wrapper
                     .swiper-slide.p-1
-                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper1_thumb.jpg" alt="WhitePaper1 Thumbnail" class="thumb active")
+                        +image(width="100" height="130"  src="media/white-paper/WhitePaper1_thumb.jpg" alt="WhitePaper1 Thumbnail" class="thumb active")
                     .swiper-slide.p-1
-                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper2_thumb.jpg" alt="WhitePaper2 Thumbnail" class="thumb")
+                        +image(width="100" height="130"  src="media/white-paper/WhitePaper2_thumb.jpg" alt="WhitePaper2 Thumbnail" class="thumb")
                     .swiper-slide.p-1
-                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper3_thumb.jpg" alt="WhitePaper3 Thumbnail" class="thumb")
+                        +image(width="100" height="130"  src="media/white-paper/WhitePaper3_thumb.jpg" alt="WhitePaper3 Thumbnail" class="thumb")
                     .swiper-slide.p-1
-                        img(loading="lazy" width="100" height="130"  src="media/white-paper/WhitePaper4_thumb.jpg" alt="WhitePaper4 Thumbnail" class="thumb")
+                        +image(width="100" height="130"  src="media/white-paper/WhitePaper4_thumb.jpg" alt="WhitePaper4 Thumbnail" class="thumb")
 
         .container.flow-root
             p It's important to note that the White Papers you see here are distinct from the product spec sheets and multiple brochures Tungsten has created for Cobham's individual products. They are different in the audience they appeal to, and in the way they are distributed to the audience.

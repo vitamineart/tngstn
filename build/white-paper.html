@@ -16,7 +16,7 @@
     <meta property="og:image" content="media/projects/cobham-white-papers/white-papers@936.webp">
     <meta property="og:url" content="https://tungstenadvertising.com/white-paper">
     <title>Tungsten's White Papers Services: Turning Techspeak into English</title>
-    <link rel="preload" as="image" imagesrcset="media/white-paper/white-papers@640.webp 640w, media/white-paper/white-papers@768.webp 768w, media/white-paper/white-papers@1024.webp 1024w, media/white-paper/white-papers@1366.webp 1366w, media/white-paper/white-papers@1600.webp 1600w, media/white-paper/white-papers@1920.webp 1920w" width="1920" height="834">
+    <link rel="preload" as="image" imagesrcset="media/white-paper/white-papers@640.webp 640w, media/white-paper/white-papers@768.webp 768w, media/white-paper/white-papers@1024.webp 1024w, media/white-paper/white-papers@1366.webp 1366w, media/white-paper/white-papers@1600.webp 1600w, media/white-paper/white-papers@1920.webp 1920w" width="1920" height="834" fetchpriority="high" decoding="async">
     <link rel="preload" href="fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
     <link rel="preload" href="fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
     <style class="font-style">@font-face { font-family: "ProximaNovaA-Bold"; src: url('fonts/ProximaNovaABold.woff2') format('woff2'), url('fonts/ProximaNovaABold.woff') format('woff'); font-display: swap; } @font-face { font-family: "ProximaNovaA-Regular"; src: url('fonts/ProximaNovaARegular.woff2') format('woff2'), url('fonts/ProximaNovaARegular.woff') format('woff'); font-display: swap;}</style>
@@ -80,9 +80,9 @@
             <use xlink:href="media/icons/icons-sprite-mono.svg#envelope-closed"></use>
           </svg></a></div>
     </header>
-    <main class="relative pt-px"><img class="w-full" width="1920" height="834" alt="Display of multiple white papers design by Tungsten advertising agency for Cobham" src="media/white-paper/white-papers@1920.webp" loading="eager" srcset="
-            media/white-paper/white-papers@640.webp 640w,media/white-paper/white-papers@768.webp 768w,media/white-paper/white-papers@1024.webp 1024w,media/white-paper/white-papers@1366.webp 1366w,media/white-paper/white-papers@1600.webp 1600w,media/white-paper/white-papers@1920.webp 1920w
-        "/>
+    <main class="relative pt-px overflow-x-hidden"><img class="w-full" width="1920" height="834" alt="Display of multiple white papers design by Tungsten advertising agency for Cobham" src="media/white-paper/white-papers@1920.webp" loading="eager" decoding="async" fetchpriority="high" srcset="
+                media/white-paper/white-papers@640.webp 640w,media/white-paper/white-papers@768.webp 768w,media/white-paper/white-papers@1024.webp 1024w,media/white-paper/white-papers@1366.webp 1366w,media/white-paper/white-papers@1600.webp 1600w,media/white-paper/white-papers@1920.webp 1920w
+            "/>
       <header class="page-title pt-5 pb-4 sm:pt-8 sm:pb-6 relative">
         <div class="container">
           <div class="tag-client relative inline-block font-proxima-bold px-2 py-0.5 bg-blue-light text-white ">Cobham</div>
@@ -115,9 +115,9 @@
             <p class="mt-4 md:mt-6  font-proxima-bold italic text-lg">The reader of a White Paper is looking to understand how a particular technology, product or method is a superior choice when solving a specific business problem.</p>
           </div>
         </div>
-        <div class="container flow-root" style="perspective: 400px;"><img class="shape-outside xs:float-right mx-auto -mt-4 translate-x-5 xs:translate-x-0 mb-4" id="roll-pitch-yaw-graph" width="315" height="257" alt="Illustration of roll, pitch and yaw movements of an oil tanker" src="media/white-paper/roll-pitch-yaw-graph@945.webp" loading="lazy" srcset="
-            media/white-paper/roll-pitch-yaw-graph@630.webp 630w,media/white-paper/roll-pitch-yaw-graph@945.webp 945w,media/white-paper/roll-pitch-yaw-graph@1260.webp 1260w
-        " sizes="315px" data-shape="media/white-paper/roll-pitch-yaw-graph-shape.svg"/>
+        <div class="container flow-root" style="perspective: 400px;"><img class="shape-outside xs:float-right mx-auto -mt-4 translate-x-5 xs:translate-x-0 mb-4" id="roll-pitch-yaw-graph" width="315" height="257" alt="Illustration of roll, pitch and yaw movements of an oil tanker" src="media/white-paper/roll-pitch-yaw-graph@945.webp" loading="lazy" decoding="async" fetchpriority="low" sizes="315px" srcset="
+                media/white-paper/roll-pitch-yaw-graph@630.webp 630w,media/white-paper/roll-pitch-yaw-graph@945.webp 945w,media/white-paper/roll-pitch-yaw-graph@1260.webp 1260w
+            " data-shape="media/white-paper/roll-pitch-yaw-graph-shape.svg"/>
           <p class="mt-4 md:mt-6">White Papers are especially important for highly technical products with long sales cycles, or products used in critical situations. A company investing in such a product will typically go through an extensive decision-making process that spans multiple departments and levels inside the company.</p>
           <p class="mt-4 md:mt-6">Some executives on the selection committee will come from non-technical backgrounds, but need to contribute to the buying decision in an informed way. Busy executives seek plain-language explanations, presented in a journalistic or academic style, backed by statistics, facts and references to reliable sources.</p>
           <div class="my-6 md:my-10 max-w-xl mx-auto overflow-hidden bg-white" id="whyte-papers">
@@ -198,17 +198,21 @@
           </div>
           <div class="pdf-slider-thumbs mt-10 mx-auto w-full sm:w-64 md:w-80">
             <div class="swiper-wrapper">
-              <div class="swiper-slide p-1"><img class="thumb active" loading="lazy" width="100" height="130" src="media/white-paper/WhitePaper1_thumb.webp" alt="WhitePaper1 Thumbnail"></div>
-              <div class="swiper-slide p-1"><img class="thumb" loading="lazy" width="100" height="130" src="media/white-paper/WhitePaper2_thumb.webp" alt="WhitePaper2 Thumbnail"></div>
-              <div class="swiper-slide p-1"><img class="thumb" loading="lazy" width="100" height="130" src="media/white-paper/WhitePaper3_thumb.webp" alt="WhitePaper3 Thumbnail"></div>
-              <div class="swiper-slide p-1"><img class="thumb" loading="lazy" width="100" height="130" src="media/white-paper/WhitePaper4_thumb.webp" alt="WhitePaper4 Thumbnail"></div>
+              <div class="swiper-slide p-1"><img class="thumb active" width="100" height="130" alt="WhitePaper1 Thumbnail" src="media/white-paper/WhitePaper1_thumb.webp" loading="lazy" decoding="async" fetchpriority="low"/>
+              </div>
+              <div class="swiper-slide p-1"><img class="thumb" width="100" height="130" alt="WhitePaper2 Thumbnail" src="media/white-paper/WhitePaper2_thumb.webp" loading="lazy" decoding="async" fetchpriority="low"/>
+              </div>
+              <div class="swiper-slide p-1"><img class="thumb" width="100" height="130" alt="WhitePaper3 Thumbnail" src="media/white-paper/WhitePaper3_thumb.webp" loading="lazy" decoding="async" fetchpriority="low"/>
+              </div>
+              <div class="swiper-slide p-1"><img class="thumb" width="100" height="130" alt="WhitePaper4 Thumbnail" src="media/white-paper/WhitePaper4_thumb.webp" loading="lazy" decoding="async" fetchpriority="low"/>
+              </div>
             </div>
           </div>
         </div>
         <div class="container flow-root">
-          <p>It's important to note that the White Papers you see here are distinct from the product spec sheets and multiple brochures Tungsten has created for Cobham's individual products. They are different in the audience they appeal to, and in the way they are distributed to the audience.</p><img class="mx-auto " id="roll-pitch-yaw-graph3" width="708" height="430" alt="Illustration of three vessels with satellite overhead beaming signal as vessels roll, pitch and yaw." src="media/white-paper/roll-pitch-yaw-graph3@708.webp" loading="lazy" srcset="
-            media/white-paper/roll-pitch-yaw-graph3@500.webp 500w,media/white-paper/roll-pitch-yaw-graph3@708.webp 708w
-        " sizes="90vw, (min-width: 768px) 708px"/>
+          <p>It's important to note that the White Papers you see here are distinct from the product spec sheets and multiple brochures Tungsten has created for Cobham's individual products. They are different in the audience they appeal to, and in the way they are distributed to the audience.</p><img class="mx-auto " id="roll-pitch-yaw-graph3" width="708" height="430" alt="Illustration of three vessels with satellite overhead beaming signal as vessels roll, pitch and yaw." src="media/white-paper/roll-pitch-yaw-graph3@708.webp" loading="lazy" decoding="async" fetchpriority="low" sizes="90vw, (min-width: 768px) 708px" srcset="
+                media/white-paper/roll-pitch-yaw-graph3@500.webp 500w,media/white-paper/roll-pitch-yaw-graph3@708.webp 708w
+            "/>
           <p class="mt-4 md:mt-6">Most of the White Papers you see on these pages were printed and distributed worldwide at the trade shows Cobham participated in, or were mailed to dealerships, or made available as online PDFs.</p>
           <p class="mt-4 md:mt-6">Tungsten brings objective input to a brand. These beautiful examples of marketing communications are a result of Tungsten's close working relationship with its client, and a deep understanding of the client's business, technology, and target audiences.</p>
         </div></div>
@@ -243,81 +247,81 @@
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Cobham</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Brand Advertising</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Leisure yacht with two Cobham maritime antenna on mast" src="media/projects/cobham-brand/luxury-yacht@780.webp" loading="lazy" srcset="
-            media/projects/cobham-brand/luxury-yacht@510.webp 510w,media/projects/cobham-brand/luxury-yacht@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="cobham-seatel-datasheets" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Leisure yacht with two Cobham maritime antenna on mast" src="media/projects/cobham-brand/luxury-yacht@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/cobham-brand/luxury-yacht@510.webp 510w,media/projects/cobham-brand/luxury-yacht@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="cobham-seatel-datasheets" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">satellite communications</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Cobham</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Data Sheets, Print</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="undefined" src="media/projects/cobham-datasheets/sea-tel-4012@780.webp" loading="lazy" srcset="
-            media/projects/cobham-datasheets/sea-tel-4012@510.webp 510w,media/projects/cobham-datasheets/sea-tel-4012@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="davis-instruments" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="undefined" src="media/projects/cobham-datasheets/sea-tel-4012@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/cobham-datasheets/sea-tel-4012@510.webp 510w,media/projects/cobham-datasheets/sea-tel-4012@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="davis-instruments" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">industrial</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Davis Instruments</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Video</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Tightrope walker Nik Wallenda traversing a wire over Las Vegas" src="media/projects/davis-instruments/wallenda-in-vegas@780.webp" loading="lazy" srcset="
-            media/projects/davis-instruments/wallenda-in-vegas@510.webp 510w,media/projects/davis-instruments/wallenda-in-vegas@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="ambassador-toys" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Tightrope walker Nik Wallenda traversing a wire over Las Vegas" src="media/projects/davis-instruments/wallenda-in-vegas@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/davis-instruments/wallenda-in-vegas@510.webp 510w,media/projects/davis-instruments/wallenda-in-vegas@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="ambassador-toys" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">Retail</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Ambassador Toys</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Newspaper, Web</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Teddy bear floating on clouds, wearing San Francisco Giants shirt and cap" src="media/projects/ambassador-toys/sf-giants-teddy-bear@780.webp" loading="lazy" srcset="
-            media/projects/ambassador-toys/sf-giants-teddy-bear@510.webp 510w,media/projects/ambassador-toys/sf-giants-teddy-bear@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="tom-meyers-illustrations" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Teddy bear floating on clouds, wearing San Francisco Giants shirt and cap" src="media/projects/ambassador-toys/sf-giants-teddy-bear@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/ambassador-toys/sf-giants-teddy-bear@510.webp 510w,media/projects/ambassador-toys/sf-giants-teddy-bear@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="tom-meyers-illustrations" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">financial services</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Pacific Equity Partners</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Hand Illustration</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Hand-drawn cartoon illustration by Tom Meyer, alongside a Rotring pen." src="media/projects/tom-meyer/tom-meyer-drawing@780.webp" loading="lazy" srcset="
-            media/projects/tom-meyer/tom-meyer-drawing@510.webp 510w,media/projects/tom-meyer/tom-meyer-drawing@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="shamann-walton" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Hand-drawn cartoon illustration by Tom Meyer, alongside a Rotring pen." src="media/projects/tom-meyer/tom-meyer-drawing@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/tom-meyer/tom-meyer-drawing@510.webp 510w,media/projects/tom-meyer/tom-meyer-drawing@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="shamann-walton" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">political advertising</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Shamann Walton</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Television Commercial</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Four multi-racial fists, with political sticker on back of each hand." src="media/projects/shamann-walton/multi-racial-fists@780.webp" loading="lazy" srcset="
-            media/projects/shamann-walton/multi-racial-fists@510.webp 510w,media/projects/shamann-walton/multi-racial-fists@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="porziuncola" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Four multi-racial fists, with political sticker on back of each hand." src="media/projects/shamann-walton/multi-racial-fists@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/shamann-walton/multi-racial-fists@510.webp 510w,media/projects/shamann-walton/multi-racial-fists@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="porziuncola" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">non-profit</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Porziuncola Nuova</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Print, Collateral</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Fresco on façade of Porziuncola, depicting St. Francis receiving “Pardon of Assisi&quot; from Christ" src="media/projects/porziuncola/porziuncola@780.webp" loading="lazy" srcset="
-            media/projects/porziuncola/porziuncola@510.webp 510w,media/projects/porziuncola/porziuncola@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="alaska" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Fresco on façade of Porziuncola, depicting St. Francis receiving “Pardon of Assisi&quot; from Christ" src="media/projects/porziuncola/porziuncola@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/porziuncola/porziuncola@510.webp 510w,media/projects/porziuncola/porziuncola@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="alaska" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">non-profit</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Friends of Alaska Marine Highway System</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Website, Digital Marketing</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Illustration of Alaskan ferry MV Malaspina" src="media/projects/alaska/mv-malaspina@780.webp" loading="lazy" srcset="
-            media/projects/alaska/mv-malaspina@510.webp 510w,media/projects/alaska/mv-malaspina@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="new-delhi" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Illustration of Alaskan ferry MV Malaspina" src="media/projects/alaska/mv-malaspina@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/alaska/mv-malaspina@510.webp 510w,media/projects/alaska/mv-malaspina@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="new-delhi" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">Telecom</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">New Delhi Restaurant</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Web</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="undefined" src="media/projects/new-delhi/new-delhi@780.webp" loading="lazy" srcset="
-            media/projects/new-delhi/new-delhi@510.webp 510w,media/projects/new-delhi/new-delhi@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a>
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="undefined" src="media/projects/new-delhi/new-delhi@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/new-delhi/new-delhi@510.webp 510w,media/projects/new-delhi/new-delhi@780.webp 780w
+            "/></a>
         </div>
       </div>
     </section>

@@ -19,10 +19,9 @@
     <link rel="preload" href="fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
     <link rel="preload" href="fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
     <style class="font-style">@font-face { font-family: "ProximaNovaA-Bold"; src: url('fonts/ProximaNovaABold.woff2') format('woff2'), url('fonts/ProximaNovaABold.woff') format('woff'); font-display: swap; } @font-face { font-family: "ProximaNovaA-Regular"; src: url('fonts/ProximaNovaARegular.woff2') format('woff2'), url('fonts/ProximaNovaARegular.woff') format('woff'); font-display: swap;}</style>
-    <link rel="preload" as="image" href="media/new-delhi/figure.svg" fetchpriority="high">
     <link rel="preload" as="image" href="media/new-delhi/noise.svg" fetchpriority="high">
-    <link rel="preload" as="image" href="media/new-delhi/new-delhi-bg@1024.webp" imagesrcset="media/new-delhi/new-delhi-bg@640.webp 640w,media/new-delhi/new-delhi-bg@768.webp 768w,media/new-delhi/new-delhi-bg@1024.webp 1024w,media/new-delhi/new-delhi-bg@1366.webp 1366w,media/new-delhi/new-delhi-bg@1600.webp 1600w,media/new-delhi/new-delhi-bg@1920.webp 1920w" fetchpriority="high">
-    <link rel="preload" as="image" href="media/new-delhi/Rajan@1x.webp" srcset="media/new-delhi/Rajan@1x.webp 1x,media/new-delhi/Rajan@2x.webp 2x" imagesizes="50vw, (min-width: 1024px) 771px" fetchpriority="high">
+    <link rel="preload" as="image" href="media/new-delhi/new-delhi-bg-blurred.webp" decoding="async" fetchpriority="high">
+    <link rel="preload" as="image" href="media/new-delhi/Rajan@1x.webp" srcset="media/new-delhi/Rajan@1x.webp 1x,media/new-delhi/Rajan@2x.webp 2x" imagesizes="80vw, (min-width: 1024px) 771px" fetchpriority="high">
     <link href="css/style.css" rel="stylesheet">
     <style>
       :root {
@@ -34,7 +33,7 @@
       
       }
       main {
-          overflow-x: hidden;
+      
       }
       #ndr {
           border: clamp(5px, 2vw, 8px) solid #F1EEE6;
@@ -43,30 +42,15 @@
           margin-right: var(--margin);
           margin-top: var(--margin);
           margin-bottom: var(--margin);
-          --shift: -34px;
+          --shift: -24px;
           margin-left: var(--shift);
           scale: 1.1;
           .plaque {
               position: absolute;
               left: 42.6%;
-              top: 62%;
-              scale: 0;
-              rotate: 360deg;
+              top: 60%;
+              scale: 0.9;
               translate: -50% -50%;
-              transition: all .4s ease;
-              filter: saturate(1.1) contrast(1.2) brightness(1.2);
-          }
-          .bg-img {
-              transition: all 1s ease;
-          }
-          &:hover .bg-img {
-              filter: blur(2px) sepia(.6);
-          }
-          &:hover .plaque {
-              scale: 1;
-              rotate: 0deg;
-              top: 35%;
-              left: 20%;
           }
           @media (width > 380px) {
               --shift: -50px;
@@ -85,20 +69,30 @@
           }
       }
       #star-anise {
-          width: 90px;
+          float: right;
+          width: 120px;
+          margin-top: 50px;
           --shift-right: -35px;
           margin-right: var(--shift-right);
-          @media (width >= 640px) {
-              width: 120px;
-              --shift-right: -30px;
+          @media (width >= 480px) {
+              width: 150px;
+              --shift-right: -10px;
               margin-top: 0;
               shape-margin: 50px;
           }
-          @media (width > 1023px) {
+          @media (width > 640px) {
               width: 218px;
-              --shift-right: -30px;
-              margin-top: -100px;
-              shape-margin: 100px;
+              --shift-right: 0;
+          }
+          @media (878px < width < 1280px) {
+              float: none;
+              position: absolute;
+              right: 0;
+          }
+          @media (width > 1280px) {
+              width: 230px;
+              --shift-right: 0;
+              margin-top: -40px;
           }
       }
       #fancy-figure-top {
@@ -143,7 +137,7 @@
       #rajan {
           margin-right: -80px;
           margin-top: 760px;
-          width: 60vw;
+          width: min(80vw, 771px);
           @media (width > 360px) {
               margin-top: 700px;
           }
@@ -161,7 +155,6 @@
           }
           @media (width > 600px) {
               margin-top: 450px;
-              width: 65vw;
           }
           @media (width > 768px) {
               margin-top: 400px;
@@ -169,7 +162,6 @@
           @media (width > 1023px) {
               margin-right: -120px;
               margin-top: 260px;
-              width: 771px;
               shape-margin: 10px;
           }
       }
@@ -237,10 +229,12 @@
             <use xlink:href="media/icons/icons-sprite-mono.svg#envelope-closed"></use>
           </svg></a></div>
     </header>
-    <main class="relative pt-px">
-      <div class="absolute w-full inset-0 h-full z-10 overflow-hidden pointer-events-none"><img class="z-10 object-cover" width="1920" height="917" alt="New Dehli Restaurant Background" src="media/new-delhi/new-delhi-bg@1920.webp" loading="eager" srcset="
-            media/new-delhi/new-delhi-bg@640.webp 640w,media/new-delhi/new-delhi-bg@768.webp 768w,media/new-delhi/new-delhi-bg@1024.webp 1024w,media/new-delhi/new-delhi-bg@1366.webp 1366w,media/new-delhi/new-delhi-bg@1600.webp 1600w,media/new-delhi/new-delhi-bg@1920.webp 1920w
-        " fetchpriority="high" decoding="async" style="min-height:400px;"/>
+    <main class="relative pt-px overflow-x-hidden">
+      <div class="absolute w-full inset-0 h-full z-10 overflow-hidden pointer-events-none">
+        <div class="blur-load bg-no-repeat bg-cover w-full" style="background-image: url(media/new-delhi/new-delhi-bg-blurred.webp);aspect-ratio: 1920 / 917;"><img class="z-10 object-cover w-full" width="1920" height="917" alt="New Dehli Restaurant Background" src="media/new-delhi/new-delhi-bg@1920.webp" loading="lazy" decoding="async" fetchpriority="low" style="aspect-ratio: 1920 / 917;min-height:400px;" srcset="
+                media/new-delhi/new-delhi-bg@640.webp 640w,media/new-delhi/new-delhi-bg@768.webp 768w,media/new-delhi/new-delhi-bg@1024.webp 1024w,media/new-delhi/new-delhi-bg@1366.webp 1366w,media/new-delhi/new-delhi-bg@1600.webp 1600w,media/new-delhi/new-delhi-bg@1920.webp 1920w
+            "/>
+        </div>
         <div class="relative z-0" style="margin-top: -1px;">
           <div class="py-1 border-t-2 border-b-2 border-current absolute w-full l-0 r-0 top-0 z-10" style="color: #DEA626; height: 34px;">
             <div class="mix-blend-lighten opacity-30 w-full h-full absolute inset-0" style="background: repeating-linear-gradient(90deg, #fff, transparent 5%, #fff 10%);"></div>
@@ -264,40 +258,18 @@
 <path fill="#DBB778" d="M592.31 119.872s6.48-13.12 6.48-16.714c0-3.594-2.7-6.47-6.3-6.83-3.599 0-6.659 2.876-6.659 6.47-.18 3.595 6.479 17.074 6.479 17.074Zm-3.059 1.977s-13.679-5.931-16.018-8.807c-2.34-2.875-1.8-6.829.899-9.165 2.88-2.337 6.84-1.977 9.179.898 2.34 2.876 5.94 17.074 5.94 17.074Zm5.939.718s13.499-5.93 15.838-8.626c2.34-2.696 1.98-6.829-.72-9.166-2.699-2.516-6.839-2.156-9.179.54-2.339 2.695-5.939 17.252-5.939 17.252Zm1.26 8.627c-1.44 2.336-4.32 3.235-6.659 1.797-2.34-1.438-3.24-4.313-1.8-6.65 1.44-2.336 4.319-3.234 6.659-1.797 2.34 1.258 3.24 4.313 1.8 6.65Zm81.351 8.626h-2.16c0-15.096-12.419-27.317-27.537-27.317-15.118 0-27.357 12.221-27.537 27.317h-2.16c0-16.354 13.319-29.473 29.697-29.473s29.517 13.119 29.697 29.473Z"/>
 <path fill="#DBB778" d="M648.104 132.452c-4.139 0-7.559 3.235-7.559 7.368h15.118c0-4.133-3.419-7.368-7.559-7.368Zm.72-2.516 1.8-12.401c0-1.437-1.26-2.695-2.7-2.695-1.44 0-2.7 1.258-2.7 2.695l1.8 12.401a.905.905 0 0 0 1.8 0Zm-9.539-10.604 4.5 11.682c.36.899-.9 1.618-1.26.719l-7.739-9.705c-.9-1.258-.36-2.875.9-3.594 1.259-.899 2.879-.36 3.599.898Zm-9.179 7.369c-1.26-.719-2.88-.36-3.599.898-.72 1.258-.36 2.876.899 3.595l11.699 4.493c.9.359 1.62-.899.9-1.438l-9.899-7.548Zm35.996-.36c1.26-.898 2.88-.359 3.6.899.72 1.258.36 2.876-.72 3.774l-11.699 4.493c-.9.36-1.62-.899-.9-1.438l9.719-7.728Zm-4.679-4.492c.72-1.258.36-2.876-.9-3.595-1.26-.719-2.88-.359-3.6.899l-4.499 11.681c-.54.899.72 1.438 1.259.719l7.74-9.704Zm8.999 15.096c1.439 0 2.699 1.258 2.699 2.875h-15.838c0-.539.18-.898.72-1.078l12.419-1.797Zm-31.497 2.875h-15.658a2.724 2.724 0 0 1 2.7-2.336l12.418 1.797.54.539ZM421.33 120.051s6.479-13.478 6.479-17.073c0-3.594-3.06-6.47-6.479-6.29-3.6 0-6.48 3.055-6.48 6.65 0 3.594 6.48 16.713 6.48 16.713Zm18.897-6.829c-2.339 2.696-16.018 8.806-16.018 8.806s3.6-14.197 5.94-17.073c2.339-2.875 6.479-3.235 9.179-.898 2.879 2.156 3.239 6.29.899 9.165Zm-37.615.719c2.339 2.696 15.838 8.626 15.838 8.626s-3.6-14.557-6.119-17.252c-2.34-2.696-6.48-2.876-9.179-.54-2.7 2.337-2.88 6.47-.54 9.166Zm21.237 19.05c-2.339 1.438-5.399.539-6.659-1.797-1.44-2.337-.54-5.392 1.8-6.65 2.34-1.437 5.399-.539 6.659 1.797 1.26 2.337.54 5.212-1.8 6.65Zm-30.956 6.829h2.16c0-16.354-13.319-29.473-29.517-29.473-16.378 0-29.697 13.119-29.697 29.473h1.98c.18-15.096 12.419-27.317 27.537-27.317 15.118 0 27.537 12.221 27.537 27.317Z"/>
 <path fill="#DBB778" d="M372.915 139.82h-15.118c0-4.133 3.419-7.368 7.559-7.368 4.139 0 7.559 3.235 7.559 7.368Zm-4.679-22.285-1.8 12.401c-.18 1.078-1.44 1.078-1.8 0l-1.8-12.401c0-1.437 1.26-2.695 2.7-2.695 1.44 0 2.7 1.258 2.7 2.695Zm3.059 14.378 7.739-9.705c.72-1.258.36-2.876-.9-3.594-1.259-.719-2.879-.36-3.599.898l-4.68 11.502c-.36.899.9 1.618 1.44.899Zm12.239-5.212c1.26-.899 2.88-.36 3.599.898.72 1.258.36 3.056-.719 3.775l-11.699 4.492c-.9.36-1.62-.898-.9-1.437l9.719-7.728Zm-35.996-.539c-1.26-.719-2.88-.36-3.6.898-.72 1.258-.36 2.876.9 3.595l11.699 4.493c.9.359 1.62-.899.9-1.438l-9.899-7.548Zm9.359-7.009 4.499 11.681c.36.899-.9 1.438-1.26.719l-7.739-9.704c-.9-1.258-.36-2.876.9-3.595 1.26-.898 2.88-.359 3.6.899Zm-.72 20.667h-15.658v-.179c0-1.438 1.26-2.696 2.699-2.696l12.239 1.797c.54.18.72.719.72 1.078Zm18.538 0h15.658c-.18-1.258-1.26-2.336-2.52-2.336l-12.418 1.797c-.36.18-.54.36-.72.539Z"/>
-</svg><img class="float-right shape-outside" id="rajan" width="771" height="757" alt="Rajan" src="media/new-delhi/Rajan@1x.webp" loading="eager" srcset="
-            media/new-delhi/Rajan@1x.webp 1x,media/new-delhi/Rajan@2x.webp 2x
-        " sizes="60vw, (min-width: 600px) 65vw, (min-width: 1024px) 771px" data-shape="media/new-delhi/rajan-shape.svg"/>
+</svg><img class="float-right shape-outside" id="rajan" width="771" height="757" alt="Rajan" src="media/new-delhi/Rajan@1x.webp" loading="eager" decoding="async" fetchpriority="low" sizes="80vw, (min-width: 1024px) 771px" srcset="
+                media/new-delhi/Rajan@1x.webp 1x,media/new-delhi/Rajan@2x.webp 2x
+            " data-shape="media/new-delhi/rajan-shape.svg"/>
             <header class="page-title pt-5 pb-4 sm:pt-8 sm:pb-6 relative">
               <div class="container">
                 <div class="tag-client relative inline-block font-proxima-bold px-2 py-0.5 bg-blue-light text-white " style="background-color: var(--c-new-delhi)">New Delhi Restaurant</div>
                 <h1 class="mt-10 mb-7 mt-4 font-proxima-bold leading-none text-blue-dark " style="color: #B92D00">The Celebrity Chef Cooking up a Legacy of Love and Belonging.</h1>
-                <p class="page-subtitle mt-3 leading-tight text-blue-dark my-2 lg:my-6">First off, we have to tell you that the food is really good. <br class="hidden lg:block"> Like, really good. So good that the New York Times calls it one of the finest Indian restaurants in the United States.</p><a class="btn-audio relative font-proxima-bold no-underline px-4 h-10 items-center inline-flex mt-6  transition-colors text-blue-dark hover:text-blue  -order-1 before:absolute before:h-10 before:left-0 before:w-1/4 before:border before:border-current before:rounded-tl before:rounded-bl before:border-r-0 after:absolute after:h-10 after:-right-3 after:w-3/4 after:border after:border-current after:rounded-tr after:rounded-br after:border-l-0" href="# ">
-                  <svg class="z-20 h-16 w-20 mr-4 inline-block relative" width="126" height="80" fill="none" viewBox="0 0 126 80" id="audio-wave" style="filter: saturate(1.5)">
-                    <path class="bar" fill="#3C5CA2" d="M50.4 0h-2.8v79.2h2.8V0z"></path>
-                    <path class="bar" fill="#805B75" d="M36.8 16.6H34v46h2.8v-46z"></path>
-                    <path class="bar" fill="#9F5A5F" d="M27.2 25.5H30v28.2h-2.8V25.5z"></path>
-                    <path class="bar" fill="#C45946" d="M23.2 33.7h-2.8v11.6h2.8V33.7z"></path>
-                    <path class="bar" fill="#D05F40" d="M13.6 35.4h2.8v8.3h-2.8v-8.3z"></path>
-                    <path class="bar" fill="#888D80" d="M2.8 37H0v4.5h2.8V37z"></path>
-                    <path class="bar" fill="#B0745D" d="M9.6 37H6.8v5h2.8v-5z"></path>
-                    <path class="bar" fill="#615B89" d="M40.8 19.3h2.8v41h-2.8v-41z"></path>
-                    <path class="bar" fill="#73488F" d="M64 16.6h-2.8v46H64v-46z"></path>
-                    <path class="bar" fill="#963D81" d="M68 25.5h2.8v27.7H68V25.5z"></path>
-                    <path class="bar" fill="#BB3172" d="M77.6 31.5h-2.8v16h2.8v-16z"></path>
-                    <path class="bar" fill="#D73C67" d="M81.6 31.5h2.8v16h-2.8v-16z"></path>
-                    <path class="bar" fill="#E78B62" d="M98 33.7h-2.8v11.7H98V33.7z"></path>
-                    <path class="bar" fill="#EFB35F" d="M102 35.4h2.8v8.3H102v-8.3z"></path>
-                    <path class="bar" fill="#F9E45C" d="M111.6 37h-2.8v5.1h2.8V37z"></path>
-                    <path class="bar" fill="#B7AA43" d="M115.6 37h2.8v5.1h-2.8V37z"></path>
-                    <path class="bar" fill="#F1BD5E" d="M125.2 37h-2.8v4.6h2.8V37z"></path>
-                    <path class="bar" fill="#766D2B" d="M125.2 37h-2.8v4.6h2.8V37z"></path>
-                    <path class="bar" fill="#DF6265" d="M88.4 28.7h2.8v21.6h-2.8V28.7z"></path>
-                    <path class="bar" fill="#4C549F" d="M54.4 6.5h2.8v65.8h-2.8V6.5z"></path>
-                  </svg><span class="text-base">Listen</span></a>
+                <p class="page-subtitle mt-3 leading-tight text-blue-dark my-2 lg:my-6">First off, we have to tell you that the food is really good. <br class="hidden lg:block"> Like, really good. So good that the New York Times calls it one of the finest Indian restaurants in the United States.</p>
               </div>
             </header>
             <div class=" container mt-0 sm:mt-4 lg:mt-10">
-              <div><svg class="float-left mr-4 mt-2 mb-1" width="90" height="93" viewBox="0 0 90 93" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div><svg class="float-left mr-1 mt-2 mb-1" width="90" height="93" viewBox="0 0 90 93" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M6.57993 9.89342C4.8589 10.8134 3.34034 12.2445 3.2391 14.3912C3.13786 17.049 4.75766 19.2979 7.49107 18.9912C8.09849 18.889 8.30097 17.7645 7.79478 17.4579C5.26385 15.8223 6.98488 12.0401 9.71829 12.6534C9.71829 12.7557 9.71829 12.8579 9.71829 12.9601C9.81953 14.1868 10.9331 15.1068 12.148 15.0045C12.4517 15.0045 12.7554 14.9023 13.0591 14.6979C13.5653 15.209 13.9703 15.7201 14.4764 16.3334C18.2222 21.5468 15.5901 26.1468 12.8566 31.0534C12.3505 31.9734 11.8443 32.8934 11.4393 33.9156C11.743 31.769 11.743 29.5201 10.8319 27.6801C8.60468 23.0801 1.92302 22.2623 0.201981 27.7823C-1.1141 32.1779 5.36509 36.6756 7.69354 31.9734C8.40221 30.6445 8.90839 27.9868 7.08612 27.169C5.26385 26.249 3.64405 27.2712 3.44158 29.3156C3.34034 30.2356 4.049 30.0312 4.55519 29.5201C4.75766 29.3156 5.77003 29.009 6.27622 29.6223C6.78241 30.3379 6.4787 31.769 5.26385 32.0756C5.06137 32.0756 4.8589 32.1779 4.65642 32.1779C3.94776 32.2801 3.2391 32.0756 2.53044 31.6668C0.303218 29.8268 1.01188 26.0445 3.94776 25.4312C6.88365 24.8179 9.71829 26.7601 10.2245 29.8268C10.6294 32.5868 10.3257 35.449 9.51582 38.209C9.11087 39.3334 8.70592 40.3556 8.40221 41.4801V41.5823C7.89602 42.809 7.38983 43.9334 6.78241 45.0579C6.78241 43.9334 6.57993 42.809 5.87127 42.0934C4.96014 41.0712 3.54281 40.7645 2.53044 41.6845C1.72054 42.4001 1.41683 44.1379 1.72054 45.2623C2.02425 46.489 3.13786 47.409 4.15024 46.3868C4.35271 46.1823 4.45395 44.649 4.15024 44.9556C3.84653 45.2623 3.34034 45.3645 2.93539 45.1601C2.4292 44.8534 1.72054 43.9334 2.22673 43.4223C2.63168 43.0134 3.34034 42.7068 4.049 42.9112C6.27622 43.5245 5.97251 46.8979 5.46632 49.3512C5.46632 49.3512 5.46632 49.3512 5.36509 49.3512C4.65642 49.3512 4.15024 49.9645 4.25147 50.6801C4.25147 51.089 4.55519 51.4979 4.8589 51.7023C4.8589 51.7023 4.8589 51.7023 4.8589 51.8045C4.75766 52.2134 4.65642 52.6223 4.55519 53.0312C3.84652 53.1334 3.2391 53.849 3.34034 54.5645C3.34034 55.0756 3.64405 55.4845 4.15024 55.7912C4.049 56.0979 4.049 56.609 4.049 57.1201C3.34034 57.3245 2.83415 58.0401 2.93539 58.8579C3.03663 59.5734 3.44158 60.1868 4.049 60.3912C4.049 61.0045 4.15024 61.5156 4.25147 62.129C3.64405 62.5379 3.2391 63.2534 3.2391 63.969C3.34034 64.9912 4.25147 65.809 5.26385 65.809C5.46632 66.2179 5.6688 66.6268 5.87127 67.0357C5.87127 67.1379 5.97251 67.2401 5.97251 67.3423C5.6688 67.7512 5.46632 68.2623 5.56756 68.8756C5.6688 70.1023 6.78241 71.0223 7.99726 70.9201C8.19973 70.9201 8.4022 70.8179 8.50344 70.8179C10.6294 73.169 13.4641 74.9068 16.7037 75.009C16.7037 75.009 16.7037 75.009 16.8049 75.009C16.8049 75.4179 16.8049 75.8268 16.8049 76.1334C16.9061 79.4045 18.6272 82.2668 20.9556 84.4134C20.8544 84.6179 20.8544 84.8223 20.8544 84.9245C20.7532 86.1512 21.6643 87.2756 22.8791 87.3779C23.3853 87.3779 23.9928 87.2756 24.3977 86.969C24.4989 86.969 24.6002 87.0712 24.7014 87.0712C25.1064 87.2756 25.5113 87.4801 25.9163 87.6845C25.9163 88.7068 26.7262 89.6268 27.7385 89.729C28.5484 89.8312 29.2571 89.4223 29.5608 88.7068C30.067 88.809 30.5732 88.9112 31.1806 88.9112C31.3831 89.5245 31.9905 90.0356 32.6992 90.0356C33.5091 90.1379 34.2177 89.6268 34.4202 88.9112C34.9264 88.9112 35.4326 88.809 35.8375 88.809C36.04 89.2179 36.445 89.5245 37.0524 89.6268C37.761 89.729 38.4697 89.1156 38.5709 88.4001C38.9759 88.2979 39.3808 88.1956 39.7858 88.0934C39.7858 88.0934 39.7858 88.0934 39.887 88.0934C40.0895 88.4001 40.3932 88.7068 40.8994 88.7068C41.6081 88.7068 42.2155 88.1956 42.2155 87.5823C42.2155 87.5823 42.2155 87.5823 42.2155 87.4801C44.5439 86.969 47.8848 86.6623 48.4922 88.9112C48.6947 89.5245 48.391 90.2401 47.8848 90.7512C47.2773 91.2623 46.3662 90.5468 46.1637 90.0356C45.9613 89.6268 45.9613 89.1156 46.3662 88.809C46.6699 88.5023 45.2526 88.6045 44.9489 88.809C43.9365 89.8312 44.8477 91.0579 46.0625 91.2623C47.0749 91.4668 48.7959 91.2623 49.6058 90.4445C50.5169 89.3201 50.2132 87.9912 49.2009 87.0712C48.391 86.3556 47.2773 86.1512 46.265 86.1512C47.3786 85.5379 48.4922 85.0268 49.707 84.5156H49.8083C50.9219 84.209 52.0355 83.8001 53.0479 83.3912C55.7813 82.6756 58.6159 82.2668 61.3493 82.6757C64.3865 83.0845 66.31 85.9468 65.7025 89.0134C65.0951 91.9779 61.4506 92.6934 59.5271 90.4445C59.1221 89.8312 58.9196 89.1156 59.0209 88.2979C59.0209 88.0934 59.1221 87.889 59.1221 87.6845C59.4258 86.4579 60.9444 86.1512 61.5518 86.6623C62.1592 87.1734 61.9568 88.1956 61.6531 88.4001C61.1469 88.9112 60.9444 89.6268 61.8555 89.5245C63.8803 89.3201 64.7914 87.6845 63.9815 85.8445C63.0704 84.0045 60.5394 84.5156 59.2234 85.2312C54.6677 87.6845 59.1221 94.2268 63.3741 92.7956C68.8409 91.0579 68.031 84.3112 63.4753 82.0623C61.653 81.1423 59.4258 81.1423 57.2998 81.449C58.211 80.9379 59.2234 80.529 60.1345 80.0179C64.9939 77.2579 69.5496 74.6001 74.7127 78.3823C75.3201 78.7912 75.8263 79.3023 76.3325 79.8134C76.13 80.1201 76.0288 80.4268 76.0288 80.7334C75.9275 81.9601 76.8387 83.0845 78.0535 83.1868C78.1547 83.1868 78.256 83.1868 78.3572 83.1868C78.9646 85.9468 75.2188 87.7868 73.5991 85.129C73.2953 84.6179 72.1817 84.8223 72.0805 85.4356C71.7768 88.2979 73.9028 89.9334 76.6362 89.729C78.7622 89.6268 80.1795 88.0934 81.0906 86.3557C84.0265 89.4223 89.5946 87.6845 89.8983 82.9823C89.9995 82.1645 88.6834 82.369 88.3797 82.7779C86.1525 86.2534 82.9129 84.3112 80.1795 81.8579C80.2807 81.6534 80.382 81.3468 80.382 81.0401C80.4832 79.8134 79.5721 78.689 78.3572 78.5868C77.9523 78.5868 77.5473 78.689 77.2436 78.7912C76.9399 78.4845 76.7374 78.2801 76.5349 78.0756C74.3077 76.0312 71.0681 74.8045 68.1322 75.2134C64.8926 75.6223 62.2605 77.2579 59.5271 78.8934C57.0974 80.3245 54.5664 81.5512 51.9343 82.4712C51.3268 82.6757 50.7194 82.8801 50.112 83.0845C50.7194 82.4712 51.3268 81.6534 51.6306 80.8356C53.8578 75.8268 50.5169 71.329 46.0625 69.3868C42.8229 67.9557 37.761 66.4223 34.0153 73.3734C33.6103 74.089 33.2054 74.7023 32.8004 75.3157C31.4843 77.3601 27.4348 78.2801 26.9286 75.5201C26.8274 74.9068 25.5113 75.2134 25.4101 75.7245C24.4989 77.9734 25.815 80.8357 28.4472 81.1423C29.8645 81.3468 31.1806 81.0401 32.2942 80.4268C31.8893 82.1645 31.5856 84.0045 31.5856 85.7423C31.5856 85.8445 31.5856 85.8445 31.5856 85.9468C31.5856 86.3557 32.4967 86.3556 32.9016 86.049C34.8252 84.7201 35.5338 82.7779 35.8375 80.8356C37.3561 82.5734 39.9883 83.289 42.3167 82.4712C45.1514 81.449 47.5811 78.3823 45.5563 75.4179C44.2402 73.3734 40.5957 73.8845 40.0895 76.3379C39.887 77.5645 40.292 78.689 41.4056 79.3023C41.8105 79.5068 42.2155 79.5068 42.6204 79.4045C41.0006 80.8357 37.6598 80.0179 37.1536 77.769C36.9511 76.6445 37.1536 75.3156 37.4573 74.2934C39.1784 68.1601 47.986 71.4312 49.9095 74.3957C52.9466 79.0979 49.2009 83.289 45.2526 85.3334C44.139 85.8445 43.0254 86.3556 41.8105 86.7645C41.6081 86.5601 41.3043 86.4579 41.0006 86.3556C40.3932 86.3556 39.7858 86.7645 39.6845 87.3779C39.2796 87.4801 38.7734 87.5823 38.3685 87.6845C38.166 87.2757 37.761 86.8668 37.1536 86.8668C36.445 86.7645 35.7363 87.3779 35.6351 88.0934C35.2301 88.0934 34.8252 88.1956 34.4202 88.1956C34.2177 87.4801 33.6103 86.8668 32.9016 86.8668C32.0917 86.5601 31.3831 87.0712 31.1806 87.889C30.6744 87.7868 30.2695 87.7868 29.7633 87.6845C29.7633 86.6623 28.9534 85.8445 27.941 85.7423C27.2324 85.7423 26.6249 85.9468 26.22 86.4579C25.815 86.2534 25.5113 86.049 25.1064 85.8445C25.2076 85.7423 25.3088 85.5379 25.3088 85.2312C25.4101 84.0045 24.4989 82.8801 23.2841 82.7779C22.7779 82.7779 22.2717 82.8801 21.8668 83.1868C21.7655 83.0845 21.5631 82.8801 21.4618 82.7779C19.4371 80.529 18.4247 77.769 18.4247 74.8045C19.1334 74.7023 19.7408 74.6001 20.3482 74.3957C20.4494 74.3957 21.4618 73.9868 21.5631 73.9868C23.689 73.0668 25.4101 71.329 25.9163 68.8756C28.6497 70.0001 27.7385 73.8845 29.1559 74.089C32.3955 74.089 31.1806 67.8534 26.1187 66.8312C25.815 60.6979 18.7284 58.9601 18.7284 62.4356C18.9309 63.969 23.4866 62.6401 24.1952 66.6268C24.094 66.6268 23.9928 66.6268 23.8915 66.6268C20.8544 66.8312 18.8297 68.7734 17.716 71.2268C17.716 71.329 17.3111 72.3512 17.3111 72.4534C17.2099 72.7601 17.2099 72.9645 17.1086 73.2712C14.5777 73.0668 12.148 72.0445 10.1232 70.2045C10.022 70.1023 9.81953 69.8979 9.71829 69.7956C10.022 69.3868 10.1232 68.8757 10.1232 68.3645C10.022 67.1379 8.90839 66.2179 7.69354 66.3201C7.38983 66.3201 7.18736 66.4223 7.08612 66.4223C6.88365 66.0134 6.68117 65.7068 6.4787 65.2979C6.98488 64.889 7.28859 64.2756 7.18736 63.5601C7.08612 62.5379 6.27622 61.7201 5.26385 61.7201C5.26385 61.3112 5.16261 60.9023 5.06137 60.3912C5.77003 60.1868 6.37746 59.4712 6.27622 58.6534C6.17498 57.8356 5.6688 57.2223 4.96014 57.1201C4.96014 56.7112 4.96014 56.3023 5.06137 55.8934C5.77003 55.7912 6.27622 55.0756 6.27622 54.3601C6.27622 53.849 5.87127 53.4401 5.46632 53.1334C5.56756 52.7245 5.6688 52.2134 5.77003 51.8045C6.37746 51.7023 6.78241 51.089 6.78241 50.4756C6.78241 50.169 6.57993 49.8623 6.37746 49.6579C6.78241 48.4312 7.28859 47.3068 7.79478 46.1823C9.81953 42.0934 14.0715 38.4134 18.6272 41.4801C21.5631 43.4223 24.8027 52.3156 18.7284 54.0534C17.716 54.3601 16.2987 54.5645 15.2863 54.3601C13.0591 53.849 12.2492 50.4756 13.6665 48.8401C13.5653 49.249 13.5653 49.6579 13.7678 50.0668C14.274 51.1912 15.4888 51.6001 16.7037 51.3956C19.2346 50.8845 19.6395 47.3068 17.6148 45.8756C14.6789 43.8312 11.6418 46.2845 10.6294 49.1468C9.81953 51.4979 10.427 54.0534 12.2492 55.689C10.2245 56.0979 8.4022 56.8134 7.08612 58.6534C6.78241 59.0623 6.68117 59.9823 7.18736 59.9823C7.18736 59.9823 7.28859 59.9823 7.38983 59.9823C9.11087 59.9823 10.9331 59.6756 12.6542 59.2668C12.0468 60.3912 11.743 61.6179 11.9455 63.1512C12.2492 65.809 14.9826 67.1379 17.3111 66.2179C17.716 66.0134 18.121 64.7868 17.5136 64.6845C14.7802 64.1734 15.6913 60.0845 17.716 58.7556C18.3235 58.3468 19.0321 57.9379 19.6395 57.529C26.6249 53.7468 25.0051 48.6356 23.5878 45.3645C21.6643 40.7645 17.2099 37.3912 12.2492 39.7423C11.4393 40.1512 10.7307 40.6623 10.022 41.2756C10.2245 40.6623 10.427 40.049 10.6294 39.4356C11.5406 36.7779 12.7554 34.1201 14.1727 31.769C15.7925 29.009 17.4123 26.3512 17.8173 23.0801C18.2222 20.0134 17.0074 16.7423 14.9826 14.5957C14.7802 14.3912 14.4764 14.0845 14.274 13.8801C14.4764 13.5734 14.4764 13.1645 14.4764 12.7557C14.3752 11.529 13.2616 10.609 12.0468 10.7112C11.743 10.7112 11.4393 10.8134 11.2369 10.9156C8.80716 8.15564 6.78241 4.88453 10.3257 2.63565C10.8319 2.32898 11.0344 1.10231 10.1232 1.10231C5.16261 1.30676 3.54281 6.92898 6.57993 9.89342ZM23.1829 68.6712C23.4866 68.6712 23.7903 68.6712 24.094 68.6712C23.7903 71.329 21.968 72.9645 19.3358 73.2712C19.0321 73.2712 18.7284 73.2712 18.4247 73.3734C18.8297 70.7157 20.4494 68.9779 23.1829 68.6712Z" fill="black"/>
 <path d="M13.4641 77.4623C13.4641 77.4623 6.98488 79.609 5.26385 81.3467C3.2391 83.289 2.83415 84.4134 3.54281 85.9467C4.75766 88.2979 7.38983 87.9912 8.60468 86.7645C10.7307 84.6179 13.4641 77.4623 13.4641 77.4623Z" fill="black"/>
 <path d="M5.06137 73.5779C3.74529 73.6801 3.03663 75.2134 3.44158 76.4401C3.94776 77.769 5.36508 78.7912 6.78241 78.689C8.60468 78.4845 10.9331 77.5645 13.2616 75.6223C10.427 75.8267 6.57993 73.3734 5.06137 73.5779Z" fill="black"/>
@@ -312,12 +284,11 @@
 </svg>
                 <p>es, the food is fit for a King. Or a Queen. And that's because Chef Ranjan Dey created the menu by curating 300 to 400 year old recipes from India's royal kitchens.</p>
                 <p class=" mt-4 md:mt-6">No wonder the restaurant is so popular with visiting royalty. And with heads of state and dignitaries from around the world. President Clinton, Vice President Kamala Harris, President Obama’s family, the late Julia Child, Chef Martin Yan, countless other celebrities and almost every San Fran- ciscan mayor have dined here, ever since Mayor Art Agnos inaugurated the restaurant in 1988. Since that day, the restaurant has served two million valued guests from San Francisco and all across the globe.</p>
-                <p class=" mt-4 md:mt-6">Today, this is the oldest Indian restaurant in San Francisco. It has been placed on the Registry of Legacy Businesses by the City of San Francisco. This is a rare honor, previously awarded to only 237 businesses throughout the history of the city. It is official recognition that the business is part of the very fabric of  this unique city's cultural identity, its history, and community.</p><img class="float-right shape-outside" src="media/new-delhi/StarAnise.webp" alt="Anise" data-shape="media/new-delhi/StarAnise-shape.webp" id="star-anise" width="218" height="187">
-                <p class="mt-4 md:mt-6">The registry aims to preserve those San Francisco businesses that are valuable cultural assets of the city, and are a draw for tourists from around the world.</p>
-                <div class="float-left relative" id="ndr"><img src="media/new-delhi/NDR.webp" alt="New Delhi Restaurant"  width="668" height="1067" sizes="87vw, (min-width: 780px) 668px" class="bg-img" loading="lazy">
-<img src="media/new-delhi/Plaque.webp" width="484" height="483" class="plaque" loading="lazy">
+                <p class=" mt-4 md:mt-6">Today, this is the oldest Indian restaurant in San Francisco. It has been placed on the Registry of Legacy Businesses by the City of San Francisco. This is a rare honor, previously awarded to only 237 businesses throughout the history of the city. It is official recognition that the business is part of the very fabric of  this unique city's cultural identity, its history, and community.</p><img class=" shape-outside" src="media/new-delhi/StarAnise.webp" alt="Anise" data-shape="media/new-delhi/star-anise-shape.svg" id="star-anise" width="218" height="187" data-spice-title="Using Star Anise in Indian Cooking" data-spice-info="This is an amazing looking spice which is a star shaped seedpod that gives off a gentle aniseed or anise perfume. This grows on a tree native to China and it isn't used a great deal in Indian cooking as it's more akin to Chinese flavours. It has a warming punchy aroma that I really enjoy and like to include it in some of my dishes.">
+                <p class="mt-4 md:mt-6 md:mr-24">The registry aims to preserve those San Francisco businesses that are valuable cultural assets of the city, and are a draw for tourists from around the world.</p>
+                <div class="float-left relative" id="ndr"><img src="media/new-delhi/NDR.webp" alt="New Delhi Restaurant"  width="668" height="1067" sizes="87vw, (min-width: 780px) 668px" class="bg-img" loading="lazy"><img class="plaque" width="484" height="483" src="media/new-delhi/Plaque.webp" loading="lazy" decoding="async" fetchpriority="low"/>
                 </div>
-                <p class="mt-12">This fine-dining restaurant is the life's work of celebrity chef Ranjan Dey, the gregarious star of PBS series, "My India." If you chat with Chef Ranjan over a chai, he will say, "Life is my secret ingredient." He loves life, and loves his guests. His guests love his stories. We won't repeat those stories here, but will let you hear them from his own mouth. Stories go well with food. Sharing stories and food is an old, old ritual. Ancient as the human race.</p>
+                <p class="mt-24">This fine-dining restaurant is the life's work of celebrity chef Ranjan Dey, the gregarious star of PBS series, "My India." If you chat with Chef Ranjan over a chai, he will say, "Life is my secret ingredient." He loves life, and loves his guests. His guests love his stories. We won't repeat those stories here, but will let you hear them from his own mouth. Stories go well with food. Sharing stories and food is an old, old ritual. Ancient as the human race.</p>
                 <p class="mt-4 md:mt-6 ">Chef Ranjan blends his own spices by hand. Almost everything about the brand that makes it so special, is hand-crafted. If you want to learn his secrets, don't miss his cooking classes. He does them on Zoom, and sometimes in person. And when you choose to dine at this wonderful restaurant, he will come to your table, and make certain everyone is having a memorable evening. If you are up for it, ask him about his Ghost Chili, a hand-made hot sauce that could be the hottest in the world. So hot, it's always kept under lock and key. It can only be served to a guest when Chef Ranjan is on the floor, and under his personal supervision.</p><br>
                 <style>
                   #papricice, #ghost-chilli {
@@ -350,8 +321,7 @@
                   }
                   
                 </style>
-                <div class=" grid grid-cols-2"><img loading="lazy" src="media/new-delhi/papricice.webp" width="235" height="194" id="papricice">
-<img loading="lazy" src="media/new-delhi/ghost-chilli.webp" width="171" height="169" id="ghost-chilli">
+                <div class=" grid grid-cols-2"><img id="papricice" width="235" height="194" src="media/new-delhi/papricice.webp" loading="lazy" decoding="async" fetchpriority="low" data-spice-title="Papricice (Paprika)" data-spice-info="A ground spice made from dried red peppers, used for its mild flavor and vivid red color in various dishes."/><img id="ghost-chilli" width="171" height="169" src="media/new-delhi/ghost-chilli.webp" loading="lazy" decoding="async" fetchpriority="low" data-spice-title="Ghost Chili Sauce" data-spice-info="If our Ghost Chili Sauce doesn't scare you, it should! It's so hot we keep it under lock and key. If you're looking for a challenge, ask your server for our Ghost Chili Sauce when you next dine at New Delhi Restaurant...if you dare."/>
                 </div><br>
               </div>
             </div>
@@ -521,19 +491,14 @@
         </style>
         <div class="container relative z-20 max-w-5xl w-full">
           <p class="text-white md:mt-12 sm:w-2/3 md:w-1/2 relative z-10">Over the years, Tungsten has worked on many areas of our client's business. Our staff have come to know every aspect of the restaurant intimately, especially the one hundred dishes on the menu, and the grand dining hall that  looks much like it did when it was first built over a century ago. The bold, sculptured columns feature deep cornices, rich swags, and sculptured decorations in the Beaux-Arts style of architecture.</p>
-        </div><img class="" id="tamarind-closed" loading="lazy" src="media/new-delhi/tamarind-closed.webp" width="182" height="174">
-<img class="" id="tamarind" loading="lazy" src="media/new-delhi/tamarind.webp" width="145" height="132">
-<img class="" id="biber" loading="lazy" src="media/new-delhi/biber.webp" width="155" height="165">
-<img class="" id="biber-kasika" loading="lazy" src="media/new-delhi/biber-kasika.webp" width="506" height="311">
-<img loading="lazy" src="media/new-delhi/meal.webp" width="801" height="901"  id="meal">
-        <div class="absolute z-0 inset-0 w-full h-full overflow-hidden" id="green-gr"><img src="media/new-delhi/green-figure.svg" width="4415" height="4205" class="object-cover absolute h-full w-full inset-0" loading="lazy" id="green-figure"></div>
+        </div><img id="tamarind-closed" width="182" height="174" src="media/new-delhi/tamarind-closed.webp" loading="lazy" decoding="async" fetchpriority="low" data-spice-title="Tamarind" data-spice-info="A tangy fruit used in many global cuisines, known for its sour and slightly sweet flavor, often used in sauces and beverages."/><img id="tamarind" width="145" height="132" src="media/new-delhi/tamarind.webp" loading="lazy" decoding="async" fetchpriority="low" data-spice-title="Tamarind" data-spice-info="A tangy fruit used in many global cuisines, known for its sour and slightly sweet flavor, often used in sauces and beverages."/><img id="biber" width="155" height="165" src="media/new-delhi/biber.webp" loading="lazy" decoding="async" fetchpriority="low" data-spice-title="Biber (Black Pepper)" data-spice-info="A common spice used worldwide, known for its sharp, pungent flavor and heat, derived from the peppercorn plant."/><img id="biber-kasika" width="506" height="311" src="media/new-delhi/biber-kasika.webp" loading="lazy" decoding="async" fetchpriority="low" data-spice-title="Biber" data-spice-info="Short Info About the Biber Kasika"/><img id="meal" width="801" height="901" src="media/new-delhi/meal.webp" loading="lazy" decoding="async" fetchpriority="low"/>
+        <div class="absolute z-0 inset-0 w-full h-full overflow-hidden" id="green-gr"><img class="object-cover absolute h-full w-full inset-0" id="green-figure" width="4415" height="4205" src="media/new-delhi/green-figure.svg" loading="lazy" decoding="async" fetchpriority="low"/>
+        </div>
       </div>
       <section class="relative z-10 overflow-hidden px-4" id="lovor-container">
         <div class="article-container max-w-5xl mx-auto relative z-10">
           <div class="relative z-10 py-5">
-            <div class="container py-5"><img src="media/new-delhi/SteveJobs@1057.webp" width="1057" height="687" alt="Steve Jobs" loading="lazy" class="">
-<img src="media/new-delhi/garlic.webp" width="98" height="91" id="garlic">
-<img class="float-right" loading="lazy" src="media/new-delhi/kari.webp" width="235" height="238" id="kari">
+            <div class="container py-5"><img width="1122" height="604" alt="Bill Clinton" src="media/new-delhi/Clinton.webp" loading="lazy" decoding="async" fetchpriority="low"/><img id="garlic" width="98" height="91" src="media/new-delhi/garlic.webp" loading="lazy" decoding="async" fetchpriority="low" data-spice-title="Garlic" data-spice-info="A pungent bulb used widely in cooking for its strong, aromatic flavor and numerous health benefits."/><img class="float-right " id="kari" width="235" height="238" src="media/new-delhi/kari.webp" loading="lazy" decoding="async" fetchpriority="low" data-spice-title="Kari (Curry Powder)" data-spice-info="A blend of spices used primarily in Indian cuisine, known for its vibrant yellow color and complex flavor profile."/>
               <p class="max-w-prose">Tungsten is proud to have been a part of New Delhi Restaurant's inspiring journey since 2010. This is our longest running client relationship. It has gifted us many individual challenges. Our long list of responsibilities includes online advertising, social media, graphic design, packaging design, food photography, web design and coding, press releases & media  relations, reputation management across review websites, out of home digital signage, vehicle wraps, events & marketing promotions. With all this experience, we have come to intimately understand all aspects of the restaurant business.</p>
               <p class="max-w-prose">We hope you enjoy looking through some of the work shared here, as we and the client have enjoyed creating it.</p>
               <style>
@@ -629,8 +594,8 @@
                     }
                 }
                 
-              </style><img class="float-right shape-outside relative" id="lovor" loading="lazy" data-shape="media/new-delhi/lovor.webp" src="media/new-delhi/lovor.webp" width="267" height="273">
-<img class="float-right shape-outside relative" loading="lazy" data-shape="media/new-delhi/cardamon.webp" src="media/new-delhi/cardamon.webp" width="227" height="183" id="cardamon">
+              </style><img class="float-right shape-outside relative" id="lovor" loading="lazy" data-shape="media/new-delhi/lovor.webp" src="media/new-delhi/lovor.webp" width="267" height="273" data-spice-title="Bay Leaves" data-spice-info="In Indian cuisine especially, bay leaves are used to flavor rice dishes like biryanis and pulaos. Here they can either be added to the masala paste with the rice or added to the raw rice to imbibe the flavor while cooking.">
+<img class="float-right shape-outside relative" loading="lazy" data-shape="media/new-delhi/cardamon.webp" src="media/new-delhi/cardamon.webp" width="227" height="183" id="cardamon" data-spice-title="Cardamom" data-spice-info="A highly aromatic spice used in both sweet and savory dishes, known for its unique, slightly sweet flavor.">
               <p class="mt-4 md:mt-6 max-w-prose">For those of you who love San Francisco, Beaux-Arts was a strong influence on downtown architecture at the turn of the 20th century. Famous examples include The Emporium, Hibernia Bank, and the Mechanics Building, all within a few blocks of this Union Square restaurant.</p>
             </div>
           </div>
@@ -643,11 +608,11 @@
       </noscript>
       <style>
         #gallery-section {
-            padding-block: 80px;
+            padding-block: 50px 80px;
             background: radial-gradient(44.13% 59.06% at 50.01% 49.98%, #FFFCDF 0%, #FFF0C8 31.38%, #FFD992 97.58%, #FFD990 100%);
         
             @media (width < 768px) {
-                padding-block: 50px;
+                padding-block: 30px 50px;
             }
             @media (width < 480px) {
                 padding-block: 30px;
@@ -656,6 +621,34 @@
             .section-title {
                 color: var(--c-title-red);
                 font-size: clamp(30px, 10vw, 50px);
+            }
+            .swiper-button-prev,
+            .swiper-button-next {
+                --width: 84px !important;
+                --height: 45px !important;
+        
+                width: var(--width);
+                height: var(--height);
+                @media (width < 640px) {
+                    --width: 64px !important;
+                    --height: 35px !important;
+                }
+        
+                svg {
+                    transition: .2s ease-in-out;
+                }
+                &:hover {
+                    svg {
+                        filter: saturate(120%) brightness(110%);
+                        scale: 1.1;
+                    }
+                }
+                &:after {
+                    content: none;
+                }
+            }
+            .swiper-navigation {
+                max-width: 250px;
             }
         }
         .gallery {
@@ -697,9 +690,13 @@
             <div class="gallery-item swiper-slide"><img class="object-cover border border-white" src="media/new-delhi/gallery-item-2.webp" width="763" height="509" loading="lazy"></div>
             <div class="gallery-item swiper-slide"><img class="object-cover border border-white" src="media/new-delhi/gallery-item-3.webp" width="763" height="509" loading="lazy"></div>
           </div>
-        </div><img class="absolute inset-0 w-full h-full z-0 object-cover opacity-80" src="media/new-delhi/gallery-bg@1920.webp" loading="lazy" srcset="
-            media/new-delhi/gallery-bg@640.webp 640w,media/new-delhi/gallery-bg@768.webp 768w,media/new-delhi/gallery-bg@1024.webp 1024w,media/new-delhi/gallery-bg@1366.webp 1366w,media/new-delhi/gallery-bg@1600.webp 1600w,media/new-delhi/gallery-bg@1920.webp 1920w
-        " style="filter: saturate(110%);"/>
+          <div class="swiper-navigation flex justify-between relative w-1/2 mx-auto h-12 mt-12"><div class="swiper-button-prev"><svg xmlns="http://www.w3.org/2000/svg" width="85" height="45" fill="none" viewBox="0 0 85 45"> <g filter="url(#a)"> <path fill="url(#b)" d="M42.386 42.221v.001l.002.004c.179.492.352.967.516 1.427.337.945-.783 1.784-1.518 1.094C30.503 34.538 16.163 27.192 1.04 23.51c-1.04-.253-1.068-1.618-.034-1.889C22.357 16.03 31.966 8.058 39.15 2.1l.001-.001c.786-.652 1.543-1.28 2.283-1.878.78-.63 1.898.197 1.505 1.116-3.285 7.685-4.538 14.367-4.664 20.154h7.133c.348-3.43 1.968-6.77 4.86-9.354 1.583-1.415 3.937.904 2.348 2.323-2.24 2.002-3.529 4.48-3.873 7.03h7.875c.499-4.115 4.039-7.304 8.332-7.304 4.292 0 7.832 3.19 8.331 7.305H84.5v2H73.28c-.499 4.115-4.039 7.305-8.331 7.305-4.293 0-7.833-3.19-8.332-7.305h-7.953c.165 2.88 1.52 5.717 4.056 7.936 1.604 1.404-.753 3.72-2.347 2.323-3.192-2.793-4.867-6.502-5.025-10.26h-7.073c.179 7.913 2.41 14.052 4.111 18.731Z"/> </g> <defs> <radialGradient id="b" cx="0" cy="0" r="1" gradientTransform="rotate(-162.365 45.006 21.82) scale(127.324 43.5952)" gradientUnits="userSpaceOnUse"> <stop offset=".44" stop-color="#DEA626"/> <stop offset=".866" stop-color="#AD6800"/> </radialGradient> <filter id="a" width="84.255" height="47.001" x=".245" y="-2" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/> <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/> <feOffset dy="-2"/> <feGaussianBlur stdDeviation="1"/> <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/> <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"/> <feBlend in2="shape" result="effect1_innerShadow_590_72"/> </filter> </defs> </svg> </div>
+<div class="swiper-button-next"> <svg xmlns="http://www.w3.org/2000/svg" width="85" height="45" fill="none" viewBox="0 0 85 45"> <g filter="url(#a)"> <path fill="url(#b)" d="M42.614 2.78v-.002l-.002-.003a237.67 237.67 0 0 1-.516-1.428c-.337-.945.783-1.784 1.518-1.094C54.497 10.462 68.837 17.81 83.96 21.49c1.04.253 1.069 1.619.034 1.89-21.351 5.59-30.96 13.562-38.143 19.52l-.001.002c-.786.651-1.543 1.28-2.283 1.877-.78.631-1.898-.197-1.505-1.116 3.285-7.685 4.538-14.366 4.664-20.153h-7.133c-.348 3.43-1.968 6.77-4.86 9.353-1.583 1.415-3.937-.904-2.348-2.323 2.24-2.001 3.529-4.48 3.873-7.03h-7.875c-.499 4.115-4.039 7.305-8.331 7.305-4.293 0-7.833-3.19-8.332-7.305H.5v-2h11.22c.499-4.116 4.039-7.306 8.332-7.306 4.292 0 7.832 3.19 8.331 7.306h7.953c-.165-2.88-1.52-5.718-4.056-7.936-1.603-1.405.753-3.72 2.347-2.323 3.192 2.792 4.867 6.502 5.025 10.259h7.073c-.179-7.912-2.41-14.052-4.111-18.73Z"/> </g> <defs> <radialGradient id="b" cx="0" cy="0" r="1" gradientTransform="matrix(121.34084 38.57201 -13.2069 41.5466 3.714 -11.25)" gradientUnits="userSpaceOnUse"> <stop offset=".44" stop-color="#DEA626"/> <stop offset=".866" stop-color="#AD6800"/> </radialGradient> <filter id="a" width="84.255" height="47.001" x=".5" y="-2" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/> <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/> <feOffset dy="-2"/> <feGaussianBlur stdDeviation="1"/> <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/> <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"/> <feBlend in2="shape" result="effect1_innerShadow_590_74"/> </filter> </defs> </svg>
+</div>
+          </div>
+        </div><img class="absolute inset-0 w-full h-full z-0 object-cover opacity-80" src="media/new-delhi/gallery-bg@1920.webp" loading="lazy" decoding="async" fetchpriority="low" style="filter: saturate(110%);" srcset="
+                media/new-delhi/gallery-bg@640.webp 640w,media/new-delhi/gallery-bg@768.webp 768w,media/new-delhi/gallery-bg@1024.webp 1024w,media/new-delhi/gallery-bg@1366.webp 1366w,media/new-delhi/gallery-bg@1600.webp 1600w,media/new-delhi/gallery-bg@1920.webp 1920w
+            "/>
       </section>
       <style>
         #garam-masala-section {
@@ -777,200 +774,6 @@
       </style>
       <section class="overflow-hidden relative z-30 px-4" id="garam-masala-section">
         <div class="article-container bottom max-w-5xl mx-auto relative z-10">
-          <h2 class="font-proxima-bold section-title text-center mb-2">Garam Masala</h2>
-          <div class="px-5 mx-auto text-center pb-10 " style="text-wrap: balance;"><b class="font-bold text-lg md:text-xl mb-4 block" style="color: var(--c-title-red)">A complex spice blend that adds warmth and depth to dishes.</b>
-            <p>Garam Masala is a fragrant blend of spices commonly used in Indian cuisine.</p>
-            <p>This magic ingredient enhances the taste and flavor of food. Create your own</p>
-            <p>Garam Masala blend. Drag and drop the ingredients into the bowl to get started.</p>
-            <div class="pt-10 closed" id="cook-garam-masala">
-              <button class="grid place-items-center relative mx-auto" id="cook-btn"><b class="text-white relative z-10">Try Cooking Indian food</b><svg xmlns="http://www.w3.org/2000/svg" fill="#860101" stroke="#DEA626" stroke-width="3" viewBox="-5 -5 335 115" class="absolute inset-0">
-<path d="M25.85 28.79S27.017-3.551 76.094 8.054c48.697 11.515 83.794 1.601 86.184-8.039V0c.014 0 .014.014.014.014 2.473 9.617 37.656 19.22 86.25 7.276 48.971-12.035 50.42 20.296 50.42 20.296 2.459-.012 27.943-1.438 25.925 24.526-2.018 25.938-26.695 24.074-26.695 24.074l-1.449 6.574c-3.34 19.059-29.008 15.234-29.008 15.234l-31.665-3.077c-60.476-9.398-72.464 8.622-73.323 10.083h-.014c-.87-1.455-13.013-19.37-73.409-9.436l-31.633 3.36s-25.63 4.051-29.14-14.979l-1.506-6.56S2.384 79.465.14 53.547C-2.104 27.603 23.392 28.802 25.85 28.79Z"/>
-</svg>
-              </button>
-              <style>
-                #StoneBowl {
-                    translate: 15% 0;
-                    margin-top: -41vw;
-                    @media (856px < width <= 1023px) {
-                        margin-top: -37vw;
-                    }
-                    @media (width > 1023px) {
-                        margin-top: -330px;
-                    }
-                }
-                #StoneHammer {
-                    translate: 24% -8%;
-                    width: min(76%, 497px);
-                    z-index: 100;
-                }
-                
-                
-                
-              </style>
-              <style>
-                #game .swiper {
-                    width: clamp(300px, 95vw, 600px);
-                }
-                #crushMessage {
-                    display: none;
-                    position: absolute;
-                    margin: auto;
-                    font-size: clamp(30px, 7vw, 50px);
-                    line-height: clamp(1.1em, 1vw, 1.25em);
-                    width: min(75%, 479px);
-                    z-index: 100;
-                }
-                #game.end-game {
-                    #GaramMasalaBg {
-                        position: absolute;
-                        opacity: 0;
-                        scale: 0.9;
-                    }
-                    #GaramMasalaBgEnd {
-                        position: relative;
-                        opacity: 1;
-                        scale: 1;
-                    }
-                    #StoneBowlContainer {
-                        display: none;
-                    }
-                }
-                #spiceSliderContainer {
-                    display: grid;
-                    place-items: center;
-                    #GaramMasalaBgContainer {
-                        > img {
-                            transition: .3s ease;
-                        }
-                    }
-                }
-                #GaramMasalaBg {
-                    position: relative;
-                    opacity: 1;
-                    scale: 1;
-                }
-                #GaramMasalaBgEnd {
-                    position: absolute;
-                    opacity:0;
-                    scale: 0.9;
-                }
-                #spiceSlider {
-                    position: absolute;
-                    z-index: 1;
-                    top: 50%;
-                    translate: 0 -50%;
-                    filter: drop-shadow(4px 7px 5px hsla(0deg 0% 0% / 70%));
-                    .swiper-slide {
-                        display: grid;
-                        place-items: center;
-                        transition: .3s ease-out;
-                        scale: .35;
-                        &.swiper-slide-active {
-                            scale: 1;
-                        }
-                    }
-                }
-                
-                #spiceSliderStatus {
-                    top: 12%;
-                    inset-inline: auto;
-                    z-index: 10;
-                    font-size: 35px;
-                }
-                #spiceSliderIndex {
-                    font-size: clamp(16px, 5vw, 32px);
-                }
-                #spiceSliderName {
-                    font-size: clamp(20px, 7vw, 42px);
-                    &.congratulations {
-                        margin-top: 40px;
-                    }
-                }
-                #spiceSliderQ {
-                    font-size: clamp(15px, 3vw, 30px)
-                }
-                #drag-line {
-                    background-color: hsla(0deg 100% 100% / 20%);
-                    padding: 3px 12px;
-                    top: 70%;
-                    inset-inline: auto;
-                    z-index: 100;
-                    border-radius: 20px;
-                    font-size: 15px;
-                }
-                .spiceSliderPrev, .spiceSliderNext {
-                    width: 30%;
-                    height: 90%;
-                    opacity: 0;
-                }
-                .spiceSliderPrev {
-                    left: 0;
-                }
-                
-                .spiceSliderNext {
-                    right: 0;
-                }
-                #StoneBowlContainerDropZone {
-                    position: absolute;
-                    width: min(38vw,70%);
-                    height: 72%;
-                    inset: 0;
-                    margin: auto;
-                    top: 14%;
-                    z-index: 100;
-                    filter: drop-shadow(0px 0px 2px #666);
-                    @media (width > 768px){
-                        width: 60%;
-                    }
-                    @media (width > 1024px){
-                        width: 50%;
-                    }
-                    > img {
-                        position: absolute;
-                        inset: 0;
-                        margin: auto;
-                        max-width: 100%;
-                        pointer-events: none;
-                    }
-                }
-                
-              </style>
-              <div class="text-center" id="game">
-                <div class="relative" id="spiceSliderContainer">
-                  <div class="absolute text-white" id="spiceSliderStatus">
-                    <div id="spiceSliderIndex"></div>
-                    <div class="font-proxima-bold" id="spiceSliderName"></div>
-                    <div id="spiceSliderQ"></div>
-                  </div>
-                  <div class="text-white" id="crushMessage">Crush them all together until the spices becomes a powder</div>
-                  <div class="swiper" id="spiceSlider">
-                    <!-- Additional required wrapper-->
-                    <div class="swiper-wrapper">
-                      <!-- Slides-->
-                      <div class="swiper-slide" data-name="Coriander"><img src="media/new-delhi/RotarySpices/Coriander.webp" alt="Coriander" data-q="50 gms." data-index="1" id="Coriander" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Green Cardamon"><img src="media/new-delhi/RotarySpices/GreenCardamon.webp" alt="Green Cardamon" data-q="10 gms." data-index="2" id="GreenCardamon" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Cloves"><img src="media/new-delhi/RotarySpices/Cloves.webp" alt="Cloves" data-q="10 gms." data-index="3" id="Cloves" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Cinnamon"><img src="media/new-delhi/RotarySpices/Cinnamon.webp" alt="Cinnamon" data-q="10 gms." data-index="4" id="Cinnamon" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Peppercorn"><img src="media/new-delhi/RotarySpices/Peppercorn.webp" alt="Peppercorn" data-q="10 gms." data-index="5" id="Peppercorn" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Mace"><img src="media/new-delhi/RotarySpices/Mace.webp" alt="Mace" data-q="5-6 gms." data-index="6" id="Mace" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Crushed Nutmeg"><img src="media/new-delhi/RotarySpices/CrushedNutmeg.webp" alt="Crushed Nutmeg" data-q="5-6 gms." data-index="7" id="CrushedNutmeg" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Bay Leaves"><img src="media/new-delhi/RotarySpices/BayLeaves.webp" alt="Bay Leaves" data-q="14-16 nos." data-index="8" id="BayLeaves" width="246" height="246"></div>
-                    </div>
-                    <div class=" spiceSliderPrev absolute bg-red-400 top-1/2 -translate-y-1/2 z-50"></div>
-                    <div class=" spiceSliderNext absolute bg-red-400 top-1/2 -translate-y-1/2 z-50"></div>
-                  </div>
-                  <div class="text-white absolute" id="drag-line">drag to the stone bowl</div>
-                  <div class="relative" id="GaramMasalaBgContainer"><img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBg" class="mx-auto relative z-0" src="media/new-delhi/GaramMasalaBg.webp" width="596" height="821" draggable="false">
-<img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBgEnd" class="mx-auto relative z-0" src="media/new-delhi/end-game-bg.webp" width="596" height="821" draggable="false">
-                  </div>
-                </div>
-                <div class="relative" id="StoneBowlContainer">
-                  <div class="absolute inset-0 w-full h-full" id="StoneBowlContainerDropZone"></div><img loading="lazy" id="StoneHammer" class="mx-auto absolute inset-0 m-auto pointer-events-none" src="media/new-delhi/StoneHammer.webp" width="497" height="383" draggable="false">
-<img loading="lazy" id="StoneBowl" class="mx-auto z-0 relative" src="media/new-delhi/StoneBowl.webp" width="676" height="682" draggable="false">
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="container"><svg xmlns="http://www.w3.org/2000/svg" id="fancy-figure-bottom" class="mx-auto w-full relative" fill="none" viewBox="0 0 960 239">
 <path fill="#DBB778" fill-rule="evenodd" d="M506 34.9c-2.6-.5-5.1 1.3-5.5 3.8-.3 1.9 1.4 7.8 2.4 10.9l-3.4 28.3c-1.5-6-5.2-11-10.1-13.8l3-33.1h.001l.002-.004.001-.002c1.601-2.402 4.996-7.496 5.196-9.394.4-2.6-1.4-5-4-5.4-2.6-.4-5 1.4-5.4 4-.3 2 1.7 7.8 2.7 10.6l-3 32.6c-2.3-1.1-4.7-1.7-7.3-1.8l.1-47c1.3-2.4 4.1-7.8 4.1-9.9 0-2.6-2.2-4.7-4.8-4.7-2.6 0-4.7 2.2-4.7 4.8 0 1.9 2.6 7 4 9.5l-.1 47.2c-2.5.1-5 .7-7.2 1.7l-2-32.5c1.1-2.7 3.3-8.6 3-10.5-.3-2.6-2.7-4.5-5.3-4.2-2.6.3-4.5 2.7-4.2 5.3.2 2 3.4 7.1 5 9.6l2.2 33.1c-5.1 2.9-8.9 8.1-10.3 14.3l-2.7-28.8c1.1-3 3-8.9 2.7-10.8-.4-2.6-2.8-4.4-5.4-4-2.6.4-4.4 2.8-4 5.4.3 2 3.8 7.7 5.3 10.1l3.026 32.8H0v1h960v-1H500.196l3.904-32.7c1.6-2.4 5.2-7.9 5.6-9.9.6-2.6-1.1-5.1-3.7-5.5ZM498.69 83c-.333-11.175-8.602-20.1-18.79-20.1-10.09 0-18.453 8.925-18.79 20.1h5.003c.324-8.479 6.49-15.3 13.887-15.3s13.563 6.821 13.702 15.3h4.988Zm-6.404 0c-.306-7.771-5.686-13.9-12.386-13.9-6.601 0-12.071 6.219-12.386 13.9h4.906c.283-4.982 3.566-9 7.58-9s7.297 4.018 7.58 9h4.706Z" clip-rule="evenodd"/>
 <path fill="#DBB778" d="M434.825 100.078c.18-.539.54-.898 1.08-1.078h.54c.72.18 1.26.899 1.08 1.617l-.002.018-.008.04-.023.119v.002c-.315 1.589-2.643 13.337 3.092 21.927 3.06 4.672 7.92 7.548 14.579 8.626.36 0 .72.36.9.539.18.36.36.719.18 1.079 0 0-1.26 6.29 1.799 10.603 1.62 2.157 4.14 3.594 7.56 3.954.72 0 1.259.719 1.259 1.437 0 .54 0 12.042 13.139 13.659 12.958-1.797 13.139-13.299 13.139-13.659 0-.718.539-1.258 1.259-1.437 3.42-.36 5.94-1.797 7.56-3.954 3.059-4.313 1.799-10.603 1.799-10.603 0-.36 0-.719.18-1.079a.99.99 0 0 1 .9-.539c6.659-1.078 11.519-3.954 14.579-8.626 6.119-8.986 3.059-21.926 3.059-21.926-.18-.719.36-1.438 1.08-1.617h.54c.54 0 .9.539 1.08 1.078.18.539 3.24 14.198-3.42 24.082-3.239 5.032-8.459 8.087-15.118 9.525.18 2.337.36 7.369-2.52 11.322-1.799 2.516-4.679 4.314-8.279 4.853-.36 3.594-2.52 13.658-15.478 15.276H480c-12.958-1.618-15.118-11.682-15.478-15.276-3.6-.539-6.48-2.337-8.279-4.853-2.88-3.953-2.7-8.985-2.52-11.322-6.839-1.438-11.879-4.493-15.118-9.525-6.364-9.287-4.296-21.233-3.854-23.785l.001-.005.044-.258c.014-.085.024-.147.027-.185l.002-.029Z"/>
@@ -984,9 +787,9 @@
           </div>
         </div>
         <div class="max-w-5xl mx-auto relative" id="bg-bottom"></div>
-      </section><img class="relative z-30" id="van" width="760" height="570" src="media/new-delhi/van@1024.webp" loading="lazy" srcset="
-            media/new-delhi/van@320.webp 320w,media/new-delhi/van@480.webp 480w,media/new-delhi/van@640.webp 640w,media/new-delhi/van@760.webp 760w,media/new-delhi/van@1024.webp 1024w
-        " sizes="39.56vw, (min-width: 1920px) 760px"/>
+      </section><img class="relative z-30" id="van" width="760" height="570" src="media/new-delhi/van@1024.webp" loading="lazy" decoding="async" fetchpriority="low" sizes="39.56vw, (min-width: 1920px) 760px" srcset="
+                media/new-delhi/van@320.webp 320w,media/new-delhi/van@480.webp 480w,media/new-delhi/van@640.webp 640w,media/new-delhi/van@760.webp 760w,media/new-delhi/van@1024.webp 1024w
+            "/>
       <style>
         #red-bg {
             background: radial-gradient(ellipse at center, #811834, #3C1112);
@@ -994,7 +797,54 @@
             filter: saturate(120%);
         }
       </style>
-      <div class="z-0 fixed inset-0 w-full h-full overflow-hidden" id="red-bg"><img id="red-figure"  src="media/new-delhi/red-figure.svg" width="1920" height="3880" loading="lazy" class="z-0 fixed inset-0 object-cover w-full h-full opacity-50 mix-blend-lighten"></div>
+      <div class="z-0 fixed inset-0 w-full h-full overflow-hidden" id="red-bg"><img class="z-0 fixed inset-0 object-cover w-full h-full opacity-50 mix-blend-lighten" id="red-figure" width="1920" height="3880" src="media/new-delhi/red-figure.svg" loading="lazy" decoding="async" fetchpriority="low"/>
+      </div>
+      <style>
+        .spice-popup {
+            position: absolute;
+            background-color:#FFFBF2E5;
+            border: 1px solid #7C2525;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 4px 4px 0px #00000040;
+            display: none;
+            opacity: 0;
+            z-index: 100;
+            width: min(80vw, 340px);
+            backdrop-filter: blur(1px);
+            .spice-popup-title {
+                color: var(--c-title-red);
+                font-size: 22px;
+                font-weight: bold;
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 5px;
+                    height: 2px;
+                    background-color: var(--c-title-red);
+                    margin-top: 10px;
+                    margin-bottom: 7px;
+                }
+            }
+        
+        }
+        
+        //- .spice-popup::before {
+        //-     content: '';
+        //-     position: absolute;
+        //-     top: 100%;
+        //-     left: 50%;
+        //-     transform: translateX(-50%);
+        //-     border-width: 5px;
+        //-     border-style: solid;
+        //-     border-color: #fff transparent transparent transparent;
+        //- }
+        
+      </style>
+      <div class="spice-popup absolute bg-white p-10 z-50 pointer-events-none" id="spice-popup">
+        <header class="spice-popup-title text-red-950 font-bold"></header>
+        <div class="spice-popup-content"></div>
+      </div>
     </main>
     <div class="py-12 md:py-20 have_question text-center relative bg-white">
       <div class="container max-w-7xl"><a class="inline-block text-center font-semibold text-lg md:text-xl text-blue" href="mailto:hello@tngstn.com" target="_blank" rel="noopener noreferrer">Have a question or comment about <br> Tungsten’s work? Tell us</a></a></div>
@@ -1009,81 +859,81 @@
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Cobham</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Brand Advertising</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Leisure yacht with two Cobham maritime antenna on mast" src="media/projects/cobham-brand/luxury-yacht@780.webp" loading="lazy" srcset="
-            media/projects/cobham-brand/luxury-yacht@510.webp 510w,media/projects/cobham-brand/luxury-yacht@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="cobham-seatel-datasheets" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Leisure yacht with two Cobham maritime antenna on mast" src="media/projects/cobham-brand/luxury-yacht@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/cobham-brand/luxury-yacht@510.webp 510w,media/projects/cobham-brand/luxury-yacht@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="cobham-seatel-datasheets" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">satellite communications</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Cobham</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Data Sheets, Print</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="undefined" src="media/projects/cobham-datasheets/sea-tel-4012@780.webp" loading="lazy" srcset="
-            media/projects/cobham-datasheets/sea-tel-4012@510.webp 510w,media/projects/cobham-datasheets/sea-tel-4012@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="white-paper" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="undefined" src="media/projects/cobham-datasheets/sea-tel-4012@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/cobham-datasheets/sea-tel-4012@510.webp 510w,media/projects/cobham-datasheets/sea-tel-4012@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="white-paper" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">satellite communications</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Cobham</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">White Papers, Print</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="undefined" src="media/projects/cobham-white-papers/white-papers@780.webp" loading="lazy" srcset="
-            media/projects/cobham-white-papers/white-papers@510.webp 510w,media/projects/cobham-white-papers/white-papers@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="davis-instruments" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="undefined" src="media/projects/cobham-white-papers/white-papers@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/cobham-white-papers/white-papers@510.webp 510w,media/projects/cobham-white-papers/white-papers@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="davis-instruments" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">industrial</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Davis Instruments</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Video</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Tightrope walker Nik Wallenda traversing a wire over Las Vegas" src="media/projects/davis-instruments/wallenda-in-vegas@780.webp" loading="lazy" srcset="
-            media/projects/davis-instruments/wallenda-in-vegas@510.webp 510w,media/projects/davis-instruments/wallenda-in-vegas@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="ambassador-toys" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Tightrope walker Nik Wallenda traversing a wire over Las Vegas" src="media/projects/davis-instruments/wallenda-in-vegas@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/davis-instruments/wallenda-in-vegas@510.webp 510w,media/projects/davis-instruments/wallenda-in-vegas@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="ambassador-toys" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">Retail</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Ambassador Toys</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Newspaper, Web</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Teddy bear floating on clouds, wearing San Francisco Giants shirt and cap" src="media/projects/ambassador-toys/sf-giants-teddy-bear@780.webp" loading="lazy" srcset="
-            media/projects/ambassador-toys/sf-giants-teddy-bear@510.webp 510w,media/projects/ambassador-toys/sf-giants-teddy-bear@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="tom-meyers-illustrations" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Teddy bear floating on clouds, wearing San Francisco Giants shirt and cap" src="media/projects/ambassador-toys/sf-giants-teddy-bear@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/ambassador-toys/sf-giants-teddy-bear@510.webp 510w,media/projects/ambassador-toys/sf-giants-teddy-bear@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="tom-meyers-illustrations" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">financial services</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Pacific Equity Partners</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Hand Illustration</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Hand-drawn cartoon illustration by Tom Meyer, alongside a Rotring pen." src="media/projects/tom-meyer/tom-meyer-drawing@780.webp" loading="lazy" srcset="
-            media/projects/tom-meyer/tom-meyer-drawing@510.webp 510w,media/projects/tom-meyer/tom-meyer-drawing@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="shamann-walton" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Hand-drawn cartoon illustration by Tom Meyer, alongside a Rotring pen." src="media/projects/tom-meyer/tom-meyer-drawing@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/tom-meyer/tom-meyer-drawing@510.webp 510w,media/projects/tom-meyer/tom-meyer-drawing@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="shamann-walton" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">political advertising</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Shamann Walton</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Television Commercial</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Four multi-racial fists, with political sticker on back of each hand." src="media/projects/shamann-walton/multi-racial-fists@780.webp" loading="lazy" srcset="
-            media/projects/shamann-walton/multi-racial-fists@510.webp 510w,media/projects/shamann-walton/multi-racial-fists@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="porziuncola" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Four multi-racial fists, with political sticker on back of each hand." src="media/projects/shamann-walton/multi-racial-fists@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/shamann-walton/multi-racial-fists@510.webp 510w,media/projects/shamann-walton/multi-racial-fists@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="porziuncola" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">non-profit</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Porziuncola Nuova</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Print, Collateral</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Fresco on façade of Porziuncola, depicting St. Francis receiving “Pardon of Assisi&quot; from Christ" src="media/projects/porziuncola/porziuncola@780.webp" loading="lazy" srcset="
-            media/projects/porziuncola/porziuncola@510.webp 510w,media/projects/porziuncola/porziuncola@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="alaska" style="opacity:0;min-height:100px;min-width:200px;">
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Fresco on façade of Porziuncola, depicting St. Francis receiving “Pardon of Assisi&quot; from Christ" src="media/projects/porziuncola/porziuncola@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/porziuncola/porziuncola@510.webp 510w,media/projects/porziuncola/porziuncola@780.webp 780w
+            "/></a><a class="item m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border" href="alaska" style="opacity:0;min-height:100px;min-width:200px;">
             <div class="overlay absolute inset-0 grid place-items-center opacity-0 z-50 bg-blue-dark/80 duration-500 transition-opacity pointer-events-none group-hover:opacity-100" style="will-change:opacity; backdrop-filter: blur(2px)">
               <div class="text text-center px-6 text-white tracking-wide" style="text-shadow: 0 2px 3px var(--c-blue-dark);">
                 <div class="project-category transition-transform-opacity will-change-transform-opacity uppercase -translate-x-1 duration-500 opacity-0 group-hover:opacity-70 group-hover:transform-none" style="font-size: 11px;">non-profit</div>
                 <div class="my-1.5 project-name text-xl lg:text-2xl font-proxima-bold will-change-opacity transition-opacity opacity-0 duration-700 group-hover:opacity-100">Friends of Alaska Marine Highway System</div>
                 <div class="text-xs project-type translate-x-1 opacity-0 duration-500 transition-transform-opacity will-change-transform-opacity group-hover:transform-none group-hover:opacity-70">Website, Digital Marketing</div>
               </div>
-            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Illustration of Alaskan ferry MV Malaspina" src="media/projects/alaska/mv-malaspina@780.webp" loading="lazy" srcset="
-            media/projects/alaska/mv-malaspina@510.webp 510w,media/projects/alaska/mv-malaspina@780.webp 780w
-        " sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" style="transition-property: color, transform;"/></a>
+            </div><img class="relative w-full h-full z-0 duration-1000  will-change-transform border-3 border-current text-white hover:text-blue group-hover:scale-105" width="390" height="217" alt="Illustration of Alaskan ferry MV Malaspina" src="media/projects/alaska/mv-malaspina@780.webp" loading="lazy" decoding="async" fetchpriority="low" style="transition-property: color, transform;" sizes="(max-width: 555px) 92vw, (max-width: 861px) 44vw, (max-width: 1280px) 30vw, 390px" srcset="
+                media/projects/alaska/mv-malaspina@510.webp 510w,media/projects/alaska/mv-malaspina@780.webp 780w
+            "/></a>
         </div>
       </div>
     </section>

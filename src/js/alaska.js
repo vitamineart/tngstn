@@ -1,301 +1,331 @@
 const sealTl = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#alaska-state-seal',
-    start: 'top 50%',
+	scrollTrigger: {
+		trigger: "#alaska-state-seal",
+		start: "top 50%"
+	}
+});
+sealTl
+	.from("#alaska-state-seal", {
+		scale: 1.5,
+		opacity: 0,
+		duration: 0.6,
+		ease: "back.out(1.4)"
+	})
+	.from(
+		"#alaska-state-seal",
+		{
+			rotate: 20,
+			duration: 0.4
+		},
+		"<"
+	)
+	.to(
+		"#seal-container > div",
+		{
+			y: "+=20",
+			yoyo: true,
+			duration: 0.1,
+			repeat: 2
+		},
+		"<0.35"
+	);
 
-  },
+document.addEventListener("DOMContentLoaded", function () {
+	var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
 
-})
-sealTl.from('#alaska-state-seal', {
-  scale: 1.5,
-  opacity: 0,
-  duration: .6,
-  ease: 'back.out(1.4)',
-}).from('#alaska-state-seal', {
-  rotate: 20,
-  duration: 0.4
-}, "<")
-.to('#seal-container > div', {
-  y: "+=20",
-  yoyo: true,
-  duration: 0.1,
-  repeat: 2
-}, "<0.35")
+	if ("IntersectionObserver" in window) {
+		var lazyVideoObserver = new IntersectionObserver(function (entries, observer) {
+			entries.forEach(function (video) {
+				if (video.isIntersecting) {
+					for (var source in video.target.children) {
+						var videoSource = video.target.children[source];
+						if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+							videoSource.src = videoSource.dataset.src;
+						}
+					}
 
-  document.addEventListener("DOMContentLoaded", function() {
-    var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+					video.target.load();
+					video.target.classList.remove("lazy");
+					lazyVideoObserver.unobserve(video.target);
+				}
+			});
+		});
 
-    if ("IntersectionObserver" in window) {
-      var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(function(video) {
-          if (video.isIntersecting) {
-            for (var source in video.target.children) {
-              var videoSource = video.target.children[source];
-              if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
-                videoSource.src = videoSource.dataset.src;
-              }
-            }
+		lazyVideos.forEach(function (lazyVideo) {
+			lazyVideoObserver.observe(lazyVideo);
+		});
+	}
+});
 
-            video.target.load();
-            video.target.classList.remove("lazy");
-            lazyVideoObserver.unobserve(video.target);
-          }
-        });
-      });
-
-      lazyVideos.forEach(function(lazyVideo) {
-        lazyVideoObserver.observe(lazyVideo);
-      });
-    }
-  });
-
-
-gsap.fromTo('.hero-ship', {
-  xPercent: -50
-}, {
-  xPercent: 300,
-  duration: 50,
-  ease: 'linear',
-  repeat: -1
-})
-
-
+gsap.fromTo(
+	".hero-ship",
+	{
+		xPercent: -50
+	},
+	{
+		xPercent: 300,
+		duration: 50,
+		ease: "linear",
+		repeat: -1
+	}
+);
 
 // alaska-blue-bg
-gsap.from('#alaska-blue-bg', {
-  scrollTrigger: {
-    trigger: '.website-role-section',
-    scrub: 5,
-    start: '20% 90%',
-    end: '80% 0%',
-  },
-  opacity: 0,
-  y: -200,
-})
+gsap.from("#alaska-blue-bg", {
+	scrollTrigger: {
+		trigger: ".website-role-section",
+		scrub: 5,
+		start: "20% 90%",
+		end: "80% 0%"
+	},
+	opacity: 0,
+	y: -200
+});
 
-const websiteRoleTl = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.website-role-grid',
-  },
-}).from('.website-role-grid > div .bg-white',{
-  scale: 0.7,
-  opacity: 0,
-  duration: 1,
-  stagger: .1
-}).from('.website-role-grid > div img',{
-  opacity: 0,
-  scale: .5,
-  duration: 1,
-  stagger: .1
-}, "<50%")
-.from('.website-role-grid > div .content',{
-  opacity: 0,
-  y: 10,
-  duration: 1,
-  stagger: .1
-}, "<50%")
+const websiteRoleTl = gsap
+	.timeline({
+		scrollTrigger: {
+			trigger: ".website-role-grid"
+		}
+	})
+	.from(".website-role-grid > div .bg-white", {
+		scale: 0.7,
+		opacity: 0,
+		duration: 1,
+		stagger: 0.1
+	})
+	.from(
+		".website-role-grid > div img",
+		{
+			opacity: 0,
+			scale: 0.5,
+			duration: 1,
+			stagger: 0.1
+		},
+		"<50%"
+	)
+	.from(
+		".website-role-grid > div .content",
+		{
+			opacity: 0,
+			y: 10,
+			duration: 1,
+			stagger: 0.1
+		},
+		"<50%"
+	);
 
+const saveFerryTrigger = gsap
+	.timeline({
+		scrollTrigger: {
+			trigger: "#save-ferry-laptop",
+			scrub: true,
+			end: "90% 90%"
+		}
+	})
+	.from("#save-ferry-laptop", {
+		scale: 0.9
+	})
+	.from(
+		"#save-ferry-page1",
+		{
+			scale: 0.8,
+			xPercent: -60,
+			ease: "circ.out()"
+		},
+		"<"
+	)
+	.from(
+		"#save-ferry-page2",
+		{
+			scale: 0.8,
+			xPercent: 60,
+			ease: "circ.out()"
+		},
+		"<"
+	);
 
-const saveFerryTrigger = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#save-ferry-laptop',
-    scrub: true,
-    end: '90% 90%',
-  },
-}).from('#save-ferry-laptop', {
-  scale: 0.9
-}).from('#save-ferry-page1', {
-  scale: .8,
-  xPercent: -60,
-  ease: 'circ.out()'
-}, "<").from('#save-ferry-page2', {
-  scale: .8,
-  xPercent: 60,
-  ease: 'circ.out()'
-}, "<")
-
-
-
-const alaskaTl = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#alaska-map',
-    start: 'top 90%',
-  },
-})
-.fromTo('#cities-labels .label', {
-  opacity: 0,
-}, {
-  opacity: 1,
-  duration: .5,
-  ease: 'circ.out',
-  stagger: .1
-
-}, "<50%")
-.from('#alaska-map .cities > g > circle', {
-  transformOrigin: 'center',
-  opacity: 0,
-  duration: .5,
-  scale: 0,
-  ease: 'circ.out',
-  stagger: .02
-}, "<50%")
-.from('#alaska-map .cities > g > path', {
-  scale: 1.2,
-  transformOrigin: 'center',
-  opacity: 0,
-  duration: 1,
-  ease: 'power1.out',
-  stagger: .02
-}, "<50%")
-.from('#alaska-map .lines > path', {
-  opacity: 0,
-  duration: 2,
-  ease: 'expo.out',
-  stagger: .2
-}, "3")
-.from('#ferry-routes .route', {
-  opacity: 0,
-  scale: .9,
-  transformOrigin: 'center',
-  duration: .7,
-  stagger: {
-    amount: 0.2,
-    grid: 'auto',
-    from: 'random',
-  }
-}, "<")
-
-
-
-
-
-
-
+const alaskaTl = gsap
+	.timeline({
+		scrollTrigger: {
+			trigger: "#alaska-map",
+			start: "top 90%"
+		}
+	})
+	.fromTo(
+		"#cities-labels .label",
+		{
+			opacity: 0
+		},
+		{
+			opacity: 1,
+			duration: 0.5,
+			ease: "circ.out",
+			stagger: 0.1
+		},
+		"<50%"
+	)
+	.from(
+		"#alaska-map .cities > g > circle",
+		{
+			transformOrigin: "center",
+			opacity: 0,
+			duration: 0.5,
+			scale: 0,
+			ease: "circ.out",
+			stagger: 0.02
+		},
+		"<50%"
+	)
+	.from(
+		"#alaska-map .cities > g > path",
+		{
+			scale: 1.2,
+			transformOrigin: "center",
+			opacity: 0,
+			duration: 1,
+			ease: "power1.out",
+			stagger: 0.02
+		},
+		"<50%"
+	)
+	.from(
+		"#alaska-map .lines > path",
+		{
+			opacity: 0,
+			duration: 2,
+			ease: "expo.out",
+			stagger: 0.2
+		},
+		"3"
+	)
+	.from(
+		"#ferry-routes .route",
+		{
+			opacity: 0,
+			scale: 0.9,
+			transformOrigin: "center",
+			duration: 0.7,
+			stagger: {
+				amount: 0.2,
+				grid: "auto",
+				from: "random"
+			}
+		},
+		"<"
+	);
 
 // routes, cities filtering
-const map = document.querySelector('#alaska-map');
-const initialMapViewBox = map.getAttribute('viewBox');
-const mapLabels = document.querySelectorAll('#cities-labels .label');
-const alaskaRoutes = document.querySelectorAll('#ferry-routes .route');
-const routeLines = document.querySelectorAll('#alaska-map .lines path');
-const cities = document.querySelectorAll('#alaska-map .cities .city');
+const map = document.querySelector("#alaska-map");
+const initialMapViewBox = map.getAttribute("viewBox");
+const mapLabels = document.querySelectorAll("#cities-labels .label");
+const alaskaRoutes = document.querySelectorAll("#ferry-routes .route");
+const routeLines = document.querySelectorAll("#alaska-map .lines path");
+const cities = document.querySelectorAll("#alaska-map .cities .city");
+const alaskaRoutesEase = "power2.inOut";
 
+mapLabels.forEach(item => {
+	item.addEventListener("mouseenter", ({ target }) => {
+		target.classList.add("active");
+		gsap.to(alaskaRoutes, { opacity: 0.2, duration: 0.15 });
 
-mapLabels.forEach(item=>{
-  item.addEventListener('mouseenter', ({target})=>{
+		const labelRoutes = target.dataset.route.split(" ");
 
-    target.classList.add('active');
-    gsap.to(alaskaRoutes, {opacity:0.2, duration: .15});
+		routeLines.forEach(line => {
+			if (labelRoutes.includes(line.dataset.route)) {
+				line.style.setProperty("transition", ".9s ease-out");
+				gsap.set(line, {
+					"stroke-dashoffset": 1,
+					opacity: 0,
+					onComplete: () => {
+						gsap.set(line, {
+							"stroke-dashoffset": 0,
+							opacity: 1
+						});
+					}
+				});
+			} else {
+				gsap.set(line, {
+					"stroke-dashoffset": 1,
+					opacity: 0
+				});
+			}
+		});
 
-    const labelRoutes = target.dataset.route.split(' ');
+		alaskaRoutes.forEach(route => {
+			if (labelRoutes.includes(route.id)) {
+				gsap.to(route, { opacity: 1, duration: 0.7, ease: alaskaRoutesEase });
+			} else {
+				gsap.to(route, { opacity: 0.2, duration: 0.7, ease: alaskaRoutesEase });
+			}
+		});
 
-    routeLines.forEach( line => {
+		if (window.innerWidth < 1024) {
+			gsap.to(map, {
+				attr: { viewBox: target.dataset.viewbox },
+				duration: 1,
+				ease: alaskaRoutesEase
+			});
+		}
+	});
+	item.addEventListener("mouseleave", () => {
+		gsap.set(routeLines, { "stroke-dashoffset": 0, opacity: 1 });
+		alaskaRoutes.forEach(route => gsap.to(route, { opacity: 1, duration: 0.7, ease: alaskaRoutesEase }));
+		mapLabels.forEach(label => label.classList.remove("active"));
+		// map.setAttribute("viewBox", `300 0 1939 1179`);
+		if (window.innerWidth < 1024) {
+			gsap.to(map, {
+				attr: { viewBox: initialMapViewBox },
+				duration: 1,
+				ease: alaskaRoutesEase
+			});
+		}
+	});
+});
 
-      if(labelRoutes.includes(line.dataset.route)) {
-        line.style.setProperty("transition", ".9s ease-out");
-        gsap.set(line, {
-          'stroke-dashoffset':1,
-          opacity: 0,
-          onComplete: ()=>{
-            gsap.set(line, {
-              'stroke-dashoffset':0,
-              opacity: 1
-            })
-          }
-        })
-      } else {
-        gsap.set(line, {
-          'stroke-dashoffset':1,
-          opacity: 0
-        })
-      }
-    })
+alaskaRoutes.forEach(route => {
+	route.addEventListener("mouseenter", ({ target }) => {
+		const filtreredLine = Array.from(routeLines).filter(line => line.dataset.route === target.id)[0];
 
-    alaskaRoutes.forEach( route => {
-      if(labelRoutes.includes(route.id)){
-        gsap.to(route, {opacity:1, duration: .7, ease: 'circ.out'})
-      } else {
-        gsap.to(route, {opacity:0.2, duration: .7, ease: 'circ.out'})
-      }
-    })
+		filtreredLine.style.setProperty("transition", ".9s ease-out");
 
-    if (window.innerWidth < 1024) {
-      gsap.to(map, {
-        attr:{viewBox: target.dataset.viewbox},
-        duration: 1,
-        ease: 'circ.inOut',
-      })
-    }
+		gsap.set(routeLines, {
+			"stroke-dashoffset": 1,
+			opacity: 0
+		});
+		gsap.set(filtreredLine, {
+			"stroke-dashoffset": 0,
+			opacity: 1
+		});
 
+		mapLabels.forEach(label => label.classList.remove("active"));
+		const routeCities = target.dataset.cities.split(" ");
+		mapLabels.forEach(label => {
+			if (routeCities.includes(label.id)) {
+				label.classList.add("active");
+			}
+		});
+		if (window.innerWidth < 1024) {
+			gsap.to(map, {
+				attr: { viewBox: target.dataset.viewbox },
+				duration: 1,
+				ease: alaskaRoutesEase
+			});
+		}
+	});
 
-  })
-  item.addEventListener('mouseleave', ()=>{
-    gsap.set(routeLines, {'stroke-dashoffset':0, opacity: 1})
-    alaskaRoutes.forEach(route=>gsap.to(route, {opacity: 1, duration: .7, ease: 'circ.out'}))
-    mapLabels.forEach(label=>label.classList.remove('active'))
-    // map.setAttribute("viewBox", `300 0 1939 1179`);
-    if (window.innerWidth < 1024) {
-      gsap.to(map, {
-        attr:{ viewBox: initialMapViewBox },
-        duration: 1,
-        ease: 'circ.inOut',
-      });
-    }
-  })
-})
-
-
-alaskaRoutes.forEach( route => {
-
-  route.addEventListener('mouseenter', ({ target })=>{
-    const filtreredLine = Array.from(routeLines).filter(( line ) => line.dataset.route === target.id)[0]
-
-    filtreredLine.style.setProperty("transition", ".9s ease-out");
-
-    gsap.set(routeLines,{
-      'stroke-dashoffset':1,
-      opacity: 0
-    })
-    gsap.set(filtreredLine, {
-      'stroke-dashoffset':0,
-      opacity: 1
-  })
-
-    mapLabels.forEach(label=>label.classList.remove('active'))
-    const routeCities = target.dataset.cities.split(" ");
-    mapLabels.forEach(label=>{
-      if(routeCities.includes(label.id)) {
-        label.classList.add('active')
-      }
-    })
-    if (window.innerWidth < 1024) {
-      gsap.to(map, {
-        attr:{viewBox: target.dataset.viewbox},
-        duration: 1,
-        ease: 'circ.inOut',
-      })
-    }
-  })
-
-  route.addEventListener('mouseleave', ({target})=>{
-    mapLabels.forEach(label=>label.classList.remove('active'))
-    gsap.set(routeLines, {'stroke-dashoffset':0, opacity: 1})
-    if (window.innerWidth < 1024) {
-      gsap.to(map, {
-        attr:{ viewBox: initialMapViewBox },
-        duration: 1,
-        ease: 'circ.inOut',
-      });
-    }
-  })
-
-
-})
-
-
-
-
-
+	route.addEventListener("mouseleave", ({ target }) => {
+		mapLabels.forEach(label => label.classList.remove("active"));
+		gsap.set(routeLines, { "stroke-dashoffset": 0, opacity: 1 });
+		if (window.innerWidth < 1024) {
+			gsap.to(map, {
+				attr: { viewBox: initialMapViewBox },
+				duration: 1,
+				ease: alaskaRoutesEase
+			});
+		}
+	});
+});
 
 // console.log(originalWidth, originalHeight);
 // svgElement.addEventListener("mouseenter", (event) => {
@@ -309,4 +339,3 @@ alaskaRoutes.forEach( route => {
 // svgElement.addEventListener("mouseleave", () => {
 //   svgElement.setAttribute("viewBox", `0 0 ${originalWidth} ${originalHeight}`);
 // });
-
