@@ -190,3 +190,49 @@ mixin imgBlur(x)
 
 
 
+
+
+mixin imgPreload(x)
+    if x.resolutions == 'default'
+        - let resolutions = [640, 768, 1024, 1366, 1600, 1920];
+        link(
+            href=x.href
+            rel="preload"
+            as="image"
+            srcset= `
+                    ${
+                        resolutions.map((resolution, index, arr) => {
+                            return `${x.dir}${x.name}@${resolution}.${x.ext} ${isForRetina ? `${resolution}` : `${resolution}w`}`
+                        })
+                    }
+                `
+            imagesizes=x.imagesizes
+            fetchpriority=x.fetchpriority||'high'
+
+        )&attributes(attributes)
+    else if x.resolutions
+        - let resolutions = x.resolutions;
+        - let isForRetina = resolutions.includes('2x');
+        link(
+            href=x.href
+            rel="preload"
+            as="image"
+            src = x.src || `${x.dir}${x.name}@${resolutions[ resolutions.length - 1 ]}.${x.ext}`
+            fetchpriority = x.fetchpriority || 'high'
+            imagesizes=x.sizes
+            imagesrcset= `
+                ${
+                    resolutions.map((resolution, index, arr) => {
+                        return `${x.dir}${x.name}@${resolution}.${x.ext} ${isForRetina ? `${resolution}` : `${resolution}w`}`
+                    })
+                }
+            `
+        )&attributes(attributes)
+    else
+        link(
+            href=x.href
+            rel="preload"
+            as="image"
+            src=x.src
+            fetchpriority = x.fetchpriority || 'high'
+        )&attributes(attributes)
