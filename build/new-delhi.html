@@ -241,7 +241,7 @@
     </header>
     <main class="relative pt-px overflow-x-hidden">
       <div class="absolute w-full inset-0 h-full z-10 overflow-hidden pointer-events-none">
-        <div class="new-delhi-bg-container"><img class="z-10 object-cover w-full" id="new-delhi-bg" width="1920" height="917" alt="New Dehli Restaurant Background" src="media/new-delhi/new-delhi-bg@1920.webp" loading="eager" decoding="async" fetchpriority="high" style="aspect-ratio: 1920 / 917;min-height:400px;" srcset="
+        <div class="new-delhi-bg-container"><img class="z-10 object-cover w-full " id="new-delhi-bg" width="1920" height="917" alt="New Dehli Restaurant Background" src="media/new-delhi/new-delhi-bg@1920.webp" loading="eager" decoding="async" fetchpriority="high" style="aspect-ratio: 1920 / 917;min-height:400px;" srcset="
                 media/new-delhi/new-delhi-bg@640.webp 640w,media/new-delhi/new-delhi-bg@768.webp 768w,media/new-delhi/new-delhi-bg@1024.webp 1024w,media/new-delhi/new-delhi-bg@1366.webp 1366w,media/new-delhi/new-delhi-bg@1600.webp 1600w,media/new-delhi/new-delhi-bg@1920.webp 1920w
             "/>
           <div class="relative z-0" style="margin-top: -1px;">
@@ -331,7 +331,7 @@
                   }
                   
                 </style>
-                <div class=" grid grid-cols-2"><img id="papricice" width="235" height="194" src="media/new-delhi/papricice.webp" loading="lazy" decoding="async" fetchpriority="low" data-spice-title="Papricice (Paprika)" data-spice-info="A ground spice made from dried red peppers, used for its mild flavor and vivid red color in various dishes."/><img id="ghost-chilli" width="171" height="169" src="media/new-delhi/ghost-chilli.webp" loading="lazy" decoding="async" fetchpriority="low" data-spice-title="Ghost Chili Sauce" data-spice-info="If our Ghost Chili Sauce doesn't scare you, it should! It's so hot we keep it under lock and key. If you're looking for a challenge, ask your server for our Ghost Chili Sauce when you next dine at New Delhi Restaurant...if you dare."/>
+                <div class=" grid grid-cols-2" id="ghost-chilli-grid"><img id="papricice" width="235" height="194" src="media/new-delhi/papricice.webp" loading="lazy" decoding="async" fetchpriority="low" data-spice-title="Papricice (Paprika)" data-spice-info="A ground spice made from dried red peppers, used for its mild flavor and vivid red color in various dishes."/><img id="ghost-chilli" width="171" height="169" src="media/new-delhi/ghost-chilli.webp" loading="lazy" decoding="async" fetchpriority="low" data-spice-title="Ghost Chili Sauce" data-spice-info="If our Ghost Chili Sauce doesn't scare you, it should! It's so hot we keep it under lock and key. If you're looking for a challenge, ask your server for our Ghost Chili Sauce when you next dine at New Delhi Restaurant...if you dare."/>
                 </div><br>
               </div>
             </div>
@@ -872,10 +872,20 @@
                     .swiper-slide {
                         display: grid;
                         place-items: center;
-                        transition: .3s ease-out;
                         scale: .35;
                         &.swiper-slide-active {
                             scale: 1;
+                        }
+                        -ms-touch-action: none;
+                        touch-action: none;
+                        img {
+                            -ms-touch-action: none;
+                            touch-action: none;
+                        }
+                    }
+                    &.isDragging {
+                        .swiper-slide:not(.swiper-slide-visible) {
+                            opacity: 0;
                         }
                     }
                 }
@@ -943,6 +953,15 @@
                     }
                 }
                 
+                .draggable {
+                    transition: .2s ease-out;
+                    touch-action: none;
+                    cursor: grab;
+                    &.dragging, &.dropped {
+                        opacity: 1;
+                    }
+                }
+                
               </style>
               <div class="text-center" id="game">
                 <div class="relative" id="spiceSliderContainer">
@@ -956,26 +975,40 @@
                     <!-- Additional required wrapper-->
                     <div class="swiper-wrapper">
                       <!-- Slides-->
-                      <div class="swiper-slide" data-name="Coriander"><img src="media/new-delhi/RotarySpices/Coriander.webp" alt="Coriander" data-q="50 gms." data-index="1" id="Coriander" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Green Cardamon"><img src="media/new-delhi/RotarySpices/GreenCardamon.webp" alt="Green Cardamon" data-q="10 gms." data-index="2" id="GreenCardamon" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Cloves"><img src="media/new-delhi/RotarySpices/Cloves.webp" alt="Cloves" data-q="10 gms." data-index="3" id="Cloves" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Cinnamon"><img src="media/new-delhi/RotarySpices/Cinnamon.webp" alt="Cinnamon" data-q="10 gms." data-index="4" id="Cinnamon" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Peppercorn"><img src="media/new-delhi/RotarySpices/Peppercorn.webp" alt="Peppercorn" data-q="10 gms." data-index="5" id="Peppercorn" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Mace"><img src="media/new-delhi/RotarySpices/Mace.webp" alt="Mace" data-q="5-6 gms." data-index="6" id="Mace" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Crushed Nutmeg"><img src="media/new-delhi/RotarySpices/CrushedNutmeg.webp" alt="Crushed Nutmeg" data-q="5-6 gms." data-index="7" id="CrushedNutmeg" width="246" height="246"></div>
-                      <div class="swiper-slide" data-name="Bay Leaves"><img src="media/new-delhi/RotarySpices/BayLeaves.webp" alt="Bay Leaves" data-q="14-16 nos." data-index="8" id="BayLeaves" width="246" height="246"></div>
+                      <div class="swiper-slide" data-name="Coriander"><img class="relative z-10 pointer-events-none" id="Coriander" width="246" height="246" alt="Coriander" src="media/new-delhi/RotarySpices/Coriander.webp" loading="lazy" decoding="async" fetchpriority="low" data-q="50 gms." data-index="1"/><img class="z-0 draggable absolute inset-0 m-auto object-contain " id="Coriander" src="media/new-delhi/ScatteredSpices/scatteredCoriander.webp" loading="lazy" decoding="async" fetchpriority="low" style="opacity: 0;" draggable="draggable"/>
+                        <audio class="spiceSound" src="media/new-delhi/sounds/Coriander.mp3"></audio>
+                      </div>
+                      <div class="swiper-slide" data-name="Green Cardamon"><img class="relative z-10 pointer-events-none" id="GreenCardamon" width="246" height="246" alt="Green Cardamon" src="media/new-delhi/RotarySpices/GreenCardamon.webp" loading="lazy" decoding="async" fetchpriority="low" data-q="10 gms." data-index="2"/><img class="z-0 draggable absolute inset-0 m-auto object-contain " id="GreenCardamon" src="media/new-delhi/ScatteredSpices/scatteredGreenCardamon.webp" loading="lazy" decoding="async" fetchpriority="low" style="opacity: 0;" draggable="draggable"/>
+                        <audio class="spiceSound" src="media/new-delhi/sounds/Cardamon.mp3"></audio>
+                      </div>
+                      <div class="swiper-slide" data-name="Cloves"><img class="relative z-10 pointer-events-none" id="Cloves" width="246" height="246" alt="Cloves" src="media/new-delhi/RotarySpices/Cloves.webp" loading="lazy" decoding="async" fetchpriority="low" data-q="10 gms." data-index="3"/><img class="z-0 draggable absolute inset-0 m-auto object-contain " id="Cloves" src="media/new-delhi/ScatteredSpices/scatteredCloves.webp" loading="lazy" decoding="async" fetchpriority="low" style="opacity: 0;" draggable="draggable"/>
+                        <audio class="spiceSound" src="media/new-delhi/sounds/Cloves.mp3"></audio>
+                      </div>
+                      <div class="swiper-slide" data-name="Cinnamon"><img class="relative z-10 pointer-events-none" id="Cinnamon" width="246" height="246" alt="Cinnamon" src="media/new-delhi/RotarySpices/Cinnamon.webp" loading="lazy" decoding="async" fetchpriority="low" data-q="10 gms." data-index="4"/><img class="z-0 draggable absolute inset-0 m-auto object-contain " id="Cinnamon" src="media/new-delhi/ScatteredSpices/scatteredCinnamon.webp" loading="lazy" decoding="async" fetchpriority="low" style="opacity: 0;" draggable="draggable"/>
+                        <audio class="spiceSound" src="media/new-delhi/sounds/Cinnamon.mp3"></audio>
+                      </div>
+                      <div class="swiper-slide" data-name="Peppercorn"><img class="relative z-10 pointer-events-none" id="Peppercorn" width="246" height="246" alt="Peppercorn" src="media/new-delhi/RotarySpices/Peppercorn.webp" loading="lazy" decoding="async" fetchpriority="low" data-q="10 gms." data-index="5"/><img class="z-0 draggable absolute inset-0 m-auto object-contain " id="Peppercorn" src="media/new-delhi/ScatteredSpices/scatteredPeppercorn.webp" loading="lazy" decoding="async" fetchpriority="low" style="opacity: 0;" draggable="draggable"/>
+                        <audio class="spiceSound" src="media/new-delhi/sounds/Pepper.mp3"></audio>
+                      </div>
+                      <div class="swiper-slide" data-name="Mace"><img class="relative z-10 pointer-events-none" id="Mace" width="246" height="246" alt="Mace" src="media/new-delhi/RotarySpices/Mace.webp" loading="lazy" decoding="async" fetchpriority="low" data-q="5-6 gms." data-index="6"/><img class="z-0 draggable absolute inset-0 m-auto object-contain " id="Mace" src="media/new-delhi/ScatteredSpices/scatteredMace.webp" loading="lazy" decoding="async" fetchpriority="low" style="opacity: 0;" draggable="draggable"/>
+                        <audio class="spiceSound" src="media/new-delhi/sounds/Mace.mp3"></audio>
+                      </div>
+                      <div class="swiper-slide" data-name="Crushed Nutmeg"><img class="relative z-10 pointer-events-none" id="CrushedNutmeg" width="246" height="246" alt="Crushed Nutmeg" src="media/new-delhi/RotarySpices/CrushedNutmeg.webp" loading="lazy" decoding="async" fetchpriority="low" data-q="5-6 gms." data-index="7"/><img class="z-0 draggable absolute inset-0 m-auto object-contain " id="CrushedNutmeg" src="media/new-delhi/ScatteredSpices/scatteredCrushedNutmeg.webp" loading="lazy" decoding="async" fetchpriority="low" style="opacity: 0;" draggable="draggable"/>
+                        <audio class="spiceSound" src="media/new-delhi/sounds/Nutmeg.mp3"></audio>
+                      </div>
+                      <div class="swiper-slide" data-name="Bay Leaves"><img class="relative z-10 pointer-events-none" id="BayLeaves" width="246" height="246" alt="Bay Leaves" src="media/new-delhi/RotarySpices/BayLeaves.webp" loading="lazy" decoding="async" fetchpriority="low" data-q="14-16 nos." data-index="8"/><img class="z-0 draggable absolute inset-0 m-auto object-contain " id="BayLeaves" src="media/new-delhi/ScatteredSpices/scatteredBayLeaves.webp" loading="lazy" decoding="async" fetchpriority="low" style="opacity: 0;" draggable="draggable"/>
+                        <audio class="spiceSound" src="media/new-delhi/sounds/Bay Leaves.mp3"></audio>
+                      </div>
                     </div>
-                    <div class=" spiceSliderPrev absolute bg-red-400 top-1/2 -translate-y-1/2 z-50"></div>
-                    <div class=" spiceSliderNext absolute bg-red-400 top-1/2 -translate-y-1/2 z-50"></div>
                   </div>
                   <div class="text-white absolute" id="drag-line">drag to the stone bowl</div>
-                  <div class="relative" id="GaramMasalaBgContainer"><img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBg" class="mx-auto relative z-0" src="media/new-delhi/GaramMasalaBg.webp" width="596" height="821" draggable="false">
-<img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBgEnd" class="mx-auto relative z-0" src="media/new-delhi/end-game-bg.webp" width="596" height="821" draggable="false">
+                  <div class="relative" id="GaramMasalaBgContainer"><img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBg" class="mx-auto relative z-0" src="media/new-delhi/GaramMasalaBg.webp" width="596" height="821" >
+<img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBgEnd" class="mx-auto relative z-0" src="media/new-delhi/end-game-bg.webp" width="596" height="821" >
                   </div>
                 </div>
                 <div class="relative" id="StoneBowlContainer">
-                  <div class="absolute inset-0 w-full h-full" id="StoneBowlContainerDropZone"></div><img loading="lazy" id="StoneHammer" class="mx-auto absolute inset-0 m-auto pointer-events-none" src="media/new-delhi/StoneHammer.webp" width="497" height="383" draggable="false">
-<img loading="lazy" id="StoneBowl" class="mx-auto z-0 relative" src="media/new-delhi/StoneBowl.webp" width="676" height="682" draggable="false">
+                  <div class="absolute inset-0 w-full h-full" id="StoneBowlContainerDropZone"></div><img loading="lazy" id="StoneHammer" class="mx-auto absolute inset-0 m-auto pointer-events-none" src="media/new-delhi/StoneHammer.webp" width="497" height="383" >
+<img loading="lazy" id="StoneBowl" class="mx-auto z-0 relative" src="media/new-delhi/StoneBowl.webp" width="676" height="682" >
                 </div>
               </div>
             </div>
@@ -995,7 +1028,7 @@
         <div class="max-w-5xl mx-auto relative" id="bg-bottom"></div>
       </section><img class="relative z-30" id="van" width="760" height="570" src="media/new-delhi/van@1024.webp" loading="lazy" decoding="async" fetchpriority="low" sizes="39.56vw, (min-width: 1920px) 760px" srcset="
                 media/new-delhi/van@320.webp 320w,media/new-delhi/van@480.webp 480w,media/new-delhi/van@640.webp 640w,media/new-delhi/van@760.webp 760w,media/new-delhi/van@1024.webp 1024w
-            "/>
+            " draggable="draggable"/>
       <style>
         #red-bg {
             background: radial-gradient(ellipse at center, #811834, #3C1112);
@@ -1188,6 +1221,7 @@
     <script src="js/main.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="js/simpleParallax.js" defer></script>
+    <script src="https://unpkg.com/interactjs/dist/interact.min.js" defer></script>
     <script src="js/new-delhi.js" defer></script>
   </body>
 </html>

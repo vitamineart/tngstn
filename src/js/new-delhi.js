@@ -18,25 +18,37 @@ ScrollTrigger.matchMedia({
 	}
 });
 
+// gsap.fromTo(
+// 	".plaque",
+// 	{
+// 		scale: 0,
+// 		opacity: 0,
+// 		rotate: 360
+// 	},
+// 	{
+// 		opacity: 1,
+// 		scale: 1,
+// 		rotate: 0,
+// 		duration: 1,
+// 		ease: "power3.out",
+// 		scrollTrigger: {
+// 			trigger: "#ndr",
+// 			start: "top top",
+// 			anticipatePin: true,
+// 			pin: true,
+// 			end: "+=300px",
+// 			scrub: true
+// 		}
+// 	}
+// );
+
 ScrollTrigger.create({
 	trigger: ".new-delhi-bg-container",
 	// start: "top 50px",
 	pin: true,
 	scrub: 3,
 	anticipatePin: 1
-});
-
-gsap.to("#bill-clinton", {
-	opacity: 0,
-	duration: 1,
-	scale: 0,
-	scrollTrigger: {
-		scrub: 3,
-		trigger: "#bill-clinton",
-		start: "top 42px",
-		pin: "#article-container-2",
-		anticipatePin: true
-	}
+	// pinSpacing: false
 });
 
 gsap.from("#meal", {
@@ -47,6 +59,7 @@ gsap.from("#meal", {
 	// ease: "power3.inOut",
 	scrollTrigger: {
 		trigger: "#meal",
+		start: "top 90%",
 		end: "+=350px",
 		scrub: 3
 	}
@@ -60,8 +73,9 @@ gsap.from("#papricice, #ghost-chilli", {
 	ease: "power2.inOut",
 	stagger: 0.4,
 	scrollTrigger: {
-		trigger: "#papricice",
-		start: "top bottom"
+		trigger: "#ghost-chilli-grid",
+		start: "top 90%",
+		end: "+=200px"
 	}
 });
 
@@ -119,6 +133,7 @@ const dropZone = document.querySelector("#StoneBowlContainerDropZone");
 const cookBtn = document.querySelector("#cook-btn");
 const cookGaramMasala = document.querySelector("#cook-garam-masala");
 const garamMasalaSection = document.querySelector("#garam-masala-section");
+
 cookBtn.addEventListener("click", function (e) {
 	cookGaramMasala.classList.remove("closed");
 	gsap.to(window, { duration: 2, scrollTo: { y: cookGaramMasala, offsetY: 0 }, ease: "power2.inOut()" });
@@ -134,9 +149,9 @@ const spiceSwiper = new Swiper("#spiceSlider ", {
 	// loop: false,
 	lazy: true,
 	watchSlidesProgress: true,
-	// touchMoveStopPropagation: true,
 	allowTouchMove: false,
-	simulateTouch: false,
+	// simulateTouch: false,
+	// touchEventsTarget: "container",
 	zoom: true,
 	keyboard: {
 		enabled: true
@@ -158,22 +173,20 @@ function displaySpiceStatus() {
 	spiceSliderQ.innerHTML = spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").dataset.q;
 }
 
-const spiceImages = document.querySelectorAll("#spiceSlider img");
+const spiceImages = document.querySelectorAll("#spiceSlider img[draggable]");
 
 // define prev next actions
-const spiceSliderPrev = document.querySelector(".spiceSliderPrev");
-const spiceSliderNext = document.querySelector(".spiceSliderNext");
-spiceSliderPrev.addEventListener("click", e => {
-	spiceSwiper.slidePrev();
-});
-spiceSliderNext.addEventListener("click", e => {
-	spiceSwiper.slideNext();
-});
+// const spiceSliderPrev = document.querySelector(".spiceSliderPrev");
+// const spiceSliderNext = document.querySelector(".spiceSliderNext");
+// spiceSliderPrev.addEventListener("click", e => {
+// 	// spiceSwiper.slidePrev();
+// });
+// spiceSliderNext.addEventListener("click", e => {
+// 	// spiceSwiper.slideNext();
+// });
 
 spiceSwiper.on("slideChange", spiceSwiper => {
 	displaySpiceStatus();
-	// spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("img").draggable = true;
-	// spiceSwiper.removeSlide[spiceSwiper.activeIndex - 1];
 });
 
 function restartGame() {
@@ -182,7 +195,10 @@ function restartGame() {
 	spiceSliderName.classList.remove("congratulations");
 	spiceSwiper.init();
 	spiceSwiper.slideTo(0);
-	displaySpiceStatus();
+	spiceSwiper.slides.forEach(item => {
+		item.querySelector("img[draggable]").draggable = true;
+		item.querySelector("img[draggable]").classList.add("draggable");
+	});
 	draggedSpices = [];
 	dropZone.innerHTML = "";
 	crushBtn.innerText = "drag to the stone bowl";
@@ -190,9 +206,6 @@ function restartGame() {
 	crushBtn.style.background = "#ffffff99";
 	crushBtn.style.cursor = "default";
 	game.classList.remove("end-game");
-	spiceImages.forEach(image => {
-		image.draggable = true;
-	});
 	gsap.to(window, { duration: 2, scrollTo: { y: garamMasalaSection, offsetY: 0 }, ease: "power2.inOut()" });
 }
 
@@ -207,60 +220,104 @@ function finishCrushing() {
 	crushBtn.addEventListener("click", e => restartGame(e), { once: true });
 }
 
-// drag'n'drop actions
+// spiceImages.forEach(image => {
 
-spiceImages.forEach(image => {
-	image.addEventListener("mouseenter", e => {
-		if (draggedSpices.includes(e.target.id)) {
-			e.target.style.cursor = "not-allowed";
-			e.target.draggable = false;
-			console.log(`You already added ${e.target.id}`);
-		} else {
-			e.target.style.cursor = "pointer";
-		}
-	});
-	image.addEventListener("dragstart", e => {
-		const data = e.dataTransfer.setData("text/plain", e.target.id);
-		e.dataTransfer.effectAllowed = "copy";
-	});
-});
+// 	// image.addEventListener("dragstart", e => {
+// 	// 	e.target.classList.add("dragging");
+// 	// 	const data = e.dataTransfer.setData("text/plain", e.target.id);
 
-// dropZone.addEventListener("dragenter", e => {
-//   const data = e.dataTransfer.getData("text/plain");
-//   console.log(e.target.id);
-//   if (draggedSpices.includes(e.target.id)) {
-//     console.log("You'already added this spice!");
-//   }
+// 	// 	e.dataTransfer.effectAllowed = "copy";
+// 	// 	// var img = image.cloneNode();
+// 	// 	// img.width = 100;
+// 	// 	// img.height = 100;
+// 	// 	// img.classList.add("object-cover");
+// 	// 	// img.src = e.target.dataset.dragging;
+// 	// 	// e.dataTransfer.setDragImage(img, img.width + 50, img.height + 50);
+// 	// });
 // });
-
-dropZone.addEventListener("dragover", e => {
-	e.preventDefault();
+interact("img.draggable[draggable]").draggable({
+	// manualStart: true,
+	startAxis: "y",
+	lockAxis: "y",
+	autoScroll: true,
+	inertia: true,
+	onmove: dragMoveListener,
+	onstart: dragStartListener,
+	onend: dragEndListener
 });
+function dragEndListener(event) {
+	// Remove the clone from the body if it was not dropped in the dropzone
 
-dropZone.addEventListener("drop", e => {
-	const data = e.dataTransfer.getData("text/plain");
-	if (!draggedSpices.includes(data)) {
-		const scatteredSpice = document.createElement("img");
-		scatteredSpice.src = `media/new-delhi/ScatteredSpices/scattered${data}.png`;
-		e.target.appendChild(scatteredSpice);
-		draggedSpices.push(data);
-		spiceSwiper.slideNext();
-		if (draggedSpices.length == 8) {
-			spiceSlider.style.display = "none";
-			crushMessage.style.display = "block";
-			spiceSliderName.innerHTML = "";
-			spiceSliderIndex.innerHTML = 9;
-			spiceSliderQ.innerHTML = "";
+	if (!event.target.classList.contains("dropped")) {
+		document.body.removeChild(event.target);
+	}
+	document.querySelector("#spiceSlider").classList.remove("isDragging");
+	document.querySelector("#spiceSlider").style.overflow = "hidden";
+}
+function dragStartListener(event) {
+	document.querySelector("#spiceSlider").style.overflow = "visible";
+	document.querySelector("#spiceSlider").classList.add("isDragging");
+	event.target.style.opacity = 1;
+}
+function dragMoveListener(event) {
+	var target = event.target,
+		x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx,
+		y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
 
-			crushBtn.innerText = "Click to crush the spices";
-			crushBtn.style.background = "#fff";
-			crushBtn.style.color = "#000";
-			crushBtn.style.cursor = "pointer";
+	target.style.transform = "translate(" + x + "px, " + y + "px)";
+	target.setAttribute("data-x", x);
+	target.setAttribute("data-y", y);
+}
 
-			crushBtn.addEventListener("click", e => finishCrushing(e), { once: true });
+interact(dropZone).dropzone({
+	accept: "img.draggable",
+	overlap: 0.01,
+	ondragenter: function (event) {},
+	ondrop: function (event) {
+		const target = event.relatedTarget;
+		let clonedImage = event.relatedTarget.cloneNode(true);
+		clonedImage.style.opacity = 0;
+		clonedImage.setAttribute("data-x", 0);
+		clonedImage.setAttribute("data-y", 0);
+		clonedImage.style.transform = "translate(0, 0)";
+		clonedImage.classList.remove("draggable");
+		clonedImage.draggable = false;
+		clonedImage.cursor = "default";
+
+		spiceSwiper.slides[spiceSwiper.activeIndex].appendChild(clonedImage);
+		const dropSound = spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("audio");
+		dropSound.currentTime = 0; // Reset the audio to start
+		dropSound.play();
+
+		if (!draggedSpices.includes(target)) {
+			event.target.appendChild(target);
+			target.classList.add("dropped");
+			target.style.opacity = 1;
+			draggedSpices.push(target);
+
+			target.style.transform = "translate(0 , 0)";
+
+			document.querySelector("#spiceSlider").style.overflow = "hidden";
+			document.querySelector("#spiceSlider").classList.remove("isDragging");
+			spiceSwiper.slideNext();
+
+			if (draggedSpices.length == 8) {
+				spiceSlider.style.display = "none";
+				crushMessage.style.display = "block";
+				spiceSliderName.innerHTML = "";
+				spiceSliderIndex.innerHTML = 9;
+				spiceSliderQ.innerHTML = "";
+
+				crushBtn.innerText = "Click to crush the spices";
+				crushBtn.style.background = "#fff";
+				crushBtn.style.color = "#000";
+				crushBtn.style.cursor = "pointer";
+
+				crushBtn.addEventListener("click", e => finishCrushing(e), { once: true });
+			}
+		} else {
+			console.log("You'already added this spice!");
 		}
-	} else {
-		console.log("You'already added this spice!");
 	}
 });
 

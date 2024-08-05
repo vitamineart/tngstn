@@ -180,13 +180,22 @@ mixin image(x='')
 
 
 mixin imgBlur(x)
-    div(
-        class="blur-load bg-no-repeat bg-cover w-full"
-        class=x.class
-        style=`background-image: url(${x.dir}${x.name}-blurred.${x.ext});`+`${x.style};`
+    if x.blurredImage
+        div(
+            class="blur-load bg-no-repeat bg-cover w-full"
+            class=x.class
+            style=`background-image: url(${x.blurredImage});`+`${ x.style ? x.style : ''};`
 
-    )
-        +image(x)&attributes(attributes)
+        )
+            +image(x)&attributes(attributes)
+    else
+        div(
+            class="blur-load bg-no-repeat bg-cover w-full"
+            class=x.class
+            style=`background-image: url(${x.dir}${x.name}-blurred.${x.ext});`+`${x.style};`
+
+        )
+            +image(x)&attributes(attributes)
 
 
 

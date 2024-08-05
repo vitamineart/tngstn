@@ -186,7 +186,7 @@ block page
                 style: 'aspect-ratio: 1920 / 917',
                 fetchpriority: 'high',
                 loading: 'eager'
-            })(src="../media/new-delhi/new-delhi-bg@1920.jpg"  alt="New Dehli Restaurant Background" width="1920" height="917" style="min-height:400px;" class="z-10 object-cover w-full" id="new-delhi-bg")
+            })(src="../media/new-delhi/new-delhi-bg@1920.jpg"  alt="New Dehli Restaurant Background" width="1920" height="917" style="min-height:400px;" class="z-10 object-cover w-full " id="new-delhi-bg")
             div(class="relative z-0" style="margin-top: -1px;")
                 div(class='py-1 border-t-2 border-b-2 border-current absolute w-full l-0 r-0 top-0 z-10' style="color: #DEA626; height: 34px;")
                     div(class="mix-blend-lighten opacity-30" style="background: repeating-linear-gradient(90deg, #fff, transparent 5%, #fff 10%);" class="w-full h-full absolute inset-0")
@@ -292,7 +292,7 @@ block page
                                 }
                             }
 
-                        div(class=" grid grid-cols-2")
+                        div(class=" grid grid-cols-2" id="ghost-chilli-grid")
                             +image(src="../media/new-delhi/papricice.png" width="235" height="194" id="papricice" data-spice-title="Papricice (Paprika)" data-spice-info="A ground spice made from dried red peppers, used for its mild flavor and vivid red color in various dishes.")
                             +image(src="../media/new-delhi/ghost-chilli.png" width="171" height="169" id="ghost-chilli" data-spice-title="Ghost Chili Sauce" data-spice-info="If our Ghost Chili Sauce doesn't scare you, it should! It's so hot we keep it under lock and key. If you're looking for a challenge, ask your server for our Ghost Chili Sauce when you next dine at New Delhi Restaurant...if you dare.")
                         br
@@ -818,42 +818,57 @@ block page
                             {
                                 id: 1,
                                 name: 'Coriander',
-                                q: '50 gms.'
+                                q: '50 gms.',
+                                sound: '../media/new-delhi/sounds/Coriander.mp3'
                             },
                             {
                                 id: 2,
                                 name: 'Green Cardamon',
-                                q: '10 gms.'
+                                q: '10 gms.',
+                                sound: '../media/new-delhi/sounds/Cardamon.mp3'
+
                             },
                             {
                                 id: 3,
                                 name: 'Cloves',
-                                q: '10 gms.'
+                                q: '10 gms.',
+                                sound: '../media/new-delhi/sounds/Cloves.mp3'
+
                             },
                             {
                                 id: 4,
                                 name: 'Cinnamon',
-                                q: '10 gms.'
+                                q: '10 gms.',
+                                sound: '../media/new-delhi/sounds/Cinnamon.mp3'
+
                             },
                             {
                                 id: 5,
                                 name: 'Peppercorn',
-                                q: '10 gms.'
+                                q: '10 gms.',
+                                sound: '../media/new-delhi/sounds/Pepper.mp3'
+
                             },
                             {
                                 id: 6,
                                 name: 'Mace',
-                                q: '5-6 gms.'
+                                q: '5-6 gms.',
+                                sound: '../media/new-delhi/sounds/Mace.mp3'
+
                             },
                             {
                                 id: 7,
                                 name: 'Crushed Nutmeg',
-                                q: '5-6 gms.'
+                                q: '5-6 gms.',
+                                sound: '../media/new-delhi/sounds/Nutmeg.mp3'
+
                             },
                             {
                                 id: 8,
                                 name: 'Bay Leaves',
-                                q: '14-16 nos.'
+                                q: '14-16 nos.',
+                                sound: '../media/new-delhi/sounds/Bay Leaves.mp3'
+
                             },
                         ]
 
@@ -913,10 +928,20 @@ block page
                             .swiper-slide {
                                 display: grid;
                                 place-items: center;
-                                transition: .3s ease-out;
                                 scale: .35;
                                 &.swiper-slide-active {
                                     scale: 1;
+                                }
+                                -ms-touch-action: none;
+                                touch-action: none;
+                                img {
+                                    -ms-touch-action: none;
+                                    touch-action: none;
+                                }
+                            }
+                            &.isDragging {
+                                .swiper-slide:not(.swiper-slide-visible) {
+                                    opacity: 0;
                                 }
                             }
                         }
@@ -984,6 +1009,15 @@ block page
                             }
                         }
 
+                        .draggable {
+                            transition: .2s ease-out;
+                            touch-action: none;
+                            cursor: grab;
+                            &.dragging, &.dropped {
+                                opacity: 1;
+                            }
+                        }
+
                     #game.text-center
                         #spiceSliderContainer.relative
                             #spiceSliderStatus.absolute.text-white
@@ -997,19 +1031,20 @@ block page
                                     // Slides
                                     for spice, index in garamMasalaSpices
                                         .swiper-slide(data-name=spice.name)
-                                            img(src=`${mediaFolder}RotarySpices/${spice.name.split(" ").join("")}.png` alt=`${spice.name}` data-q=`${spice.q}` data-index=`${spice.id}` id=`${spice.name.split(" ").join("")}` width=246 height=246)
-                                div(class=" spiceSliderPrev absolute bg-red-400 top-1/2 -translate-y-1/2 z-50")
-                                div(class=" spiceSliderNext absolute bg-red-400 top-1/2 -translate-y-1/2 z-50")
+                                            +image(src=`${mediaFolder}RotarySpices/${spice.name.split(" ").join("")}.png` alt=`${spice.name}` data-q=`${spice.q}` data-index=`${spice.id}` id=`${spice.name.split(" ").join("")}` width=246 height=246 class="relative z-10 pointer-events-none")
+                                            +image(class="z-0 draggable absolute inset-0 m-auto object-contain " src=`${mediaFolder}ScatteredSpices/scattered${spice.name.split(" ").join("")}.png` draggable id=`${spice.name.split(" ").join("")}` style="opacity: 0;")
+                                            audio(class="spiceSound" src=spice.sound)
+
                             div.text-white.absolute#drag-line drag to the stone bowl
                             #GaramMasalaBgContainer.relative
-                                <img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBg" class="mx-auto relative z-0" src="../media/new-delhi/GaramMasalaBg.png" width="596" height="821" draggable="false">
-                                <img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBgEnd" class="mx-auto relative z-0" src="../media/new-delhi/end-game-bg.png" width="596" height="821" draggable="false">
+                                <img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBg" class="mx-auto relative z-0" src="../media/new-delhi/GaramMasalaBg.png" width="596" height="821" >
+                                <img loading="lazy" fetchpriority="low" decoding="async" id="GaramMasalaBgEnd" class="mx-auto relative z-0" src="../media/new-delhi/end-game-bg.png" width="596" height="821" >
 
 
                         #StoneBowlContainer.relative
                             #StoneBowlContainerDropZone.absolute.inset-0.w-full.h-full
-                            <img loading="lazy" id="StoneHammer" class="mx-auto absolute inset-0 m-auto pointer-events-none" src="../media/new-delhi/StoneHammer.png" width="497" height="383" draggable="false">
-                            <img loading="lazy" id="StoneBowl" class="mx-auto z-0 relative" src="../media/new-delhi/StoneBowl.png" width="676" height="682" draggable="false">
+                            <img loading="lazy" id="StoneHammer" class="mx-auto absolute inset-0 m-auto pointer-events-none" src="../media/new-delhi/StoneHammer.png" width="497" height="383" >
+                            <img loading="lazy" id="StoneBowl" class="mx-auto z-0 relative" src="../media/new-delhi/StoneBowl.png" width="676" height="682" >
 
 
 
@@ -1031,7 +1066,7 @@ block page
         resolutions: [320, 480, 640, 760, 1024],
         name: 'van',
         ext: 'png',
-    })( id="van" width="760" height="570" class="relative z-30" sizes="39.56vw, (min-width: 1920px) 760px")
+    })( id="van" width="760" height="570" class="relative z-30" sizes="39.56vw, (min-width: 1920px) 760px" draggable)
 
     style.
         #red-bg {
@@ -1090,6 +1125,7 @@ block page
 append footer_scripts
     script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer)
     script(src="../js/simpleParallax.js" defer)
+    script(src="https://unpkg.com/interactjs/dist/interact.min.js" defer)
     script(src="js/new-delhi.js" defer)
 
 
