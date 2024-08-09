@@ -56,15 +56,21 @@ img.shape-outside {
 }
 
 .projects-grid {
-  --grid-fit: auto-fit;
+  grid-auto-flow: dense;
+  --grid-fit: auto-fill;
   grid-template-columns: repeat(var(--grid-fit), minmax(250px, 1fr));
 }
-
 @media (min-width: 1024px) {
   .projects-grid {
     --grid-fit: 3;
   }
 }
+@media (min-width: 862px) {
+  .projects-grid.home-projects .item:nth-last-child(1) {
+    grid-column-start: 2;
+  }
+}
+
 /* lazy load img with blur effect start */
 @keyframes pulse {
   0% {

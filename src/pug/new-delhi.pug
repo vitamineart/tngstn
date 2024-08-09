@@ -15,7 +15,8 @@ append preload
         dir: mediaFolder,
         name: 'new-delhi-bg',
         ext: 'jpg',
-        resolutions: 'default'
+        resolutions: 'default',
+        href: '../media/new-delhi/new-delhi-bg.jpg'
     })
 
 append head
@@ -1013,8 +1014,12 @@ block page
                             transition: .2s ease-out;
                             touch-action: none;
                             cursor: grab;
+                            &.dragging {
+                                cursor: grabbing;
+                            }
                             &.dragging, &.dropped {
                                 opacity: 1;
+
                             }
                         }
 

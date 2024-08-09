@@ -253,13 +253,16 @@ function dragEndListener(event) {
 	}
 	document.querySelector("#spiceSlider").classList.remove("isDragging");
 	document.querySelector("#spiceSlider").style.overflow = "hidden";
+	event.target.style.cursor = "grab";
 }
 function dragStartListener(event) {
 	document.querySelector("#spiceSlider").style.overflow = "visible";
 	document.querySelector("#spiceSlider").classList.add("isDragging");
 	event.target.style.opacity = 1;
+	event.target.style.cursor = "grabbing";
 }
 function dragMoveListener(event) {
+	event.target.style.cursor = "grabbing";
 	var target = event.target,
 		x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx,
 		y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
@@ -272,7 +275,9 @@ function dragMoveListener(event) {
 interact(dropZone).dropzone({
 	accept: "img.draggable",
 	overlap: 0.01,
-	ondragenter: function (event) {},
+	ondragenter: function (event) {
+		event.target.style.cursor = "grabbing";
+	},
 	ondrop: function (event) {
 		const target = event.relatedTarget;
 		let clonedImage = event.relatedTarget.cloneNode(true);
@@ -288,7 +293,7 @@ interact(dropZone).dropzone({
 		const dropSound = spiceSwiper.slides[spiceSwiper.activeIndex].querySelector("audio");
 		dropSound.currentTime = 0; // Reset the audio to start
 		dropSound.play();
-
+		event.target.style.cursor = "default";
 		if (!draggedSpices.includes(target)) {
 			event.target.appendChild(target);
 			target.classList.add("dropped");
@@ -326,7 +331,7 @@ const gameP = document.querySelectorAll("#garam-masala-section p");
 
 const garamAppearanceTL = gsap.timeline({
 	scrollTrigger: {
-		trigger: "#garamMasala"
+		trigger: game
 	},
 	defaults: { y: 20, duration: 1, ease: "power3.out()" }
 });

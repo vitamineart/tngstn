@@ -83,9 +83,9 @@
             url: `alaska`
         },
         {
-            category: 'Telecom',
+            category: 'FOOD & BEVERAGE',
             name: 'New Delhi Restaurant',
-            medium: 'Web',
+            medium: 'Multiple Mediums',
             imageDir: `new-delhi/`,
             image: `new-delhi`,
             url: `new-delhi`
@@ -97,15 +97,16 @@
     })
 
 
+
 section(class="py-10 md:py-16 relative projects-section bg-white")
     .container.max-w-7xl
         if currentUrl !== '/'
             header.text-blue.font-proxima-bold.text-3xl.text-center Our Work and Clients
-        div(class=`projects-grid grid gap-3 md:gap-4 ${currentUrl !== '/' ? 'mt-6 md:mt-10' : ''} `)
+        div(class=`projects-grid grid gap-3 md:gap-4 ${currentUrl !== '/' ? 'mt-6 md:mt-10' : 'home-projects'} `)
             each project in filteredProjects
                 a.item(
                     href=project.url
-                    class="m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border"
+                    class=`m-auto sm:max-w-none relative block shadow-cardshadow overflow-hidden group will-change-transform-opacity box-border`
                     style={
                         opacity: 0,
                         'min-height':'100px',

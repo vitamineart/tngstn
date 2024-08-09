@@ -19,7 +19,7 @@
     <link rel="preload" href="fonts/ProximaNovaABold.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
     <link rel="preload" href="fonts/ProximaNovaARegular.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
     <style class="font-style">@font-face { font-family: "ProximaNovaA-Bold"; src: url('fonts/ProximaNovaABold.woff2') format('woff2'), url('fonts/ProximaNovaABold.woff') format('woff'); font-display: swap; } @font-face { font-family: "ProximaNovaA-Regular"; src: url('fonts/ProximaNovaARegular.woff2') format('woff2'), url('fonts/ProximaNovaARegular.woff') format('woff'); font-display: swap;}</style>
-    <link rel="preload" as="image" srcset="
+    <link href="media/new-delhi/new-delhi-bg.webp" rel="preload" as="image" srcset="
                     media/new-delhi/new-delhi-bg@640.webp 640w,media/new-delhi/new-delhi-bg@768.webp 768w,media/new-delhi/new-delhi-bg@1024.webp 1024w,media/new-delhi/new-delhi-bg@1366.webp 1366w,media/new-delhi/new-delhi-bg@1600.webp 1600w,media/new-delhi/new-delhi-bg@1920.webp 1920w
                 " fetchpriority="high"/>
     <link href="css/style.css" rel="stylesheet">
@@ -957,8 +957,12 @@
                     transition: .2s ease-out;
                     touch-action: none;
                     cursor: grab;
+                    &.dragging {
+                        cursor: grabbing;
+                    }
                     &.dragging, &.dropped {
                         opacity: 1;
+                
                     }
                 }
                 

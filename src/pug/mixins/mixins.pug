@@ -201,7 +201,7 @@ mixin imgBlur(x)
 
 
 
-mixin imgPreload(x)
+mixin imgPreload(x='')
     if x.resolutions == 'default'
         - let resolutions = [640, 768, 1024, 1366, 1600, 1920];
         link(
