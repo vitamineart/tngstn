@@ -324,9 +324,7 @@ function moveManifestProd() {
 //   ])
 //     .pipe(dest(options.paths.build.base))
 // }
-function moveRobotsTXT() {
-  return src(`${options.paths.src.base}/robots.txt`).pipe(dest(options.paths.build.base));
-}
+
 
 function prodClean() {
   console.log("\n\t" + logSymbols.info, "Cleaning build folder for fresh start.\n");
@@ -372,7 +370,6 @@ exports.prod = series(
     prodFonts,
     prodHTML,
     moveManifestProd,
-    moveRobotsTXT
     // prodFavicon
   ), //Run All tasks in parallel
   // criticalCSS,
@@ -382,6 +379,5 @@ exports.prod = series(
 exports.devImages = devImages;
 exports.devClean = devClean;
 exports.prodSVGSprite = prodSVGSprite;
-exports.moveRobotsTXT = moveRobotsTXT;
 exports.moveManifestProd = moveManifestProd;
 // exports.prodFavicon = prodFavicon;

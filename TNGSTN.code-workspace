@@ -5,7 +5,6 @@
 		}
 	],
 	"settings": {
-		"netlify.site_id": "tngstn.netlify.app",
 		"liveServer.settings.port": 5501
 	}
 }
